@@ -146,6 +146,7 @@ typedef struct {
 
         DBusGProxy             *bus_proxy;
         DBusGConnection        *connection;
+        gboolean                dbus_disconnected : 1;
 } GsmManagerPrivate;
 
 enum {
@@ -1798,6 +1799,12 @@ _disconnect_client (GsmManager *manager,
                                                      "phase");
         }
 
+        if (priv->dbus_disconnected && GSM_IS_DBUS_CLIENT (client)) {
+                g_debug ("GsmManager: dbus disconnected, not restarting application");
+                goto out;
+        }
+
+
         if (app == NULL) {
                 g_debug ("GsmManager: unable to find application for client - not restarting");
                 goto out;
@@ -1852,6 +1859,12 @@ _disconnect_dbus_client (const char       *id,
                 return FALSE;
         }
 
+        /* If no service name, then we simply disconnect all clients */
+        if (!data->service_name) {
+                _disconnect_client (data->manager, client);
+                return TRUE;
+        }
+
         name = gsm_dbus_client_get_bus_name (GSM_DBUS_CLIENT (client));
         if (IS_STRING_EMPTY (name)) {
                 return FALSE;
@@ -1865,6 +1878,15 @@ _disconnect_dbus_client (const char       *id,
         return FALSE;
 }
 
+/**
+ * remove_clients_for_connection:
+ * @manager: a #GsmManager
+ * @service_name: a service name
+ *
+ * Disconnects clients that own @service_name.
+ *
+ * If @service_name is NULL, then disconnects all clients for the connection.
+ */
 static void
 remove_clients_for_connection (GsmManager *manager,
                                const char *service_name)
@@ -1952,11 +1974,36 @@ bus_name_owner_changed (DBusGProxy  *bus_proxy,
         }
 }
 
+static DBusHandlerResult
+gsm_manager_bus_filter (DBusConnection *connection,
+                        DBusMessage    *message,
+                        void           *user_data)
+{
+        GsmManager *manager;
+        GsmManagerPrivate *priv;
+
+        manager = GSM_MANAGER (user_data);
+        priv = gsm_manager_get_instance_private (manager);
+
+        if (dbus_message_is_signal (message,
+                                    DBUS_INTERFACE_LOCAL, "Disconnected") &&
+            strcmp (dbus_message_get_path (message), DBUS_PATH_LOCAL) == 0) {
+                g_debug ("GsmManager: dbus disconnected; disconnecting dbus clients...");
+                priv->dbus_disconnected = TRUE;
+                remove_clients_for_connection (manager, NULL);
+                /* let other filters get this disconnected signal, so that they
+                 * can handle it too */
+        }
+
+        return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
+}
+
 static gboolean
 register_manager (GsmManager *manager)
 {
         GError *error = NULL;
         GsmManagerPrivate *priv;
+        DBusConnection *connection;
 
         error = NULL;
         priv = gsm_manager_get_instance_private (manager);
@@ -1969,6 +2016,12 @@ register_manager (GsmManager *manager)
                 }
                 exit (1);
         }
+
+        connection = dbus_g_connection_get_connection (priv->connection);
+        dbus_connection_add_filter (connection,
+                                    gsm_manager_bus_filter,
+                                    manager, NULL);
+        priv->dbus_disconnected = FALSE;
 
         priv->bus_proxy = dbus_g_proxy_new_for_name (priv->connection,
                                                      DBUS_SERVICE_DBUS,
