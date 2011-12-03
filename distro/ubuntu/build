@@ -2,7 +2,7 @@
 
 # fill it
 pkgname=mate-session-manager
-pkgver=2011.10.29
+pkgver=2011.12.01
 pkgrel=1
 pkgdesc="The MATE Session Handler"
 depends=('upower' 'gtk2' 'mate-conf' 'hicolor-icon-theme' 'libxtst6' 'mate-polkit')
