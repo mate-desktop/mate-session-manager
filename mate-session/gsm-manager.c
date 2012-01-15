@@ -72,6 +72,9 @@
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
 
+#define GDM_FLEXISERVER_COMMAND "gdmflexiserver"
+#define GDM_FLEXISERVER_ARGS    "--startnew Standard"
+
 
 #define KEY_LOCKDOWN_DIR          "/desktop/mate/lockdown"
 #define KEY_LOCK_DISABLE          KEY_LOCKDOWN_DIR "/disable_lock_screen"
@@ -935,6 +938,26 @@ manager_switch_user (GsmManager *manager)
         if (! res) {
                 g_debug ("GsmManager: Unable to start MDM greeter: %s", error->message);
                 g_error_free (error);
+                
+                /* MDM not found, so we try to use gdmflexiserver from GDM */
+                
+                char    *gdm_command;
+
+                gdm_command = g_strdup_printf ("%s %s",
+                                               GDM_FLEXISERVER_COMMAND,
+                                               GDM_FLEXISERVER_ARGS);
+                
+                error = NULL;
+                res = gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
+                                                gdm_command,
+                                                &error);
+
+                g_free (gdm_command);
+                
+                if (! res) {
+                        g_debug ("GsmManager: Unable to start GDM greeter: %s", error->message);
+                        g_error_free (error);
+                }
         }
 }
 
