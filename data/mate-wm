@@ -145,10 +145,11 @@ fi
 
 case `basename $WINDOW_MANAGER` in
   compiz)
-    export LIBGL_ALWAYS_INDIRECT=1
+    #commented lines cause high cpu usage
+    #export LIBGL_ALWAYS_INDIRECT=1
     gtk-window-decorator &
-    OPT3=glib
-    OPT4=mateconf
+    #OPT3=glib
+    #OPT4=mateconf
     ;;
   beryl)
     emerald &
