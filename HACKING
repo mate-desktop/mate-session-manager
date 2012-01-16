@@ -3,20 +3,15 @@ Hacking on mate-session
 
  + The development occurs in git:
 
-     http://git.gnome.org/browse/mate-session
+     https://github.com/mate-desktop/mate-session-manager
 
    For information on how to access MATE git please read:
 
-     http://live.gnome.org/Git
+     http://wiki.mate-desktop.org/
 
- + Please send patches as bug reports in MATE Bugzilla:
+ + Please send patches as pull requests on GitHub:
 
-     https://bugzilla.gnome.org/ (product mate-session)
-
-   Your patch should be in unified diff form (the -u option to GNU
-   diff). See also:
-
-     http://live.gnome.org/MateLove/SubmittingPatches
+     https://github.com/mate-desktop/mate-session-manager/pulls
 
  + Please try and send a patch against a recent version of this package.
    Patches against git master are most preferable.
