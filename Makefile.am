@@ -7,6 +7,10 @@ SUBDIRS = \
 	doc \
 	po
 
+if ENABLE_SPLASH
+SUBDIRS += splash
+endif
+
 ACLOCAL_AMFLAGS = -I m4
 
 EXTRA_DIST = \

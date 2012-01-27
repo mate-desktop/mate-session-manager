@@ -1,0 +1,17 @@
+This directory contains three small programs used at startup or
+shutdown to do some user-notificationy things that used to be handled
+directly by mate-session.
+
+  * mate-session-splash: This provides the splash screen. It is
+    mostly a straight port of the old mate-session splash screen, but
+    modified to get its data from Startup Notification rather than
+    having mate-session directly provide it with binary names, and
+    then looking those binary names up in a hardcoded list in hopes of
+    finding localized names and icons.
+
+  * mate-login-sound: This plays the login sound. If invoked with the
+    "--logout" flag, it plays the logout sound instead.
+
+  * mate-logout-sound.sh: This gets installed into the session
+    "shutdown" directory to run at logout time. It just invokes
+    mate-login-sound with the --logout flag.

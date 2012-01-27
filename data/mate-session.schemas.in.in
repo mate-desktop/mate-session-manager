@@ -3,6 +3,17 @@
    <schemalist>
 
       <schema>
+         <key>/schemas/apps/mate-session/options/show_splash_screen</key>
+         <applyto>/apps/mate-session/options/show_splash_screen</applyto>
+         <owner>mate</owner>
+         <type>bool</type>
+         <default>true</default>
+         <locale name="C">
+            <short>Show the splash screen</short>
+            <long>Show the splash screen when the session starts up</long>
+         </locale>
+      </schema>
+      <schema>
          <key>/schemas/apps/mate-session/options/auto_save_session</key>
          <applyto>/apps/mate-session/options/auto_save_session</applyto>
          <owner>mate</owner>
@@ -22,6 +33,17 @@
          <locale name="C">
             <short>Logout prompt</short>
             <long>If enabled, mate-session will prompt the user before ending a session.</long>
+         </locale>
+      </schema>
+      <schema>
+         <key>/schemas/apps/mate-session/options/splash_image</key>
+         <applyto>/apps/mate-session/options/splash_image</applyto>
+         <owner>mate</owner>
+         <type>string</type>
+         <default>splash/mate-splash.png</default>
+         <locale name="C">
+            <short>Preferred Image to use for login splash screen</short>
+            <long>This is a relative path value based off the $datadir/pixmaps/ directory.  Sub-directories and image names are valid values. Changing this value will effect the next session login.</long>
          </locale>
       </schema>
       <schema>
