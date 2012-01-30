@@ -408,9 +408,9 @@ get_pixmap_for_window (Window window)
         int                      width;
         int                      height;
 
-        XGetWindowAttributes (GDK_DISPLAY (), window, &attr);
+        XGetWindowAttributes (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), window, &attr);
 
-        format = XRenderFindVisualFormat (GDK_DISPLAY (), attr.visual);
+        format = XRenderFindVisualFormat (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), attr.visual);
         has_alpha = (format->type == PictTypeDirect && format->direct.alphaMask);
         x = attr.x;
         y = attr.y;
@@ -419,15 +419,15 @@ get_pixmap_for_window (Window window)
 
         pa.subwindow_mode = IncludeInferiors; /* Don't clip child widgets */
 
-        src_picture = XRenderCreatePicture (GDK_DISPLAY (), window, format, CPSubwindowMode, &pa);
+        src_picture = XRenderCreatePicture (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), window, format, CPSubwindowMode, &pa);
 
-        pixmap = XCreatePixmap (GDK_DISPLAY (),
+        pixmap = XCreatePixmap (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
                                 window,
                                 width, height,
                                 attr.depth);
 
-        dst_picture = XRenderCreatePicture (GDK_DISPLAY (), pixmap, format, 0, 0);
-        XRenderComposite (GDK_DISPLAY (),
+        dst_picture = XRenderCreatePicture (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), pixmap, format, 0, 0);
+        XRenderComposite (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
                           has_alpha ? PictOpOver : PictOpSrc,
                           src_picture,
                           None,
@@ -465,7 +465,7 @@ get_pixbuf_for_window (guint xid,
 
         if (xpixmap != None) {
                 gdk_error_trap_push ();
-                XFreePixmap (GDK_DISPLAY (), xpixmap);
+                XFreePixmap (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), xpixmap);
                 gdk_display_sync (gdk_display_get_default ());
                 gdk_error_trap_pop ();
         }
@@ -994,7 +994,7 @@ gsm_inhibit_dialog_constructor (GType                  type,
 
 #ifdef HAVE_XRENDER
         gdk_error_trap_push ();
-        if (XRenderQueryExtension (GDK_DISPLAY (), &dialog->priv->xrender_event_base, &dialog->priv->xrender_error_base)) {
+        if (XRenderQueryExtension (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), &dialog->priv->xrender_event_base, &dialog->priv->xrender_error_base)) {
                 g_debug ("GsmInhibitDialog: Initialized XRender extension");
                 dialog->priv->have_xrender = TRUE;
         } else {
