@@ -75,7 +75,15 @@ PKG_CHECK_MODULES(MATE_SESSION,
 PKG_CHECK_MODULES(SESSION_PROPERTIES,
         glib-2.0 >= $GLIB_REQUIRED
         gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
+        dbus-glib-1 >= $DBUS_GLIB_REQUIRED
 )
+
+PKG_CHECK_MODULES(SPLASH,
+        glib-2.0 >= $GLIB_REQUIRED
+        gtk+-2.0 >= $GTK_REQUIRED
+        dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+        libstartup-notification-1.0
+        mateconf-2.0)
 
 PKG_CHECK_MODULES(SM, sm)
 PKG_CHECK_MODULES(ICE, ice)
@@ -98,6 +106,16 @@ AC_ARG_WITH(default-wm,
 DEFAULT_WM=$with_default_wm
 AC_SUBST(DEFAULT_WM)
 AM_CONDITIONAL(USE_MATE_WM, test x$with_default_wm = xmate-wm)
+
+dnl ====================================================================
+dnl Option to enable the splash screen
+dnl ====================================================================
+AC_ARG_ENABLE(splash,
+              [AC_HELP_STRING([--enable-splash],
+                              [enable splash screen @<:@default=no@:>@])],,
+              [enable_splash=no])
+
+AM_CONDITIONAL(ENABLE_SPLASH, test x$enable_splash = xyes)
 
 dnl ====================================================================
 dnl MateConf Checks
@@ -352,6 +370,8 @@ data/icons/48x48/Makefile
 data/icons/scalable/Makefile
 egg/Makefile
 mate-session/Makefile
+splash/Makefile
+splash/mate-session-splash.desktop.in.in
 tools/Makefile
 po/Makefile.in
 ])
@@ -385,6 +405,7 @@ echo "
         XRender support:          ${have_xrender}
         XSync support:            ${have_xsync}
         XTest support:            ${have_xtest}
+        Build splash:             ${enable_splash}
         Build documentation:      ${enable_docbook_docs}
 
 "

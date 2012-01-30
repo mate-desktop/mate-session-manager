@@ -21,6 +21,12 @@ endif
 
 @INTLTOOL_DESKTOP_RULE@
 
+pixmap_DATA_dist = mate-splash.png
+if ENABLE_SPLASH
+pixmapdir = $(datadir)/pixmaps/splash/
+pixmap_DATA = $(pixmap_DATA_dist)
+endif
+
 schemas_in_in_files = mate-session.schemas.in.in
 schemas_in_files = $(schemas_in_in_files:.schemas.in.in=.schemas.in)
 schemasdir = $(MATECONF_SCHEMA_FILE_DIR)
