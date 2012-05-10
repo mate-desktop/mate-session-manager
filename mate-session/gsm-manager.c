@@ -2947,6 +2947,48 @@ gsm_manager_set_phase (GsmManager      *manager,
 }
 
 gboolean
+gsm_manager_request_shutdown (GsmManager *manager,
+                              GError    **error)
+{
+        g_debug ("GsmManager: RequestShutdown called");
+        
+        g_return_val_if_fail(GSM_IS_MANAGER (manager), FALSE);
+        
+        if (manager->priv->phase != GSM_MANAGER_PHASE_RUNNING) {
+                g_set_error (error,
+                             GSM_MANAGER_ERROR,
+                             GSM_MANAGER_ERROR_NOT_IN_RUNNING,
+                             "RequestShutdown interface is only available during the Running phase");
+                return FALSE;
+        }
+        
+        request_shutdown (manager);
+        
+        return TRUE;
+}
+
+gboolean
+gsm_manager_request_reboot (GsmManager *manager,
+                            GError    **error)
+{
+        g_debug ("GsmManager: RequestReboot called");
+        
+        g_return_val_if_fail (GSM_IS_MANAGER (manager), FALSE);
+        
+        if (manager->priv->phase != GSM_MANAGER_PHASE_RUNNING) {
+                g_set_error (error,
+                             GSM_MANAGER_ERROR,
+                             GSM_MANAGER_ERROR_NOT_IN_RUNNING,
+                             "RequestReboot interface is only available during the running phase");
+                return FALSE;
+        }
+        
+        request_reboot (manager);
+        
+        return TRUE;
+}
+
+gboolean
 gsm_manager_shutdown (GsmManager *manager,
                       GError    **error)
 {
