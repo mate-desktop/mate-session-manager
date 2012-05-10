@@ -1,3 +1,19 @@
+commit 22feb13f2d163436ab2c3af1b30823ddee6e43b5
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Thu Feb 23 21:31:13 2012 -0500
+
+    Preparing for 1.2 release
+
+ ChangeLog              |  431 ++++++++++++++++++++++++++++++++++++++++++++++++
+ autogen.sh             |    4 +-
+ configure.ac           |    2 +-
+ distro/ubuntu/build    |   29 ----
+ distro/ubuntu/postinst |   11 --
+ distro/ubuntu/postrm   |    8 -
+ distro/ubuntu/preinst  |    7 -
+ distro/ubuntu/prerm    |   11 --
+ 8 files changed, 434 insertions(+), 69 deletions(-)
+
 commit 838bbdba9b2581489b2e6b9b6265098dde1e312f
 Author: Perberos <perberos@gmail.com>
 Date:   Mon Jan 30 12:56:56 2012 -0300
