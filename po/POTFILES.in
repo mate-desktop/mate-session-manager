@@ -8,7 +8,7 @@ data/mate.desktop.in
 data/mate-session.schemas.in.in
 data/mate-wm.desktop.in.in
 [type: gettext/glade]data/gsm-inhibit-dialog.ui
-data/session-properties.desktop.in.in
+data/mate-session-properties.desktop.in.in
 [type: gettext/glade]data/session-properties.ui
 egg/eggdesktopfile.c
 egg/eggsmclient.c
