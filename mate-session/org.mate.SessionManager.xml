@@ -301,6 +301,22 @@
       </doc:doc>
     </method>
 
+    <method name="RequestShutdown">
+        <doc:doc>
+          <doc:description>
+            <doc:para>Request a shutdown with no diaog</doc:para>
+          </doc:description>
+        </doc:doc>
+    </method>
+    
+    <method name="RequestReboot">
+        <doc:doc>
+          <doc:description>
+            <doc:para>Request a reboot with no dialog</doc:para>
+          </doc:description>
+        </doc:doc>
+    </method>
+    
     <!-- Signals -->
 
     <signal name="ClientAdded">
