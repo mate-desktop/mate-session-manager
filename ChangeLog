@@ -1,3 +1,88 @@
+commit 74c4f34a137c2cd2c76f0b2bed32bfb7060ca653
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Tue Jul 10 00:52:06 2012 +0200
+
+    fix POTFILES.in
+
+ po/POTFILES.in |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f586f849d6151ffde79c1f1b36c038a3916470dc
+Merge: b96b613 a20404a
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Tue Jul 10 00:42:27 2012 +0200
+
+    Merge branch 'master' of github.com:mate-desktop/mate-session-manager
+
+commit b96b613c3ff317d6897dfc0228d5f91199b72f80
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Tue Jul 10 00:42:08 2012 +0200
+
+    fix gettext package name
+
+ configure.ac |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0a7d818dcaef7400f07361a182f27c55f036a8d9
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Date:   Tue Jul 10 00:41:42 2012 +0200
+
+    add po gnome copyrights file
+
+ po/gnome-copyrights.txt | 1324 +++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 1324 insertions(+)
+
+commit a20404af7c2ece049d9d423a89be7707a37cefa5
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Thu May 10 15:02:12 2012 -0400
+
+    Revert "Preparing for 1.2.1 release."
+    
+    This reverts commit 973fb6b3aac7b37a741b21f3571be1dafaa0d7f4.
+
+ ChangeLog    |   16 ----------------
+ README       |   25 ++++++++++++++++++++-----
+ configure.ac |    2 +-
+ 3 files changed, 21 insertions(+), 22 deletions(-)
+
+commit 973fb6b3aac7b37a741b21f3571be1dafaa0d7f4
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Thu May 10 12:51:25 2012 -0400
+
+    Preparing for 1.2.1 release.
+
+ ChangeLog    |   16 ++++++++++++++++
+ README       |   25 +++++--------------------
+ configure.ac |    2 +-
+ 3 files changed, 22 insertions(+), 21 deletions(-)
+
+commit d2717333e57bd8b2e8533d8c3de8ceb120830f6a
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Thu May 10 12:50:16 2012 -0400
+
+    Fixed reboot/shutdown issue.
+
+ mate-session/gsm-manager.c               |   42 ++++++++++++++++++++++++++++++
+ mate-session/gsm-manager.h               |    6 +++++
+ mate-session/org.mate.SessionManager.xml |   16 ++++++++++++
+ 3 files changed, 64 insertions(+)
+
+commit 22feb13f2d163436ab2c3af1b30823ddee6e43b5
+Author: Steve Zesch <stevezesch2@gmail.com>
+Date:   Thu Feb 23 21:31:13 2012 -0500
+
+    Preparing for 1.2 release
+
+ ChangeLog              |  431 ++++++++++++++++++++++++++++++++++++++++++++++++
+ autogen.sh             |    4 +-
+ configure.ac           |    2 +-
+ distro/ubuntu/build    |   29 ----
+ distro/ubuntu/postinst |   11 --
+ distro/ubuntu/postrm   |    8 -
+ distro/ubuntu/preinst  |    7 -
+ distro/ubuntu/prerm    |   11 --
+ 8 files changed, 434 insertions(+), 69 deletions(-)
+
 commit 838bbdba9b2581489b2e6b9b6265098dde1e312f
 Author: Perberos <perberos@gmail.com>
 Date:   Mon Jan 30 12:56:56 2012 -0300
@@ -5,7 +90,7 @@ Date:   Mon Jan 30 12:56:56 2012 -0300
     update version number on archlinux scripts
 
  distro/archlinux/PKGBUILD |   10 +++++-----
- 1 files changed, 5 insertions(+), 5 deletions(-)
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
 commit 624c3c083c0d2deb17711e1bf880d43e3c3f3435
 Author: Perberos <perberos@gmail.com>
@@ -13,8 +98,8 @@ Date:   Mon Jan 30 12:56:46 2012 -0300
 
     GDK_DISPLAY() is deprecated
 
- mate-session/gs-idle-monitor.c    |   38 ++++++++++++++++++------------------
- mate-session/gsm-inhibit-dialog.c |   16 +++++++-------
+ mate-session/gs-idle-monitor.c    |   38 ++++++++++++++++++-------------------
+ mate-session/gsm-inhibit-dialog.c |   16 ++++++++--------
  2 files changed, 27 insertions(+), 27 deletions(-)
 
 commit 2509a50ebe4f3af9530d060a2ca1567cbc564445
@@ -36,7 +121,7 @@ Date:   Mon Jan 16 15:53:25 2012 +0100
     solved high cpu usage with compiz
 
  data/mate-wm |    7 ++++---
- 1 files changed, 4 insertions(+), 3 deletions(-)
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
 commit 2f5fa07da8e7ffd44fe55f853ac7d055a6f4caf0
 Merge: 7ab49d8 2a6ebef
@@ -64,7 +149,7 @@ Date:   Sun Jan 15 13:33:10 2012 +0100
     switch user, use GDM if MDM not found (lightDM supports gdmflexiserver too)
 
  mate-session/gsm-manager.c |   23 +++++++++++++++++++++++
- 1 files changed, 23 insertions(+), 0 deletions(-)
+ 1 file changed, 23 insertions(+)
 
 commit 8a462f1358573ff538fb3795df12d6207d6474ac
 Author: Stefano Karapetsas <stefano@karapetsas.com>
@@ -73,7 +158,7 @@ Date:   Sun Jan 15 12:49:15 2012 +0100
     fix gettext package name
 
  configure.ac |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 2a6ebefbb2e692ddc353d6b508e2c98f4cd7874b
 Author: Steve Zesch <stevezesch2@gmail.com>
@@ -82,7 +167,7 @@ Date:   Tue Jan 10 14:33:40 2012 -0500
     Changed mate.gr.jp to gnome.gr.jp as requested in Issue #86
 
  po/ja.po |    8 ++++----
- 1 files changed, 4 insertions(+), 4 deletions(-)
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 commit 7cda9aec7fc057788d480177011260e964b2b374
 Author: Stefano Karapetsas <stefano@karapetsas.com>
@@ -109,7 +194,7 @@ Date:   Sat Dec 3 20:19:34 2011 -0300
  m4/ltversion.m4      |   23 -
  m4/lt~obsolete.m4    |   98 -
  m4/mate-doc-utils.m4 |   56 -
- 7 files changed, 0 insertions(+), 8716 deletions(-)
+ 7 files changed, 8716 deletions(-)
 
 commit 3e4256a425cb856b187ab45ee6395eb22e3a7459
 Author: Perberos <perberos@gmail.com>
@@ -144,7 +229,7 @@ Date:   Sat Dec 3 20:15:19 2011 -0300
  mkinstalldirs                   |  162 -
  po/Makefile.in.in               |  217 -
  tools/Makefile.in               |  618 ---
- 27 files changed, 0 insertions(+), 27103 deletions(-)
+ 27 files changed, 27103 deletions(-)
 
 commit 16704acc4fe3f80819106b03050cc8560775f313
 Author: Steve Zesch <stevezesch2@gmail.com>
@@ -387,7 +472,7 @@ Date:   Thu Dec 1 23:03:59 2011 -0300
  po/mr.po                                           |  522 ++
  po/ms.po                                           |  502 +
  po/nb.po                                           |  488 +
- po/nds.po                                          |  508 +
+ po/nds.po                                          |  508 ++
  po/ne.po                                           |  628 ++
  po/nl.po                                           |  614 ++
  po/nn.po                                           | 1064 +++
@@ -429,4 +514,4 @@ Date:   Thu Dec 1 23:03:59 2011 -0300
  tools/Makefile.am                                  |   22 +
  tools/Makefile.in                                  |  618 ++
  tools/mate-session-save.c                          |  320 +
- 266 files changed, 132146 insertions(+), 0 deletions(-)
+ 266 files changed, 132146 insertions(+)
