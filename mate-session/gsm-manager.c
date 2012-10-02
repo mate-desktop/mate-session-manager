@@ -41,7 +41,7 @@
 #include <upower.h>
 
 #include <gtk/gtk.h> /* for logout dialog */
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h> /* for gsettings */
 
 #include "gsm-manager.h"
 #include "gsm-manager-glue.h"
@@ -76,17 +76,16 @@
 #define GDM_FLEXISERVER_ARGS    "--startnew Standard"
 
 
-#define KEY_LOCKDOWN_DIR          "/desktop/mate/lockdown"
-#define KEY_LOCK_DISABLE          KEY_LOCKDOWN_DIR "/disable_lock_screen"
-#define KEY_USER_SWITCH_DISABLE   KEY_LOCKDOWN_DIR "/disable_user_switching"
+#define LOCKDOWN_SCHEMA              "org.mate.lockdown"
+#define KEY_LOCK_DISABLE             "disable-lock-screen"
+#define KEY_USER_SWITCH_DISABLE      "disable-user-switching"
 
-#define KEY_DESKTOP_DIR           "/desktop/mate/session"
-#define KEY_IDLE_DELAY            KEY_DESKTOP_DIR "/idle_delay"
+#define SESSION_SCHEMA               "org.mate.session"
+#define KEY_IDLE_DELAY               "idle-delay"
+#define KEY_AUTOSAVE                 "auto-save-session"
 
-#define KEY_MATE_SESSION_DIR     "/apps/mate-session/options"
-#define KEY_AUTOSAVE              KEY_MATE_SESSION_DIR "/auto_save_session"
-
-#define KEY_SLEEP_LOCK            "/apps/mate-screensaver/lock_enabled"
+#define SCREENSAVER_SCHEMA           "org.mate.screensaver"
+#define KEY_SLEEP_LOCK               "lock-enabled"
 
 #define IS_STRING_EMPTY(x) ((x)==NULL||(x)[0]=='\0')
 
@@ -130,9 +129,8 @@ struct GsmManagerPrivate
          * and shouldn't be automatically restarted */
         GSList                 *condition_clients;
 
-        MateConfClient            *mateconf_client;
-        guint                   desktop_notify_id;
-        guint                   lockdown_notify_id;
+        GSettings              *settings_session;
+        GSettings              *settings_lockdown;
 
         DBusGProxy             *bus_proxy;
         DBusGConnection        *connection;
@@ -964,23 +962,8 @@ manager_switch_user (GsmManager *manager)
 static gboolean
 sleep_lock_is_enabled (GsmManager *manager)
 {
-        GError   *error;
-        gboolean  enable_lock;
-
-        error = NULL;
-        enable_lock = mateconf_client_get_bool (manager->priv->mateconf_client,
-                                             KEY_SLEEP_LOCK, &error);
-
-        if (error) {
-                g_warning ("Error retrieving configuration key '%s': %s",
-                           KEY_SLEEP_LOCK, error->message);
-                g_error_free (error);
-
-                /* If we fail to query mateconf key, just enable locking */
-                enable_lock = TRUE;
-        }
-
-        return enable_lock;
+        return g_settings_get_boolean (manager->priv->settings_lockdown,
+                                       KEY_SLEEP_LOCK);
 }
 
 static void
@@ -1823,25 +1806,8 @@ on_xsmp_client_register_request (GsmXSMPClient *client,
 static gboolean
 auto_save_is_enabled (GsmManager *manager)
 {
-        GError   *error;
-        gboolean  auto_save;
-
-        error = NULL;
-        auto_save = mateconf_client_get_bool (manager->priv->mateconf_client,
-                                           KEY_AUTOSAVE,
-                                           &error);
-
-        if (error) {
-                g_warning ("Error retrieving configuration key '%s': %s",
-                           KEY_AUTOSAVE,
-                           error->message);
-                g_error_free (error);
-
-                /* If we fail to query mateconf key, disable auto save */
-                auto_save = FALSE;
-        }
-
-        return auto_save;
+        return g_settings_get_boolean (manager->priv->settings_session,
+                                       KEY_AUTOSAVE);
 }
 
 static void
@@ -2197,26 +2163,14 @@ gsm_manager_dispose (GObject *object)
                 manager->priv->presence = NULL;
         }
 
-        if (manager->priv->mateconf_client) {
-                if (manager->priv->desktop_notify_id != 0) {
-                        mateconf_client_remove_dir (manager->priv->mateconf_client,
-                                                 KEY_DESKTOP_DIR,
-                                                 NULL);
-                        mateconf_client_notify_remove (manager->priv->mateconf_client,
-                                                    manager->priv->desktop_notify_id);
-                        manager->priv->desktop_notify_id = 0;
-                }
-                if (manager->priv->lockdown_notify_id != 0) {
-                        mateconf_client_remove_dir (manager->priv->mateconf_client,
-                                                 KEY_LOCKDOWN_DIR,
-                                                 NULL);
-                        mateconf_client_notify_remove (manager->priv->mateconf_client,
-                                                    manager->priv->lockdown_notify_id);
-                        manager->priv->lockdown_notify_id = 0;
-                }
+        if (manager->priv->settings_session) {
+                g_object_unref (manager->priv->settings_session);
+                manager->priv->settings_session = NULL;
+        }
 
-                g_object_unref (manager->priv->mateconf_client);
-                manager->priv->mateconf_client = NULL;
+        if (manager->priv->settings_lockdown) {
+                g_object_unref (manager->priv->settings_lockdown);
+                manager->priv->settings_lockdown = NULL;
         }
 
         if (manager->priv->up_client != NULL) {
@@ -2332,83 +2286,29 @@ gsm_manager_class_init (GsmManagerClass *klass)
 }
 
 static void
-invalid_type_warning (const char *type)
+load_idle_delay_from_gsettings (GsmManager *manager)
 {
-        g_warning ("Error retrieving configuration key '%s': Invalid type",
-                   type);
-}
-
-static void
-load_idle_delay_from_mateconf (GsmManager *manager)
-{
-        GError *error;
         glong   value;
-
-        error = NULL;
-        value = mateconf_client_get_int (manager->priv->mateconf_client,
-                                      KEY_IDLE_DELAY,
-                                      &error);
-        if (error == NULL) {
-                gsm_presence_set_idle_timeout (manager->priv->presence, value * 60000);
-        } else {
-                g_warning ("Error retrieving configuration key '%s': %s",
-                           KEY_IDLE_DELAY,
-                           error->message);
-                g_error_free (error);
-        }
-
+        value = g_settings_get_int (manager->priv->settings_session,
+                                    KEY_IDLE_DELAY);
+        gsm_presence_set_idle_timeout (manager->priv->presence, value * 60000);
 }
 
 static void
-on_mateconf_key_changed (MateConfClient *client,
-                      guint        cnxn_id,
-                      MateConfEntry  *entry,
-                      GsmManager  *manager)
+on_gsettings_key_changed (GSettings   *settings,
+                          gchar       *key,
+                          GsmManager  *manager)
 {
-        const char *key;
-        MateConfValue *value;
-
-        key = mateconf_entry_get_key (entry);
-
-        if (! g_str_has_prefix (key, KEY_DESKTOP_DIR)
-            && ! g_str_has_prefix (key, KEY_LOCKDOWN_DIR)) {
-                return;
-        }
-
-        value = mateconf_entry_get_value (entry);
-
-        if (strcmp (key, KEY_IDLE_DELAY) == 0) {
-                if (value->type == MATECONF_VALUE_INT) {
-                        int delay;
-
-                        delay = mateconf_value_get_int (value);
-
-                        gsm_presence_set_idle_timeout (manager->priv->presence, delay * 60000);
-                } else {
-                        invalid_type_warning (key);
-                }
-        } else if (strcmp (key, KEY_LOCK_DISABLE) == 0) {
-                if (value->type == MATECONF_VALUE_BOOL) {
-                        gboolean disabled;
-
-                        disabled = mateconf_value_get_bool (value);
-
-                        /* FIXME: handle this */
-                } else {
-                        invalid_type_warning (key);
-                }
-        } else if (strcmp (key, KEY_USER_SWITCH_DISABLE) == 0) {
-
-                if (value->type == MATECONF_VALUE_BOOL) {
-                        gboolean disabled;
-
-                        disabled = mateconf_value_get_bool (value);
-
-                        /* FIXME: handle this */
-                } else {
-                        invalid_type_warning (key);
-                }
-
+        if (g_strcmp0 (key, KEY_IDLE_DELAY) == 0) {
+                int delay;
+                delay = g_settings_get_int (settings, key);
+                gsm_presence_set_idle_timeout (manager->priv->presence, delay * 60000);
+        } else if (g_strcmp0 (key, KEY_LOCK_DISABLE) == 0) {
+                gboolean disabled;
+                disabled = g_settings_get_boolean (settings, key);
+        } else if (g_strcmp0 (key, KEY_USER_SWITCH_DISABLE) == 0) {
+                gboolean disabled;
+                disabled = g_settings_get_boolean (settings, key);
         } else {
                 g_debug ("Config key not handled: %s", key);
         }
@@ -2432,7 +2332,8 @@ gsm_manager_init (GsmManager *manager)
 
         manager->priv = GSM_MANAGER_GET_PRIVATE (manager);
 
-        manager->priv->mateconf_client = mateconf_client_get_default ();
+        manager->priv->settings_session = g_settings_new (SESSION_SCHEMA);
+        manager->priv->settings_lockdown = g_settings_new (LOCKDOWN_SCHEMA);
 
         manager->priv->inhibitors = gsm_store_new ();
         g_signal_connect (manager->priv->inhibitors,
@@ -2454,26 +2355,16 @@ gsm_manager_init (GsmManager *manager)
 
         manager->priv->up_client = up_client_new ();
 
-        /* MateConf setup */
-        mateconf_client_add_dir (manager->priv->mateconf_client,
-                              KEY_DESKTOP_DIR,
-                              MATECONF_CLIENT_PRELOAD_RECURSIVE, NULL);
-        mateconf_client_add_dir (manager->priv->mateconf_client,
-                              KEY_LOCKDOWN_DIR,
-                              MATECONF_CLIENT_PRELOAD_NONE, NULL);
+        g_signal_connect (manager->priv->settings_session,
+                          "changed",
+                          G_CALLBACK (on_gsettings_key_changed),
+                          manager);
+        g_signal_connect (manager->priv->settings_lockdown,
+                          "changed",
+                          G_CALLBACK (on_gsettings_key_changed),
+                          manager);
 
-        manager->priv->desktop_notify_id = mateconf_client_notify_add (manager->priv->mateconf_client,
-                                                                    KEY_DESKTOP_DIR,
-                                                                    (MateConfClientNotifyFunc)on_mateconf_key_changed,
-                                                                    manager,
-                                                                    NULL, NULL);
-        manager->priv->lockdown_notify_id = mateconf_client_notify_add (manager->priv->mateconf_client,
-                                                                     KEY_LOCKDOWN_DIR,
-                                                                     (MateConfClientNotifyFunc)on_mateconf_key_changed,
-                                                                     manager,
-                                                                     NULL, NULL);
-
-        load_idle_delay_from_mateconf (manager);
+        load_idle_delay_from_gsettings (manager);
 }
 
 static void
@@ -2914,9 +2805,8 @@ user_logout (GsmManager *manager,
         }
 
         logout_prompt =
-               mateconf_client_get_bool (manager->priv->mateconf_client,
-                                      "/apps/mate-session/options/logout_prompt",
-                                      NULL);
+               g_settings_get_boolean (manager->priv->settings_session,
+                                       "logout-prompt");
 
         /* Global settings overides input parameter in order to disable confirmation
          * dialog accordingly. If we're shutting down, we always show the confirmation

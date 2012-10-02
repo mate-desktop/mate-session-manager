@@ -21,41 +21,23 @@ endif
 
 @INTLTOOL_DESKTOP_RULE@
 
-schemas_in_in_files = mate-session.schemas.in.in
-schemas_in_files = $(schemas_in_in_files:.schemas.in.in=.schemas.in)
-schemasdir = $(MATECONF_SCHEMA_FILE_DIR)
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
-
-$(schemas_in_files): $(schemas_in_files).in Makefile
+org.mate.session.gschema.xml.in: org.mate.session.gschema.xml.in.in Makefile
 	$(AM_V_GEN)sed \
 		-e "s|\@DEFAULT_WM\@|$(DEFAULT_WM)|" \
 		$< > $@
 
-@INTLTOOL_SCHEMAS_RULE@
-
-if MATECONF_SCHEMAS_INSTALL
-install-data-local:
-	if test -z "$(DESTDIR)" ; then \
-		for p in $(schemas_DATA) ; do \
-			MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-install-rule $(top_builddir)/data/$$p ; \
-		done \
-	fi
-uninstall-local:
-	for p in $(schema_DATA) ; do \
-		MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-uninstall-rule $(top_builddir)/data/$$p ; \
-	done
-endif
+gsettings_SCHEMAS = org.mate.session.gschema.xml
+@INTLTOOL_XML_NOMERGE_RULE@
+@GSETTINGS_RULES@
 
 EXTRA_DIST =					\
 	mate-wm				\
 	$(xsession_in_files)			\
-	$(schemas_in_in_files)			\
+	$(gsettings_SCHEMAS)			\
 	$(ui_DATA)				\
 	$(pixmap_DATA_dist)
 
 CLEANFILES =					\
-	$(schemas_in_files)			\
-	$(schemas_DATA)				\
 	$(xsession_DATA)			\
 	$(desktop_DATA)				\
 	mate-wm.desktop

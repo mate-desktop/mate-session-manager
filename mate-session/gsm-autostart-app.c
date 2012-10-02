@@ -29,8 +29,6 @@
 #include <glib.h>
 #include <gio/gio.h>
 
-#include <mateconf/mateconf-client.h>
-
 #include "gsm-autostart-app.h"
 #include "gsm-util.h"
 
@@ -62,7 +60,7 @@ struct _GsmAutostartAppPrivate {
         gboolean              autorestart;
 
         GFileMonitor         *condition_monitor;
-        guint                 condition_notify_id;
+        GSettings            *condition_settings;
 
         int                   launch_type;
         GPid                  pid;
@@ -238,10 +236,9 @@ unless_exists_condition_cb (GFileMonitor     *monitor,
 }
 
 static void
-mateconf_condition_cb (MateConfClient *client,
-                    guint        cnxn_id,
-                    MateConfEntry  *entry,
-                    gpointer     user_data)
+gsettings_condition_cb (GSettings  *settings,
+                        const char *key,
+                        gpointer    user_data)
 {
         GsmApp                 *app;
         GsmAutostartAppPrivate *priv;
@@ -253,10 +250,7 @@ mateconf_condition_cb (MateConfClient *client,
 
         priv = GSM_AUTOSTART_APP (app)->priv;
 
-        condition = FALSE;
-        if (entry->value != NULL && entry->value->type == MATECONF_VALUE_BOOL) {
-                condition = mateconf_value_get_bool (entry->value);
-        }
+        condition = g_settings_get_boolean (settings, key);
 
         g_debug ("GsmAutostartApp: app:%s condition changed condition:%d",
                  gsm_app_peek_id (app),
@@ -267,6 +261,53 @@ mateconf_condition_cb (MateConfClient *client,
                 priv->condition = condition;
                 g_signal_emit (app, signals[CONDITION_CHANGED], 0, condition);
         }
+}
+
+static gboolean
+setup_gsettings_condition_monitor (GsmAutostartApp *app,
+                                   const char      *key)
+{
+        GSettings *settings;
+        const char * const *schemas;
+        char **elems;
+        gboolean schema_exists;
+        guint i;
+        gboolean retval;
+        char *signal;
+
+        elems = g_strsplit (key, " ", 2);
+        if (elems == NULL)
+                return FALSE;
+        if (elems[0] == NULL || elems[1] == NULL) {
+                g_strfreev (elems);
+                return FALSE;
+        }
+
+        schemas = g_settings_list_schemas ();
+        schema_exists = FALSE;
+        for (i = 0; schemas[i] != NULL; i++) {
+                if (g_str_equal (schemas[i], elems[0])) {
+                        schema_exists = TRUE;
+                        break;
+                }
+        }
+
+        if (schema_exists == FALSE)
+                return FALSE;
+
+        settings = g_settings_new (elems[0]);
+        retval = g_settings_get_boolean (settings, elems[1]);
+
+        signal = g_strdup_printf ("changed::%s", elems[1]);
+        g_signal_connect (G_OBJECT (settings), signal,
+                          G_CALLBACK (gsettings_condition_cb), app);
+        g_free (signal);
+
+        app->priv->condition_settings = settings;
+
+        g_strfreev (elems);
+
+        return retval;
 }
 
 static void
@@ -281,12 +322,9 @@ setup_condition_monitor (GsmAutostartApp *app)
                 g_file_monitor_cancel (app->priv->condition_monitor);
         }
 
-        if (app->priv->condition_notify_id > 0) {
-                MateConfClient *client;
-                client = mateconf_client_get_default ();
-                mateconf_client_notify_remove (client,
-                                            app->priv->condition_notify_id);
-                app->priv->condition_notify_id = 0;
+        if (app->priv->condition_settings != NULL) {
+                g_object_unref (app->priv->condition_settings);
+                app->priv->condition_settings = NULL;
         }
 
         if (app->priv->condition_string == NULL) {
@@ -344,26 +382,7 @@ setup_condition_monitor (GsmAutostartApp *app)
                 g_object_unref (file);
                 g_free (file_path);
         } else if (kind == GSM_CONDITION_MATE) {
-                MateConfClient *client;
-                char        *dir;
-
-                client = mateconf_client_get_default ();
-                g_assert (MATECONF_IS_CLIENT (client));
-
-                disabled = !mateconf_client_get_bool (client, key, NULL);
-
-                dir = g_path_get_dirname (key);
-
-                mateconf_client_add_dir (client,
-                                      dir,
-                                      MATECONF_CLIENT_PRELOAD_NONE, NULL);
-                g_free (dir);
-
-                app->priv->condition_notify_id = mateconf_client_notify_add (client,
-                                                                          key,
-                                                                          mateconf_condition_cb,
-                                                                          app, NULL, NULL);
-                g_object_unref (client);
+                disabled = !setup_gsettings_condition_monitor (app, key);
         } else {
                 disabled = TRUE;
         }
@@ -641,12 +660,11 @@ is_conditionally_disabled (GsmApp *app)
                 file_path = g_build_filename (g_get_user_config_dir (), key, NULL);
                 disabled = g_file_test (file_path, G_FILE_TEST_EXISTS);
                 g_free (file_path);
-        } else if (kind == GSM_CONDITION_MATE) {
-                MateConfClient *client;
-                client = mateconf_client_get_default ();
-                g_assert (MATECONF_IS_CLIENT (client));
-                disabled = !mateconf_client_get_bool (client, key, NULL);
-                g_object_unref (client);
+        } else if (kind == GSM_CONDITION_MATE && priv->condition_settings != NULL) {
+                char **elems;
+                elems = g_strsplit (key, " ", 2);
+                disabled = !g_settings_get_boolean (priv->condition_settings, elems[1]);
+                g_strfreev (elems);
         } else {
                 disabled = TRUE;
         }

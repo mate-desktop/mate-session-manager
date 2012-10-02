@@ -31,8 +31,6 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 
-#include <mateconf/mateconf-client.h>
-
 #include "gsm-inhibit-dialog.h"
 #include "gsm-store.h"
 #include "gsm-client.h"

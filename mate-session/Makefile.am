@@ -33,8 +33,6 @@ mate_session_SOURCES =				\
 	gs-idle-monitor.c			\
 	gsm-presence.h				\
 	gsm-presence.c				\
-	gsm-mateconf.c				\
-	gsm-mateconf.h				\
 	mdm.h					\
 	mdm.c					\
 	mdm-signal-handler.h			\
@@ -58,14 +56,11 @@ mate_session_CPPFLAGS =			\
 	$(SM_CFLAGS)				\
 	$(ICE_CFLAGS)				\
 	$(XEXT_CFLAGS)				\
-	$(MATECONF_CFLAGS)				\
 	-I$(top_srcdir)/egg			\
 	-DLOCALE_DIR=\""$(datadir)/locale"\"	\
 	-DDATA_DIR=\""$(datadir)/mate-session"\" \
 	-DLIBEXECDIR=\"$(libexecdir)\"		\
 	-DGTKBUILDER_DIR=\""$(pkgdatadir)"\"	\
-	-DMATECONF_SANITY_CHECK=\""$(MATECONF_SANITY_CHECK)"\" \
-	-DMATECONFTOOL_CMD=\"$(MATECONFTOOL)\"	\
 	-DI_KNOW_THE_DEVICEKIT_POWER_API_IS_SUBJECT_TO_CHANGE
 
 mate_session_LDADD =				\
@@ -77,7 +72,6 @@ mate_session_LDADD =				\
 	$(XTEST_LIBS)				\
 	$(XEXT_LIBS)				\
 	$(MATE_SESSION_LIBS)			\
-	$(MATECONF_LIBS)				\
 	$(EXECINFO_LIBS)
 
 libgsmutil_la_SOURCES =				\

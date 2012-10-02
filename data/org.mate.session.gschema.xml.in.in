@@ -1,0 +1,47 @@
+<schemalist>
+  <schema id="org.mate.session" path="/desktop/mate/session/">
+    <key name="auto-save-session" type="b">
+      <default>false</default>
+      <_summary>Save sessions</_summary>
+      <_description>If enabled, mate-session will save the session automatically.</_description>
+    </key>
+    <key name="logout-prompt" type="b">
+      <default>true</default>
+      <_summary>Logout prompt</_summary>
+      <_description>If enabled, mate-session will prompt the user before ending a session.</_description>
+    </key>
+    <key name="idle-delay" type="i">
+      <default>5</default>
+      <_summary>Time before session is considered idle</_summary>
+      <_description>The number of minutes of inactivity before the session is considered idle.</_description>
+    </key>
+    <key name="default-session" type="as">
+      <default>[ 'mate-settings-daemon' ]</default>
+      <_summary>Default session</_summary>
+      <_description>List of applications that are part of the default session.</_description>
+    </key>
+    <key name="required-components-list" type="as">
+      <default>[ 'windowmanager', 'panel', 'filemanager' ]</default>
+      <_summary>Required session components</_summary>
+      <_description>List of components that are required as part of the session. (Each element names a key under "/desktop/mate/session/required_components"). The Startup Applications preferences tool will not normally allow users to remove a required component from the session, and the session manager will automatically add the required components back to the session at login time if they do get removed.</_description>
+    </key>
+    <child name="required-components" schema="org.mate.session.required-components"/>
+  </schema>
+  <schema id="org.mate.session.required-components" path="/desktop/mate/session/required-components/">
+    <key name="windowmanager" type="s">
+      <default>'@DEFAULT_WM@'</default>
+      <_summary>Window Manager</_summary>
+      <_description>The window manager is the program that draws the title bar and borders around windows, and allows you to move and resize windows.</_description>
+    </key>
+    <key name="panel" type="s">
+      <default>'mate-panel'</default>
+      <_summary>Panel</_summary>
+      <_description>The panel provides the bar at the top or bottom of the screen containing menus, the window list, status icons, the clock, etc.</_description>
+    </key>
+    <key name="filemanager" type="s">
+      <default>'caja'</default>
+      <_summary>File Manager</_summary>
+      <_description>The file manager provides the desktop icons and allows you to interact with your saved files.</_description>
+    </key>
+  </schema>
+</schemalist>

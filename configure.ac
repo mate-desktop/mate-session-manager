@@ -1,4 +1,4 @@
-AC_INIT([mate-session], [1.4.0], [http://www.mate-desktop.org/])
+AC_INIT([mate-session], [1.5.0], [http://www.mate-desktop.org/])
 AC_CONFIG_SRCDIR([mate-session])
 AC_CONFIG_HEADERS([config.h])
 
@@ -47,6 +47,7 @@ AC_ARG_WITH([gtk],
 AC_MSG_RESULT([$with_gtk])
 
 GLIB_REQUIRED=2.16.0
+GIO_REQUIRED=2.25.0
 DBUS_GLIB_REQUIRED=0.76
 UPOWER_REQUIRED=0.9.0
 
@@ -66,7 +67,7 @@ PKG_PROG_PKG_CONFIG()
 
 PKG_CHECK_MODULES(MATE_SESSION,
         glib-2.0 >= $GLIB_REQUIRED
-        gio-2.0 >= $GLIB_REQUIRED
+        gio-2.0 >= $GIO_REQUIRED
         gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
         upower-glib >= $UPOWER_REQUIRED
@@ -82,7 +83,6 @@ PKG_CHECK_MODULES(ICE, ice)
 PKG_CHECK_MODULES(XEXT, xext xau)
 
 PKG_CHECK_MODULES(DBUS_GLIB, dbus-glib-1 >= $DBUS_GLIB_REQUIRED)
-PKG_CHECK_MODULES(MATECONF, mateconf-2.0)
 
 PKG_CHECK_MODULES(EGG_SMCLIENT, gtk+-$GTK_API_VERSION)
 
@@ -100,28 +100,9 @@ AC_SUBST(DEFAULT_WM)
 AM_CONDITIONAL(USE_MATE_WM, test x$with_default_wm = xmate-wm)
 
 dnl ====================================================================
-dnl MateConf Checks
+dnl GSettings
 dnl ====================================================================
-AC_PATH_PROG(MATECONFTOOL, mateconftool-2, no)
-if test x"$MATECONFTOOL" = xno; then
-  AC_MSG_ERROR([mateconftool-2 executable not found in your path - should be installed with MateConf])
-fi
-
-AM_MATECONF_SOURCE_2
-
-MATECONF_SERVERDIR=`$PKG_CONFIG --variable=mateconf_serverdir mateconf-2.0`
-old_path=$PATH
-if test x"$MATECONF_SERVERDIR" != x; then
-   PATH=$MATECONF_SERVERDIR:$PATH
-fi
-
-AC_PATH_PROG(MATECONF_SANITY_CHECK, mateconf-sanity-check-2, no)
-if test x"$MATECONF_SANITY_CHECK" = xno; then
-  AC_MSG_ERROR([mateconf-sanity-check-2 executable not found in your path - should be installed with MateConf])
-fi
-
-AC_SUBST(MATECONF_SANITY_CHECK)
-PATH=$old_path
+GLIB_GSETTINGS
 
 dnl ====================================================================
 dnl X development libraries check

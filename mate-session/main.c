@@ -31,6 +31,7 @@
 #include <glib/gi18n.h>
 #include <glib.h>
 #include <gtk/gtk.h>
+#include <gio/gio.h>
 
 #include <dbus/dbus.h>
 #include <dbus/dbus-glib.h>
@@ -41,15 +42,15 @@
 #include "mdm-log.h"
 
 #include "gsm-consolekit.h"
-#include "gsm-mateconf.h"
 #include "gsm-util.h"
 #include "gsm-manager.h"
 #include "gsm-xsmp-server.h"
 #include "gsm-store.h"
 
-#define GSM_MATECONF_DEFAULT_SESSION_KEY "/desktop/mate/session/default_session"
-#define GSM_MATECONF_REQUIRED_COMPONENTS_DIRECTORY "/desktop/mate/session/required_components"
-#define GSM_MATECONF_REQUIRED_COMPONENTS_LIST_KEY "/desktop/mate/session/required_components_list"
+#define GSM_SCHEMA "org.mate.session"
+#define GSM_DEFAULT_SESSION_KEY "default-session"
+#define GSM_REQUIRED_COMPONENTS_SCHEMA GSM_SCHEMA ".required-components"
+#define GSM_REQUIRED_COMPONENTS_LIST_KEY "required-components-list"
 
 #define GSM_DBUS_NAME "org.mate.SessionManager"
 
@@ -156,29 +157,29 @@ static gboolean acquire_name(void)
  * call append_required_apps() after a call to append_default_apps(). */
 static void append_default_apps(GsmManager* manager, const char* default_session_key, char** autostart_dirs)
 {
-	GSList* default_apps;
-	GSList* a;
-	MateConfClient* client;
+	gint i;
+	gchar** default_apps;
+	GSettings* settings;
 
 	g_debug("main: *** Adding default apps");
 
 	g_assert(default_session_key != NULL);
 	g_assert(autostart_dirs != NULL);
 
-	client = mateconf_client_get_default();
-	default_apps = mateconf_client_get_list(client, default_session_key, MATECONF_VALUE_STRING, NULL);
-	g_object_unref(client);
+	settings = g_settings_new (GSM_SCHEMA);
+	default_apps = g_settings_get_strv (settings, default_session_key);
+	g_object_unref(settings);
 
-	for (a = default_apps; a; a = a->next)
+	for (i = 0; default_apps[i]; i++)
 	{
 		char* app_path;
 
-		if (IS_STRING_EMPTY((char*) a->data))
+		if (IS_STRING_EMPTY((char*) default_apps[i]))
 		{
 			continue;
 		}
 
-		app_path = gsm_util_find_desktop_file_for_app_name(a->data, autostart_dirs);
+		app_path = gsm_util_find_desktop_file_for_app_name(default_apps[i], autostart_dirs);
 
 		if (app_path != NULL)
 		{
@@ -187,44 +188,43 @@ static void append_default_apps(GsmManager* manager, const char* default_session
 		}
 	}
 
-	g_slist_foreach(default_apps, (GFunc) g_free, NULL);
-	g_slist_free(default_apps);
+	g_strfreev (default_apps);
 }
 
 static void append_required_apps(GsmManager* manager)
 {
-	GSList* required_components;
-	GSList* r;
-	MateConfClient* client;
+	gchar** required_components;
+	gint i;
+	GSettings* settings;
+	GSettings* settings_required_components;
 
 	g_debug("main: *** Adding required apps");
 
-	client = mateconf_client_get_default();
-	required_components = mateconf_client_get_list(client, GSM_MATECONF_REQUIRED_COMPONENTS_LIST_KEY, MATECONF_VALUE_STRING, NULL);
+	settings = g_settings_new (GSM_SCHEMA);
+	settings_required_components = g_settings_new (GSM_REQUIRED_COMPONENTS_SCHEMA);
+
+	required_components = g_settings_get_strv(settings, GSM_REQUIRED_COMPONENTS_LIST_KEY);
 
 	if (required_components == NULL)
 	{
 		g_warning("No required applications specified");
 	}
 
-	for (r = required_components; r != NULL; r = r->next)
+	for (i = 0; required_components[i]; i++)
 	{
-			char* path;
 			char* default_provider;
 			const char* component;
 
-			if (IS_STRING_EMPTY((char*) r->data))
+			if (IS_STRING_EMPTY((char*) required_components[i]))
 			{
 					continue;
 			}
 
-			component = r->data;
+			component = required_components[i];
 
-			path = g_strdup_printf("%s/%s", GSM_MATECONF_REQUIRED_COMPONENTS_DIRECTORY, component);
+			default_provider = g_settings_get_string (settings_required_components, component);
 
-			default_provider = mateconf_client_get_string(client, path, NULL);
-
-			g_debug ("main: %s looking for component: '%s'", path, default_provider);
+			g_debug ("main: %s looking for component: '%s'", component, default_provider);
 
 			if (default_provider != NULL)
 			{
@@ -245,15 +245,14 @@ static void append_required_apps(GsmManager* manager)
 			}
 
 			g_free(default_provider);
-			g_free(path);
 	}
 
 	g_debug("main: *** Done adding required apps");
 
-	g_slist_foreach(required_components, (GFunc) g_free, NULL);
-	g_slist_free(required_components);
+	g_strfreev(required_components);
 
-	g_object_unref(client);
+	g_object_unref(settings);
+	g_object_unref(settings_required_components);
 }
 
 static void maybe_load_saved_session_apps(GsmManager* manager)
@@ -417,11 +416,9 @@ int main(int argc, char** argv)
 	GsmXsmpServer* xsmp_server;
 	MdmSignalHandler* signal_handler;
 	static char** override_autostart_dirs = NULL;
-	static char* default_session_key = NULL;
 
 	static GOptionEntry entries[] = {
 		{"autostart", 'a', 0, G_OPTION_ARG_STRING_ARRAY, &override_autostart_dirs, N_("Override standard autostart directories"), NULL},
-		{"default-session-key", 0, 0, G_OPTION_ARG_STRING, &default_session_key, N_("MateConf key used to look up default session"), NULL},
 		{"debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable debugging code"), NULL},
 		{"failsafe", 'f', 0, G_OPTION_ARG_NONE, &failsafe, N_("Do not load user-specified applications"), NULL},
 		{"version", 0, 0, G_OPTION_ARG_NONE, &show_version, N_("Version of this application"), NULL},
@@ -475,16 +472,11 @@ int main(int argc, char** argv)
 
 	client_store = gsm_store_new();
 
-
-	/* Start up mateconfd if not already running. */
-	gsm_mateconf_init();
-
 	xsmp_server = gsm_xsmp_server_new(client_store);
 
 	/* Now make sure they succeeded. (They'll call
 	 * gsm_util_init_error() if they failed.)
 	 */
-	gsm_mateconf_check();
 	acquire_name();
 
 	manager = gsm_manager_new(client_store, failsafe);
@@ -504,14 +496,7 @@ int main(int argc, char** argv)
 	}
 	else
 	{
-		if (!IS_STRING_EMPTY(default_session_key))
-		{
-			load_standard_apps(manager, default_session_key);
-		}
-		else
-		{
-			load_standard_apps(manager, GSM_MATECONF_DEFAULT_SESSION_KEY);
-		}
+		load_standard_apps(manager, GSM_DEFAULT_SESSION_KEY);
 	}
 
 	gsm_xsmp_server_start(xsmp_server);
@@ -534,8 +519,6 @@ int main(int argc, char** argv)
 	{
 		g_object_unref(client_store);
 	}
-
-	gsm_mateconf_shutdown();
 
 	mdm_log_shutdown();
 

@@ -12,7 +12,6 @@ data/mate-session-properties.desktop.in.in
 [type: gettext/glade]data/session-properties.ui
 egg/eggdesktopfile.c
 egg/eggsmclient.c
-mate-session/gsm-mateconf.c
 mate-session/gsm-inhibit-dialog.c
 mate-session/gsm-logout-dialog.c
 mate-session/gsm-manager.c

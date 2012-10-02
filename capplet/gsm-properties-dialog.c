@@ -27,7 +27,7 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "gsm-properties-dialog.h"
 #include "gsm-app-dialog.h"
@@ -54,8 +54,8 @@
 
 #define STARTUP_APP_ICON     "system-run"
 
-#define SPC_MATECONF_CONFIG_PREFIX   "/apps/mate-session/options"
-#define SPC_MATECONF_AUTOSAVE_KEY    SPC_MATECONF_CONFIG_PREFIX "/auto_save_session"
+#define SPC_CONFIG_SCHEMA   "org.mate.session"
+#define SPC_AUTOSAVE_KEY    "auto-save-session"
 
 struct GsmPropertiesDialogPrivate
 {
@@ -71,6 +71,8 @@ struct GsmPropertiesDialogPrivate
         GtkWidget         *remember_toggle;
 
         GspAppManager     *manager;
+
+        GSettings         *settings;
 };
 
 enum {
@@ -458,15 +460,14 @@ on_row_activated (GtkTreeView         *tree_view,
 }
 
 static void
-on_autosave_value_notify (MateConfClient         *client,
-                          guint                id,
-                          MateConfEntry          *entry,
+on_autosave_value_notify (GSettings *settings,
+                          gchar *key,
                           GsmPropertiesDialog *dialog)
 {
         gboolean   gval;
         gboolean   bval;
 
-        gval = mateconf_value_get_bool (entry->value);
+        gval = g_settings_get_boolean (settings, key);
         bval = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->priv->remember_toggle));
 
         if (bval != gval) {
@@ -478,18 +479,15 @@ static void
 on_autosave_value_toggled (GtkToggleButton     *button,
                            GsmPropertiesDialog *dialog)
 {
-        MateConfClient *client;
         gboolean     gval;
         gboolean     bval;
 
-        client = mateconf_client_get_default ();
-        gval = mateconf_client_get_bool (client, SPC_MATECONF_AUTOSAVE_KEY, NULL);
+        gval = g_settings_get_boolean (dialog->priv->settings, SPC_AUTOSAVE_KEY);
         bval = gtk_toggle_button_get_active (button);
 
         if (gval != bval) {
-                mateconf_client_set_bool (client, SPC_MATECONF_AUTOSAVE_KEY, bval, NULL);
+                g_settings_set_boolean (dialog->priv->settings, SPC_AUTOSAVE_KEY, bval);
         }
-        g_object_unref (client);
 }
 
 static void
@@ -508,7 +506,6 @@ setup_dialog (GsmPropertiesDialog *dialog)
         GtkTreeViewColumn *column;
         GtkCellRenderer   *renderer;
         GtkTreeSelection  *selection;
-        MateConfClient       *client;
         GtkTargetList     *targetlist;
 
         gtk_dialog_add_buttons (GTK_DIALOG (dialog),
@@ -655,19 +652,18 @@ setup_dialog (GsmPropertiesDialog *dialog)
                           G_CALLBACK (on_edit_app_clicked),
                           dialog);
 
-        client = mateconf_client_get_default ();
+
+        dialog->priv->settings = g_settings_new (SPC_CONFIG_SCHEMA);
+
         button = GTK_WIDGET (gtk_builder_get_object (dialog->priv->xml,
                                                      CAPPLET_REMEMBER_WIDGET_NAME));
         dialog->priv->remember_toggle = button;
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button),
-                                      mateconf_client_get_bool (client, SPC_MATECONF_AUTOSAVE_KEY, NULL));
-        mateconf_client_notify_add (client,
-                                 SPC_MATECONF_AUTOSAVE_KEY,
-                                 (MateConfClientNotifyFunc)on_autosave_value_notify,
-                                 dialog,
-                                 NULL,
-                                 NULL);
-        g_object_unref (client);
+                                      g_settings_get_boolean (dialog->priv->settings, SPC_AUTOSAVE_KEY));
+        g_signal_connect (dialog->priv->settings,
+                          "changed::" SPC_AUTOSAVE_KEY,
+                          G_CALLBACK (on_autosave_value_notify),
+                          dialog);
 
         g_signal_connect (button,
                           "toggled",
@@ -752,16 +748,9 @@ gsm_properties_dialog_init (GsmPropertiesDialog *dialog)
 {
         GtkWidget   *content_area;
         GtkWidget   *widget;
-        MateConfClient *client;
         GError      *error;
 
         dialog->priv = GSM_PROPERTIES_DIALOG_GET_PRIVATE (dialog);
-
-        client = mateconf_client_get_default ();
-        mateconf_client_add_dir (client,
-                              SPC_MATECONF_CONFIG_PREFIX,
-                              MATECONF_CLIENT_PRELOAD_ONELEVEL,
-                              NULL);
 
         dialog->priv->xml = gtk_builder_new ();
         gtk_builder_set_translation_domain (dialog->priv->xml, GETTEXT_PACKAGE);
