@@ -401,8 +401,10 @@ get_pixmap_for_window (Window window)
         Picture                  src_picture;
         Picture                  dst_picture;
         gboolean                 has_alpha;
+#if 0
         int                      x;
         int                      y;
+#endif
         int                      width;
         int                      height;
 
@@ -410,8 +412,10 @@ get_pixmap_for_window (Window window)
 
         format = XRenderFindVisualFormat (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), attr.visual);
         has_alpha = (format->type == PictTypeDirect && format->direct.alphaMask);
+#if 0
         x = attr.x;
         y = attr.y;
+#endif
         width = attr.width;
         height = attr.height;
 

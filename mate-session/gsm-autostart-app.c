@@ -32,6 +32,12 @@
 #include "gsm-autostart-app.h"
 #include "gsm-util.h"
 
+#ifdef __GNUC__
+#define UNUSED_VARIABLE __attribute__ ((unused))
+#else
+#define UNUSED_VARIABLE
+#endif
+
 enum {
         AUTOSTART_LAUNCH_SPAWN = 0,
         AUTOSTART_LAUNCH_ACTIVATE
@@ -316,7 +322,7 @@ setup_condition_monitor (GsmAutostartApp *app)
         guint    kind;
         char    *key;
         gboolean res;
-        gboolean disabled;
+        gboolean UNUSED_VARIABLE disabled;
 
         if (app->priv->condition_monitor != NULL) {
                 g_file_monitor_cancel (app->priv->condition_monitor);
