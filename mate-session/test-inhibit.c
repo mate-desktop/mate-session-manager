@@ -34,6 +34,12 @@
 #define SM_DBUS_PATH      "/org/mate/SessionManager"
 #define SM_DBUS_INTERFACE "org.mate.SessionManager"
 
+#ifdef __GNUC__
+#define UNUSED_VARIABLE __attribute__ ((unused))
+#else
+#define UNUSED_VARIABLE
+#endif
+
 static DBusGConnection *bus_connection = NULL;
 static DBusGProxy      *sm_proxy = NULL;
 static guint            cookie = 0;
@@ -73,7 +79,7 @@ do_inhibit_for_window (GdkWindow *window)
 {
         GError     *error;
         gboolean    res;
-        const char *startup_id;
+        const char UNUSED_VARIABLE *startup_id;
         const char *app_id;
         const char *reason;
         guint       toplevel_xid;

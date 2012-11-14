@@ -35,8 +35,13 @@
 #define CAPPLET_COMMENT_ENTRY_WIDGET_NAME "session_properties_comment_entry"
 #define CAPPLET_BROWSE_WIDGET_NAME        "session_properties_browse_button"
 
-
 #define GSM_APP_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_APP_DIALOG, GsmAppDialogPrivate))
+
+#ifdef __GNUC__
+#define UNUSED_VARIABLE __attribute__ ((unused))
+#else
+#define UNUSED_VARIABLE
+#endif
 
 struct GsmAppDialogPrivate
 {
@@ -473,7 +478,7 @@ gsm_app_dialog_run (GsmAppDialog  *dialog,
                 GError     *error;
                 char      **argv;
                 int         argc;
-                gboolean    changed;
+                gboolean   UNUSED_VARIABLE changed;
 
                 name = gsm_app_dialog_get_name (GSM_APP_DIALOG (dialog));
                 exec = gsm_app_dialog_get_command (GSM_APP_DIALOG (dialog));

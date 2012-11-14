@@ -35,6 +35,12 @@
 
 #define SM_CLIENT_DBUS_INTERFACE "org.mate.SessionManager.ClientPrivate"
 
+#ifdef __GNUC__
+#define UNUSED_VARIABLE __attribute__ ((unused))
+#else
+#define UNUSED_VARIABLE
+#endif
+
 static DBusGConnection *bus_connection = NULL;
 static DBusGProxy      *sm_proxy = NULL;
 static char            *client_id = NULL;
@@ -72,7 +78,7 @@ on_client_query_end_session (DBusGProxy     *proxy,
 {
         GError     *error;
         gboolean    is_ok;
-        gboolean    res;
+        gboolean UNUSED_VARIABLE res;
         const char *reason;
 
         is_ok = FALSE;

@@ -791,6 +791,12 @@ gsm_consolekit_can_restart (GsmConsolekit *manager)
                                               G_TYPE_INVALID,
                                               G_TYPE_BOOLEAN, &can_restart,
                                               G_TYPE_INVALID);
+        if (res == FALSE) {
+                g_warning ("Could not make DBUS call: %s",
+                           error->message);
+                g_error_free (error);
+                return FALSE;
+	}
 
 	return can_restart;
 }
@@ -818,6 +824,13 @@ gsm_consolekit_can_stop (GsmConsolekit *manager)
                                               G_TYPE_INVALID,
                                               G_TYPE_BOOLEAN, &can_stop,
                                               G_TYPE_INVALID);
+
+        if (res == FALSE) {
+                g_warning ("Could not make DBUS call: %s",
+                           error->message);
+                g_error_free (error);
+                return FALSE;
+	}
 
 	return can_stop;
 }

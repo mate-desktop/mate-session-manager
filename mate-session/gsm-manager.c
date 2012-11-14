@@ -89,6 +89,12 @@
 
 #define IS_STRING_EMPTY(x) ((x)==NULL||(x)[0]=='\0')
 
+#ifdef __GNUC__
+#define UNUSED_VARIABLE __attribute__ ((unused))
+#else
+#define UNUSED_VARIABLE
+#endif
+
 typedef enum
 {
         GSM_MANAGER_LOGOUT_NONE,
@@ -288,12 +294,11 @@ app_condition_changed (GsmApp     *app,
 
         if (condition) {
                 if (!gsm_app_is_running (app) && client == NULL) {
-                        GError  *error;
-                        gboolean res;
+                        GError  *error = NULL;
+                        gboolean UNUSED_VARIABLE res;
 
                         g_debug ("GsmManager: starting app '%s'", gsm_app_peek_id (app));
 
-                        error = NULL;
                         res = gsm_app_start (app, &error);
                         if (error != NULL) {
                                 g_warning ("Not able to start app from its condition: %s",
@@ -305,7 +310,7 @@ app_condition_changed (GsmApp     *app,
                 }
         } else {
                 GError  *error;
-                gboolean res;
+                gboolean UNUSED_VARIABLE res;
 
                 if (client != NULL) {
                         /* Kill client in case condition if false and make sure it won't
@@ -1473,7 +1478,7 @@ _disconnect_client (GsmManager *manager,
         gboolean              is_condition_client;
         GsmApp               *app;
         GError               *error;
-        gboolean              res;
+        gboolean UNUSED_VARIABLE res;
         const char           *app_id;
         const char           *startup_id;
         gboolean              app_restart;
@@ -1632,7 +1637,7 @@ static void
 remove_inhibitors_for_connection (GsmManager *manager,
                                   const char *service_name)
 {
-        guint            n_removed;
+        guint UNUSED_VARIABLE n_removed;
         RemoveClientData data;
 
         data.service_name = service_name;
@@ -2304,10 +2309,12 @@ on_gsettings_key_changed (GSettings   *settings,
                 delay = g_settings_get_int (settings, key);
                 gsm_presence_set_idle_timeout (manager->priv->presence, delay * 60000);
         } else if (g_strcmp0 (key, KEY_LOCK_DISABLE) == 0) {
-                gboolean disabled;
+                /* ??? */
+                gboolean UNUSED_VARIABLE disabled;
                 disabled = g_settings_get_boolean (settings, key);
         } else if (g_strcmp0 (key, KEY_USER_SWITCH_DISABLE) == 0) {
-                gboolean disabled;
+                /* ??? */
+                gboolean UNUSED_VARIABLE disabled;
                 disabled = g_settings_get_boolean (settings, key);
         } else {
                 g_debug ("Config key not handled: %s", key);
