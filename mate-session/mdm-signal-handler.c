@@ -44,6 +44,12 @@
 #define MDM_SIGNAL_HANDLER_GET_PRIVATE(o) \
 	(G_TYPE_INSTANCE_GET_PRIVATE((o), MDM_TYPE_SIGNAL_HANDLER, MdmSignalHandlerPrivate))
 
+#ifdef __GNUC__
+#define UNUSED_VARIABLE __attribute__ ((unused))
+#else
+#define UNUSED_VARIABLE
+#endif
+
 typedef struct {
 	int signal_number;
 	MdmSignalHandlerFunc func;
@@ -254,7 +260,7 @@ static void mdm_signal_handler_backtrace(void)
 static void signal_handler(int signo)
 {
 	static int in_fatal = 0;
-	int ignore;
+	int UNUSED_VARIABLE ignore;
 	guchar signo_byte = signo;
 
 	/* avoid loops */
