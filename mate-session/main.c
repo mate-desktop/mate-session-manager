@@ -57,6 +57,8 @@
 #define IS_STRING_EMPTY(x) \
 	((x) == NULL || (x)[0] == '\0')
 
+#define KEY_AUTOSAVE "auto-save-session"
+
 static gboolean failsafe = FALSE;
 static gboolean show_version = FALSE;
 static gboolean debug = FALSE;
@@ -265,7 +267,15 @@ static void maybe_load_saved_session_apps(GsmManager* manager)
 
 	if (g_strcmp0 (session_type, GSM_CONSOLEKIT_SESSION_TYPE_LOGIN_WINDOW) != 0)
 	{
-		gsm_manager_add_autostart_apps_from_dir(manager, gsm_util_get_saved_session_dir());
+	        GSettings* settings;
+                gboolean autostart;
+
+		settings = g_settings_new (GSM_SCHEMA);
+	        autostart = g_settings_get_boolean (settings, KEY_AUTOSAVE);
+	        g_object_unref (settings);
+
+                if (autostart == TRUE)
+			gsm_manager_add_autostart_apps_from_dir(manager, gsm_util_get_saved_session_dir());
 	}
 
 	g_object_unref(consolekit);
