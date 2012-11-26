@@ -137,6 +137,7 @@ struct GsmManagerPrivate
 
         GSettings              *settings_session;
         GSettings              *settings_lockdown;
+        GSettings              *settings_screensaver;
 
         DBusGProxy             *bus_proxy;
         DBusGConnection        *connection;
@@ -967,8 +968,11 @@ manager_switch_user (GsmManager *manager)
 static gboolean
 sleep_lock_is_enabled (GsmManager *manager)
 {
-        return g_settings_get_boolean (manager->priv->settings_lockdown,
-                                       KEY_SLEEP_LOCK);
+        if (manager->priv->settings_screensaver != NULL)
+                return g_settings_get_boolean (manager->priv->settings_screensaver,
+                                               KEY_SLEEP_LOCK);
+        else
+                return FALSE;
 }
 
 static void
@@ -2178,6 +2182,11 @@ gsm_manager_dispose (GObject *object)
                 manager->priv->settings_lockdown = NULL;
         }
 
+        if (manager->priv->settings_screensaver) {
+                g_object_unref (manager->priv->settings_screensaver);
+                manager->priv->settings_screensaver = NULL;
+        }
+
         if (manager->priv->up_client != NULL) {
                 g_object_unref (manager->priv->up_client);
                 manager->priv->up_client = NULL;
@@ -2336,11 +2345,28 @@ on_presence_status_changed (GsmPresence  *presence,
 static void
 gsm_manager_init (GsmManager *manager)
 {
+        const char * const *schemas;
+        gboolean schema_exists;
+        guint i;
 
         manager->priv = GSM_MANAGER_GET_PRIVATE (manager);
 
         manager->priv->settings_session = g_settings_new (SESSION_SCHEMA);
         manager->priv->settings_lockdown = g_settings_new (LOCKDOWN_SCHEMA);
+
+        /* check if mate-screensaver is installed */
+        schemas = g_settings_list_schemas ();
+        schema_exists = FALSE;
+        for (i = 0; schemas[i] != NULL; i++) {
+                if (g_str_equal (schemas[i], SCREENSAVER_SCHEMA)) {
+                        schema_exists = TRUE;
+                        break;
+                }
+        }
+        if (schema_exists == TRUE)
+                manager->priv->settings_screensaver = g_settings_new (SCREENSAVER_SCHEMA);
+        else
+                manager->priv->settings_screensaver = NULL;
 
         manager->priv->inhibitors = gsm_store_new ();
         g_signal_connect (manager->priv->inhibitors,
