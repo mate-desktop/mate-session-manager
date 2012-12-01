@@ -6,12 +6,11 @@ configuration program to choose applications starting on login.
 
 You may download updates to the package from:
 
-   http://download.gnome.org/sources/mate-session/
+   http://pub.mate-desktop.org/releases/
 
-To discuss mate-session, you may use the desktop-devel-list mailing
-list:
+To discuss mate-session, you may use the mate-dev mailing list:
 
-  http://mail.gnome.org/mailman/listinfo/desktop-devel-list
+   http://ml.mate-desktop.org/listinfo/mate-dev
 
 
 Design notes
@@ -31,15 +30,9 @@ first need to run './autogen.sh'.
 How to report bugs
 ==================
 
-Bugs should be reported to the MATE bug tracking system:
+Bugs should be reported to mate-session's Github issue tracker:
 
-   https://bugzilla.gnome.org/ (product mate-session)
-
-You will need to create an account for yourself.
-
-Please read the following page on how to prepare a useful bug report:
-
-   https://bugzilla.gnome.org/page.cgi?id=bug-writing.html
+   https://github.com/mate-desktop/mate-session-manager/issues?state=open
 
 Please read the HACKING file for information on where to send changes or
 bugfixes for this package.
