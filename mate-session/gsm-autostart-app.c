@@ -47,8 +47,9 @@ enum {
         GSM_CONDITION_NONE          = 0,
         GSM_CONDITION_IF_EXISTS     = 1,
         GSM_CONDITION_UNLESS_EXISTS = 2,
-        GSM_CONDITION_MATE         = 3,
-        GSM_CONDITION_UNKNOWN       = 4
+        GSM_CONDITION_MATE          = 3,
+        GSM_CONDITION_GSETTINGS     = 4,
+        GSM_CONDITION_UNKNOWN       = 5
 };
 
 #define GSM_SESSION_CLIENT_DBUS_INTERFACE "org.mate.SessionClient"
@@ -163,6 +164,8 @@ parse_condition_string (const char *condition_string,
                 kind = GSM_CONDITION_UNLESS_EXISTS;
         } else if (!g_ascii_strncasecmp (condition_string, "MATE", len)) {
                 kind = GSM_CONDITION_MATE;
+        } else if (!g_ascii_strncasecmp (condition_string, "GSettings", len)) {
+                kind = GSM_CONDITION_GSETTINGS;
         } else {
                 key = NULL;
                 kind = GSM_CONDITION_UNKNOWN;
@@ -389,6 +392,8 @@ setup_condition_monitor (GsmAutostartApp *app)
                 g_free (file_path);
         } else if (kind == GSM_CONDITION_MATE) {
                 disabled = !setup_gsettings_condition_monitor (app, key);
+        } else if (kind == GSM_CONDITION_GSETTINGS) {
+                disabled = !setup_gsettings_condition_monitor (app, key);
         } else {
                 disabled = TRUE;
         }
@@ -578,6 +583,11 @@ gsm_autostart_app_dispose (GObject *object)
                 priv->condition_string = NULL;
         }
 
+        if (priv->condition_settings) {
+                g_object_unref (priv->condition_settings);
+                priv->condition_settings = NULL;
+        }
+
         if (priv->desktop_file) {
                 egg_desktop_file_free (priv->desktop_file);
                 priv->desktop_file = NULL;
@@ -667,6 +677,11 @@ is_conditionally_disabled (GsmApp *app)
                 disabled = g_file_test (file_path, G_FILE_TEST_EXISTS);
                 g_free (file_path);
         } else if (kind == GSM_CONDITION_MATE && priv->condition_settings != NULL) {
+                char **elems;
+                elems = g_strsplit (key, " ", 2);
+                disabled = !g_settings_get_boolean (priv->condition_settings, elems[1]);
+                g_strfreev (elems);
+        } else if (kind == GSM_CONDITION_GSETTINGS && priv->condition_settings != NULL) {
                 char **elems;
                 elems = g_strsplit (key, " ", 2);
                 disabled = !g_settings_get_boolean (priv->condition_settings, elems[1]);
