@@ -30,10 +30,14 @@ gsettings_SCHEMAS = org.mate.session.gschema.xml
 @INTLTOOL_XML_NOMERGE_RULE@
 @GSETTINGS_RULES@
 
+convertdir = $(datadir)/MateConf/gsettings
+convert_DATA = mate-session.convert
+
 EXTRA_DIST =					\
 	mate-wm				\
 	$(xsession_in_files)			\
 	$(gsettings_SCHEMAS)			\
+	$(convert_DATA)				\
 	$(ui_DATA)				\
 	$(pixmap_DATA_dist)
 
