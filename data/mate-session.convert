@@ -1,0 +1,11 @@
+[org.mate.session]
+auto-save-session = /apps/mate-session/options/auto_save_session
+logout-prompt = /apps/mate-session/options/logout_prompt
+idle-delay = /desktop/mate/session/idle_delay
+default-session = /desktop/mate/session/default_session
+required-components-list = /desktop/mate/session/required_components_list
+
+[org.mate.session.required-components]
+windowmanager = /desktop/mate/session/required_components/windowmanager
+panel = /desktop/mate/session/required_components/panel
+filemanager = /desktop/mate/session/required_components/filemanager
