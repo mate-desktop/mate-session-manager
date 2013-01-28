@@ -1,5 +1,5 @@
 <schemalist>
-  <schema id="org.mate.session" path="/desktop/mate/session/">
+  <schema id="org.mate.session" path="/org/mate/desktop/session/">
     <key name="auto-save-session" type="b">
       <default>false</default>
       <_summary>Save sessions</_summary>
@@ -23,11 +23,11 @@
     <key name="required-components-list" type="as">
       <default>[ 'windowmanager', 'panel', 'filemanager' ]</default>
       <_summary>Required session components</_summary>
-      <_description>List of components that are required as part of the session. (Each element names a key under "/desktop/mate/session/required_components"). The Startup Applications preferences tool will not normally allow users to remove a required component from the session, and the session manager will automatically add the required components back to the session at login time if they do get removed.</_description>
+      <_description>List of components that are required as part of the session. (Each element names a key under "/org/mate/desktop/session/required_components"). The Startup Applications preferences tool will not normally allow users to remove a required component from the session, and the session manager will automatically add the required components back to the session at login time if they do get removed.</_description>
     </key>
     <child name="required-components" schema="org.mate.session.required-components"/>
   </schema>
-  <schema id="org.mate.session.required-components" path="/desktop/mate/session/required-components/">
+  <schema id="org.mate.session.required-components" path="/org/mate/desktop/session/required-components/">
     <key name="windowmanager" type="s">
       <default>'@DEFAULT_WM@'</default>
       <_summary>Window Manager</_summary>
