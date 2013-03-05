@@ -42,6 +42,10 @@
 #include "mdm-log.h"
 
 #include "gsm-consolekit.h"
+#ifdef HAVE_SYSTEMD
+#include "gsm-systemd.h"
+#include <systemd/sd-daemon.h>
+#endif
 #include "gsm-util.h"
 #include "gsm-manager.h"
 #include "gsm-xsmp-server.h"
@@ -259,26 +263,47 @@ static void append_required_apps(GsmManager* manager)
 
 static void maybe_load_saved_session_apps(GsmManager* manager)
 {
-	GsmConsolekit* consolekit;
+	GsmConsolekit* consolekit = NULL;
+#ifdef HAVE_SYSTEMD
+	GsmSystemd* systemd = NULL;
+#endif
 	char* session_type;
+	gboolean is_login;
 
+#ifdef HAVE_SYSTEMD
+	if (sd_booted() > 0) {
+		systemd = gsm_get_systemd();
+		session_type = gsm_systemd_get_current_session_type(systemd);
+		is_login = g_strcmp0 (session_type, GSM_SYSTEMD_SESSION_TYPE_LOGIN_WINDOW) == 0;
+	}
+	else {
+#endif
 	consolekit = gsm_get_consolekit();
 	session_type = gsm_consolekit_get_current_session_type(consolekit);
+	is_login = g_strcmp0 (session_type, GSM_CONSOLEKIT_SESSION_TYPE_LOGIN_WINDOW) == 0;
+#ifdef HAVE_SYSTEMD
+	}
+#endif
 
-	if (g_strcmp0 (session_type, GSM_CONSOLEKIT_SESSION_TYPE_LOGIN_WINDOW) != 0)
+	if (!is_login)
 	{
-	        GSettings* settings;
-                gboolean autostart;
+		GSettings* settings;
+		gboolean autostart;
 
 		settings = g_settings_new (GSM_SCHEMA);
-	        autostart = g_settings_get_boolean (settings, KEY_AUTOSAVE);
-	        g_object_unref (settings);
+		autostart = g_settings_get_boolean (settings, KEY_AUTOSAVE);
+		g_object_unref (settings);
 
-                if (autostart == TRUE)
+		if (autostart == TRUE)
 			gsm_manager_add_autostart_apps_from_dir(manager, gsm_util_get_saved_session_dir());
 	}
 
-	g_object_unref(consolekit);
+	if (consolekit != NULL)
+		g_object_unref(consolekit);
+#ifdef HAVE_SYSTEMD
+	if (systemd != NULL)
+		g_object_unref(systemd);
+#endif
 	g_free(session_type);
 }
 

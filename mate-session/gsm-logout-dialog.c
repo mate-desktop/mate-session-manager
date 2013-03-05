@@ -30,6 +30,10 @@
 #include <upower.h>
 
 #include "gsm-logout-dialog.h"
+#ifdef HAVE_SYSTEMD
+#include "gsm-systemd.h"
+#include <systemd/sd-daemon.h>
+#endif
 #include "gsm-consolekit.h"
 #include "mdm.h"
 
@@ -51,6 +55,9 @@ struct _GsmLogoutDialogPrivate
         GsmDialogLogoutType  type;
 
         UpClient            *up_client;
+#ifdef HAVE_SYSTEMD
+        GsmSystemd          *systemd;
+#endif
         GsmConsolekit       *consolekit;
 
         int                  timeout;
@@ -144,6 +151,11 @@ gsm_logout_dialog_init (GsmLogoutDialog *logout_dialog)
 
         logout_dialog->priv->up_client = up_client_new ();
 
+#ifdef HAVE_SYSTEMD
+        if (sd_booted() > 0)
+            logout_dialog->priv->systemd = gsm_get_systemd ();
+        else
+#endif
         logout_dialog->priv->consolekit = gsm_get_consolekit ();
 
         g_signal_connect (logout_dialog,
@@ -171,6 +183,13 @@ gsm_logout_dialog_destroy (GsmLogoutDialog *logout_dialog,
                 logout_dialog->priv->up_client = NULL;
         }
 
+#ifdef HAVE_SYSTEMD
+        if (logout_dialog->priv->systemd) {
+                g_object_unref (logout_dialog->priv->systemd);
+                logout_dialog->priv->systemd = NULL;
+        }
+#endif
+
         if (logout_dialog->priv->consolekit) {
                 g_object_unref (logout_dialog->priv->consolekit);
                 logout_dialog->priv->consolekit = NULL;
@@ -196,6 +215,11 @@ gsm_logout_supports_switch_user (GsmLogoutDialog *logout_dialog)
 {
         gboolean ret;
 
+#ifdef HAVE_SYSTEMD
+        if (sd_booted () > 0)
+            ret = gsm_systemd_can_switch_user (logout_dialog->priv->systemd);
+        else
+#endif
         ret = gsm_consolekit_can_switch_user (logout_dialog->priv->consolekit);
 
         return ret;
@@ -206,6 +230,11 @@ gsm_logout_supports_reboot (GsmLogoutDialog *logout_dialog)
 {
         gboolean ret;
 
+#ifdef HAVE_SYSTEMD
+        if (sd_booted () > 0)
+            ret = gsm_systemd_can_restart (logout_dialog->priv->systemd);
+        else
+#endif
         ret = gsm_consolekit_can_restart (logout_dialog->priv->consolekit);
         if (!ret) {
                 ret = mdm_supports_logout_action (MDM_LOGOUT_ACTION_REBOOT);
@@ -219,6 +248,11 @@ gsm_logout_supports_shutdown (GsmLogoutDialog *logout_dialog)
 {
         gboolean ret;
 
+#ifdef HAVE_SYSTEMD
+        if (sd_booted () > 0)
+            ret = gsm_systemd_can_stop (logout_dialog->priv->systemd);
+        else
+#endif
         ret = gsm_consolekit_can_stop (logout_dialog->priv->consolekit);
 
         if (!ret) {
@@ -242,6 +276,7 @@ gsm_logout_dialog_timeout (gpointer data)
         char            *secondary_text;
         int              seconds_to_show;
         static char     *session_type = NULL;
+        static gboolean  is_not_login;
 
         logout_dialog = (GsmLogoutDialog *) data;
 
@@ -283,14 +318,27 @@ gsm_logout_dialog_timeout (gpointer data)
         }
 
         if (session_type == NULL) {
-		GsmConsolekit *consolekit;
-
+#ifdef HAVE_SYSTEMD
+                if (sd_booted () > 0) {
+                    GsmSystemd *systemd;
+                    systemd = gsm_get_systemd ();
+                    session_type = gsm_systemd_get_current_session_type (systemd);
+                    g_object_unref (systemd);
+                    is_not_login = (g_strcmp0 (session_type, GSM_SYSTEMD_SESSION_TYPE_LOGIN_WINDOW) != 0);
+                }
+                else {
+#endif
+                GsmConsolekit *consolekit;
                 consolekit = gsm_get_consolekit ();
                 session_type = gsm_consolekit_get_current_session_type (consolekit);
                 g_object_unref (consolekit);
+                is_not_login = (g_strcmp0 (session_type, GSM_CONSOLEKIT_SESSION_TYPE_LOGIN_WINDOW) != 0);
+#ifdef HAVE_SYSTEMD
+                }
+#endif
         }
 
-        if (g_strcmp0 (session_type, GSM_CONSOLEKIT_SESSION_TYPE_LOGIN_WINDOW) != 0) {
+        if (is_not_login) {
                 char *name, *tmp;
 
                 name = g_locale_to_utf8 (g_get_real_name (), -1, NULL, NULL, NULL);
@@ -308,9 +356,9 @@ gsm_logout_dialog_timeout (gpointer data)
                 g_free (tmp);
 
                 g_free (name);
-	} else {
-		secondary_text = g_strdup (seconds_warning);
-	}
+        } else {
+                secondary_text = g_strdup (seconds_warning);
+        }
 
         gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (logout_dialog),
                                                   secondary_text,

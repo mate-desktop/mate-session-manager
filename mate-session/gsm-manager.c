@@ -60,6 +60,10 @@
 #include "gsm-logout-dialog.h"
 #include "gsm-inhibit-dialog.h"
 #include "gsm-consolekit.h"
+#ifdef HAVE_SYSTEMD
+#include "gsm-systemd.h"
+#include <systemd/sd-daemon.h>
+#endif
 #include "gsm-session-save.h"
 
 #define GSM_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_MANAGER, GsmManagerPrivate))
@@ -391,9 +395,9 @@ phase_num_to_name (guint phase)
 static void start_phase (GsmManager *manager);
 
 static void
-quit_request_completed (GsmConsolekit *consolekit,
-                        GError        *error,
-                        gpointer       user_data)
+quit_request_completed_consolekit (GsmConsolekit *consolekit,
+                                   GError        *error,
+                                   gpointer       user_data)
 {
         MdmLogoutAction fallback_action = GPOINTER_TO_INT (user_data);
 
@@ -406,10 +410,31 @@ quit_request_completed (GsmConsolekit *consolekit,
         gtk_main_quit ();
 }
 
+#ifdef HAVE_SYSTEMD
+static void
+quit_request_completed_systemd (GsmSystemd *systemd,
+                                GError     *error,
+                                gpointer    user_data)
+{
+        MdmLogoutAction fallback_action = GPOINTER_TO_INT (user_data);
+
+        if (error != NULL) {
+                mdm_set_logout_action (fallback_action);
+        }
+
+        g_object_unref (systemd);
+
+        gtk_main_quit ();
+}
+#endif
+
 static void
 gsm_manager_quit (GsmManager *manager)
 {
         GsmConsolekit *consolekit;
+#ifdef HAVE_SYSTEMD
+        GsmSystemd *systemd;
+#endif
 
         /* See the comment in request_reboot() for some more details about how
          * this works. */
@@ -422,12 +447,26 @@ gsm_manager_quit (GsmManager *manager)
         case GSM_MANAGER_LOGOUT_REBOOT_INTERACT:
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
 
+                #ifdef HAVE_SYSTEMD
+                if (sd_booted () > 0) {
+                    systemd = gsm_get_systemd ();
+                    g_signal_connect (systemd,
+                                      "request-completed",
+                                      G_CALLBACK (quit_request_completed_systemd),
+                                      GINT_TO_POINTER (MDM_LOGOUT_ACTION_REBOOT));
+                    gsm_systemd_attempt_restart (systemd);
+                }
+                else {
+                #endif
                 consolekit = gsm_get_consolekit ();
                 g_signal_connect (consolekit,
                                   "request-completed",
-                                  G_CALLBACK (quit_request_completed),
+                                  G_CALLBACK (quit_request_completed_consolekit),
                                   GINT_TO_POINTER (MDM_LOGOUT_ACTION_REBOOT));
                 gsm_consolekit_attempt_restart (consolekit);
+                #ifdef HAVE_SYSTEMD
+                }
+                #endif
                 break;
         case GSM_MANAGER_LOGOUT_REBOOT_MDM:
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_REBOOT);
@@ -437,12 +476,26 @@ gsm_manager_quit (GsmManager *manager)
         case GSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
 
+                #ifdef HAVE_SYSTEMD
+                if (sd_booted () > 0) {
+                    systemd = gsm_get_systemd ();
+                    g_signal_connect (systemd,
+                                      "request-completed",
+                                      G_CALLBACK (quit_request_completed_systemd),
+                                      GINT_TO_POINTER (MDM_LOGOUT_ACTION_SHUTDOWN));
+                    gsm_systemd_attempt_stop (systemd);
+                }
+                else {
+                #endif
                 consolekit = gsm_get_consolekit ();
                 g_signal_connect (consolekit,
                                   "request-completed",
-                                  G_CALLBACK (quit_request_completed),
+                                  G_CALLBACK (quit_request_completed_consolekit),
                                   GINT_TO_POINTER (MDM_LOGOUT_ACTION_SHUTDOWN));
                 gsm_consolekit_attempt_stop (consolekit);
+                #ifdef HAVE_SYSTEMD
+                }
+                #endif
                 break;
         case GSM_MANAGER_LOGOUT_SHUTDOWN_MDM:
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_SHUTDOWN);
@@ -1822,16 +1875,33 @@ auto_save_is_enabled (GsmManager *manager)
 static void
 maybe_save_session (GsmManager *manager)
 {
-        GsmConsolekit *consolekit;
+        GsmConsolekit *consolekit = NULL;
+#ifdef HAVE_SYSTEMD
+        GsmSystemd *systemd = NULL;
+#endif
         char *session_type;
         GError *error;
 
+#ifdef HAVE_SYSTEMD
+        if (sd_booted () > 0) {
+                systemd = gsm_get_systemd ();
+                session_type = gsm_systemd_get_current_session_type (systemd);
+
+                if (g_strcmp0 (session_type, GSM_SYSTEMD_SESSION_TYPE_LOGIN_WINDOW) == 0) {
+                        goto out;
+                }
+        }
+        else {
+#endif
         consolekit = gsm_get_consolekit ();
         session_type = gsm_consolekit_get_current_session_type (consolekit);
 
         if (g_strcmp0 (session_type, GSM_CONSOLEKIT_SESSION_TYPE_LOGIN_WINDOW) == 0) {
                 goto out;
         }
+#ifdef HAVE_SYSTEMD
+        }
+#endif
 
         /* We only allow session saving when session is running or when
          * logging out */
@@ -1849,7 +1919,12 @@ maybe_save_session (GsmManager *manager)
         }
 
 out:
-        g_object_unref (consolekit);
+        if (consolekit != NULL)
+                g_object_unref (consolekit);
+#ifdef HAVE_SYSTEMD
+        if (systemd != NULL)
+                g_object_unref (systemd);
+#endif
         g_free (session_type);
 }
 
@@ -2335,11 +2410,24 @@ on_presence_status_changed (GsmPresence  *presence,
                             guint         status,
                             GsmManager   *manager)
 {
+#ifdef HAVE_SYSTEMD
+        if (sd_booted () > 0) {
+                GsmSystemd *systemd;
+
+                systemd = gsm_get_systemd ();
+                gsm_systemd_set_session_idle (systemd,
+                                              (status == GSM_PRESENCE_STATUS_IDLE));
+        }
+        else {
+#endif
         GsmConsolekit *consolekit;
 
         consolekit = gsm_get_consolekit ();
         gsm_consolekit_set_session_idle (consolekit,
                                          (status == GSM_PRESENCE_STATUS_IDLE));
+#ifdef HAVE_SYSTEMD
+        }
+#endif
 }
 
 static void
@@ -2520,17 +2608,17 @@ gsm_manager_is_suspend_inhibited (GsmManager *manager)
 }
 
 static void
-request_reboot_privileges_completed (GsmConsolekit *consolekit,
-                                     gboolean       success,
-                                     gboolean       ask_later,
-                                     GError        *error,
-                                     GsmManager    *manager)
+request_reboot_privileges_completed_consolekit (GsmConsolekit *consolekit,
+                                                gboolean       success,
+                                                gboolean       ask_later,
+                                                GError        *error,
+                                                GsmManager    *manager)
 {
         /* make sure we disconnect the signal handler so that it's not called
          * again next time the event is fired -- this can happen if the reboot
          * is cancelled. */
         g_signal_handlers_disconnect_by_func (consolekit,
-                                              request_reboot_privileges_completed,
+                                              request_reboot_privileges_completed_consolekit,
                                               manager);
 
         g_object_unref (consolekit);
@@ -2546,10 +2634,42 @@ request_reboot_privileges_completed (GsmConsolekit *consolekit,
         }
 }
 
+#ifdef HAVE_SYSTEMD
+static void
+request_reboot_privileges_completed_systemd (GsmSystemd *systemd,
+                                             gboolean    success,
+                                             gboolean    ask_later,
+                                             GError     *error,
+                                             GsmManager *manager)
+{
+        /* make sure we disconnect the signal handler so that it's not called
+         * again next time the event is fired -- this can happen if the reboot
+         * is cancelled. */
+        g_signal_handlers_disconnect_by_func (systemd,
+                                              request_reboot_privileges_completed_systemd,
+                                              manager);
+
+        g_object_unref (systemd);
+
+        if (success) {
+                if (ask_later) {
+                        manager->priv->logout_type = GSM_MANAGER_LOGOUT_REBOOT_INTERACT;
+                } else {
+                        manager->priv->logout_type = GSM_MANAGER_LOGOUT_REBOOT;
+                }
+
+                end_phase (manager);
+        }
+}
+#endif
+
 static void
 request_reboot (GsmManager *manager)
 {
         GsmConsolekit *consolekit;
+#ifdef HAVE_SYSTEMD
+        GsmSystemd *systemd;
+#endif
         gboolean       success;
 
         g_debug ("GsmManager: requesting reboot");
@@ -2557,6 +2677,7 @@ request_reboot (GsmManager *manager)
         /* We request the privileges before doing anything. There are a few
          * different cases here:
          *
+         *   - no systemd: we fallback on ConsoleKit
          *   - no ConsoleKit: we fallback on MDM
          *   - no password required: everything is fine
          *   - password asked once: we ask for it now. If the user enters it
@@ -2575,36 +2696,60 @@ request_reboot (GsmManager *manager)
          * just work fine.
          */
 
+#ifdef HAVE_SYSTEMD
+        if (sd_booted () > 0) {
+                systemd = gsm_get_systemd ();
+                g_signal_connect (systemd,
+                                  "privileges-completed",
+                                  G_CALLBACK (request_reboot_privileges_completed_systemd),
+                                  manager);
+                success = gsm_systemd_get_restart_privileges (systemd);
+
+                if (!success) {
+                        g_signal_handlers_disconnect_by_func (systemd,
+                                                              request_reboot_privileges_completed_systemd,
+                                                              manager);
+                        g_object_unref (systemd);
+
+                        manager->priv->logout_type = GSM_MANAGER_LOGOUT_REBOOT_MDM;
+                        end_phase (manager);
+                }
+        }
+        else {
+#endif
         consolekit = gsm_get_consolekit ();
         g_signal_connect (consolekit,
                           "privileges-completed",
-                          G_CALLBACK (request_reboot_privileges_completed),
+                          G_CALLBACK (request_reboot_privileges_completed_consolekit),
                           manager);
         success = gsm_consolekit_get_restart_privileges (consolekit);
 
         if (!success) {
                 g_signal_handlers_disconnect_by_func (consolekit,
-                                                      request_reboot_privileges_completed,
+                                                      request_reboot_privileges_completed_consolekit,
                                                       manager);
                 g_object_unref (consolekit);
 
                 manager->priv->logout_type = GSM_MANAGER_LOGOUT_REBOOT_MDM;
                 end_phase (manager);
         }
+#ifdef HAVE_SYSTEMD
+        }
+#endif
 }
 
 static void
-request_shutdown_privileges_completed (GsmConsolekit *consolekit,
-                                       gboolean       success,
-                                       gboolean       ask_later,
-                                       GError        *error,
-                                       GsmManager    *manager)
+request_shutdown_privileges_completed_consolekit (GsmConsolekit *consolekit,
+                                                  gboolean       success,
+                                                  gboolean       ask_later,
+                                                  GError        *error,
+                                                  GsmManager    *manager)
 {
         /* make sure we disconnect the signal handler so that it's not called
          * again next time the event is fired -- this can happen if the reboot
          * is cancelled. */
         g_signal_handlers_disconnect_by_func (consolekit,
-                                              request_shutdown_privileges_completed,
+                                              request_shutdown_privileges_completed_consolekit,
                                               manager);
 
         g_object_unref (consolekit);
@@ -2620,10 +2765,42 @@ request_shutdown_privileges_completed (GsmConsolekit *consolekit,
         }
 }
 
+#ifdef HAVE_SYSTEMD
+static void
+request_shutdown_privileges_completed_systemd (GsmSystemd *systemd,
+                                               gboolean    success,
+                                               gboolean    ask_later,
+                                               GError     *error,
+                                               GsmManager *manager)
+{
+        /* make sure we disconnect the signal handler so that it's not called
+         * again next time the event is fired -- this can happen if the reboot
+         * is cancelled. */
+        g_signal_handlers_disconnect_by_func (systemd,
+                                              request_shutdown_privileges_completed_systemd,
+                                              manager);
+
+        g_object_unref (systemd);
+
+        if (success) {
+                if (ask_later) {
+                        manager->priv->logout_type = GSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT;
+                } else {
+                        manager->priv->logout_type = GSM_MANAGER_LOGOUT_SHUTDOWN;
+                }
+
+                end_phase (manager);
+        }
+}
+#endif
+
 static void
 request_shutdown (GsmManager *manager)
 {
         GsmConsolekit *consolekit;
+#ifdef HAVE_SYSTEMD
+        GsmSystemd *systemd;
+#endif
         gboolean       success;
 
         g_debug ("GsmManager: requesting shutdown");
@@ -2631,22 +2808,46 @@ request_shutdown (GsmManager *manager)
         /* See the comment in request_reboot() for some more details about how
          * this works. */
 
+#ifdef HAVE_SYSTEMD
+        if (sd_booted () > 0) {
+                systemd = gsm_get_systemd ();
+                g_signal_connect (systemd,
+                                  "privileges-completed",
+                                  G_CALLBACK (request_shutdown_privileges_completed_systemd),
+                                  manager);
+                success = gsm_systemd_get_stop_privileges (systemd);
+
+                if (!success) {
+                        g_signal_handlers_disconnect_by_func (systemd,
+                                                              request_shutdown_privileges_completed_systemd,
+                                                              manager);
+                        g_object_unref (systemd);
+
+                        manager->priv->logout_type = GSM_MANAGER_LOGOUT_SHUTDOWN_MDM;
+                        end_phase (manager);
+                }
+        }
+        else {
+#endif
         consolekit = gsm_get_consolekit ();
         g_signal_connect (consolekit,
                           "privileges-completed",
-                          G_CALLBACK (request_shutdown_privileges_completed),
+                          G_CALLBACK (request_shutdown_privileges_completed_consolekit),
                           manager);
         success = gsm_consolekit_get_stop_privileges (consolekit);
 
         if (!success) {
                 g_signal_handlers_disconnect_by_func (consolekit,
-                                                      request_shutdown_privileges_completed,
+                                                      request_shutdown_privileges_completed_consolekit,
                                                       manager);
                 g_object_unref (consolekit);
 
                 manager->priv->logout_type = GSM_MANAGER_LOGOUT_SHUTDOWN_MDM;
                 end_phase (manager);
         }
+#ifdef HAVE_SYSTEMD
+        }
+#endif
 }
 
 static void
@@ -2938,6 +3139,9 @@ gsm_manager_can_shutdown (GsmManager *manager,
                           GError    **error)
 {
         GsmConsolekit *consolekit;
+#ifdef HAVE_SYSTEMD
+        GsmSystemd *systemd;
+#endif
         gboolean can_suspend;
         gboolean can_hibernate;
 
@@ -2950,12 +3154,26 @@ gsm_manager_can_shutdown (GsmManager *manager,
 
         g_return_val_if_fail (GSM_IS_MANAGER (manager), FALSE);
 
+#ifdef HAVE_SYSTEMD
+        if (sd_booted () > 0) {
+                systemd = gsm_get_systemd ();
+                *shutdown_available = gsm_systemd_can_stop (systemd)
+                                      || gsm_systemd_can_restart (systemd)
+                                      || can_suspend
+                                      || can_hibernate;
+                g_object_unref (systemd);
+        }
+        else {
+#endif
         consolekit = gsm_get_consolekit ();
         *shutdown_available = gsm_consolekit_can_stop (consolekit)
                               || gsm_consolekit_can_restart (consolekit)
                               || can_suspend
                               || can_hibernate;
         g_object_unref (consolekit);
+#ifdef HAVE_SYSTEMD
+        }
+#endif
 
         return TRUE;
 }

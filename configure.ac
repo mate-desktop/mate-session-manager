@@ -104,6 +104,29 @@ dnl GSettings
 dnl ====================================================================
 GLIB_GSETTINGS
 
+
+dnl ====================================================================
+dnl Systemd
+dnl ====================================================================
+
+AC_ARG_WITH(systemd,
+            AS_HELP_STRING([--with-systemd],
+            [Add systemd support]),,
+            with_systemd=auto)
+
+use_systemd=no
+if test "x$with_systemd" != "xno" ; then
+    PKG_CHECK_MODULES(SYSTEMD, libsystemd-login libsystemd-daemon, use_systemd=yes, use_systemd=no)
+
+    if test "x$use_systemd" = "xyes"; then
+        AC_DEFINE(HAVE_SYSTEMD, 1, [systemd support])
+        AC_SUBST(SYSTEMD_CFLAGS)
+        AC_SUBST(SYSTEMD_LIBS)
+    fi
+fi
+AM_CONDITIONAL(HAVE_SYSTEMD, test "x$use_systemd" = "xyes")
+AC_SUBST(HAVE_SYSTEMD)
+
 dnl ====================================================================
 dnl X development libraries check
 dnl ====================================================================
@@ -137,7 +160,7 @@ fi
 
 AC_CHECK_LIB(Xau, XauFileName, [X_LIBS="$X_LIBS -lXau"],
              [AC_MSG_ERROR([
-*** Can't find the Xauth library. It is needed to compile mate-session.])],
+*** Cant find the Xauth library. It is needed to compile mate-session.])],
 	     $X_LIBS)
 
 AC_SUBST(X_LIBS)
@@ -361,6 +384,7 @@ echo "
 
         GTK+ version:             ${with_gtk}
         Default WM:               ${with_default_wm}
+        Systemd support:          ${use_systemd}
         IPv6 support:             ${have_full_ipv6}
         Backtrace support:        ${have_backtrace}
         XRender support:          ${have_xrender}

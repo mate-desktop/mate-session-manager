@@ -5,7 +5,8 @@ noinst_PROGRAMS = 		\
 	test-inhibit
 
 AM_CPPFLAGS =					\
-	$(MATE_SESSION_CFLAGS)			\
+	$(MATE_SESSION_CFLAGS)		\
+	$(SYSTEMD_CFLAGS)			\
 	$(DISABLE_DEPRECATED_CFLAGS)
 
 AM_CFLAGS = $(WARN_CFLAGS)
@@ -25,6 +26,8 @@ mate_session_SOURCES =				\
 	gsm-marshal.c				\
 	gsm-consolekit.c			\
 	gsm-consolekit.h			\
+	gsm-systemd.c 				\
+	gsm-systemd.h				\
 	gsm-logout-dialog.h			\
 	gsm-logout-dialog.c			\
 	gsm-inhibit-dialog.h			\
@@ -72,6 +75,7 @@ mate_session_LDADD =				\
 	$(XTEST_LIBS)				\
 	$(XEXT_LIBS)				\
 	$(MATE_SESSION_LIBS)			\
+	$(SYSTEMD_LIBS)				\
 	$(EXECINFO_LIBS)
 
 libgsmutil_la_SOURCES =				\
