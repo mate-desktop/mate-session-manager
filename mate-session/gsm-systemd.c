@@ -593,8 +593,6 @@ gsm_systemd_set_session_idle (GsmSystemd *manager,
         g_debug ("%s raised:\n %s\n\n", dbus_error.name, dbus_error.message);
         dbus_error_free (&dbus_error);
     }
-
-    g_free (session_path);
 }
 
 gboolean
