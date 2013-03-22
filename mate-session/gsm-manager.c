@@ -71,7 +71,7 @@
 #define GSM_MANAGER_DBUS_PATH "/org/mate/SessionManager"
 #define GSM_MANAGER_DBUS_NAME "org.mate.SessionManager"
 
-#define GSM_MANAGER_PHASE_TIMEOUT 10 /* seconds */
+#define GSM_MANAGER_PHASE_TIMEOUT 30 /* seconds */
 
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
