@@ -1048,14 +1048,13 @@ manager_switch_user (GsmManager *manager)
                                                               NULL,
                                                               &error);
                         if (proxy != NULL) {
-                                g_dbus_proxy_call (proxy,
-                                                   "SwitchToGreeter",
-                                                   g_variant_new ("()"),
-                                                   G_DBUS_CALL_FLAGS_NONE,
-                                                   -1,
-                                                   NULL,
-                                                   NULL,
-                                                   NULL);
+                                g_dbus_proxy_call_sync (proxy,
+                                                        "SwitchToGreeter",
+                                                        g_variant_new ("()"),
+                                                        G_DBUS_CALL_FLAGS_NONE,
+                                                        -1,
+                                                        NULL,
+                                                        NULL);
                                 g_object_unref (proxy);
                         }
                         else {
