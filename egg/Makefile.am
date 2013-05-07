@@ -8,7 +8,7 @@ platform_libs = 			\
 	$(ICE_LIBS)
 platform_sources = eggsmclient-xsmp.c
 
-INCLUDES =                               \
+AM_CPPFLAGS =                            \
 	-DG_LOG_DOMAIN=\""EggSMClient"\" \
 	$(platform_defines)              \
 	$(EGG_SMCLIENT_CFLAGS)           \
