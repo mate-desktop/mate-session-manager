@@ -27,6 +27,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <errno.h>
+#include <time.h>
 
 #include <glib/gi18n.h>
 #include <glib.h>
@@ -67,6 +68,27 @@ static gboolean failsafe = FALSE;
 static gboolean show_version = FALSE;
 static gboolean debug = FALSE;
 
+static gboolean
+initialize_gsettings (void)
+{
+	GSettings* settings;
+	time_t now = time (0);
+	gboolean ret;
+
+	settings = g_settings_new (GSM_SCHEMA);
+
+	if (!settings)
+		return FALSE;
+
+	ret = g_settings_set_int (settings, "session-start", now);
+
+	g_settings_sync ();
+
+	g_object_unref (settings);
+
+        return ret;
+}
+	
 static void on_bus_name_lost(DBusGProxy* bus_proxy, const char* name, gpointer data)
 {
 	g_warning("Lost name on bus: %s, exiting", name);
@@ -504,6 +526,13 @@ int main(int argc, char** argv)
 	 * detect if MATE is running. We keep this for compatibility reasons.
 	 */
 	gsm_util_setenv("MATE_DESKTOP_SESSION_ID", "this-is-deprecated");
+
+        /*
+         * Make sure gsettings is set up correctly.  If not, then bail.
+         */
+
+        if (initialize_gsettings () != TRUE)
+		exit (1);
 
 	client_store = gsm_store_new();
 

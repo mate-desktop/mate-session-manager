@@ -1,5 +1,10 @@
 <schemalist>
   <schema id="org.mate.session" path="/org/mate/desktop/session/">
+    <key name="session-start" type="i">
+      <default>0</default>
+      <_summary>Current session start time</_summary>
+      <_description>Unix time of the start of the current session.</_description>
+    </key>
     <key name="auto-save-session" type="b">
       <default>false</default>
       <_summary>Save sessions</_summary>
