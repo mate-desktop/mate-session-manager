@@ -547,7 +547,7 @@ gsm_systemd_set_session_idle (GsmSystemd *manager,
                               gboolean       is_idle)
 {
     GError         *error;
-    char           *session_path;
+    char           *session_path = NULL;
     DBusMessage    *message;
     DBusMessage    *reply;
     DBusError       dbus_error;
@@ -563,6 +563,8 @@ gsm_systemd_set_session_idle (GsmSystemd *manager,
     }
 
     gsm_systemd_get_session_path (dbus_g_connection_get_connection (manager->priv->dbus_connection), &session_path);
+
+    g_return_if_fail (session_path != NULL);
 
     g_debug ("Updating Systemd idle status: %d", is_idle);
     message = dbus_message_new_method_call (SD_NAME,
@@ -600,7 +602,9 @@ gsm_systemd_can_switch_user (GsmSystemd *manager)
 {
     GError  *error;
     char    *session_id = NULL;
+#ifdef HAVE_SYSTEMD
     char    *seat_id = NULL;
+#endif
     int      ret = 0;
 
     error = NULL;
@@ -864,9 +868,11 @@ gchar *
 gsm_systemd_get_current_session_type (GsmSystemd *manager)
 {
     GError   *gerror;
-    int       session_id;
+    gchar    *session_id;
     gchar    *session_class = NULL;
+#ifdef HAVE_SYSTEMD
     int       res;
+#endif
 
     gerror = NULL;
 
@@ -890,6 +896,8 @@ gsm_systemd_get_current_session_type (GsmSystemd *manager)
         g_warning ("Could not get Systemd session class!");
         return NULL;
     }
+
+    g_free (session_id);
 #endif
 
     return session_class;
