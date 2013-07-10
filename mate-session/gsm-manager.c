@@ -62,7 +62,6 @@
 #include "gsm-consolekit.h"
 #ifdef HAVE_SYSTEMD
 #include "gsm-systemd.h"
-#include <systemd/sd-daemon.h>
 #endif
 #include "gsm-session-save.h"
 
@@ -448,7 +447,7 @@ gsm_manager_quit (GsmManager *manager)
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
 
                 #ifdef HAVE_SYSTEMD
-                if (sd_booted () > 0) {
+                if (LOGIND_RUNNING()) {
                     systemd = gsm_get_systemd ();
                     g_signal_connect (systemd,
                                       "request-completed",
@@ -477,7 +476,7 @@ gsm_manager_quit (GsmManager *manager)
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
 
                 #ifdef HAVE_SYSTEMD
-                if (sd_booted () > 0) {
+                if (LOGIND_RUNNING()) {
                     systemd = gsm_get_systemd ();
                     g_signal_connect (systemd,
                                       "request-completed",
@@ -1930,7 +1929,7 @@ maybe_save_session (GsmManager *manager)
         GError *error;
 
 #ifdef HAVE_SYSTEMD
-        if (sd_booted () > 0) {
+        if (LOGIND_RUNNING()) {
                 systemd = gsm_get_systemd ();
                 session_type = gsm_systemd_get_current_session_type (systemd);
 
@@ -2458,7 +2457,7 @@ on_presence_status_changed (GsmPresence  *presence,
                             GsmManager   *manager)
 {
 #ifdef HAVE_SYSTEMD
-        if (sd_booted () > 0) {
+        if (LOGIND_RUNNING()) {
                 GsmSystemd *systemd;
 
                 systemd = gsm_get_systemd ();
@@ -2744,7 +2743,7 @@ request_reboot (GsmManager *manager)
          */
 
 #ifdef HAVE_SYSTEMD
-        if (sd_booted () > 0) {
+        if (LOGIND_RUNNING()) {
                 systemd = gsm_get_systemd ();
                 g_signal_connect (systemd,
                                   "privileges-completed",
@@ -2856,7 +2855,7 @@ request_shutdown (GsmManager *manager)
          * this works. */
 
 #ifdef HAVE_SYSTEMD
-        if (sd_booted () > 0) {
+        if (LOGIND_RUNNING()) {
                 systemd = gsm_get_systemd ();
                 g_signal_connect (systemd,
                                   "privileges-completed",
@@ -3202,7 +3201,7 @@ gsm_manager_can_shutdown (GsmManager *manager,
         g_return_val_if_fail (GSM_IS_MANAGER (manager), FALSE);
 
 #ifdef HAVE_SYSTEMD
-        if (sd_booted () > 0) {
+        if (LOGIND_RUNNING()) {
                 systemd = gsm_get_systemd ();
                 *shutdown_available = gsm_systemd_can_stop (systemd)
                                       || gsm_systemd_can_restart (systemd)
