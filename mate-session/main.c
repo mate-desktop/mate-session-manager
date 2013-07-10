@@ -45,7 +45,6 @@
 #include "gsm-consolekit.h"
 #ifdef HAVE_SYSTEMD
 #include "gsm-systemd.h"
-#include <systemd/sd-daemon.h>
 #endif
 #include "gsm-util.h"
 #include "gsm-manager.h"

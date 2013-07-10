@@ -32,7 +32,6 @@
 #include "gsm-logout-dialog.h"
 #ifdef HAVE_SYSTEMD
 #include "gsm-systemd.h"
-#include <systemd/sd-daemon.h>
 #endif
 #include "gsm-consolekit.h"
 #include "mdm.h"
