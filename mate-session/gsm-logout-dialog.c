@@ -152,7 +152,7 @@ gsm_logout_dialog_init (GsmLogoutDialog *logout_dialog)
         logout_dialog->priv->up_client = up_client_new ();
 
 #ifdef HAVE_SYSTEMD
-        if (sd_booted() > 0)
+        if (LOGIND_RUNNING())
             logout_dialog->priv->systemd = gsm_get_systemd ();
         else
 #endif
@@ -216,7 +216,7 @@ gsm_logout_supports_switch_user (GsmLogoutDialog *logout_dialog)
         gboolean ret;
 
 #ifdef HAVE_SYSTEMD
-        if (sd_booted () > 0)
+        if (LOGIND_RUNNING())
             ret = gsm_systemd_can_switch_user (logout_dialog->priv->systemd);
         else
 #endif
@@ -231,7 +231,7 @@ gsm_logout_supports_reboot (GsmLogoutDialog *logout_dialog)
         gboolean ret;
 
 #ifdef HAVE_SYSTEMD
-        if (sd_booted () > 0)
+        if (LOGIND_RUNNING())
             ret = gsm_systemd_can_restart (logout_dialog->priv->systemd);
         else
 #endif
@@ -249,7 +249,7 @@ gsm_logout_supports_shutdown (GsmLogoutDialog *logout_dialog)
         gboolean ret;
 
 #ifdef HAVE_SYSTEMD
-        if (sd_booted () > 0)
+        if (LOGIND_RUNNING())
             ret = gsm_systemd_can_stop (logout_dialog->priv->systemd);
         else
 #endif
@@ -319,7 +319,7 @@ gsm_logout_dialog_timeout (gpointer data)
 
         if (session_type == NULL) {
 #ifdef HAVE_SYSTEMD
-                if (sd_booted () > 0) {
+                if (LOGIND_RUNNING()) {
                     GsmSystemd *systemd;
                     systemd = gsm_get_systemd ();
                     session_type = gsm_systemd_get_current_session_type (systemd);

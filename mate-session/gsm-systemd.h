@@ -23,6 +23,7 @@
 #ifndef __GSM_SYSTEMD_H__
 #define __GSM_SYSTEMD_H__
 
+#include <unistd.h>
 #include <glib.h>
 #include <glib-object.h>
 
@@ -37,6 +38,8 @@ extern "C" {
 #define GSM_IS_SYSTEMD_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), GSM_TYPE_SYSTEMD))
 #define GSM_SYSTEMD_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS((obj), GSM_TYPE_SYSTEMD, GsmSystemdClass))
 #define GSM_SYSTEMD_ERROR            (gsm_systemd_error_quark ())
+
+#define LOGIND_RUNNING() (access("/run/systemd/seats/", F_OK) >= 0)
 
 typedef struct _GsmSystemd        GsmSystemd;
 typedef struct _GsmSystemdClass   GsmSystemdClass;

@@ -293,7 +293,7 @@ static void maybe_load_saved_session_apps(GsmManager* manager)
 	gboolean is_login;
 
 #ifdef HAVE_SYSTEMD
-	if (sd_booted() > 0) {
+	if (LOGIND_RUNNING()) {
 		systemd = gsm_get_systemd();
 		session_type = gsm_systemd_get_current_session_type(systemd);
 		is_login = g_strcmp0 (session_type, GSM_SYSTEMD_SESSION_TYPE_LOGIN_WINDOW) == 0;
