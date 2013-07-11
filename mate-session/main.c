@@ -526,11 +526,11 @@ int main(int argc, char** argv)
 	 */
 	gsm_util_setenv("MATE_DESKTOP_SESSION_ID", "this-is-deprecated");
 
-        /*
-         * Make sure gsettings is set up correctly.  If not, then bail.
-         */
+	/*
+	 * Make sure gsettings is set up correctly.  If not, then bail.
+	 */
 
-        if (initialize_gsettings () != TRUE)
+	if (initialize_gsettings () != TRUE)
 		exit (1);
 
 	client_store = gsm_store_new();
