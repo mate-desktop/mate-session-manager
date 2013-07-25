@@ -4,8 +4,8 @@ capplet/gsm-app-dialog.c
 capplet/gsm-properties-dialog.c
 capplet/gsp-app.c
 capplet/main.c
+data/org.mate.session.gschema.xml.in.in
 data/mate.desktop.in
-data/mate-session.schemas.in.in
 data/mate-wm.desktop.in.in
 [type: gettext/glade]data/gsm-inhibit-dialog.ui
 data/mate-session-properties.desktop.in.in

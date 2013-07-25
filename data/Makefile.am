@@ -36,7 +36,7 @@ convert_DATA = mate-session.convert
 EXTRA_DIST =					\
 	mate-wm				\
 	$(xsession_in_files)			\
-	$(gsettings_SCHEMAS)			\
+	$(gsettings_SCHEMAS).in.in		\
 	$(convert_DATA)				\
 	$(ui_DATA)				\
 	$(pixmap_DATA_dist)
@@ -44,6 +44,8 @@ EXTRA_DIST =					\
 CLEANFILES =					\
 	$(xsession_DATA)			\
 	$(desktop_DATA)				\
+	$(gsettings_SCHEMAS).in		\
+	$(gsettings_SCHEMAS)		\
 	mate-wm.desktop
 
 DISTCLEANFILES =				\

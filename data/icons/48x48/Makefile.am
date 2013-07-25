@@ -15,6 +15,9 @@ install-data-hook:
 		echo "***   $(gtk_update_icon_cache)"; \
 	fi
 
+uninstall-hook:
+	@rm -f $(datadir)/icons/hicolor/icon-theme.cache
+
 EXTRA_DIST =		\
 	$(icons_DATA)
 
