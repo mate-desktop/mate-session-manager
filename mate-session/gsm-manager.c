@@ -1001,9 +1001,13 @@ manager_switch_user (GsmManager *manager)
                                            MDM_FLEXISERVER_ARGS);
 
                 error = NULL;
+#if GTK_CHECK_VERSION (3, 0, 0)
+                res = g_spawn_command_line_sync (command, NULL, NULL, NULL, &error);
+#else
                 res = gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
                                                         command,
                                                         &error);
+#endif
 
                 g_free (command);
 
@@ -1019,9 +1023,13 @@ manager_switch_user (GsmManager *manager)
                                                GDM_FLEXISERVER_ARGS);
                 
                 error = NULL;
+#if GTK_CHECK_VERSION (3, 0, 0)
+                res = g_spawn_command_line_sync (command, NULL, NULL, NULL, &error);
+#else
                 res = gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
                                                 command,
                                                 &error);
+#endif
 
                 g_free (command);
                 
