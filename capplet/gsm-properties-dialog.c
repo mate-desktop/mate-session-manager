@@ -603,6 +603,18 @@ setup_dialog (GsmPropertiesDialog *dialog)
         /* we don't want to accept drags coming from this widget */
         targetlist = gtk_drag_dest_get_target_list (GTK_WIDGET (treeview));
         if (targetlist != NULL) {
+#if GTK_CHECK_VERSION (3, 0, 0)
+                GtkTargetEntry *targets;
+                guint n_targets;
+                gint i;
+                targets = gtk_target_table_new_from_list (targetlist, &n_targets);
+                for (i = 0; i < n_targets; i++)
+                        targets[i].flags = GTK_TARGET_OTHER_WIDGET;
+                targetlist = gtk_target_list_new (targets, n_targets);
+                gtk_drag_dest_set_target_list (GTK_WIDGET (treeview), targetlist);
+                gtk_target_list_unref (targetlist);
+                gtk_target_table_free (targets, n_targets);
+#else
                 GList *list;
                 list = targetlist->list;
                 while (list != NULL) {
@@ -611,6 +623,7 @@ setup_dialog (GsmPropertiesDialog *dialog)
                         targetpair->flags = GTK_TARGET_OTHER_WIDGET;
                         list = list->next;
                 }
+#endif
         }
 
         g_signal_connect (treeview, "drag_begin",
@@ -776,7 +789,9 @@ gsm_properties_dialog_init (GsmPropertiesDialog *dialog)
         gtk_window_set_resizable (GTK_WINDOW (dialog), TRUE);
         gtk_container_set_border_width (GTK_CONTAINER (dialog), 6);
         gtk_box_set_spacing (GTK_BOX (content_area), 2);
+#if !GTK_CHECK_VERSION (3, 0, 0)
         gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
+#endif
         gtk_window_set_icon_name (GTK_WINDOW (dialog), "mate-session-properties");
         gtk_window_set_title (GTK_WINDOW (dialog), _("Startup Applications Preferences"));
 }

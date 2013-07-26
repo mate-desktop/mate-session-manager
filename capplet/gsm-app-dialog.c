@@ -182,7 +182,9 @@ setup_dialog (GsmAppDialog *dialog)
         gtk_container_add (GTK_CONTAINER (content_area), widget);
 
         gtk_container_set_border_width (GTK_CONTAINER (dialog), 6);
+#if !GTK_CHECK_VERSION (3, 0, 0)
         gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
+#endif
         gtk_window_set_icon_name (GTK_WINDOW (dialog), "mate-session-properties");
 
         g_object_set (dialog,
