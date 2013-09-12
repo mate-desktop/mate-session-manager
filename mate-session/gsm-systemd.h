@@ -89,9 +89,17 @@ gboolean         gsm_systemd_can_stop        (GsmSystemd *manager);
 
 gboolean         gsm_systemd_can_restart     (GsmSystemd *manager);
 
+gboolean         gsm_systemd_can_hibernate     (GsmSystemd *manager);
+
+gboolean         gsm_systemd_can_suspend     (GsmSystemd *manager);
+
 void             gsm_systemd_attempt_stop    (GsmSystemd *manager);
 
 void             gsm_systemd_attempt_restart (GsmSystemd *manager);
+
+void             gsm_systemd_attempt_hibernate (GsmSystemd *manager);
+
+void             gsm_systemd_attempt_suspend (GsmSystemd *manager);
 
 void             gsm_systemd_set_session_idle (GsmSystemd *manager,
                                                   gboolean       is_idle);

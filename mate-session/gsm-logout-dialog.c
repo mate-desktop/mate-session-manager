@@ -200,13 +200,29 @@ gsm_logout_dialog_destroy (GsmLogoutDialog *logout_dialog,
 static gboolean
 gsm_logout_supports_system_suspend (GsmLogoutDialog *logout_dialog)
 {
-        return up_client_get_can_suspend (logout_dialog->priv->up_client);
+        gboolean ret;
+#ifdef HAVE_SYSTEMD
+        if (LOGIND_RUNNING())
+            ret = gsm_systemd_can_suspend (logout_dialog->priv->systemd);
+        else
+#endif
+        ret = up_client_get_can_suspend (logout_dialog->priv->up_client);
+
+        return ret;
 }
 
 static gboolean
 gsm_logout_supports_system_hibernate (GsmLogoutDialog *logout_dialog)
 {
-        return up_client_get_can_hibernate (logout_dialog->priv->up_client);
+        gboolean ret;
+#ifdef HAVE_SYSTEMD
+        if (LOGIND_RUNNING())
+            ret = gsm_systemd_can_hibernate (logout_dialog->priv->systemd);
+        else
+#endif
+        ret = up_client_get_can_hibernate (logout_dialog->priv->up_client);
+
+        return ret;
 }
 
 static gboolean

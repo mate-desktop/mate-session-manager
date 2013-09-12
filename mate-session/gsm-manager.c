@@ -1101,6 +1101,20 @@ manager_attempt_hibernate (GsmManager *manager)
         GError   *error;
         gboolean  ret;
 
+#ifdef HAVE_SYSTEMD
+        if (LOGIND_RUNNING()) {
+
+                GsmSystemd *systemd;
+
+                systemd = gsm_get_systemd ();
+
+                /* lock the screen before we suspend */
+                manager_perhaps_lock (manager);
+
+                gsm_systemd_attempt_hibernate (systemd);
+        }
+        else {
+#endif
         can_hibernate = up_client_get_can_hibernate (manager->priv->up_client);
         if (can_hibernate) {
 
@@ -1115,6 +1129,9 @@ manager_attempt_hibernate (GsmManager *manager)
                         g_error_free (error);
                 }
         }
+#ifdef HAVE_SYSTEMD
+        }
+#endif
 }
 
 static void
@@ -1124,6 +1141,20 @@ manager_attempt_suspend (GsmManager *manager)
         GError   *error;
         gboolean  ret;
 
+#ifdef HAVE_SYSTEMD
+        if (LOGIND_RUNNING()) {
+
+                GsmSystemd *systemd;
+
+                systemd = gsm_get_systemd ();
+
+                /* lock the screen before we suspend */
+                manager_perhaps_lock (manager);
+
+                gsm_systemd_attempt_suspend (systemd);
+        }
+        else {
+#endif
         can_suspend = up_client_get_can_suspend (manager->priv->up_client);
         if (can_suspend) {
 
@@ -1138,6 +1169,9 @@ manager_attempt_suspend (GsmManager *manager)
                         g_error_free (error);
                 }
         }
+#ifdef HAVE_SYSTEMD
+        }
+#endif
 }
 
 static void
