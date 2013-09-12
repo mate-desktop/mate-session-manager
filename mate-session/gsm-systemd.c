@@ -725,6 +725,141 @@ gsm_systemd_can_stop (GsmSystemd *manager)
     return can_stop;
 }
 
+gboolean
+gsm_systemd_can_hibernate (GsmSystemd *manager)
+{
+  gboolean res;
+  gchar   *value;
+  gboolean can_hibernate;
+  GError  *error;
+  
+  error = NULL;
+  
+  if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
+    g_warning ("Could not connect to Systemd: %s",
+	       error->message);
+    g_error_free (error);
+    return FALSE;
+  }
+  
+  res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
+					"CanHibernate",
+					INT_MAX,
+					&error,
+					G_TYPE_INVALID,
+					G_TYPE_STRING, &value,
+					G_TYPE_INVALID);
+  if (res == FALSE) {
+    g_warning ("Could not make DBUS call: %s",
+	       error->message);
+    g_error_free (error);
+    return FALSE;
+  }
+  
+  can_hibernate = g_strcmp0 (value, "yes") == 0 ||
+  g_strcmp0 (value, "challenge") == 0;
+  g_free (value);
+  return can_hibernate;
+}
+
+gboolean
+gsm_systemd_can_suspend (GsmSystemd *manager)
+{
+  gboolean res;
+  gchar   *value;
+  gboolean can_suspend;
+  GError  *error;
+  
+  error = NULL;
+  
+  if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
+    g_warning ("Could not connect to Systemd: %s",
+	       error->message);
+    g_error_free (error);
+    return FALSE;
+  }
+  
+  res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
+					"CanSuspend",
+					INT_MAX,
+					&error,
+					G_TYPE_INVALID,
+					G_TYPE_STRING, &value,
+					G_TYPE_INVALID);
+  if (res == FALSE) {
+    g_warning ("Could not make DBUS call: %s",
+	       error->message);
+    g_error_free (error);
+    return FALSE;
+  }
+  
+  can_suspend = g_strcmp0 (value, "yes") == 0 ||
+  g_strcmp0 (value, "challenge") == 0;
+  g_free (value);
+  return can_suspend;
+}
+
+void
+gsm_systemd_attempt_hibernate (GsmSystemd *manager)
+{
+  gboolean res;
+  GError  *error;
+  
+  error = NULL;
+  
+  if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
+    g_warning ("Could not connect to Systemd: %s",
+	       error->message);
+    g_error_free (error);
+    return FALSE;
+  }
+  
+  res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
+					"Hibernate",
+					INT_MAX,
+					&error,
+                                        G_TYPE_BOOLEAN, TRUE, /* interactive */
+					G_TYPE_INVALID,
+					G_TYPE_INVALID);
+  if (res == FALSE) {
+    g_warning ("Could not make DBUS call: %s",
+	       error->message);
+    g_error_free (error);
+    return FALSE;
+  }
+  
+}
+
+void
+gsm_systemd_attempt_suspend (GsmSystemd *manager)
+{
+  gboolean res;
+  GError  *error;
+  
+  error = NULL;
+  
+  if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
+    g_warning ("Could not connect to Systemd: %s",
+	       error->message);
+    g_error_free (error);
+    return FALSE;
+  }
+  
+  res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
+					"Suspend",
+					INT_MAX,
+					&error,
+                                        G_TYPE_BOOLEAN, TRUE, /* interactive */
+                                        G_TYPE_INVALID,
+					G_TYPE_INVALID);
+  if (res == FALSE) {
+    g_warning ("Could not make DBUS call: %s",
+	       error->message);
+    g_error_free (error);
+    return FALSE;
+  }
+}
+
 gchar *
 gsm_systemd_get_current_session_type (GsmSystemd *manager)
 {
