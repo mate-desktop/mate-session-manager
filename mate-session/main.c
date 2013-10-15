@@ -51,6 +51,8 @@
 #include "gsm-xsmp-server.h"
 #include "gsm-store.h"
 
+#include "msm-gnome.h"
+
 #define GSM_SCHEMA "org.mate.session"
 #define GSM_DEFAULT_SESSION_KEY "default-session"
 #define GSM_REQUIRED_COMPONENTS_SCHEMA GSM_SCHEMA ".required-components"
@@ -542,6 +544,9 @@ int main(int argc, char** argv)
 	 */
 	acquire_name();
 
+	/* Starts gnome compat mode */
+	msm_gnome_start();
+
 	manager = gsm_manager_new(client_store, failsafe);
 
 	signal_handler = mdm_signal_handler_new();
@@ -583,6 +588,7 @@ int main(int argc, char** argv)
 		g_object_unref(client_store);
 	}
 
+	msm_gnome_stop();
 	mdm_log_shutdown();
 
 	return 0;
