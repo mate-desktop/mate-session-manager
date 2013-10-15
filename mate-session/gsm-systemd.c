@@ -815,7 +815,7 @@ gsm_systemd_attempt_hibernate (GsmSystemd *manager)
     g_warning ("Could not connect to Systemd: %s",
 	       error->message);
     g_error_free (error);
-    return FALSE;
+    return;
   }
   
   res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
@@ -829,7 +829,7 @@ gsm_systemd_attempt_hibernate (GsmSystemd *manager)
     g_warning ("Could not make DBUS call: %s",
 	       error->message);
     g_error_free (error);
-    return FALSE;
+    return;
   }
   
 }
@@ -846,7 +846,7 @@ gsm_systemd_attempt_suspend (GsmSystemd *manager)
     g_warning ("Could not connect to Systemd: %s",
 	       error->message);
     g_error_free (error);
-    return FALSE;
+    return;
   }
   
   res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
@@ -860,7 +860,7 @@ gsm_systemd_attempt_suspend (GsmSystemd *manager)
     g_warning ("Could not make DBUS call: %s",
 	       error->message);
     g_error_free (error);
-    return FALSE;
+    return;
   }
 }
 
