@@ -35,6 +35,7 @@
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
 
+#include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 
 #include "msm-gnome.h"
@@ -174,7 +175,11 @@ msm_compat_gnome_smproxy_startup (void)
    * This has another advantage, since it prevents people from running
    * gnome-smproxy in xfce4, which would cause trouble otherwise.
    */
+#if GTK_CHECK_VERSION (3, 0, 0)
+  dpy = GDK_DISPLAY_XDISPLAY(gdk_display_get_default());
+#else
   dpy = gdk_display;
+#endif
   root = RootWindow (dpy, 0);
 
   if (gnome_smproxy_window != None)
@@ -203,8 +208,13 @@ msm_compat_gnome_smproxy_shutdown (void)
 
   if (gnome_smproxy_window != None)
     {
+#if GTK_CHECK_VERSION (3, 0, 0)
+      XDestroyWindow (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), gnome_smproxy_window);
+      XSync (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), False);
+#else
       XDestroyWindow (gdk_display, gnome_smproxy_window);
       XSync (gdk_display, False);
+#endif
       gnome_smproxy_window = None;
     }
 
