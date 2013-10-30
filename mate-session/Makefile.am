@@ -42,6 +42,8 @@ mate_session_SOURCES =				\
 	mdm-signal-handler.c			\
 	mdm-log.h				\
 	mdm-log.c				\
+	msm-gnome.c				\
+	msm-gnome.h				\
 	main.c					\
 	gsm-store.h				\
 	gsm-store.c				\
