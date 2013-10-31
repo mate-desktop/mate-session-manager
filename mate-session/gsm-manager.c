@@ -335,13 +335,16 @@ app_condition_changed (GsmApp     *app,
                 } else {
                         g_debug ("GsmManager: stopping app %s", gsm_app_peek_id (app));
 
-                        /* If we don't have a client then we should try to kill the app */
+                        /* If we don't have a client then we should try to kill the app,
+                         * if it is running */
                         error = NULL;
-                        res = gsm_app_stop (app, &error);
-                        if (error != NULL) {
-                                g_warning ("Not able to stop app from its condition: %s",
-                                           error->message);
-                                g_error_free (error);
+                        if (gsm_app_is_running (app)) {
+                                res = gsm_app_stop (app, &error);
+                                if (error != NULL) {
+                                       g_warning ("Not able to stop app from its condition: %s",
+                                                error->message);
+                                   g_error_free (error);
+                                }
                         }
                 }
         }
@@ -622,12 +625,37 @@ on_phase_timeout (GsmManager *manager)
 }
 
 static gboolean
+_autostart_delay_timeout (GsmApp *app)
+{
+        GError *error = NULL;
+        gboolean res;
+
+        if (!gsm_app_peek_is_disabled (app)
+            && !gsm_app_peek_is_conditionally_disabled (app)) {
+                res = gsm_app_start (app, &error);
+                if (!res) {
+                        if (error != NULL) {
+                                g_warning ("Could not launch application '%s': %s",
+                                           gsm_app_peek_app_id (app),
+                                           error->message);
+                                g_error_free (error);
+                        }
+                }
+        }
+
+        g_object_unref (app);
+
+        return FALSE;
+}
+
+static gboolean
 _start_app (const char *id,
             GsmApp     *app,
             GsmManager *manager)
 {
         GError  *error;
         gboolean res;
+        int      delay;
 
         if (gsm_app_peek_phase (app) != manager->priv->phase) {
                 goto out;
@@ -643,6 +671,15 @@ _start_app (const char *id,
         if (gsm_app_peek_is_disabled (app)
             || gsm_app_peek_is_conditionally_disabled (app)) {
                 g_debug ("GsmManager: Skipping disabled app: %s", id);
+                goto out;
+        }
+
+        delay = gsm_app_peek_autostart_delay (app);
+        if (delay > 0) {
+                g_timeout_add_seconds (delay, 
+                                       (GSourceFunc)_autostart_delay_timeout,
+                                       g_object_ref (app));
+                g_debug ("GsmManager: %s is scheduled to start in %d seconds", id, delay);
                 goto out;
         }
 
@@ -1484,11 +1521,12 @@ _debug_app_for_phase (const char *id,
                 return FALSE;
         }
 
-        g_debug ("GsmManager:\tID: %s\tapp-id:%s\tis-disabled:%d\tis-conditionally-disabled:%d",
+        g_debug ("GsmManager:\tID: %s\tapp-id:%s\tis-disabled:%d\tis-conditionally-disabled:%d\tis-delayed:%d",
                  gsm_app_peek_id (app),
                  gsm_app_peek_app_id (app),
                  gsm_app_peek_is_disabled (app),
-                 gsm_app_peek_is_conditionally_disabled (app));
+                 gsm_app_peek_is_conditionally_disabled (app),
+                 (gsm_app_peek_autostart_delay (app) > 0));
 
         return FALSE;
 }
