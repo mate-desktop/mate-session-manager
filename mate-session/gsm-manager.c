@@ -38,7 +38,9 @@
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
+#ifdef HAVE_UPOWER
 #include <upower.h>
+#endif
 
 #include <gtk/gtk.h> /* for logout dialog */
 #include <gio/gio.h> /* for gsettings */
@@ -144,9 +146,10 @@ struct GsmManagerPrivate
 
         DBusGProxy             *bus_proxy;
         DBusGConnection        *connection;
-
+#ifdef HAVE_UPOWER
         /* Interface with other parts of the system */
         UpClient               *up_client;
+#endif
 };
 
 enum {
@@ -1105,10 +1108,11 @@ manager_perhaps_lock (GsmManager *manager)
 static void
 manager_attempt_hibernate (GsmManager *manager)
 {
+#ifdef HAVE_UPOWER
         gboolean  can_hibernate;
         GError   *error;
         gboolean  ret;
-
+#endif
 #ifdef HAVE_SYSTEMD
         if (LOGIND_RUNNING()) {
 
@@ -1121,8 +1125,8 @@ manager_attempt_hibernate (GsmManager *manager)
 
                 gsm_systemd_attempt_hibernate (systemd);
         }
-        else {
 #endif
+#ifdef HAVE_UPOWER
         can_hibernate = up_client_get_can_hibernate (manager->priv->up_client);
         if (can_hibernate) {
 
@@ -1137,18 +1141,17 @@ manager_attempt_hibernate (GsmManager *manager)
                         g_error_free (error);
                 }
         }
-#ifdef HAVE_SYSTEMD
-        }
 #endif
 }
 
 static void
 manager_attempt_suspend (GsmManager *manager)
 {
+#ifdef HAVE_UPOWER
         gboolean  can_suspend;
         GError   *error;
         gboolean  ret;
-
+#endif
 #ifdef HAVE_SYSTEMD
         if (LOGIND_RUNNING()) {
 
@@ -1161,8 +1164,8 @@ manager_attempt_suspend (GsmManager *manager)
 
                 gsm_systemd_attempt_suspend (systemd);
         }
-        else {
 #endif
+#ifdef HAVE_UPOWER
         can_suspend = up_client_get_can_suspend (manager->priv->up_client);
         if (can_suspend) {
 
@@ -1176,8 +1179,6 @@ manager_attempt_suspend (GsmManager *manager)
                                    error->message);
                         g_error_free (error);
                 }
-        }
-#ifdef HAVE_SYSTEMD
         }
 #endif
 }
@@ -2349,12 +2350,12 @@ gsm_manager_dispose (GObject *object)
                 g_object_unref (manager->priv->settings_screensaver);
                 manager->priv->settings_screensaver = NULL;
         }
-
+#ifdef HAVE_UPOWER
         if (manager->priv->up_client != NULL) {
                 g_object_unref (manager->priv->up_client);
                 manager->priv->up_client = NULL;
         }
-
+#endif
         G_OBJECT_CLASS (gsm_manager_parent_class)->dispose (object);
 }
 
@@ -2561,9 +2562,9 @@ gsm_manager_init (GsmManager *manager)
                           "status-changed",
                           G_CALLBACK (on_presence_status_changed),
                           manager);
-
+#ifdef HAVE_UPOWER
         manager->priv->up_client = up_client_new ();
-
+#endif
         g_signal_connect (manager->priv->settings_session,
                           "changed",
                           G_CALLBACK (on_gsettings_key_changed),
@@ -3232,12 +3233,12 @@ gsm_manager_can_shutdown (GsmManager *manager,
 #endif
         gboolean can_suspend;
         gboolean can_hibernate;
-
+#ifdef HAVE_UPOWER
         g_object_get (manager->priv->up_client,
                       "can-suspend", &can_suspend,
                       "can-hibernate", &can_hibernate,
                       NULL);
-
+#endif
         g_debug ("GsmManager: CanShutdown called");
 
         g_return_val_if_fail (GSM_IS_MANAGER (manager), FALSE);
