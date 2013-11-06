@@ -65,6 +65,7 @@ struct _GsmAutostartAppPrivate {
         char                 *condition_string;
         gboolean              condition;
         gboolean              autorestart;
+        int                   autostart_delay;
 
         GFileMonitor         *condition_monitor;
         GSettings            *condition_settings;
@@ -101,6 +102,7 @@ gsm_autostart_app_init (GsmAutostartApp *app)
         app->priv->pid = -1;
         app->priv->condition_monitor = NULL;
         app->priv->condition = FALSE;
+        app->priv->autostart_delay = -1;
 }
 
 static gboolean
@@ -481,6 +483,18 @@ load_desktop_file (GsmAutostartApp *app)
                                                                    "AutostartCondition",
                                                                    NULL);
         setup_condition_monitor (app);
+
+        if (phase == GSM_MANAGER_PHASE_APPLICATION) {
+                /* Only accept an autostart delay for the application phase */
+                app->priv->autostart_delay = egg_desktop_file_get_integer (app->priv->desktop_file,
+                                                                           GSM_AUTOSTART_APP_DELAY_KEY,
+                                                                           NULL);
+                if (app->priv->autostart_delay < 0) {
+                        g_warning ("Invalid autostart delay of %d for %s", app->priv->autostart_delay,
+                                   gsm_app_peek_id (GSM_APP (app)));
+                        app->priv->autostart_delay = -1;
+                }
+        }
 
         g_object_set (app,
                       "phase", phase,
@@ -1108,6 +1122,14 @@ gsm_autostart_app_get_app_id (GsmApp *app)
         }
 }
 
+static int
+gsm_autostart_app_peek_autostart_delay (GsmApp *app)
+{
+        GsmAutostartApp *aapp = GSM_AUTOSTART_APP (app);
+
+        return aapp->priv->autostart_delay;
+}
+
 static GObject *
 gsm_autostart_app_constructor (GType                  type,
                                guint                  n_construct_properties,
@@ -1148,6 +1170,7 @@ gsm_autostart_app_class_init (GsmAutostartAppClass *klass)
         app_class->impl_has_autostart_condition = gsm_autostart_app_has_autostart_condition;
         app_class->impl_get_app_id = gsm_autostart_app_get_app_id;
         app_class->impl_get_autorestart = gsm_autostart_app_get_autorestart;
+        app_class->impl_peek_autostart_delay = gsm_autostart_app_peek_autostart_delay;
 
         g_object_class_install_property (object_class,
                                          PROP_DESKTOP_FILENAME,

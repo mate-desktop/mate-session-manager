@@ -70,6 +70,7 @@ GsmApp *gsm_autostart_app_new                (const char *desktop_file);
 #define GSM_AUTOSTART_APP_DBUS_PATH_KEY   "X-MATE-DBus-Path"
 #define GSM_AUTOSTART_APP_DBUS_ARGS_KEY   "X-MATE-DBus-Start-Arguments"
 #define GSM_AUTOSTART_APP_DISCARD_KEY     "X-MATE-Autostart-discard-exec"
+#define GSM_AUTOSTART_APP_DELAY_KEY       "X-MATE-Autostart-Delay"
 
 #ifdef __cplusplus
 }
