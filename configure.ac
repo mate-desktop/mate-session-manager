@@ -70,7 +70,6 @@ PKG_CHECK_MODULES(MATE_SESSION,
         gio-2.0 >= $GIO_REQUIRED
         gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
-        upower-glib >= $UPOWER_REQUIRED
 )
 
 PKG_CHECK_MODULES(SESSION_PROPERTIES,
@@ -126,6 +125,24 @@ if test "x$with_systemd" != "xno" ; then
 fi
 AM_CONDITIONAL(HAVE_SYSTEMD, test "x$use_systemd" = "xyes")
 AC_SUBST(HAVE_SYSTEMD)
+
+dnl ====================================================================
+dnl UPOWER
+dnl ====================================================================
+
+AC_ARG_ENABLE(upower,
+              AS_HELP_STRING([--enable-upower],
+              [Use upower to suspend/hibernate]),
+              enable_upower=$enableval,
+              enable_upower=yes)
+if test "x$enable_upower" = "xyes"; then
+    PKG_CHECK_MODULES(UPOWER, upower-glib >= $UPOWER_REQUIRED, has_upower=yes, has_upower=no)
+    AC_DEFINE(HAVE_UPOWER, 1, [upower support])
+    AC_SUBST(UPOWER_CFLAGS)
+    AC_SUBST(UPOWER_LIBS)
+fi
+AM_CONDITIONAL(HAVE_UPOWER, test "x$enable_upower" = "xyes")
+AC_SUBST(HAVE_UPOWER)
 
 dnl ====================================================================
 dnl X development libraries check
@@ -385,6 +402,7 @@ echo "
         GTK+ version:             ${with_gtk}
         Default WM:               ${with_default_wm}
         Systemd support:          ${use_systemd}
+        Upower support:           ${enable_upower}
         IPv6 support:             ${have_full_ipv6}
         Backtrace support:        ${have_backtrace}
         XRender support:          ${have_xrender}
