@@ -605,7 +605,7 @@ setup_dialog (GsmPropertiesDialog *dialog)
         if (targetlist != NULL) {
 #if GTK_CHECK_VERSION (3, 0, 0)
                 GtkTargetEntry *targets;
-                guint n_targets;
+                gint n_targets;
                 gint i;
                 targets = gtk_target_table_new_from_list (targetlist, &n_targets);
                 for (i = 0; i < n_targets; i++)

@@ -497,7 +497,11 @@ get_pixbuf_for_window (GdkDisplay *gdkdisplay,
                 gdk_error_trap_push ();
                 XFreePixmap (display, xpixmap);
                 gdk_display_sync (gdkdisplay);
+#if GTK_CHECK_VERSION (3, 0, 0)
+                gdk_error_trap_pop_ignored ();
+#else
                 gdk_error_trap_pop ();
+#endif
         }
 
         if (pixbuf != NULL) {
@@ -1038,7 +1042,11 @@ gsm_inhibit_dialog_constructor (GType                  type,
                 dialog->priv->have_xrender = FALSE;
         }
         gdk_display_sync (gdkdisplay);
+#if GTK_CHECK_VERSION (3, 0, 0)
+        gdk_error_trap_pop_ignored ();
+#else
         gdk_error_trap_pop ();
+#endif
 #endif /* HAVE_XRENDER */
 
         /* FIXME: turn this on when it is ready */
