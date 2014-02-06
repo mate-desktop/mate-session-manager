@@ -141,7 +141,7 @@ if test "x$enable_upower" = "xyes"; then
     AC_SUBST(UPOWER_CFLAGS)
     AC_SUBST(UPOWER_LIBS)
 fi
-AM_CONDITIONAL(HAVE_UPOWER, test "x$enable_upower" = "xyes")
+AM_CONDITIONAL(HAVE_UPOWER, test "x$has_upower" = "xyes")
 AC_SUBST(HAVE_UPOWER)
 
 dnl ====================================================================
