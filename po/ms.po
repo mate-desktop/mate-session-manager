@@ -1,502 +1,474 @@
-# mate-session Bahasa Melayu (ms)
-# Melihat Sistem kehakiman masa kini, Saya tak hairan 
-# kalau saya disabitkan dengan kesalahan mendera isteri 
-# ketika saya masih BUJANG
-#
-# Hasbullah Bin Pit (sebol) <sebol@ikhlas.com>, 2001-2003
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# abuyop <abuyop@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session HEAD\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-11 08:59+0000\n"
-"PO-Revision-Date: 2003-08-08 01:58+0800\n"
-"Last-Translator: Hasbullah Bin Pit <sebol@ikhlas.com>\n"
-"Language-Team: Projek Gabai <gabai-penyumbang@lists.sf.net>\n"
+"POT-Creation-Date: 2012-07-10 00:44+0200\n"
+"PO-Revision-Date: 2013-08-10 17:04+0000\n"
+"Last-Translator: abuyop <abuyop@gmail.com>\n"
+"Language-Team: Malay (http://www.transifex.com/projects/p/MATE/language/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ms\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: mate-session/mate-session.schemas.in.h:1
-msgid "Allow TCP connections"
-msgstr "Izinkan Sambungan TCP"
+#: ../capplet/gsm-app-dialog.c:120
+msgid "Select Command"
+msgstr "Pilih Perintah"
 
-#: mate-session/mate-session.schemas.in.h:2
-msgid ""
-"For security reasons, on platforms which have _IceTcpTransNoListen() "
-"(XFree86 systems), mate-session does not listen for connections on TCP "
-"ports. This option will allow connections from (authorized) remote hosts. "
-"mate-session must be restarted for this to take effect."
-msgstr ""
-"Atas sebab keselamatan, pada platform yang mempunyai _IceTcpTransNoListen() "
-"(Sistem XFree86), mate-session tidak akan mendengar sambungan pada liang "
-"TCP. Opsyen ini akan membolehkan sambungan (sah) drpd hos jauh. mate-"
-"session mesti diulanghidupkan supaya ia bertindakbalas."
-
-#: mate-session/mate-session.schemas.in.h:3
-msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr ""
-"Jika dihidupkan, mate-session akan memaklum pengguna sebelum mengakhirkan "
-"sesi."
-
-#: mate-session/mate-session.schemas.in.h:4
-msgid ""
-"If enabled, mate-session will save the session automatically. Otherwise, "
-"the logout dialog will have an option to save the session."
-msgstr ""
-"Jika dihidupkan, mate-session akan menyimpan sesi secara automatik. "
-"Sebaliknya dialog logkeluar akan mempunyai opsyen untuk menyimpan sesi."
-
-#: mate-session/mate-session.schemas.in.h:5
-msgid "Logout prompt"
-msgstr "Maklum logkeluar"
-
-#: mate-session/mate-session.schemas.in.h:6
-msgid ""
-"Preferred Image to use for the splash screen when logging in to the MATE "
-"Desktop"
-msgstr ""
-"Imej digemari untuk digunakan bagi skrin splash bila menglogmasuk ke Desktop "
-"MATE"
-
-#: mate-session/mate-session.schemas.in.h:7
-msgid "Save sessions"
-msgstr "Simpan Sesi"
-
-#: mate-session/mate-session.schemas.in.h:8
-msgid "Show the splash screen"
-msgstr "Papar skrin splash"
-
-#: mate-session/mate-session.schemas.in.h:9
-msgid "Show the splash screen when the session starts up"
-msgstr "Papar skrin splash bila sesi bermula"
-
-#: mate-session/mate-session.schemas.in.h:10
-msgid "Splash Screen Image"
-msgstr "Imej Skrin Splash"
-
-#: mate-session/gsm-client-editor.c:97 mate-session/startup-programs.c:314
-msgid "_Order:"
-msgstr "_Turutan:"
-
-#: mate-session/gsm-client-editor.c:99
-msgid "The order in which applications are started in the session."
-msgstr "Turutan aplikasi yang mana dimulakan pada sesi."
-
-#: mate-session/gsm-client-editor.c:106
-msgid "What happens to the application when it exits."
-msgstr "Apa terjadi pada aplikasi bila ia keluar."
-
-#: mate-session/gsm-client-editor.c:109
-msgid "_Style:"
-msgstr "_Gaya:"
-
-#: mate-session/gsm-client-list.c:150
-#: mate-session/session-properties-capplet.c:412
-msgid "Order"
-msgstr "Turutan:"
-
-#: mate-session/gsm-client-list.c:155
-msgid "Style"
-msgstr "Gaya:"
-
-#: mate-session/gsm-client-list.c:160
-msgid "State"
-msgstr "Keadaan:"
-
-#: mate-session/gsm-client-list.c:165
-msgid "Program"
-msgstr "Program"
-
-#: mate-session/gsm-client-row.c:31
-msgid "Inactive"
-msgstr "Tidak aktif"
-
-#: mate-session/gsm-client-row.c:32
-msgid "Waiting to start or already finished."
-msgstr "Menunggu untuk bermula atau sudah tamat."
-
-#: mate-session/gsm-client-row.c:34
-msgid "Starting"
-msgstr "Memulakan"
-
-#: mate-session/gsm-client-row.c:35
-msgid "Started but has not yet reported state."
-msgstr "Bermula tetapi tidak dilaporkan keadaannya"
-
-#: mate-session/gsm-client-row.c:37
-msgid "Running"
-msgstr "Terlaksana"
-
-#: mate-session/gsm-client-row.c:38
-msgid "A normal member of the session."
-msgstr "Ahli normal bagi sesi"
-
-#: mate-session/gsm-client-row.c:40
-msgid "Saving"
-msgstr "Menyimpan"
-
-#: mate-session/gsm-client-row.c:41
-msgid "Saving session details."
-msgstr "Menyimpan perincian sesi."
-
-#: mate-session/gsm-client-row.c:43
-msgid "Unknown"
-msgstr "Entah"
-
-#: mate-session/gsm-client-row.c:44
-msgid "State not reported within timeout."
-msgstr "Keadaan tidak dilaporkan dalam hadmasa."
-
-#: mate-session/gsm-client-row.c:50
-msgid "Normal"
-msgstr "Normal"
-
-#: mate-session/gsm-client-row.c:51
-msgid "Unaffected by logouts but can die."
-msgstr "Kebal oleh logkeluar tetapi boleh mati"
-
-#: mate-session/gsm-client-row.c:53
-msgid "Restart"
-msgstr "Ulanghidup"
-
-#: mate-session/gsm-client-row.c:54
-msgid "Never allowed to die."
-msgstr "Tidak diizinkan untuk mati."
-
-#: mate-session/gsm-client-row.c:56
-msgid "Trash"
-msgstr "Sampah"
-
-#: mate-session/gsm-client-row.c:57
-msgid "Discarded on logout and can die."
-msgstr "Abaikan ketika log keluar dan boleh mati"
-
-#: mate-session/gsm-client-row.c:59
-msgid "Settings"
-msgstr "Penetapan"
-
-#: mate-session/gsm-client-row.c:60
-msgid "Always started on every login."
-msgstr "Sentiasa dimulakan pada setiap logmasuk."
-
-#.
-#. * it would be nice to have a dialog which either:
-#. *
-#. * 1.  lets you change the message on it
-#. * 2.  lets you append messages and has a "history"
-#. *
-#. * for now, we just kill the old dialog and pop up a new one.
-#.
-#: mate-session/gsm-gsd.c:41
-msgid ""
-"There was an error starting the MATE Settings Daemon.\n"
-"\n"
-"Some things, such as themes, sounds, or background settings may not work "
-"correctly."
-msgstr ""
-"Terdapat ralat memulakan Daemon Tetapan MATE.\n"
-"\n"
-"Terdapat perkara seperti tetapan tema, bunyi atau latang belakang mungkin "
-"tidak berkerja dengan betul."
-
-#: mate-session/gsm-gsd.c:53
-msgid ""
-"\n"
-"\n"
-"The last error message was:\n"
-"\n"
-msgstr ""
-"\n"
-"\n"
-"Mesej ralat terakhir adalah:\n"
-"\n"
-
-#: mate-session/gsm-gsd.c:58
-msgid ""
-"\n"
-"\n"
-"MATE will still try to restart the Settings Daemon next time you log in."
-msgstr ""
-"\n"
-"\n"
-"MATE akan cuba mengulanghidupkan Daemon Tetapan bila anda log masuk kelak."
-
-#: mate-session/gsm-gsd.c:115
-msgid "There was an unknown activation error."
-msgstr "Terdapat ralat pengaktifan yang tidak diketahui."
-
-#: mate-session/gsm-gsd.c:157
-msgid "The Settings Daemon restarted too many times."
-msgstr "Daemon Tetapan diulanghidup terlalu banyak kali."
-
-#: mate-session/logout.c:355
-msgid "Are you sure you want to log out?"
-msgstr "Adakah anda pasti untuk log keluar?"
-
-#: mate-session/logout.c:372
-msgid "_Save current setup"
-msgstr "_Simpan tetapan semasa"
-
-#: mate-session/logout.c:393
-msgid "Action"
-msgstr "Aksi"
-
-#: mate-session/logout.c:410
-msgid "_Log out"
-msgstr "_Log keluar"
-
-#: mate-session/logout.c:416
-msgid "Sh_ut down"
-msgstr "T_utup komputer"
-
-#: mate-session/logout.c:423
-msgid "_Restart the computer"
-msgstr "_Ulanghidup komputer"
-
-#: mate-session/main.c:81
-msgid "Specify a session name to load"
-msgstr "Nyatakan nama sesi untuk dimuatkan"
-
-#: mate-session/main.c:82
-msgid "Only read saved sessions from the default.session file"
-msgstr "Hanya membaca sesi tersimpan daripada fail default.session"
-
-#: mate-session/main.c:83
-msgid "Millisecond period spent waiting for clients to register (0=forever)"
-msgstr ""
-"Tempoh dalam milisaat diluangkan untuk menunggu klien mendaftar (0=selamanya)"
-
-#: mate-session/main.c:84
-msgid "Millisecond period spent waiting for clients to respond (0=forever)"
-msgstr ""
-"Tempoh dalam milisaat diluangkan untuk menunggu klien menjawap (0=selamanya)"
-
-#: mate-session/main.c:85
-msgid "Millisecond period spent waiting for clients to die (0=forever)"
-msgstr ""
-"Tempoh dalam milisaat diluangkan untuk menunggu klien mati (0=selamanya)"
-
-#: mate-session/main.c:265
-#, c-format
-msgid ""
-"Could not look up internet address for %s.\n"
-"This will prevent MATE from operating correctly.\n"
-"It may be possible to correct the problem by adding\n"
-"%s to the file /etc/hosts."
-msgstr ""
-"Tak boleh mencari alamat internet untuk %s.\n"
-"Ianya akan mengelakkan MATE daripada bekerja dengan betul.\n"
-"Anda boleh membetulkan maslaah ini dengan menambah\n"
-" %s di fail /etc/hosts"
-
-#: mate-session/main.c:272
-msgid "Log in Anyway"
-msgstr "Log Masuk Juga"
-
-#: mate-session/main.c:273
-msgid "Try Again"
-msgstr "Cuba Lagi"
-
-#: mate-session/manager.c:223
-msgid "Your session has been saved"
-msgstr "Sesi anda telah pun disimpan"
-
-#: mate-session/manager.c:527
-msgid "Wait abandoned due to conflict."
-msgstr "Penantian diabaikan kerana konflik"
-
-#: mate-session/manager.c:1035
-#, c-format
-msgid "No response to the %s command."
-msgstr "Tiada jawapan untuk arahan %s."
-
-#: mate-session/manager.c:1036
-msgid "The program may be slow, stopped or broken."
-msgstr "Program mungkin perlahan, terhenti atau berderai."
-
-#: mate-session/manager.c:1037
-msgid "You may wait for it to respond or remove it."
-msgstr "Anda boleh menunggunya dijawap atau dibuang."
-
-#: mate-session/manager.c:1760
-msgid "Restart abandoned due to failures."
-msgstr "Ulanghidup diabaikan kerana kegagalan."
-
-#: mate-session/manager.c:1956
-msgid "A session shutdown is in progress."
-msgstr "Sesi penutupan dalam progres."
-
-#: mate-session/save-session.c:46
-msgid "Set the current session"
-msgstr "Tetapkan sesi semasa"
-
-#: mate-session/save-session.c:47
-msgid "Kill session"
-msgstr "Bunuh sesi"
-
-#: mate-session/save-session.c:48
-msgid "Use dialog boxes"
-msgstr "Guna kekotak dialog"
-
-#: mate-session/save-session.c:146 mate-session/save-session.c:179
-msgid "Could not connect to the session manager"
-msgstr "Tak boleh menyambung ke pengurus sesi"
-
-#: mate-session/session-names.c:143
-msgid "The session name cannot be empty"
-msgstr "Nama sesi tak boleh kosong"
-
-#: mate-session/session-names.c:154
-msgid "The session name already exists"
-msgstr "Nama sesi sudah wujud"
-
-#: mate-session/session-names.c:188
-msgid "Add a new session"
-msgstr "Tambah sesi baru"
-
-#: mate-session/session-names.c:218
-msgid "Edit session name"
-msgstr "Edit nama sesi"
-
-#: mate-session/session-properties-capplet.c:122
-msgid "_Edit"
-msgstr "_Edit"
-
-#: mate-session/session-properties-capplet.c:190
-msgid ""
-"Some changes are not saved.\n"
-"Is it still OK to exit?"
-msgstr ""
-"Terdapat perubahan tidak disimpan\n"
-"Masih OK untuk keluar?"
-
-#: mate-session/session-properties-capplet.c:240
-#: mate-session/session-properties.desktop.in.in.h:2
-msgid "Sessions"
-msgstr "Sesi"
-
-#: mate-session/session-properties-capplet.c:273
-msgid "Show splash screen on _login"
-msgstr "Papar skrin splash pada _logmasuk"
-
-#: mate-session/session-properties-capplet.c:284
-#, fuzzy
-msgid "As_k on logout"
-msgstr "_Maklum pada logkeluar"
-
-#: mate-session/session-properties-capplet.c:295
-msgid "Automatically save chan_ges to session"
-msgstr "Automatik simpan per_ubahan pada sesi"
-
-#: mate-session/session-properties-capplet.c:306
-msgid "_Sessions:"
-msgstr "_Sessi:"
-
-#: mate-session/session-properties-capplet.c:324
-msgid "Session Name"
-msgstr "Nama Sessi"
-
-#: mate-session/session-properties-capplet.c:375
-msgid "Session Options"
-msgstr "Opsyen Sessi"
-
-#: mate-session/session-properties-capplet.c:384
-msgid "Current Session"
-msgstr "Sessi Semasa"
-
-#: mate-session/session-properties-capplet.c:393
-msgid "Additional startup _programs:"
-msgstr "_Program permulaan tambahan:"
-
-# help-browser/toc-man.c:19
-# help-browser/toc2-man.c:21
-#: mate-session/session-properties-capplet.c:414
-msgid "Command"
-msgstr "Arahan"
-
-#: mate-session/session-properties-capplet.c:446
-msgid "Startup Programs"
-msgstr "Program Permulaan"
-
-#: mate-session/session-properties.c:49
-msgid "Remove the currently selected client from the session."
-msgstr "Buang klien semasa dipilih dari sesi."
-
-#: mate-session/session-properties.c:55
-msgid "Apply changes to the current session"
-msgstr "Terapkan perubahan perubahan pada sesi"
-
-#: mate-session/session-properties.c:61
-msgid "The list of programs in the session."
-msgstr "Senarai program pada sesi."
-
-#: mate-session/session-properties.c:88
-msgid "Currently running _programs:"
-msgstr "_Program sedang terlaksana:"
-
-#: mate-session/session-properties.c:104
-msgid "Initialize session settings"
-msgstr "Initialisasi Tetapan sesi"
-
-#: mate-session/session-properties.desktop.in.in.h:1
-msgid "Configure your sessions"
-msgstr "Konfigurasi sesi anda"
-
-#: mate-session/splash-widget.c:43
-msgid "Sawfish Window Manager"
-msgstr "Pengurus Tetingkap Sawfish"
-
-#: mate-session/splash-widget.c:44
-msgid "Marco Window Manager"
-msgstr "Pengurus Tetingkap Marco"
-
-#: mate-session/splash-widget.c:45
-msgid "Window Manager"
-msgstr "Pengurus Tetingkap"
-
-#: mate-session/splash-widget.c:46
-msgid "The Panel"
-msgstr "Panel"
-
-#: mate-session/splash-widget.c:47
-msgid "Session Manager Proxy"
-msgstr "Pengurus Proksi Sesi"
-
-#: mate-session/splash-widget.c:48
-msgid "Caja"
-msgstr "Caja"
-
-#: mate-session/splash-widget.c:49
-msgid "Desktop Settings"
-msgstr "Tetapan Desktop"
-
-# help-browser/toc-man.c:19
-# help-browser/toc2-man.c:21
-#: mate-session/startup-programs.c:292
-msgid "_Startup Command:"
-msgstr "Arahan _Permulaan:"
-
-# help-browser/toc-man.c:19
-# help-browser/toc2-man.c:21
-#: mate-session/startup-programs.c:298
-msgid "Startup Command"
-msgstr "Arahan Permulaan"
-
-#: mate-session/startup-programs.c:347
-msgid "The startup command cannot be empty"
-msgstr "Arahan permulaan tak boleh kosong"
-
-#: mate-session/startup-programs.c:384
+#: ../capplet/gsm-app-dialog.c:194
 msgid "Add Startup Program"
 msgstr "Tambah Program Permulaan"
 
-#: mate-session/startup-programs.c:405
+#: ../capplet/gsm-app-dialog.c:198
 msgid "Edit Startup Program"
-msgstr "Edit Program Permulaan"
+msgstr "Sunting Program Permulaan"
 
-#~ msgid "Save Current Session"
-#~ msgstr "Simpan Sessi semasa"
+#: ../capplet/gsm-app-dialog.c:486
+msgid "The startup command cannot be empty"
+msgstr "Perintah permulaan tidak boleh kosong"
 
-#~ msgid "Save current state of desktop"
-#~ msgstr "Simpan keadaan semasa bagi desktop"
+#: ../capplet/gsm-app-dialog.c:492
+msgid "The startup command is not valid"
+msgstr "Perintah permulaan tidak sah"
+
+#: ../capplet/gsm-properties-dialog.c:555
+msgid "Enabled"
+msgstr "Dibenarkan"
+
+#: ../capplet/gsm-properties-dialog.c:567
+msgid "Icon"
+msgstr "Ikon"
+
+#: ../capplet/gsm-properties-dialog.c:579
+msgid "Program"
+msgstr "Program"
+
+#: ../capplet/gsm-properties-dialog.c:792
+msgid "Startup Applications Preferences"
+msgstr "Keutamaan Aplikasi Permulaan"
+
+#: ../capplet/gsp-app.c:269
+msgid "No name"
+msgstr "Tiada nama"
+
+#: ../capplet/gsp-app.c:275
+msgid "No description"
+msgstr "Tiada keterangan"
+
+#: ../capplet/main.c:37 ../mate-session/main.c:427
+msgid "Version of this application"
+msgstr "Versi aplikasi ini"
+
+#: ../capplet/main.c:56
+msgid "Could not display help document"
+msgstr "Tidak dapat papar dokumen bantuan"
+
+#: ../data/mate.desktop.in.h:1
+msgid "MATE"
+msgstr "MATE"
+
+#: ../data/mate.desktop.in.h:2
+msgid "This session logs you into MATE"
+msgstr "Sesi ini mendaftar anda masuk ke MATE"
+
+#: ../data/mate-session.schemas.in.in.h:1
+msgid "Save sessions"
+msgstr "Simpan Sesi"
+
+#: ../data/mate-session.schemas.in.in.h:2
+msgid "If enabled, mate-session will save the session automatically."
+msgstr "Jika dibenarkan, mate-session akan simpan sesi secara automatik."
+
+#: ../data/mate-session.schemas.in.in.h:3
+msgid "Logout prompt"
+msgstr "Maklum daftar keluar"
+
+#: ../data/mate-session.schemas.in.in.h:4
+msgid "If enabled, mate-session will prompt the user before ending a session."
+msgstr "Jika dbenarkan, mate-session akan memaklum pengguna sebelum menamatkan sesi."
+
+#: ../data/mate-session.schemas.in.in.h:5
+msgid "Time before session is considered idle"
+msgstr "Masa sebelum sesi dianggap melahu"
+
+#: ../data/mate-session.schemas.in.in.h:6
+msgid ""
+"The number of minutes of inactivity before the session is considered idle."
+msgstr "Bilangan minit tidak aktif sebelum sesi dianggap melahu."
+
+#: ../data/mate-session.schemas.in.in.h:7
+msgid "Default session"
+msgstr "Sesi lalai"
+
+#: ../data/mate-session.schemas.in.in.h:8
+msgid "List of applications that are part of the default session."
+msgstr "Senarai aplikasi yang merupakan sebahagian dari sesi lalai."
+
+#: ../data/mate-session.schemas.in.in.h:9
+msgid "Required session components"
+msgstr "Komponen sesi diperlukan"
+
+#: ../data/mate-session.schemas.in.in.h:10
+msgid ""
+"List of components that are required as part of the session. (Each element "
+"names a key under \"/desktop/mate/session/required_components\"). The "
+"Startup Applications preferences tool will not normally allow users to "
+"remove a required component from the session, and the session manager will "
+"automatically add the required components back to the session at login time "
+"if they do get removed."
+msgstr "Senarai komponen yang diperlukan sebagai sebahagian dari sesi. (Setiap unsur namakan kunci dibawah \"/desktop/mate/session/required_components\"). Alat keutamaan Aplikasi Permulaan tidak membenarkan secara normal pengguna membuang komponen yang diperlukan dari sesi, dan pengurus sesi akan tambah secara automatik komponen yang diperlukan kembali ke sesi pada masa daftar masuk jika ia dibuang."
+
+#: ../data/mate-session.schemas.in.in.h:11 ../data/mate-wm.desktop.in.in.h:1
+msgid "Window Manager"
+msgstr "Pengurus Tetingkap"
+
+#: ../data/mate-session.schemas.in.in.h:12
+msgid ""
+"The window manager is the program that draws the title bar and borders "
+"around windows, and allows you to move and resize windows."
+msgstr "Pengurus tetingkap adalah progrma yang melukis palang tajuk dan sempadan disekeliling tetingkap, dan membolehkan anda alih dan saizkan semula tetingkap."
+
+#: ../data/mate-session.schemas.in.in.h:13
+msgid "Panel"
+msgstr "Panel"
+
+#: ../data/mate-session.schemas.in.in.h:14
+msgid ""
+"The panel provides the bar at the top or bottom of the screen containing "
+"menus, the window list, status icons, the clock, etc."
+msgstr "Panel menyediakan palang pada bahagian atas dan bawah skrin yang mengandungi menu, senarai tetingkap, ikon status, jam, dan lain-lain."
+
+#: ../data/mate-session.schemas.in.in.h:15
+msgid "File Manager"
+msgstr "Pengurus Fail"
+
+#: ../data/mate-session.schemas.in.in.h:16
+msgid ""
+"The file manager provides the desktop icons and allows you to interact with "
+"your saved files."
+msgstr "Pengurus fail menyediakan ikon dektop dan membolehkan anda berinteraksi dengan fail tersimpan anda."
+
+#: ../data/gsm-inhibit-dialog.ui.h:1
+msgid "<b>Some programs are still running:</b>"
+msgstr "<b>Beberapa program masih berjalan:</b>"
+
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:672
+msgid ""
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
+msgstr "Menunggu program untuk diselesaikan. Menyampuk program boleh menyebabkan anda kehilangan kerja yang sedang dibuat."
+
+#: ../data/mate-session-properties.desktop.in.in.h:1
+msgid "Startup Applications"
+msgstr "Aplkasi Permulaan"
+
+#: ../data/mate-session-properties.desktop.in.in.h:2
+msgid "Choose what applications to start when you log in"
+msgstr "Pilih apakah aplikasi yang hendak dimulakan bila anda mendaftar masuk"
+
+#: ../data/session-properties.ui.h:1
+msgid "Additional startup _programs:"
+msgstr "_Program permulaan tambahan:"
+
+#: ../data/session-properties.ui.h:2
+msgid "Startup Programs"
+msgstr "Program Permulaan"
+
+#: ../data/session-properties.ui.h:3
+msgid "_Automatically remember running applications when logging out"
+msgstr "Ingat aplikasi yang berjalan secara _automatik bila mendaftar keluar"
+
+#: ../data/session-properties.ui.h:4
+msgid "_Remember Currently Running Application"
+msgstr "_Ingat Aplikasi Berjalan Semasa"
+
+#: ../data/session-properties.ui.h:5
+msgid "Options"
+msgstr "Pilihan"
+
+#: ../data/session-properties.ui.h:6
+msgid "Browse…"
+msgstr "Layar..."
+
+#: ../data/session-properties.ui.h:7
+msgid "Comm_ent:"
+msgstr "_Ulasan:"
+
+#: ../data/session-properties.ui.h:8
+msgid "Co_mmand:"
+msgstr "Pe_rintah:"
+
+#: ../data/session-properties.ui.h:9
+msgid "_Name:"
+msgstr "_Nama:"
+
+#: ../egg/eggdesktopfile.c:152
+#, c-format
+msgid "File is not a valid .desktop file"
+msgstr "Fail bukanlah fail .desktop yang sah"
+
+#: ../egg/eggdesktopfile.c:172
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "Versi fail desktop '%s' tidak dikenali"
+
+#: ../egg/eggdesktopfile.c:947
+#, c-format
+msgid "Starting %s"
+msgstr "Memulakan %s"
+
+#: ../egg/eggdesktopfile.c:1089
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "Aplikasi tidak menerima dokumen pada baris perintah"
+
+#: ../egg/eggdesktopfile.c:1157
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "Pilihan lancar tidak dikenali: %d"
+
+#: ../egg/eggdesktopfile.c:1362
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr "Tidak dapat lepaskan URL dokumen ke masukan dekstop 'Type=Link'"
+
+#: ../egg/eggdesktopfile.c:1383
+#, c-format
+msgid "Not a launchable item"
+msgstr "Bukan item boleh lancar"
+
+#: ../egg/eggsmclient.c:225
+msgid "Disable connection to session manager"
+msgstr "Lumpuhkan sambungan ke pengurus sesi"
+
+#: ../egg/eggsmclient.c:228
+msgid "Specify file containing saved configuration"
+msgstr "Nyatakan fail yang mengandungi konfigurasi tersimpan"
+
+#: ../egg/eggsmclient.c:228
+msgid "FILE"
+msgstr "FILE"
+
+#: ../egg/eggsmclient.c:231
+msgid "Specify session management ID"
+msgstr "Nyatakan ID pengurusan sesi"
+
+#: ../egg/eggsmclient.c:231
+msgid "ID"
+msgstr "ID"
+
+#: ../egg/eggsmclient.c:252
+msgid "Session management options:"
+msgstr "Pilihan pengurusan sesi:"
+
+#: ../egg/eggsmclient.c:253
+msgid "Show session management options"
+msgstr "Tunjuk pilihan pengurusan sesi"
+
+#: ../mate-session/gsm-mateconf.c:106
+#, c-format
+msgid ""
+"There is a problem with the configuration server.\n"
+"(%s exited with status %d)"
+msgstr "Terdapat masalah dengan pelayan konfigurasi.⏎\n(%s keluar dengan status %d)"
+
+#: ../mate-session/gsm-inhibit-dialog.c:255
+#, c-format
+msgid "Icon '%s' not found"
+msgstr "Ikon '%s' tidak ditemui"
+
+#: ../mate-session/gsm-inhibit-dialog.c:620
+msgid "Unknown"
+msgstr "Tidak diketahui"
+
+#: ../mate-session/gsm-inhibit-dialog.c:671
+msgid "A program is still running:"
+msgstr "Ada program masih berjalan:"
+
+#: ../mate-session/gsm-inhibit-dialog.c:675
+msgid "Some programs are still running:"
+msgstr "Beberapa program masih berjalan:"
+
+#: ../mate-session/gsm-inhibit-dialog.c:676
+msgid ""
+"Waiting for programs to finish.  Interrupting these programs may cause you "
+"to lose work."
+msgstr "Menunggu program diselesaikan. Menyampuk program ini boleh menyebabkan anda kehilangan kerja yang sedang dibuat."
+
+#: ../mate-session/gsm-inhibit-dialog.c:906
+msgid "Switch User Anyway"
+msgstr "Tukar Pengguna Jua"
+
+#: ../mate-session/gsm-inhibit-dialog.c:909
+msgid "Log Out Anyway"
+msgstr "Daftar Keluar Jua"
+
+#: ../mate-session/gsm-inhibit-dialog.c:912
+msgid "Suspend Anyway"
+msgstr "Tangguh Jua"
+
+#: ../mate-session/gsm-inhibit-dialog.c:915
+msgid "Hibernate Anyway"
+msgstr "Hibernasi Jua"
+
+#: ../mate-session/gsm-inhibit-dialog.c:918
+msgid "Shut Down Anyway"
+msgstr "Matikan Jua"
+
+#: ../mate-session/gsm-inhibit-dialog.c:921
+msgid "Reboot Anyway"
+msgstr "But Semula Jua"
+
+#: ../mate-session/gsm-inhibit-dialog.c:929
+msgid "Lock Screen"
+msgstr "Kunci Skrin"
+
+#: ../mate-session/gsm-inhibit-dialog.c:932
+msgid "Cancel"
+msgstr "Batal"
+
+#: ../mate-session/gsm-logout-dialog.c:266
+#, c-format
+msgid "You will be automatically logged out in %d second."
+msgid_plural "You will be automatically logged out in %d seconds."
+msgstr[0] "Anda akan mendaftar keluar secara automatik dalam tempoh %d saat."
+
+#: ../mate-session/gsm-logout-dialog.c:274
+#, c-format
+msgid "This system will be automatically shut down in %d second."
+msgid_plural "This system will be automatically shut down in %d seconds."
+msgstr[0] "Sistem ini akan dimatikan secara automatik dalam tempoh %d saat."
+
+#: ../mate-session/gsm-logout-dialog.c:306
+#, c-format
+msgid "You are currently logged in as \"%s\"."
+msgstr "Anda kini mendaftar masuk sebagai \"%s\"."
+
+#: ../mate-session/gsm-logout-dialog.c:372
+msgid "Log out of this system now?"
+msgstr "Daftar keluar dari sistem ini sekarang?"
+
+#: ../mate-session/gsm-logout-dialog.c:378
+msgid "_Switch User"
+msgstr "_Tukar Pengguna"
+
+#: ../mate-session/gsm-logout-dialog.c:387
+msgid "_Log Out"
+msgstr "_Daftar Keluar"
+
+#: ../mate-session/gsm-logout-dialog.c:393
+msgid "Shut down this system now?"
+msgstr "Matikan sistem ini sekarang?"
+
+#: ../mate-session/gsm-logout-dialog.c:399
+msgid "S_uspend"
+msgstr "Ta_ngguh"
+
+#: ../mate-session/gsm-logout-dialog.c:405
+msgid "_Hibernate"
+msgstr "_Hibernasi"
+
+#: ../mate-session/gsm-logout-dialog.c:411
+msgid "_Restart"
+msgstr "_Mula Semula"
+
+#: ../mate-session/gsm-logout-dialog.c:421
+msgid "_Shut Down"
+msgstr "Ma_tikan"
+
+#: ../mate-session/gsm-manager.c:1237 ../mate-session/gsm-manager.c:1929
+msgid "Not responding"
+msgstr "Tidak membalas"
+
+#: ../mate-session/gsm-xsmp-client.c:1189
+msgid "This program is blocking logout."
+msgstr "Program ini menghalang daftar keluar."
+
+#: ../mate-session/gsm-xsmp-server.c:325
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
+msgstr "Menafikan sambungan klien baru kerana sesi kini sedang dimatikan⏎\n"
+
+#: ../mate-session/gsm-xsmp-server.c:587
+#, c-format
+msgid "Could not create ICE listening socket: %s"
+msgstr "Tidak dapat cipta soket mendengar ICE: %s"
+
+#. Oh well, no X for you!
+#: ../mate-session/gsm-util.c:354
+#, c-format
+msgid "Unable to start login session (and unable to connect to the X server)"
+msgstr "Tidak boleh mulakan sesi daftar masuk (dan tidak boleh sambung ke pelayan X)"
+
+#: ../mate-session/main.c:423
+msgid "Override standard autostart directories"
+msgstr "Membatalkan direktori mula-sendiri piawai"
+
+#: ../mate-session/main.c:424
+msgid "MateConf key used to look up default session"
+msgstr "Kunci MateConf digunakan untuk mencari sesi lalai"
+
+#: ../mate-session/main.c:425
+msgid "Enable debugging code"
+msgstr "Benarkan kod penyahpepijatan"
+
+#: ../mate-session/main.c:426
+msgid "Do not load user-specified applications"
+msgstr "Jangan muat aplikasi dinyatakan-pengguna"
+
+#: ../mate-session/main.c:447
+msgid " - the MATE session manager"
+msgstr "- pengurus sesi MATE"
+
+#: ../tools/mate-session-save.c:65
+msgid "Log out"
+msgstr "Daftar keluar"
+
+#: ../tools/mate-session-save.c:66
+msgid "Log out, ignoring any existing inhibitors"
+msgstr "Daftar keluar, mengabaikan perencat sedia ada"
+
+#: ../tools/mate-session-save.c:67
+msgid "Show logout dialog"
+msgstr "Tunjuk dialog daftar keluar"
+
+#: ../tools/mate-session-save.c:68
+msgid "Show shutdown dialog"
+msgstr "Tunjuk dialog matikan"
+
+#: ../tools/mate-session-save.c:69
+msgid "Use dialog boxes for errors"
+msgstr "Guna kotak dialog untuk ralat"
+
+#. deprecated options
+#: ../tools/mate-session-save.c:71
+msgid "Set the current session name"
+msgstr "Tetapkan nama sesi semasa"
+
+#: ../tools/mate-session-save.c:71
+msgid "NAME"
+msgstr "NAMA"
+
+#: ../tools/mate-session-save.c:72
+msgid "Kill session"
+msgstr "Matikan sesi"
+
+#: ../tools/mate-session-save.c:73
+msgid "Do not require confirmation"
+msgstr "Tidak perlukan pengesahan"
+
+#: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
+msgid "Could not connect to the session manager"
+msgstr "Tidak dapat sambung ke pengurus sesi"
+
+#: ../tools/mate-session-save.c:287
+msgid "Program called with conflicting options"
+msgstr "Program yang dikenali dengan pilihan berkonflik"

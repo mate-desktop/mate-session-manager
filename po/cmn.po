@@ -3,73 +3,76 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Koljan1970 <Stuartlittle1970@gmail.com>, 2013
-# Stefano Karapetsas <stefano@karapetsas.com>, 2012
+# Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw>, 2008
+# Chih-Wei Huang <cwhuang@linux.org.tw>, 2000
+# Jing-Jong Shyue <shyue@sonoma.com.tw>, 2000
+# Wei-Lun Chao <bluebat@member.fsf.org>, 2012-2013
+# Yuan-Chung Cheng <platin@linux.org.tw>, 1999
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-10 00:44+0200\n"
-"PO-Revision-Date: 2013-06-16 14:42+0000\n"
-"Last-Translator: Koljan1970 <Stuartlittle1970@gmail.com>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/projects/p/MATE/language/uk/)\n"
+"PO-Revision-Date: 2013-11-21 07:08+0000\n"
+"Last-Translator: Wei-Lun Chao <bluebat@member.fsf.org>\n"
+"Language-Team: Chinese (Mandarin) (http://www.transifex.com/projects/p/MATE/language/cmn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: cmn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../capplet/gsm-app-dialog.c:120
 msgid "Select Command"
-msgstr "Оберіть команду"
+msgstr "選擇指令"
 
 #: ../capplet/gsm-app-dialog.c:194
 msgid "Add Startup Program"
-msgstr "Додати програму, що запускається на початку"
+msgstr "新增初始啟動程式"
 
 #: ../capplet/gsm-app-dialog.c:198
 msgid "Edit Startup Program"
-msgstr "Змінити програму"
+msgstr "修改初始啟動程式"
 
 #: ../capplet/gsm-app-dialog.c:486
 msgid "The startup command cannot be empty"
-msgstr "Початкова команда не може бути порожньою"
+msgstr "初始啟動指令不可以留空"
 
 #: ../capplet/gsm-app-dialog.c:492
 msgid "The startup command is not valid"
-msgstr "Початкова команда некоректна"
+msgstr "初始啟動指令無效"
 
 #: ../capplet/gsm-properties-dialog.c:555
 msgid "Enabled"
-msgstr "Увімкнено"
+msgstr "已啟用"
 
 #: ../capplet/gsm-properties-dialog.c:567
 msgid "Icon"
-msgstr "Піктограма"
+msgstr "圖示"
 
 #: ../capplet/gsm-properties-dialog.c:579
 msgid "Program"
-msgstr "Програма"
+msgstr "程式"
 
 #: ../capplet/gsm-properties-dialog.c:792
 msgid "Startup Applications Preferences"
-msgstr "Параметри програм, що запускаються"
+msgstr "啟動應用程式偏好設定"
 
 #: ../capplet/gsp-app.c:269
 msgid "No name"
-msgstr "Без назви"
+msgstr "沒有名稱"
 
 #: ../capplet/gsp-app.c:275
 msgid "No description"
-msgstr "Опис відсутній"
+msgstr "沒有描述"
 
 #: ../capplet/main.c:37 ../mate-session/main.c:427
 msgid "Version of this application"
-msgstr "Версія цієї програми"
+msgstr "這個程式的版本"
 
 #: ../capplet/main.c:56
 msgid "Could not display help document"
-msgstr "Не вдається вивести довідку"
+msgstr "無法顯示求助文件"
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -77,44 +80,44 @@ msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
-msgstr "Це - сеанс входу у MATE"
+msgstr "這個作業階段讓您登入 MATE"
 
 #: ../data/mate-session.schemas.in.in.h:1
 msgid "Save sessions"
-msgstr "Зберігати сеанси"
+msgstr "儲存作業階段"
 
 #: ../data/mate-session.schemas.in.in.h:2
 msgid "If enabled, mate-session will save the session automatically."
-msgstr "Якщо цей ключ встановлено, mate-session буде автоматично зберігати сеанс."
+msgstr "如啟用本選項，mate-session 會自動儲存作業階段。"
 
 #: ../data/mate-session.schemas.in.in.h:3
 msgid "Logout prompt"
-msgstr "Попередження про завершення сеансу"
+msgstr "登出提示"
 
 #: ../data/mate-session.schemas.in.in.h:4
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Якщо увімкнено, то mate-session буде попереджувати користувача перед завершенням сеансу."
+msgstr "如啟用本選項，mate-session 會在作業階段終止前先提示使用者。"
 
 #: ../data/mate-session.schemas.in.in.h:5
 msgid "Time before session is considered idle"
-msgstr "Проміжок часу, по закінченню якого сеанс буде вважатися неактивним"
+msgstr "判定作業階段閒置的時間"
 
 #: ../data/mate-session.schemas.in.in.h:6
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Проміжок часу у хвилинах, по закінченню якого сеанс вважатиметься неактивним."
+msgstr "不使用電腦幾分鐘後將作業階段判定為閒置。"
 
 #: ../data/mate-session.schemas.in.in.h:7
 msgid "Default session"
-msgstr "Типовий сеанс"
+msgstr "預設作業階段"
 
 #: ../data/mate-session.schemas.in.in.h:8
 msgid "List of applications that are part of the default session."
-msgstr "Список програм, які є частиною типового сеансу."
+msgstr "預設作業階段中的應用程式列表。"
 
 #: ../data/mate-session.schemas.in.in.h:9
 msgid "Required session components"
-msgstr "Обов'язкові компоненти сеансу"
+msgstr "要求的作業階段元件"
 
 #: ../data/mate-session.schemas.in.in.h:10
 msgid ""
@@ -124,142 +127,142 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Список компонентів які є обо'язковими для сеансу. (Кожний елемент є назвою ключа у \"/desktop/mate/session/required_components\".) \"Параметри додатківщо запускаються\" звичайно не дозволяють користувачам вилучати обов'язковий компонент з системи, та менеджер сеансів автоматично додаватиме обов'язкові компоненти назад до сеансу, якщо вони будуть вилучені."
+msgstr "做為此作業階段一部分的必要元件列表。（每個元件都會在「/desktop/mate/session/required_components」有一個設定鍵。）啟動應用程式偏好設定工具一般不會允許使用者自作業階段中移除必要的元件，而作業階段管理員會在這些必要元件被移除時自動將它們加回作業階段中。"
 
 #: ../data/mate-session.schemas.in.in.h:11 ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
-msgstr "Віконний менеджер"
+msgstr "視窗管理員"
 
 #: ../data/mate-session.schemas.in.in.h:12
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Менеджер вікон - це програма, яка малює заголовок та оформлення вікна, та дозволяє переміщувати вікна та змінювати їх розмір."
+msgstr "視窗管理程式是一種在視窗周圍繪出標題列、邊框的程式，並且讓您能移動和改變視窗大小。"
 
 #: ../data/mate-session.schemas.in.in.h:13
 msgid "Panel"
-msgstr "Панель"
+msgstr "面板"
 
 #: ../data/mate-session.schemas.in.in.h:14
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Панель надає смугу згори та знизу екрану, що містять меню, список вікон, значки стану, годинник та т.і."
+msgstr "面板提供了螢幕頂端或底部的工具列，包含了選單、視窗列表、狀態圖示、時鐘等功能。"
 
 #: ../data/mate-session.schemas.in.in.h:15
 msgid "File Manager"
-msgstr "Файловий менеджер"
+msgstr "檔案管理程式"
 
 #: ../data/mate-session.schemas.in.in.h:16
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Менеджер файлів надає піктограми стільниці та дозволяє працювати із збереженими файлами."
+msgstr "檔案管理程式提供桌面圖示功能並且讓您能操作儲存的檔案。"
 
 #: ../data/gsm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
-msgstr "<b>Деякі програми досі працюють:</b>"
+msgstr "<b>某些程式仍在執行：</b>"
 
 #: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:672
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Очікування завершення роботи програми.  Переривання роботи програми може привести до втрати ваших даних."
+msgstr "正在等待程式結束。中斷這些程式可能造成您的工作遺失。"
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
-msgstr "Програми, що запускаються"
+msgstr "啟動應用程式"
 
 #: ../data/mate-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr "Оберіть програми, що запускаються при вході у сеанс"
+msgstr "選擇在您登入時要啟動哪些應用程式"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
-msgstr "Додаткові по_чаткові програми для запуску:"
+msgstr "啟動時額外執行以下的程式(_P):"
 
 #: ../data/session-properties.ui.h:2
 msgid "Startup Programs"
-msgstr "Початкові програми"
+msgstr "初始啟動程式"
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
-msgstr "_Автоматично запам'ятовувати запущені програми при завершенні"
+msgstr "登出時自動記住還在執行中的應用程式(_A)"
 
 #: ../data/session-properties.ui.h:4
 msgid "_Remember Currently Running Application"
-msgstr "_Запам'ятати запущені програми"
+msgstr "記住目前執行的應用程式(_R)"
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr "Параметри"
+msgstr "選項"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
-msgstr "Огляд…"
+msgstr "瀏覽…"
 
 #: ../data/session-properties.ui.h:7
 msgid "Comm_ent:"
-msgstr "Ко_ментар:"
+msgstr "註解(_E):"
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
-msgstr "_Команда:"
+msgstr "指令(_M):"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr "_Назва:"
+msgstr "名稱(_N):"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "Файл не є дійсним файлом .desktop"
+msgstr "檔案不是有效的 .desktop 檔案"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Нерозпізнана версія десктоп-файлу «%s»"
+msgstr "無法辨識的桌面檔案版本「%s」"
 
 #: ../egg/eggdesktopfile.c:947
 #, c-format
 msgid "Starting %s"
-msgstr "Запускється «%s»"
+msgstr "準備啟動 %s"
 
 #: ../egg/eggdesktopfile.c:1089
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "Програма не приймає документи, вказані у командному рядку"
+msgstr "應用程式不接受以命令列開啟文件"
 
 #: ../egg/eggdesktopfile.c:1157
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Невизначений параметр запуску: %d"
+msgstr "無法辨識的啟動選項：%d"
 
 #: ../egg/eggdesktopfile.c:1362
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Не можна передавати URI документів у десктоп-запис 'Type=Link'"
+msgstr "不能傳送文件 URI 至「Type=Link」桌面項目"
 
 #: ../egg/eggdesktopfile.c:1383
 #, c-format
 msgid "Not a launchable item"
-msgstr "Не є елементом, що запускається"
+msgstr "不是可以啟動的項目"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "Вимкнути з'єднання з менеджером сеансів"
+msgstr "停用到作業階段管理程式的連線"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "Вказати файл, що містить збережену конфігурацію"
+msgstr "指定含有已儲存組態的檔案"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr "ФАЙЛ"
+msgstr "檔案"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Вказати ідентифікатор керування сеансом"
+msgstr "指定作業階段管理 ID"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -267,213 +270,209 @@ msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr "Параметри керування сеансами:"
+msgstr "作業階段管理選項："
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "Показати параметри керування сеансами"
+msgstr "顯示作業階段管理選項"
 
 #: ../mate-session/gsm-mateconf.c:106
 #, c-format
 msgid ""
 "There is a problem with the configuration server.\n"
 "(%s exited with status %d)"
-msgstr "Виникла проблема з сервером конфігурації.\n(%s завершився зі станом %d)"
+msgstr "組態伺服器發生問題。\n(%s 以狀態 %d 關閉)"
 
 #: ../mate-session/gsm-inhibit-dialog.c:255
 #, c-format
 msgid "Icon '%s' not found"
-msgstr "Піктограму «%s» не знайдено"
+msgstr "找不到圖示「%s」"
 
 #: ../mate-session/gsm-inhibit-dialog.c:620
 msgid "Unknown"
-msgstr "Невідомо"
+msgstr "不明"
 
 #: ../mate-session/gsm-inhibit-dialog.c:671
 msgid "A program is still running:"
-msgstr "Програма досі працює:"
+msgstr "一個程式仍在執行中："
 
 #: ../mate-session/gsm-inhibit-dialog.c:675
 msgid "Some programs are still running:"
-msgstr "Деякі програми досі працюють:"
+msgstr "有些程式仍在執行中："
 
 #: ../mate-session/gsm-inhibit-dialog.c:676
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Очікування завершення роботи програм.  Переривання цих програм може привести до втрати вашої роботи."
+msgstr "正在等待程式結束。中斷這些程式可能造成您進行中的工作遺失。"
 
 #: ../mate-session/gsm-inhibit-dialog.c:906
 msgid "Switch User Anyway"
-msgstr "Перемикнути користувача попри все"
+msgstr "強制切換使用者"
 
 #: ../mate-session/gsm-inhibit-dialog.c:909
 msgid "Log Out Anyway"
-msgstr "Все одно вийти з системи"
+msgstr "強制登出"
 
 #: ../mate-session/gsm-inhibit-dialog.c:912
 msgid "Suspend Anyway"
-msgstr "Призупинити систему попри все"
+msgstr "強制暫停"
 
 #: ../mate-session/gsm-inhibit-dialog.c:915
 msgid "Hibernate Anyway"
-msgstr "Перевести у режим сну попри все"
+msgstr "強制休眠"
 
 #: ../mate-session/gsm-inhibit-dialog.c:918
 msgid "Shut Down Anyway"
-msgstr "Все одно вимкнути"
+msgstr "強制關閉電腦"
 
 #: ../mate-session/gsm-inhibit-dialog.c:921
 msgid "Reboot Anyway"
-msgstr "Перезавантажити попри все"
+msgstr "強制重新開機"
 
 #: ../mate-session/gsm-inhibit-dialog.c:929
 msgid "Lock Screen"
-msgstr "Заблокувати екран"
+msgstr "鎖定螢幕"
 
 #: ../mate-session/gsm-inhibit-dialog.c:932
 msgid "Cancel"
-msgstr "Скасувати"
+msgstr "取消"
 
 #: ../mate-session/gsm-logout-dialog.c:266
 #, c-format
 msgid "You will be automatically logged out in %d second."
 msgid_plural "You will be automatically logged out in %d seconds."
-msgstr[0] "Сеанс буде автоматично завершено через %d секунду."
-msgstr[1] "Сеанс буде автоматично завершено через %d секунди."
-msgstr[2] "Сеанс буде автоматично завершено через %d секунд."
+msgstr[0] "您會在 %d 秒後自動登出。"
 
 #: ../mate-session/gsm-logout-dialog.c:274
 #, c-format
 msgid "This system will be automatically shut down in %d second."
 msgid_plural "This system will be automatically shut down in %d seconds."
-msgstr[0] "Систему буде вимкнено автоматично через %d секунду."
-msgstr[1] "Систему буде вимкнено автоматично через %d секунди."
-msgstr[2] "Систему буде вимкнено автоматично через %d секунд."
+msgstr[0] "本系統會在 %d 秒後自動關閉。"
 
 #: ../mate-session/gsm-logout-dialog.c:306
 #, c-format
 msgid "You are currently logged in as \"%s\"."
-msgstr "Ви зареєстровані у системі як користувач «%s»."
+msgstr "您目前以「%s」的身分登入。"
 
 #: ../mate-session/gsm-logout-dialog.c:372
 msgid "Log out of this system now?"
-msgstr "Вийти з системи зараз?"
+msgstr "是否立刻登出系統？"
 
 #: ../mate-session/gsm-logout-dialog.c:378
 msgid "_Switch User"
-msgstr "_Перемикнути користувача"
+msgstr "切換使用者(_S)"
 
 #: ../mate-session/gsm-logout-dialog.c:387
 msgid "_Log Out"
-msgstr "_Завершити сеанс"
+msgstr "登出(_L)"
 
 #: ../mate-session/gsm-logout-dialog.c:393
 msgid "Shut down this system now?"
-msgstr "Вимкнути систему зараз?"
+msgstr "是否立刻關閉這個系統？"
 
 #: ../mate-session/gsm-logout-dialog.c:399
 msgid "S_uspend"
-msgstr "_Режим очікування"
+msgstr "暫停(_U)"
 
 #: ../mate-session/gsm-logout-dialog.c:405
 msgid "_Hibernate"
-msgstr "_Режим сну"
+msgstr "休眠(_H)"
 
 #: ../mate-session/gsm-logout-dialog.c:411
 msgid "_Restart"
-msgstr "Пе_резавантажити"
+msgstr "重新啟動(_R)"
 
 #: ../mate-session/gsm-logout-dialog.c:421
 msgid "_Shut Down"
-msgstr "_Вимкнути"
+msgstr "關閉電腦(_S)"
 
 #: ../mate-session/gsm-manager.c:1237 ../mate-session/gsm-manager.c:1929
 msgid "Not responding"
-msgstr "Не відповідає"
+msgstr "沒有回應"
 
 #: ../mate-session/gsm-xsmp-client.c:1189
 msgid "This program is blocking logout."
-msgstr "Ця програма блокує вихід з системи."
+msgstr "這個程式正在阻擋登出。"
 
 #: ../mate-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr "Відхиляються нові клієнти, тому що система знаходиться у стані вимикання.\n"
+msgstr "因為目前此作業階段即將關閉電腦，拒絕新的客戶端連線\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
-msgstr "Не вдається створити сокет прослуховування ICE: %s"
+msgstr "無法建立 ICE 監聽插槽：%s"
 
 #. Oh well, no X for you!
 #: ../mate-session/gsm-util.c:354
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Не вдається запустити сеанс (та з'єднатися з X-сервером)"
+msgstr "無法啟動登入作業階段（並且無法連線至 X 伺服器）"
 
 #: ../mate-session/main.c:423
 msgid "Override standard autostart directories"
-msgstr "Перевизначити стандартні каталоги автозапуску"
+msgstr "覆蓋標準的自動啟動目錄"
 
 #: ../mate-session/main.c:424
 msgid "MateConf key used to look up default session"
-msgstr "Ключ MateConf, що використовується для пошуку типового сеансу"
+msgstr "用來查詢預設作業階段的 MateConf 設定鍵"
 
 #: ../mate-session/main.c:425
 msgid "Enable debugging code"
-msgstr "Увімкнути налагоджувальний код"
+msgstr "啟用除錯碼"
 
 #: ../mate-session/main.c:426
 msgid "Do not load user-specified applications"
-msgstr "Не завантажувати вибрані користувачем програми"
+msgstr "不要載入使用者指定的應用程式"
 
 #: ../mate-session/main.c:447
 msgid " - the MATE session manager"
-msgstr " - керування сеансом MATE"
+msgstr " - MATE 作業階段管理員"
 
 #: ../tools/mate-session-save.c:65
 msgid "Log out"
-msgstr "Завершити сеанс"
+msgstr "登出"
 
 #: ../tools/mate-session-save.c:66
 msgid "Log out, ignoring any existing inhibitors"
-msgstr "Завершити сеанс, ігноруючи будь-які стримування"
+msgstr "登出，忽略任何既存的限制因素"
 
 #: ../tools/mate-session-save.c:67
 msgid "Show logout dialog"
-msgstr "Показати діалог завершення сеансу"
+msgstr "顯示登出對話盒"
 
 #: ../tools/mate-session-save.c:68
 msgid "Show shutdown dialog"
-msgstr "Показати діалог вимикання"
+msgstr "顯示關機對話盒"
 
 #: ../tools/mate-session-save.c:69
 msgid "Use dialog boxes for errors"
-msgstr "Використовувати діалогові вікна для помилок"
+msgstr "使用對話視窗顯示錯誤"
 
 #. deprecated options
 #: ../tools/mate-session-save.c:71
 msgid "Set the current session name"
-msgstr "Встановити назву поточного сеансу"
+msgstr "設定目前作業階段名稱"
 
 #: ../tools/mate-session-save.c:71
 msgid "NAME"
-msgstr "НАЗВА"
+msgstr "名稱"
 
 #: ../tools/mate-session-save.c:72
 msgid "Kill session"
-msgstr "Знищити сеанс"
+msgstr "強行中止作業階段"
 
 #: ../tools/mate-session-save.c:73
 msgid "Do not require confirmation"
-msgstr "Не вимагати підтвердження"
+msgstr "無需確定"
 
 #: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
 msgid "Could not connect to the session manager"
-msgstr "Не вдається з'єднатися з менеджером сеансів"
+msgstr "無法連接作業階段總管"
 
 #: ../tools/mate-session-save.c:287
 msgid "Program called with conflicting options"
-msgstr "Програму запущено з несумісними параметрами"
+msgstr "以相衝突的選項呼叫程式"
