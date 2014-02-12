@@ -729,6 +729,42 @@ gsp_app_reload_at (GspApp       *app,
         gsp_app_new (path, xdg_position);
 }
 
+gboolean
+gsp_app_can_launch (GKeyFile *keyfile)
+{
+        char **only_show_in, **not_show_in;
+        gboolean found;
+        int i;
+
+        only_show_in = g_key_file_get_string_list (keyfile,
+                                                   G_KEY_FILE_DESKTOP_GROUP,
+                                                   G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN,
+                                                   NULL, NULL);
+        if (only_show_in) {
+                for (i = 0, found = FALSE; only_show_in[i] && !found; i++) {
+                        if (!strcmp (only_show_in[i], "MATE"))
+                                found = TRUE;
+                }
+                g_strfreev (only_show_in);
+                if (!found)
+                    return FALSE;
+        }
+        not_show_in = g_key_file_get_string_list (keyfile,
+                                                  G_KEY_FILE_DESKTOP_GROUP,
+                                                  G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN,
+                                                  NULL, NULL);
+        if (not_show_in) {
+                for (i = 0, found = FALSE; not_show_in[i] && !found; i++) {
+                        if (!strcmp (not_show_in[i], "MATE"))
+                                found = TRUE;
+                }
+                g_strfreev (not_show_in);
+                if (found)
+                        return FALSE;
+        }
+        return TRUE;
+}
+
 GspApp *
 gsp_app_new (const char   *path,
              unsigned int  xdg_position)
@@ -772,6 +808,12 @@ gsp_app_new (const char   *path,
 
         keyfile = g_key_file_new ();
         if (!g_key_file_load_from_file (keyfile, path, G_KEY_FILE_NONE, NULL)) {
+                g_key_file_free (keyfile);
+                g_free (basename);
+                return NULL;
+        }
+
+        if (!gsp_app_can_launch (keyfile)) {
                 g_key_file_free (keyfile);
                 g_free (basename);
                 return NULL;
