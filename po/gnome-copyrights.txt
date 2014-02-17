@@ -316,7 +316,7 @@
 
 ========== en@shaw.po ==========
 # Shavian translation for gnome-session.
-# Copyright (C) 2009 The Mate Foundation.
+# Copyright (C) 2009 The GNOME Foundation.
 # Thomas Thurman <tthurman@gnome.org>, 2009.
 
 

@@ -1,5 +1,5 @@
 # Canadian English translation of mate-session
-# Copyright (C) 2004-2006 Adam Weinberger and the MATE Foundation
+# Copyright (C) 2004-2006 Adam Weinberger and the GNOME Foundation
 # This file is distributed under the same licence as the mate-session package.
 # Adam Weinberger <adamw@gnome.org>, 2004, 2005, 2006.
 #
