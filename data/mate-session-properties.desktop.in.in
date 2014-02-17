@@ -7,6 +7,7 @@ Terminal=false
 Type=Application
 StartupNotify=true
 Categories=GTK;Settings;X-MATE-PersonalSettings;
+Keywords=MATE;session;properties;applications;login;start;
 OnlyShowIn=MATE;
 X-MATE-Bugzilla-Bugzilla=MATE
 X-MATE-Bugzilla-Product=mate-session

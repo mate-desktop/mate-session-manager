@@ -5,3 +5,4 @@ Exec=mate-session
 TryExec=mate-session
 Icon=
 Type=Application
+Keywords=launch;MATE;desktop;session;
