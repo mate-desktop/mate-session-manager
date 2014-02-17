@@ -1,24 +1,48 @@
-.\"
 .\" mate-session-properties manual page.
 .\" (C) 2009-2010 Vincent Untz (vuntz@gnome.org)
 .\"
-.TH MATE-SESSION-PROPERTIES 1 "MATE"
-.SH NAME
-mate-session-properties \- Configure applications to start on login
-.SH SYNOPSIS
+.TH MATE-SESSION-PROPERTIES 1 "11 February 2014" "MATE Desktop Environment"
+.\" Please adjust this date when revising the manpage.
+.\"
+.SH "NAME"
+mate-session-properties \- Configure applications to start on login.
+.SH "SYNOPSIS"
 .B mate-session-properties
-.SH DESCRIPTION
+.SH "DESCRIPTION"
 .PP
-The \fImate-session-properties\fP program enables the users to
+The \fBmate-session-properties\fP program enables the users to
 configure what applications should be started on login, in addition to
 the default startup applications configured on the system.
 .PP
 It also proposes an interface to save a snapshot of the currently
 running applications so that they can automatically be restored to
 their current state on your next MATE session.
-.SH BUGS
-If you find bugs in the \fImate-session-properties\fP program, please report
-these on https://bugzilla.gnome.org.
-.SH SEE ALSO
-.BR mate-session(1)
-.BR mate-session-save(1)
+.SH "OPTIONS"
+.TP
+\fB\-\-display=DISPLAY\fR
+X display to use.
+.TP
+\fB\-\-version\fR
+Output version information and exit.
+.TP
+\fB\-?, -h, \-\-help\fR
+Print standard command line options.
+.TP
+\fB\-\-help\-all\fR
+Print all command line options.
+.SH "BUGS"
+.SS Should you encounter any bugs, they may be reported at: 
+http://github.com/mate-desktop/mate-session/issues
+.SH "AUTHORS"
+.SS This Manual page was originally written for gnome-session by:
+.nf
+Vincent Untz <vuntz@gnome.org> (2009-2010)
+.fi
+.SS It has been updated for the MATE Desktop Environment by:
+Adam Erdman <hekel@archlinux.info> (2014)
+.SH "SEE ALSO"
+.SS Further information may also be available at: http://wiki.mate-desktop.org/docs
+.P
+.BR mate-session(1),
+.BR mate-session-save(1),
+.BR mate-wm(1)

@@ -1,40 +1,70 @@
-.\"
 .\" mate-session-save manual page.
 .\" (C) 2000 Miguel de Icaza (miguel@helixcode.com)
 .\" (C) 2009-2010 Vincent Untz (vuntz@gnome.org)
 .\"
-.TH MATE-SESSION-SAVE 1 "MATE"
-.SH NAME
+.TH MATE-SESSION-SAVE 1 "11 February 2014" "MATE Desktop Environment"
+.\" Please adjust this date when revising the manpage.
+.\"
+.SH "NAME"
 mate-session-save \- End or save the current MATE session
-.SH SYNOPSIS
+.SH "SYNOPSIS"
 .B mate-session-save [\-\-logout] [\-\-force\-logout] [\-\-logout\-dialog] [\-\-shutdown\-dialog] [\-\-gui] [\-\-kill [\-\-silent]]
-.SH DESCRIPTION
-The \fImate-session-save\fP program can be used from a MATE session to
-save a snapshot of the currently running applications. This session will
-be later restored at your next MATE session.
+.SH "DESCRIPTION"
+The \fBmate-session-save\fP program can be used from a MATE session to save a snapshot of the currently running applications. This session will be later restored at your next MATE session.
+.SH "USAGE"
+The \fB\-\-gui\fP option will report errors in dialog boxes instead of printing to stderr.
 .PP
-The \fB\-\-gui\fP option will report errors in dialog boxes instead of
-printing to stderr.
+If called with the \fB\-\-logout\fP option, the current MATE session will be ended, unless logging out has been inhibited by an application. The \fB\-\-force\-logout\fP option can be used to end the session regardless of the inhibition state.
 .PP
-If called with the \fB\-\-logout\fP option, the current MATE session will be
-ended, unless logging out has been inhibited by an application. The
-\fB\-\-force\-logout\fP option can be used to end the session regardless of
-the inhibition state.
+When the \fB\-\-logout\-dialog\fP option is given, the standard dialog displaying logout options is displayed. When \fB\-\-shutdown\-dialog\fP option is given, the standard dialog displaying shutdown options is displayed.
 .PP
-When the \fB\-\-logout\-dialog\fP option is given, the standard dialog
-displaying logout options is displayed. When \fB\-\-shutdown\-dialog\fP
-option is given, the standard dialog displaying shutdown options is
-displayed.
+The \fB\-\-kill\fP and \fB\-\-silent\fP options are deprecated. The \fB\-\-kill\fP option is equivalent to the \fB\-\-logout\-dialog\fP option. If \fB\-\-silent\fP is used with \fB\-\-kill\fR, then it will behave as if \fB\-\-logout\fP was used.
 .PP
-The \fB\-\-kill\fP and \fB\-\-silent\fP options are deprecated. The
-\fB\-\-kill\fP option is equivalent to the \fB\-\-logout\-dialog\fP
-option. If \fB\-\-silent\fP is used with \fB\-\-kill\fR, then it will
-behave as if \fB\-\-logout\fP was used.
-.PP
-The session is not saved when \fImate-session-save\fP is called with any of
-the options ending the session.
-.SH BUGS
-If you find bugs in the \fImate-session-save\fP program, please report
-these on https://bugzilla.gnome.org.
-.SH SEE ALSO
+The session is not saved when \fBmate-session-save\fP is called with any of the options ending the session.
+.SH "OPTIONS"
+.TP
+\fB\-\-logout\fR
+Log out
+.TP
+\fB\-\-force-logout\fR
+Log out, ignoring any existing inhibitors
+.TP
+\fB\-\-ogout-dialog\fR
+Show logout dialog
+.TP
+\fB\-\-shutdown-dialog\fR
+Show shutdown dialog
+.TP
+\fB\-\-gui\fR
+.br
+Use dialog boxes for errors
+.TP
+\fB\-\-display=DISPLAY\fR
+X display to use.
+.TP
+\fB\-\-version\fR
+Output version information and exit.
+.TP
+\fB\-?, -h, \-\-help\fR
+Print standard command line options.
+.TP
+\fB\-\-help\-all\fR
+Print all command line options.
+.SH "BUGS"
+.SS Should you encounter any bugs, they may be reported at: 
+http://github.com/mate-desktop/mate-session/issues
+.SH "AUTHORS"
+.SS This Man Page has been updated/re-written for the MATE Desktop Environment by:
+Adam Erdman <hekel@archlinux.info> (2014)
+.SH "HISTORY"
+.SS This Manual was originally written for gnome-session by:
+.nf
+Miguel de Icaza <miguel@helixcode.com> (2000)
+Vincent Untz <vuntz@gnome.org> (2009-2010)
+.fi
+.SH "SEE ALSO"
+.SS Further information may also be available at: http://wiki.mate-desktop.org/docs
+.P
+.BR mate-session-properties(1),
+.BR mate-wm(1),
 .BR mate-session(1)
