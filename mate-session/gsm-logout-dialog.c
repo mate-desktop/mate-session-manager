@@ -62,6 +62,8 @@ struct _GsmLogoutDialogPrivate
 #endif
         GsmConsolekit       *consolekit;
 
+        GtkWidget           *progressbar;
+
         int                  timeout;
         unsigned int         timeout_id;
 
@@ -300,7 +302,6 @@ gsm_logout_dialog_timeout (gpointer data)
         GsmLogoutDialog *logout_dialog;
         char            *seconds_warning;
         char            *secondary_text;
-        int              seconds_to_show;
         static char     *session_type = NULL;
         static gboolean  is_not_login;
 
@@ -313,35 +314,27 @@ gsm_logout_dialog_timeout (gpointer data)
                 return FALSE;
         }
 
-        if (logout_dialog->priv->timeout <= 30) {
-                seconds_to_show = logout_dialog->priv->timeout;
-        } else {
-                seconds_to_show = (logout_dialog->priv->timeout/10) * 10;
-
-                if (logout_dialog->priv->timeout % 10)
-                        seconds_to_show += 10;
-        }
-
         switch (logout_dialog->priv->type) {
         case GSM_DIALOG_LOGOUT_TYPE_LOGOUT:
                 seconds_warning = ngettext ("You will be automatically logged "
-                                            "out in %d second.",
+                                            "out in %d second",
                                             "You will be automatically logged "
-                                            "out in %d seconds.",
-                                            seconds_to_show);
+                                            "out in %d seconds",
+                                            logout_dialog->priv->timeout);
                 break;
 
         case GSM_DIALOG_LOGOUT_TYPE_SHUTDOWN:
                 seconds_warning = ngettext ("This system will be automatically "
-                                            "shut down in %d second.",
+                                            "shut down in %d second",
                                             "This system will be automatically "
-                                            "shut down in %d seconds.",
-                                            seconds_to_show);
+                                            "shut down in %d seconds",
+                                            logout_dialog->priv->timeout);
                 break;
 
         default:
                 g_assert_not_reached ();
         }
+        seconds_warning = g_strdup_printf (seconds_warning, logout_dialog->priv->timeout);
 
         if (session_type == NULL) {
 #ifdef HAVE_SYSTEMD
@@ -365,7 +358,7 @@ gsm_logout_dialog_timeout (gpointer data)
         }
 
         if (is_not_login) {
-                char *name, *tmp;
+                char *name;
 
                 name = g_locale_to_utf8 (g_get_real_name (), -1, NULL, NULL, NULL);
 
@@ -377,23 +370,26 @@ gsm_logout_dialog_timeout (gpointer data)
                         name = g_strdup (g_get_user_name ());
                 }
 
-                tmp = g_strdup_printf (_("You are currently logged in as \"%s\"."), name);
-                secondary_text = g_strconcat (tmp, "\n", seconds_warning, NULL);
-                g_free (tmp);
+                secondary_text = g_strdup_printf (_("You are currently logged in as \"%s\"."), name);
 
                 g_free (name);
         } else {
                 secondary_text = g_strdup (seconds_warning);
         }
 
+        gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (logout_dialog->priv->progressbar),
+                                       logout_dialog->priv->timeout / 60.0);
+        gtk_progress_bar_set_text (GTK_PROGRESS_BAR (logout_dialog->priv->progressbar),
+                                   seconds_warning);
+
         gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (logout_dialog),
                                                   secondary_text,
-                                                  seconds_to_show,
                                                   NULL);
 
         logout_dialog->priv->timeout--;
 
         g_free (secondary_text);
+        g_free (seconds_warning);
 
         return TRUE;
 }
@@ -422,6 +418,7 @@ gsm_get_dialog (GsmDialogLogoutType type,
 {
         GsmLogoutDialog *logout_dialog;
         GtkWidget       *dialog_image;
+        GtkWidget       *hbox;
         const char      *primary_text;
         const char      *icon_name;
 
@@ -501,6 +498,15 @@ gsm_get_dialog (GsmDialogLogoutType type,
         }
 
         dialog_image = gtk_message_dialog_get_image (GTK_MESSAGE_DIALOG (logout_dialog));
+
+        hbox = gtk_hbox_new (FALSE, 0);
+        logout_dialog->priv->progressbar = gtk_progress_bar_new ();
+        gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (logout_dialog->priv->progressbar), 1.0);
+        gtk_box_pack_start (GTK_BOX (hbox),
+                            logout_dialog->priv->progressbar,
+                            TRUE, TRUE, 12);
+        gtk_widget_show_all (hbox);
+        gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (logout_dialog))), hbox);
 
         gtk_image_set_from_icon_name (GTK_IMAGE (dialog_image),
                                       icon_name, GTK_ICON_SIZE_DIALOG);
