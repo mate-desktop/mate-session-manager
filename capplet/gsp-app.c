@@ -729,7 +729,7 @@ gsp_app_reload_at (GspApp       *app,
         gsp_app_new (path, xdg_position);
 }
 
-gboolean
+static gboolean
 gsp_app_can_launch (GKeyFile *keyfile)
 {
         char **only_show_in, **not_show_in;

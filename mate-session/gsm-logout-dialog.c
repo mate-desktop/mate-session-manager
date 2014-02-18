@@ -499,7 +499,11 @@ gsm_get_dialog (GsmDialogLogoutType type,
 
         dialog_image = gtk_message_dialog_get_image (GTK_MESSAGE_DIALOG (logout_dialog));
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+        hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+#else
         hbox = gtk_hbox_new (FALSE, 0);
+#endif
         logout_dialog->priv->progressbar = gtk_progress_bar_new ();
         gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (logout_dialog->priv->progressbar), 1.0);
         gtk_box_pack_start (GTK_BOX (hbox),
