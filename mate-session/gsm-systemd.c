@@ -868,7 +868,7 @@ gchar *
 gsm_systemd_get_current_session_type (GsmSystemd *manager)
 {
     GError   *gerror;
-    gchar    *session_id;
+    gchar    *session_id = NULL;
     gchar    *session_class = NULL;
 #ifdef HAVE_SYSTEMD
     int       res;

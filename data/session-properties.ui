@@ -31,6 +31,7 @@
           <object class="GtkHBox" id="hbox1">
             <property name="visible">True</property>
             <property name="spacing">6</property>
+            <property name="expand">True</property>
             <child>
               <object class="GtkScrolledWindow" id="scrolledwindow1">
                 <property name="visible">True</property>
