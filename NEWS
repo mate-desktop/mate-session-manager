@@ -1,4 +1,4 @@
-1.7.2
+1.7.90
   * Show a progress bar in logout dialog
   * Add GTK3 support
   * Add gnome keyring support
