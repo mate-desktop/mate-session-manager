@@ -1,521 +1,478 @@
-# mate-session yn Gymraeg.
-# Copyright (C) 2003 Free Software Foundation, Inc.
-# www.gyfieithu.co.uk <kyfieithu@dotmon.com>, 2003.
-# and contributors
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# www.gyfieithu.co.uk <kyfieithu@dotmon.com>, 2003
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-02 17:48+0000\n"
-"PO-Revision-Date: 2006-03-02 12:20-0000\n"
-"Last-Translator: Rhys Jones <rhys@sucs.org>\n"
-"Language-Team: Cymraeg <mate-cy@pengwyn.linux.org.uk>\n"
+"POT-Creation-Date: 2014-02-17 18:41+0100\n"
+"PO-Revision-Date: 2014-02-17 21:40+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"Language-Team: Welsh (http://www.transifex.com/projects/p/MATE/language/cy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: cy\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != 11) ? 2 : 3;\n"
 
-#: ../mate-session/mate-session.schemas.in.h:1
-msgid "Allow TCP connections"
-msgstr "Caniatáu cysylltiadau TCP"
-
-#: ../mate-session/mate-session.schemas.in.h:2
-msgid ""
-"For security reasons, on platforms which have _IceTcpTransNoListen() "
-"(XFree86 systems), mate-session does not listen for connections on TCP "
-"ports. This option will allow connections from (authorized) remote hosts. "
-"mate-session must be restarted for this to take effect."
+#: ../capplet/gsm-app-dialog.c:125
+msgid "Select Command"
 msgstr ""
-"Am resymau diogelwch, nid yw mate-session yn caniatáu cysylltiadau TCP ar "
-"systemau sy'n darparu _IceTcpTransNoListen() (systemau XFree86). Mae'r "
-"opsiwn hwn yn caniatáu cysylltiadau o westeion pell (awdurdodedig). Mae'n "
-"rhaid ailgychwyn mate-session cyn bo hyn yn cael effaith."
 
-#: ../mate-session/mate-session.schemas.in.h:3
-msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr ""
-"Os galluogir hyn, fe fydd mate-session yn gofyn am gadarnhad cyn diweddu "
-"sesiwn."
-
-#: ../mate-session/mate-session.schemas.in.h:4
-msgid ""
-"If enabled, mate-session will save the session automatically. Otherwise, "
-"the logout dialog will have an option to save the session."
-msgstr ""
-"Os galluogir hyn, fe fydd mate-session yn cadw'r sesiwn yn awtomatig. Fel "
-"arall, fe fydd gan y deialog allgofnodi opsiwn i gadw'r sesiwn."
-
-#: ../mate-session/mate-session.schemas.in.h:5
-msgid "Logout prompt"
-msgstr "Annog allgofnodi"
-
-#: ../mate-session/mate-session.schemas.in.h:6
-msgid "Preferred Image to use for login splash screen"
-msgstr ""
-"Y ddelwedd hoffech gael ei ddefnyddio yn y sgrin gychwyn wrth fewngofnodi"
-
-#: ../mate-session/mate-session.schemas.in.h:7
-msgid "Save sessions"
-msgstr "Cadw sesiynau"
-
-#: ../mate-session/mate-session.schemas.in.h:8
-msgid "Selected option in the log out dialog"
-msgstr "Opsiwn dewisedig yn y deialog allgofnodi"
-
-#: ../mate-session/mate-session.schemas.in.h:9
-msgid "Show the splash screen"
-msgstr "Dangos y sgrin gychwyn"
-
-#: ../mate-session/mate-session.schemas.in.h:10
-msgid "Show the splash screen when the session starts up"
-msgstr "Dangos y sgrin gychwyn wrth gychwyn sesiwn"
-
-#: ../mate-session/mate-session.schemas.in.h:11
-msgid ""
-"This is a relative path value based off the $datadir/pixmaps/ directory. Sub-"
-"directories and image names are valid values. Changing this value will "
-"effect the next session login."
-msgstr ""
-"Mae hwn yn werth perthynol wedi ei seilio oddi ar y plygell $datadir/"
-"pixmaps/. Bydd is ffolderi ac enwau delweddau yn werthoedd dilys. Bydd newid "
-"y gwerthoedd yma yn dod i rym yn y sesiwn mewngofnodi nesaf."
-
-#: ../mate-session/mate-session.schemas.in.h:12
-msgid ""
-"This is the option that will be selected in the logout dialog, valid values "
-"are \"logout\" for logging out, \"shutdown\" for halting the system and "
-"\"restart\" for restarting the system."
-msgstr ""
-"Hon fydd yr opsiwn a dewisir yn y deialog allgofnodi, gwerthoedd dilys yw  "
-"\"logout\" ar gyfer allgofnodi, \"shutdown\" ar gyfer atal system ac "
-"\"restart\" i ail gychwyn y system."
-
-#: ../mate-session/gsm-client-editor.c:97
-msgid "_Order:"
-msgstr "_Trefn:"
-
-#: ../mate-session/gsm-client-editor.c:99
-msgid "The order in which applications are started in the session."
-msgstr "Y drefn mae rhaglenni yn cael eu dechrau ynddi yn y sesiwn."
-
-#: ../mate-session/gsm-client-editor.c:106
-msgid "What happens to the application when it exits."
-msgstr "Beth sy'n digwydd i'r rhaglen pan mae'n terfynu."
-
-#: ../mate-session/gsm-client-editor.c:109
-msgid "_Style:"
-msgstr "_Arddull:"
-
-#: ../mate-session/gsm-client-list.c:150
-msgid "Order"
-msgstr "Trefn"
-
-#: ../mate-session/gsm-client-list.c:155
-msgid "Style"
-msgstr "Arddull"
-
-#: ../mate-session/gsm-client-list.c:160
-msgid "State"
-msgstr "Cyflwr"
-
-#: ../mate-session/gsm-client-list.c:165
-msgid "Program"
-msgstr "Rhaglen"
-
-#: ../mate-session/gsm-client-row.c:31
-msgid "Inactive"
-msgstr "Anweithredol"
-
-#: ../mate-session/gsm-client-row.c:32
-msgid "Waiting to start or already finished."
-msgstr "Aros i gychwyn neu wedi gorffen."
-
-#: ../mate-session/gsm-client-row.c:34
-msgid "Starting"
-msgstr "Wedi dechrau"
-
-#: ../mate-session/gsm-client-row.c:35
-msgid "Started but has not yet reported state."
-msgstr "Wedi dechrau ond heb adroddi ei gyflwr eto."
-
-#: ../mate-session/gsm-client-row.c:37
-msgid "Running"
-msgstr "Gweithredu"
-
-#: ../mate-session/gsm-client-row.c:38
-msgid "A normal member of the session."
-msgstr "Aelod arferol o'r sesiwn."
-
-#: ../mate-session/gsm-client-row.c:40
-msgid "Saving"
-msgstr "Wrthi'n Cadw"
-
-#: ../mate-session/gsm-client-row.c:41
-msgid "Saving session details."
-msgstr "Wrthi'n cadw manylion y sesiwn."
-
-#: ../mate-session/gsm-client-row.c:43
-msgid "Unknown"
-msgstr "Anhysbys"
-
-#: ../mate-session/gsm-client-row.c:44
-msgid "State not reported within timeout."
-msgstr "Ni adroddwyd y cyflwr o fewn y terfyn amser."
-
-#: ../mate-session/gsm-client-row.c:50
-msgid "Normal"
-msgstr "Arferol"
-
-#: ../mate-session/gsm-client-row.c:51
-msgid "Unaffected by logouts but can die."
-msgstr "Heb ei effeithio gan allgofnodi ond caiff derfynu."
-
-#: ../mate-session/gsm-client-row.c:53
-msgid "Restart"
-msgstr "Ailgychwyn"
-
-#: ../mate-session/gsm-client-row.c:54
-msgid "Never allowed to die."
-msgstr "Ni chaiff derfynu."
-
-#: ../mate-session/gsm-client-row.c:56
-msgid "Trash"
-msgstr "Sbwriel"
-
-#: ../mate-session/gsm-client-row.c:57
-msgid "Discarded on logout and can die."
-msgstr "Gwaredir wrth allgofnodi a chaiff derfynu."
-
-#: ../mate-session/gsm-client-row.c:59
-msgid "Settings"
-msgstr "Gosodiadau"
-
-#: ../mate-session/gsm-client-row.c:60
-msgid "Always started on every login."
-msgstr "Caiff ei gychwyn ar bob mewngofnodiad."
-
-#.
-#. * it would be nice to have a dialog which either:
-#. *
-#. * 1.  lets you change the message on it
-#. * 2.  lets you append messages and has a "history"
-#. *
-#. * for now, we just kill the old dialog and pop up a new one.
-#.
-#: ../mate-session/gsm-gsd.c:41
-msgid ""
-"There was an error starting the MATE Settings Daemon.\n"
-"\n"
-"Some things, such as themes, sounds, or background settings may not work "
-"correctly."
-msgstr ""
-"Roedd gwall wrth gychwyn Ellyll Gosodiadau MATE.\n"
-"\n"
-"Efallai na fydd rhai pethau (megis themâu, seiniau a chefndir) yn gweithio'n "
-"gywir."
-
-#: ../mate-session/gsm-gsd.c:53
-msgid ""
-"\n"
-"\n"
-"The last error message was:\n"
-"\n"
-msgstr ""
-"\n"
-"\n"
-"Y neges gwall diwethaf oedd:\n"
-"\n"
-"\n"
-
-#: ../mate-session/gsm-gsd.c:58
-msgid ""
-"\n"
-"\n"
-"MATE will still try to restart the Settings Daemon next time you log in."
-msgstr ""
-"\n"
-"\n"
-"Bydd MATE o hyd yn ceisio ailgychwyn y Daemon Gosodiadau y tro nesaf i chi "
-"fewngofnodi."
-
-#: ../mate-session/gsm-gsd.c:115
-msgid "There was an unknown activation error."
-msgstr "Roedd gwall cychwyn anhysbys."
-
-#: ../mate-session/gsm-gsd.c:157
-msgid "The Settings Daemon restarted too many times."
-msgstr "Fe ailgychwynnodd Daemon Gosodiadau MATE gormod o weithiau."
-
-#: ../mate-session/logout.c:408
-msgid "Are you sure you want to log out?"
-msgstr "Ydych chi'n sicr eich bod eisiau allgofnodi?"
-
-#: ../mate-session/logout.c:425
-msgid "_Save current setup"
-msgstr "_Cadw'r cyflwr cyfredol"
-
-#: ../mate-session/logout.c:448
-msgid "Action"
-msgstr "Gweithred"
-
-#: ../mate-session/logout.c:465
-msgid "_Log out"
-msgstr "_Allgofnodi"
-
-#: ../mate-session/logout.c:472
-msgid "Sh_ut down"
-msgstr "_Troi'r cyfrifiadur i ffwrdd"
-
-#: ../mate-session/logout.c:480
-msgid "_Restart the computer"
-msgstr "A_il-gychwyn y cyfrifiadur"
-
-#: ../mate-session/main.c:82
-msgid "Specify a session name to load"
-msgstr "Penodwch enw sesiwn i'w lwytho"
-
-#: ../mate-session/main.c:83
-msgid "Only read saved sessions from the default.session file"
-msgstr "Darllen sesiynau wedi'u cadw o'r ffeil default.session yn unig"
-
-#: ../mate-session/main.c:84
-msgid "Millisecond period spent waiting for clients to register (0=forever)"
-msgstr ""
-"Y milfedau o eiliadau dylid aros am gleientiaid i gofrestru (0 = am byth)"
-
-#: ../mate-session/main.c:85
-msgid "Millisecond period spent waiting for clients to respond (0=forever)"
-msgstr "Y milfedau o eiliadau dylid aros am gleientiaid i ateb (0 = am byth)"
-
-#: ../mate-session/main.c:86
-msgid "Millisecond period spent waiting for clients to die (0=forever)"
-msgstr ""
-"Y milfedau o eiliadau dylid aros am gleientiaid i derfynu (0 = am byth)"
-
-#: ../mate-session/main.c:266
-#, c-format
-msgid ""
-"Could not look up internet address for %s.\n"
-"This will prevent MATE from operating correctly.\n"
-"It may be possible to correct the problem by adding\n"
-"%s to the file /etc/hosts."
-msgstr ""
-"Methu canfod y cyfeiriad rhyngrwyd ar gyfer %s.\n"
-"Fe fydd hyn yn rhwystro MATE rhag gweithredu'n gywir.\n"
-"Fe all fod yn bosib cywiro'r broblem gan ychwanegu\n"
-"%s y ffeil /etc/hosts."
-
-#: ../mate-session/main.c:273
-msgid "Log in Anyway"
-msgstr "Mewngofnodi Fodd Bynnag"
-
-#: ../mate-session/main.c:274
-msgid "Try Again"
-msgstr "Ceisio Eto"
-
-#: ../mate-session/manager.c:223
-msgid "Your session has been saved"
-msgstr "Mae eich sesiwn wedi ei gadw"
-
-#: ../mate-session/manager.c:527
-msgid "Wait abandoned due to conflict."
-msgstr "Peidiwyd aros oherwydd gwrthdrawiad"
-
-#: ../mate-session/manager.c:1035
-#, c-format
-msgid "No response to the %s command."
-msgstr "Dim ateb i'r gorchymyn %s."
-
-#: ../mate-session/manager.c:1036
-msgid "The program may be slow, stopped or broken."
-msgstr "Fe all fod y rhaglen yn araf, yn seibio, neu wedi torri."
-
-#: ../mate-session/manager.c:1037
-msgid "You may wait for it to respond or remove it."
-msgstr "Fe allwch aros iddo ymateb neu ei dynnu."
-
-#: ../mate-session/manager.c:1760
-msgid "Restart abandoned due to failures."
-msgstr "Peidiwyd yr ailgychwyniad oherwydd methiannau."
-
-#: ../mate-session/manager.c:1956
-msgid "A session shutdown is in progress."
-msgstr "Mae terfyniad sesiwn yn digwydd."
-
-#: ../mate-session/save-session.c:46
-msgid "Set the current session"
-msgstr "Gosod y sesiwn gyfredol"
-
-#: ../mate-session/save-session.c:47
-msgid "Kill session"
-msgstr "Terfynu'r sesiwn"
-
-#: ../mate-session/save-session.c:48
-msgid "Use dialog boxes"
-msgstr "Defnyddio blychau deialog"
-
-#: ../mate-session/save-session.c:146 ../mate-session/save-session.c:179
-msgid "Could not connect to the session manager"
-msgstr "Methu cysylltu â'r rheolwr sesiwn"
-
-#: ../mate-session/session-names.c:143
-msgid "The session name cannot be empty"
-msgstr "Ni all enw'r sesiwn fod yn wag"
-
-#: ../mate-session/session-names.c:154
-msgid "The session name already exists"
-msgstr "Mae sesiwn gyda'r enw hwn yn bodoli"
-
-#: ../mate-session/session-names.c:188
-msgid "Add a new session"
-msgstr "Ychwanegu sesiwn newydd"
-
-#: ../mate-session/session-names.c:218
-msgid "Edit session name"
-msgstr "Golygu enw'r sesiwn"
-
-#: ../mate-session/session-properties-capplet.c:117
-msgid "Enable"
-msgstr "Galluogi"
-
-#: ../mate-session/session-properties-capplet.c:123
-#: ../mate-session/session-properties-capplet.c:464
-msgid "Disable"
-msgstr "Analluogi"
-
-#: ../mate-session/session-properties-capplet.c:145
-msgid "_Edit"
-msgstr "_Golygu"
-
-#: ../mate-session/session-properties-capplet.c:213
-msgid ""
-"Some changes are not saved.\n"
-"Is it still OK to exit?"
-msgstr ""
-"Mae rhai newidiadau heb eu cadw.\n"
-"Ydy hi'n iawn i derfynu fodd bynnag?"
-
-#: ../mate-session/session-properties-capplet.c:263
-#: ../mate-session/session-properties.desktop.in.in.h:2
-msgid "Sessions"
-msgstr "Sesiynau"
-
-#: ../mate-session/session-properties-capplet.c:296
-msgid "Show splash screen on _login"
-msgstr "Dangos sgrin gychwyn wrth _fewngofnodi"
-
-#: ../mate-session/session-properties-capplet.c:307
-msgid "As_k on logout"
-msgstr "_Cadarnhau wrth allgofnodi"
-
-#: ../mate-session/session-properties-capplet.c:318
-msgid "Automatically save chan_ges to session"
-msgstr "Cadw newidiadau i'r sesiwn yn _awtomatig"
-
-#: ../mate-session/session-properties-capplet.c:329
-msgid "_Sessions:"
-msgstr "_Sesiynau:"
-
-#: ../mate-session/session-properties-capplet.c:347
-msgid "Session Name"
-msgstr "Enw'r Sesiwn"
-
-#: ../mate-session/session-properties-capplet.c:398
-msgid "Session Options"
-msgstr "Dewisiadau'r Sesiwn"
-
-#: ../mate-session/session-properties-capplet.c:407
-msgid "Current Session"
-msgstr "Y Sesiwn Gyfredol"
-
-#: ../mate-session/session-properties-capplet.c:416
-msgid "Additional startup _programs:"
-msgstr "Rhaglenni wrth _gychwyn eraill:"
-
-#: ../mate-session/session-properties-capplet.c:435
-msgid "Command"
-msgstr "Gorchymyn"
-
-#: ../mate-session/session-properties-capplet.c:475
-msgid "Startup Programs"
-msgstr "Rhaglenni Wrth Gychwyn"
-
-#: ../mate-session/session-properties.c:49
-msgid "Remove the currently selected client from the session."
-msgstr "Tynnu'r cleient dewisedig o'r sesiwn"
-
-#: ../mate-session/session-properties.c:55
-msgid "Apply changes to the current session"
-msgstr "Gosod y newidiadau i'r sesiwn gyfredol"
-
-#: ../mate-session/session-properties.c:61
-msgid "The list of programs in the session."
-msgstr "Rhestr y rhaglenni yn y sesiwn."
-
-#: ../mate-session/session-properties.c:88
-msgid "Currently running _programs:"
-msgstr "_Rhaglenni sy'n rhedeg ar hyn o bryd:"
-
-#: ../mate-session/session-properties.c:104
-msgid "Initialize session settings"
-msgstr "Cychwyn gosodiadau'r sesiwn"
-
-#: ../mate-session/session-properties.desktop.in.in.h:1
-msgid "Configure your sessions"
-msgstr "Ffurfweddu eich sesiynau"
-
-#: ../mate-session/splash-widget.c:43
-msgid "Sawfish Window Manager"
-msgstr "Y Rheolwr Ffenestri Sawfish"
-
-#: ../mate-session/splash-widget.c:44
-msgid "Marco Window Manager"
-msgstr "Y Rheolwr Ffenestri Marco"
-
-#: ../mate-session/splash-widget.c:45
-msgid "Window Manager"
-msgstr "Rheolwr Ffenestri"
-
-#: ../mate-session/splash-widget.c:46
-msgid "The Panel"
-msgstr "Y Panel"
-
-#: ../mate-session/splash-widget.c:47
-msgid "Caja"
-msgstr "Caja"
-
-#: ../mate-session/splash-widget.c:48
-msgid "Desktop Settings"
-msgstr "Gosodiadau Penbwrdd"
-
-#: ../mate-session/startup-programs.c:425
-msgid "_Startup Command:"
-msgstr "_Gorchymyn Wrth Gychwyn:"
-
-#: ../mate-session/startup-programs.c:431
-msgid "Startup Command"
-msgstr "Gorchymyn Wrth Gychwyn"
-
-#: ../mate-session/startup-programs.c:460
-msgid "The startup command cannot be empty"
-msgstr "Ni chaiff y gorchymyn wrth gychwyn fod yn wag"
-
-#: ../mate-session/startup-programs.c:497
+#: ../capplet/gsm-app-dialog.c:201
 msgid "Add Startup Program"
 msgstr "Ychwanegu Rhaglen Wrth Gychwyn"
 
-#: ../mate-session/startup-programs.c:535
+#: ../capplet/gsm-app-dialog.c:205
 msgid "Edit Startup Program"
 msgstr "Golygu Rhaglen Wrth Gychwyn"
 
-#~ msgid "Splash Screen Image"
-#~ msgstr "Delwedd y Sgrin Gychwyn"
+#: ../capplet/gsm-app-dialog.c:493
+msgid "The startup command cannot be empty"
+msgstr "Ni chaiff y gorchymyn wrth gychwyn fod yn wag"
 
-#~ msgid "Session Manager Proxy"
-#~ msgstr "Dirprwy Rheolwr Sesiynau"
+#: ../capplet/gsm-app-dialog.c:499
+msgid "The startup command is not valid"
+msgstr ""
 
-#~ msgid "Save Current Session"
-#~ msgstr "Cadw'r Sesiwn Gyfredol"
+#: ../capplet/gsm-properties-dialog.c:552
+msgid "Enabled"
+msgstr ""
 
-#~ msgid "Save current state of desktop"
-#~ msgstr "Cadw cyflwr cyfredol y penbwrdd"
+#: ../capplet/gsm-properties-dialog.c:564
+msgid "Icon"
+msgstr ""
+
+#: ../capplet/gsm-properties-dialog.c:576
+msgid "Program"
+msgstr "Rhaglen"
+
+#: ../capplet/gsm-properties-dialog.c:796
+msgid "Startup Applications Preferences"
+msgstr ""
+
+#: ../capplet/gsp-app.c:269
+msgid "No name"
+msgstr ""
+
+#: ../capplet/gsp-app.c:275
+msgid "No description"
+msgstr ""
+
+#: ../capplet/main.c:35 ../mate-session/main.c:482
+msgid "Version of this application"
+msgstr ""
+
+#: ../capplet/main.c:54
+msgid "Could not display help document"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:1
+msgid "Current session start time"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:2
+msgid "Unix time of the start of the current session."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:3
+msgid "Save sessions"
+msgstr "Cadw sesiynau"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:4
+msgid "If enabled, mate-session will save the session automatically."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:5
+msgid "Logout prompt"
+msgstr "Annog allgofnodi"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:6
+msgid "If enabled, mate-session will prompt the user before ending a session."
+msgstr "Os galluogir hyn, fe fydd mate-session yn gofyn am gadarnhad cyn diweddu sesiwn."
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:7
+msgid "Time before session is considered idle"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:8
+msgid ""
+"The number of minutes of inactivity before the session is considered idle."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:9
+msgid "Default session"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:10
+msgid "List of applications that are part of the default session."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:11
+msgid "Required session components"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:12
+msgid ""
+"List of components that are required as part of the session. (Each element "
+"names a key under \"/org/mate/desktop/session/required_components\"). The "
+"Startup Applications preferences tool will not normally allow users to "
+"remove a required component from the session, and the session manager will "
+"automatically add the required components back to the session at login time "
+"if they do get removed."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/mate-wm.desktop.in.in.h:1
+msgid "Window Manager"
+msgstr "Rheolwr Ffenestri"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:14
+msgid ""
+"The window manager is the program that draws the title bar and borders "
+"around windows, and allows you to move and resize windows."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:15
+msgid "Panel"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:16
+msgid ""
+"The panel provides the bar at the top or bottom of the screen containing "
+"menus, the window list, status icons, the clock, etc."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:17
+msgid "File Manager"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:18
+msgid ""
+"The file manager provides the desktop icons and allows you to interact with "
+"your saved files."
+msgstr ""
+
+#: ../data/mate.desktop.in.h:1
+msgid "MATE"
+msgstr ""
+
+#: ../data/mate.desktop.in.h:2
+msgid "This session logs you into MATE"
+msgstr ""
+
+#: ../data/gsm-inhibit-dialog.ui.h:1
+msgid "<b>Some programs are still running:</b>"
+msgstr ""
+
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
+msgid ""
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
+msgstr ""
+
+#: ../data/mate-session-properties.desktop.in.in.h:1
+msgid "Startup Applications"
+msgstr ""
+
+#: ../data/mate-session-properties.desktop.in.in.h:2
+msgid "Choose what applications to start when you log in"
+msgstr ""
+
+#: ../data/session-properties.ui.h:1
+msgid "Additional startup _programs:"
+msgstr "Rhaglenni wrth _gychwyn eraill:"
+
+#: ../data/session-properties.ui.h:2
+msgid "Startup Programs"
+msgstr "Rhaglenni Wrth Gychwyn"
+
+#: ../data/session-properties.ui.h:3
+msgid "_Automatically remember running applications when logging out"
+msgstr ""
+
+#: ../data/session-properties.ui.h:4
+msgid "_Remember Currently Running Application"
+msgstr ""
+
+#: ../data/session-properties.ui.h:5
+msgid "Options"
+msgstr ""
+
+#: ../data/session-properties.ui.h:6
+msgid "Browse…"
+msgstr ""
+
+#: ../data/session-properties.ui.h:7
+msgid "Comm_ent:"
+msgstr ""
+
+#: ../data/session-properties.ui.h:8
+msgid "Co_mmand:"
+msgstr ""
+
+#: ../data/session-properties.ui.h:9
+msgid "_Name:"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:152
+#, c-format
+msgid "File is not a valid .desktop file"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:172
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:957
+#, c-format
+msgid "Starting %s"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:1099
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:1167
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:1372
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr ""
+
+#: ../egg/eggdesktopfile.c:1393
+#, c-format
+msgid "Not a launchable item"
+msgstr ""
+
+#: ../egg/eggsmclient.c:225
+msgid "Disable connection to session manager"
+msgstr ""
+
+#: ../egg/eggsmclient.c:228
+msgid "Specify file containing saved configuration"
+msgstr ""
+
+#: ../egg/eggsmclient.c:228
+msgid "FILE"
+msgstr ""
+
+#: ../egg/eggsmclient.c:231
+msgid "Specify session management ID"
+msgstr ""
+
+#: ../egg/eggsmclient.c:231
+msgid "ID"
+msgstr ""
+
+#: ../egg/eggsmclient.c:252
+msgid "Session management options:"
+msgstr ""
+
+#: ../egg/eggsmclient.c:253
+msgid "Show session management options"
+msgstr ""
+
+#: ../mate-session/gsm-inhibit-dialog.c:258
+#, c-format
+msgid "Icon '%s' not found"
+msgstr ""
+
+#: ../mate-session/gsm-inhibit-dialog.c:657
+msgid "Unknown"
+msgstr "Anhysbys"
+
+#: ../mate-session/gsm-inhibit-dialog.c:708
+msgid "A program is still running:"
+msgstr ""
+
+#: ../mate-session/gsm-inhibit-dialog.c:712
+msgid "Some programs are still running:"
+msgstr ""
+
+#: ../mate-session/gsm-inhibit-dialog.c:713
+msgid ""
+"Waiting for programs to finish.  Interrupting these programs may cause you "
+"to lose work."
+msgstr ""
+
+#: ../mate-session/gsm-inhibit-dialog.c:943
+msgid "Switch User Anyway"
+msgstr ""
+
+#: ../mate-session/gsm-inhibit-dialog.c:946
+msgid "Log Out Anyway"
+msgstr ""
+
+#: ../mate-session/gsm-inhibit-dialog.c:949
+msgid "Suspend Anyway"
+msgstr ""
+
+#: ../mate-session/gsm-inhibit-dialog.c:952
+msgid "Hibernate Anyway"
+msgstr ""
+
+#: ../mate-session/gsm-inhibit-dialog.c:955
+msgid "Shut Down Anyway"
+msgstr ""
+
+#: ../mate-session/gsm-inhibit-dialog.c:958
+msgid "Reboot Anyway"
+msgstr ""
+
+#: ../mate-session/gsm-inhibit-dialog.c:966
+msgid "Lock Screen"
+msgstr ""
+
+#: ../mate-session/gsm-inhibit-dialog.c:969
+msgid "Cancel"
+msgstr ""
+
+#: ../mate-session/gsm-logout-dialog.c:319
+#, c-format
+msgid "You will be automatically logged out in %d second"
+msgid_plural "You will be automatically logged out in %d seconds"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: ../mate-session/gsm-logout-dialog.c:327
+#, c-format
+msgid "This system will be automatically shut down in %d second"
+msgid_plural "This system will be automatically shut down in %d seconds"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: ../mate-session/gsm-logout-dialog.c:373
+#, c-format
+msgid "You are currently logged in as \"%s\"."
+msgstr ""
+
+#: ../mate-session/gsm-logout-dialog.c:443
+msgid "Log out of this system now?"
+msgstr ""
+
+#: ../mate-session/gsm-logout-dialog.c:449
+msgid "_Switch User"
+msgstr ""
+
+#: ../mate-session/gsm-logout-dialog.c:458
+msgid "_Log Out"
+msgstr ""
+
+#: ../mate-session/gsm-logout-dialog.c:464
+msgid "Shut down this system now?"
+msgstr ""
+
+#: ../mate-session/gsm-logout-dialog.c:470
+msgid "S_uspend"
+msgstr ""
+
+#: ../mate-session/gsm-logout-dialog.c:476
+msgid "_Hibernate"
+msgstr ""
+
+#: ../mate-session/gsm-logout-dialog.c:482
+msgid "_Restart"
+msgstr ""
+
+#: ../mate-session/gsm-logout-dialog.c:492
+msgid "_Shut Down"
+msgstr ""
+
+#: ../mate-session/gsm-manager.c:1420 ../mate-session/gsm-manager.c:2118
+msgid "Not responding"
+msgstr ""
+
+#: ../mate-session/gsm-xsmp-client.c:1189
+msgid "This program is blocking logout."
+msgstr ""
+
+#: ../mate-session/gsm-xsmp-server.c:325
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
+msgstr ""
+
+#: ../mate-session/gsm-xsmp-server.c:587
+#, c-format
+msgid "Could not create ICE listening socket: %s"
+msgstr ""
+
+#. Oh well, no X for you!
+#: ../mate-session/gsm-util.c:354
+#, c-format
+msgid "Unable to start login session (and unable to connect to the X server)"
+msgstr ""
+
+#: ../mate-session/main.c:479
+msgid "Override standard autostart directories"
+msgstr ""
+
+#: ../mate-session/main.c:480
+msgid "Enable debugging code"
+msgstr ""
+
+#: ../mate-session/main.c:481
+msgid "Do not load user-specified applications"
+msgstr ""
+
+#: ../mate-session/main.c:502
+msgid " - the MATE session manager"
+msgstr ""
+
+#: ../tools/mate-session-save.c:65
+msgid "Log out"
+msgstr ""
+
+#: ../tools/mate-session-save.c:66
+msgid "Log out, ignoring any existing inhibitors"
+msgstr ""
+
+#: ../tools/mate-session-save.c:67
+msgid "Show logout dialog"
+msgstr ""
+
+#: ../tools/mate-session-save.c:68
+msgid "Show shutdown dialog"
+msgstr ""
+
+#: ../tools/mate-session-save.c:69
+msgid "Use dialog boxes for errors"
+msgstr ""
+
+#. deprecated options
+#: ../tools/mate-session-save.c:71
+msgid "Set the current session name"
+msgstr ""
+
+#: ../tools/mate-session-save.c:71
+msgid "NAME"
+msgstr ""
+
+#: ../tools/mate-session-save.c:72
+msgid "Kill session"
+msgstr "Terfynu'r sesiwn"
+
+#: ../tools/mate-session-save.c:73
+msgid "Do not require confirmation"
+msgstr ""
+
+#: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
+msgid "Could not connect to the session manager"
+msgstr "Methu cysylltu â'r rheolwr sesiwn"
+
+#: ../tools/mate-session-save.c:287
+msgid "Program called with conflicting options"
+msgstr ""

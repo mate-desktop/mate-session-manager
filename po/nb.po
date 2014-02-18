@@ -1,54 +1,55 @@
-# Norwegian translation of mate-session (bokmål dialect).
-# Copyright (C) 1998-2004 Free Software Foundation, Inc.
-# Kjartan Maraas <kmaraas@gnome.org>, 1998-2010.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session 2.31.x\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-02 11:31+0200\n"
-"PO-Revision-Date: 2010-09-02 11:32+0200\n"
-"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
-"Language-Team: Norwegian <i18n-nb@lister.ping.uio.no>\n"
-"Language: no\n"
+"POT-Creation-Date: 2014-02-17 18:41+0100\n"
+"PO-Revision-Date: 2014-02-17 21:40+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/MATE/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
 msgstr "Velg kommando"
 
-#: ../capplet/gsm-app-dialog.c:194
+#: ../capplet/gsm-app-dialog.c:201
 msgid "Add Startup Program"
 msgstr "Legg til oppstartsprogram"
 
-#: ../capplet/gsm-app-dialog.c:198
+#: ../capplet/gsm-app-dialog.c:205
 msgid "Edit Startup Program"
 msgstr "Rediger oppstartsprogram"
 
-#: ../capplet/gsm-app-dialog.c:486
+#: ../capplet/gsm-app-dialog.c:493
 msgid "The startup command cannot be empty"
 msgstr "Oppstartskommando kan ikke være tom"
 
-#: ../capplet/gsm-app-dialog.c:492
+#: ../capplet/gsm-app-dialog.c:499
 msgid "The startup command is not valid"
 msgstr "Oppstartskommandoen er ikke gyldig"
 
-#: ../capplet/gsm-properties-dialog.c:555
+#: ../capplet/gsm-properties-dialog.c:552
 msgid "Enabled"
 msgstr "Aktivert"
 
-#: ../capplet/gsm-properties-dialog.c:567
+#: ../capplet/gsm-properties-dialog.c:564
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../capplet/gsm-properties-dialog.c:579
+#: ../capplet/gsm-properties-dialog.c:576
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/gsm-properties-dialog.c:792
+#: ../capplet/gsm-properties-dialog.c:796
 msgid "Startup Applications Preferences"
 msgstr "Brukervalg for oppstartsprogrammer"
 
@@ -60,13 +61,99 @@ msgstr "Uten navn"
 msgid "No description"
 msgstr "Ingen beskrivelse"
 
-#: ../capplet/main.c:37 ../mate-session/main.c:441
+#: ../capplet/main.c:35 ../mate-session/main.c:482
 msgid "Version of this application"
 msgstr "Versjon av dette programmet"
 
-#: ../capplet/main.c:63
+#: ../capplet/main.c:54
 msgid "Could not display help document"
 msgstr "Kunne ikke vise hjelp"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:1
+msgid "Current session start time"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:2
+msgid "Unix time of the start of the current session."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:3
+msgid "Save sessions"
+msgstr "Lagre sesjoner"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:4
+msgid "If enabled, mate-session will save the session automatically."
+msgstr "Hvis denne er aktiv vil sesjonen lagres automatisk."
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:5
+msgid "Logout prompt"
+msgstr "Spør ved avlogging"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:6
+msgid "If enabled, mate-session will prompt the user before ending a session."
+msgstr "Aktiveres hvis brukeren ønsker en spørsmålsdialog før sesjonen avsluttes."
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:7
+msgid "Time before session is considered idle"
+msgstr "Tid før sesjonen antas å være ubrukt"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:8
+msgid ""
+"The number of minutes of inactivity before the session is considered idle."
+msgstr "Antall minutter uten aktivitet før sesjonen anses som inaktiv."
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:9
+msgid "Default session"
+msgstr "Forvalgt sesjon"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:10
+msgid "List of applications that are part of the default session."
+msgstr "Liste med programmer som er en del av forvalgt sesjon."
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:11
+msgid "Required session components"
+msgstr "Nødvendige deler av sesjonen"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:12
+msgid ""
+"List of components that are required as part of the session. (Each element "
+"names a key under \"/org/mate/desktop/session/required_components\"). The "
+"Startup Applications preferences tool will not normally allow users to "
+"remove a required component from the session, and the session manager will "
+"automatically add the required components back to the session at login time "
+"if they do get removed."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/mate-wm.desktop.in.in.h:1
+msgid "Window Manager"
+msgstr "Vindushåndterer"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:14
+msgid ""
+"The window manager is the program that draws the title bar and borders "
+"around windows, and allows you to move and resize windows."
+msgstr "Vindushåndterer er programmet som styrer tittellinje og kanter rundt vinduer i tillegg til å la deg flytte og endre størrelse på vinduene."
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:15
+msgid "Panel"
+msgstr "Panel"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:16
+msgid ""
+"The panel provides the bar at the top or bottom of the screen containing "
+"menus, the window list, status icons, the clock, etc."
+msgstr "Panelet er linjen øverst eller nederst på skjermen som inneholder menyer, vinduliste, statusikoner, klokke, etc."
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:17
+msgid "File Manager"
+msgstr "Filhåndterer"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:18
+msgid ""
+"The file manager provides the desktop icons and allows you to interact with "
+"your saved files."
+msgstr "Filhåndterer gir deg skrivebordsikoner og lar deg håndtere dine filer."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -76,178 +163,91 @@ msgstr "MATE"
 msgid "This session logs you into MATE"
 msgstr "Denne sesjonen logger inn i MATE"
 
-#: ../data/mate-session.schemas.in.in.h:1
-msgid "Default session"
-msgstr "Forvalgt sesjon"
-
-#: ../data/mate-session.schemas.in.in.h:2
-msgid "File Manager"
-msgstr "Filhåndterer"
-
-#: ../data/mate-session.schemas.in.in.h:3
-msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr ""
-"Aktiveres hvis brukeren ønsker en spørsmålsdialog før sesjonen avsluttes."
-
-#: ../data/mate-session.schemas.in.in.h:4
-msgid "If enabled, mate-session will save the session automatically."
-msgstr "Hvis denne er aktiv vil sesjonen lagres automatisk."
-
-#: ../data/mate-session.schemas.in.in.h:5
-msgid "List of applications that are part of the default session."
-msgstr "Liste med programmer som er en del av forvalgt sesjon."
-
-#: ../data/mate-session.schemas.in.in.h:6
-msgid ""
-"List of components that are required as part of the session. (Each element "
-"names a key under \"/desktop/mate/session/required_components\"). The "
-"Startup Applications preferences tool will not normally allow users to "
-"remove a required component from the session, and the session manager will "
-"automatically add the required components back to the session at login time "
-"if they do get removed."
-msgstr ""
-"Liste med komponenter som kreves i sesjonen. (Hvert element navngir en "
-"nøkkel under «/desktop/mate/session/required_components».) Dialog for "
-"egenskaper for sesjon vil vanligvis ikke la brukere fjerne en påkrevet "
-"komponent fra sesjonen. Sesjonshåndtereren vil automatisk legge tilbake "
-"påkrevede komponenter i sesjonen hvis de fjernes."
-
-#: ../data/mate-session.schemas.in.in.h:7
-msgid "Logout prompt"
-msgstr "Spør ved avlogging"
-
-#: ../data/mate-session.schemas.in.in.h:8
-msgid "Panel"
-msgstr "Panel"
-
-#: ../data/mate-session.schemas.in.in.h:9
-msgid "Required session components"
-msgstr "Nødvendige deler av sesjonen"
-
-#: ../data/mate-session.schemas.in.in.h:10
-msgid "Save sessions"
-msgstr "Lagre sesjoner"
-
-#: ../data/mate-session.schemas.in.in.h:11
-msgid ""
-"The file manager provides the desktop icons and allows you to interact with "
-"your saved files."
-msgstr "Filhåndterer gir deg skrivebordsikoner og lar deg håndtere dine filer."
-
-#: ../data/mate-session.schemas.in.in.h:12
-msgid ""
-"The number of minutes of inactivity before the session is considered idle."
-msgstr "Antall minutter uten aktivitet før sesjonen anses som inaktiv."
-
-#: ../data/mate-session.schemas.in.in.h:13
-msgid ""
-"The panel provides the bar at the top or bottom of the screen containing "
-"menus, the window list, status icons, the clock, etc."
-msgstr ""
-"Panelet er linjen øverst eller nederst på skjermen som inneholder menyer, "
-"vinduliste, statusikoner, klokke, etc."
-
-#: ../data/mate-session.schemas.in.in.h:14
-msgid ""
-"The window manager is the program that draws the title bar and borders "
-"around windows, and allows you to move and resize windows."
-msgstr ""
-"Vindushåndterer er programmet som styrer tittellinje og kanter rundt vinduer "
-"i tillegg til å la deg flytte og endre størrelse på vinduene."
-
-#: ../data/mate-session.schemas.in.in.h:15
-msgid "Time before session is considered idle"
-msgstr "Tid før sesjonen antas å være ubrukt"
-
-#: ../data/mate-session.schemas.in.in.h:16 ../data/mate-wm.desktop.in.in.h:1
-msgid "Window Manager"
-msgstr "Vindushåndterer"
-
 #: ../data/gsm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Noen programmer kjører fremdeles:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:667
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr "Venter på at programmet skal avsluttes. Hvis du avbryter programmet kan du miste data."
 
-#: ../data/session-properties.desktop.in.in.h:1
-msgid "Choose what applications to start when you log in"
-msgstr "Velg programmer som skal startes når du logger inn"
-
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
 msgstr "Oppstartsprogrammer"
+
+#: ../data/mate-session-properties.desktop.in.in.h:2
+msgid "Choose what applications to start when you log in"
+msgstr "Velg programmer som skal startes når du logger inn"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "Flere oppstarts_programmer:"
 
 #: ../data/session-properties.ui.h:2
-msgid "Browse…"
-msgstr "Bla gjennom …"
+msgid "Startup Programs"
+msgstr "Oppstartsprogrammer"
 
 #: ../data/session-properties.ui.h:3
-msgid "Co_mmand:"
-msgstr "Ko_mmando:"
+msgid "_Automatically remember running applications when logging out"
+msgstr "Husk kjørende programmer _automatisk når du logger ut"
 
 #: ../data/session-properties.ui.h:4
-msgid "Comm_ent:"
-msgstr "Komm_entar:"
+msgid "_Remember Currently Running Application"
+msgstr "Husk kjø_rende program"
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
 msgstr "Alternativer"
 
 #: ../data/session-properties.ui.h:6
-msgid "Startup Programs"
-msgstr "Oppstartsprogrammer"
+msgid "Browse…"
+msgstr "Bla gjennom …"
 
 #: ../data/session-properties.ui.h:7
-msgid "_Automatically remember running applications when logging out"
-msgstr "Husk kjørende programmer _automatisk når du logger ut"
+msgid "Comm_ent:"
+msgstr "Komm_entar:"
 
 #: ../data/session-properties.ui.h:8
+msgid "Co_mmand:"
+msgstr "Ko_mmando:"
+
+#: ../data/session-properties.ui.h:9
 msgid "_Name:"
 msgstr "_Navn:"
 
-#: ../data/session-properties.ui.h:9
-msgid "_Remember Currently Running Application"
-msgstr "Husk kjø_rende program"
-
-#: ../egg/eggdesktopfile.c:165
+#: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
 msgstr "Filen er ikke en gyldig .desktop-fil"
 
-#: ../egg/eggdesktopfile.c:188
+#: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Versjon «%s» i skrivebordsfil ikke gjenkjent"
 
-#: ../egg/eggdesktopfile.c:958
+#: ../egg/eggdesktopfile.c:957
 #, c-format
 msgid "Starting %s"
 msgstr "Starter %s"
 
-#: ../egg/eggdesktopfile.c:1100
+#: ../egg/eggdesktopfile.c:1099
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "Programmet tar ikke dokumenter på kommandolinjen"
 
-#: ../egg/eggdesktopfile.c:1168
+#: ../egg/eggdesktopfile.c:1167
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Ikke gjenkjent oppstartsflagg: %d"
 
-#: ../egg/eggdesktopfile.c:1373
+#: ../egg/eggdesktopfile.c:1372
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Kan ikke gi dokument-URIer til en skrivebordsoppføring med «Type=Link»"
 
-#: ../egg/eggdesktopfile.c:1394
+#: ../egg/eggdesktopfile.c:1393
 #, c-format
 msgid "Not a launchable item"
 msgstr "Ikke en startbar oppføring"
@@ -280,124 +280,113 @@ msgstr "Alternativer for sesjonshåndtering:"
 msgid "Show session management options"
 msgstr "Vis alternativer for sesjonshåndtering"
 
-#: ../mate-session/gsm-mateconf.c:106
-#, c-format
-msgid ""
-"There is a problem with the configuration server.\n"
-"(%s exited with status %d)"
-msgstr ""
-"Det er problemer med konfigurasjonstjeneren.\n"
-"(%s avsluttet med status %d)"
-
-#: ../mate-session/gsm-inhibit-dialog.c:255
+#: ../mate-session/gsm-inhibit-dialog.c:258
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Ikon «%s» ikke funnet"
 
-#: ../mate-session/gsm-inhibit-dialog.c:615
+#: ../mate-session/gsm-inhibit-dialog.c:657
 msgid "Unknown"
 msgstr "Ukjent"
 
-#: ../mate-session/gsm-inhibit-dialog.c:666
+#: ../mate-session/gsm-inhibit-dialog.c:708
 msgid "A program is still running:"
 msgstr "Et program kjører fremdeles:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:670
+#: ../mate-session/gsm-inhibit-dialog.c:712
 msgid "Some programs are still running:"
 msgstr "Noen programmer kjører fremdeles:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:671
+#: ../mate-session/gsm-inhibit-dialog.c:713
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr ""
-"Venter på at programmer skal avsluttes. Hvis du avbryter disse programmene "
-"kan du miste data."
+msgstr "Venter på at programmer skal avsluttes. Hvis du avbryter disse programmene kan du miste data."
 
-#: ../mate-session/gsm-inhibit-dialog.c:901
+#: ../mate-session/gsm-inhibit-dialog.c:943
 msgid "Switch User Anyway"
 msgstr "Bytt bruker likevel"
 
-#: ../mate-session/gsm-inhibit-dialog.c:904
+#: ../mate-session/gsm-inhibit-dialog.c:946
 msgid "Log Out Anyway"
 msgstr "Logg ut likevel"
 
-#: ../mate-session/gsm-inhibit-dialog.c:907
+#: ../mate-session/gsm-inhibit-dialog.c:949
 msgid "Suspend Anyway"
 msgstr "Gå i hvilemodus likevel"
 
-#: ../mate-session/gsm-inhibit-dialog.c:910
+#: ../mate-session/gsm-inhibit-dialog.c:952
 msgid "Hibernate Anyway"
 msgstr "Gå i dvalemodus likevel"
 
-#: ../mate-session/gsm-inhibit-dialog.c:913
+#: ../mate-session/gsm-inhibit-dialog.c:955
 msgid "Shut Down Anyway"
 msgstr "Slå av likevel"
 
-#: ../mate-session/gsm-inhibit-dialog.c:916
+#: ../mate-session/gsm-inhibit-dialog.c:958
 msgid "Reboot Anyway"
 msgstr "Start på nytt likevel"
 
-#: ../mate-session/gsm-inhibit-dialog.c:924
+#: ../mate-session/gsm-inhibit-dialog.c:966
 msgid "Lock Screen"
 msgstr "Lås skjerm"
 
-#: ../mate-session/gsm-inhibit-dialog.c:927
+#: ../mate-session/gsm-inhibit-dialog.c:969
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: ../mate-session/gsm-logout-dialog.c:266
+#: ../mate-session/gsm-logout-dialog.c:319
 #, c-format
-msgid "You will be automatically logged out in %d second."
-msgid_plural "You will be automatically logged out in %d seconds."
-msgstr[0] "Du vil bli logget ut automatisk om %d sekund."
-msgstr[1] "Du vil bli logget ut automatisk om %d sekunder."
+msgid "You will be automatically logged out in %d second"
+msgid_plural "You will be automatically logged out in %d seconds"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:274
+#: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
-msgid "This system will be automatically shut down in %d second."
-msgid_plural "This system will be automatically shut down in %d seconds."
-msgstr[0] "Systemet vil bli slått av automatisk om %d sekund."
-msgstr[1] "Systemet vil bli slått automatisk av om %d sekunder."
+msgid "This system will be automatically shut down in %d second"
+msgid_plural "This system will be automatically shut down in %d seconds"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:306
+#: ../mate-session/gsm-logout-dialog.c:373
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Du er logget inn som «%s»"
 
-#: ../mate-session/gsm-logout-dialog.c:372
+#: ../mate-session/gsm-logout-dialog.c:443
 msgid "Log out of this system now?"
 msgstr "Logg ut av dette systemet nå?"
 
-#: ../mate-session/gsm-logout-dialog.c:378
+#: ../mate-session/gsm-logout-dialog.c:449
 msgid "_Switch User"
 msgstr "_Bytt bruker"
 
-#: ../mate-session/gsm-logout-dialog.c:387
+#: ../mate-session/gsm-logout-dialog.c:458
 msgid "_Log Out"
 msgstr "_Logg ut"
 
-#: ../mate-session/gsm-logout-dialog.c:393
+#: ../mate-session/gsm-logout-dialog.c:464
 msgid "Shut down this system now?"
 msgstr "Slå av dette systemet nå?"
 
-#: ../mate-session/gsm-logout-dialog.c:399
+#: ../mate-session/gsm-logout-dialog.c:470
 msgid "S_uspend"
 msgstr "H_vilemodus"
 
-#: ../mate-session/gsm-logout-dialog.c:405
+#: ../mate-session/gsm-logout-dialog.c:476
 msgid "_Hibernate"
 msgstr "_Dvalemodus"
 
-#: ../mate-session/gsm-logout-dialog.c:411
+#: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Restart"
 msgstr "Sta_rt på nytt"
 
-#: ../mate-session/gsm-logout-dialog.c:421
+#: ../mate-session/gsm-logout-dialog.c:492
 msgid "_Shut Down"
 msgstr "_Slå av"
 
-#: ../mate-session/gsm-manager.c:1214 ../mate-session/gsm-manager.c:1906
+#: ../mate-session/gsm-manager.c:1420 ../mate-session/gsm-manager.c:2118
 msgid "Not responding"
 msgstr "Svarer ikke"
 
@@ -422,23 +411,19 @@ msgstr "Kunne ikke opprette plugg for ICE-lytting: %s"
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Kan ikke starte påloggingssesjonen (kan ikke koble til X-tjeneren)"
 
-#: ../mate-session/main.c:437
+#: ../mate-session/main.c:479
 msgid "Override standard autostart directories"
 msgstr "Overstyr forvalgte kataloger for autostart"
 
-#: ../mate-session/main.c:438
-msgid "MateConf key used to look up default session"
-msgstr "MateConf-nøkkel som brukes til å finne forvalgt sesjon"
-
-#: ../mate-session/main.c:439
+#: ../mate-session/main.c:480
 msgid "Enable debugging code"
 msgstr "Aktiver feilsøkingskode"
 
-#: ../mate-session/main.c:440
+#: ../mate-session/main.c:481
 msgid "Do not load user-specified applications"
 msgstr "Ikke last brukerdefinerte programmer"
 
-#: ../mate-session/main.c:461
+#: ../mate-session/main.c:502
 msgid " - the MATE session manager"
 msgstr "- MATE sesjonshåndterer"
 
@@ -479,10 +464,10 @@ msgstr "Terminer sesjon"
 msgid "Do not require confirmation"
 msgstr "Ikke krev bekreftelse"
 
-#: ../tools/mate-session-save.c:120 ../tools/mate-session-save.c:130
+#: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
 msgid "Could not connect to the session manager"
 msgstr "Kunne ikke koble til sesjonshåndterer"
 
-#: ../tools/mate-session-save.c:273
+#: ../tools/mate-session-save.c:287
 msgid "Program called with conflicting options"
 msgstr "Programmet ble kalt med motstridende alternativer"

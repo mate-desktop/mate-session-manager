@@ -1,73 +1,61 @@
-# translation of mate-session.master.po to Hindi
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-#
-#
-# Rajesh Ranjan <rranjan@redhat.com>, 2005, 2006, 2009.
-# Rajesh Ranjan <rajesh672@gmail.com>, 2009.
+# 
+# Translators:
+# Rajesh Ranjan <rajesh672@gmail.com>, 2009
+# Rajesh Ranjan <rranjan@redhat.com>, 2005, 2006, 2009
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session.master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-session&component=general\n"
-"POT-Creation-Date: 2009-09-07 17:27+0000\n"
-"PO-Revision-Date: 2009-09-16 12:48+0530\n"
-"Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
-"Language-Team: Hindi <hindi.sf.net>\n"
+"Project-Id-Version: MATE Desktop Environment\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-17 18:41+0100\n"
+"PO-Revision-Date: 2014-02-17 21:40+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"Language-Team: Hindi (http://www.transifex.com/projects/p/MATE/language/hi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"net>\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
-"\n"
-"\n"
-"\n"
+"Language: hi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# mate-session/startup-programs.c:282 mate-session/startup-programs.c:289
-#: ../capplet/gsm-app-dialog.c:120
+#: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
 msgstr "कमांड चुनें"
 
-# mate-session/startup-programs.c:372
-#: ../capplet/gsm-app-dialog.c:194
+#: ../capplet/gsm-app-dialog.c:201
 msgid "Add Startup Program"
 msgstr "प्रारंभिक प्रोग्राम में जोड़ें"
 
-# mate-session/startup-programs.c:392
-#: ../capplet/gsm-app-dialog.c:198
+#: ../capplet/gsm-app-dialog.c:205
 msgid "Edit Startup Program"
 msgstr "प्रारंभिक प्रोग्राम में संशोधन करें"
 
-# mate-session/startup-programs.c:332
-#: ../capplet/gsm-app-dialog.c:486
+#: ../capplet/gsm-app-dialog.c:493
 msgid "The startup command cannot be empty"
 msgstr "प्रारंभिक निर्देश रिक्त नहीं हो सकता"
 
-# mate-session/startup-programs.c:332
-#: ../capplet/gsm-app-dialog.c:492
+#: ../capplet/gsm-app-dialog.c:499
 msgid "The startup command is not valid"
 msgstr "प्रारंभिक वैध नहीं है"
 
-#: ../capplet/gsm-properties-dialog.c:555
+#: ../capplet/gsm-properties-dialog.c:552
 msgid "Enabled"
 msgstr "सक्षम"
 
-# mate-session/logout.c:266
-#: ../capplet/gsm-properties-dialog.c:567
+#: ../capplet/gsm-properties-dialog.c:564
 msgid "Icon"
 msgstr "प्रतीक"
 
-# mate-session/gsm-client-list.c:111
-#: ../capplet/gsm-properties-dialog.c:579
+#: ../capplet/gsm-properties-dialog.c:576
 msgid "Program"
 msgstr "प्रोग्राम"
 
-#: ../capplet/gsm-properties-dialog.c:792
+#: ../capplet/gsm-properties-dialog.c:796
 msgid "Startup Applications Preferences"
 msgstr "आरंभन अनुप्रयोग वरीयता"
 
 #: ../capplet/gsp-app.c:269
-#| msgid "_Name:"
 msgid "No name"
 msgstr "कोई नाम नहीं"
 
@@ -75,17 +63,99 @@ msgstr "कोई नाम नहीं"
 msgid "No description"
 msgstr "कोई विवरण नहीं"
 
-#: ../capplet/main.c:37 ../mate-session/main.c:437
+#: ../capplet/main.c:35 ../mate-session/main.c:482
 msgid "Version of this application"
 msgstr "इस अनुप्रयोग का संस्करण"
 
-#: ../capplet/main.c:63
+#: ../capplet/main.c:54
 msgid "Could not display help document"
 msgstr "मदद दस्तावेज़ नहीं दिखा सका"
 
-#: ../compat/mate-settings-daemon-helper.desktop.in.in.in.h:1
-msgid "MATE Settings Daemon Helper"
-msgstr "MATE सेटिंग डेमॉन मददगार"
+#: ../data/org.mate.session.gschema.xml.in.in.h:1
+msgid "Current session start time"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:2
+msgid "Unix time of the start of the current session."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:3
+msgid "Save sessions"
+msgstr "सत्रें संग्रहित करें"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:4
+msgid "If enabled, mate-session will save the session automatically."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:5
+msgid "Logout prompt"
+msgstr "लॉगाउट संदेश"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:6
+msgid "If enabled, mate-session will prompt the user before ending a session."
+msgstr "अगर सक्षम हे तो जीनोम सत्र वंद होने से पहले उपयोगकर्ता को टोकेगा"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:7
+msgid "Time before session is considered idle"
+msgstr "सत्र के निष्क्रिय माने जाने के पहले का समय"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:8
+msgid ""
+"The number of minutes of inactivity before the session is considered idle."
+msgstr "सत्र के निष्क्रिय समझे जाने के पहले निष्क्रियता के मिनट की संख्या."
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:9
+msgid "Default session"
+msgstr "तयशुदा सत्र"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:10
+msgid "List of applications that are part of the default session."
+msgstr "अनुप्रयोग की सूची जो तयशुदा सत्र का हिस्सा है"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:11
+msgid "Required session components"
+msgstr "जरूरी सत्र घटक"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:12
+msgid ""
+"List of components that are required as part of the session. (Each element "
+"names a key under \"/org/mate/desktop/session/required_components\"). The "
+"Startup Applications preferences tool will not normally allow users to "
+"remove a required component from the session, and the session manager will "
+"automatically add the required components back to the session at login time "
+"if they do get removed."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/mate-wm.desktop.in.in.h:1
+msgid "Window Manager"
+msgstr "विन्डो मैनेजर"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:14
+msgid ""
+"The window manager is the program that draws the title bar and borders "
+"around windows, and allows you to move and resize windows."
+msgstr "यह विंडो प्रबंधक वह प्रोग्राम है जो विंडो के गिर्द शीर्षक पट्टी और किनारा बनाता है और आपको विंडो को खिसकाने व फिर आकार देने की छूट देता है."
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:15
+msgid "Panel"
+msgstr "पटल"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:16
+msgid ""
+"The panel provides the bar at the top or bottom of the screen containing "
+"menus, the window list, status icons, the clock, etc."
+msgstr "यह पटल स्क्रीन के ऊपर या नीचे पट्टी देता है जिसमें मेन्यू, विंडो सूची, स्थिति प्रतीक, घड़ी आदि समाहित किए है."
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:17
+msgid "File Manager"
+msgstr "फ़ाइल प्रबंधक"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:18
+msgid ""
+"The file manager provides the desktop icons and allows you to interact with "
+"your saved files."
+msgstr "यह फाइल प्रबंधक डेस्कटॉप प्रतीक देता है और अपनी सहेजी फाइलों से अंतःक्रिया करने की स्वीकृति देता है."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -95,219 +165,95 @@ msgstr "गनोम"
 msgid "This session logs you into MATE"
 msgstr "यह सत्र गनोम में लॉगइन होगा"
 
-# mate-session/save-session.c:43
-#: ../data/mate-session.schemas.in.in.h:1
-msgid "Default session"
-msgstr "तयशुदा सत्र"
-
-# mate-session/splash.c:71
-#: ../data/mate-session.schemas.in.in.h:2
-msgid "File Manager"
-msgstr "फ़ाइल प्रबंधक"
-
-#: ../data/mate-session.schemas.in.in.h:3
-msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "अगर सक्षम हे तो जीनोम सत्र वंद होने से पहले उपयोगकर्ता को टोकेगा"
-
-#: ../data/mate-session.schemas.in.in.h:4
-msgid ""
-"If enabled, mate-session will save the session automatically. Otherwise, "
-"the logout dialog will have an option to save the session."
-msgstr ""
-"अगर सक्षम हे तो जीनोम सत्र स्वतः संग्रहित होगा, नहीं तो लॉगउट संवाद में सत्र संग्रहित करने "
-"का विकल्प होगा"
-
-#: ../data/mate-session.schemas.in.in.h:5
-msgid "List of applications that are part of the default session."
-msgstr "अनुप्रयोग की सूची जो तयशुदा सत्र का हिस्सा है"
-
-#: ../data/mate-session.schemas.in.in.h:6
-msgid ""
-"List of components that are required as part of the session. (Each element "
-"names a key under \"/desktop/mate/session/required_components\"). The "
-"Startup Applications preferences tool will not normally allow users to "
-"remove a required component from the session, and the session manager will "
-"automatically add the required components back to the session at login time "
-"if they do get removed."
-msgstr ""
-"घटकों की सूची जो कि सत्र के हिस्से के रूप में जरूरी है. (Each element "
-"names a key under \"/desktop/mate/session/required_components\"). स्टार्टअप अनुप्रयोग वरीयताएँ औजार उपयोक्ता को सामान्यतः अनुमति नहीं देगी सत्र से किसी जरूरी घटकों को हटाने के लिए, और सत्र प्रबंधक स्वतः जरूरी घटकोंको जोड़ेगा सत्र में लॉगिन समय पर यदि वे हटाए जाते हैं."
-
-#: ../data/mate-session.schemas.in.in.h:7
-msgid "Logout prompt"
-msgstr "लॉगाउट संदेश"
-
-# mate-session/splash.c:69
-#: ../data/mate-session.schemas.in.in.h:8
-msgid "Panel"
-msgstr "पटल"
-
-#: ../data/mate-session.schemas.in.in.h:9
-msgid "Preferred Image to use for login splash screen"
-msgstr "पसंदीदा विंब जिसे लॉगिन स्प्लैश के लिये प्रयोग करना है"
-
-#: ../data/mate-session.schemas.in.in.h:10
-msgid "Required session components"
-msgstr "जरूरी सत्र घटक"
-
-# mate-session/session-properties.c:272
-#: ../data/mate-session.schemas.in.in.h:11
-msgid "Save sessions"
-msgstr "सत्रें संग्रहित करें"
-
-# mate-session/session-properties-capplet.c:227
-#: ../data/mate-session.schemas.in.in.h:12
-msgid "Show the splash screen"
-msgstr "स्प्लेश स्क्रीन प्रदर्शित करें"
-
-#: ../data/mate-session.schemas.in.in.h:13
-msgid "Show the splash screen when the session starts up"
-msgstr "सत्र शुरु होने पर स्प्लेश स्क्रीन प्रदर्शित करें"
-
-#: ../data/mate-session.schemas.in.in.h:14
-msgid ""
-"The file manager provides the desktop icons and allows you to interact with "
-"your saved files."
-msgstr ""
-"यह फाइल प्रबंधक डेस्कटॉप प्रतीक देता है और अपनी सहेजी फाइलों से अंतःक्रिया करने की स्वीकृति "
-"देता है."
-
-#: ../data/mate-session.schemas.in.in.h:15
-msgid "The number of minutes of inactivity before the session is considered idle."
-msgstr "सत्र के निष्क्रिय समझे जाने के पहले निष्क्रियता के मिनट की संख्या."
-
-#: ../data/mate-session.schemas.in.in.h:16
-msgid ""
-"The panel provides the bar at the top or bottom of the screen containing "
-"menus, the window list, status icons, the clock, etc."
-msgstr ""
-"यह पटल स्क्रीन के ऊपर या नीचे पट्टी देता है जिसमें मेन्यू, विंडो सूची, स्थिति प्रतीक, घड़ी "
-"आदि समाहित किए है."
-
-#: ../data/mate-session.schemas.in.in.h:17
-msgid ""
-"The window manager is the program that draws the title bar and borders "
-"around windows, and allows you to move and resize windows."
-msgstr ""
-"यह विंडो प्रबंधक वह प्रोग्राम है जो विंडो के गिर्द शीर्षक पट्टी और किनारा बनाता है और "
-"आपको विंडो को खिसकाने व फिर आकार देने की छूट देता है."
-
-#: ../data/mate-session.schemas.in.in.h:18
-msgid ""
-"This is a relative path value based off the $datadir/pixmaps/ directory. Sub-"
-"directories and image names are valid values. Changing this value will "
-"effect the next session login."
-msgstr ""
-"यह $datadir/pixmaps/ निर्देशिका पर आधारित सापेक्षिक पथ है. उपनिर्देशिका औऱ विंब नाम "
-"मान्य मान हैं. इस मान को बदलना अगले सत्र लॉगिन को प्रभावित करेगा."
-
-#: ../data/mate-session.schemas.in.in.h:19
-msgid "Time before session is considered idle"
-msgstr "सत्र के निष्क्रिय माने जाने के पहले का समय"
-
-# mate-session/splash.c:71
-#: ../data/mate-session.schemas.in.in.h:20 ../data/mate-wm.desktop.in.in.h:1
-msgid "Window Manager"
-msgstr "विन्डो मैनेजर"
-
 #: ../data/gsm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>कुछ प्रोग्राम अभी भी चल रहा है:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:667
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
 msgid ""
-"Waiting for program to finish.  Interrupting program may cause you to lose "
-"work."
+"Waiting for the program to finish.  Interrupting the program may cause you "
+"to lose work."
 msgstr ""
-"समाप्त करने के लिए प्रोग्राम के लिए प्रतीक्षारत.  प्रोग्राम में व्यवधान आपके काम को खराब "
-"कर सकता है."
 
-#: ../data/session-properties.desktop.in.in.h:1
-msgid "Choose what applications to start when you log in"
-msgstr "चुनें कि कौन सा अनुप्रयोग शुरू करना है जब लॉगिन हों"
-
-#: ../data/session-properties.desktop.in.in.h:2
+#: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
 msgstr "आरंभन अनुप्रयोग"
 
-# mate-session/startup-programs.c:372
+#: ../data/mate-session-properties.desktop.in.in.h:2
+msgid "Choose what applications to start when you log in"
+msgstr "चुनें कि कौन सा अनुप्रयोग शुरू करना है जब लॉगिन हों"
+
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
 msgstr "प्रारंभिक प्रोग्राम में जोड़ें (_p)"
 
 #: ../data/session-properties.ui.h:2
-msgid "Browse..."
-msgstr "ब्राउज़..."
+msgid "Startup Programs"
+msgstr "प्रारंभिक प्रोग्राम"
 
-# mate-session/session-properties-capplet.c:362
 #: ../data/session-properties.ui.h:3
-msgid "Co_mmand:"
-msgstr "कमांड (_m):"
+msgid "_Automatically remember running applications when logging out"
+msgstr "चलते अनुप्रयोग को स्वतः याद रखें जब लॉग आउट हो रहे हों (_A)"
 
-# mate-session/session-properties-capplet.c:362
 #: ../data/session-properties.ui.h:4
-msgid "Comm_ent:"
-msgstr "टिप्पणी (_e):"
+msgid "_Remember Currently Running Application"
+msgstr "हाल में कार्यशील अनुप्रयोग याद रखें (_R)"
 
-# mate-session/session-properties-capplet.c:332
 #: ../data/session-properties.ui.h:5
 msgid "Options"
 msgstr "विकल्प"
 
-# mate-session/session-properties-capplet.c:399
 #: ../data/session-properties.ui.h:6
-msgid "Startup Programs"
-msgstr "प्रारंभिक प्रोग्राम"
+msgid "Browse…"
+msgstr ""
 
 #: ../data/session-properties.ui.h:7
-msgid "_Automatically remember running applications when logging out"
-msgstr "चलते अनुप्रयोग को स्वतः याद रखें जब लॉग आउट हो रहे हों (_A)"
+msgid "Comm_ent:"
+msgstr "टिप्पणी (_e):"
 
 #: ../data/session-properties.ui.h:8
+msgid "Co_mmand:"
+msgstr "कमांड (_m):"
+
+#: ../data/session-properties.ui.h:9
 msgid "_Name:"
 msgstr "नाम (_N):"
 
-#: ../data/session-properties.ui.h:9
-msgid "_Remember Currently Running Application"
-msgstr "हाल में कार्यशील अनुप्रयोग याद रखें (_R)"
-
-#: ../egg/eggdesktopfile.c:165
+#: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
 msgstr "फ़ाइल वैध .desktop फ़ाइल नहीं है"
 
-#: ../egg/eggdesktopfile.c:188
+#: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "अपरिचित डेस्कटॉप फ़ाइल संस्करण '%s'"
 
-# mate-session/gsm-client-row.c:34
-#: ../egg/eggdesktopfile.c:958
+#: ../egg/eggdesktopfile.c:957
 #, c-format
 msgid "Starting %s"
 msgstr "%s आरंभ हो रहा है"
 
-#: ../egg/eggdesktopfile.c:1100
+#: ../egg/eggdesktopfile.c:1099
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "कमांड लाइन पर अनुप्रयोग दस्तावेज़ स्वीकार नहीं करता है"
 
-#: ../egg/eggdesktopfile.c:1168
+#: ../egg/eggdesktopfile.c:1167
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "अपरिचित लॉन्च विकल्प: %d"
 
-#: ../egg/eggdesktopfile.c:1373
+#: ../egg/eggdesktopfile.c:1372
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "दस्तावेज़ URI को 'Type=Link' डेस्कटॉप प्रविष्टि में भेज नहीं सकता है"
 
-#: ../egg/eggdesktopfile.c:1394
+#: ../egg/eggdesktopfile.c:1393
 #, c-format
 msgid "Not a launchable item"
 msgstr "चलाने योग्य प्रोग्राम नहीं है"
 
-# mate-session/save-session.c:112
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
 msgstr "सत्र प्रबंधक में कनेक्शन निष्क्रिय करें"
@@ -320,7 +266,6 @@ msgstr "सहेजा विन्यास समाहित करता �
 msgid "FILE"
 msgstr "फ़ाइल"
 
-# mate-session/main.c:66
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
 msgstr "सत्र प्रबंधन ID निर्दिष्ट करें"
@@ -329,154 +274,135 @@ msgstr "सत्र प्रबंधन ID निर्दिष्ट कर
 msgid "ID"
 msgstr "आईडी"
 
-# mate-session/session-properties-capplet.c:332
 #: ../egg/eggsmclient.c:252
-#| msgid "Session Management Options"
 msgid "Session management options:"
 msgstr "सत्र प्रबंधन विकल्प:"
 
-# mate-session/session-properties-capplet.c:332
 #: ../egg/eggsmclient.c:253
-#| msgid "Show Session Management options"
 msgid "Show session management options"
 msgstr "सत्र प्रबंधन विकल्प दिखाएँ"
 
-#: ../mate-session/gsm-mateconf.c:106
-#, c-format
-msgid ""
-"There is a problem with the configuration server.\n"
-"(%s exited with status %d)"
-msgstr ""
-"इस विन्यास सर्वर के साथ एक समस्या है.\n"
-"(%s स्थिति %d के साथ बाहर निकल गया)"
-
-#: ../mate-session/gsm-inhibit-dialog.c:255
+#: ../mate-session/gsm-inhibit-dialog.c:258
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' प्रतीक नहीं मिली"
 
-# mate-session/gsm-client-row.c:43
-#: ../mate-session/gsm-inhibit-dialog.c:615
+#: ../mate-session/gsm-inhibit-dialog.c:657
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: ../mate-session/gsm-inhibit-dialog.c:666
+#: ../mate-session/gsm-inhibit-dialog.c:708
 msgid "A program is still running:"
 msgstr "एक प्रोग्राम अभी भी चल रहा है:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:670
+#: ../mate-session/gsm-inhibit-dialog.c:712
 msgid "Some programs are still running:"
 msgstr "कुछ प्रोग्राम अभी भी चल रहा है:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:671
+#: ../mate-session/gsm-inhibit-dialog.c:713
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr ""
-"समाप्त करने के लिए प्रोग्राम के लिए प्रतीक्षारत.  इन प्रोग्राम में व्यवधान आपको काम खराब "
-"करने का कारण बन सकता है."
+msgstr "समाप्त करने के लिए प्रोग्राम के लिए प्रतीक्षारत.  इन प्रोग्राम में व्यवधान आपको काम खराब करने का कारण बन सकता है."
 
-#: ../mate-session/gsm-inhibit-dialog.c:901
+#: ../mate-session/gsm-inhibit-dialog.c:943
 msgid "Switch User Anyway"
 msgstr "किसी तरह उपयोक्ता बदलें"
 
-#: ../mate-session/gsm-inhibit-dialog.c:904
-msgid "Logout Anyway"
-msgstr "किसी तरह लॉगआउट करें"
+#: ../mate-session/gsm-inhibit-dialog.c:946
+msgid "Log Out Anyway"
+msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:907
+#: ../mate-session/gsm-inhibit-dialog.c:949
 msgid "Suspend Anyway"
 msgstr "किसी तरह स्थगित करें"
 
-#: ../mate-session/gsm-inhibit-dialog.c:910
+#: ../mate-session/gsm-inhibit-dialog.c:952
 msgid "Hibernate Anyway"
 msgstr "किसी तरह हाइबरनेट करें"
 
-#: ../mate-session/gsm-inhibit-dialog.c:913
-msgid "Shutdown Anyway"
-msgstr "किसी तरह बंद करें"
+#: ../mate-session/gsm-inhibit-dialog.c:955
+msgid "Shut Down Anyway"
+msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:916
+#: ../mate-session/gsm-inhibit-dialog.c:958
 msgid "Reboot Anyway"
 msgstr "किसी तरह रिबूट करें"
 
-#: ../mate-session/gsm-inhibit-dialog.c:924
+#: ../mate-session/gsm-inhibit-dialog.c:966
 msgid "Lock Screen"
 msgstr "स्क्रीन पर ताला लगाएँ"
 
-#: ../mate-session/gsm-inhibit-dialog.c:927
+#: ../mate-session/gsm-inhibit-dialog.c:969
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: ../mate-session/gsm-logout-dialog.c:274
+#: ../mate-session/gsm-logout-dialog.c:319
 #, c-format
-msgid "You will be automatically logged out in %d second."
-msgid_plural "You will be automatically logged out in %d seconds."
-msgstr[0] "आप स्वतः %d सेकेंड में लॉग आउट हो जायेंगे."
-msgstr[1] "आप स्वतः %d सेकेंड में लॉग आउट हो जायेंगे."
+msgid "You will be automatically logged out in %d second"
+msgid_plural "You will be automatically logged out in %d seconds"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:282
+#: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
-msgid "This system will be automatically shut down in %d second."
-msgid_plural "This system will be automatically shut down in %d seconds."
-msgstr[0] "तंत्र %d सेकेंड में स्वतः बंद हो जायेगा"
-msgstr[1] "तंत्र %d सेकेंड में स्वतः बंद हो जायेगा"
+msgid "This system will be automatically shut down in %d second"
+msgid_plural "This system will be automatically shut down in %d seconds"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:314
+#: ../mate-session/gsm-logout-dialog.c:373
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "आप अभी बतौर \"%s\" लॉग इन हैं."
 
-#: ../mate-session/gsm-logout-dialog.c:380
+#: ../mate-session/gsm-logout-dialog.c:443
 msgid "Log out of this system now?"
 msgstr "अब इस तंत्र से लॉग आउट करें?"
 
-#: ../mate-session/gsm-logout-dialog.c:386
+#: ../mate-session/gsm-logout-dialog.c:449
 msgid "_Switch User"
 msgstr "उपयोक्ता बदलें (_S)"
 
-# mate-session/logout.c:274
-#: ../mate-session/gsm-logout-dialog.c:395
+#: ../mate-session/gsm-logout-dialog.c:458
 msgid "_Log Out"
 msgstr "लॉग आउट (_L)"
 
-#: ../mate-session/gsm-logout-dialog.c:401
+#: ../mate-session/gsm-logout-dialog.c:464
 msgid "Shut down this system now?"
 msgstr "अब इस तंत्र को बंद करें?"
 
-#: ../mate-session/gsm-logout-dialog.c:407
+#: ../mate-session/gsm-logout-dialog.c:470
 msgid "S_uspend"
 msgstr "स्थगित करें (_S)"
 
-#: ../mate-session/gsm-logout-dialog.c:413
+#: ../mate-session/gsm-logout-dialog.c:476
 msgid "_Hibernate"
 msgstr "सुप्तावस्था में ले जायें (_H)"
 
-# mate-session/session-properties.c:173
-#: ../mate-session/gsm-logout-dialog.c:419
+#: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Restart"
 msgstr "पुन:आरंभ करें (_R)"
 
-# mate-session/logout.c:277
-#: ../mate-session/gsm-logout-dialog.c:429
+#: ../mate-session/gsm-logout-dialog.c:492
 msgid "_Shut Down"
 msgstr "बंद करें (_S)"
 
-#: ../mate-session/gsm-manager.c:1158 ../mate-session/gsm-manager.c:1850
+#: ../mate-session/gsm-manager.c:1420 ../mate-session/gsm-manager.c:2118
 msgid "Not responding"
 msgstr "कोई प्रतिक्रिया नहीं दे रहा है"
 
-#: ../mate-session/gsm-xsmp-client.c:1206
-msgid "This program is blocking log out."
-msgstr "यह प्रोग्राम लॉगआउट रोक रहा है."
+#: ../mate-session/gsm-xsmp-client.c:1189
+msgid "This program is blocking logout."
+msgstr ""
 
-#: ../mate-session/gsm-xsmp-server.c:234
+#: ../mate-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "नया क्लाइंट कनेक्शन अस्वीकार कर रहा है क्योंकि सत्र शट डाउन हो रहा है\n"
 
-#: ../mate-session/gsm-xsmp-server.c:489
+#: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE लाइसेंसिंग सॉकेट बना नहीं सका: %s"
@@ -487,36 +413,22 @@ msgstr "ICE लाइसेंसिंग सॉकेट बना नही�
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "लॉगिन सत्र आरंभ करने में असमर्थ (और X सर्वर से कनेक्ट करने में असमर्थ)"
 
-#: ../mate-session/main.c:433
+#: ../mate-session/main.c:479
 msgid "Override standard autostart directories"
 msgstr "मानक स्वतः आरंभ निर्देशिका अध्यारोहित करें"
 
-#: ../mate-session/main.c:434
-msgid "MateConf key used to lookup default session"
-msgstr "तयशुदा सत्र देखने के लिए प्रयुक्त MateConf कुंजी"
-
-#: ../mate-session/main.c:435
+#: ../mate-session/main.c:480
 msgid "Enable debugging code"
 msgstr "डिबगिंग कोड सक्रिय करें"
 
-#: ../mate-session/main.c:436
+#: ../mate-session/main.c:481
 msgid "Do not load user-specified applications"
 msgstr "उपयोक्ता विशिष्ट अनुप्रयोग मत लोड करें"
 
-#: ../mate-session/main.c:457
+#: ../mate-session/main.c:502
 msgid " - the MATE session manager"
 msgstr "- MATE सत्र प्रबंधक"
 
-# mate-session/session-properties-capplet.c:227
-#: ../splash/mate-session-splash.c:315
-msgid "- MATE Splash Screen"
-msgstr "- गनोम स्प्लैश स्क्रीन"
-
-#: ../splash/mate-session-splash.desktop.in.in.in.h:1
-msgid "MATE Splash Screen"
-msgstr "गनोम स्प्लैश स्क्रीन"
-
-# mate-session/logout.c:274
 #: ../tools/mate-session-save.c:65
 msgid "Log out"
 msgstr "लॉग आउट"
@@ -533,12 +445,10 @@ msgstr "लॉगआउट संवाद दिखाएँ"
 msgid "Show shutdown dialog"
 msgstr "शटडाउन संवाद दिखाएँ"
 
-# mate-session/save-session.c:44
 #: ../tools/mate-session-save.c:69
 msgid "Use dialog boxes for errors"
 msgstr "त्रुटि के लिए संवाद पेटी का प्रयोग करें"
 
-# mate-session/session-properties-capplet.c:259
 #. deprecated options
 #: ../tools/mate-session-save.c:71
 msgid "Set the current session name"
@@ -548,7 +458,6 @@ msgstr "वर्तमान सत्र सेट करें"
 msgid "NAME"
 msgstr "नाम"
 
-# mate-session/save-session.c:43
 #: ../tools/mate-session-save.c:72
 msgid "Kill session"
 msgstr "सत्र को समाप्त करें"
@@ -557,12 +466,10 @@ msgstr "सत्र को समाप्त करें"
 msgid "Do not require confirmation"
 msgstr "संपुष्टि की जरूरत नहीं"
 
-# mate-session/save-session.c:112
-#: ../tools/mate-session-save.c:120 ../tools/mate-session-save.c:130
+#: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
 msgid "Could not connect to the session manager"
 msgstr "सत्र मैनेजर से संपर्क स्थापित नहीं हो पा रहा है"
 
-#: ../tools/mate-session-save.c:273
+#: ../tools/mate-session-save.c:287
 msgid "Program called with conflicting options"
 msgstr "विरोधी विकल्प के साथ लाया गया प्रोग्राम"
-
