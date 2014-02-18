@@ -1,3 +1,9 @@
-1.5.0
+1.7.2
+  * Show a progress bar in logout dialog
+  * Add GTK3 support
+  * Add gnome keyring support
+  * Add support for X-MATE-Autostart-Delay in desktop files
+
+1.6.0
 
   * Migrate to gsettings (dropped mateconf)
