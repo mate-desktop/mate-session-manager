@@ -8,13 +8,14 @@
 # Jing-Jong Shyue <shyue@sonoma.com.tw>, 2000
 # Wei-Lun Chao <bluebat@member.fsf.org>, 2012
 # Yuan-Chung Cheng <platin@linux.org.tw>, 1999
+# 柏諺 黃 <s8321414@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-17 21:40+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-02-18 23:43+0000\n"
+"Last-Translator: 柏諺 黃 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/MATE/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,11 +77,11 @@ msgstr "無法顯示求助文件"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "目前作業階段啟動時間"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "目前作業階段啟動的 Unix 時間"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:3
 msgid "Save sessions"
@@ -127,7 +128,7 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr ""
+msgstr "做為此作業階段一部分的必要元件清單。（每個元件都會在「/org/mate/desktop/session/required_components」有一個設定鍵。）啟動應用程式偏好設定工具一般不會允許使用者自作業階段中移除必要的元件，而作業階段管理員會在這些必要元件被移除時自動將它們加回作業階段中。"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:13
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -344,13 +345,13 @@ msgstr "取消"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
+msgstr[0] "您將會在 %d 秒後自動登出"
 
 #: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
+msgstr[0] "本系統將會在 %d 秒後自動關閉。"
 
 #: ../mate-session/gsm-logout-dialog.c:373
 #, c-format

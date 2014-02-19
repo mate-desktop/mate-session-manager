@@ -3,13 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# elzear <babciaroziazpogwizdowa@wp.pl>, 2014
+# Matriks404 <marcink96@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-17 21:40+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-02-19 15:50+0000\n"
+"Last-Translator: Matriks404 <marcink96@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/MATE/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,11 +73,11 @@ msgstr "Nie można wyświetlić dokumentu pomocy"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Czas rozpoczęcia bieżącej sesji"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Czas rozpoczęcia bieżącej sesji w formacie Unix."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:3
 msgid "Save sessions"
@@ -122,7 +124,7 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr ""
+msgstr "Lista składników wymaganych jako części sesji (każdy element występuje pod własnym kluczem w \"/org/mate/desktop/session/required_components\"). Narzędzie preferencji programów startowych nie pozwala użytkownikom na usuwanie wymaganych składników z sesji, a menedżer sesji automatycznie doda z powrotem wymagane składniki do sesji podczas logowania, jeśli zostaną usunięte."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:13
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -339,17 +341,17 @@ msgstr "Anuluj"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Zostaniesz automatycznie wylogowany za %d sekundę"
+msgstr[1] "Zostaniesz automatycznie wylogowany za %d sekundy"
+msgstr[2] "Zostaniesz automatycznie wylogowany za %d sekund"
 
 #: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Ten system zostanie automatycznie wyłączony za %d sekundę"
+msgstr[1] "Ten system zostanie automatycznie wyłączony za %d sekundy"
+msgstr[2] "Ten system zostanie automatycznie wyłączony za %d sekund"
 
 #: ../mate-session/gsm-logout-dialog.c:373
 #, c-format

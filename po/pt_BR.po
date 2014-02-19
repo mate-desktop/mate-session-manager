@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-18 00:32+0000\n"
+"PO-Revision-Date: 2014-02-19 04:21+0000\n"
 "Last-Translator: Pygmalion\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/MATE/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "Hora de início da sessão atual"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Tempo Unix do início da sessão atual."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:3
 msgid "Save sessions"
@@ -127,7 +127,7 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr ""
+msgstr "Lista de componentes que são requeridos como parte da sessão. (Cada elemento nomeia uma chave em \"/org/mate/desktop/session/required_components\"). A ferramenta de preferências dos aplicativos de sessão não permitirá normalmente que usuários removam um componente requerido da sessão, e o gerenciador de sessão automaticamente adicionará os componentes requeridos de volta a sessão se eles forem removidos."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:13
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -344,15 +344,15 @@ msgstr "Cancelar"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Você sairá automaticamente em %d segundo"
+msgstr[1] "Você sairá automaticamente em %d segundos"
 
 #: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Este sistema será automaticamente desligado em %d segundo"
+msgstr[1] "Este sistema será automaticamente desligado em %d segundos"
 
 #: ../mate-session/gsm-logout-dialog.c:373
 #, c-format
