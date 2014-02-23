@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ján Ďanovský <dagsoftware@yahoo.com>, 2013
+# Ján Ďanovský <dagsoftware@yahoo.com>, 2013-2014
 # Marcel Telka <marcel@telka.sk>, 2005-2006,2008
 # Pavol Šimo <palo.simo@gmail.com>, 2009-2010
 # Peter Tuharsky <tuharsky@misbb.sk>, 2007
@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-17 21:47+0000\n"
-"Last-Translator: tibbi <tibbbi2@gmail.com>\n"
+"PO-Revision-Date: 2014-02-20 23:39+0000\n"
+"Last-Translator: Ján Ďanovský <dagsoftware@yahoo.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/MATE/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,7 +59,7 @@ msgstr "Program"
 
 #: ../capplet/gsm-properties-dialog.c:796
 msgid "Startup Applications Preferences"
-msgstr "Nastavenia aplikácií spúšťaných pri štarte"
+msgstr "Nastavenia programov spúšťaných pri štarte"
 
 #: ../capplet/gsp-app.c:269
 msgid "No name"
@@ -71,7 +71,7 @@ msgstr "Bez popisu"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:482
 msgid "Version of this application"
-msgstr "Verzia tejto aplikácie"
+msgstr "Verzia tohto programu"
 
 #: ../capplet/main.c:54
 msgid "Could not display help document"
@@ -116,7 +116,7 @@ msgstr "Predvolená relácia"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:10
 msgid "List of applications that are part of the default session."
-msgstr "Zoznam aplikácií, ktoré sú súčasťou predvolenej relácie."
+msgstr "Zoznam programov, ktoré sú súčasťou predvolenej relácie."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:11
 msgid "Required session components"
@@ -130,7 +130,7 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Zoznam komponentov, ktoré sú potrebné ako súčasť relácie. (Každý prvok pomenúva kľúč pod „/org/mate/desktop/session/required_components“). Nástroj na predvoľby aplikácií spúšťaných pri štarte za normálnych podmienok nepovolí odstránenie potrebného komponentu z relácie a správca relácií v prípade odstránenia potrebných komponentov ich automaticky pridá po prihlásení späť."
+msgstr "Zoznam komponentov, ktoré sú potrebné ako súčasť relácie. (Každý prvok pomenúva kľúč pod „/org/mate/desktop/session/required_components“). Nástroj na nastavenie programov spúšťaných pri štarte za normálnych podmienok nepovolí odstránenie potrebného komponentu z relácie a správca relácií v prípade odstránenia potrebných komponentov ich automaticky pridá po prihlásení späť."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:13
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -183,11 +183,11 @@ msgstr "Čaká se na ukončenie programu. Prerušenie behu programu môže spôs
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
-msgstr "Aplikácie spúšťané pri štarte"
+msgstr "Programy spúšťané pri štarte"
 
 #: ../data/mate-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr "Vyberte si aplikácie, ktoré sa majú spustiťpo prihlásení"
+msgstr "Vyberte programy, ktoré sa majú spustiť po prihlásení"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
@@ -199,11 +199,11 @@ msgstr "Programy spúšťané pri štarte"
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
-msgstr "Pri odhlasovaní si _automaticky zapamätať bežiace aplikácie"
+msgstr "Pri odhlasovaní si _automaticky zapamätať bežiace programy"
 
 #: ../data/session-properties.ui.h:4
 msgid "_Remember Currently Running Application"
-msgstr "_Zapamätať si teraz bežiacu aplikáciu"
+msgstr "_Zapamätať si teraz bežiaci program"
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
@@ -243,7 +243,7 @@ msgstr "Spúšťa sa %s"
 #: ../egg/eggdesktopfile.c:1099
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "Aplikácia neprijíma dokumenty v príkazovom riadku"
+msgstr "Program neprijíma dokumenty v príkazovom riadku"
 
 #: ../egg/eggdesktopfile.c:1167
 #, c-format
@@ -423,7 +423,7 @@ msgstr "Nedá sa spustiť relácia prihlasovania (a nedá sa pripojiť k serveru
 
 #: ../mate-session/main.c:479
 msgid "Override standard autostart directories"
-msgstr "Prekryť štandardné adresáre automatického spúšťania"
+msgstr "Prekryť štandardné priečinky automatického spúšťania"
 
 #: ../mate-session/main.c:480
 msgid "Enable debugging code"
@@ -431,7 +431,7 @@ msgstr "Povoliť ladiaci kód"
 
 #: ../mate-session/main.c:481
 msgid "Do not load user-specified applications"
-msgstr "Nenačítať aplikácie špecifikované používateľom"
+msgstr "Nenačítať programy špecifikované používateľom"
 
 #: ../mate-session/main.c:502
 msgid " - the MATE session manager"
