@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# abuyop <abuyop@gmail.com>, 2013
+# abuyop <abuyop@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-17 21:40+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-02-26 13:35+0000\n"
+"Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/MATE/language/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,11 +72,11 @@ msgstr "Tidak dapat papar dokumen bantuan"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Masa mula sesi semasa"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Masa Unix bagi permulaan sesi semasa."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:3
 msgid "Save sessions"
@@ -123,7 +123,7 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr ""
+msgstr "Senarai komponen yang diperlukan sebagai sebahagian dari sesi. (Setiap unsur namakan kunci dibawah \"/org/desktop/mate/session/required_components\"). Alat keutamaan Aplikasi Permulaan tidak membenarkan secara normal pengguna membuang komponen yang diperlukan dari sesi, dan pengurus sesi akan tambah secara automatik komponen yang diperlukan kembali ke sesi pada masa daftar masuk jika ia dibuang."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:13
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -340,13 +340,13 @@ msgstr "Batal"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
+msgstr[0] "Anda akan mendaftar keluar secara automatik dalam tempoh %d saat"
 
 #: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
+msgstr[0] "Sistem ini akan dimatikan secara automatik dalam tempoh %d saat"
 
 #: ../mate-session/gsm-logout-dialog.c:373
 #, c-format
