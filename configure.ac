@@ -137,9 +137,12 @@ AC_ARG_ENABLE(upower,
               enable_upower=yes)
 if test "x$enable_upower" = "xyes"; then
     PKG_CHECK_MODULES(UPOWER, upower-glib >= $UPOWER_REQUIRED, has_upower=yes, has_upower=no)
-    AC_DEFINE(HAVE_UPOWER, 1, [upower support])
-    AC_SUBST(UPOWER_CFLAGS)
-    AC_SUBST(UPOWER_LIBS)
+
+    if test "x$has_upower" = "xyes"; then
+        AC_DEFINE(HAVE_UPOWER, 1, [upower support])
+        AC_SUBST(UPOWER_CFLAGS)
+        AC_SUBST(UPOWER_LIBS)
+    fi
 fi
 AM_CONDITIONAL(HAVE_UPOWER, test "x$has_upower" = "xyes")
 AC_SUBST(HAVE_UPOWER)
