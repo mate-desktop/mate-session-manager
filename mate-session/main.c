@@ -58,6 +58,17 @@
 #define GSM_REQUIRED_COMPONENTS_SCHEMA GSM_SCHEMA ".required-components"
 #define GSM_REQUIRED_COMPONENTS_LIST_KEY "required-components-list"
 
+#define ACCESSIBILITY_KEY     "accessibility"
+#define ACCESSIBILITY_SCHEMA  "org.mate.interface"
+
+#define VISUAL_SCHEMA         "org.mate.applications-at-visual"
+#define VISUAL_KEY            "exec"
+#define VISUAL_STARTUP_KEY    "startup"
+
+#define MOBILITY_SCHEMA       "org.mate.applications-at-mobility"
+#define MOBILITY_KEY          "exec"
+#define MOBILITY_STARTUP_KEY  "startup"
+
 #define GSM_DBUS_NAME "org.mate.SessionManager"
 
 #define IS_STRING_EMPTY(x) \
@@ -284,6 +295,54 @@ static void append_required_apps(GsmManager* manager)
 	g_object_unref(settings_required_components);
 }
 
+static void append_accessibility_apps(GsmManager* manager)
+{
+	GSettings* mobility_settings;
+	GSettings* visual_settings;
+
+	g_debug("main: *** Adding accesibility apps");
+
+	mobility_settings = g_settings_new (MOBILITY_SCHEMA);
+	visual_settings = g_settings_new (VISUAL_SCHEMA);
+
+	if (g_settings_get_boolean (mobility_settings, MOBILITY_STARTUP_KEY))
+	{
+		gchar *mobility_exec;
+		mobility_exec = g_settings_get_string (mobility_settings, MOBILITY_KEY);
+		if (mobility_exec != NULL && mobility_exec[0] != 0)
+		{
+			char* app_path;
+			app_path = gsm_util_find_desktop_file_for_app_name(mobility_exec, NULL);
+			if (app_path != NULL)
+			{
+				gsm_manager_add_autostart_app(manager, app_path, NULL);
+				g_free (app_path);
+			}
+			g_free (mobility_exec);
+		}
+	}
+
+	if (g_settings_get_boolean (visual_settings, VISUAL_STARTUP_KEY))
+	{
+		gchar *visual_exec;
+		visual_exec = g_settings_get_string (visual_settings, VISUAL_KEY);
+		if (visual_exec != NULL && visual_exec[0] != 0)
+		{
+			char* app_path;
+			app_path = gsm_util_find_desktop_file_for_app_name(visual_exec, NULL);
+			if (app_path != NULL)
+			{
+				gsm_manager_add_autostart_app(manager, app_path, NULL);
+				g_free (app_path);
+			}
+			g_free (visual_exec);
+		}
+	}
+
+	g_object_unref (mobility_settings);
+	g_object_unref (visual_settings);
+}
+
 static void maybe_load_saved_session_apps(GsmManager* manager)
 {
 	GsmConsolekit* consolekit = NULL;
@@ -351,6 +410,7 @@ static void load_standard_apps (GsmManager* manager, const char* default_session
 	 * application that already provides one of the components. */
 	append_default_apps(manager, default_session_key, autostart_dirs);
 	append_required_apps(manager);
+	append_accessibility_apps(manager);
 
 	g_strfreev(autostart_dirs);
 }
@@ -476,6 +536,7 @@ int main(int argc, char** argv)
 	GsmManager* manager;
 	GsmStore* client_store;
 	GsmXsmpServer* xsmp_server;
+	GSettings* accessibility_settings;
 	MdmSignalHandler* signal_handler;
 	static char** override_autostart_dirs = NULL;
 
@@ -544,6 +605,14 @@ int main(int argc, char** argv)
 
 	if (initialize_gsettings () != TRUE)
 		exit (1);
+
+	/* Look if accessibility is enabled */
+	accessibility_settings = g_settings_new (ACCESSIBILITY_SCHEMA);
+	if (g_settings_get_boolean (accessibility_settings, ACCESSIBILITY_KEY))
+	{
+		gsm_util_setenv("GTK_MODULES", "gail:atk-bridge");
+	}
+	g_object_unref (accessibility_settings);
 
 	client_store = gsm_store_new();
 
