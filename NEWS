@@ -1,3 +1,7 @@
+1.8.1
+  * Add autostart of accessibility apps
+  * Fix build with upower disabled
+
 1.8.0
   * Show a progress bar in logout dialog
   * Add GTK3 support
