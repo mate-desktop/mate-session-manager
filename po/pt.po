@@ -3,14 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# alfalb_mansil <manuela.silva@sky.com>, 2014
+# Carlos <crolidge@gmail.com>, 2014
 # Sérgio Marques <smarquespt@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-17 21:40+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-03-22 13:04+0000\n"
+"Last-Translator: Carlos <crolidge@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/MATE/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,27 +22,27 @@ msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
-msgstr "Selecione o comando"
+msgstr "Selecione o Comando"
 
 #: ../capplet/gsm-app-dialog.c:201
 msgid "Add Startup Program"
-msgstr "Adicionar programa de arranque automático"
+msgstr "Adicionar Programa de Arranque"
 
 #: ../capplet/gsm-app-dialog.c:205
 msgid "Edit Startup Program"
-msgstr "Editar programa de arranque automático"
+msgstr "Editar Programa de Arranque"
 
 #: ../capplet/gsm-app-dialog.c:493
 msgid "The startup command cannot be empty"
-msgstr "O comando não pode estar vazio"
+msgstr "O comando do arranque não pode estar vazio"
 
 #: ../capplet/gsm-app-dialog.c:499
 msgid "The startup command is not valid"
-msgstr "O comando não é válido"
+msgstr "O comando de arranque não é válido"
 
 #: ../capplet/gsm-properties-dialog.c:552
 msgid "Enabled"
-msgstr "Ativo"
+msgstr "Ativado"
 
 #: ../capplet/gsm-properties-dialog.c:564
 msgid "Icon"
@@ -52,7 +54,7 @@ msgstr "Programa"
 
 #: ../capplet/gsm-properties-dialog.c:796
 msgid "Startup Applications Preferences"
-msgstr "Preferências dos programas de arranque automático"
+msgstr "Preferências das Aplicações do Arranque"
 
 #: ../capplet/gsp-app.c:269
 msgid "No name"
@@ -64,56 +66,56 @@ msgstr "Sem descrição"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:482
 msgid "Version of this application"
-msgstr "Versão da aplicação"
+msgstr "Versão desta aplicação"
 
 #: ../capplet/main.c:54
 msgid "Could not display help document"
-msgstr "Não foi possível abrir a ajuda"
+msgstr "Não foi possível mostrar o documento da ajuda"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Tempo de início da sessão atual"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Duração Unix do início da sessão atual."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:3
 msgid "Save sessions"
-msgstr "Gravar sessões"
+msgstr "Guardar sessões"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr "Se ativa, a sessão será gravada automaticamente"
+msgstr "Se ativada, a sessão do mate irá guardar a sessão automaticamente."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:5
 msgid "Logout prompt"
-msgstr "Caixa de diálogo para sair"
+msgstr "Janela de Fechar Sessão"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Se ativa, será exibida uma caixa de diálogo antes de sair da sessão"
+msgstr "Se ativada, a sessão do mate irá exibir uma janela antes de terminar a sessão."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
 msgid "Time before session is considered idle"
-msgstr "Intervalo de tempo para considerar sessão como inativa"
+msgstr "O tempo antes da sessão é considerada inativa"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:8
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "O número de minutos de inatividade antes que a sessão seja considerada como inativa."
+msgstr "O número de minutos de inatividade antes da sessão ser considerada inativa."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Default session"
-msgstr "Sessão pré-definida"
+msgstr "Sessão Pré-definida"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:10
 msgid "List of applications that are part of the default session."
-msgstr "Lista de aplicações que pertencem à sessão pré-definida."
+msgstr "Lista das aplicações que pertencem à sessão pré-definida."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:11
 msgid "Required session components"
-msgstr "Componentes necessários"
+msgstr "Componentes da sessão necessários"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:12
 msgid ""
@@ -128,13 +130,13 @@ msgstr ""
 #: ../data/org.mate.session.gschema.xml.in.in.h:13
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
-msgstr "Gestor de janelas"
+msgstr "Gestor de Janelas"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:14
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "O gestor de janelas é o programa que mostra a barra de título e os limites das janelas. Permite-lhe também mover e redimensionar as janelas."
+msgstr "O gestor de janelas é o programa que mostra a barra de título e as margens das janelas, e permite-lhe também mover e redimensionar as janelas."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:15
 msgid "Panel"
@@ -144,17 +146,17 @@ msgstr "Painel"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "O painel disponibiliza a barra no topo ou na base do ecrã e que contém os menus, a lista de janelas, ícones, entre outros."
+msgstr "O painel disponibiliza a barra no topo ou na base do ecrã, contendo os menus, a lista das janelas, ícones de estado, o relógio, etc."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 msgid "File Manager"
-msgstr "Gestor de ficheiros"
+msgstr "Gestor de Ficheiro"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:18
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "O gestor de ficheiros disponibiliza os ícones do ambiente de trabalho e permite-lhe interagir com os ficheiros e pastas."
+msgstr "O gestor de ficheiro disponibiliza os ícones do ambiente de trabalho e permite-lhe interagir com os seus ficheiros guardados."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -162,41 +164,41 @@ msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
-msgstr "A sessão é iniciada com o MATE"
+msgstr "Esta sessão inicia-o no MATE"
 
 #: ../data/gsm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
-msgstr "<b>Ainda existem alguns programas em execução:</b>"
+msgstr "<b>Alguns programas ainda estão em execução:</b>"
 
 #: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "A esperar o término do programa. Se interromper pode perder o seu trabalho."
+msgstr "A aguardar que o programa termine. Se o interromper poderá perder o seu trabalho."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
-msgstr "Aplicações de arranque automático"
+msgstr "Aplicações de Arranque"
 
 #: ../data/mate-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr "Escolha os programas que devem ser iniciados ao iniciar sessão"
+msgstr "Escolha as aplicações para inciarem quando inicia a sessão"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
-msgstr "_Programas adicionais:"
+msgstr "_Programas de arranque adicionais:"
 
 #: ../data/session-properties.ui.h:2
 msgid "Startup Programs"
-msgstr "Programas de arranque automático"
+msgstr "Programas de Arranque"
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
-msgstr "_Ao sair, lembrar as aplicações em execução"
+msgstr "_Ao terminar a sessão, lembrar automaticamente das aplicações em execução"
 
 #: ../data/session-properties.ui.h:4
 msgid "_Remember Currently Running Application"
-msgstr "_Lembrar as aplicações em execução"
+msgstr "_Lembrar da Aplicação Atualmente em Execução"
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
@@ -204,7 +206,7 @@ msgstr "Opções"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
-msgstr "Explorar..."
+msgstr "Explorar ..."
 
 #: ../data/session-properties.ui.h:7
 msgid "Comm_ent:"
@@ -221,12 +223,12 @@ msgstr "_Nome:"
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "Este não é um ficheiro .desktop válido."
+msgstr "O ficheiro não é um ficheiro de .desktop válido"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Versão de ficheiro .desktop desconhecida %s"
+msgstr "Versão do ficheiro de .desktop desconhecida %s"
 
 #: ../egg/eggdesktopfile.c:957
 #, c-format
@@ -236,50 +238,50 @@ msgstr "A iniciar %s"
 #: ../egg/eggdesktopfile.c:1099
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "A aplicação não aceita documentos na linha de comandos"
+msgstr "A aplicação não aceita documentos na linha de comando"
 
 #: ../egg/eggdesktopfile.c:1167
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Opção desconhecida %d"
+msgstr "Opção de inciar desconhecida %d"
 
 #: ../egg/eggdesktopfile.c:1372
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Não pode enviar URIs de um documento para uma entrada Type=Link"
+msgstr "Não pode enviar URIs de documento para uma entrada da área de trabalho 'Tipo=Hiperligação'"
 
 #: ../egg/eggdesktopfile.c:1393
 #, c-format
 msgid "Not a launchable item"
-msgstr "Não é um item que possa ser iniciado"
+msgstr "Não é um item de iniciação"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "Desligar ligação ao gestor de sessões"
+msgstr "Desative a ligação ao gestor de sessão"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "Indique o ficheiro que possui a configuração gravada"
+msgstr "Indique o ficheiro que possui a configuração guardada"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr "Ficheiro"
+msgstr "FICHEIRO"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Indique a Id do gestor de sessões"
+msgstr "Indique a Id. do gestor de sessão"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr "Id"
+msgstr "ID."
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr "Opções do gestor de sessões:"
+msgstr "Opções do gestor de sessão:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "Mostrar opções do gestor de sessões"
+msgstr "Mostre as opções do gestor de sessão"
 
 #: ../mate-session/gsm-inhibit-dialog.c:258
 #, c-format
@@ -347,8 +349,8 @@ msgstr[1] ""
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Este sistema irá desligar automaticamente em %d segundo"
+msgstr[1] "Este sistema irá desligar automaticamente em %d segundos"
 
 #: ../mate-session/gsm-logout-dialog.c:373
 #, c-format

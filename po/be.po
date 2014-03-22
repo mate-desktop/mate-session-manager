@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-28 08:14+0000\n"
+"PO-Revision-Date: 2014-03-20 10:02+0000\n"
 "Last-Translator: meequz <meequz@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/projects/p/MATE/language/be/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
-msgstr "Вылучыце загад"
+msgstr "Пазначце загад"
 
 #: ../capplet/gsm-app-dialog.c:201
 msgid "Add Startup Program"
@@ -55,7 +55,7 @@ msgstr "Праграма"
 
 #: ../capplet/gsm-properties-dialog.c:796
 msgid "Startup Applications Preferences"
-msgstr "Настáўленні праграм запуску"
+msgstr "Настáўленні пачатковага запуску"
 
 #: ../capplet/gsp-app.c:269
 msgid "No name"
@@ -79,7 +79,7 @@ msgstr "Час запуску дзейнага сеансу"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Unix-час пачатку дзейнага сеансу."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:3
 msgid "Save sessions"
@@ -87,7 +87,7 @@ msgstr "Захоўваць сеансы"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr ""
+msgstr "Калі ўключана, mate-session будзе захоўваць сеанс аўтаматычна."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:5
 msgid "Logout prompt"
@@ -175,7 +175,7 @@ msgstr "<b>Некаторыя праграмы ўсё яшчэ выконваю�
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr ""
+msgstr "Чаканне завяршэння праграмы. Перапыненне праграмы можа выклікаць страту вашай працы."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -313,7 +313,7 @@ msgstr "Прымусовае пераключэнне"
 
 #: ../mate-session/gsm-inhibit-dialog.c:946
 msgid "Log Out Anyway"
-msgstr ""
+msgstr "Прымусовы выхад"
 
 #: ../mate-session/gsm-inhibit-dialog.c:949
 msgid "Suspend Anyway"
@@ -343,19 +343,19 @@ msgstr "Скасаваць"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Сеанс аўтаматычна скончыцца праз %d секунду"
+msgstr[1] "Сеанс аўтаматычна скончыцца праз %d секунды"
+msgstr[2] "Сеанс аўтаматычна скончыцца праз %d секунд"
+msgstr[3] "Сеанс аўтаматычна скончыцца праз %d секунд"
 
 #: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Сістэма аўтаматычна адключыцца праз %d секунду"
+msgstr[1] "Сістэма аўтаматычна адключыцца праз %d секунды"
+msgstr[2] "Сістэма аўтаматычна адключыцца праз %d секунд"
+msgstr[3] "Сістэма аўтаматычна адключыцца праз %d секунд"
 
 #: ../mate-session/gsm-logout-dialog.c:373
 #, c-format
@@ -376,7 +376,7 @@ msgstr "Вы_йсці"
 
 #: ../mate-session/gsm-logout-dialog.c:464
 msgid "Shut down this system now?"
-msgstr "Адключыць сыстэму?"
+msgstr "Адключыць сістэму?"
 
 #: ../mate-session/gsm-logout-dialog.c:470
 msgid "S_uspend"
@@ -400,7 +400,7 @@ msgstr "Не адказвае"
 
 #: ../mate-session/gsm-xsmp-client.c:1189
 msgid "This program is blocking logout."
-msgstr ""
+msgstr "Гэтая праграма блакуе выхад."
 
 #: ../mate-session/gsm-xsmp-server.c:325
 msgid ""
