@@ -1,3 +1,6 @@
+1.9.0
+  *
+
 1.8.1
   * Add autostart of accessibility apps
   * Fix build with upower disabled
