@@ -505,6 +505,9 @@ gsm_get_dialog (GsmDialogLogoutType type,
         hbox = gtk_hbox_new (FALSE, 0);
 #endif
         logout_dialog->priv->progressbar = gtk_progress_bar_new ();
+#if GTK_CHECK_VERSION (3, 0, 0)
+        gtk_progress_bar_set_show_text (GTK_PROGRESS_BAR (logout_dialog->priv->progressbar), TRUE);
+#endif
         gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (logout_dialog->priv->progressbar), 1.0);
         gtk_box_pack_start (GTK_BOX (hbox),
                             logout_dialog->priv->progressbar,
