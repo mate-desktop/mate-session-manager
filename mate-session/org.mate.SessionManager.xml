@@ -304,7 +304,7 @@
     <method name="RequestShutdown">
         <doc:doc>
           <doc:description>
-            <doc:para>Request a shutdown with no diaog</doc:para>
+            <doc:para>Request a shutdown with no dialog</doc:para>
           </doc:description>
         </doc:doc>
     </method>
