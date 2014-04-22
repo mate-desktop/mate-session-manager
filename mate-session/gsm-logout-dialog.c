@@ -211,10 +211,10 @@ gsm_logout_supports_system_suspend (GsmLogoutDialog *logout_dialog)
         if (LOGIND_RUNNING())
             ret = gsm_systemd_can_suspend (logout_dialog->priv->systemd);
 #endif
-#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER)
+#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER) && !UP_CHECK_VERSION(0, 99, 0)
         else
 #endif
-#ifdef HAVE_UPOWER
+#if defined(HAVE_UPOWER) && !UP_CHECK_VERSION(0, 99, 0)
         ret = up_client_get_can_suspend (logout_dialog->priv->up_client);
 #endif
         return ret;
@@ -229,10 +229,10 @@ gsm_logout_supports_system_hibernate (GsmLogoutDialog *logout_dialog)
         if (LOGIND_RUNNING())
             ret = gsm_systemd_can_hibernate (logout_dialog->priv->systemd);
 #endif
-#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER)
+#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER) && !UP_CHECK_VERSION(0, 99, 0)
         else
 #endif
-#ifdef HAVE_UPOWER
+#if defined(HAVE_UPOWER) && !UP_CHECK_VERSION(0, 99, 0)
         ret = up_client_get_can_hibernate (logout_dialog->priv->up_client);
 #endif
         return ret;
