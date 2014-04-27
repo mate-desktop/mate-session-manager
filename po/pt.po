@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-03-22 13:04+0000\n"
+"PO-Revision-Date: 2014-03-22 15:28+0000\n"
 "Last-Translator: Carlos <crolidge@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/MATE/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -125,7 +125,7 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr ""
+msgstr "Lista de componentes que são necessários como parte da sessão. (Cada elemento nomeia uma chave sob \"/org/mate/desktop/session/required_components\"). A ferramenta de preferências Aplicações de Arranque não permite normalmente aos utilizadores que removam um componente necessário para a sessão, e o gestor de sessões irá adicionar automaticamente os componentes necessários novamente ao iniciar sessão, se estes tiverem sido removidos."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:13
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -342,8 +342,8 @@ msgstr "Cancelar"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Você irá terminar a sessão automaticamente em %d segundo."
+msgstr[1] "Você irá terminar a sessão automaticamente em %d segundos."
 
 #: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
