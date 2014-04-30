@@ -1163,10 +1163,10 @@ manager_attempt_hibernate (GsmManager *manager)
                 gsm_systemd_attempt_hibernate (systemd);
         }
 #endif
-#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER) && !UP_CHECK_VERSION(0, 99, 0)
+#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER)
         else {
 #endif
-#if defined(HAVE_UPOWER) && !UP_CHECK_VERSION(0, 99, 0)
+#ifdef HAVE_UPOWER
         can_hibernate = up_client_get_can_hibernate (manager->priv->up_client);
         if (can_hibernate) {
 
@@ -1182,7 +1182,7 @@ manager_attempt_hibernate (GsmManager *manager)
                 }
         }
 #endif
-#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER) && !UP_CHECK_VERSION(0, 99, 0)
+#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER)
         }
 #endif
 }
@@ -1208,10 +1208,10 @@ manager_attempt_suspend (GsmManager *manager)
                 gsm_systemd_attempt_suspend (systemd);
         }
 #endif
-#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER) && !UP_CHECK_VERSION(0, 99, 0)
+#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER)
         else {
 #endif
-#if defined(HAVE_UPOWER) && !UP_CHECK_VERSION(0, 99, 0)
+#ifdef HAVE_UPOWER
         can_suspend = up_client_get_can_suspend (manager->priv->up_client);
         if (can_suspend) {
 
@@ -1227,7 +1227,7 @@ manager_attempt_suspend (GsmManager *manager)
                 }
         }
 #endif
-#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER) && !UP_CHECK_VERSION(0, 99, 0)
+#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER)
         }
 #endif
 }
