@@ -603,7 +603,6 @@ setup_dialog (GsmPropertiesDialog *dialog)
         /* we don't want to accept drags coming from this widget */
         targetlist = gtk_drag_dest_get_target_list (GTK_WIDGET (treeview));
         if (targetlist != NULL) {
-#if GTK_CHECK_VERSION (3, 0, 0)
                 GtkTargetEntry *targets;
                 gint n_targets;
                 gint i;
@@ -614,16 +613,6 @@ setup_dialog (GsmPropertiesDialog *dialog)
                 gtk_drag_dest_set_target_list (GTK_WIDGET (treeview), targetlist);
                 gtk_target_list_unref (targetlist);
                 gtk_target_table_free (targets, n_targets);
-#else
-                GList *list;
-                list = targetlist->list;
-                while (list != NULL) {
-                        GtkTargetPair *targetpair;
-                        targetpair = list->data;
-                        targetpair->flags = GTK_TARGET_OTHER_WIDGET;
-                        list = list->next;
-                }
-#endif
         }
 
         g_signal_connect (treeview, "drag_begin",
