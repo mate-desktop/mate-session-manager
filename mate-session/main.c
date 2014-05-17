@@ -528,11 +528,7 @@ int main(int argc, char** argv)
 {
 	struct sigaction sa;
 	GError* error;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	const char* display_str;
-#else
-	char* display_str;
-#endif
 	GsmManager* manager;
 	GsmStore* client_store;
 	GsmXsmpServer* xsmp_server;
@@ -584,15 +580,7 @@ int main(int argc, char** argv)
 	/* Set DISPLAY explicitly for all our children, in case --display
 	 * was specified on the command line.
 	 */
-#if GTK_CHECK_VERSION (3, 0, 0)
 	display_str = gdk_display_get_name (gdk_display_get_default());
-#else
-	display_str = gdk_get_display();
-#endif
-	gsm_util_setenv("DISPLAY", display_str);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	g_free(display_str);
-#endif
 
 	/* Some third-party programs rely on MATE_DESKTOP_SESSION_ID to
 	 * detect if MATE is running. We keep this for compatibility reasons.
