@@ -111,9 +111,17 @@ on_browse_button_clicked (GtkWidget    *widget,
         chooser = gtk_file_chooser_dialog_new ("",
                                                GTK_WINDOW (dialog),
                                                GTK_FILE_CHOOSER_ACTION_OPEN,
+#if GTK_CHECK_VERSION (3, 10, 0)
+                                               _("_Cancel"),
+#else
                                                GTK_STOCK_CANCEL,
+#endif
                                                GTK_RESPONSE_CANCEL,
+#if GTK_CHECK_VERSION (3, 10, 0)
+                                               _("_Open"),
+#else
                                                GTK_STOCK_OPEN,
+#endif
                                                GTK_RESPONSE_ACCEPT,
                                                NULL);
 
@@ -190,18 +198,30 @@ setup_dialog (GsmAppDialog *dialog)
                       NULL);
 
         gtk_dialog_add_button (GTK_DIALOG (dialog),
+#if GTK_CHECK_VERSION (3, 10, 0)
+                               _("_Cancel"), GTK_RESPONSE_CANCEL);
+#else
                                GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+#endif
 
         if (dialog->priv->name == NULL
             && dialog->priv->command == NULL
             && dialog->priv->comment == NULL) {
                 gtk_window_set_title (GTK_WINDOW (dialog), _("Add Startup Program"));
                 gtk_dialog_add_button (GTK_DIALOG (dialog),
+#if GTK_CHECK_VERSION (3, 10, 0)
+                                       _("_Add"), GTK_RESPONSE_OK);
+#else
                                        GTK_STOCK_ADD, GTK_RESPONSE_OK);
+#endif
         } else {
                 gtk_window_set_title (GTK_WINDOW (dialog), _("Edit Startup Program"));
                 gtk_dialog_add_button (GTK_DIALOG (dialog),
+#if GTK_CHECK_VERSION (3, 10, 0)
+                                       _("_Save"), GTK_RESPONSE_OK);
+#else
                                        GTK_STOCK_SAVE, GTK_RESPONSE_OK);
+#endif
         }
 
         dialog->priv->name_entry = GTK_WIDGET (gtk_builder_get_object (xml, CAPPLET_NAME_ENTRY_WIDGET_NAME));
