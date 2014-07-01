@@ -240,10 +240,6 @@ main (int   argc,
 
         g_log_set_always_fatal (G_LOG_LEVEL_ERROR | G_LOG_LEVEL_CRITICAL | G_LOG_LEVEL_WARNING);
 
-#if !GLIB_CHECK_VERSION (2, 36, 0)
-        g_type_init ();
-#endif
-
         res = session_manager_connect ();
         if (! res) {
                 g_warning ("Unable to connect to session manager");
