@@ -292,8 +292,8 @@ setup_gsettings_condition_monitor (GsmAutostartApp *app,
                 return FALSE;
         }
 
-	GSettingsSchemaSource *source = g_settings_schema_source_get_default();
-	schema_exists = g_settings_schema_source_lookup(source, elems[0], TRUE) != NULL;
+        GSettingsSchemaSource *source = g_settings_schema_source_get_default();
+        schema_exists = g_settings_schema_source_lookup(source, elems[0], TRUE) != NULL;
 
         if (schema_exists == FALSE)
                 return FALSE;

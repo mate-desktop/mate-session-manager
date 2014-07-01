@@ -2568,8 +2568,8 @@ gsm_manager_init (GsmManager *manager)
         manager->priv->settings_lockdown = g_settings_new (LOCKDOWN_SCHEMA);
 
         /* check if mate-screensaver is installed */
-	GSettingsSchemaSource *source = g_settings_schema_source_get_default();
-	schema_exists = g_settings_schema_source_lookup(source, SCREENSAVER_SCHEMA, TRUE) != NULL;
+        GSettingsSchemaSource *source = g_settings_schema_source_get_default();
+        schema_exists = g_settings_schema_source_lookup(source, SCREENSAVER_SCHEMA, TRUE) != NULL;
 
         if (schema_exists == TRUE)
                 manager->priv->settings_screensaver = g_settings_new (SCREENSAVER_SCHEMA);
