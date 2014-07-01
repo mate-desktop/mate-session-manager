@@ -29,4 +29,6 @@ MAINTAINERCLEANFILES = \
 	$(srcdir)/m4/intltool.m4 \
 	`find "$(srcdir)" -type f -name Makefile.in -print`
 
+DISTCHECK_CONFIGURE_FLAGS = --disable-upower
+
 -include $(top_srcdir)/git.mk
