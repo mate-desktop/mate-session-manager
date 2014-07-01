@@ -2560,9 +2560,7 @@ on_presence_status_changed (GsmPresence  *presence,
 static void
 gsm_manager_init (GsmManager *manager)
 {
-        const char * const *schemas;
         gboolean schema_exists;
-        guint i;
 
         manager->priv = GSM_MANAGER_GET_PRIVATE (manager);
 
@@ -2570,14 +2568,9 @@ gsm_manager_init (GsmManager *manager)
         manager->priv->settings_lockdown = g_settings_new (LOCKDOWN_SCHEMA);
 
         /* check if mate-screensaver is installed */
-        schemas = g_settings_list_schemas ();
-        schema_exists = FALSE;
-        for (i = 0; schemas[i] != NULL; i++) {
-                if (g_str_equal (schemas[i], SCREENSAVER_SCHEMA)) {
-                        schema_exists = TRUE;
-                        break;
-                }
-        }
+	GSettingsSchemaSource *source = g_settings_schema_source_get_default();
+	schema_exists = g_settings_schema_source_lookup(source, SCREENSAVER_SCHEMA, TRUE) != NULL;
+
         if (schema_exists == TRUE)
                 manager->priv->settings_screensaver = g_settings_new (SCREENSAVER_SCHEMA);
         else
@@ -3269,8 +3262,8 @@ gsm_manager_can_shutdown (GsmManager *manager,
 #ifdef HAVE_SYSTEMD
         GsmSystemd *systemd;
 #endif
-        gboolean can_suspend;
-        gboolean can_hibernate;
+        gboolean can_suspend = FALSE;
+        gboolean can_hibernate = FALSE;
 #ifdef HAVE_UPOWER
         g_object_get (manager->priv->up_client,
                       "can-suspend", &can_suspend,
