@@ -53,7 +53,7 @@ UPOWER_REQUIRED=0.9.0
 
 case "$with_gtk" in
   2.0) GTK_API_VERSION=2.0
-       GTK_REQUIRED=2.14.0
+       GTK_REQUIRED=2.24.0
        ;;
   3.0) GTK_API_VERSION=3.0
        GTK_REQUIRED=2.90.0
