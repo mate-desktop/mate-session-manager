@@ -41,10 +41,11 @@
 #define GSM_LOGOUT_DIALOG_GET_PRIVATE(o)                                \
         (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_LOGOUT_DIALOG, GsmLogoutDialogPrivate))
 
-#define AUTOMATIC_ACTION_TIMEOUT 60
-
 #define GSM_ICON_LOGOUT   "system-log-out"
 #define GSM_ICON_SHUTDOWN "system-shutdown"
+
+#define SESSION_SCHEMA     "org.mate.session"
+#define KEY_LOGOUT_TIMEOUT "logout-timeout"
 
 typedef enum {
         GSM_DIALOG_LOGOUT_TYPE_LOGOUT,
@@ -397,18 +398,29 @@ gsm_logout_dialog_timeout (gpointer data)
 static void
 gsm_logout_dialog_set_timeout (GsmLogoutDialog *logout_dialog)
 {
-        logout_dialog->priv->timeout = AUTOMATIC_ACTION_TIMEOUT;
+        GSettings *settings;
 
-        /* Sets the secondary text */
-        gsm_logout_dialog_timeout (logout_dialog);
+        settings = g_settings_new (SESSION_SCHEMA);
 
-        if (logout_dialog->priv->timeout_id != 0) {
-                g_source_remove (logout_dialog->priv->timeout_id);
+        logout_dialog->priv->timeout = g_settings_get_int (settings, KEY_LOGOUT_TIMEOUT);
+
+        if (logout_dialog->priv->timeout > 0) {
+                /* Sets the secondary text */
+                gsm_logout_dialog_timeout (logout_dialog);
+
+                if (logout_dialog->priv->timeout_id != 0) {
+                        g_source_remove (logout_dialog->priv->timeout_id);
+                }
+
+                logout_dialog->priv->timeout_id = g_timeout_add (1000,
+                                                                 gsm_logout_dialog_timeout,
+                                                                 logout_dialog);
+        }
+        else {
+                gtk_widget_hide (logout_dialog->priv->progressbar);
         }
 
-        logout_dialog->priv->timeout_id = g_timeout_add (1000,
-                                                         gsm_logout_dialog_timeout,
-                                                         logout_dialog);
+        g_object_unref (settings);
 }
 
 static GtkWidget *
