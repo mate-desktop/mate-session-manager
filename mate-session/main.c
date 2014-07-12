@@ -39,6 +39,8 @@
 #include <dbus/dbus-glib-bindings.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
+#include <libmate-desktop/mate-gsettings.h>
+
 #include "mdm-signal-handler.h"
 #include "mdm-log.h"
 
@@ -527,41 +529,6 @@ static gboolean require_dbus_session(int argc, char** argv, GError** error)
 	return TRUE;
 }
 
-// Copied from mate-desktop
-gboolean
-_gsettings_schema_exists (const gchar* schema)
-{
-#if GLIB_CHECK_VERSION (2, 40, 0)
-    GSettingsSchemaSource *schema_source;
-    GSettingsSchema *schema_schema;
-#else
-    const char * const *schemas;
-    gint i;
-#endif
-    gboolean schema_exists;
-
-#if GLIB_CHECK_VERSION (2, 40, 0)
-    schema_source = g_settings_schema_source_get_default();
-    schema_schema = g_settings_schema_source_lookup (schema_source, schema, FALSE);
-    schema_exists = (schema_schema != NULL);
-    if (schema_schema)
-        g_settings_schema_unref (schema_schema);
-#else
-    schemas = g_settings_list_schemas ();
-    schema_exists = FALSE;
-
-    for (i = 0; schemas[i] != NULL; i++) {
-        if (g_strcmp0 (schemas[i], schema) == 0) {
-            schema_exists = TRUE;
-            break;
-        }
-    }
-#endif
-
-    return schema_exists;
-}
-
-
 void debug_changed (GSettings *settings, gchar *key, gpointer user_data)
 {
 	debug = g_settings_get_boolean (settings, DEBUG_KEY);
@@ -620,7 +587,7 @@ int main(int argc, char** argv)
 	}
 
 	/* Allows to enable/disable debug from GSettings only if it is not set from argument */
-	if (!debug && _gsettings_schema_exists(DEBUG_SCHEMA))
+	if (!debug && mate_gsettings_schema_exists(DEBUG_SCHEMA))
 	{
 		debug_settings = g_settings_new (DEBUG_SCHEMA);
 		debug = g_settings_get_boolean (debug_settings, DEBUG_KEY);
