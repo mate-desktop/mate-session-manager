@@ -15,15 +15,15 @@
 # Karl Eichwalder <ke@suse.de>, 2000, 2001
 # Mario Blättermann <mariobl@gnome.org>, 2008, 2010
 # qazwsxedc <qazwsxedc@gmx.net>, 2014
-# to_ba, 2014
+# Tobias Bannert, 2014
 # c72578 <c72578@yahoo.de>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-04-20 13:04+0000\n"
-"Last-Translator: to_ba\n"
+"PO-Revision-Date: 2014-05-19 14:17+0000\n"
+"Last-Translator: Tobias Bannert\n"
 "Language-Team: German (http://www.transifex.com/projects/p/MATE/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -109,20 +109,20 @@ msgstr "Soll mate-session den Benutzer vor dem Beenden einer Sitzung fragen?"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
 msgid "Time before session is considered idle"
-msgstr "Zeitdauer ab der die Sitzung als untätig gilt"
+msgstr "Zeitdauer, ab der die Sitzung als untätig gilt"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:8
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Die Anzahl inaktiver Minuten bis der Benutzer als untätig gilt."
+msgstr "Die Anzahl inaktiver Minuten, bis der Benutzer als untätig gilt."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Default session"
-msgstr "Standardsitzung"
+msgstr "Vorgabesitzung"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:10
 msgid "List of applications that are part of the default session."
-msgstr "Liste der Anwendungen, die Teil der Standardsitzung sind."
+msgstr "Liste der Anwendungen, die Teil der Vorgabesitzung sind."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:11
 msgid "Required session components"
@@ -185,7 +185,7 @@ msgstr "<b>Einige Anwendungen laufen noch:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Warten auf Beenden der Anwendung. Durch Abbruch der Anwendung könnten Änderungen verloren gehen."
+msgstr "Warten auf das Beenden der Anwendung. Durch Abbruch der Anwendung könnten Änderungen verloren gehen."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -193,7 +193,7 @@ msgstr "Startprogramme"
 
 #: ../data/mate-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr "Wählen Sie, welche Anwendungen gestartet werden, wenn Sie sich anmelden"
+msgstr "Auswählen, welche Anwendungen gestartet werden, wenn Sie sich anmelden"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
@@ -221,7 +221,7 @@ msgstr "Durchsuchen …"
 
 #: ../data/session-properties.ui.h:7
 msgid "Comm_ent:"
-msgstr "Ko_mmentar:"
+msgstr "_Kommentar:"
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
@@ -244,7 +244,7 @@ msgstr "Version der .desktop-Datei »%s« wurde nicht erkannt"
 #: ../egg/eggdesktopfile.c:957
 #, c-format
 msgid "Starting %s"
-msgstr "Startet %s"
+msgstr "%s wird gestartet"
 
 #: ../egg/eggdesktopfile.c:1099
 #, c-format
@@ -280,7 +280,7 @@ msgstr "DATEI"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Geben Sie die zu ladende Sitzungskennung an"
+msgstr "Bitte die zu ladende Sitzungskennung angeben"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -335,11 +335,11 @@ msgstr "Trotzdem in Ruhezustand gehen"
 
 #: ../mate-session/gsm-inhibit-dialog.c:955
 msgid "Shut Down Anyway"
-msgstr "Trotzdem ausschalten"
+msgstr "Trotzdem herunterfahren"
 
 #: ../mate-session/gsm-inhibit-dialog.c:958
 msgid "Reboot Anyway"
-msgstr "Trotzdem neu starten"
+msgstr "Trotzdem neustarten"
 
 #: ../mate-session/gsm-inhibit-dialog.c:966
 msgid "Lock Screen"
@@ -360,8 +360,8 @@ msgstr[1] "Sie werden in %d Sekunden automatisch abgemeldet"
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Der Rechner wird in %d Sekunde automatisch ausgeschaltet"
-msgstr[1] "Der Rechner wird in %d Sekunden automatisch ausgeschaltet"
+msgstr[0] "Der Rechner wird in %d Sekunde automatisch heruntergefahren"
+msgstr[1] "Der Rechner wird in %d Sekunden automatisch heruntergefahren"
 
 #: ../mate-session/gsm-logout-dialog.c:373
 #, c-format
@@ -382,7 +382,7 @@ msgstr "Benutzer ab_melden"
 
 #: ../mate-session/gsm-logout-dialog.c:464
 msgid "Shut down this system now?"
-msgstr "Möchten Sie den Rechner jetzt ausschalten?"
+msgstr "Möchten Sie den Rechner jetzt herunterfahren?"
 
 #: ../mate-session/gsm-logout-dialog.c:470
 msgid "S_uspend"
@@ -394,11 +394,11 @@ msgstr "_Ruhezustand"
 
 #: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Restart"
-msgstr "_Neu starten"
+msgstr "_Neustarten"
 
 #: ../mate-session/gsm-logout-dialog.c:492
 msgid "_Shut Down"
-msgstr "Rechner a_usschalten"
+msgstr "_Herunterfahren"
 
 #: ../mate-session/gsm-manager.c:1420 ../mate-session/gsm-manager.c:2118
 msgid "Not responding"
@@ -412,7 +412,7 @@ msgstr "Dieses Programm blockiert die Abmeldung."
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr "Neue Client-Verbindung wurde abgelehnt, weil die aktuelle Sitzung gegenwärtig beendet wird\n"
+msgstr "Neue Klientverbindung wurde abgelehnt, weil die aktuelle Sitzung gegenwärtig herunterfahren wird\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
@@ -427,11 +427,11 @@ msgstr "Anmeldesitzung konnte nicht gestartet werden (keine Verbindung zum X-Ser
 
 #: ../mate-session/main.c:479
 msgid "Override standard autostart directories"
-msgstr "Überschreiben vorgegebener Autostart-Ordner"
+msgstr "Vorgegebene Autostartordner überschreiben"
 
 #: ../mate-session/main.c:480
 msgid "Enable debugging code"
-msgstr "Debugging-Code aktivieren"
+msgstr "Fehlerdiagnose-Code aktivieren"
 
 #: ../mate-session/main.c:481
 msgid "Do not load user-specified applications"
@@ -439,7 +439,7 @@ msgstr "Keine benutzerspezifischen Anwendungen laden"
 
 #: ../mate-session/main.c:502
 msgid " - the MATE session manager"
-msgstr " - Die MATE-Sitzung verwalten"
+msgstr " - Die MATE-Sitzungsverwaltung"
 
 #: ../tools/mate-session-save.c:65
 msgid "Log out"
@@ -447,15 +447,15 @@ msgstr "Abmelden"
 
 #: ../tools/mate-session-save.c:66
 msgid "Log out, ignoring any existing inhibitors"
-msgstr "Abmelden und Unterdrückungen ignorieren"
+msgstr "Abmelden und alle vorhandenen Unterdrückungen ignorieren"
 
 #: ../tools/mate-session-save.c:67
 msgid "Show logout dialog"
-msgstr "Abmelden-Dialog anzeigen"
+msgstr "»Abmelden«-Dialog anzeigen"
 
 #: ../tools/mate-session-save.c:68
 msgid "Show shutdown dialog"
-msgstr "Ausschalten-Dialog anzeigen"
+msgstr "»Herunterfahren«-Dialog anzeigen"
 
 #: ../tools/mate-session-save.c:69
 msgid "Use dialog boxes for errors"

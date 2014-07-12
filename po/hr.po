@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-17 21:40+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-06-05 09:05+0000\n"
+"Last-Translator: Mislav E. Lukšić <meluksic@yahoo.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/MATE/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,23 +20,23 @@ msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
-msgstr "Odaberite naredbu"
+msgstr "Odaberi naredbu"
 
 #: ../capplet/gsm-app-dialog.c:201
 msgid "Add Startup Program"
-msgstr "Dodaj progam za pokretanje pri podizanju"
+msgstr "Dodaj početni progam"
 
 #: ../capplet/gsm-app-dialog.c:205
 msgid "Edit Startup Program"
-msgstr "Uređivanje programa koji se pokreću prilikom pokretanja"
+msgstr "Uredi početni program"
 
 #: ../capplet/gsm-app-dialog.c:493
 msgid "The startup command cannot be empty"
-msgstr "Naredba pri pokretanju ne može biti prazna"
+msgstr "Pokretačka naredba ne može biti prazna"
 
 #: ../capplet/gsm-app-dialog.c:499
 msgid "The startup command is not valid"
-msgstr "Naredba nije ispravna"
+msgstr "Pokretačka naredba nije ispravna"
 
 #: ../capplet/gsm-properties-dialog.c:552
 msgid "Enabled"
@@ -44,7 +44,7 @@ msgstr "Omogućeno"
 
 #: ../capplet/gsm-properties-dialog.c:564
 msgid "Icon"
-msgstr "Ikona"
+msgstr "Sličica"
 
 #: ../capplet/gsm-properties-dialog.c:576
 msgid "Program"
@@ -52,7 +52,7 @@ msgstr "Program"
 
 #: ../capplet/gsm-properties-dialog.c:796
 msgid "Startup Applications Preferences"
-msgstr ""
+msgstr "Prilagodbe početnih programa"
 
 #: ../capplet/gsp-app.c:269
 msgid "No name"
@@ -64,56 +64,56 @@ msgstr "Bez opisa"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:482
 msgid "Version of this application"
-msgstr "Verzija ovoga programa"
+msgstr "Inačica ovoga programa"
 
 #: ../capplet/main.c:54
 msgid "Could not display help document"
-msgstr ""
+msgstr "Nije bilo moguće prikazati pomoćni zapis"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Početno vrijeme tekuće pristupne dionice"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Unixovo vrijeme početka tekuće pristupne dionice."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:3
 msgid "Save sessions"
-msgstr "Spremiti prijavu"
+msgstr "Spremi pristupne dionice"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr ""
+msgstr "Ako je omogućeno, mate-session će samostalno spremiti pristupnu dionicu."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:5
 msgid "Logout prompt"
-msgstr "Dijalog odjave"
+msgstr "Odjavna poruka"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Ako je omogućeno, mate-session će upitati korisnika prije završavanja prijave."
+msgstr "Ako je omogućeno, mate-session će korisniku prikazati odzivnu poruku prije dovršetka pristupne dionice."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
 msgid "Time before session is considered idle"
-msgstr ""
+msgstr "Vrijeme nakon kojega se pristupna dionica smatra u mirovanju"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:8
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr ""
+msgstr "Vrijeme nedjelovanja u minutama nakon kojega se pristupna dionica smatra u mirovanju."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Default session"
-msgstr ""
+msgstr "Zadana pristupna dionica"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:10
 msgid "List of applications that are part of the default session."
-msgstr ""
+msgstr "Popis programa koji su dio zadane pristupne dionice."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:11
 msgid "Required session components"
-msgstr ""
+msgstr "Potrebne sastavnice pristupne dionice"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:12
 msgid ""
@@ -123,18 +123,18 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr ""
+msgstr "Popis sastavnica koje su potrebne kao dio pristupne dionice. (Svaka sastavnica daje ime ključu pod \"/org/mate/desktop/session/required_components\"). Pomagalo prilagodbi početnih programa obično neće korisnicima dopustiti uklanjanje potrebne sastavnice iz pristupne dionice, a upravitelj pristupne dionice će joj samostalno vratiti potrebne sastavnice u trenutku prijave ako one budu uklonjene."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:13
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
-msgstr "Upravitelj prozora"
+msgstr "Prozorski upravitelj"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:14
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr ""
+msgstr "Prozorski upravitelj jest program koji ocrtava naslovnu traku i rubove oko prozora, te ti omogućava premještanje prozora i promjenu njihove veličine."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:15
 msgid "Panel"
@@ -144,17 +144,17 @@ msgstr "Ploča"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr ""
+msgstr "Ploča omogućava traku pri vrhu ili dnu zaslona sadržavajući izbornike, popis prozora, sličice slanja, uru itd."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 msgid "File Manager"
-msgstr "Upravitelj datotekama"
+msgstr "Datotečni upravitelj"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:18
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr ""
+msgstr "Datotečni upravitelj omogućava sličice radne površine i dopušta ti uzajamno djelovanje s tvojim pohranjenim datotekama."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -162,53 +162,53 @@ msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
-msgstr "Ova sesija vas prijavljuje u MATE"
+msgstr "Ova pristupna dionica prijavljuje te u MATE"
 
 #: ../data/gsm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
-msgstr ""
+msgstr "<b>Pojedini programi su još uvijek pokrenuti:</b>"
 
 #: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr ""
+msgstr "Čekanje na svršetak programa. Prekidanje programa može ti prouzročiti gubitak rada."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
-msgstr ""
+msgstr "Početni programi"
 
 #: ../data/mate-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr ""
+msgstr "Izaberi programe koje treba pokrenuti nakon prijave"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
-msgstr "Dodatni programi za _pokrenuti pri podizanju:"
+msgstr "Dodatni početni _programi:"
 
 #: ../data/session-properties.ui.h:2
 msgid "Startup Programs"
-msgstr "Startup servisi"
+msgstr "Početni programi"
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
-msgstr "_Automatski zapamti pokrenute aplikacije pri odjavljivanju iz sustava"
+msgstr "_Samostalno upamti pokrenute programe pri odjavljivanju"
 
 #: ../data/session-properties.ui.h:4
 msgid "_Remember Currently Running Application"
-msgstr ""
+msgstr "_Upamti trenutno pokrenute programe"
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr "Opcije"
+msgstr "Mogućnosti"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
-msgstr ""
+msgstr "Pregledaj..."
 
 #: ../data/session-properties.ui.h:7
 msgid "Comm_ent:"
-msgstr "_Komentar:"
+msgstr "Napo_mena:"
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
@@ -221,239 +221,239 @@ msgstr "_Ime:"
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr ""
+msgstr "Datoteka nije valjana .desktop datoteka"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr ""
+msgstr "Neprepoznata inačica datoteke radne površine '%s'"
 
 #: ../egg/eggdesktopfile.c:957
 #, c-format
 msgid "Starting %s"
-msgstr ""
+msgstr "Pokreće se %s"
 
 #: ../egg/eggdesktopfile.c:1099
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "Program ne prihvaća zapise u naredbenom retku"
 
 #: ../egg/eggdesktopfile.c:1167
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr ""
+msgstr "Neprepoznata mogućnost pokretanja: %d"
 
 #: ../egg/eggdesktopfile.c:1372
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr ""
+msgstr "Nije moguće proslijediti URI-je zapisa na unos radne površine 'Type=Link'"
 
 #: ../egg/eggdesktopfile.c:1393
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "Nije izvršna stavka"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "Onemogući vezu prema upravitelju pristupne dionice"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr ""
+msgstr "Navedi datoteku koja sadrži pohranjene postavke"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr ""
+msgstr "DATOTEKA"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "Navedi označivač upravljanja pristupnom dionicom"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr ""
+msgstr "Označivač"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr ""
+msgstr "Mogućnosti upravljanja pristupnom dionicom:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr ""
+msgstr "Prikaži mogućnosti upravljanja pristupnom dionicom"
 
 #: ../mate-session/gsm-inhibit-dialog.c:258
 #, c-format
 msgid "Icon '%s' not found"
-msgstr ""
+msgstr "Sličica '%s' nije pronađena"
 
 #: ../mate-session/gsm-inhibit-dialog.c:657
 msgid "Unknown"
-msgstr "Napoznato"
+msgstr "Nepoznato"
 
 #: ../mate-session/gsm-inhibit-dialog.c:708
 msgid "A program is still running:"
-msgstr ""
+msgstr "Program se još uvijek izvodi:"
 
 #: ../mate-session/gsm-inhibit-dialog.c:712
 msgid "Some programs are still running:"
-msgstr ""
+msgstr "Pojedini programi se još uvijek izvode:"
 
 #: ../mate-session/gsm-inhibit-dialog.c:713
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr ""
+msgstr "Čekanje na svršetak programa. Prekidanje ovih programa može ti prouzročiti gubitak rada."
 
 #: ../mate-session/gsm-inhibit-dialog.c:943
 msgid "Switch User Anyway"
-msgstr ""
+msgstr "Ipak zamijeni korisnika"
 
 #: ../mate-session/gsm-inhibit-dialog.c:946
 msgid "Log Out Anyway"
-msgstr ""
+msgstr "Ipak se odjavi"
 
 #: ../mate-session/gsm-inhibit-dialog.c:949
 msgid "Suspend Anyway"
-msgstr ""
+msgstr "Ipak obustavi"
 
 #: ../mate-session/gsm-inhibit-dialog.c:952
 msgid "Hibernate Anyway"
-msgstr ""
+msgstr "Ipak hiberniraj"
 
 #: ../mate-session/gsm-inhibit-dialog.c:955
 msgid "Shut Down Anyway"
-msgstr ""
+msgstr "Ipak isključi"
 
 #: ../mate-session/gsm-inhibit-dialog.c:958
 msgid "Reboot Anyway"
-msgstr ""
+msgstr "Ipak ponovno pokreni"
 
 #: ../mate-session/gsm-inhibit-dialog.c:966
 msgid "Lock Screen"
-msgstr ""
+msgstr "Zaključaj zaslon"
 
 #: ../mate-session/gsm-inhibit-dialog.c:969
 msgid "Cancel"
-msgstr ""
+msgstr "Opozovi"
 
 #: ../mate-session/gsm-logout-dialog.c:319
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Slijedi ti automatska odjava za %d sekundu"
+msgstr[1] "Slijedi ti automatska odjava za %d sekunde"
+msgstr[2] "Slijedi ti automatska odjava za %d sekunda"
 
 #: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Sustav će se samostalno isključiti za %d sekundu"
+msgstr[1] "Sustav će se samostalno isključiti za %d sekunde"
+msgstr[2] "Sustav će se samostalno isključiti za %d sekunda"
 
 #: ../mate-session/gsm-logout-dialog.c:373
 #, c-format
 msgid "You are currently logged in as \"%s\"."
-msgstr ""
+msgstr "Tvoja se trenutna prijava vodi kao \"%s\"."
 
 #: ../mate-session/gsm-logout-dialog.c:443
 msgid "Log out of this system now?"
-msgstr ""
+msgstr "Želiš li odmah odjavu iz ovog sustava?"
 
 #: ../mate-session/gsm-logout-dialog.c:449
 msgid "_Switch User"
-msgstr ""
+msgstr "_Zamijeni korisnika"
 
 #: ../mate-session/gsm-logout-dialog.c:458
 msgid "_Log Out"
-msgstr "_Odjava"
+msgstr "_Odjavi se"
 
 #: ../mate-session/gsm-logout-dialog.c:464
 msgid "Shut down this system now?"
-msgstr ""
+msgstr "Želiš li odmah isključenje ovog sustava?"
 
 #: ../mate-session/gsm-logout-dialog.c:470
 msgid "S_uspend"
-msgstr ""
+msgstr "O_bustavi"
 
 #: ../mate-session/gsm-logout-dialog.c:476
 msgid "_Hibernate"
-msgstr "_Hibernacija"
+msgstr "_Hiberniraj"
 
 #: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Restart"
-msgstr "Po_novno pokretanje"
+msgstr "_Ponovno pokreni"
 
 #: ../mate-session/gsm-logout-dialog.c:492
 msgid "_Shut Down"
-msgstr "_Gašenje"
+msgstr "_Isključi"
 
 #: ../mate-session/gsm-manager.c:1420 ../mate-session/gsm-manager.c:2118
 msgid "Not responding"
-msgstr ""
+msgstr "Nema odziva"
 
 #: ../mate-session/gsm-xsmp-client.c:1189
 msgid "This program is blocking logout."
-msgstr ""
+msgstr "Ovaj program sprječava odjavu."
 
 #: ../mate-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr ""
+msgstr "Odbija se veza novoga klijenta jer je pristupna dionica trenutno u isključivanju\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
-msgstr ""
+msgstr "Nije bilo moguće stvoriti ICE primateljsku spojnicu: %s"
 
 #. Oh well, no X for you!
 #: ../mate-session/gsm-util.c:354
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr ""
+msgstr "Nije moguće pokrenuti pristupnu dionicu prijave (i nije moguće povezati se na X poslužitelj)"
 
 #: ../mate-session/main.c:479
 msgid "Override standard autostart directories"
-msgstr ""
+msgstr "Premosti uobičajene direktorije samopokretanja"
 
 #: ../mate-session/main.c:480
 msgid "Enable debugging code"
-msgstr ""
+msgstr "Omogući kod za otklanjanje neispravnosti"
 
 #: ../mate-session/main.c:481
 msgid "Do not load user-specified applications"
-msgstr ""
+msgstr "Ne učitavaj korisnički određene programe"
 
 #: ../mate-session/main.c:502
 msgid " - the MATE session manager"
-msgstr ""
+msgstr " - MATE-ov upravitelj pristupne dionice"
 
 #: ../tools/mate-session-save.c:65
 msgid "Log out"
-msgstr ""
+msgstr "Odjavi se"
 
 #: ../tools/mate-session-save.c:66
 msgid "Log out, ignoring any existing inhibitors"
-msgstr ""
+msgstr "Odjavi se zanemarujući sve postojeće prepreke"
 
 #: ../tools/mate-session-save.c:67
 msgid "Show logout dialog"
-msgstr ""
+msgstr "Prikaži odjavni dijaloški okvir"
 
 #: ../tools/mate-session-save.c:68
 msgid "Show shutdown dialog"
-msgstr ""
+msgstr "Prikaži dijaloški okvir isključivanja"
 
 #: ../tools/mate-session-save.c:69
 msgid "Use dialog boxes for errors"
-msgstr "Koristi dijaloške okvire za greške"
+msgstr "Koristi dijaloške okvire za neispravnosti"
 
 #. deprecated options
 #: ../tools/mate-session-save.c:71
 msgid "Set the current session name"
-msgstr "Postavi ime trenutačne prijave"
+msgstr "Postavi ime tekuće pristupne dionice"
 
 #: ../tools/mate-session-save.c:71
 msgid "NAME"
@@ -461,16 +461,16 @@ msgstr "IME"
 
 #: ../tools/mate-session-save.c:72
 msgid "Kill session"
-msgstr "Ubij prijavu"
+msgstr "Prekini pristupnu dionicu"
 
 #: ../tools/mate-session-save.c:73
 msgid "Do not require confirmation"
-msgstr "Ne traži potvrdu"
+msgstr "Ne zahtijevaj potvrdu"
 
 #: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
 msgid "Could not connect to the session manager"
-msgstr "Nije moguće povezati se na upravitelja prijava"
+msgstr "Nije bilo moguće povezati se s upraviteljem pristupne dionice"
 
 #: ../tools/mate-session-save.c:287
 msgid "Program called with conflicting options"
-msgstr ""
+msgstr "Program pozvan sukobljenim izborima"

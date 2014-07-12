@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Asier Iturralde Sarasola <asier.iturralde@gmail.com>, 2012
+# Asier Iturralde Sarasola <asier.iturralde@gmail.com>, 2012,2014
 # Hizkuntza Politikarako Sailburuordetza <hizpol@ej-gv.es>, 2004
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2005, 2006, 2007, 2008, 2009, 2010
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007
@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-17 21:40+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-06-16 21:08+0000\n"
+"Last-Translator: Asier Iturralde Sarasola <asier.iturralde@gmail.com>\n"
 "Language-Team: Basque (http://www.transifex.com/projects/p/MATE/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,11 +76,11 @@ msgstr "Ezin izan da laguntzako dokumentua bistaratu"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Uneko saioaren hasierako denbora"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Uneko saioaren hasierako Unix denbora."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:3
 msgid "Save sessions"
@@ -88,7 +88,7 @@ msgstr "Gorde saioak"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr ""
+msgstr "Gaituta badago, mate-session-ek saioa automatikoki gordeko du."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:5
 msgid "Logout prompt"
@@ -176,7 +176,7 @@ msgstr "<b>Programa batzuk oraindik exekutatzen ari dira:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr ""
+msgstr "Programak amaitu zain. Programa hau eteteak zure lanak galtzea eragin dezake."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -306,7 +306,7 @@ msgstr "Programa batzuk oraindik exekutatzen ari dira:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Programak amaitu zain. Programa hauek etetzeak zure lanak galtzea eragin lezake."
+msgstr "Programek amaitu zain. Programa hauek eteteak zure lanak galtzea eragin dezake."
 
 #: ../mate-session/gsm-inhibit-dialog.c:943
 msgid "Switch User Anyway"
@@ -344,15 +344,15 @@ msgstr "Utzi"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Saioa automatikoki amaituko duzu segundo %d igarotzean"
+msgstr[1] "Saioa automatikoki amaituko duzu %d segundo igarotzean"
 
 #: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Sistema automatikoki itzaliko da segundo %d igarotzean"
+msgstr[1] "Sistema automatikoki itzaliko da %d segundo igarotzean"
 
 #: ../mate-session/gsm-logout-dialog.c:373
 #, c-format
