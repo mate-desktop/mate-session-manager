@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Ilmar Kerm <ikerm@hot.ee>, 2001, 2002
+# Ivar Smolin <okul@linux.ee>, 2014
 # Lauris Kaplinski <lauris@ariman.ee>, 1999
 # Tõivo Leedjärv <toivo@linux.ee>, 2002
 msgid ""
@@ -11,8 +12,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-17 21:40+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-08-20 06:49+0000\n"
+"Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/MATE/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +35,7 @@ msgstr "Käivitusprogrammi redigeerimine"
 
 #: ../capplet/gsm-app-dialog.c:493
 msgid "The startup command cannot be empty"
-msgstr "Käivituskäsku ei tohi tühjaks jätta"
+msgstr "Käivituskäsk ei tohi olla tühi"
 
 #: ../capplet/gsm-app-dialog.c:499
 msgid "The startup command is not valid"
@@ -54,7 +55,7 @@ msgstr "Programm"
 
 #: ../capplet/gsm-properties-dialog.c:796
 msgid "Startup Applications Preferences"
-msgstr "Käivitatavate rakenduste eelistused"
+msgstr "Käivitusrakenduste eelistused"
 
 #: ../capplet/gsp-app.c:269
 msgid "No name"
@@ -66,7 +67,7 @@ msgstr "Kirjeldus puudub"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:482
 msgid "Version of this application"
-msgstr "Rakenduse versioon"
+msgstr "Selle rakenduse versioon"
 
 #: ../capplet/main.c:54
 msgid "Could not display help document"
@@ -74,19 +75,19 @@ msgstr "Abidokumenti pole võimalik kuvada"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Jooksva seansi käivitamise aeg"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Jooksva seansi käivitamise aeg Unixi vormingus"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:3
 msgid "Save sessions"
-msgstr "Salvesta seansid"
+msgstr "Seansside salvestamine"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr "Kui lubatud, salvestab mate-session seansi automaatselt."
+msgstr "Lubamise korral salvestab mate-session seansi automaatselt."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:5
 msgid "Logout prompt"
@@ -94,7 +95,7 @@ msgstr "Väljalogimisviip"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Kui määratud, siis mate-session küsib kasutaja nõusolekut enne seansi lõpetamist."
+msgstr "Lubamise korral küsib mate-session enne seansi lõpetamist kasutaja nõusolekut."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
 msgid "Time before session is considered idle"
@@ -103,7 +104,7 @@ msgstr "Seansi jõudeoleku saavutamiseks kuluv aeg"
 #: ../data/org.mate.session.gschema.xml.in.in.h:8
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Mitu minutit peab mööduma selleks, et seanss loetaks jõudeolevaks."
+msgstr "Mitu minutit peab mööduma, et seanss loetaks jõudeolevaks."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Default session"
@@ -115,7 +116,7 @@ msgstr "Vaikimisi seansi osaks olevate rakenduste nimekiri."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:11
 msgid "Required session components"
-msgstr "Vajalikut seansikomponendid"
+msgstr "Vajalikud seansikomponendid"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:12
 msgid ""
@@ -125,7 +126,7 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr ""
+msgstr "Nimekiri seansi osaks olevatest vajalikest komponentidest (iga kirje annab nime rajal \"/org/mate/desktop/session/required_components\" olevale võtmele). Harilikult ei luba käivitatavate rakenduste eelistuste määramise tööriist kasutajal vajalikke komponente seansist eemaldada ja kui need ka eemaldatud on, siis lisab seansihaldur need sisselogimise ajal tagasi."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:13
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -146,7 +147,7 @@ msgstr "Paneel"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Paneel tekitab ekraani üla- või allosas oleva riba. Nendel ribadel võivad asuda menüüd, akende nimekiri, olekuikoonid, kell jms."
+msgstr "Paneel tekitab ekraani üla- või allosas oleva riba, millel võivad asuda menüüd, akende nimekiri, olekuikoonid, kell jms."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 msgid "File Manager"
@@ -156,7 +157,7 @@ msgstr "Failihaldur"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Failihaldur tagab töölauaikoonide funktsionaalsuse ja võimaldab salvestatud failidega tegeleda."
+msgstr "Failihaldur tagab töölauaikoonide funktsionaalsuse ja võimaldab tegeleda salvestatud failidega."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -178,7 +179,7 @@ msgstr "Programmi töö lõpetamise järel ootamine.  Programmi katkestamine võ
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
-msgstr "Käivitatavad rakendused"
+msgstr "Käivitusrakendused"
 
 #: ../data/mate-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
@@ -261,7 +262,7 @@ msgstr "Seansihalduriga ühendumise keelamine"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "Salvestatud seadistusi sisaldava faili määramine"
+msgstr "Salvestatud sätteid sisaldava faili määramine"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
@@ -342,15 +343,15 @@ msgstr "Tühista"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Sind logitakse %d sekundi pärast automaatselt välja"
+msgstr[1] "Sind logitakse %d sekundi pärast automaatselt välja"
 
 #: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Süsteem jäetakse %d sekundi pärast automaatselt seisma"
+msgstr[1] "Süsteem jäetakse %d sekundi pärast automaatselt seisma"
 
 #: ../mate-session/gsm-logout-dialog.c:373
 #, c-format

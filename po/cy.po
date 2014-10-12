@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# ciaran, 2014
 # www.gyfieithu.co.uk <kyfieithu@dotmon.com>, 2003
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-17 21:40+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-09-03 15:28+0000\n"
+"Last-Translator: ciaran\n"
 "Language-Team: Welsh (http://www.transifex.com/projects/p/MATE/language/cy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +45,7 @@ msgstr ""
 
 #: ../capplet/gsm-properties-dialog.c:564
 msgid "Icon"
-msgstr ""
+msgstr "Eicon"
 
 #: ../capplet/gsm-properties-dialog.c:576
 msgid "Program"
@@ -60,11 +61,11 @@ msgstr ""
 
 #: ../capplet/gsp-app.c:275
 msgid "No description"
-msgstr ""
+msgstr "Dim disgrifiad"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:482
 msgid "Version of this application"
-msgstr ""
+msgstr "Fersiwn y rhaglen hon"
 
 #: ../capplet/main.c:54
 msgid "Could not display help document"
@@ -105,7 +106,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Default session"
-msgstr ""
+msgstr "Sesiwn rhagosodedig"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:10
 msgid "List of applications that are part of the default session."
@@ -148,7 +149,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 msgid "File Manager"
-msgstr ""
+msgstr "Rheolydd Ffeiliau"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:18
 msgid ""
@@ -158,15 +159,15 @@ msgstr ""
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr ""
+msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
-msgstr ""
+msgstr "Mae'r sesiwn hwn yn eich mewngofnodi i MATE"
 
 #: ../data/gsm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
-msgstr ""
+msgstr "<b>Mae rhai rhaglenni yn dal i redeg:</b>"
 
 #: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
 msgid ""
@@ -200,7 +201,7 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr ""
+msgstr "Dewisiadau"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
@@ -361,19 +362,19 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:443
 msgid "Log out of this system now?"
-msgstr ""
+msgstr "Allgofnodi o'r system hon nawr?"
 
 #: ../mate-session/gsm-logout-dialog.c:449
 msgid "_Switch User"
-msgstr ""
+msgstr "_Newid Defnyddiwr"
 
 #: ../mate-session/gsm-logout-dialog.c:458
 msgid "_Log Out"
-msgstr ""
+msgstr "_Allgofnodi"
 
 #: ../mate-session/gsm-logout-dialog.c:464
 msgid "Shut down this system now?"
-msgstr ""
+msgstr "Diffodd y system hon nawr?"
 
 #: ../mate-session/gsm-logout-dialog.c:470
 msgid "S_uspend"
@@ -385,11 +386,11 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Restart"
-msgstr ""
+msgstr "_Ailgychwyn"
 
 #: ../mate-session/gsm-logout-dialog.c:492
 msgid "_Shut Down"
-msgstr ""
+msgstr "_Diffodd"
 
 #: ../mate-session/gsm-manager.c:1420 ../mate-session/gsm-manager.c:2118
 msgid "Not responding"
@@ -434,7 +435,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:65
 msgid "Log out"
-msgstr ""
+msgstr "Allgofnodi"
 
 #: ../tools/mate-session-save.c:66
 msgid "Log out, ignoring any existing inhibitors"
@@ -459,7 +460,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:71
 msgid "NAME"
-msgstr ""
+msgstr "ENW"
 
 #: ../tools/mate-session-save.c:72
 msgid "Kill session"

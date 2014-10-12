@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2014
 # Gintautas Miliauskas <gintas@akl.lt>, 2006, 2007, 2008
 # brennus <jonas.ska@gmail.com>, 2014
 # Justina Klingaitė <justina.klingaite@gmail.com>, 2005
@@ -11,8 +12,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-04-15 15:53+0000\n"
-"Last-Translator: brennus <jonas.ska@gmail.com>\n"
+"PO-Revision-Date: 2014-09-21 21:00+0000\n"
+"Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,11 +75,11 @@ msgstr "Nepavyko parodyti žinyno dokumento"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Esamo seanso pradžios laikas"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Esamo seanso pradžios Unix laikas"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:3
 msgid "Save sessions"
@@ -86,7 +87,7 @@ msgstr "Išsaugoti seansus"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr ""
+msgstr "Jeigu įjungta, mate-session automatiškai išsaugos seansą."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:5
 msgid "Logout prompt"
@@ -125,7 +126,7 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr ""
+msgstr "Komponentų, kurie yra būtini seanse, sąrašas. (Kiekvienas elementas nurodo raktą, esantį „/org/mate/desktop/session/required_components“.) Paleidžiamų programų nustatymų įrankis paprastai neleidžia naudotojams pašalinti būtiną komponentą iš seanso, o seansų valdyklė automatiškai vėl grąžins būtinus komponentus į seansą prisijungimo metu, jei jie kaip nors bus pašalinti."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:13
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -206,7 +207,7 @@ msgstr "Parinktys"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
-msgstr ""
+msgstr "Naršyti..."
 
 #: ../data/session-properties.ui.h:7
 msgid "Comm_ent:"
@@ -312,7 +313,7 @@ msgstr "Keisti naudotoją bet kokiu atveu"
 
 #: ../mate-session/gsm-inhibit-dialog.c:946
 msgid "Log Out Anyway"
-msgstr ""
+msgstr "Vis tiek atsijungti"
 
 #: ../mate-session/gsm-inhibit-dialog.c:949
 msgid "Suspend Anyway"
@@ -324,7 +325,7 @@ msgstr "Hibernuoti bet kokiu atveju"
 
 #: ../mate-session/gsm-inhibit-dialog.c:955
 msgid "Shut Down Anyway"
-msgstr ""
+msgstr "Vis tiek išjungti"
 
 #: ../mate-session/gsm-inhibit-dialog.c:958
 msgid "Reboot Anyway"
@@ -342,17 +343,17 @@ msgstr "Atsisakyti"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Būsite automatiškai atjungti po %d sekundės"
+msgstr[1] "Būsite automatiškai atjungti po %d sekundžių"
+msgstr[2] "Būsite automatiškai atjungti po %d sekundžių"
 
 #: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Sistema automatiškai išsijungs po %d sekundės"
+msgstr[1] "Sistema automatiškai išsijungs po %d sekundžių"
+msgstr[2] "Sistema automatiškai išsijungs po %d sekundžių"
 
 #: ../mate-session/gsm-logout-dialog.c:373
 #, c-format
@@ -397,7 +398,7 @@ msgstr "Neatsako"
 
 #: ../mate-session/gsm-xsmp-client.c:1189
 msgid "This program is blocking logout."
-msgstr ""
+msgstr "Ši programa neleidžia atsijungti"
 
 #: ../mate-session/gsm-xsmp-server.c:325
 msgid ""
