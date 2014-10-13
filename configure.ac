@@ -49,7 +49,6 @@ AC_MSG_RESULT([$with_gtk])
 GLIB_REQUIRED=2.36.0
 GIO_REQUIRED=2.25.0
 DBUS_GLIB_REQUIRED=0.76
-UPOWER_REQUIRED=0.9.0
 MATE_DESKTOP_REQUIRED=1.9.2
 
 case "$with_gtk" in
@@ -131,23 +130,24 @@ AC_SUBST(HAVE_SYSTEMD)
 dnl ====================================================================
 dnl UPOWER
 dnl ====================================================================
-
-AC_ARG_ENABLE(upower,
-              AS_HELP_STRING([--enable-upower],
+dnl We can only support old upower
+dnl https://bugzilla.gnome.org/show_bug.cgi?id=710383
+AC_ARG_ENABLE(old-upower,
+              AS_HELP_STRING([--enable-old-upower],
               [Use upower to suspend/hibernate]),
-              enable_upower=$enableval,
-              enable_upower=yes)
-if test "x$enable_upower" = "xyes"; then
-    PKG_CHECK_MODULES(UPOWER, upower-glib >= $UPOWER_REQUIRED, has_upower=yes, has_upower=no)
+              enable_old_upower=$enableval,
+              enable_old_upower=no)
+if test "x$enable_old_upower" = "xyes"; then
+    PKG_CHECK_MODULES(UPOWER, upower-glib <= 0.9.23, have_old_upower=yes, have_old_upower=no)
 
-    if test "x$has_upower" = "xyes"; then
-        AC_DEFINE(HAVE_UPOWER, 1, [upower support])
+    if test "x$have_old_upower" = "xyes"; then
+        AC_DEFINE(HAVE_OLD_UPOWER, 1, [legacy upower support])
         AC_SUBST(UPOWER_CFLAGS)
         AC_SUBST(UPOWER_LIBS)
     fi
 fi
-AM_CONDITIONAL(HAVE_UPOWER, test "x$has_upower" = "xyes")
-AC_SUBST(HAVE_UPOWER)
+AM_CONDITIONAL(HAVE_OLD_UPOWER, test "x$has_old_upower" = "xyes")
+AC_SUBST(HAVE_OLD_UPOWER)
 
 dnl ====================================================================
 dnl X development libraries check
@@ -407,7 +407,7 @@ echo "
         GTK+ version:             ${with_gtk}
         Default WM:               ${with_default_wm}
         Systemd support:          ${use_systemd}
-        Upower support:           ${enable_upower}
+        Legacy Upower support:    ${have_old_upower}
         IPv6 support:             ${have_full_ipv6}
         Backtrace support:        ${have_backtrace}
         XRender support:          ${have_xrender}
