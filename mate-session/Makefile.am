@@ -59,6 +59,7 @@ mate_session_SOURCES =				\
 
 mate_session_CPPFLAGS =			\
 	$(AM_CPPFLAGS)				\
+	$(X11_CFLAGS)                           \
 	$(SM_CFLAGS)				\
 	$(ICE_CFLAGS)				\
 	$(XEXT_CFLAGS)				\
@@ -71,6 +72,7 @@ mate_session_CPPFLAGS =			\
 
 mate_session_LDADD =				\
 	libgsmutil.la 				\
+	$(X11_LIBS)                             \
 	$(top_builddir)/egg/libeggdesktopfile.la \
 	$(SM_LIBS)				\
 	$(ICE_LIBS)				\
