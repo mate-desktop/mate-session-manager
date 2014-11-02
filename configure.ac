@@ -77,6 +77,7 @@ PKG_CHECK_MODULES(SESSION_PROPERTIES,
         gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
 )
 
+PKG_CHECK_MODULES(X11, x11)
 PKG_CHECK_MODULES(SM, sm)
 PKG_CHECK_MODULES(ICE, ice)
 PKG_CHECK_MODULES(XEXT, xext xau)
@@ -146,44 +147,6 @@ if test "x$enable_upower" = "xyes"; then
 fi
 AM_CONDITIONAL(HAVE_UPOWER, test "x$has_upower" = "xyes")
 AC_SUBST(HAVE_UPOWER)
-
-dnl ====================================================================
-dnl X development libraries check
-dnl ====================================================================
-
-# If Pango included the shared library dependencies from X11 in
-# the pkg-config output, then we use that (to avoid duplicates).
-# but if they were omitted to avoid binary compatibility problems
-# then we need to repeat the checks.
-
-if $PKG_CONFIG --exists pangoxft ; then
-  PANGO_PACKAGES="pangox pangoxft"
-else
-  PANGO_PACKAGES="pangox"
-fi
-
-x_libs="`$PKG_CONFIG --libs $PANGO_PACKAGES`"
-case x_libs in
-  *-lX11*) pango_omitted_x_deps=no ;;
-  *)       pango_omitted_x_deps=yes ;;
-esac
-
-if test $pango_omitted_x_deps = yes ; then
-  AC_PATH_XTRA
-
-  if test x$no_x = xyes ; then
-    AC_MSG_ERROR([X development libraries not found])
-  else
-    X_LIBS="$X_PRE_LIBS $X_LIBS -lX11 $X_EXTRA_LIBS"
-  fi
-fi
-
-AC_CHECK_LIB(Xau, XauFileName, [X_LIBS="$X_LIBS -lXau"],
-             [AC_MSG_ERROR([
-*** Cant find the Xauth library. It is needed to compile mate-session.])],
-	     $X_LIBS)
-
-AC_SUBST(X_LIBS)
 
 dnl ====================================================================
 dnl Check for XSync extension
