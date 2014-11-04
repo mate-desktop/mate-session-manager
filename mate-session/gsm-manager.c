@@ -175,6 +175,8 @@ static void     gsm_manager_class_init  (GsmManagerClass *klass);
 static void     gsm_manager_init        (GsmManager      *manager);
 static void     gsm_manager_finalize    (GObject         *object);
 
+static gboolean _log_out_is_locked_down (GsmManager *manager);
+
 static void     _handle_client_end_session_response (GsmManager *manager,
                                                      GsmClient  *client,
                                                      gboolean    is_ok,
@@ -523,6 +525,8 @@ gsm_manager_quit (GsmManager *manager)
 static void
 end_phase (GsmManager *manager)
 {
+        gboolean start_next_phase = TRUE;
+
         g_debug ("GsmManager: ending phase %s\n",
                  phase_num_to_name (manager->priv->phase));
 
@@ -547,25 +551,32 @@ end_phase (GsmManager *manager)
         case GSM_MANAGER_PHASE_PANEL:
         case GSM_MANAGER_PHASE_DESKTOP:
         case GSM_MANAGER_PHASE_APPLICATION:
+                break;
         case GSM_MANAGER_PHASE_RUNNING:
+                if (_log_out_is_locked_down (manager)) {
+                        g_warning ("Unable to logout: Logout has been locked down");
+                        start_next_phase = FALSE;
+                }
+                break;
         case GSM_MANAGER_PHASE_QUERY_END_SESSION:
-                manager->priv->phase++;
-                start_phase (manager);
                 break;
         case GSM_MANAGER_PHASE_END_SESSION:
-                if (auto_save_is_enabled (manager)) {
+                if (auto_save_is_enabled (manager))
                         maybe_save_session (manager);
-                }
-                manager->priv->phase++;
-                start_phase (manager);
                 break;
         case GSM_MANAGER_PHASE_EXIT:
+                start_next_phase = FALSE;
                 gsm_manager_quit (manager);
                 break;
         default:
                 g_assert_not_reached ();
                 break;
         }
+
+        if (start_next_phase) {
+                manager->priv->phase++;
+                start_phase (manager);
+	}
 }
 
 static void
@@ -3327,6 +3338,14 @@ gsm_manager_shutdown (GsmManager *manager,
                 return FALSE;
         }
 
+        if (_log_out_is_locked_down (manager)) {
+                g_set_error (error,
+                             GSM_MANAGER_ERROR,
+                             GSM_MANAGER_ERROR_LOCKED_DOWN,
+                             "Logout has been locked down");
+                return FALSE;
+        }
+
         show_shutdown_dialog (manager);
 
         return TRUE;
@@ -3365,10 +3384,11 @@ gsm_manager_can_shutdown (GsmManager *manager,
         else {
 #endif
         consolekit = gsm_get_consolekit ();
-        *shutdown_available = gsm_consolekit_can_stop (consolekit)
-                              || gsm_consolekit_can_restart (consolekit)
-                              || can_suspend
-                              || can_hibernate;
+        *shutdown_available = !_log_out_is_locked_down (manager) &&
+	                      (gsm_consolekit_can_stop (consolekit)
+                               || gsm_consolekit_can_restart (consolekit)
+                               || can_suspend
+                               || can_hibernate);
         g_object_unref (consolekit);
 #ifdef HAVE_SYSTEMD
         }
