@@ -215,6 +215,7 @@ gsm_manager_error_get_type (void)
                         ENUM_ENTRY (GSM_MANAGER_ERROR_ALREADY_REGISTERED, "AlreadyRegistered"),
                         ENUM_ENTRY (GSM_MANAGER_ERROR_NOT_REGISTERED, "NotRegistered"),
                         ENUM_ENTRY (GSM_MANAGER_ERROR_INVALID_OPTION, "InvalidOption"),
+                        ENUM_ENTRY (GSM_MANAGER_ERROR_LOCKED_DOWN, "LockedDown"),
                         { 0, 0, 0 }
                 };
 
@@ -3303,6 +3304,13 @@ gsm_manager_request_reboot (GsmManager *manager,
         return TRUE;
 }
 
+static gboolean
+_log_out_is_locked_down (GsmManager *manager)
+{
+        return g_settings_get_boolean (manager->priv->settings_lockdown,
+        "disable-log-out");
+}
+
 gboolean
 gsm_manager_shutdown (GsmManager *manager,
                       GError    **error)
@@ -3383,6 +3391,14 @@ gsm_manager_logout (GsmManager *manager,
                              GSM_MANAGER_ERROR,
                              GSM_MANAGER_ERROR_NOT_IN_RUNNING,
                              "Shutdown interface is only available during the Running phase");
+                return FALSE;
+        }
+
+        if (_log_out_is_locked_down (manager)) {
+                g_set_error (error,
+                             GSM_MANAGER_ERROR,
+                             GSM_MANAGER_ERROR_LOCKED_DOWN,
+                             "Logout has been locked down");
                 return FALSE;
         }
 
