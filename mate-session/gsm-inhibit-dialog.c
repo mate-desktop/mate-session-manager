@@ -1168,8 +1168,7 @@ gsm_inhibit_dialog_init (GsmInhibitDialog *dialog)
         gtk_window_set_icon_name (GTK_WINDOW (dialog), "system-log-out");
         gtk_window_set_title (GTK_WINDOW (dialog), "");
         g_object_set (dialog,
-                      "allow-shrink", FALSE,
-                      "allow-grow", FALSE,
+                      "resizable", FALSE,
                       NULL);
 }
 
