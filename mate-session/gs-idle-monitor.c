@@ -448,6 +448,7 @@ _xsync_alarm_set (GSIdleMonitor      *monitor,
         attr.delta = delta;
         attr.events = TRUE;
 
+        attr.trigger.wait_value = _int64_to_xsyncvalue (_xsyncvalue_to_int64 (watch->interval) - 1);
         attr.trigger.test_type = XSyncPositiveTransition;
         if (watch->xalarm_positive != None) {
                 g_debug ("GSIdleMonitor: updating alarm for positive transition wait=%ld",
