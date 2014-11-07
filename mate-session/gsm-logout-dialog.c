@@ -47,6 +47,9 @@
 #define SESSION_SCHEMA     "org.mate.session"
 #define KEY_LOGOUT_TIMEOUT "logout-timeout"
 
+#define LOCKDOWN_SCHEMA            "org.mate.lockdown"
+#define KEY_USER_SWITCHING_DISABLE "disable-user-switching"
+
 typedef enum {
         GSM_DIALOG_LOGOUT_TYPE_LOGOUT,
         GSM_DIALOG_LOGOUT_TYPE_SHUTDOWN
@@ -242,14 +245,22 @@ gsm_logout_supports_system_hibernate (GsmLogoutDialog *logout_dialog)
 static gboolean
 gsm_logout_supports_switch_user (GsmLogoutDialog *logout_dialog)
 {
-        gboolean ret;
+        GSettings *settings;
+        gboolean   ret;
 
+        settings = g_settings_new (LOCKDOWN_SCHEMA);
+
+	if (g_settings_get_boolean (settings, KEY_USER_SWITCHING_DISABLE))
+	        ret = FALSE;
+	g_object_unref (settings);
+
+	if (ret)
 #ifdef HAVE_SYSTEMD
-        if (LOGIND_RUNNING())
-            ret = gsm_systemd_can_switch_user (logout_dialog->priv->systemd);
-        else
+            if (LOGIND_RUNNING())
+                ret = gsm_systemd_can_switch_user (logout_dialog->priv->systemd);
+            else
 #endif
-        ret = gsm_consolekit_can_switch_user (logout_dialog->priv->consolekit);
+            ret = gsm_consolekit_can_switch_user (logout_dialog->priv->consolekit);
 
         return ret;
 }
