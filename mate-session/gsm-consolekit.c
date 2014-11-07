@@ -164,7 +164,8 @@ gsm_consolekit_dbus_filter (DBusConnection *connection,
                                     DBUS_INTERFACE_LOCAL, "Disconnected") &&
             strcmp (dbus_message_get_path (message), DBUS_PATH_LOCAL) == 0) {
                 gsm_consolekit_free_dbus (manager);
-                return DBUS_HANDLER_RESULT_HANDLED;
+                /* let other filters get this disconnected signal, so that they
+                 * can handle it too */
         }
 
         return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
