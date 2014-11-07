@@ -167,7 +167,8 @@ reset_idle_watch (GsmPresence  *presence)
         }
 
         if (! presence->priv->screensaver_active
-            && presence->priv->idle_enabled) {
+            && presence->priv->idle_enabled
+            && presence->priv->idle_timeout > 0) {
                 g_debug ("GsmPresence: adding idle watch");
 
                 presence->priv->idle_watch_id = gs_idle_monitor_add_watch (presence->priv->idle_monitor,
