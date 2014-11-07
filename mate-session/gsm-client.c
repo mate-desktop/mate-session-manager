@@ -365,6 +365,16 @@ gsm_client_peek_id (GsmClient *client)
         return client->priv->id;
 }
 
+/**
+ * gsm_client_peek_app_id:
+ * @client: a #GsmClient.
+ *
+ * Note that the application ID might not be known; this happens when for XSMP
+ * clients that we did not start ourselves, for instance.
+ *
+ * Returns: the application ID of the client, or %NULL if no such ID is
+ * known. The string is owned by @client.
+ **/
 const char *
 gsm_client_peek_app_id (GsmClient *client)
 {
@@ -457,6 +467,13 @@ gsm_client_get_unix_process_id (GsmClient  *client,
         return TRUE;
 }
 
+/**
+ * gsm_client_get_app_name:
+ * @client: a #GsmClient.
+ *
+ * Returns: a copy of the application name of the client, or %NULL if no such
+ * name is known.
+ **/
 char *
 gsm_client_get_app_name (GsmClient *client)
 {
