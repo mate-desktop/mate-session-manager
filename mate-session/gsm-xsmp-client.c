@@ -551,20 +551,20 @@ static void
 set_desktop_file_keys_from_client (GsmClient *client,
                                    GKeyFile  *keyfile)
 {
-        SmProp *prop;
-        char   *name;
-        char   *comment;
+        SmProp       *prop;
+        const char   *name;
+        char         *comment;
 
         prop = find_property (GSM_XSMP_CLIENT (client), SmProgram, NULL);
 
         if (prop) {
-                name = g_strdup (prop->vals[0].value);
+                name = prop->vals[0].value;
         } else {
             /* It'd be really surprising to reach this code: if we're here,
              * then the XSMP client already has set several XSMP
              * properties. But it could still be that SmProgram is not set.
              */
-            name = g_strdup (_("Remembered Application"));
+            name = _("Remembered Application");
 	}
 
         comment = g_strdup_printf ("Client %s which was automatically saved",
@@ -595,7 +595,6 @@ set_desktop_file_keys_from_client (GsmClient *client,
                                 G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY,
                                 TRUE);
 
-        g_free (name);
         g_free (comment);
 }
 
