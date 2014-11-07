@@ -83,6 +83,7 @@
 
 #define LOCKDOWN_SCHEMA              "org.mate.lockdown"
 #define KEY_LOCK_DISABLE             "disable-lock-screen"
+#define KEY_LOG_OUT_DISABLE          "disable-log-out"
 #define KEY_USER_SWITCH_DISABLE      "disable-user-switching"
 
 #define SESSION_SCHEMA               "org.mate.session"
@@ -3319,7 +3320,7 @@ static gboolean
 _log_out_is_locked_down (GsmManager *manager)
 {
         return g_settings_get_boolean (manager->priv->settings_lockdown,
-        "disable-log-out");
+        KEY_LOG_OUT_DISABLE);
 }
 
 gboolean
