@@ -316,7 +316,21 @@
           </doc:description>
         </doc:doc>
     </method>
-    
+
+    <method name="IsSessionRunning">
+      <arg name="running" direction="out" type="b">
+        <doc:doc>
+          <doc:summary>True if the session has entered the Running phase, false otherwise</doc:summary>
+        </doc:doc>
+      </arg>
+     <doc:doc>
+       <doc:description>
+         <doc:para>Allows the caller to determine whether the session manager
+         has entered the Running phase, in case the client missed the
+         SessionRunning signal.</doc:para>
+       </doc:description>
+     </doc:doc>
+    </method>
     <!-- Signals -->
 
     <signal name="ClientAdded">

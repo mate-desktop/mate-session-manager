@@ -3942,3 +3942,14 @@ gsm_manager_add_autostart_apps_from_dir (GsmManager *manager,
 
         return TRUE;
 }
+
+gboolean
+gsm_manager_is_session_running (GsmManager *manager,
+                                gboolean *running,
+                                GError **error)
+{
+        g_return_val_if_fail (GSM_IS_MANAGER (manager), FALSE);
+
+        *running = (manager->priv->phase == GSM_MANAGER_PHASE_RUNNING);
+        return TRUE;
+}

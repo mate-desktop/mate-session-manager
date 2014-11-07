@@ -190,6 +190,10 @@ gboolean            gsm_manager_is_autostart_condition_handled (GsmManager     *
 gboolean            gsm_manager_set_phase                      (GsmManager     *manager,
                                                                 GsmManagerPhase phase);
 
+gboolean            gsm_manager_is_session_running             (GsmManager *manager,
+                                                                gboolean *running,
+                                                                GError **error);
+
 #ifdef __cplusplus
 }
 #endif
