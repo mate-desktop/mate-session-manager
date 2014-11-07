@@ -1,0 +1,92 @@
+<refentry id="mate-session-inhibit" lang="en">
+
+<refentryinfo>
+<title>mate-session-inhibit</title>
+<productname>mate-session</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle>mate-session-inhibit</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class="manual">User Commands</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>mate-session-inhibit</refname>
+<refpurpose>inhibit mate-session functionality</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis>
+<command>mate-session-inhibit</command>
+<arg choice="opt" rep="repeat">OPTION</arg>
+<arg choice="req">COMMAND</arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1><title>Description</title>
+<para><command>mate-session-inhibit</command> can inhibit certain
+mate-session functionality while executing the given COMMAND. To
+achieve this, it calls the Inhibit() method of the mate-session
+D-Bus API and creates an inhibitor. The inhibitor is automatically
+removed when mate-session-inhibit exits.
+</para>
+<para>
+A typical use case is to prevent the session from going idle (and
+thus locking the screen) while a movie player is running.
+</para>
+
+</refsect1>
+
+<refsect1><title>Options</title>
+<variablelist>
+
+<varlistentry>
+<term><option>-h</option>, <option>--help</option></term>
+<listitem><para>
+print help and exit
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--version</option></term>
+<listitem><para>
+print version information and exit
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--app-id</option> ID</term>
+<listitem><para>
+The application id to use when calling the mate-session Inhibit() method.
+If this option is not specified, "unknown" is used.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--reason</option> REASON</term>
+<listitem><para>
+A human-readable reason to pass along when calling the mate-session
+Inhibit() method. If this option is not specified, "not specified" is used.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--inhibit</option> ARG</term>
+<listitem><para>
+ARG specifies the things to inhibit, as a colon-separated list. The
+possible values are logout, switch-user, suspend, idle, automount.
+If this option is used more than once, the values are combined.
+If this option is not specified, "idle" is assumed.
+</para></listitem>
+</varlistentry>
+
+</variablelist>
+</refsect1>
+
+<refsect1><title>See also</title>
+<para>
+<citerefentry><refentrytitle>systemd-inhibit</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+</para>
+</refsect1>
+</refentry>
