@@ -31,7 +31,6 @@
 
 #include "gsm-properties-dialog.h"
 #include "gsm-app-dialog.h"
-#include "eggdesktopfile.h"
 #include "gsm-util.h"
 #include "gsp-app.h"
 #include "gsp-app-manager.h"

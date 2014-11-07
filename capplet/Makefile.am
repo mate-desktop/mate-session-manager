@@ -3,7 +3,6 @@ bin_PROGRAMS = mate-session-properties
 AM_CPPFLAGS =						\
 	$(SESSION_PROPERTIES_CFLAGS)			\
 	$(MATECONF_CFLAGS)					\
-	-I$(top_srcdir)/egg				\
 	-I$(top_srcdir)/mate-session			\
 	-DLOCALE_DIR=\""$(datadir)/locale"\"		\
 	-DGTKBUILDER_DIR=\""$(pkgdatadir)"\"		\
@@ -26,7 +25,6 @@ mate_session_properties_SOURCES =			\
 
 mate_session_properties_LDADD =			\
 	$(SESSION_PROPERTIES_LIBS)			\
-	$(top_builddir)/egg/libeggdesktopfile.la 	\
 	$(top_builddir)/mate-session/libgsmutil.la 	\
 	$(MATECONF_LIBS)
 
