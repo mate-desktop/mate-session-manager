@@ -176,7 +176,8 @@ static void     gsm_manager_class_init  (GsmManagerClass *klass);
 static void     gsm_manager_init        (GsmManager      *manager);
 static void     gsm_manager_finalize    (GObject         *object);
 
-static gboolean _log_out_is_locked_down (GsmManager *manager);
+static gboolean _log_out_is_locked_down     (GsmManager *manager);
+static gboolean _switch_user_is_locked_down (GsmManager *manager);
 
 static void     _handle_client_end_session_response (GsmManager *manager,
                                                      GsmClient  *client,
@@ -1053,6 +1054,14 @@ manager_switch_user (GsmManager *manager)
         GError  *error;
         gboolean res;
         char    *command;
+
+        /* We have to do this here and in request_switch_user() because this
+         * function can be called at a later time, not just directly after
+         * request_switch_user(). */
+        if (_switch_user_is_locked_down (manager)) {
+                g_warning ("Unable to switch user: User switching has been locked down");
+                return;
+        }
 
         if (is_program_in_path (MDM_FLEXISERVER_COMMAND)) {
                 /* MDM */
@@ -3113,6 +3122,13 @@ request_switch_user (GsmManager *manager)
 {
         g_debug ("GsmManager: requesting user switch");
 
+        /* See comment in manager_switch_user() to understand why we do this in
+         * both functions. */
+        if (_switch_user_is_locked_down (manager)) {
+                g_warning ("Unable to switch user: User switching has been locked down");
+                return;
+        }
+
         if (! gsm_manager_is_switch_user_inhibited (manager)) {
                 manager_switch_user (manager);
                 return;
@@ -3321,6 +3337,13 @@ _log_out_is_locked_down (GsmManager *manager)
 {
         return g_settings_get_boolean (manager->priv->settings_lockdown,
         KEY_LOG_OUT_DISABLE);
+}
+
+static gboolean
+_switch_user_is_locked_down (GsmManager *manager)
+{
+        return g_settings_get_boolean (manager->priv->settings_lockdown,
+        KEY_USER_SWITCH_DISABLE);
 }
 
 gboolean
