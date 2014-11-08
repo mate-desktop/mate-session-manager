@@ -599,7 +599,7 @@ dbus_client_cancel_end_session (GsmClient *client,
 {
         GsmDBusClient  *dbus_client = (GsmDBusClient *) client;
         DBusMessage    *message;
-        gboolean        ret;
+        gboolean        ret = FALSE;
 
         /* unicast the signal to only the registered bus name */
         message = dbus_message_new_signal (gsm_client_peek_id (client),
