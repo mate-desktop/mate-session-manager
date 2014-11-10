@@ -1,5 +1,5 @@
 1.9.2
-  *
+  * Disable upower support by default (use --enable-upower if you need it)
 
 1.8.1
   * Add autostart of accessibility apps

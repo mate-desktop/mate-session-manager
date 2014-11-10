@@ -136,7 +136,7 @@ AC_ARG_ENABLE(upower,
               AS_HELP_STRING([--enable-upower],
               [Use upower to suspend/hibernate]),
               enable_upower=$enableval,
-              enable_upower=yes)
+              enable_upower=no)
 if test "x$enable_upower" = "xyes"; then
     PKG_CHECK_MODULES(UPOWER, upower-glib >= $UPOWER_REQUIRED, has_upower=yes, has_upower=no)
 
