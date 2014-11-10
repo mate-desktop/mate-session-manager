@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# cpatrick08 <cpatrick08@rocketmail.com>, 2014
+# Christopher Patrick <cpatrick08@rocketmail.com>, 2014
+# Christopher Patrick <cpatrick08@rocketmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-20 21:12+0000\n"
-"Last-Translator: cpatrick08 <cpatrick08@rocketmail.com>\n"
+"PO-Revision-Date: 2014-03-02 23:37+0000\n"
+"Last-Translator: Christopher Patrick <cpatrick08@rocketmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/projects/p/MATE/language/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -340,20 +341,20 @@ msgstr "Cancel"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "You will be automatically logged out in %d second"
+msgstr[1] "You will be automatically logged out in %d seconds"
 
 #: ../mate-session/gsm-logout-dialog.c:327
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "This system will be automatically shut down in %d second"
+msgstr[1] "This system will be automatically shut down in %d seconds"
 
 #: ../mate-session/gsm-logout-dialog.c:373
 #, c-format
 msgid "You are currently logged in as \"%s\"."
-msgstr ""
+msgstr "You are currently logged in as \"%s\"."
 
 #: ../mate-session/gsm-logout-dialog.c:443
 msgid "Log out of this system now?"
@@ -393,13 +394,13 @@ msgstr "Not responding"
 
 #: ../mate-session/gsm-xsmp-client.c:1189
 msgid "This program is blocking logout."
-msgstr ""
+msgstr "This program is blocking logout."
 
 #: ../mate-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr ""
+msgstr "Refusing new client connection because the session is currently being shut down\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
