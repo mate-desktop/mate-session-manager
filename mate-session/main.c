@@ -254,15 +254,16 @@ static void append_required_apps(GsmManager* manager)
 	{
 		g_warning("No required applications specified");
 	}
-
-	for (i = 0; required_components[i]; i++)
+	else
 	{
+		for (i = 0; required_components[i]; i++)
+		{
 			char* default_provider;
 			const char* component;
 
 			if (IS_STRING_EMPTY((char*) required_components[i]))
 			{
-					continue;
+				continue;
 			}
 
 			component = required_components[i];
@@ -290,6 +291,7 @@ static void append_required_apps(GsmManager* manager)
 			}
 
 			g_free(default_provider);
+		}
 	}
 
 	g_debug("main: *** Done adding required apps");
