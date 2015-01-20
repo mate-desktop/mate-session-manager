@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-17 21:40+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"POT-Creation-Date: 2015-01-13 14:22+0100\n"
+"PO-Revision-Date: 2015-01-13 13:27+0000\n"
+"Last-Translator: infirit <infirit@gmail.com>\n"
 "Language-Team: Western Frisian (http://www.transifex.com/projects/p/MATE/language/fy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,47 +23,47 @@ msgstr ""
 msgid "Select Command"
 msgstr "Kommando selektearje"
 
-#: ../capplet/gsm-app-dialog.c:201
+#: ../capplet/gsm-app-dialog.c:198
 msgid "Add Startup Program"
 msgstr "Opstartprogramma tafoegje"
 
-#: ../capplet/gsm-app-dialog.c:205
+#: ../capplet/gsm-app-dialog.c:202
 msgid "Edit Startup Program"
 msgstr "Opstartprogramma oanpasse"
 
-#: ../capplet/gsm-app-dialog.c:493
+#: ../capplet/gsm-app-dialog.c:491
 msgid "The startup command cannot be empty"
 msgstr "It opstartkommando kin net leeg wêze"
 
-#: ../capplet/gsm-app-dialog.c:499
+#: ../capplet/gsm-app-dialog.c:497
 msgid "The startup command is not valid"
 msgstr "It opstartkommando is net jildich"
 
-#: ../capplet/gsm-properties-dialog.c:552
+#: ../capplet/gsm-properties-dialog.c:551
 msgid "Enabled"
 msgstr "Ynskeakele"
 
-#: ../capplet/gsm-properties-dialog.c:564
+#: ../capplet/gsm-properties-dialog.c:563
 msgid "Icon"
 msgstr "Byldkaike"
 
-#: ../capplet/gsm-properties-dialog.c:576
+#: ../capplet/gsm-properties-dialog.c:575
 msgid "Program"
 msgstr "Programma"
 
-#: ../capplet/gsm-properties-dialog.c:796
+#: ../capplet/gsm-properties-dialog.c:783
 msgid "Startup Applications Preferences"
 msgstr "Ynstellings foar opstartprogramma's"
 
-#: ../capplet/gsp-app.c:269
+#: ../capplet/gsp-app.c:273
 msgid "No name"
 msgstr "Gjin namme"
 
-#: ../capplet/gsp-app.c:275
+#: ../capplet/gsp-app.c:279
 msgid "No description"
 msgstr "Gjin beskriuwing"
 
-#: ../capplet/main.c:35 ../mate-session/main.c:482
+#: ../capplet/main.c:35 ../mate-session/main.c:557
 msgid "Version of this application"
 msgstr "Ferzje fan dit programma"
 
@@ -96,27 +96,37 @@ msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr "As dit ynskakele is, sil mate-session de bruker freegje foar't hij de sesje beeindiget."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
+msgid "Logout timeout"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:8
+msgid ""
+"If logout prompt is enabled, this set the timeout in seconds before logout "
+"automatically. If 0, automatic logout is disabled."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Time before session is considered idle"
 msgstr "Tiid foardat de sesje is sjoen as neatdwaande"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr "It oantal minuten fan wachttid foar't de sesje as non-aktyf beskôge wurd."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.in.h:11
 msgid "Default session"
 msgstr "Standaardsesje"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.in.h:12
 msgid "List of applications that are part of the default session."
 msgstr "Lyst mei applikaasjes dy't in part binne fan de standerdsesje"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.in.h:13
 msgid "Required session components"
 msgstr "Easke sesje komponinten"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.in.h:14
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -126,32 +136,40 @@ msgid ""
 "if they do get removed."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.in.h:15
+msgid "Control gnome compatibility component startup"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:16
+msgid "Control which compatibility components to start."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
 msgstr "Finsterbehearder"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr "De finster ûnderhâlder is de applikaasje dat de titelbalke tekent mei rânen rûnom de finsters, en makket it mooglik om de finsters te verpleatsen en fan formaat te feroarjen."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.in.h:19
 msgid "Panel"
 msgstr "Paniel"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.in.h:20
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr "De paniel levert in balke boppe as ûnder jo skerm en befetted menus, the finster list, status byldkaaikes, de klok, ens."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:17
+#: ../data/org.mate.session.gschema.xml.in.in.h:21
 msgid "File Manager"
 msgstr "Triembehearder"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
@@ -229,27 +247,27 @@ msgstr "Triem is gjin deugdlike .desktop triem"
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Ûnbekend buroblêd triem fersje '%s'"
 
-#: ../egg/eggdesktopfile.c:957
+#: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
 msgstr "Út ein setten fan %s"
 
-#: ../egg/eggdesktopfile.c:1099
+#: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "Applikaasje akseptearret gjin dokuminten op de kommando rigel"
 
-#: ../egg/eggdesktopfile.c:1167
+#: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Ûnbekende start opsje: %d"
 
-#: ../egg/eggdesktopfile.c:1372
+#: ../egg/eggdesktopfile.c:1364
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Kin gjin dokumint URIs oan in 'Type=Link' buroblêd ynfier trochjaan"
 
-#: ../egg/eggdesktopfile.c:1393
+#: ../egg/eggdesktopfile.c:1385
 #, c-format
 msgid "Not a launchable item"
 msgstr "Gjin útein te setten item"
@@ -337,62 +355,69 @@ msgstr "Skerm Beskoattelje"
 msgid "Cancel"
 msgstr "Skras"
 
-#: ../mate-session/gsm-logout-dialog.c:319
+#: ../mate-session/gsm-logout-dialog.c:332
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:327
+#: ../mate-session/gsm-logout-dialog.c:340
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:373
+#: ../mate-session/gsm-logout-dialog.c:386
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Jo binne no oanmelde as \"%s\""
 
-#: ../mate-session/gsm-logout-dialog.c:443
+#: ../mate-session/gsm-logout-dialog.c:467
 msgid "Log out of this system now?"
 msgstr "No ôfmelde fan dit systeem?"
 
-#: ../mate-session/gsm-logout-dialog.c:449
+#: ../mate-session/gsm-logout-dialog.c:473
 msgid "_Switch User"
 msgstr "Brûker wik_selje"
 
-#: ../mate-session/gsm-logout-dialog.c:458
+#: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Log Out"
 msgstr "Ôfme_lde"
 
-#: ../mate-session/gsm-logout-dialog.c:464
+#: ../mate-session/gsm-logout-dialog.c:488
 msgid "Shut down this system now?"
 msgstr "No dit systeem ôfslúte?"
 
-#: ../mate-session/gsm-logout-dialog.c:470
+#: ../mate-session/gsm-logout-dialog.c:494
 msgid "S_uspend"
 msgstr "Pa_usearje"
 
-#: ../mate-session/gsm-logout-dialog.c:476
+#: ../mate-session/gsm-logout-dialog.c:500
 msgid "_Hibernate"
 msgstr "Sliepstân"
 
-#: ../mate-session/gsm-logout-dialog.c:482
+#: ../mate-session/gsm-logout-dialog.c:506
 msgid "_Restart"
 msgstr "Opnij Sta_rte"
 
-#: ../mate-session/gsm-logout-dialog.c:492
+#: ../mate-session/gsm-logout-dialog.c:516
 msgid "_Shut Down"
 msgstr "Ôf_slúte"
 
-#: ../mate-session/gsm-manager.c:1420 ../mate-session/gsm-manager.c:2118
+#: ../mate-session/gsm-manager.c:1443 ../mate-session/gsm-manager.c:2162
 msgid "Not responding"
 msgstr "Reagearret net"
 
-#: ../mate-session/gsm-xsmp-client.c:1189
+#. It'd be really surprising to reach this code: if we're here,
+#. * then the XSMP client already has set several XSMP
+#. * properties. But it could still be that SmProgram is not set.
+#: ../mate-session/gsm-xsmp-client.c:567
+msgid "Remembered Application"
+msgstr ""
+
+#: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
 msgstr ""
 
@@ -408,24 +433,24 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "Koe net ICE lústerjende oanslúting: %s meitsje"
 
 #. Oh well, no X for you!
-#: ../mate-session/gsm-util.c:354
+#: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Kin oanmeld sesje net starte (en kin gjin kontakt mei de X tsjinner meitsje)"
 
-#: ../mate-session/main.c:479
+#: ../mate-session/main.c:554
 msgid "Override standard autostart directories"
 msgstr "Oerskriuw standerd autostart triemmen"
 
-#: ../mate-session/main.c:480
+#: ../mate-session/main.c:555
 msgid "Enable debugging code"
 msgstr "Debug-koade ynskeakelje"
 
-#: ../mate-session/main.c:481
+#: ../mate-session/main.c:556
 msgid "Do not load user-specified applications"
 msgstr "Brûker-ynstelde programma's net lade"
 
-#: ../mate-session/main.c:502
+#: ../mate-session/main.c:577
 msgid " - the MATE session manager"
 msgstr " - de MATE sesjebehearder"
 
@@ -473,3 +498,32 @@ msgstr "Koe net ferbine mei de sesjebehearder"
 #: ../tools/mate-session-save.c:287
 msgid "Program called with conflicting options"
 msgstr "Applikaasje oanroppen mei konfliktearende opsjes"
+
+#: ../tools/mate-session-inhibit.c:114
+#, c-format
+msgid ""
+"%s [OPTION...] COMMAND\n"
+"\n"
+"Execute COMMAND while inhibiting some session functionality.\n"
+"\n"
+"  -h, --help        Show this help\n"
+"  --version         Show program version\n"
+"  --app-id ID       The application id to use\n"
+"                    when inhibiting (optional)\n"
+"  --reason REASON   The reason for inhibiting (optional)\n"
+"  --inhibit ARG     Things to inhibit, colon-separated list of:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"If no --inhibit option is specified, idle is assumed.\n"
+msgstr ""
+
+#: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
+#: ../tools/mate-session-inhibit.c:188
+#, c-format
+msgid "%s requires an argument\n"
+msgstr ""
+
+#: ../tools/mate-session-inhibit.c:224
+#, c-format
+msgid "Failed to execute %s\n"
+msgstr ""

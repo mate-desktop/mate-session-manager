@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-06-16 21:08+0000\n"
-"Last-Translator: Asier Iturralde Sarasola <asier.iturralde@gmail.com>\n"
+"POT-Creation-Date: 2015-01-13 14:22+0100\n"
+"PO-Revision-Date: 2015-01-13 13:27+0000\n"
+"Last-Translator: infirit <infirit@gmail.com>\n"
 "Language-Team: Basque (http://www.transifex.com/projects/p/MATE/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,47 +26,47 @@ msgstr ""
 msgid "Select Command"
 msgstr "Hautatu komandoa"
 
-#: ../capplet/gsm-app-dialog.c:201
+#: ../capplet/gsm-app-dialog.c:198
 msgid "Add Startup Program"
 msgstr "Gehitu abioko programa"
 
-#: ../capplet/gsm-app-dialog.c:205
+#: ../capplet/gsm-app-dialog.c:202
 msgid "Edit Startup Program"
 msgstr "Editatu abioko programa"
 
-#: ../capplet/gsm-app-dialog.c:493
+#: ../capplet/gsm-app-dialog.c:491
 msgid "The startup command cannot be empty"
 msgstr "Abioko komandoa ezin da hutsik egon"
 
-#: ../capplet/gsm-app-dialog.c:499
+#: ../capplet/gsm-app-dialog.c:497
 msgid "The startup command is not valid"
 msgstr "Abioko komandoa ez da baliozkoa"
 
-#: ../capplet/gsm-properties-dialog.c:552
+#: ../capplet/gsm-properties-dialog.c:551
 msgid "Enabled"
 msgstr "Gaituta"
 
-#: ../capplet/gsm-properties-dialog.c:564
+#: ../capplet/gsm-properties-dialog.c:563
 msgid "Icon"
 msgstr "Ikonoa"
 
-#: ../capplet/gsm-properties-dialog.c:576
+#: ../capplet/gsm-properties-dialog.c:575
 msgid "Program"
 msgstr "Programa"
 
-#: ../capplet/gsm-properties-dialog.c:796
+#: ../capplet/gsm-properties-dialog.c:783
 msgid "Startup Applications Preferences"
 msgstr "Abioko aplikazioen hobespenak"
 
-#: ../capplet/gsp-app.c:269
+#: ../capplet/gsp-app.c:273
 msgid "No name"
 msgstr "Izenik ez"
 
-#: ../capplet/gsp-app.c:275
+#: ../capplet/gsp-app.c:279
 msgid "No description"
 msgstr "Azalpenik ez"
 
-#: ../capplet/main.c:35 ../mate-session/main.c:482
+#: ../capplet/main.c:35 ../mate-session/main.c:557
 msgid "Version of this application"
 msgstr "Aplikazio honen bertsioa"
 
@@ -99,27 +99,37 @@ msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr "Gaituta badago, mate-session-ek erabiltzaileari galdetuko dio saioa bukatu aurretik."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
+msgid "Logout timeout"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:8
+msgid ""
+"If logout prompt is enabled, this set the timeout in seconds before logout "
+"automatically. If 0, automatic logout is disabled."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Time before session is considered idle"
 msgstr "Denbora saioa inaktibotzat hartu arte"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr "Inaktibitateko minutu kopurua, saioa inaktibotzat hartu arte."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.in.h:11
 msgid "Default session"
 msgstr "Saio lehenetsia"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.in.h:12
 msgid "List of applications that are part of the default session."
 msgstr "Saio lehenetsiko zati diren aplikazioen zerrenda."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.in.h:13
 msgid "Required session components"
 msgstr "Saioaren beharrezko osagaiak"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.in.h:14
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -129,32 +139,40 @@ msgid ""
 "if they do get removed."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.in.h:15
+msgid "Control gnome compatibility component startup"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:16
+msgid "Control which compatibility components to start."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
 msgstr "Leiho-kudeatzailea"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr "Leiho-kudeatzailea leihoen inguruan titulu-barra eta ertzak marrazten ditu, eta leihoak lekuz edo tamainaz aldatzea uzten du."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.in.h:19
 msgid "Panel"
 msgstr "Panela"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.in.h:20
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr "Panelak pantailaren goiko edo beheko barra eskaintzen du. Panel batek menuak, leihoen zerrenda, egoera-ikonoak, ordularia e.a. eduki ditzake."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:17
+#: ../data/org.mate.session.gschema.xml.in.in.h:21
 msgid "File Manager"
 msgstr "Fitxategi-kudeatzailea"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
@@ -232,27 +250,27 @@ msgstr "Fitxategia ez da baliozko '.desktop' fitxategia"
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Mahaigaineko fitxategiaren '%s' bertsioa ezezaguna"
 
-#: ../egg/eggdesktopfile.c:957
+#: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
 msgstr "%s abiarazten"
 
-#: ../egg/eggdesktopfile.c:1099
+#: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "Aplikazioak ez ditu dokumenturik onartzen komando-lerroan"
 
-#: ../egg/eggdesktopfile.c:1167
+#: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Abiarazteko aukera ezezaguna: %d"
 
-#: ../egg/eggdesktopfile.c:1372
+#: ../egg/eggdesktopfile.c:1364
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Ezin zaio dokumentuaren URIrik eman mahaigaineko 'Type=Link' sarrerari"
 
-#: ../egg/eggdesktopfile.c:1393
+#: ../egg/eggdesktopfile.c:1385
 #, c-format
 msgid "Not a launchable item"
 msgstr "Ez da elementu abiarazgarria"
@@ -340,62 +358,69 @@ msgstr "Blokeatu pantaila"
 msgid "Cancel"
 msgstr "Utzi"
 
-#: ../mate-session/gsm-logout-dialog.c:319
+#: ../mate-session/gsm-logout-dialog.c:332
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] "Saioa automatikoki amaituko duzu segundo %d igarotzean"
 msgstr[1] "Saioa automatikoki amaituko duzu %d segundo igarotzean"
 
-#: ../mate-session/gsm-logout-dialog.c:327
+#: ../mate-session/gsm-logout-dialog.c:340
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] "Sistema automatikoki itzaliko da segundo %d igarotzean"
 msgstr[1] "Sistema automatikoki itzaliko da %d segundo igarotzean"
 
-#: ../mate-session/gsm-logout-dialog.c:373
+#: ../mate-session/gsm-logout-dialog.c:386
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Unean \"%s\" gisa zaude saioan hasita."
 
-#: ../mate-session/gsm-logout-dialog.c:443
+#: ../mate-session/gsm-logout-dialog.c:467
 msgid "Log out of this system now?"
 msgstr "Amaitu saioa sistematik orain?"
 
-#: ../mate-session/gsm-logout-dialog.c:449
+#: ../mate-session/gsm-logout-dialog.c:473
 msgid "_Switch User"
 msgstr "_Aldatu erabiltzailez"
 
-#: ../mate-session/gsm-logout-dialog.c:458
+#: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Log Out"
 msgstr "Amaitu _saioa"
 
-#: ../mate-session/gsm-logout-dialog.c:464
+#: ../mate-session/gsm-logout-dialog.c:488
 msgid "Shut down this system now?"
 msgstr "Itzali sistema orain?"
 
-#: ../mate-session/gsm-logout-dialog.c:470
+#: ../mate-session/gsm-logout-dialog.c:494
 msgid "S_uspend"
 msgstr "_Eseki"
 
-#: ../mate-session/gsm-logout-dialog.c:476
+#: ../mate-session/gsm-logout-dialog.c:500
 msgid "_Hibernate"
 msgstr "_Hibernatu"
 
-#: ../mate-session/gsm-logout-dialog.c:482
+#: ../mate-session/gsm-logout-dialog.c:506
 msgid "_Restart"
 msgstr "_Berrabiarazi"
 
-#: ../mate-session/gsm-logout-dialog.c:492
+#: ../mate-session/gsm-logout-dialog.c:516
 msgid "_Shut Down"
 msgstr "_Itzali"
 
-#: ../mate-session/gsm-manager.c:1420 ../mate-session/gsm-manager.c:2118
+#: ../mate-session/gsm-manager.c:1443 ../mate-session/gsm-manager.c:2162
 msgid "Not responding"
 msgstr "Ez du erantzuten"
 
-#: ../mate-session/gsm-xsmp-client.c:1189
+#. It'd be really surprising to reach this code: if we're here,
+#. * then the XSMP client already has set several XSMP
+#. * properties. But it could still be that SmProgram is not set.
+#: ../mate-session/gsm-xsmp-client.c:567
+msgid "Remembered Application"
+msgstr ""
+
+#: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
 msgstr "Programa hau saioa amaitzea blokeatzen ari da."
 
@@ -411,24 +436,24 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "Ezin izan da entzuteko ICE socket-a sortu: %s"
 
 #. Oh well, no X for you!
-#: ../mate-session/gsm-util.c:354
+#: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Ezin da saio-hasiera hasi (eta ezin da X zerbitzariarekin konektatu)"
 
-#: ../mate-session/main.c:479
+#: ../mate-session/main.c:554
 msgid "Override standard autostart directories"
 msgstr "Jaramonik ez egin hasiera automatikoko direktorio estandarrei"
 
-#: ../mate-session/main.c:480
+#: ../mate-session/main.c:555
 msgid "Enable debugging code"
 msgstr "Gaitu arazketa-kodea"
 
-#: ../mate-session/main.c:481
+#: ../mate-session/main.c:556
 msgid "Do not load user-specified applications"
 msgstr "Ez kargatu erabiltzaileak zehaztutako aplikazioak"
 
-#: ../mate-session/main.c:502
+#: ../mate-session/main.c:577
 msgid " - the MATE session manager"
 msgstr "- MATEren saio-kudeatzailea"
 
@@ -476,3 +501,32 @@ msgstr "Ezin izan da saio-kudeatzailearekin konektatu"
 #: ../tools/mate-session-save.c:287
 msgid "Program called with conflicting options"
 msgstr "Gatazkan dauden aukerekin deitu da programa"
+
+#: ../tools/mate-session-inhibit.c:114
+#, c-format
+msgid ""
+"%s [OPTION...] COMMAND\n"
+"\n"
+"Execute COMMAND while inhibiting some session functionality.\n"
+"\n"
+"  -h, --help        Show this help\n"
+"  --version         Show program version\n"
+"  --app-id ID       The application id to use\n"
+"                    when inhibiting (optional)\n"
+"  --reason REASON   The reason for inhibiting (optional)\n"
+"  --inhibit ARG     Things to inhibit, colon-separated list of:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"If no --inhibit option is specified, idle is assumed.\n"
+msgstr ""
+
+#: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
+#: ../tools/mate-session-inhibit.c:188
+#, c-format
+msgid "%s requires an argument\n"
+msgstr ""
+
+#: ../tools/mate-session-inhibit.c:224
+#, c-format
+msgid "Failed to execute %s\n"
+msgstr ""

@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-17 21:40+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"POT-Creation-Date: 2015-01-13 14:22+0100\n"
+"PO-Revision-Date: 2015-01-13 13:27+0000\n"
+"Last-Translator: infirit <infirit@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/projects/p/MATE/language/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,47 +23,47 @@ msgstr ""
 msgid "Select Command"
 msgstr "เลือกคำสั่ง"
 
-#: ../capplet/gsm-app-dialog.c:201
+#: ../capplet/gsm-app-dialog.c:198
 msgid "Add Startup Program"
 msgstr "เพิ่มโปรแกรมเริ่มวาระ"
 
-#: ../capplet/gsm-app-dialog.c:205
+#: ../capplet/gsm-app-dialog.c:202
 msgid "Edit Startup Program"
 msgstr "แก้ไขโปรแกรมเริ่มวาระ"
 
-#: ../capplet/gsm-app-dialog.c:493
+#: ../capplet/gsm-app-dialog.c:491
 msgid "The startup command cannot be empty"
 msgstr "คำสั่งที่ให้เรียกเมื่อเริ่มวาระจะว่างไม่ได้"
 
-#: ../capplet/gsm-app-dialog.c:499
+#: ../capplet/gsm-app-dialog.c:497
 msgid "The startup command is not valid"
 msgstr "คำสั่งที่ให้เรียกเมื่อเริ่มวาระผิดพลาด"
 
-#: ../capplet/gsm-properties-dialog.c:552
+#: ../capplet/gsm-properties-dialog.c:551
 msgid "Enabled"
 msgstr "เปิดใช้"
 
-#: ../capplet/gsm-properties-dialog.c:564
+#: ../capplet/gsm-properties-dialog.c:563
 msgid "Icon"
 msgstr "ไอคอน"
 
-#: ../capplet/gsm-properties-dialog.c:576
+#: ../capplet/gsm-properties-dialog.c:575
 msgid "Program"
 msgstr "โปรแกรม"
 
-#: ../capplet/gsm-properties-dialog.c:796
+#: ../capplet/gsm-properties-dialog.c:783
 msgid "Startup Applications Preferences"
 msgstr "ปรับแต่งโปรแกรมเริ่มวาระ"
 
-#: ../capplet/gsp-app.c:269
+#: ../capplet/gsp-app.c:273
 msgid "No name"
 msgstr "ไม่มีชื่อ"
 
-#: ../capplet/gsp-app.c:275
+#: ../capplet/gsp-app.c:279
 msgid "No description"
 msgstr "ไม่มีคำบรรยาย"
 
-#: ../capplet/main.c:35 ../mate-session/main.c:482
+#: ../capplet/main.c:35 ../mate-session/main.c:557
 msgid "Version of this application"
 msgstr "รุ่นของโปรแกรมนี้"
 
@@ -96,27 +96,37 @@ msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr "เลือกแล้ว mate-session จะถามผู้ใช้ก่อนจะออกจากการใช้งาน"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
+msgid "Logout timeout"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:8
+msgid ""
+"If logout prompt is enabled, this set the timeout in seconds before logout "
+"automatically. If 0, automatic logout is disabled."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Time before session is considered idle"
 msgstr "ระยะเวลาที่จะเริ่มถือว่าวาระไม่มีการใช้งาน"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr "จำนวนนาทีของช่วงไร้กิจกรรมที่จะเริ่มถือว่าวาระไม่มีการใช้งาน"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.in.h:11
 msgid "Default session"
 msgstr "วาระปริยาย"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.in.h:12
 msgid "List of applications that are part of the default session."
 msgstr "รายชื่อโปรแกรมที่จะเปิดในวาระปริยาย"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.in.h:13
 msgid "Required session components"
 msgstr "องค์ประกอบที่จำเป็นของวาระ"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.in.h:14
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -126,32 +136,40 @@ msgid ""
 "if they do get removed."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.in.h:15
+msgid "Control gnome compatibility component startup"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:16
+msgid "Control which compatibility components to start."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
 msgstr "โปรแกรมจัดการหน้าต่าง"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr "โปรแกรมจัดการหน้าต่าง คือโปรแกรมที่วาดแถบหัวและกรอบรอบหน้าต่าง และให้คุณย้ายหรือปรับขนาดหน้าต่างได้"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.in.h:19
 msgid "Panel"
 msgstr "พาเนล"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.in.h:20
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr "พาเนลคือแถบที่ด้านบนหรือด้านล่างหน้าจอ บรรจุเมนู รายชื่อหน้าต่าง ไอคอนสถานะ นาฬิกา ฯลฯ"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:17
+#: ../data/org.mate.session.gschema.xml.in.in.h:21
 msgid "File Manager"
 msgstr "โปรแกรมจัดการแฟ้ม"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
@@ -229,27 +247,27 @@ msgstr "แฟ้มนี้ไม่ใช่แฟ้ม .desktop ที่�
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "ไม่รู้จักแฟ้มเดสก์ท็อปรุ่น '%s'"
 
-#: ../egg/eggdesktopfile.c:957
+#: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
 msgstr "กำลังเริ่ม %s"
 
-#: ../egg/eggdesktopfile.c:1099
+#: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "โปรแกรมไม่รับเอกสารในบรรทัดคำสั่ง"
 
-#: ../egg/eggdesktopfile.c:1167
+#: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "ไม่รู้จักตัวเลือกของการเรียกโปรแกรม: %d"
 
-#: ../egg/eggdesktopfile.c:1372
+#: ../egg/eggdesktopfile.c:1364
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "ไม่สามารถส่ง URI ของเอกสารไปยังรายการเดสก์ท็อปที่มี 'Type=Link'"
 
-#: ../egg/eggdesktopfile.c:1393
+#: ../egg/eggdesktopfile.c:1385
 #, c-format
 msgid "Not a launchable item"
 msgstr "ไม่ใช่รายการที่เรียกทำงานได้"
@@ -337,60 +355,67 @@ msgstr "ล็อคหน้าจอ"
 msgid "Cancel"
 msgstr "ยกเลิก"
 
-#: ../mate-session/gsm-logout-dialog.c:319
+#: ../mate-session/gsm-logout-dialog.c:332
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] ""
 
-#: ../mate-session/gsm-logout-dialog.c:327
+#: ../mate-session/gsm-logout-dialog.c:340
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] ""
 
-#: ../mate-session/gsm-logout-dialog.c:373
+#: ../mate-session/gsm-logout-dialog.c:386
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "คุณกำลังเข้าระบบในนาม \"%s\""
 
-#: ../mate-session/gsm-logout-dialog.c:443
+#: ../mate-session/gsm-logout-dialog.c:467
 msgid "Log out of this system now?"
 msgstr "ออกจากระบบเดี๋ยวนี้เลยหรือไม่?"
 
-#: ../mate-session/gsm-logout-dialog.c:449
+#: ../mate-session/gsm-logout-dialog.c:473
 msgid "_Switch User"
 msgstr "_สลับผู้ใช้"
 
-#: ../mate-session/gsm-logout-dialog.c:458
+#: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Log Out"
 msgstr "_ออกจากระบบ"
 
-#: ../mate-session/gsm-logout-dialog.c:464
+#: ../mate-session/gsm-logout-dialog.c:488
 msgid "Shut down this system now?"
 msgstr "ปิดเครื่องเดี๋ยวนี้เลยหรือไม่?"
 
-#: ../mate-session/gsm-logout-dialog.c:470
+#: ../mate-session/gsm-logout-dialog.c:494
 msgid "S_uspend"
 msgstr "_พักเครื่อง"
 
-#: ../mate-session/gsm-logout-dialog.c:476
+#: ../mate-session/gsm-logout-dialog.c:500
 msgid "_Hibernate"
 msgstr "_จำศีลเครื่อง"
 
-#: ../mate-session/gsm-logout-dialog.c:482
+#: ../mate-session/gsm-logout-dialog.c:506
 msgid "_Restart"
 msgstr "_เปิดเครื่องใหม่"
 
-#: ../mate-session/gsm-logout-dialog.c:492
+#: ../mate-session/gsm-logout-dialog.c:516
 msgid "_Shut Down"
 msgstr "ปิ_ดเครื่อง"
 
-#: ../mate-session/gsm-manager.c:1420 ../mate-session/gsm-manager.c:2118
+#: ../mate-session/gsm-manager.c:1443 ../mate-session/gsm-manager.c:2162
 msgid "Not responding"
 msgstr "ไม่ตอบสนอง"
 
-#: ../mate-session/gsm-xsmp-client.c:1189
+#. It'd be really surprising to reach this code: if we're here,
+#. * then the XSMP client already has set several XSMP
+#. * properties. But it could still be that SmProgram is not set.
+#: ../mate-session/gsm-xsmp-client.c:567
+msgid "Remembered Application"
+msgstr ""
+
+#: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
 msgstr ""
 
@@ -406,24 +431,24 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "ไม่สามารถสร้างซ็อกเก็ตรอรับการเชื่อมต่อ ICE: %s"
 
 #. Oh well, no X for you!
-#: ../mate-session/gsm-util.c:354
+#: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "ไม่สามารถเริ่มวาระเข้าระบบ (และไม่สามารถเชื่อมต่อไปยังเซิร์ฟเวอร์เอ็กซ์)"
 
-#: ../mate-session/main.c:479
+#: ../mate-session/main.c:554
 msgid "Override standard autostart directories"
 msgstr "กำหนดค่าไดเรกทอรีเริ่มต้นอัตโนมัติทับค่ามาตรฐาน"
 
-#: ../mate-session/main.c:480
+#: ../mate-session/main.c:555
 msgid "Enable debugging code"
 msgstr "เปิดใช้โค้ดส่วนดีบั๊ก"
 
-#: ../mate-session/main.c:481
+#: ../mate-session/main.c:556
 msgid "Do not load user-specified applications"
 msgstr "ไม่ต้องโหลดโปรแกรมที่ผู้ใช้ระบุไว้"
 
-#: ../mate-session/main.c:502
+#: ../mate-session/main.c:577
 msgid " - the MATE session manager"
 msgstr "- โปรแกรมจัดการวาระ MATE"
 
@@ -471,3 +496,32 @@ msgstr "ติดต่อโปรแกรมจัดการวาระไ
 #: ../tools/mate-session-save.c:287
 msgid "Program called with conflicting options"
 msgstr "โปรแกรมถูกเรียกด้วยตัวเลือกที่ขัดแย้งกันเอง"
+
+#: ../tools/mate-session-inhibit.c:114
+#, c-format
+msgid ""
+"%s [OPTION...] COMMAND\n"
+"\n"
+"Execute COMMAND while inhibiting some session functionality.\n"
+"\n"
+"  -h, --help        Show this help\n"
+"  --version         Show program version\n"
+"  --app-id ID       The application id to use\n"
+"                    when inhibiting (optional)\n"
+"  --reason REASON   The reason for inhibiting (optional)\n"
+"  --inhibit ARG     Things to inhibit, colon-separated list of:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"If no --inhibit option is specified, idle is assumed.\n"
+msgstr ""
+
+#: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
+#: ../tools/mate-session-inhibit.c:188
+#, c-format
+msgid "%s requires an argument\n"
+msgstr ""
+
+#: ../tools/mate-session-inhibit.c:224
+#, c-format
+msgid "Failed to execute %s\n"
+msgstr ""

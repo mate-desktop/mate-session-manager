@@ -5,17 +5,18 @@
 # Translators:
 # Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw>, 2008
 # Chih-Wei Huang <cwhuang@linux.org.tw>, 2000
+# Jeff Huang <s8321414@gmail.com>, 2015
 # Jing-Jong Shyue <shyue@sonoma.com.tw>, 2000
-# Wei-Lun Chao <bluebat@member.fsf.org>, 2012
+# 趙惟倫 <bluebat@member.fsf.org>, 2012
 # Yuan-Chung Cheng <platin@linux.org.tw>, 1999
-# 柏諺 黃 <s8321414@gmail.com>, 2014
+# Jeff Huang <s8321414@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-17 18:41+0100\n"
-"PO-Revision-Date: 2014-02-18 23:43+0000\n"
-"Last-Translator: 柏諺 黃 <s8321414@gmail.com>\n"
+"POT-Creation-Date: 2015-01-13 14:22+0100\n"
+"PO-Revision-Date: 2015-01-16 02:16+0000\n"
+"Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/MATE/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,47 +28,47 @@ msgstr ""
 msgid "Select Command"
 msgstr "選擇指令"
 
-#: ../capplet/gsm-app-dialog.c:201
+#: ../capplet/gsm-app-dialog.c:198
 msgid "Add Startup Program"
 msgstr "新增初始啟動程式"
 
-#: ../capplet/gsm-app-dialog.c:205
+#: ../capplet/gsm-app-dialog.c:202
 msgid "Edit Startup Program"
 msgstr "修改初始啟動程式"
 
-#: ../capplet/gsm-app-dialog.c:493
+#: ../capplet/gsm-app-dialog.c:491
 msgid "The startup command cannot be empty"
 msgstr "初始啟動指令不可以留空"
 
-#: ../capplet/gsm-app-dialog.c:499
+#: ../capplet/gsm-app-dialog.c:497
 msgid "The startup command is not valid"
 msgstr "初始啟動指令無效"
 
-#: ../capplet/gsm-properties-dialog.c:552
+#: ../capplet/gsm-properties-dialog.c:551
 msgid "Enabled"
 msgstr "已啟用"
 
-#: ../capplet/gsm-properties-dialog.c:564
+#: ../capplet/gsm-properties-dialog.c:563
 msgid "Icon"
 msgstr "圖示"
 
-#: ../capplet/gsm-properties-dialog.c:576
+#: ../capplet/gsm-properties-dialog.c:575
 msgid "Program"
 msgstr "程式"
 
-#: ../capplet/gsm-properties-dialog.c:796
+#: ../capplet/gsm-properties-dialog.c:783
 msgid "Startup Applications Preferences"
 msgstr "啟動應用程式偏好設定"
 
-#: ../capplet/gsp-app.c:269
+#: ../capplet/gsp-app.c:273
 msgid "No name"
 msgstr "沒有名稱"
 
-#: ../capplet/gsp-app.c:275
+#: ../capplet/gsp-app.c:279
 msgid "No description"
 msgstr "沒有描述"
 
-#: ../capplet/main.c:35 ../mate-session/main.c:482
+#: ../capplet/main.c:35 ../mate-session/main.c:557
 msgid "Version of this application"
 msgstr "這個程式的版本"
 
@@ -100,27 +101,37 @@ msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr "如啟用本選項，mate-session 會在作業階段終止前先提示使用者。"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
+msgid "Logout timeout"
+msgstr "登出逾時"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:8
+msgid ""
+"If logout prompt is enabled, this set the timeout in seconds before logout "
+"automatically. If 0, automatic logout is disabled."
+msgstr "如果登出提示開啟，將會設定在自動登出前以秒為單位的逾時時間。若設為0，自動登出將停用。"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Time before session is considered idle"
 msgstr "判定作業階段閒置的時間"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr "不使用電腦幾分鐘後將作業階段判定為閒置。"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.in.h:11
 msgid "Default session"
 msgstr "預設作業階段"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.in.h:12
 msgid "List of applications that are part of the default session."
 msgstr "預設作業階段中的應用程式清單。"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.in.h:13
 msgid "Required session components"
 msgstr "要求的作業階段元件"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.in.h:14
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -130,32 +141,40 @@ msgid ""
 "if they do get removed."
 msgstr "做為此作業階段一部分的必要元件清單。（每個元件都會在「/org/mate/desktop/session/required_components」有一個設定鍵。）啟動應用程式偏好設定工具一般不會允許使用者自作業階段中移除必要的元件，而作業階段管理員會在這些必要元件被移除時自動將它們加回作業階段中。"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.in.h:15
+msgid "Control gnome compatibility component startup"
+msgstr "控制初始啟動的 gnome 相容性元件"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:16
+msgid "Control which compatibility components to start."
+msgstr "控制要啟動何種相容性元件。"
+
+#: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
 msgstr "視窗管理員"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr "視窗管理程式是一種在視窗周圍繪出標題列、邊框的程式，並且讓您能移動和改變視窗大小。"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.in.h:19
 msgid "Panel"
 msgstr "面板"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.in.h:20
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr "面板提供了螢幕頂端或底部的工具列，包含了選單、視窗清單、狀態圖示、時鐘等功能。"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:17
+#: ../data/org.mate.session.gschema.xml.in.in.h:21
 msgid "File Manager"
 msgstr "檔案管理程式"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
@@ -233,27 +252,27 @@ msgstr "檔案不是有效的 .desktop 檔案"
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "無法辨識的桌面檔案版本「%s」"
 
-#: ../egg/eggdesktopfile.c:957
+#: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
 msgstr "準備啟動 %s"
 
-#: ../egg/eggdesktopfile.c:1099
+#: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "應用程式不接受以命令列開啟文件"
 
-#: ../egg/eggdesktopfile.c:1167
+#: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "無法辨識的啟動選項：%d"
 
-#: ../egg/eggdesktopfile.c:1372
+#: ../egg/eggdesktopfile.c:1364
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "不能傳送文件 URI 至「Type=Link」桌面項目"
 
-#: ../egg/eggdesktopfile.c:1393
+#: ../egg/eggdesktopfile.c:1385
 #, c-format
 msgid "Not a launchable item"
 msgstr "不是可以啟動的項目"
@@ -341,60 +360,67 @@ msgstr "鎖定螢幕"
 msgid "Cancel"
 msgstr "取消"
 
-#: ../mate-session/gsm-logout-dialog.c:319
+#: ../mate-session/gsm-logout-dialog.c:332
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] "您將會在 %d 秒後自動登出"
 
-#: ../mate-session/gsm-logout-dialog.c:327
+#: ../mate-session/gsm-logout-dialog.c:340
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] "本系統將會在 %d 秒後自動關閉。"
 
-#: ../mate-session/gsm-logout-dialog.c:373
+#: ../mate-session/gsm-logout-dialog.c:386
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "您目前以「%s」的身分登入。"
 
-#: ../mate-session/gsm-logout-dialog.c:443
+#: ../mate-session/gsm-logout-dialog.c:467
 msgid "Log out of this system now?"
 msgstr "是否立刻登出系統？"
 
-#: ../mate-session/gsm-logout-dialog.c:449
+#: ../mate-session/gsm-logout-dialog.c:473
 msgid "_Switch User"
 msgstr "切換使用者(_S)"
 
-#: ../mate-session/gsm-logout-dialog.c:458
+#: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Log Out"
 msgstr "登出(_L)"
 
-#: ../mate-session/gsm-logout-dialog.c:464
+#: ../mate-session/gsm-logout-dialog.c:488
 msgid "Shut down this system now?"
 msgstr "是否立刻關閉這個系統？"
 
-#: ../mate-session/gsm-logout-dialog.c:470
+#: ../mate-session/gsm-logout-dialog.c:494
 msgid "S_uspend"
 msgstr "暫停(_U)"
 
-#: ../mate-session/gsm-logout-dialog.c:476
+#: ../mate-session/gsm-logout-dialog.c:500
 msgid "_Hibernate"
 msgstr "休眠(_H)"
 
-#: ../mate-session/gsm-logout-dialog.c:482
+#: ../mate-session/gsm-logout-dialog.c:506
 msgid "_Restart"
 msgstr "重新啟動(_R)"
 
-#: ../mate-session/gsm-logout-dialog.c:492
+#: ../mate-session/gsm-logout-dialog.c:516
 msgid "_Shut Down"
 msgstr "關閉電腦(_S)"
 
-#: ../mate-session/gsm-manager.c:1420 ../mate-session/gsm-manager.c:2118
+#: ../mate-session/gsm-manager.c:1443 ../mate-session/gsm-manager.c:2162
 msgid "Not responding"
 msgstr "沒有回應"
 
-#: ../mate-session/gsm-xsmp-client.c:1189
+#. It'd be really surprising to reach this code: if we're here,
+#. * then the XSMP client already has set several XSMP
+#. * properties. But it could still be that SmProgram is not set.
+#: ../mate-session/gsm-xsmp-client.c:567
+msgid "Remembered Application"
+msgstr "已記住的應用程式"
+
+#: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
 msgstr "這個程式正在阻擋登出。"
 
@@ -410,24 +436,24 @@ msgid "Could not create ICE listening socket: %s"
 msgstr "無法建立 ICE 監聽插槽：%s"
 
 #. Oh well, no X for you!
-#: ../mate-session/gsm-util.c:354
+#: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "無法啟動登入作業階段（並且無法連線至 X 伺服器）"
 
-#: ../mate-session/main.c:479
+#: ../mate-session/main.c:554
 msgid "Override standard autostart directories"
 msgstr "覆蓋標準的自動啟動目錄"
 
-#: ../mate-session/main.c:480
+#: ../mate-session/main.c:555
 msgid "Enable debugging code"
 msgstr "啟用除錯碼"
 
-#: ../mate-session/main.c:481
+#: ../mate-session/main.c:556
 msgid "Do not load user-specified applications"
 msgstr "不要載入使用者指定的應用程式"
 
-#: ../mate-session/main.c:502
+#: ../mate-session/main.c:577
 msgid " - the MATE session manager"
 msgstr " - MATE 作業階段管理員"
 
@@ -475,3 +501,32 @@ msgstr "無法連接作業階段總管"
 #: ../tools/mate-session-save.c:287
 msgid "Program called with conflicting options"
 msgstr "以相衝突的選項呼叫程式"
+
+#: ../tools/mate-session-inhibit.c:114
+#, c-format
+msgid ""
+"%s [OPTION...] COMMAND\n"
+"\n"
+"Execute COMMAND while inhibiting some session functionality.\n"
+"\n"
+"  -h, --help        Show this help\n"
+"  --version         Show program version\n"
+"  --app-id ID       The application id to use\n"
+"                    when inhibiting (optional)\n"
+"  --reason REASON   The reason for inhibiting (optional)\n"
+"  --inhibit ARG     Things to inhibit, colon-separated list of:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"If no --inhibit option is specified, idle is assumed.\n"
+msgstr "%s [選項...] 指令\n\n當部份工作階段的功能遭抑制時執行指令。\n\n  -h, --help        顯示這份說明\n  --version         顯示程式版本\n  --app-id ID       當被抑制時要使用的\n                    應用程式 id（選擇性）\n  --reason REASON   抑制的理由（選擇性）\n  --inhibit ARG     要抑制的事物，列表分別為：\n                    登出，切換使用者，暫停，閒置，自動掛載\n\n若未指定 --inhibit 選項，將使用閒置。\n"
+
+#: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
+#: ../tools/mate-session-inhibit.c:188
+#, c-format
+msgid "%s requires an argument\n"
+msgstr "%s 需要一個參數\n"
+
+#: ../tools/mate-session-inhibit.c:224
+#, c-format
+msgid "Failed to execute %s\n"
+msgstr "執行 %s 失敗\n"
