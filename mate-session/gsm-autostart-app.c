@@ -307,12 +307,13 @@ setup_gsettings_condition_monitor (GsmAutostartApp *app,
                 return FALSE;
 
         settings = g_settings_new (elems[0]);
-        retval = g_settings_get_boolean (settings, elems[1]);
 
         signal = g_strdup_printf ("changed::%s", elems[1]);
         g_signal_connect (G_OBJECT (settings), signal,
                           G_CALLBACK (gsettings_condition_cb), app);
         g_free (signal);
+
+        retval = g_settings_get_boolean (settings, elems[1]);
 
         app->priv->condition_settings = settings;
 
