@@ -63,8 +63,8 @@
 #define ACCESSIBILITY_KEY     "accessibility"
 #define ACCESSIBILITY_SCHEMA  "org.mate.interface"
 
-#define DEBUG_KEY             "mate-session"
 #define DEBUG_SCHEMA          "org.mate.debug"
+#define DEBUG_KEY             "mate-session"
 
 #define VISUAL_SCHEMA         "org.mate.applications-at-visual"
 #define VISUAL_KEY            "exec"
@@ -588,15 +588,16 @@ int main(int argc, char** argv)
 		exit(1);
 	}
 
+	mdm_log_init();
+
 	/* Allows to enable/disable debug from GSettings only if it is not set from argument */
 	if (!debug && mate_gsettings_schema_exists(DEBUG_SCHEMA))
 	{
 		debug_settings = g_settings_new (DEBUG_SCHEMA);
-		debug = g_settings_get_boolean (debug_settings, DEBUG_KEY);
 		g_signal_connect (debug_settings, "changed::" DEBUG_KEY, G_CALLBACK (debug_changed), NULL);
+		debug = g_settings_get_boolean (debug_settings, DEBUG_KEY);
 	}
 
-	mdm_log_init();
 	mdm_log_set_debug(debug);
 
 	if (g_getenv ("XDG_CURRENT_DESKTOP") == NULL)
