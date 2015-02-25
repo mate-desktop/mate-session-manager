@@ -1,4 +1,4 @@
-1.9.3
+1.9.90
   * Disable upower support by default (use --enable-upower if you need it)
 
 1.8.1
