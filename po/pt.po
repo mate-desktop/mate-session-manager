@@ -4,7 +4,7 @@
 # 
 # Translators:
 # alfalb_mansil, 2014
-# Carlos Moreira <crolidge@gmail.com>, 2014
+# Carlos Moreira <crolidge@gmail.com>, 2014-2015
 # alfalb_mansil, 2015
 # Sérgio Marques <smarquespt@gmail.com>, 2012
 msgid ""
@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 14:00+0000\n"
-"Last-Translator: alfalb_mansil\n"
+"PO-Revision-Date: 2015-02-13 01:31+0000\n"
+"Last-Translator: Carlos Moreira <crolidge@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/MATE/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -99,13 +99,13 @@ msgstr "Se ativada, mate-session irá exibir uma janela antes de terminar a sess
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
 msgid "Logout timeout"
-msgstr "Terminar sessão expirou"
+msgstr "Fim de sessão expirado"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "Se for ativada a caixa de fim de sessão, isto define o tempo-limite em segundos antes do fim de sessão automático. Se for 0, é desativado o fim de sessão automático. "
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Time before session is considered idle"
@@ -140,11 +140,11 @@ msgstr "Lista de componentes que são necessários como parte da sessão. (Cada 
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "Controle o arranque do componente de acessibilidade gnome"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "Controle quais componentes de acessibilidade a iniciar."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -417,7 +417,7 @@ msgstr "Não está a responder"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:567
 msgid "Remembered Application"
-msgstr ""
+msgstr "Aplicação Recordada"
 
 #: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
@@ -517,15 +517,15 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s [OPÇÃO...] COMANDO\n\nExecutar COMANDO ao inibir alguma funcionalidade da sessão.\n\n  -h, --help        Mostrar esta ajuda\n  --version         Mostrar versão do programa\n  --app-id ID       A ID da aplicação a usar\n                    ao inibir (opcional)\n  --reason RAZÃO   A razão para inibir (opcional)\n  --inhibit ARG     Coisas a inibir, lista separada por ponto e vírgulas de:\n                    logout, switch-user, suspend, idle, automount\n\nSe não é especificado --inhibit, então é assumido idle.\n"
 
 #: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
 #: ../tools/mate-session-inhibit.c:188
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s precisa de um argumento\n"
 
 #: ../tools/mate-session-inhibit.c:224
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr "Não foi possível executar %s\n"
+msgstr "Falha ao executar %s\n"

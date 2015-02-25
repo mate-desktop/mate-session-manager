@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-20 17:09+0000\n"
+"PO-Revision-Date: 2015-01-21 20:13+0000\n"
 "Last-Translator: Tibor Kaputa <tibbbi2@gmail.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/MATE/language/sk/)\n"
 "MIME-Version: 1.0\n"
@@ -103,13 +103,13 @@ msgstr "Ak je povolené, mate-session bude pýtať potvrdenie pred ukončením r
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "Časový limit pred odhlásením"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "Ak je povolené potvrdzovacie okno pred odhlásením, toto nastavenie určuje čas v sekundách pred automatickým odhlásením. Ak je to 0, automatické odhlasovanie je vypnuté."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Time before session is considered idle"
@@ -144,11 +144,11 @@ msgstr "Zoznam komponentov, ktoré sú potrebné ako súčasť relácie. (Každ�
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "Správa spúšťania komponentov gnome kompatibility"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "Nastavte, ktoré komponenty kompatibility sa majú spustiť."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -423,7 +423,7 @@ msgstr "Neodpovedá"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:567
 msgid "Remembered Application"
-msgstr ""
+msgstr "Zapamätané aplikácie"
 
 #: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
@@ -523,7 +523,7 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s [OPTION...] COMMAND\n\nSpusťte COMMAND popri obmedzení niektorých funkcií relácie.\n\n-h, --help Zobraziť pomoc\n--version Zobraziť verziu programu\n--app-id ID Id aplikácie pre použitie\nv prípade obmedzenia (nepovinné)\n--reason REASON Dôvod obmedzenia (nepovinný)\n--inhibit ARG Obmedzené položky, čiarkou oddelený zoznam:\nlogout, switch-user, suspend, idle, automount\n\nAk možnosť --inhibit nie je zadaná, predpokladá sa idle.\n"
 
 #: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
 #: ../tools/mate-session-inhibit.c:188

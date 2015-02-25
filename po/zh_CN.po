@@ -8,13 +8,14 @@
 # Updated by Funda Wang <fundawang@linux.net.cn>, 2003
 # Wylmer Wang <wantinghard@gmail.com>, 2014
 # Yang Zhang <zyangmath@gmail.com>, 2009
+# 白铭骢 <jeffbaichina@members.fsf.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 13:27+0000\n"
-"Last-Translator: infirit <infirit@gmail.com>\n"
+"PO-Revision-Date: 2015-02-21 17:39+0000\n"
+"Last-Translator: 白铭骢 <jeffbaichina@members.fsf.org>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/MATE/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,13 +101,13 @@ msgstr "如果启用，mate-session 将在结束会话之前提示。"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "注销超时"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "如开启注销提示框，将自动设置注销超时。如设置为 0，则关闭自动注销。"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Time before session is considered idle"
@@ -141,11 +142,11 @@ msgstr "列出会话所包含的必需组件。(每个元素代表了“/org/mat
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "控制 GNOME 兼容组件启动"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "控制要启动的兼容组件。"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -416,7 +417,7 @@ msgstr "无响应"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:567
 msgid "Remembered Application"
-msgstr ""
+msgstr "已记住的应用程序"
 
 #: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
@@ -516,15 +517,15 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s [选项……] 命令\n\n禁用一些会话功能并执行命令。\n\n-h, --help 显示此帮助信息\n--version 显示程序版本\n--app-id ID 在阻止功能时要使用的应用程序 ID（可选）\n--reason REASON 阻止功能的原因（可选）\n--inhibit ARG 要阻止启动的功能，可用列表为：\nlogout, switch-user, suspend, idle, automount\n\n如未指定 --inhibit 选项，则默认为空闲状态。\n"
 
 #: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
 #: ../tools/mate-session-inhibit.c:188
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s 需要一个参数\n"
 
 #: ../tools/mate-session-inhibit.c:224
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "执行 %s 失败\n"

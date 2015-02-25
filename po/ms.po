@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# abuyop <abuyop@gmail.com>, 2013-2014
+# abuyop <abuyop@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 13:27+0000\n"
-"Last-Translator: infirit <infirit@gmail.com>\n"
+"PO-Revision-Date: 2015-02-08 13:46+0000\n"
+"Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/MATE/language/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,13 +96,13 @@ msgstr "Jika dbenarkan, mate-session akan memaklum pengguna sebelum menamatkan s
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "Had masa tamat daftar keluar"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "Jika makluman daftar keluar dibenarkan, ia tetapkan had masa tamat dalam saat sebelum mendaftar keluar secara automatik. Jika 0, daftar keluar automatik dilumpuhkan."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Time before session is considered idle"
@@ -137,11 +137,11 @@ msgstr "Senarai komponen yang diperlukan sebagai sebahagian dari sesi. (Setiap u
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "Kawal permulaan komponen keserasian gnome"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "Kawal komponen keserasian yang manakah hendak dimulakan."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -412,7 +412,7 @@ msgstr "Tidak membalas"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:567
 msgid "Remembered Application"
-msgstr ""
+msgstr "Aplikasi Diingati"
 
 #: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
@@ -512,15 +512,15 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s [OPTION...] COMMAND\n\nLakukan COMMAND ketika merencatkan beberapa kefungsian sesi.\n\n  -h, --help        Tunjuk bantuan ini\n  --version         Tunjuk versi program\n  --app-id ID       Id aplikasi yang digunakan bila\n                    membuat perencatan (pilihan)\n  --reason REASON   Sebab membuat perencatan (pilihan)\n  --inhibit ARG     Perkara yang direncat, senarai dipisah tanda titik bertindih:\n                    logout, switch-user, suspend, idle, automount\n\nJika tiada pilihan --inhibit dinyatakan, melahu digunakan.\n"
 
 #: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
 #: ../tools/mate-session-inhibit.c:188
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s memerlukan argumen\n"
 
 #: ../tools/mate-session-inhibit.c:224
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "Gagal lakukan %s\n"

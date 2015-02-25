@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Michael Findlay <keltoiboy@gmail.com>, 2012,2014
+# Michael Findlay <keltoiboy@gmail.com>, 2012,2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 13:27+0000\n"
-"Last-Translator: infirit <infirit@gmail.com>\n"
+"PO-Revision-Date: 2015-01-27 02:11+0000\n"
+"Last-Translator: Michael Findlay <keltoiboy@gmail.com>\n"
 "Language-Team: English (Australia) (http://www.transifex.com/projects/p/MATE/language/en_AU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,13 +96,13 @@ msgstr "If enabled, mate-session will prompt the user before ending a session."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "Logout timeout"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "If logout prompt is enabled, this set the timeout in seconds before logout automatically. If 0, automatic logout is disabled."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Time before session is considered idle"
@@ -137,11 +137,11 @@ msgstr "List of components that are required as part of the session. (Each eleme
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "Control gnome compatibility component startup"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "Control which compatibility components to start."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -414,7 +414,7 @@ msgstr "Not responding"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:567
 msgid "Remembered Application"
-msgstr ""
+msgstr "Remembered Application"
 
 #: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
@@ -514,15 +514,15 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s [OPTION...] COMMAND\n\nExecute COMMAND while inhibiting some session functionality.\n\n  -h, --help        Show this help\n  --version         Show program version\n  --app-id ID       The application id to use\n                    when inhibiting (optional)\n  --reason REASON   The reason for inhibiting (optional)\n  --inhibit ARG     Things to inhibit, colon-separated list of:\n                    logout, switch-user, suspend, idle, automount\n\nIf no --inhibit option is specified, idle is assumed.\n"
 
 #: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
 #: ../tools/mate-session-inhibit.c:188
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s requires an argument\n"
 
 #: ../tools/mate-session-inhibit.c:224
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "Failed to execute %s\n"

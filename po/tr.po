@@ -7,16 +7,17 @@
 # Baris Cicek <baris@teamforce.name.tr>, 2004, 2008, 2009
 # Fatih Demir <kabalak@kabalak.net>, 2000
 # Görkem Cetin <gorkem@gelecek.com.tr>, 2001
-# mauron, 2014
+# mauron, 2014-2015
 # mauron, 2012
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002
+# Umut Barış GÖKMEN <umtbrsgkmn@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 13:27+0000\n"
-"Last-Translator: infirit <infirit@gmail.com>\n"
+"PO-Revision-Date: 2015-02-14 03:01+0000\n"
+"Last-Translator: Umut Barış GÖKMEN <umtbrsgkmn@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/MATE/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,13 +103,13 @@ msgstr "Eğer seçiliyse, mate-session oturumu kapatmadan önce kullanıcı iste
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "Çıkış Zaman Aşımı"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "Eğer çıkış komutu etkinleştirildiyse, ayarlanmış süre içerisinde çıkış kendiliğinden gerçekleşir. Eğer süre 0 olarak ayarlanmışsa, kendiliğinden çıkış devre dışı kalır."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Time before session is considered idle"
@@ -143,11 +144,11 @@ msgstr "Oturumun parçası olarak gerekli bileşenlerin listesi. (Her öğe ismi
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "Gnome Uyumluluk Bileşeni Başlangıcını Kontrol Et"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "Hangi Uyumlu Bileşenlerin Başlatılabileceğini Kontrol Et"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -420,7 +421,7 @@ msgstr "Cevap vermiyor"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:567
 msgid "Remembered Application"
-msgstr ""
+msgstr "Hatırlanan Uygulama"
 
 #: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
@@ -520,15 +521,15 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s [SEÇENEK] KOMUT\n\nKOMUT gerçekltirilirken bazı oturum fonksiyonları engellenebilir\n\n-h, --yardım Bu yardımı gösterir\n--version Yazılım sürümünü gösterir\n--app-id ID Uygulama kimliğin kullanmak için\nEngellerken (opsiyonel)\n--reason REASON Engellemek için neden (opsiyonel)\n--inhibit ARG Engellemenin nesneleri, listede renklendirirlerek ayrıştırılmış:\nlogout,switch-user,suspend,idle,automount\n\nEğer --inhibit option belirtilmediyse, boşta varsayılır\n\n\n"
 
 #: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
 #: ../tools/mate-session-inhibit.c:188
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s argüman gerekli\n"
 
 #: ../tools/mate-session-inhibit.c:224
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "Gerçekleştirilemedi %s\n"

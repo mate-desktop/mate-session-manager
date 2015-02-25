@@ -9,14 +9,15 @@
 # kami911 <kami911@gmail.com>, 2014
 # Laszlo Dvornik <dvornik at mate dot hu>, 2004
 # Mate ORY <orymate at gmail d0t com>, 2006,2008
+# Rezső Páder <rezso@rezso.net>, 2015
 # Szabolcs Ban <shooby at mate dot hu>, 1998-2002
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 13:27+0000\n"
-"Last-Translator: infirit <infirit@gmail.com>\n"
+"PO-Revision-Date: 2015-01-25 20:55+0000\n"
+"Last-Translator: Rezső Páder <rezso@rezso.net>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/MATE/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +27,7 @@ msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
-msgstr "Válasszon parancsot"
+msgstr "Parancs kiválasztása"
 
 #: ../capplet/gsm-app-dialog.c:198
 msgid "Add Startup Program"
@@ -102,13 +103,13 @@ msgstr "Ha engedélyezve van, a mate-session megerősítést kér, mielőtt bez�
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "Kijelentkezési késleltetés"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "Ha a kijelentkezés megerősítése engedélyezett, ez a beállítás adja meg másodpercben a késleltetést az automatikus kijelentkezés előtt. Ha 0, az automatikus kijelentkezés tiltott."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Time before session is considered idle"
@@ -143,11 +144,11 @@ msgstr "Azon összetevők felsorolása, amelyek a munkamenet szükséges részé
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "Gnome kompatibilitási komponens automatikus indításának beállítása"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "Az indítandó kompatibilitási komponens megadása."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -420,7 +421,7 @@ msgstr "Nem válaszol"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:567
 msgid "Remembered Application"
-msgstr ""
+msgstr "Megjegyzett alkalmazás"
 
 #: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
@@ -526,9 +527,9 @@ msgstr ""
 #: ../tools/mate-session-inhibit.c:188
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s egy argumentumot igényel\n"
 
 #: ../tools/mate-session-inhibit.c:224
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "%s végrehajtása nem sikerült\n"
