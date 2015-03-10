@@ -1,3 +1,6 @@
+1.8.2
+  * Support glib >= 2.43
+
 1.8.1
   * Add autostart of accessibility apps
   * Fix build with upower disabled
