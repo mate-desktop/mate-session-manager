@@ -671,13 +671,14 @@ setup_dialog (GsmPropertiesDialog *dialog)
         button = GTK_WIDGET (gtk_builder_get_object (dialog->priv->xml,
                                                      CAPPLET_REMEMBER_WIDGET_NAME));
         dialog->priv->remember_toggle = button;
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button),
-                                      g_settings_get_boolean (dialog->priv->settings, SPC_AUTOSAVE_KEY));
+
         g_signal_connect (dialog->priv->settings,
                           "changed::" SPC_AUTOSAVE_KEY,
                           G_CALLBACK (on_autosave_value_notify),
                           dialog);
 
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button),
+                                      g_settings_get_boolean (dialog->priv->settings, SPC_AUTOSAVE_KEY));
         g_signal_connect (button,
                           "toggled",
                           G_CALLBACK (on_autosave_value_toggled),
