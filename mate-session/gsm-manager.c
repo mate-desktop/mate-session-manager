@@ -1013,18 +1013,19 @@ cancel_end_session (GsmManager *manager)
 }
 
 static gboolean
-is_program_in_path (const char *program)
+process_is_running (const char * name)
 {
-        char *tmp = g_find_program_in_path (program);
-        if (tmp != NULL)
-        {
-                g_free (tmp);
-                return TRUE;
-        }
-        else
-        {
-                return FALSE;
-        }
+       int num_processes;
+       char * command = g_strdup_printf ("pidof %s | wc -l", name);
+       FILE *fp = popen(command, "r");
+       fscanf(fp, "%d", &num_processes);
+       pclose(fp);
+       if (num_processes > 0) {
+           return TRUE;
+       }
+       else {
+           return FALSE;
+       }
 }
 
 static void
@@ -1034,7 +1035,7 @@ manager_switch_user (GsmManager *manager)
         gboolean res;
         char    *command;
 
-        if (is_program_in_path (MDM_FLEXISERVER_COMMAND)) {
+        if (process_is_running("mdm")) {
                 /* MDM */
                 command = g_strdup_printf ("%s %s",
                                            MDM_FLEXISERVER_COMMAND,
@@ -1056,7 +1057,7 @@ manager_switch_user (GsmManager *manager)
                         g_error_free (error);
                 }
         }
-        else if (is_program_in_path (GDM_FLEXISERVER_COMMAND)) {
+        else if (process_is_running("gdm") || process_is_running("gdm3")) {
                 /* GDM */
                 command = g_strdup_printf ("%s %s",
                                                GDM_FLEXISERVER_COMMAND,
@@ -1078,7 +1079,7 @@ manager_switch_user (GsmManager *manager)
                         g_error_free (error);
                 }
         }
-        else {
+        else if (process_is_running("lightdm")) {
                 /* LightDM */
                 const gchar *xdg_seat_path = g_getenv ("XDG_SEAT_PATH");
                 if (xdg_seat_path != NULL) {
