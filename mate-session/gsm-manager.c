@@ -1013,18 +1013,21 @@ cancel_end_session (GsmManager *manager)
 }
 
 static gboolean
-is_program_in_path (const char *program)
+process_is_running (const char * name)
 {
-        char *tmp = g_find_program_in_path (program);
-        if (tmp != NULL)
-        {
-                g_free (tmp);
-                return TRUE;
-        }
-        else
-        {
-                return FALSE;
-        }
+       int num_processes;
+       char * command = g_strdup_printf ("pidof %s | wc -l", name);
+       FILE *fp = popen(command, "r");
+       fscanf(fp, "%d", &num_processes);
+       pclose(fp);
+       g_free (command);
+
+       if (num_processes > 0) {
+           return TRUE;
+       }
+       else {
+           return FALSE;
+       }
 }
 
 static void
@@ -1033,8 +1036,9 @@ manager_switch_user (GsmManager *manager)
         GError  *error;
         gboolean res;
         char    *command;
+        const gchar *xdg_seat_path = g_getenv ("XDG_SEAT_PATH");
 
-        if (is_program_in_path (MDM_FLEXISERVER_COMMAND)) {
+        if (process_is_running("mdm")) {
                 /* MDM */
                 command = g_strdup_printf ("%s %s",
                                            MDM_FLEXISERVER_COMMAND,
@@ -1056,7 +1060,7 @@ manager_switch_user (GsmManager *manager)
                         g_error_free (error);
                 }
         }
-        else if (is_program_in_path (GDM_FLEXISERVER_COMMAND)) {
+        else if (process_is_running("gdm") || process_is_running("gdm3")) {
                 /* GDM */
                 command = g_strdup_printf ("%s %s",
                                                GDM_FLEXISERVER_COMMAND,
@@ -1078,36 +1082,33 @@ manager_switch_user (GsmManager *manager)
                         g_error_free (error);
                 }
         }
-        else {
+        else if (xdg_seat_path != NULL) {
                 /* LightDM */
-                const gchar *xdg_seat_path = g_getenv ("XDG_SEAT_PATH");
-                if (xdg_seat_path != NULL) {
-                        GDBusProxyFlags flags = G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START;
-                        GDBusProxy *proxy = NULL;
-                        error = NULL;
+                GDBusProxyFlags flags = G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START;
+                GDBusProxy *proxy = NULL;
+                error = NULL;
 
-                        proxy = g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SYSTEM,
-                                                              flags,
-                                                              NULL,
-                                                              "org.freedesktop.DisplayManager",
-                                                              xdg_seat_path,
-                                                              "org.freedesktop.DisplayManager.Seat",
-                                                              NULL,
-                                                              &error);
-                        if (proxy != NULL) {
-                                g_dbus_proxy_call_sync (proxy,
-                                                        "SwitchToGreeter",
-                                                        g_variant_new ("()"),
-                                                        G_DBUS_CALL_FLAGS_NONE,
-                                                        -1,
-                                                        NULL,
-                                                        NULL);
-                                g_object_unref (proxy);
-                        }
-                        else {
-                                g_debug ("GsmManager: Unable to start LightDM greeter: %s", error->message);
-                                g_error_free (error);
-                        }
+                proxy = g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SYSTEM,
+                                                      flags,
+                                                      NULL,
+                                                      "org.freedesktop.DisplayManager",
+                                                      xdg_seat_path,
+                                                      "org.freedesktop.DisplayManager.Seat",
+                                                      NULL,
+                                                      &error);
+                if (proxy != NULL) {
+                        g_dbus_proxy_call_sync (proxy,
+                                                "SwitchToGreeter",
+                                                g_variant_new ("()"),
+                                                G_DBUS_CALL_FLAGS_NONE,
+                                                -1,
+                                                NULL,
+                                                NULL);
+                        g_object_unref (proxy);
+                }
+                else {
+                        g_debug ("GsmManager: Unable to start LightDM greeter: %s", error->message);
+                        g_error_free (error);
                 }
         }
 }
