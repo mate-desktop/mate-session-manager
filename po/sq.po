@@ -5,14 +5,15 @@
 # Translators:
 # Deep_Dark <epidamus@netscape.net>, 2002
 # Elian Myftiu <elian@alblinux.net>, 2007
+# Indrit Bashkimi <indrit.bashkimi@gmail.com>, 2015
 # Laurent Dhima <laurenti@alblinux.net>, 2003, 2004, 2005, 2006
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 13:27+0000\n"
-"Last-Translator: infirit <infirit@gmail.com>\n"
+"PO-Revision-Date: 2015-04-09 12:40+0000\n"
+"Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian (http://www.transifex.com/projects/p/MATE/language/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -178,7 +179,7 @@ msgstr ""
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr ""
+msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
@@ -220,7 +221,7 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr ""
+msgstr "Opsionet"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
@@ -354,7 +355,7 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:969
 msgid "Cancel"
-msgstr ""
+msgstr "Anulo"
 
 #: ../mate-session/gsm-logout-dialog.c:332
 #, c-format
@@ -393,7 +394,7 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:494
 msgid "S_uspend"
-msgstr ""
+msgstr "_Pezullo"
 
 #: ../mate-session/gsm-logout-dialog.c:500
 msgid "_Hibernate"
@@ -401,15 +402,15 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:506
 msgid "_Restart"
-msgstr ""
+msgstr "_Rindiz"
 
 #: ../mate-session/gsm-logout-dialog.c:516
 msgid "_Shut Down"
-msgstr ""
+msgstr "_Fik"
 
 #: ../mate-session/gsm-manager.c:1443 ../mate-session/gsm-manager.c:2162
 msgid "Not responding"
-msgstr ""
+msgstr "Nuk po përgjigjet"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP

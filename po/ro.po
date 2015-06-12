@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Adi Roiban https://launchpad.net/~adiroiban, 2008, 2009
+# Daniel <danny34ever@yahoo.com>, 2015
 # Eddy Petrișor <eddy.petrisor@gmail.com>, 2006
 # Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2009
 # sorinn <nemes.sorin@gmail.com>, 2014
@@ -13,8 +14,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 13:27+0000\n"
-"Last-Translator: infirit <infirit@gmail.com>\n"
+"PO-Revision-Date: 2015-04-21 13:52+0000\n"
+"Last-Translator: Daniel <danny34ever@yahoo.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/MATE/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,7 +49,7 @@ msgstr "Activat"
 
 #: ../capplet/gsm-properties-dialog.c:563
 msgid "Icon"
-msgstr "Iconiță"
+msgstr "Pictogramă"
 
 #: ../capplet/gsm-properties-dialog.c:575
 msgid "Program"
@@ -64,7 +65,7 @@ msgstr "Fără nume"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
-msgstr "Fără descriere"
+msgstr "Nicio descriere"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:557
 msgid "Version of this application"
@@ -76,11 +77,11 @@ msgstr "Nu se poate afișa documentul de ajutor"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Oră pornire sesiune curentă"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Oră Unix a începerii sesiunii curente."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:3
 msgid "Save sessions"
@@ -145,7 +146,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "Controlați ce componente de compatibilitate să pornească"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -166,7 +167,7 @@ msgstr "Panou"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Panoul furnizează bara de deasupra ori dedesubtul ecranului ce conține meniuri, lista cu ferestre, iconițe de stare, ceasul etc."
+msgstr "Panoul furnizează bara din partea de sus sau jos a ecranului ce conține meniuri, lista de ferestre, pictograme de stare, ceasul etc."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:21
 msgid "File Manager"
@@ -176,7 +177,7 @@ msgstr "Administrator de fișiere"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Administratorul de fișiere furnizează iconițele de pe desktop și permite interacțiunea cu fișierele salvate."
+msgstr "Administratorul de fișiere furnizează pictogramele de pe desktop și permite interacțiunea cu fișierele salvate."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -226,7 +227,7 @@ msgstr "Opțiuni"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
-msgstr "Răsfoiește"
+msgstr "Răsfoire…"
 
 #: ../data/session-properties.ui.h:7
 msgid "Comm_ent:"
@@ -306,7 +307,7 @@ msgstr "Afișează opțiunile de administrare a sesiunii"
 #: ../mate-session/gsm-inhibit-dialog.c:258
 #, c-format
 msgid "Icon '%s' not found"
-msgstr "Iconița „%s” nu a fost găsită"
+msgstr "Pictograma „%s” nu a fost găsită"
 
 #: ../mate-session/gsm-inhibit-dialog.c:657
 msgid "Unknown"
@@ -332,7 +333,7 @@ msgstr "Schimbă oricum utilizatorul"
 
 #: ../mate-session/gsm-inhibit-dialog.c:946
 msgid "Log Out Anyway"
-msgstr ""
+msgstr "Ieși oricum"
 
 #: ../mate-session/gsm-inhibit-dialog.c:949
 msgid "Suspend Anyway"
@@ -344,7 +345,7 @@ msgstr "Hibernează oricum"
 
 #: ../mate-session/gsm-inhibit-dialog.c:955
 msgid "Shut Down Anyway"
-msgstr ""
+msgstr "Oprește oricum"
 
 #: ../mate-session/gsm-inhibit-dialog.c:958
 msgid "Reboot Anyway"
@@ -352,7 +353,7 @@ msgstr "Repornește oricum"
 
 #: ../mate-session/gsm-inhibit-dialog.c:966
 msgid "Lock Screen"
-msgstr "Blocare ecran"
+msgstr "Blochează ecranul"
 
 #: ../mate-session/gsm-inhibit-dialog.c:969
 msgid "Cancel"
@@ -362,17 +363,17 @@ msgstr "Renunță"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Veți ieși automat în %d secunde"
+msgstr[1] "Veți ieși automat în %d secunde"
+msgstr[2] "Veți ieși automat în %d secunde"
 
 #: ../mate-session/gsm-logout-dialog.c:340
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Acest sistem va fi oprit automat în %d secunde"
+msgstr[1] "Acest sistem va fi oprit automat în %d secunde"
+msgstr[2] "Acest sistem va fi oprit automat în %d secunde"
 
 #: ../mate-session/gsm-logout-dialog.c:386
 #, c-format
@@ -385,7 +386,7 @@ msgstr "Ieșiți de pe acest sistem acum?"
 
 #: ../mate-session/gsm-logout-dialog.c:473
 msgid "_Switch User"
-msgstr "_Schimbă utilizator"
+msgstr "_Schimbare utilizator"
 
 #: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Log Out"
@@ -409,7 +410,7 @@ msgstr "_Repornește"
 
 #: ../mate-session/gsm-logout-dialog.c:516
 msgid "_Shut Down"
-msgstr "_Oprire"
+msgstr "_Oprește"
 
 #: ../mate-session/gsm-manager.c:1443 ../mate-session/gsm-manager.c:2162
 msgid "Not responding"
@@ -420,11 +421,11 @@ msgstr "Nu răspunde"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:567
 msgid "Remembered Application"
-msgstr ""
+msgstr "Aplicație memorată"
 
 #: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
-msgstr ""
+msgstr "Acest program blochează ieșirea."
 
 #: ../mate-session/gsm-xsmp-server.c:325
 msgid ""
@@ -526,7 +527,7 @@ msgstr ""
 #: ../tools/mate-session-inhibit.c:188
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s necesită un argument\n"
 
 #: ../tools/mate-session-inhibit.c:224
 #, c-format

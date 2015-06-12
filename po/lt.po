@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-15 20:57+0000\n"
+"PO-Revision-Date: 2015-05-21 14:43+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -420,7 +420,7 @@ msgstr "Neatsako"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:567
 msgid "Remembered Application"
-msgstr ""
+msgstr "Įsiminta Programa"
 
 #: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
@@ -520,7 +520,7 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s [PARINKTIS...] KOMANDA\n\nVykdo KOMANDĄ, drausdama kai kurį seanso funkcionalumą.\n\n  -h, --help        Rodo šią pagalbą\n  --version         Rodo programos versiją\n  --app-id ID       Draudžiant (pasirinktinai) naudojamos\n                    programos id\n  --reason PRIEŽASTIS   Draudimo (pasirinktinai) priežastis\n  --inhibit ARG     Dvitaškiais atskirtų, draudžiamų dalykų sąrašas:\n                    logout, switch-user, suspend, idle, automount\n\nJei nenurodyta parinktis --inhibit, tuomet yra numanoma idle.\n"
 
 #: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
 #: ../tools/mate-session-inhibit.c:188

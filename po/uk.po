@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Maks Lyashuk <m_lyashuk@ukr.net>, 2015
+# Max Lyashuk <m_lyashuk@ukr.net>, 2015
 # Микола Ткач <Stuartlittle1970@gmail.com>, 2013
 # Oleh <aalesshhkka@gmail.com>, 2015
 # Stefano Karapetsas <stefano@karapetsas.com>, 2012
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-25 02:32+0000\n"
+"PO-Revision-Date: 2015-05-08 18:13+0000\n"
 "Last-Translator: Микола Ткач <Stuartlittle1970@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/MATE/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -28,11 +28,11 @@ msgstr "Оберіть команду"
 
 #: ../capplet/gsm-app-dialog.c:198
 msgid "Add Startup Program"
-msgstr "Додати програму, що запускається на початку"
+msgstr "Додати проґраму, що запускається на початку"
 
 #: ../capplet/gsm-app-dialog.c:202
 msgid "Edit Startup Program"
-msgstr "Змінити програму"
+msgstr "Змінити проґраму"
 
 #: ../capplet/gsm-app-dialog.c:491
 msgid "The startup command cannot be empty"
@@ -52,11 +52,11 @@ msgstr "Піктограма"
 
 #: ../capplet/gsm-properties-dialog.c:575
 msgid "Program"
-msgstr "Програма"
+msgstr "Проґрама"
 
 #: ../capplet/gsm-properties-dialog.c:783
 msgid "Startup Applications Preferences"
-msgstr "Параметри програм, що запускаються"
+msgstr "Параметри проґрам, що запускаються"
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
@@ -68,7 +68,7 @@ msgstr "Опис відсутній"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:557
 msgid "Version of this application"
-msgstr "Версія цієї програми"
+msgstr "Версія цієї проґрами"
 
 #: ../capplet/main.c:54
 msgid "Could not display help document"
@@ -106,7 +106,7 @@ msgstr "Час сеансу завершився"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "Якщо увімкнено діалог виходу, це встановлює час очікування у секундах, перед автоматичним виходом. При значенні рівному 0 автоматичний вихід з сеансу вимкнуто. "
+msgstr "Якщо увімкнено діялоґ виходу, це встановлює час очікування у секундах, перед автоматичним виходом. При значенні рівному 0 автоматичний вихід з сеансу вимкнуто. "
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:9
 msgid "Time before session is considered idle"
@@ -123,7 +123,7 @@ msgstr "Типовий сеанс"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:12
 msgid "List of applications that are part of the default session."
-msgstr "Список програм, які є частиною типового сеансу."
+msgstr "Перелік проґрам, які є частиною типового сеансу."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:13
 msgid "Required session components"
@@ -145,7 +145,7 @@ msgstr "Контролюйте запуск компонентів сумісн�
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:16
 msgid "Control which compatibility components to start."
-msgstr "Перевірте які компоненти сумісності будуть запускатись"
+msgstr "Перевірте які компоненти сумісності будуть запускатися"
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -156,7 +156,7 @@ msgstr "Віконний менеджер"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Менеджер вікон - це програма, яка малює заголовок та оформлення вікна, та дозволяє переміщувати вікна та змінювати їх розмір."
+msgstr "Менеджер вікон - це проґрама, яка малює заголовок та оформлення вікна, та дозволяє переміщувати вікна і змінювати їх розмір."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:19
 msgid "Panel"
@@ -166,7 +166,7 @@ msgstr "Панель"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Панель надає смугу згори та знизу екрану, що містять меню, список вікон, значки стану, годинник та т.і."
+msgstr "Панель надає смугу згори та знизу екрану, що містять меню, перелік вікон, піктограми стану, годинник тощо."
 
 #: ../data/org.mate.session.gschema.xml.in.in.h:21
 msgid "File Manager"
@@ -188,37 +188,37 @@ msgstr "Це - сеанс входу у MATE"
 
 #: ../data/gsm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
-msgstr "<b>Деякі програми досі працюють:</b>"
+msgstr "<b>Деякі проґрами досі працюють:</b>"
 
 #: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Очікування завершення роботи програми.  Переривання роботи програми може привести до втрати ваших даних."
+msgstr "Очікування завершення роботи проґрами.  Переривання роботи проґрами може призвести до втрати ваших даних."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
-msgstr "Програми, що запускаються"
+msgstr "Проґрами, що запускаються"
 
 #: ../data/mate-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr "Оберіть програми, що запускаються при вході у сеанс"
+msgstr "Оберіть проґрами, що запускаються при вході у сеанс"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
-msgstr "Додаткові по_чаткові програми для запуску:"
+msgstr "Додаткові по_чаткові проґрами для запуску:"
 
 #: ../data/session-properties.ui.h:2
 msgid "Startup Programs"
-msgstr "Початкові програми"
+msgstr "Початкові проґрами"
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
-msgstr "_Автоматично запам'ятовувати запущені програми при завершенні"
+msgstr "_Автоматично запам'ятовувати запущені проґрами при завершенні"
 
 #: ../data/session-properties.ui.h:4
 msgid "_Remember Currently Running Application"
-msgstr "_Запам'ятати запущені програми"
+msgstr "_Запам'ятати запущені проґрами"
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
@@ -258,7 +258,7 @@ msgstr "Запускється «%s»"
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "Програма не приймає документи, вказані у командному рядку"
+msgstr "Проґрама не приймає документи, вказані у командному рядку"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
@@ -314,21 +314,21 @@ msgstr "Невідомо"
 
 #: ../mate-session/gsm-inhibit-dialog.c:708
 msgid "A program is still running:"
-msgstr "Програма досі працює:"
+msgstr "Проґрама досі працює:"
 
 #: ../mate-session/gsm-inhibit-dialog.c:712
 msgid "Some programs are still running:"
-msgstr "Деякі програми досі працюють:"
+msgstr "Деякі проґрами досі працюють:"
 
 #: ../mate-session/gsm-inhibit-dialog.c:713
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Очікування завершення роботи програм.  Переривання цих програм може привести до втрати вашої роботи."
+msgstr "Очікування завершення роботи проґрам.  Переривання цих проґрам може призвести до втрати вашої роботи."
 
 #: ../mate-session/gsm-inhibit-dialog.c:943
 msgid "Switch User Anyway"
-msgstr "Перемикнути користувача попри все"
+msgstr "Перемикнути користувача попри усе"
 
 #: ../mate-session/gsm-inhibit-dialog.c:946
 msgid "Log Out Anyway"
@@ -336,11 +336,11 @@ msgstr "Все одно вийти з системи"
 
 #: ../mate-session/gsm-inhibit-dialog.c:949
 msgid "Suspend Anyway"
-msgstr "Призупинити систему попри все"
+msgstr "Призупинити систему попри усе"
 
 #: ../mate-session/gsm-inhibit-dialog.c:952
 msgid "Hibernate Anyway"
-msgstr "Перевести у режим сну попри все"
+msgstr "Перевести у режим сну попри усе"
 
 #: ../mate-session/gsm-inhibit-dialog.c:955
 msgid "Shut Down Anyway"
@@ -348,7 +348,7 @@ msgstr "Все одно вимкнути"
 
 #: ../mate-session/gsm-inhibit-dialog.c:958
 msgid "Reboot Anyway"
-msgstr "Перезавантажити попри все"
+msgstr "Перезавантажити попри усе"
 
 #: ../mate-session/gsm-inhibit-dialog.c:966
 msgid "Lock Screen"
@@ -420,11 +420,11 @@ msgstr "Не відповідає"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:567
 msgid "Remembered Application"
-msgstr "Запам’ятовані програми"
+msgstr "Запам’ятовані проґрами"
 
 #: ../mate-session/gsm-xsmp-client.c:1205
 msgid "This program is blocking logout."
-msgstr "Ця програма блокує вихід з системи."
+msgstr "Ця проґрама блокує вихід з системи."
 
 #: ../mate-session/gsm-xsmp-server.c:325
 msgid ""
@@ -453,7 +453,7 @@ msgstr "Увімкнути налагоджувальний код"
 
 #: ../mate-session/main.c:556
 msgid "Do not load user-specified applications"
-msgstr "Не завантажувати вибрані користувачем програми"
+msgstr "Не завантажувати вибрані користувачем проґрами"
 
 #: ../mate-session/main.c:577
 msgid " - the MATE session manager"
@@ -469,15 +469,15 @@ msgstr "Завершити сеанс, ігноруючи будь-які стр
 
 #: ../tools/mate-session-save.c:67
 msgid "Show logout dialog"
-msgstr "Показати діалог завершення сеансу"
+msgstr "Показати діялоґ завершення сеансу"
 
 #: ../tools/mate-session-save.c:68
 msgid "Show shutdown dialog"
-msgstr "Показати діалог вимикання"
+msgstr "Показати діялоґ вимикання"
 
 #: ../tools/mate-session-save.c:69
 msgid "Use dialog boxes for errors"
-msgstr "Використовувати діалогові вікна для помилок"
+msgstr "Використовувати діялоґові вікна для помилок"
 
 #. deprecated options
 #: ../tools/mate-session-save.c:71
@@ -502,7 +502,7 @@ msgstr "Не вдається з'єднатися з менеджером сеа
 
 #: ../tools/mate-session-save.c:287
 msgid "Program called with conflicting options"
-msgstr "Програму запущено з несумісними параметрами"
+msgstr "Проґраму запущено з несумісними параметрами"
 
 #: ../tools/mate-session-inhibit.c:114
 #, c-format
@@ -520,13 +520,13 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [ОПЦІЯ...] КОМАНДА\n\nВиконати КОМАНДУ в той самий час інгібуючи деякі функції сеансу.\n\n  -h, --help        Показати довідку\n  --version         Показати версію проґрами\n  --app-id ID       ID додатку для використання\n                    при інгібуванні (опційно)\n  --reason REASON   Причина для інгібування (опційно)\n  --inhibit ARG     Речі для інгібування, розділений двокрапкою список:\n                    вихід, перемикач користувачів, призупинка, режим очікування, автомонтування\n\nIf no --inhibit опція не вказана, означає бездіяльність.\n"
+msgstr "%s [ОПЦІЯ...] КОМАНДА\n\nВиконати КОМАНДУ в той самий час інгібуючи деякі функції сеансу.\n\n  -h, --help        Показати довідку\n  --version         Показати версію проґрами\n  --app-id ID       ID додатку для використання\n                    при інгібуванні (опційно)\n  --reason REASON   Причина для інгібування (опційно)\n  --inhibit ARG     Речі для інгібування, розділений двокрапкою перелік:\n                    вихід, перемикач користувачів, призупинка, режим очікування, автомонтування\n\nIf no --inhibit опція не вказана, означає бездіяльність.\n"
 
 #: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
 #: ../tools/mate-session-inhibit.c:188
 #, c-format
 msgid "%s requires an argument\n"
-msgstr "%s вимагає аргументу\n"
+msgstr "%s потребує аргументу\n"
 
 #: ../tools/mate-session-inhibit.c:224
 #, c-format
