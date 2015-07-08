@@ -46,7 +46,7 @@ static void dialog_response(GsmPropertiesDialog* dialog, guint response_id, gpoi
 		screen = gtk_widget_get_screen(GTK_WIDGET (dialog));
 
 		error = NULL;
-		gtk_show_uri (screen, "help:user-guide?gosstartsession-2",
+		gtk_show_uri (screen, "help:mate-user-guide/gosstartsession-2",
 					  gtk_get_current_event_time (), &error);
 
 		if (error != NULL)
