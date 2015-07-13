@@ -1,3 +1,9 @@
+1.10.2
+  * Reintroduce missing help in session properties dialog
+  * Set XDG_CURRENT_DESKTOP env var to MATE
+  * Some bugfixes
+  * Translations update
+
 1.10.1
   * Fix size of GtkScrolledWindow in session properties.
   * Check for running display manager when user switching.
