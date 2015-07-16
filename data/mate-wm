@@ -42,7 +42,7 @@ done
 
 # WINDOW_MANAGER overrides all
 if [ -z "$WINDOW_MANAGER" ] ; then
-    WINDOW_MANAGER=`mateconftool-2 --get /desktop/mate/session/required_components/windowmanager 2> /dev/null`
+    WINDOW_MANAGER=`gsettings get org.mate.session.required-components windowmanager 2> /dev/null`
 fi
 
 # Migrate compiz to compiz-manager if possible and needed
