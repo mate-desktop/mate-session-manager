@@ -45,8 +45,6 @@
 
 #define GSM_INHIBIT_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_INHIBIT_DIALOG, GsmInhibitDialogPrivate))
 
-#define IS_STRING_EMPTY(x) ((x)==NULL||(x)[0]=='\0')
-
 #define GTKBUILDER_FILE "gsm-inhibit-dialog.ui"
 
 #ifndef DEFAULT_ICON_SIZE

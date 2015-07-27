@@ -41,8 +41,6 @@
 
 #define MAX_STATUS_TEXT 140
 
-#define IS_STRING_EMPTY(x) ((x)==NULL||(x)[0]=='\0')
-
 #define GSM_PRESENCE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_PRESENCE, GsmPresencePrivate))
 
 struct GsmPresencePrivate

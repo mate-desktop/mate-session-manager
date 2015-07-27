@@ -76,9 +76,6 @@
 
 #define GSM_DBUS_NAME "org.mate.SessionManager"
 
-#define IS_STRING_EMPTY(x) \
-	((x) == NULL || (x)[0] == '\0')
-
 #define KEY_AUTOSAVE "auto-save-session"
 
 static gboolean failsafe = FALSE;

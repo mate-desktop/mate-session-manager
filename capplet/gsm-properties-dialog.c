@@ -37,11 +37,6 @@
 
 #define GSM_PROPERTIES_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_PROPERTIES_DIALOG, GsmPropertiesDialogPrivate))
 
-#define IS_STRING_EMPTY(x) ((x)==NULL||(x)[0]=='\0')
-
-#define REALLY_IDENTICAL_STRING(a, b)                   \
-        ((a && b && !strcmp (a, b)) || (!a && !b))
-
 #define GTKBUILDER_FILE "session-properties.ui"
 
 #define CAPPLET_TREEVIEW_WIDGET_NAME      "session_properties_treeview"

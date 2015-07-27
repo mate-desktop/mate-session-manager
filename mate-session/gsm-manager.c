@@ -93,8 +93,6 @@
 #define SCREENSAVER_SCHEMA           "org.mate.screensaver"
 #define KEY_SLEEP_LOCK               "lock-enabled"
 
-#define IS_STRING_EMPTY(x) ((x)==NULL||(x)[0]=='\0')
-
 #ifdef __GNUC__
 #define UNUSED_VARIABLE __attribute__ ((unused))
 #else

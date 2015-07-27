@@ -36,11 +36,9 @@
 #include "gsm-marshal.h"
 
 #include "gsm-manager.h"
+#include "gsm-util.h"
 
 #define GSM_DBUS_CLIENT_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_DBUS_CLIENT, GsmDBusClientPrivate))
-
-#define IS_STRING_EMPTY(x) ((x)==NULL||(x)[0]=='\0')
-
 
 #define SM_DBUS_NAME                     "org.mate.SessionManager"
 #define SM_DBUS_CLIENT_PRIVATE_INTERFACE "org.mate.SessionManager.ClientPrivate"

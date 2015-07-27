@@ -40,8 +40,6 @@
 
 #define GsmDesktopFile "_GSM_DesktopFile"
 
-#define IS_STRING_EMPTY(x) ((x)==NULL||(x)[0]=='\0')
-
 #define GSM_XSMP_CLIENT_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_XSMP_CLIENT, GsmXSMPClientPrivate))
 
 struct GsmXSMPClientPrivate
