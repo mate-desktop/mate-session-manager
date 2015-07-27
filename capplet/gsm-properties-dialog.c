@@ -62,8 +62,6 @@ struct GsmPropertiesDialogPrivate
         GtkWidget         *delete_button;
         GtkWidget         *edit_button;
 
-        GtkWidget         *remember_toggle;
-
         GspAppManager     *manager;
 
         GSettings         *settings;
@@ -458,37 +456,6 @@ on_row_activated (GtkTreeView         *tree_view,
 }
 
 static void
-on_autosave_value_notify (GSettings *settings,
-                          gchar *key,
-                          GsmPropertiesDialog *dialog)
-{
-        gboolean   gval;
-        gboolean   bval;
-
-        gval = g_settings_get_boolean (settings, key);
-        bval = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->priv->remember_toggle));
-
-        if (bval != gval) {
-                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->priv->remember_toggle), gval);
-        }
-}
-
-static void
-on_autosave_value_toggled (GtkToggleButton     *button,
-                           GsmPropertiesDialog *dialog)
-{
-        gboolean     gval;
-        gboolean     bval;
-
-        gval = g_settings_get_boolean (dialog->priv->settings, SPC_AUTOSAVE_KEY);
-        bval = gtk_toggle_button_get_active (button);
-
-        if (gval != bval) {
-                g_settings_set_boolean (dialog->priv->settings, SPC_AUTOSAVE_KEY, bval);
-        }
-}
-
-static void
 on_save_session_clicked (GtkWidget           *widget,
                          GsmPropertiesDialog *dialog)
 {
@@ -658,19 +625,9 @@ setup_dialog (GsmPropertiesDialog *dialog)
 
         button = GTK_WIDGET (gtk_builder_get_object (dialog->priv->xml,
                                                      CAPPLET_REMEMBER_WIDGET_NAME));
-        dialog->priv->remember_toggle = button;
 
-        g_signal_connect (dialog->priv->settings,
-                          "changed::" SPC_AUTOSAVE_KEY,
-                          G_CALLBACK (on_autosave_value_notify),
-                          dialog);
-
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button),
-                                      g_settings_get_boolean (dialog->priv->settings, SPC_AUTOSAVE_KEY));
-        g_signal_connect (button,
-                          "toggled",
-                          G_CALLBACK (on_autosave_value_toggled),
-                          dialog);
+        g_settings_bind (dialog->priv->settings, SPC_AUTOSAVE_KEY,
+                         button, "active", G_SETTINGS_BIND_DEFAULT);
 
         button = GTK_WIDGET (gtk_builder_get_object (dialog->priv->xml,
                                                      CAPPLET_SAVE_WIDGET_NAME));
@@ -722,6 +679,11 @@ gsm_properties_dialog_dispose (GObject *object)
         if (dialog->priv->xml != NULL) {
                 g_object_unref (dialog->priv->xml);
                 dialog->priv->xml = NULL;
+        }
+
+        if (dialog->priv->settings != NULL) {
+                g_object_unref (dialog->priv->settings);
+                dialog->priv->settings = NULL;
         }
 
         G_OBJECT_CLASS (gsm_properties_dialog_parent_class)->dispose (object);
