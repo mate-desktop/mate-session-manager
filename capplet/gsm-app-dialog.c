@@ -185,8 +185,7 @@ setup_dialog (GsmAppDialog *dialog)
         gtk_window_set_icon_name (GTK_WINDOW (dialog), "mate-session-properties");
 
         g_object_set (dialog,
-                      "allow-shrink", FALSE,
-                      "allow-grow", FALSE,
+                      "resizable", FALSE,
                       NULL);
 
         gtk_dialog_add_button (GTK_DIALOG (dialog),
