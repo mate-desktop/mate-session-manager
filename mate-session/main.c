@@ -74,6 +74,9 @@
 #define MOBILITY_KEY          "exec"
 #define MOBILITY_STARTUP_KEY  "startup"
 
+#define MATE_INTERFACE_SCHEMA "org.mate.interface"
+#define GTK_OVERLAY_SCROLL    "gtk-overlay-scrolling"
+
 #define GSM_DBUS_NAME "org.mate.SessionManager"
 
 #define KEY_AUTOSAVE "auto-save-session"
@@ -534,6 +537,23 @@ void debug_changed (GSettings *settings, gchar *key, gpointer user_data)
 	mdm_log_set_debug (debug);
 }
 
+static void set_overlay_scroll (void)
+{
+	GSettings *settings;
+	gboolean   enabled;
+
+	settings = g_settings_new (MATE_INTERFACE_SCHEMA);
+	enabled = g_settings_get_boolean (settings, GTK_OVERLAY_SCROLL);
+
+	if (enabled) {
+		gsm_util_setenv ("GTK_OVERLAY_SCROLLING", "1");
+	} else {
+		gsm_util_setenv ("GTK_OVERLAY_SCROLLING", "0");
+	}
+
+	g_object_unref (settings);
+}
+
 int main(int argc, char** argv)
 {
 	struct sigaction sa;
@@ -637,6 +657,9 @@ int main(int argc, char** argv)
 
 	/* Starts gnome compat mode */
 	msm_gnome_start();
+
+	/* Set to use Gtk3 overlay scroll */
+	set_overlay_scroll ();
 
 	manager = gsm_manager_new(client_store, failsafe);
 
