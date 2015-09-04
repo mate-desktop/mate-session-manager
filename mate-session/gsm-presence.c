@@ -33,7 +33,7 @@
 #include "gsm-presence.h"
 #include "gsm-presence-glue.h"
 
-#define GSM_PRESENCE_DBUS_PATH "/org/mate/SessionManager/Presence"
+#define GSM_PRESENCE_DBUS_PATH "/org/gnome/SessionManager/Presence"
 
 #define GS_NAME      "org.mate.ScreenSaver"
 #define GS_PATH      "/org/mate/ScreenSaver"

@@ -140,7 +140,7 @@ gsm_client_constructor (GType                  type,
                                                                                     construct_properties));
 
         g_free (client->priv->id);
-        client->priv->id = g_strdup_printf ("/org/mate/SessionManager/Client%u", get_next_client_serial ());
+        client->priv->id = g_strdup_printf ("/org/gnome/SessionManager/Client%u", get_next_client_serial ());
 
         res = register_client (client);
         if (! res) {

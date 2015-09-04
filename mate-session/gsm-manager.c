@@ -69,8 +69,8 @@
 
 #define GSM_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_MANAGER, GsmManagerPrivate))
 
-#define GSM_MANAGER_DBUS_PATH "/org/mate/SessionManager"
-#define GSM_MANAGER_DBUS_NAME "org.mate.SessionManager"
+#define GSM_MANAGER_DBUS_PATH "/org/gnome/SessionManager"
+#define GSM_MANAGER_DBUS_NAME "org.gnome.SessionManager"
 
 #define GSM_MANAGER_PHASE_TIMEOUT 30 /* seconds */
 
@@ -3275,8 +3275,8 @@ user_logout (GsmManager           *manager,
 
 /*
   dbus-send --session --type=method_call --print-reply
-      --dest=org.mate.SessionManager
-      /org/mate/SessionManager
+      --dest=org.gnome.SessionManager
+      /org/gnome/SessionManager
       org.freedesktop.DBus.Introspectable.Introspect
 */
 

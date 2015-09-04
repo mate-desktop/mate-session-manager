@@ -30,9 +30,9 @@
 #include <gdk/gdkx.h>
 #include <dbus/dbus-glib.h>
 
-#define SM_DBUS_NAME      "org.mate.SessionManager"
-#define SM_DBUS_PATH      "/org/mate/SessionManager"
-#define SM_DBUS_INTERFACE "org.mate.SessionManager"
+#define SM_DBUS_NAME      "org.gnome.SessionManager"
+#define SM_DBUS_PATH      "/org/gnome/SessionManager"
+#define SM_DBUS_INTERFACE "org.gnome.SessionManager"
 
 #ifdef __GNUC__
 #define UNUSED_VARIABLE __attribute__ ((unused))

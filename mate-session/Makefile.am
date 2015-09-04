@@ -104,20 +104,20 @@ gsm-marshal.c: gsm-marshal.list
 gsm-marshal.h: gsm-marshal.list
 	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --prefix=gsm_marshal --header > $@
 
-gsm-manager-glue.h: org.mate.SessionManager.xml Makefile.am
-	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_manager --mode=glib-server --output=gsm-manager-glue.h $(srcdir)/org.mate.SessionManager.xml
+gsm-manager-glue.h: org.gnome.SessionManager.xml Makefile.am
+	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_manager --mode=glib-server --output=gsm-manager-glue.h $(srcdir)/org.gnome.SessionManager.xml
 
-gsm-client-glue.h: org.mate.SessionManager.Client.xml Makefile.am
-	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_client --mode=glib-server --output=gsm-client-glue.h $(srcdir)/org.mate.SessionManager.Client.xml
+gsm-client-glue.h: org.gnome.SessionManager.Client.xml Makefile.am
+	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_client --mode=glib-server --output=gsm-client-glue.h $(srcdir)/org.gnome.SessionManager.Client.xml
 
-gsm-app-glue.h: org.mate.SessionManager.App.xml Makefile.am
-	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_app --mode=glib-server --output=gsm-app-glue.h $(srcdir)/org.mate.SessionManager.App.xml
+gsm-app-glue.h: org.gnome.SessionManager.App.xml Makefile.am
+	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_app --mode=glib-server --output=gsm-app-glue.h $(srcdir)/org.gnome.SessionManager.App.xml
 
-gsm-inhibitor-glue.h: org.mate.SessionManager.Inhibitor.xml Makefile.am
-	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_inhibitor --mode=glib-server --output=gsm-inhibitor-glue.h $(srcdir)/org.mate.SessionManager.Inhibitor.xml
+gsm-inhibitor-glue.h: org.gnome.SessionManager.Inhibitor.xml Makefile.am
+	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_inhibitor --mode=glib-server --output=gsm-inhibitor-glue.h $(srcdir)/org.gnome.SessionManager.Inhibitor.xml
 
-gsm-presence-glue.h: org.mate.SessionManager.Presence.xml Makefile.am
-	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_presence --mode=glib-server --output=gsm-presence-glue.h $(srcdir)/org.mate.SessionManager.Presence.xml
+gsm-presence-glue.h: org.gnome.SessionManager.Presence.xml Makefile.am
+	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_presence --mode=glib-server --output=gsm-presence-glue.h $(srcdir)/org.gnome.SessionManager.Presence.xml
 
 BUILT_SOURCES =			\
 	gsm-marshal.c		\
@@ -131,12 +131,12 @@ BUILT_SOURCES =			\
 EXTRA_DIST =						\
 	README						\
 	gsm-marshal.list				\
-	org.mate.SessionManager.xml			\
-	org.mate.SessionManager.App.xml		\
-	org.mate.SessionManager.Client.xml		\
-	org.mate.SessionManager.ClientPrivate.xml	\
-	org.mate.SessionManager.Inhibitor.xml		\
-	org.mate.SessionManager.Presence.xml
+	org.gnome.SessionManager.xml			\
+	org.gnome.SessionManager.App.xml		\
+	org.gnome.SessionManager.Client.xml		\
+	org.gnome.SessionManager.ClientPrivate.xml	\
+	org.gnome.SessionManager.Inhibitor.xml		\
+	org.gnome.SessionManager.Presence.xml
 
 CLEANFILES =	\
 	$(BUILT_SOURCES)

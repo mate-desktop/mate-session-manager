@@ -40,8 +40,8 @@
 
 #define GSM_DBUS_CLIENT_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_DBUS_CLIENT, GsmDBusClientPrivate))
 
-#define SM_DBUS_NAME                     "org.mate.SessionManager"
-#define SM_DBUS_CLIENT_PRIVATE_INTERFACE "org.mate.SessionManager.ClientPrivate"
+#define SM_DBUS_NAME                     "org.gnome.SessionManager"
+#define SM_DBUS_CLIENT_PRIVATE_INTERFACE "org.gnome.SessionManager.ClientPrivate"
 
 struct GsmDBusClientPrivate
 {

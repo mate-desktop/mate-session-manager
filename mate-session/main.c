@@ -77,7 +77,7 @@
 #define MATE_INTERFACE_SCHEMA "org.mate.interface"
 #define GTK_OVERLAY_SCROLL    "gtk-overlay-scrolling"
 
-#define GSM_DBUS_NAME "org.mate.SessionManager"
+#define GSM_DBUS_NAME "org.gnome.SessionManager"
 
 #define KEY_AUTOSAVE "auto-save-session"
 
