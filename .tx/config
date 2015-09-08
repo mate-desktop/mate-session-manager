@@ -3,5 +3,5 @@ host = https://www.transifex.com
  
 [MATE.mate-session-manager]
 file_filter = po/<lang>.po
-source_file = po/mate-session.pot
+source_file = po/mate-session-manager.pot
 source_lang = en
