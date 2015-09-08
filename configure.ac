@@ -11,7 +11,7 @@ AM_MAINTAINER_MODE
 MATE_COMMON_INIT
 MATE_DEBUG_CHECK
 
-IT_PROG_INTLTOOL([0.40.0])
+IT_PROG_INTLTOOL([0.50.1])
 
 AC_PROG_CC
 AC_STDC_HEADERS
@@ -331,6 +331,7 @@ doc/man/Makefile
 data/Makefile
 data/mate-wm.desktop.in
 data/mate-session-properties.desktop.in
+data/org.mate.session.gschema.xml
 data/icons/Makefile
 data/icons/16x16/Makefile
 data/icons/22x22/Makefile

@@ -21,12 +21,8 @@ endif
 
 @INTLTOOL_DESKTOP_RULE@
 
-org.mate.session.gschema.xml.in: org.mate.session.gschema.xml.in.in Makefile
-	$(AM_V_GEN)sed \
-		-e "s|\@DEFAULT_WM\@|$(DEFAULT_WM)|" \
-		$< > $@
-
-gsettings_SCHEMAS = org.mate.session.gschema.xml
+gsettingsschema_in_files = org.mate.session.gschema.xml.in
+gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
 @INTLTOOL_XML_NOMERGE_RULE@
 @GSETTINGS_RULES@
 
@@ -36,7 +32,7 @@ convert_DATA = mate-session.convert
 EXTRA_DIST =					\
 	mate-wm				\
 	$(xsession_in_files)			\
-	$(gsettings_SCHEMAS).in.in		\
+	$(gsettingsschema_in_files)		\
 	$(convert_DATA)				\
 	$(ui_DATA)				\
 	$(pixmap_DATA_dist)
@@ -44,8 +40,7 @@ EXTRA_DIST =					\
 CLEANFILES =					\
 	$(xsession_DATA)			\
 	$(desktop_DATA)				\
-	$(gsettings_SCHEMAS).in		\
-	$(gsettings_SCHEMAS)		\
+	$(gsettings_SCHEMAS)			\
 	mate-wm.desktop
 
 DISTCLEANFILES =				\
