@@ -32,7 +32,7 @@
       <description>List of applications that are part of the default session.</description>
     </key>
     <key name="required-components-list" type="as">
-      <default>[ 'windowmanager', 'panel', 'filemanager' ]</default>
+      <default>[ 'windowmanager', 'panel', 'filemanager', 'dock' ]</default>
       <summary>Required session components</summary>
       <description>List of components that are required as part of the session. (Each element names a key under "/org/mate/desktop/session/required_components"). The Startup Applications preferences tool will not normally allow users to remove a required component from the session, and the session manager will automatically add the required components back to the session at login time if they do get removed.</description>
     </key>
@@ -58,6 +58,11 @@
       <default>'caja'</default>
       <summary>File Manager</summary>
       <description>The file manager provides the desktop icons and allows you to interact with your saved files.</description>
+    </key>
+    <key name="dock" type="s">
+      <default>''</default>
+      <summary>Dock</summary>
+      <description>A dock provides a dockable area, simliar to a panel, for launching and switching applications.</description>
     </key>
   </schema>
 </schemalist>
