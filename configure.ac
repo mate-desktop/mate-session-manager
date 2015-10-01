@@ -123,7 +123,9 @@ AC_ARG_WITH(systemd,
 
 use_systemd=no
 if test "x$with_systemd" != "xno" ; then
-    PKG_CHECK_MODULES(SYSTEMD, libsystemd-login, use_systemd=yes, use_systemd=no)
+    PKG_CHECK_MODULES(SYSTEMD, [libsystemd], [have_systemd=yes],
+                      [PKG_CHECK_MODULES(SYSTEMD, [libsystemd-login >= $SYSTEMD_REQUIRED],
+                      [have_systemd=yes])])
 
     if test "x$use_systemd" = "xyes"; then
         AC_DEFINE(HAVE_SYSTEMD, 1, [systemd support])
