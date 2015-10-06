@@ -1,3 +1,5 @@
+1.11.0
+
 1.10.2
   * Reintroduce missing help in session properties dialog
   * Set XDG_CURRENT_DESKTOP env var to MATE
