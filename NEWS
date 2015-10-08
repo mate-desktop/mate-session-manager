@@ -1,5 +1,10 @@
 1.11.0
 
+  * Add support for new libsystemd library
+  * Add support for an optional dock, such as Plank
+  * Use org.gnome.SessionManager at /org/gnome/SessionManager as the DBUS API
+  * Add option to disable overlay scrolling
+
 1.10.2
   * Reintroduce missing help in session properties dialog
   * Set XDG_CURRENT_DESKTOP env var to MATE
