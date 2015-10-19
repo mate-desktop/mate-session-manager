@@ -74,6 +74,11 @@
 
 #define GSM_MANAGER_PHASE_TIMEOUT 30 /* seconds */
 
+/* In the exit phase, all apps were already given the chance to inhibit the session end
+ * At that stage we don't want to wait much for apps to respond, we want to exit, and fast.
+ */
+#define GSM_MANAGER_EXIT_PHASE_TIMEOUT 1 /* seconds */
+
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
 
@@ -876,7 +881,7 @@ static void
 do_phase_exit (GsmManager *manager)
 {
         if (gsm_store_size (manager->priv->clients) > 0) {
-                manager->priv->phase_timeout_id = g_timeout_add_seconds (GSM_MANAGER_PHASE_TIMEOUT,
+                manager->priv->phase_timeout_id = g_timeout_add_seconds (GSM_MANAGER_EXIT_PHASE_TIMEOUT,
                                                                          (GSourceFunc)on_phase_timeout,
                                                                          manager);
 
