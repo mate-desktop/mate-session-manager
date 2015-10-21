@@ -37,6 +37,10 @@
 #define GSM_PATH_DBUS "/org/gnome/SessionManager"
 #define GSM_INTERFACE_DBUS "org.gnome.SessionManager"
 
+#define GSM_SERVICE_DBUS_OLD "org.mate.SessionManager"
+#define GSM_PATH_DBUS_OLD "/org/mate/SessionManager"
+#define GSM_INTERFACE_DBUS_OLD "org.mate.SessionManager"
+
 enum {
 	GSM_LOGOUT_MODE_NORMAL = 0,
 	GSM_LOGOUT_MODE_NO_CONFIRMATION,
@@ -105,6 +109,20 @@ static DBusGConnection* get_session_bus(void)
 	return bus;
 }
 
+static DBusGProxy* create_proxy(DBusGConnection *connection, const char *name, const char *path, const char *iface)
+{
+	GError* error = NULL;
+	DBusGProxy* proxy = dbus_g_proxy_new_for_name_owner(connection, name, path, iface, &error);
+
+	if (proxy == NULL)
+	{
+		g_warning("Couldn't create DBus proxy: %s", error->message);
+		g_error_free(error);
+	}
+
+	return proxy;
+}
+
 static DBusGProxy* get_sm_proxy(void)
 {
 	DBusGConnection* connection;
@@ -118,12 +136,20 @@ static DBusGProxy* get_sm_proxy(void)
 		return NULL;
 	}
 
-	sm_proxy = dbus_g_proxy_new_for_name(connection, GSM_SERVICE_DBUS, GSM_PATH_DBUS, GSM_INTERFACE_DBUS);
+	sm_proxy = create_proxy(connection, GSM_SERVICE_DBUS, GSM_PATH_DBUS, GSM_INTERFACE_DBUS);
 
 	if (sm_proxy == NULL)
 	{
-		display_error(_("Could not connect to the session manager"));
-		return NULL;
+		/* Try the old name - for the case when we've just upgraded from 1.10
+		 * so the old m-s-m is currently running */
+		sm_proxy = create_proxy(connection, GSM_SERVICE_DBUS_OLD, GSM_PATH_DBUS_OLD, GSM_INTERFACE_DBUS_OLD);
+
+		if (sm_proxy == NULL)
+		{
+			/* Okay, it wasn't the upgrade case, so now we can give up. */
+			display_error(_("Could not connect to the session manager"));
+			return NULL;
+		}
 	}
 
 	return sm_proxy;
