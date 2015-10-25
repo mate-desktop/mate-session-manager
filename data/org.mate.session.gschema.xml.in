@@ -62,7 +62,7 @@
     <key name="dock" type="s">
       <default>''</default>
       <summary>Dock</summary>
-      <description>A dock provides a dockable area, simliar to a panel, for launching and switching applications.</description>
+      <description>A dock provides a dockable area, similar to a panel, for launching and switching applications.</description>
     </key>
   </schema>
 </schemalist>
