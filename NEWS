@@ -1,9 +1,10 @@
 1.11.0
-
-  * Add support for new libsystemd library
   * Add support for an optional dock, such as Plank
-  * Use org.gnome.SessionManager at /org/gnome/SessionManager as the DBUS API
-  * Add option to disable overlay scrolling
+  * Retrieve strings directly from gschema (requires intltool 0.50.1)
+  * Switch to org.gnome.SessionManager
+  * Add support for new libsystemd library (in addition to libsystemd-login)
+  * Turn GTK+3 overlay scrolling on/off on start using new gsettings key
+  * Some more fixes and cleanups
 
 1.10.2
   * Reintroduce missing help in session properties dialog
@@ -29,5 +30,4 @@
   * Add support for X-MATE-Autostart-Delay in desktop files
 
 1.6.0
-
   * Migrate to gsettings (dropped mateconf)
