@@ -1,8 +1,9 @@
-1.11.0
+1.12.0
   * Add support for an optional dock, such as Plank
   * Retrieve strings directly from gschema (requires intltool 0.50.1)
   * Switch to org.gnome.SessionManager
   * Add support for new libsystemd library (in addition to libsystemd-login)
+  * Only wait 1 second max on logout/shutdown
   * Turn GTK+3 overlay scrolling on/off on start using new gsettings key
   * Some more fixes and cleanups
 
