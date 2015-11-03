@@ -1,4 +1,4 @@
-AC_INIT([mate-session-manager], [1.11.0], [http://www.mate-desktop.org/])
+AC_INIT([mate-session-manager], [1.12.0], [http://www.mate-desktop.org/])
 AC_CONFIG_SRCDIR([mate-session])
 AC_CONFIG_HEADERS([config.h])
 
