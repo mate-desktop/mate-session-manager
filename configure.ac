@@ -62,7 +62,7 @@ case "$with_gtk" in
        GTK_REQUIRED=2.24.0
        ;;
   3.0) GTK_API_VERSION=3.0
-       GTK_REQUIRED=2.90.0
+       GTK_REQUIRED=3.0.0
        ;;
 esac
 
