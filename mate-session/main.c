@@ -39,8 +39,6 @@
 #include <dbus/dbus-glib-bindings.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
-#include <libmate-desktop/mate-gsettings.h>
-
 #include "mdm-signal-handler.h"
 #include "mdm-log.h"
 
@@ -537,6 +535,22 @@ void debug_changed (GSettings *settings, gchar *key, gpointer user_data)
 	mdm_log_set_debug (debug);
 }
 
+static gboolean
+schema_exists (const gchar* schema_name)
+{
+    GSettingsSchemaSource *source;
+    GSettingsSchema *schema;
+    gboolean exists;
+
+    source = g_settings_schema_source_get_default();
+    schema = g_settings_schema_source_lookup (source, schema_name, FALSE);
+    exists = (schema != NULL);
+    if (schema)
+        g_settings_schema_unref (schema);
+
+    return exists;
+}
+
 static void set_overlay_scroll (void)
 {
 	GSettings *settings;
@@ -608,7 +622,7 @@ int main(int argc, char** argv)
 	mdm_log_init();
 
 	/* Allows to enable/disable debug from GSettings only if it is not set from argument */
-	if (!debug && mate_gsettings_schema_exists(DEBUG_SCHEMA))
+	if (!debug && schema_exists(DEBUG_SCHEMA))
 	{
 		debug_settings = g_settings_new (DEBUG_SCHEMA);
 		g_signal_connect (debug_settings, "changed::" DEBUG_KEY, G_CALLBACK (debug_changed), NULL);
