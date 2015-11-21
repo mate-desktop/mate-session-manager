@@ -552,7 +552,9 @@ setup_dialog (GsmPropertiesDialog *dialog)
 
         gtk_tree_view_column_set_sort_column_id (column, STORE_COL_DESCRIPTION);
         gtk_tree_view_set_search_column (treeview, STORE_COL_SEARCH);
+#if !GTK_CHECK_VERSION (3, 14, 0)
         gtk_tree_view_set_rules_hint (treeview, TRUE);
+#endif
 
         gtk_tree_view_enable_model_drag_source (treeview,
                                                 GDK_BUTTON1_MASK|GDK_BUTTON2_MASK,
