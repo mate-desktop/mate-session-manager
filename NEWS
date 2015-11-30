@@ -1,3 +1,6 @@
+1.12.1
+  * Get rid of dependency on libmate-desktop
+
 1.12.0
   * Add support for an optional dock, such as Plank
   * Retrieve strings directly from gschema (requires intltool 0.50.1)
