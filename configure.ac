@@ -153,7 +153,7 @@ if test "x$enable_upower" = "xyes"; then
     fi
     PKG_CHECK_MODULES([UPOWER_HIBERNATE], [upower-glib < 0.99], has_upower_hibernate_suspend=yes, has_upower_hibernate_suspend=no)
     if test "x$has_upower_hibernate_suspend" = "xyes"; then
-        AC_DEFINE(HAVE_UPOWER_HIBERNATE_SUSPEND, 1, [upower based support for hibernate and suspend (<0.99) ])
+        AC_DEFINE(HAVE_UPOWER_HIBERNATE_SUSPEND, 1, [upower based support for hibernate and suspend (< 0.99)])
     fi
 
 fi
