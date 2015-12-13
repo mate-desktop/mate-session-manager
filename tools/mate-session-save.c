@@ -155,43 +155,6 @@ static DBusGProxy* get_sm_proxy(void)
 	return sm_proxy;
 }
 
-#if 0
-static void set_session_name(const char* session_name)
-{
-	DBusGProxy* sm_proxy;
-	GError* error;
-	gboolean res;
-
-	sm_proxy = get_sm_proxy();
-
-	if (sm_proxy == NULL)
-	{
-		return;
-	}
-
-	error = NULL;
-	res = dbus_g_proxy_call(sm_proxy, "SetName", &error, G_TYPE_STRING, session_name, G_TYPE_INVALID, G_TYPE_INVALID);
-
-	if (!res)
-	{
-		if (error != NULL)
-		{
-			g_warning("Failed to set session name '%s': %s", session_name, error->message);
-			g_error_free(error);
-		}
-		else
-		{
-			g_warning("Failed to set session name '%s'", session_name);
-		}
-	}
-
-	if (sm_proxy != NULL)
-	{
-		g_object_unref(sm_proxy);
-	}
-}
-#endif
-
 static void do_logout(unsigned int mode)
 {
 	DBusGProxy* sm_proxy;
