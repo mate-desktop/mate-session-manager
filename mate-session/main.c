@@ -529,7 +529,8 @@ static gboolean require_dbus_session(int argc, char** argv, GError** error)
 	return TRUE;
 }
 
-void debug_changed (GSettings *settings, gchar *key, gpointer user_data)
+static void
+debug_changed (GSettings *settings, gchar *key, gpointer user_data)
 {
 	debug = g_settings_get_boolean (settings, DEBUG_KEY);
 	mdm_log_set_debug (debug);
