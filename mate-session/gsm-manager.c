@@ -2125,7 +2125,7 @@ _handle_client_end_session_response (GsmManager *manager,
 
         manager->priv->query_clients = g_slist_remove (manager->priv->query_clients, client);
 
-        if (! is_ok && !manager->priv->logout_mode != GSM_MANAGER_LOGOUT_MODE_FORCE) {
+        if (! is_ok && manager->priv->logout_mode != GSM_MANAGER_LOGOUT_MODE_FORCE) {
                 guint         cookie;
                 GsmInhibitor *inhibitor;
                 char         *app_id;
