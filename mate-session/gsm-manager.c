@@ -1166,11 +1166,6 @@ manager_perhaps_lock (GsmManager *manager)
 static void
 manager_attempt_hibernate (GsmManager *manager)
 {
-#ifdef HAVE_UPOWER
-        gboolean  can_hibernate;
-        GError   *error;
-        gboolean  ret;
-#endif
 #ifdef HAVE_SYSTEMD
         if (LOGIND_RUNNING()) {
 
@@ -1188,14 +1183,13 @@ manager_attempt_hibernate (GsmManager *manager)
         else {
 #endif
 #ifdef HAVE_UPOWER_HIBERNATE_SUSPEND
-        can_hibernate = up_client_get_can_hibernate (manager->priv->up_client);
+        gboolean can_hibernate = up_client_get_can_hibernate (manager->priv->up_client);
         if (can_hibernate) {
-
                 /* lock the screen before we suspend */
                 manager_perhaps_lock (manager);
 
-                error = NULL;
-                ret = up_client_hibernate_sync (manager->priv->up_client, NULL, &error);
+                GError *error = NULL;
+                gboolean ret = up_client_hibernate_sync (manager->priv->up_client, NULL, &error);
                 if (!ret) {
                         g_warning ("Unexpected hibernate failure: %s",
                                    error->message);
@@ -1211,11 +1205,6 @@ manager_attempt_hibernate (GsmManager *manager)
 static void
 manager_attempt_suspend (GsmManager *manager)
 {
-#ifdef HAVE_UPOWER
-        gboolean  can_suspend;
-        GError   *error;
-        gboolean  ret;
-#endif
 #ifdef HAVE_SYSTEMD
         if (LOGIND_RUNNING()) {
 
@@ -1233,14 +1222,13 @@ manager_attempt_suspend (GsmManager *manager)
         else {
 #endif
 #ifdef HAVE_UPOWER_HIBERNATE_SUSPEND
-        can_suspend = up_client_get_can_suspend (manager->priv->up_client);
+        gboolean can_suspend = up_client_get_can_suspend (manager->priv->up_client);
         if (can_suspend) {
-
                 /* lock the screen before we suspend */
                 manager_perhaps_lock (manager);
 
-                error = NULL;
-                ret = up_client_suspend_sync (manager->priv->up_client, NULL, &error);
+                GError *error = NULL;
+                gboolean ret = up_client_suspend_sync (manager->priv->up_client, NULL, &error);
                 if (!ret) {
                         g_warning ("Unexpected suspend failure: %s",
                                    error->message);
