@@ -3,7 +3,6 @@ bin_PROGRAMS = mate-session-save mate-session-inhibit
 AM_CPPFLAGS =					\
 	$(MATE_SESSION_CFLAGS)			\
 	$(DBUS_GLIB_CFLAGS)			\
-	$(MATECONF_FLAGS)				\
 	-DLOCALE_DIR=\""$(datadir)/locale"\"	\
 	$(DISABLE_DEPRECATED_CFLAGS)
 
@@ -16,8 +15,7 @@ mate_session_save_LDADD =			\
 	$(SM_LIBS)				\
 	$(ICE_LIBS)				\
 	$(MATE_SESSION_LIBS)			\
-	$(DBUS_GLIB_LIBS)			\
-	$(MATECONF_LIBS)
+	$(DBUS_GLIB_LIBS)
 
 mate_session_inhibit_SOURCES =			\
 	mate-session-inhibit.c
