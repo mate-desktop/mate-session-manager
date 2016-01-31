@@ -25,6 +25,8 @@
 #include <string.h>
 #include <sys/wait.h>
 #include <errno.h>
+/* Needed for FreeBSD */
+#include <signal.h>
 
 #include <glib.h>
 #include <gio/gio.h>
