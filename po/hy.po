@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2005
+# Siranush <ss.m.95@mail.ru>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 13:27+0000\n"
-"Last-Translator: infirit <infirit@gmail.com>\n"
-"Language-Team: Armenian (http://www.transifex.com/projects/p/MATE/language/hy/)\n"
+"POT-Creation-Date: 2015-12-14 13:15+0300\n"
+"PO-Revision-Date: 2016-01-18 16:16+0000\n"
+"Last-Translator: Siranush <ss.m.95@mail.ru>\n"
+"Language-Team: Armenian (http://www.transifex.com/mate/MATE/language/hy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,112 +21,112 @@ msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
-msgstr ""
+msgstr "Ընտրել Հրաման"
 
-#: ../capplet/gsm-app-dialog.c:198
+#: ../capplet/gsm-app-dialog.c:197
 msgid "Add Startup Program"
 msgstr "Ավելացնել գործարկման ծրագիր"
 
-#: ../capplet/gsm-app-dialog.c:202
+#: ../capplet/gsm-app-dialog.c:201
 msgid "Edit Startup Program"
 msgstr "Խմբագրել գործարկման ծրագիրը"
 
-#: ../capplet/gsm-app-dialog.c:491
+#: ../capplet/gsm-app-dialog.c:490
 msgid "The startup command cannot be empty"
 msgstr "Գործարկման հրահանգը չի կարող դատարկ լինել"
 
-#: ../capplet/gsm-app-dialog.c:497
+#: ../capplet/gsm-app-dialog.c:496
 msgid "The startup command is not valid"
-msgstr ""
+msgstr "Գործարկման հրամանը վավերական չէ"
 
-#: ../capplet/gsm-properties-dialog.c:551
+#: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
-msgstr ""
+msgstr "Միացված"
 
-#: ../capplet/gsm-properties-dialog.c:563
+#: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr ""
+msgstr "Պատկեր"
 
-#: ../capplet/gsm-properties-dialog.c:575
+#: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
 msgstr "Ծրագիր"
 
-#: ../capplet/gsm-properties-dialog.c:783
+#: ../capplet/gsm-properties-dialog.c:748
 msgid "Startup Applications Preferences"
-msgstr ""
+msgstr "Մեկնարկի դիմումների արտոնությունները"
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr ""
+msgstr "Անանուն"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
-msgstr ""
+msgstr "Ոչ մի Նկարագրություն"
 
-#: ../capplet/main.c:35 ../mate-session/main.c:557
+#: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr ""
+msgstr "Այս դիմումի տարբերակը"
 
 #: ../capplet/main.c:54
 msgid "Could not display help document"
-msgstr ""
+msgstr "Չի հաջողվել ցույց տալ օգնության փաստաթուղթը"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Ընթացիկ աշխատաշրջանի սկսելու ժամանակ"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:2
+#: ../data/org.mate.session.gschema.xml.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Unix ժամանակը մեկնարկեց ընթացիկ նստաշրջանը։"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:3
+#: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
 msgstr "Պահպանել սեանսները"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:4
+#: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr ""
+msgstr "Եթե միացված է,  ապա mate նստաշրջանը նիստը կպահպանի ինքնաբերաբար։"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:5
+#: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
 msgstr "Համակարգից դուրս գալու հուշում"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:6
+#: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr "Միացնելու դեպքում գնոմ–ենթահամակարգը գործարկողին հուշում է սեանսի ավարտի մասին"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:7
+#: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "Ավարտի սահմանված ժամանակի ավարտը"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "Եթե դուրս գալու հուշումը միացված է, ապա այս սահմանում է ժամանակի ավարտը վարկյաններով, նախքան ինքնաբերաբար դուրս գալը։ Եթե 0, ապա ավտոմատ դուրս գալը անջատված է։"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr ""
+msgstr "Ժամանակը նախքան նիստը համարվում է պարապ"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr ""
+msgstr "Անգործության րոպեների քանակը նիստից առաջ համարվում է պարապ։"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
-msgstr ""
+msgstr "Հիմնական աշխատաշրջան"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.h:12
 msgid "List of applications that are part of the default session."
-msgstr ""
+msgstr "Կիրառական ծրագրերի ցանկը, որոնք հաստատուն նիստի մաս են կազմում։"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Required session components"
-msgstr ""
+msgstr "Աշխատաշրջանի պահանջվող բազադրիչներ"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.h:14
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -133,72 +134,82 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr ""
+msgstr "Բաղադրիչների ցանկը, որոնք անհրաժեշտ են որպես նիստի մաս։ (Յուրաքանչյուր տարրի անուները բանալիի տակ \"/org/mate/desktop/session/required_components\")։ Գործարկման Ծրագրերի նախապատվությունների գործիքը սովորաբար թույլ չի տալիս օգտվողներին հեռացնել պահանջվող նիստի բաղադրիչը և նիստ կառավարիչը ինքնաբերաբար ավելացնում է պահանջվող բաղադրիչները դեպի հետ նստաշրջանի մուտքի ժամանակ, եթե նրանք չեն հեռացվել։"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "gnome վերահսկիչ համատեղելիության բաղկացուցիչ մեկնարկը"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "Վերահսկիչ որը սկսում է բաղադրիչների համատեղելիությունը:"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:17
+#: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
 msgstr "Պատուհանի մենեջեր"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr ""
+msgstr "Պատուհանային կառավարիչը ծրագիր է, որը պատկերում է վերնագիր բարը և պատուհանների սահմանները շուրջը, և թույլ է տալիս Ձեզ տեղափոխել և չափափոխել պատուհանները։"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:19
+#: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
-msgstr ""
+msgstr "Վահանակ"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:20
+#: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr ""
+msgstr "Վահանակը ապահովում է բարը էկրանի վերևի կամ ներքևի մասում, որը պարունակում ընտրացանկերը, պատուհանի ցուցակը, կարգավիճակի պատկերանշանները, ժամացույցը և այլն։"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:21
+#: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr ""
+msgstr "Ֆայլի Կառավարիչ"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:22
+#: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr ""
+msgstr "Ֆայլային կառավարիչը ապահովում է աշխատասեղանի պատկերանշանները և թույլ է տալիս Ձեզ փոխներգործել ձեր պահպանած ֆայլերի հետ։"
+
+#: ../data/org.mate.session.gschema.xml.in.h:23
+msgid "Dock"
+msgstr "Կտրել"
+
+#: ../data/org.mate.session.gschema.xml.in.h:24
+msgid ""
+"A dock provides a dockable area, similar to a panel, for launching and "
+"switching applications."
+msgstr "Կտրելը ապահովումէ կտրելի տարածք, որը նման է վահանակի, գործարկելու և կիրառական ծրագրերի փոխանջատելու համար։"
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr ""
+msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
-msgstr ""
+msgstr "Այս նիստը գրանցում է քեզ MATE֊ի մեջ"
 
 #: ../data/gsm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
-msgstr ""
+msgstr "<b>Որոշ ծրագրեր դեռ աշխատում են:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:707
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr ""
+msgstr "Սպասում ծրագրի ավարտի համար։ Ծրագրի ընդհատումը կարող է առաջացնել աշխատանքի կորուստ։"
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
-msgstr ""
+msgstr "Գործարկման Դիմումներ"
 
 #: ../data/mate-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr ""
+msgstr "Ընտրեք, թե ինչ ծրագրեր են սկսվելու, երբ դուք մուտք գործեք"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
@@ -210,295 +221,296 @@ msgstr "Գործարկման ծրագրեր"
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
-msgstr ""
+msgstr "_Ավտոմատ կերպով հիշել ընթացող դիմումները, երբ դուս է գալիս"
 
 #: ../data/session-properties.ui.h:4
 msgid "_Remember Currently Running Application"
-msgstr ""
+msgstr "_Հիշել Ներկայումս Գործարկվող Դիմումը"
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr ""
+msgstr "Տարբերակներ"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
-msgstr ""
+msgstr "Թերթել․․․"
 
 #: ../data/session-properties.ui.h:7
 msgid "Comm_ent:"
-msgstr ""
+msgstr "Մեկնաբանություն։"
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
-msgstr ""
+msgstr "Հր_ահանգ։"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr ""
+msgstr "_Անուն։"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr ""
+msgstr "Ֆայլը վավեր չէ .աշխատանքային սեղան ֆայլ"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr ""
+msgstr "Չճանաչված աշխատանքային ֆայլի տարբերակ '%s'"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr ""
+msgstr "Գործարկում %s"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "Ծրագիրը փաստաթուղթ չի ընդունում հրամանի տողում "
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr ""
+msgstr "Չճանաչված գործարկչի ընտրացանկ. %d"
 
 #: ../egg/eggdesktopfile.c:1364
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr ""
+msgstr "Չի հաջողվել անցկացնել փաստաթղթի URI–ները աշխատաքային սեղանի մուտքի 'Type=Link'–ին "
 
 #: ../egg/eggdesktopfile.c:1385
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "Չգործարկվող տարր"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "Անջատել ենթահամակարգի կառավարչի հետ կապը"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr ""
+msgstr "Պահպանված կոնֆիգուրացիա պարունակող ֆայլը նշել"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr ""
+msgstr "ՖԱՅԼ"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "Հ ատկորոշել ենթահամակարգի կառավարչի ID"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr ""
+msgstr "Սեսիայի կառավարման տարբերակներ․"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr ""
+msgstr "Ցույց տալ սեսիայի կառավարման ընտրացանկը"
 
-#: ../mate-session/gsm-inhibit-dialog.c:258
+#: ../mate-session/gsm-inhibit-dialog.c:256
 #, c-format
 msgid "Icon '%s' not found"
-msgstr ""
+msgstr "Պատկերակը '%s' չի գտնվել"
 
-#: ../mate-session/gsm-inhibit-dialog.c:657
+#: ../mate-session/gsm-inhibit-dialog.c:655
 msgid "Unknown"
 msgstr "Անհայտ"
 
-#: ../mate-session/gsm-inhibit-dialog.c:708
+#: ../mate-session/gsm-inhibit-dialog.c:706
 msgid "A program is still running:"
-msgstr ""
+msgstr "Ծրագիրը դեռ աշխատում է:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:712
+#: ../mate-session/gsm-inhibit-dialog.c:710
 msgid "Some programs are still running:"
-msgstr ""
+msgstr "Որոշ ծրագրեր դեռ աշխատում են:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:713
+#: ../mate-session/gsm-inhibit-dialog.c:711
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr ""
+msgstr "Սպասում ծրագրի ավարտի համար։ Այդ ծրագրերը ընդհատելը կարող են առաջացնել աշխատանքի կորուստ։"
 
-#: ../mate-session/gsm-inhibit-dialog.c:943
+#: ../mate-session/gsm-inhibit-dialog.c:941
 msgid "Switch User Anyway"
-msgstr ""
+msgstr "Ամեն դեպքում Փոխանջատել Օգտատիրոջը"
 
-#: ../mate-session/gsm-inhibit-dialog.c:946
+#: ../mate-session/gsm-inhibit-dialog.c:944
 msgid "Log Out Anyway"
-msgstr ""
+msgstr "Դուրս գալ Ամեն դեպքում"
 
-#: ../mate-session/gsm-inhibit-dialog.c:949
+#: ../mate-session/gsm-inhibit-dialog.c:947
 msgid "Suspend Anyway"
-msgstr ""
+msgstr "Կասեցնել Ամեն դեպքում"
 
-#: ../mate-session/gsm-inhibit-dialog.c:952
+#: ../mate-session/gsm-inhibit-dialog.c:950
 msgid "Hibernate Anyway"
-msgstr ""
+msgstr "Ձմեռել Ամեն դեպքում"
 
-#: ../mate-session/gsm-inhibit-dialog.c:955
+#: ../mate-session/gsm-inhibit-dialog.c:953
 msgid "Shut Down Anyway"
-msgstr ""
+msgstr "Անջատել Ամեն դեպքում"
 
-#: ../mate-session/gsm-inhibit-dialog.c:958
+#: ../mate-session/gsm-inhibit-dialog.c:956
 msgid "Reboot Anyway"
-msgstr ""
+msgstr "Վերագործարկել Ամեն դեպքում"
 
-#: ../mate-session/gsm-inhibit-dialog.c:966
+#: ../mate-session/gsm-inhibit-dialog.c:964
 msgid "Lock Screen"
-msgstr ""
+msgstr "Արգելափակել էկրանը"
 
-#: ../mate-session/gsm-inhibit-dialog.c:969
+#: ../mate-session/gsm-inhibit-dialog.c:967
 msgid "Cancel"
-msgstr ""
+msgstr "Չեղարկել"
 
 #: ../mate-session/gsm-logout-dialog.c:332
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Դուք պետք է ավտոմատ կերպով դուրս գաք %d վայրկյանում"
+msgstr[1] "Դուք պետք է ավտոմատ կերպով դուրս գաք %d վայրկյաններում"
 
 #: ../mate-session/gsm-logout-dialog.c:340
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Այս համակարգը կարող է ավտոմատ կերպով անջատվել %d վայրկյանում"
+msgstr[1] "Այս համակարգը կարող է ավտոմատ կերպով անջատվել %d վայրկյաններում"
 
 #: ../mate-session/gsm-logout-dialog.c:386
 #, c-format
 msgid "You are currently logged in as \"%s\"."
-msgstr ""
+msgstr "Դուք այժմ մուտք եք գործել, որպես \"%s\"."
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Log out of this system now?"
-msgstr ""
+msgstr "Հիմա Դուրս գա՞լ այս համակարգից"
 
 #: ../mate-session/gsm-logout-dialog.c:473
 msgid "_Switch User"
-msgstr ""
+msgstr "_Փոխել Օգտագործողին"
 
 #: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Log Out"
-msgstr ""
+msgstr "_Դուրս գալ"
 
 #: ../mate-session/gsm-logout-dialog.c:488
 msgid "Shut down this system now?"
-msgstr ""
+msgstr "Հիմա անջատե՞լ այս համակարգը"
 
 #: ../mate-session/gsm-logout-dialog.c:494
 msgid "S_uspend"
-msgstr ""
+msgstr "Հետաձգել"
 
 #: ../mate-session/gsm-logout-dialog.c:500
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Ձմեռել"
 
 #: ../mate-session/gsm-logout-dialog.c:506
 msgid "_Restart"
-msgstr ""
+msgstr "_Վերսկսել"
 
 #: ../mate-session/gsm-logout-dialog.c:516
 msgid "_Shut Down"
-msgstr ""
+msgstr "_Անջատել"
 
-#: ../mate-session/gsm-manager.c:1443 ../mate-session/gsm-manager.c:2162
+#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
 msgid "Not responding"
-msgstr ""
+msgstr "Չի արձագանքում"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: ../mate-session/gsm-xsmp-client.c:567
+#: ../mate-session/gsm-xsmp-client.c:565
 msgid "Remembered Application"
-msgstr ""
+msgstr "Հիշված Դիմում"
 
-#: ../mate-session/gsm-xsmp-client.c:1205
+#: ../mate-session/gsm-xsmp-client.c:1203
 msgid "This program is blocking logout."
-msgstr ""
+msgstr "Այս ծրագիրն արգելափակում է ավարտը։"
 
 #: ../mate-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr ""
+msgstr "Նոր կլիենտի կապի մերժում, որովհետև նիստը ներկայումս փակվում է\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
-msgstr ""
+msgstr "Չհաջողվեց ստեղծել ICE լսելու սոկետ: %s"
 
 #. Oh well, no X for you!
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr ""
+msgstr "Անհմար է սկսվել մուտքը դեպի համակարգ (և անհնար է միանալ X սերվերին)"
 
-#: ../mate-session/main.c:554
+#: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
-msgstr ""
+msgstr "Չեղյալ հայտարարել ստանդարտ ինքնաթողք տեղեկագրքերը"
 
-#: ../mate-session/main.c:555
+#: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr ""
+msgstr "Ակտրվացնել ծածկագրի վրիպակազերծումը"
 
-#: ../mate-session/main.c:556
+#: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
-msgstr ""
+msgstr "Չբեռնել օգտվողի նշված դիմումները"
 
-#: ../mate-session/main.c:577
+#: ../mate-session/main.c:609
 msgid " - the MATE session manager"
-msgstr ""
-
-#: ../tools/mate-session-save.c:65
-msgid "Log out"
-msgstr ""
-
-#: ../tools/mate-session-save.c:66
-msgid "Log out, ignoring any existing inhibitors"
-msgstr ""
-
-#: ../tools/mate-session-save.c:67
-msgid "Show logout dialog"
-msgstr ""
-
-#: ../tools/mate-session-save.c:68
-msgid "Show shutdown dialog"
-msgstr ""
+msgstr "- MATE աշխատաշրջանի կառավարիչը"
 
 #: ../tools/mate-session-save.c:69
-msgid "Use dialog boxes for errors"
-msgstr ""
+msgid "Log out"
+msgstr "Դուրս գալ"
 
-#. deprecated options
-#: ../tools/mate-session-save.c:71
-msgid "Set the current session name"
-msgstr ""
+#: ../tools/mate-session-save.c:70
+msgid "Log out, ignoring any existing inhibitors"
+msgstr "Դուրս գալ, անտեսելով առկա արգելակիչները"
 
 #: ../tools/mate-session-save.c:71
-msgid "NAME"
-msgstr ""
+msgid "Show logout dialog"
+msgstr "Ցույց տալ դուրս գալ երկխոսությունը"
 
 #: ../tools/mate-session-save.c:72
+msgid "Show shutdown dialog"
+msgstr "Ցույց տալ անջատել երկխոսությունը"
+
+#: ../tools/mate-session-save.c:73
+msgid "Use dialog boxes for errors"
+msgstr "Սխալների համար օգտագործել երկխոսության արկղեր"
+
+#. deprecated options
+#: ../tools/mate-session-save.c:75
+msgid "Set the current session name"
+msgstr "Սահմանել ըթացիկ աշխատաշրջանի անունը"
+
+#: ../tools/mate-session-save.c:75
+msgid "NAME"
+msgstr "ԱՆՈՒՆ"
+
+#: ../tools/mate-session-save.c:76
 msgid "Kill session"
 msgstr "Սեանսը ոչնչացնել"
 
-#: ../tools/mate-session-save.c:73
+#: ../tools/mate-session-save.c:77
 msgid "Do not require confirmation"
-msgstr ""
+msgstr "Չի պահանջում հաստատում"
 
-#: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
 msgid "Could not connect to the session manager"
 msgstr "Անկարող է միանալ սեանսի մենեջերին"
 
-#: ../tools/mate-session-save.c:287
+#: ../tools/mate-session-save.c:276
 msgid "Program called with conflicting options"
-msgstr ""
+msgstr "Ծրագիրը կանչվել է կոնֆլիտային տարբերակների հետ"
 
-#: ../tools/mate-session-inhibit.c:114
+#: ../tools/mate-session-inhibit.c:115
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -514,15 +526,15 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s [ՏԱՐԲԵՐԱԿ...] ՀՐԱՄԱՆ\n\nԿատարել հրամանը մինչդեռ արգելակվում է  որոշ նիստի ֆունկցիոնալությունը։\n\n-h, --help Ցույց այդ օգնությունը\n--version Ցույց տալ ծրագրի նոր տարբերակը\n--app-id ID Դիմումի օգտագործած id\nերբ արգելակել (ըստ ցանկության)\n--reason ՊԱՏՃԱՌԸ Պատճառն արգելակելու (ըստ ցանկության)\n--inhibit ARG Արգելակող տարրեր, կետ-առանձնացված ցանկ:\nԴուրս գալ, օգտագործողի փոխանջատում, կասեցնել, պարապուրդ, ապատեղակայում\nԵթե ոչ --inhibit տարբերակն է նշված, ենթադրվում է պարապ է։\n"
 
-#: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
-#: ../tools/mate-session-inhibit.c:188
+#: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
+#: ../tools/mate-session-inhibit.c:189
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s պահանջում է արգումենտ\n"
 
-#: ../tools/mate-session-inhibit.c:224
+#: ../tools/mate-session-inhibit.c:225
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "Չհաջողվեց կատարել %s\n"

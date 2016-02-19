@@ -5,128 +5,129 @@
 # Translators:
 # Richard Allen <ra@ra.is>, 2003
 # Samúel Jón Gunnarsson <sammi@techattack.nu>, 2003
+# Sveinn í Felli <sv1@fellsnet.is>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 13:27+0000\n"
-"Last-Translator: infirit <infirit@gmail.com>\n"
-"Language-Team: Icelandic (http://www.transifex.com/projects/p/MATE/language/is/)\n"
+"POT-Creation-Date: 2015-12-14 13:15+0300\n"
+"PO-Revision-Date: 2016-02-10 11:56+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic (http://www.transifex.com/mate/MATE/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: is\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
-msgstr ""
+msgstr "Velja skipun"
 
-#: ../capplet/gsm-app-dialog.c:198
+#: ../capplet/gsm-app-dialog.c:197
 msgid "Add Startup Program"
 msgstr "Bæta við ræsiforriti"
 
-#: ../capplet/gsm-app-dialog.c:202
+#: ../capplet/gsm-app-dialog.c:201
 msgid "Edit Startup Program"
 msgstr "Breyta ræsiforriti"
 
-#: ../capplet/gsm-app-dialog.c:491
+#: ../capplet/gsm-app-dialog.c:490
 msgid "The startup command cannot be empty"
 msgstr "Ræsiskipunin getur ekki verið auð"
 
-#: ../capplet/gsm-app-dialog.c:497
+#: ../capplet/gsm-app-dialog.c:496
 msgid "The startup command is not valid"
-msgstr ""
+msgstr "Ræsiskipunin er ekki gild"
 
-#: ../capplet/gsm-properties-dialog.c:551
+#: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
-msgstr ""
+msgstr "Virkjað"
 
-#: ../capplet/gsm-properties-dialog.c:563
+#: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr ""
+msgstr "Táknmynd"
 
-#: ../capplet/gsm-properties-dialog.c:575
+#: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
 msgstr "Forrit"
 
-#: ../capplet/gsm-properties-dialog.c:783
+#: ../capplet/gsm-properties-dialog.c:748
 msgid "Startup Applications Preferences"
-msgstr ""
+msgstr "Stillingar ræsiforrita"
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr ""
+msgstr "Ekkert heiti"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
-msgstr ""
+msgstr "Engin lýsing"
 
-#: ../capplet/main.c:35 ../mate-session/main.c:557
+#: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr ""
+msgstr "Útgáfa þessa forrits"
 
 #: ../capplet/main.c:54
 msgid "Could not display help document"
-msgstr ""
+msgstr "Gat ekki birt hjálparskjal"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:2
+#: ../data/org.mate.session.gschema.xml.in.h:2
 msgid "Unix time of the start of the current session."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:3
+#: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
 msgstr "Vista setur"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:4
+#: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr ""
+msgstr "Ef virkt mun mate-session vista setuna sjálfkrafa."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:5
+#: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
 msgstr "Staðfesta útskráningu"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:6
+#: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr "Ef virkt mun mate-setan spyrja um staðfestingu áður en setu er lokið."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:7
+#: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "Tímamörk útskráningar"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr ""
+msgstr "Tími áður en seta er talin iðjulaus"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr ""
+msgstr "Mínútur af bið þar til seta er talin iðjulaus."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
-msgstr ""
+msgstr "Sjálfgefin seta"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.h:12
 msgid "List of applications that are part of the default session."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Required session components"
-msgstr ""
+msgstr "Nauðsynlegar einingar fyrir setu"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.h:14
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -136,70 +137,80 @@ msgid ""
 "if they do get removed."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.h:16
 msgid "Control which compatibility components to start."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:17
+#: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
 msgstr "Gluggastjóri"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:19
+#: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
-msgstr ""
+msgstr "Skjástika"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:20
+#: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:21
+#: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr ""
+msgstr "Skráastjóri"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:22
+#: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
 msgstr ""
 
+#: ../data/org.mate.session.gschema.xml.in.h:23
+msgid "Dock"
+msgstr "Spjald"
+
+#: ../data/org.mate.session.gschema.xml.in.h:24
+msgid ""
+"A dock provides a dockable area, similar to a panel, for launching and "
+"switching applications."
+msgstr ""
+
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr ""
+msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
-msgstr ""
+msgstr "Þessi seta skráir þig inn í MATE"
 
 #: ../data/gsm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
-msgstr ""
+msgstr "<b>Sum forrit eru ennþá í gangi:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:707
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr ""
+msgstr "Bíð eftir að forritið ljúki sér af. Ef forritið er truflað gætirðu tapað einhverjum gögnum."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
-msgstr ""
+msgstr "Ræsiforrit"
 
 #: ../data/mate-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr ""
+msgstr "Veldu hvaða forrit þú vilt keyra þegar þú skráir þig inn"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
@@ -211,295 +222,296 @@ msgstr "Ræsiforrit"
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
-msgstr ""
+msgstr "_Muna eftir keyrandi forritum þegar ég skrái mig út"
 
 #: ../data/session-properties.ui.h:4
 msgid "_Remember Currently Running Application"
-msgstr ""
+msgstr "_Muna eftir forritum sem keyra"
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr ""
+msgstr "Valkostir"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
-msgstr ""
+msgstr "Velja..."
 
 #: ../data/session-properties.ui.h:7
 msgid "Comm_ent:"
-msgstr ""
+msgstr "At_hugasemd:"
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
-msgstr ""
+msgstr "Ski_pun"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr ""
+msgstr "_Nafn:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr ""
+msgstr "Skrá er ekki gild .desktop skrá"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr ""
+msgstr "Óþekkt desktop skráarútgáfa ‚%s‘"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr ""
+msgstr "Ræsi %s"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "Hugbúnaður tekur ekki á móti skrám á skipanalínunni"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr ""
+msgstr "Þessi valmöguleiki er ekki þekktur: %d"
 
 #: ../egg/eggdesktopfile.c:1364
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr ""
+msgstr "Get ekki látið veffang ganga til ‚Type=Link‘"
 
 #: ../egg/eggdesktopfile.c:1385
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "Þetta er ekki ræsanlegur íhlutur"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "Afvirkja tengingu við setustjóra"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr ""
+msgstr "Veldu skrá sem inniheldur vistaðar stillingar"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr ""
+msgstr "SKRÁ"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "Tilgreindu setustjórnunarkenni"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr ""
+msgstr "Auðkenni"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr ""
+msgstr "Valkostir við að sjá um setu:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr ""
+msgstr "Sýna valkosti setustýringar"
 
-#: ../mate-session/gsm-inhibit-dialog.c:258
+#: ../mate-session/gsm-inhibit-dialog.c:256
 #, c-format
 msgid "Icon '%s' not found"
-msgstr ""
+msgstr "Táknmynd ,%s' fannst ekki"
 
-#: ../mate-session/gsm-inhibit-dialog.c:657
+#: ../mate-session/gsm-inhibit-dialog.c:655
 msgid "Unknown"
 msgstr "Óþekkt"
 
-#: ../mate-session/gsm-inhibit-dialog.c:708
+#: ../mate-session/gsm-inhibit-dialog.c:706
 msgid "A program is still running:"
-msgstr ""
+msgstr "Forrit er ennþá í gangi:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:712
+#: ../mate-session/gsm-inhibit-dialog.c:710
 msgid "Some programs are still running:"
-msgstr ""
+msgstr "Sum forrit eru ennþá í gangi:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:713
+#: ../mate-session/gsm-inhibit-dialog.c:711
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr ""
+msgstr "Leyfi forritunum að klára fyrst. Það að trufla þessi forrit við vinnu gæti valdið vinnutapi."
 
-#: ../mate-session/gsm-inhibit-dialog.c:943
+#: ../mate-session/gsm-inhibit-dialog.c:941
 msgid "Switch User Anyway"
-msgstr ""
+msgstr "Skipta samt um notanda"
 
-#: ../mate-session/gsm-inhibit-dialog.c:946
+#: ../mate-session/gsm-inhibit-dialog.c:944
 msgid "Log Out Anyway"
-msgstr ""
+msgstr "Skrá samt út"
 
-#: ../mate-session/gsm-inhibit-dialog.c:949
+#: ../mate-session/gsm-inhibit-dialog.c:947
 msgid "Suspend Anyway"
-msgstr ""
+msgstr "Svæfa hvort eð er"
 
-#: ../mate-session/gsm-inhibit-dialog.c:952
+#: ../mate-session/gsm-inhibit-dialog.c:950
 msgid "Hibernate Anyway"
-msgstr ""
+msgstr "Leggjast samt í dvala"
 
-#: ../mate-session/gsm-inhibit-dialog.c:955
+#: ../mate-session/gsm-inhibit-dialog.c:953
 msgid "Shut Down Anyway"
-msgstr ""
+msgstr "Slökkva samt"
 
-#: ../mate-session/gsm-inhibit-dialog.c:958
+#: ../mate-session/gsm-inhibit-dialog.c:956
 msgid "Reboot Anyway"
-msgstr ""
+msgstr "Endurræsa samt"
 
-#: ../mate-session/gsm-inhibit-dialog.c:966
+#: ../mate-session/gsm-inhibit-dialog.c:964
 msgid "Lock Screen"
-msgstr ""
+msgstr "Læsa skjá"
 
-#: ../mate-session/gsm-inhibit-dialog.c:969
+#: ../mate-session/gsm-inhibit-dialog.c:967
 msgid "Cancel"
-msgstr ""
+msgstr "Hætta við"
 
 #: ../mate-session/gsm-logout-dialog.c:332
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Þú verður skráður sjálfvirkt út eftir %d sekúndu"
+msgstr[1] "Þú verður skráður sjálfvirkt út eftir %d sekúndur"
 
 #: ../mate-session/gsm-logout-dialog.c:340
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tölvan slekkur sjálfvirkt á sér eftir %d sekúndu"
+msgstr[1] "Tölvan slekkur sjálfvirkt á sér eftir %d sekúndur"
 
 #: ../mate-session/gsm-logout-dialog.c:386
 #, c-format
 msgid "You are currently logged in as \"%s\"."
-msgstr ""
+msgstr "Þú ert skráður inn sem \"%s\"."
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Log out of this system now?"
-msgstr ""
+msgstr "Útskrá úr þessu kerfi núna?"
 
 #: ../mate-session/gsm-logout-dialog.c:473
 msgid "_Switch User"
-msgstr ""
+msgstr "_Skipta um notenda"
 
 #: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Log Out"
-msgstr ""
+msgstr "_Útskrá"
 
 #: ../mate-session/gsm-logout-dialog.c:488
 msgid "Shut down this system now?"
-msgstr ""
+msgstr "Slökkva á kerfinu núna?"
 
 #: ../mate-session/gsm-logout-dialog.c:494
 msgid "S_uspend"
-msgstr ""
+msgstr "_Hvíla"
 
 #: ../mate-session/gsm-logout-dialog.c:500
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Leggja í dvala"
 
 #: ../mate-session/gsm-logout-dialog.c:506
 msgid "_Restart"
-msgstr ""
+msgstr "_Endurræsa"
 
 #: ../mate-session/gsm-logout-dialog.c:516
 msgid "_Shut Down"
-msgstr ""
+msgstr "_Slökkva"
 
-#: ../mate-session/gsm-manager.c:1443 ../mate-session/gsm-manager.c:2162
+#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
 msgid "Not responding"
-msgstr ""
+msgstr "Svarar ekki"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: ../mate-session/gsm-xsmp-client.c:567
+#: ../mate-session/gsm-xsmp-client.c:565
 msgid "Remembered Application"
-msgstr ""
+msgstr "Munað forrit"
 
-#: ../mate-session/gsm-xsmp-client.c:1205
+#: ../mate-session/gsm-xsmp-client.c:1203
 msgid "This program is blocking logout."
-msgstr ""
+msgstr "Þetta forrit hindrar útskráningu."
 
 #: ../mate-session/gsm-xsmp-server.c:325
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr ""
+msgstr "Leyfi biðlara ekki að tengjast vegna þess að það er verið að slökkva á þessari setu\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
 msgid "Could not create ICE listening socket: %s"
-msgstr ""
+msgstr "Gat ekki búið til ICE hlustunar tengi: %s"
 
 #. Oh well, no X for you!
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr ""
+msgstr "Gat ekki hafið innskráningarsetu (og ekki náðist að tengjast X þjóninum)"
 
-#: ../mate-session/main.c:554
+#: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
-msgstr ""
+msgstr "Ekki nota sjálfgefna möppu fyrir sjálfvirka ræsingu"
 
-#: ../mate-session/main.c:555
+#: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr ""
+msgstr "Virkja aflúsunarham"
 
-#: ../mate-session/main.c:556
+#: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
-msgstr ""
+msgstr "Ekki hlaða inn forritum völdum að notanda"
 
-#: ../mate-session/main.c:577
+#: ../mate-session/main.c:609
 msgid " - the MATE session manager"
-msgstr ""
-
-#: ../tools/mate-session-save.c:65
-msgid "Log out"
-msgstr ""
-
-#: ../tools/mate-session-save.c:66
-msgid "Log out, ignoring any existing inhibitors"
-msgstr ""
-
-#: ../tools/mate-session-save.c:67
-msgid "Show logout dialog"
-msgstr ""
-
-#: ../tools/mate-session-save.c:68
-msgid "Show shutdown dialog"
-msgstr ""
+msgstr " - Setustjórnun MATE"
 
 #: ../tools/mate-session-save.c:69
-msgid "Use dialog boxes for errors"
-msgstr ""
+msgid "Log out"
+msgstr "Skrá út"
 
-#. deprecated options
-#: ../tools/mate-session-save.c:71
-msgid "Set the current session name"
-msgstr ""
+#: ../tools/mate-session-save.c:70
+msgid "Log out, ignoring any existing inhibitors"
+msgstr "Skrá sig út, og hunsa allt sem gæti truflað"
 
 #: ../tools/mate-session-save.c:71
-msgid "NAME"
-msgstr ""
+msgid "Show logout dialog"
+msgstr "Sýna texta við útskráningu"
 
 #: ../tools/mate-session-save.c:72
+msgid "Show shutdown dialog"
+msgstr "Sýna texta við það að slökkt sé á tölvunni"
+
+#: ../tools/mate-session-save.c:73
+msgid "Use dialog boxes for errors"
+msgstr "Nota textaglugga fyrir villur"
+
+#. deprecated options
+#: ../tools/mate-session-save.c:75
+msgid "Set the current session name"
+msgstr "Gefa setunni nafn"
+
+#: ../tools/mate-session-save.c:75
+msgid "NAME"
+msgstr "NAFN"
+
+#: ../tools/mate-session-save.c:76
 msgid "Kill session"
 msgstr "Aflífa setu"
 
-#: ../tools/mate-session-save.c:73
+#: ../tools/mate-session-save.c:77
 msgid "Do not require confirmation"
-msgstr ""
+msgstr "Staðfesting ekki skilyrði"
 
-#: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
 msgid "Could not connect to the session manager"
 msgstr "Ekki tókst að tengjast setustjóra"
 
-#: ../tools/mate-session-save.c:287
+#: ../tools/mate-session-save.c:276
 msgid "Program called with conflicting options"
-msgstr ""
+msgstr "Kallað á forrit með röngum stillingum"
 
-#: ../tools/mate-session-inhibit.c:114
+#: ../tools/mate-session-inhibit.c:115
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -517,13 +529,13 @@ msgid ""
 "If no --inhibit option is specified, idle is assumed.\n"
 msgstr ""
 
-#: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
-#: ../tools/mate-session-inhibit.c:188
+#: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
+#: ../tools/mate-session-inhibit.c:189
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s krefst færibreytu\n"
 
-#: ../tools/mate-session-inhibit.c:224
+#: ../tools/mate-session-inhibit.c:225
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "Mistókst að keyra %s\n"
