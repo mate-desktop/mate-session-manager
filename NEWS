@@ -1,3 +1,8 @@
+1.12.2
+  * Fix rare build failure with upower >= 0.99 when both systemd and upower
+    support are enabled
+  * Some more fixes
+
 1.12.1
   * Get rid of dependency on libmate-desktop
 
