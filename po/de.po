@@ -16,15 +16,16 @@
 # Mario Blättermann <mariobl@gnome.org>, 2008, 2010
 # qazwsxedc <qazwsxedc@gmx.net>, 2014
 # Tobias Bannert <tobannert@gmail.com>, 2014-2015
+# valsu <valsu@hylia.de>, 2015
 # Wolfgang Stöggl <c72578@yahoo.de>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 19:54+0000\n"
+"POT-Creation-Date: 2015-12-14 13:15+0300\n"
+"PO-Revision-Date: 2016-03-09 18:46+0000\n"
 "Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/MATE/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/mate/MATE/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,35 +36,35 @@ msgstr ""
 msgid "Select Command"
 msgstr "Startbefehl auswählen"
 
-#: ../capplet/gsm-app-dialog.c:198
+#: ../capplet/gsm-app-dialog.c:197
 msgid "Add Startup Program"
 msgstr "Startprogramm hinzufügen"
 
-#: ../capplet/gsm-app-dialog.c:202
+#: ../capplet/gsm-app-dialog.c:201
 msgid "Edit Startup Program"
 msgstr "Startprogramm bearbeiten"
 
-#: ../capplet/gsm-app-dialog.c:491
+#: ../capplet/gsm-app-dialog.c:490
 msgid "The startup command cannot be empty"
 msgstr "Der Startbefehl darf nicht leer sein"
 
-#: ../capplet/gsm-app-dialog.c:497
+#: ../capplet/gsm-app-dialog.c:496
 msgid "The startup command is not valid"
 msgstr "Der Startbefehl ist ungültig"
 
-#: ../capplet/gsm-properties-dialog.c:551
+#: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: ../capplet/gsm-properties-dialog.c:563
+#: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
 msgstr "Symbol"
 
-#: ../capplet/gsm-properties-dialog.c:575
+#: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
 msgstr "Programm"
 
-#: ../capplet/gsm-properties-dialog.c:783
+#: ../capplet/gsm-properties-dialog.c:748
 msgid "Startup Applications Preferences"
 msgstr "Startprogrammeinstellungen"
 
@@ -75,7 +76,7 @@ msgstr "Namenlos"
 msgid "No description"
 msgstr "Keine Beschreibung"
 
-#: ../capplet/main.c:35 ../mate-session/main.c:557
+#: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
 msgstr "Version dieser Anwendung"
 
@@ -83,62 +84,62 @@ msgstr "Version dieser Anwendung"
 msgid "Could not display help document"
 msgstr "Die Hilfeseite konnte nicht angezeigt werden"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
 msgstr "Anfangszeit der momentanen Sitzung"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:2
+#: ../data/org.mate.session.gschema.xml.in.h:2
 msgid "Unix time of the start of the current session."
 msgstr "Unix-Anfangszeit der momentanen Sitzung"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:3
+#: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
 msgstr "Sitzungen speichern"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:4
+#: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
 msgstr "Falls aktiviert, speichert mate-session die Sitzung automatisch."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:5
+#: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
 msgstr "Abmeldedialog"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:6
+#: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr "Wenn aktiviert, wird mate-session den Benutzer vor dem Beenden einer Sitzung fragen."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:7
+#: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
 msgstr "Abmeldezeitgrenze"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
 msgstr "Wenn der Abmeldedialog aktiviert ist, stellt dieses die Zeitgrenze in Sekunden ein, bevor automatisch abgemeldet wird. Bei 0 ist die automatische Abmeldung deaktiviert."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
 msgstr "Zeitdauer, ab der die Sitzung als untätig gilt"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr "Die Anzahl inaktiver Minuten, bis der Benutzer als untätig gilt."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
 msgstr "Vorgabesitzung"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.h:12
 msgid "List of applications that are part of the default session."
 msgstr "Liste der Anwendungen, die Teil der Vorgabesitzung sind."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Required session components"
 msgstr "Benötigte Sitzungskomponenten"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.h:14
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -148,44 +149,54 @@ msgid ""
 "if they do get removed."
 msgstr "Liste der Komponenten, die als Teil der Sitzung erforderlich sind. (Jedes Element bezeichnet einen Schlüssel unter »/org/mate/desktop/session/required_components«). Das Programm zur Verwaltung der Startprogrammeinstellungen erlaubt Benutzern normalerweise nicht, benötigte Komponenten aus der Sitzung zu entfernen. Diese werden bei Anmeldung wieder automatisch zur Sitzung hinzugefügt, falls sie entfernt wurden."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
 msgstr "Startvorgang der Gnome-Kompatibilitätsbestandteile steuern"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.h:16
 msgid "Control which compatibility components to start."
 msgstr "Steuern, welche Kompatibilitätsbestandteile gestartet werden sollen."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:17
+#: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
 msgstr "Fensterverwaltung"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr "Die Fensterverwaltung ist das Programm, welches die Titelleiste und die Ränder der Fenster zeichnet, sowie das Bewegen und die Änderung der Größe der Fenster erlaubt."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:19
+#: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
 msgstr "Leiste"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:20
+#: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr "Die Leiste stellt die Leisten am oberen und unteren Bildschirmrand bereit, welche die Menüs, die Fensterliste, Statussymbole, die Uhr usw. beinhalten."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:21
+#: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
 msgstr "Dateiverwaltung"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:22
+#: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
 msgstr "Die Dateiverwaltung stellt die Schreibtischsymbole bereit und erlaubt Ihnen, gespeicherte Dateien zu verwalten."
+
+#: ../data/org.mate.session.gschema.xml.in.h:23
+msgid "Dock"
+msgstr "Dock"
+
+#: ../data/org.mate.session.gschema.xml.in.h:24
+msgid ""
+"A dock provides a dockable area, similar to a panel, for launching and "
+"switching applications."
+msgstr "Ein Dock stellt einen anheftbaren Bereich, ähnlich einer Leiste, für das Starten und Wechseln von Anwendungen, zur Verfügung."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -199,7 +210,7 @@ msgstr "Diese Sitzung meldet Sie bei MATE an"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Einige Anwendungen laufen noch:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:707
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -286,7 +297,7 @@ msgstr "Kein ausführbares Objekt"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "Sitzungsverwaltung konnte nicht kontaktiert werden"
+msgstr "Verbindung zur Sitzungsverwaltung deaktivieren"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -312,58 +323,58 @@ msgstr "Sitzungsoptionen:"
 msgid "Show session management options"
 msgstr "Sitzungsoptionen anzeigen"
 
-#: ../mate-session/gsm-inhibit-dialog.c:258
+#: ../mate-session/gsm-inhibit-dialog.c:256
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Symbol »%s« konnte nicht gefunden werden"
 
-#: ../mate-session/gsm-inhibit-dialog.c:657
+#: ../mate-session/gsm-inhibit-dialog.c:655
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: ../mate-session/gsm-inhibit-dialog.c:708
+#: ../mate-session/gsm-inhibit-dialog.c:706
 msgid "A program is still running:"
 msgstr "Eine Anwendung läuft noch:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:712
+#: ../mate-session/gsm-inhibit-dialog.c:710
 msgid "Some programs are still running:"
 msgstr "Einige Anwendungen laufen noch:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:713
+#: ../mate-session/gsm-inhibit-dialog.c:711
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr "Warten auf das Beenden der Anwendungen. Durch Abbruch der Anwendungen könnten Änderungen verlorengehen."
 
-#: ../mate-session/gsm-inhibit-dialog.c:943
+#: ../mate-session/gsm-inhibit-dialog.c:941
 msgid "Switch User Anyway"
 msgstr "Trotzdem Benutzer wechseln"
 
-#: ../mate-session/gsm-inhibit-dialog.c:946
+#: ../mate-session/gsm-inhibit-dialog.c:944
 msgid "Log Out Anyway"
 msgstr "Trotzdem abmelden"
 
-#: ../mate-session/gsm-inhibit-dialog.c:949
+#: ../mate-session/gsm-inhibit-dialog.c:947
 msgid "Suspend Anyway"
 msgstr "Trotzdem in Bereitschaftsmodus gehen"
 
-#: ../mate-session/gsm-inhibit-dialog.c:952
+#: ../mate-session/gsm-inhibit-dialog.c:950
 msgid "Hibernate Anyway"
 msgstr "Trotzdem in Ruhezustand gehen"
 
-#: ../mate-session/gsm-inhibit-dialog.c:955
+#: ../mate-session/gsm-inhibit-dialog.c:953
 msgid "Shut Down Anyway"
 msgstr "Trotzdem herunterfahren"
 
-#: ../mate-session/gsm-inhibit-dialog.c:958
+#: ../mate-session/gsm-inhibit-dialog.c:956
 msgid "Reboot Anyway"
 msgstr "Trotzdem neustarten"
 
-#: ../mate-session/gsm-inhibit-dialog.c:966
+#: ../mate-session/gsm-inhibit-dialog.c:964
 msgid "Lock Screen"
 msgstr "Bildschirm sperren"
 
-#: ../mate-session/gsm-inhibit-dialog.c:969
+#: ../mate-session/gsm-inhibit-dialog.c:967
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -418,18 +429,18 @@ msgstr "_Neustarten"
 msgid "_Shut Down"
 msgstr "_Herunterfahren"
 
-#: ../mate-session/gsm-manager.c:1443 ../mate-session/gsm-manager.c:2162
+#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
 msgid "Not responding"
 msgstr "Keine Antwort"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: ../mate-session/gsm-xsmp-client.c:567
+#: ../mate-session/gsm-xsmp-client.c:565
 msgid "Remembered Application"
 msgstr "Gemerkte Anwendung"
 
-#: ../mate-session/gsm-xsmp-client.c:1205
+#: ../mate-session/gsm-xsmp-client.c:1203
 msgid "This program is blocking logout."
 msgstr "Dieses Programm blockiert die Abmeldung."
 
@@ -450,68 +461,69 @@ msgstr "ICE-Listening-Socket konnte nicht erzeugt werden: %s"
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Anmeldesitzung konnte nicht gestartet werden (keine Verbindung zum X-Server)"
 
-#: ../mate-session/main.c:554
+#: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
 msgstr "Vorgegebene Autostartordner überschreiben"
 
-#: ../mate-session/main.c:555
+#: ../mate-session/main.c:587
 msgid "Enable debugging code"
 msgstr "Fehlerdiagnose-Code aktivieren"
 
-#: ../mate-session/main.c:556
+#: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
 msgstr "Keine benutzerspezifischen Anwendungen laden"
 
-#: ../mate-session/main.c:577
+#: ../mate-session/main.c:609
 msgid " - the MATE session manager"
 msgstr " - Die MATE-Sitzungsverwaltung"
 
-#: ../tools/mate-session-save.c:65
+#: ../tools/mate-session-save.c:69
 msgid "Log out"
 msgstr "Abmelden"
 
-#: ../tools/mate-session-save.c:66
+#: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"
 msgstr "Abmelden und alle vorhandenen Unterdrückungen ignorieren"
 
-#: ../tools/mate-session-save.c:67
+#: ../tools/mate-session-save.c:71
 msgid "Show logout dialog"
 msgstr "»Abmelden«-Dialog anzeigen"
 
-#: ../tools/mate-session-save.c:68
+#: ../tools/mate-session-save.c:72
 msgid "Show shutdown dialog"
 msgstr "»Herunterfahren«-Dialog anzeigen"
 
-#: ../tools/mate-session-save.c:69
+#: ../tools/mate-session-save.c:73
 msgid "Use dialog boxes for errors"
 msgstr "Dialogfenster bei Fehlern anzeigen"
 
 #. deprecated options
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:75
 msgid "Set the current session name"
 msgstr "Den Namen der momentan geöffneten Sitzung festlegen"
 
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:75
 msgid "NAME"
 msgstr "NAME"
 
-#: ../tools/mate-session-save.c:72
+#: ../tools/mate-session-save.c:76
 msgid "Kill session"
 msgstr "Sitzung zwangsweise beenden"
 
-#: ../tools/mate-session-save.c:73
+#: ../tools/mate-session-save.c:77
 msgid "Do not require confirmation"
 msgstr "Keine Bestätigung erwarten"
 
-#: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
 msgid "Could not connect to the session manager"
 msgstr "Sitzungsverwaltung konnte nicht kontaktiert werden"
 
-#: ../tools/mate-session-save.c:287
+#: ../tools/mate-session-save.c:276
 msgid "Program called with conflicting options"
 msgstr "Programm wurde mit Optionen aufgerufen, die zu einem Konflikt führen"
 
-#: ../tools/mate-session-inhibit.c:114
+#: ../tools/mate-session-inhibit.c:115
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -529,13 +541,13 @@ msgid ""
 "If no --inhibit option is specified, idle is assumed.\n"
 msgstr "%s [OPTION …] BEFEHL\n\nBEFEHL ausführen während einige Sitzungsfunktionen unterdrückt werden.\n\n  -h, --help        Diese Hilfe anzeigen\n  --version         Programmversion anzeigen\n  --app-id ID       Die beim Unterdrücken zu benutzende\n                    Anwendungskennung (optional)\n  --reason REASON   Der Grund für das Unterdrücken (optional)\n  --inhibit ARG     Zu unterdrückende Funktionen als Doppelpunkt getrennte Liste:\n                    logout (Abmelden), switch-user (Benutzer wechseln), suspend \n                    (Bereitschaft), idle (Leerlauf), automount (Automatisch einhängen)\n\nWenn keine »--inhibit«-Option angegeben ist, wird Leerlauf angenommen.\n"
 
-#: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
-#: ../tools/mate-session-inhibit.c:188
+#: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
+#: ../tools/mate-session-inhibit.c:189
 #, c-format
 msgid "%s requires an argument\n"
 msgstr "%s benötigt einen Parameter\n"
 
-#: ../tools/mate-session-inhibit.c:224
+#: ../tools/mate-session-inhibit.c:225
 #, c-format
 msgid "Failed to execute %s\n"
 msgstr "%s konnte nicht ausgeführt werden\n"

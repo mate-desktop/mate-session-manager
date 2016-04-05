@@ -10,10 +10,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-18 10:01+0000\n"
+"POT-Creation-Date: 2015-12-14 13:15+0300\n"
+"PO-Revision-Date: 2015-12-17 09:00+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: Serbian (http://www.transifex.com/projects/p/MATE/language/sr/)\n"
+"Language-Team: Serbian (http://www.transifex.com/mate/MATE/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,35 +24,35 @@ msgstr ""
 msgid "Select Command"
 msgstr "Изабери наредбу"
 
-#: ../capplet/gsm-app-dialog.c:198
+#: ../capplet/gsm-app-dialog.c:197
 msgid "Add Startup Program"
 msgstr "Додај почетни програм"
 
-#: ../capplet/gsm-app-dialog.c:202
+#: ../capplet/gsm-app-dialog.c:201
 msgid "Edit Startup Program"
 msgstr "Уреди почетни програм"
 
-#: ../capplet/gsm-app-dialog.c:491
+#: ../capplet/gsm-app-dialog.c:490
 msgid "The startup command cannot be empty"
 msgstr "Наредба почетног програма се мора унети"
 
-#: ../capplet/gsm-app-dialog.c:497
+#: ../capplet/gsm-app-dialog.c:496
 msgid "The startup command is not valid"
 msgstr "Наредба почетног програма није исправна"
 
-#: ../capplet/gsm-properties-dialog.c:551
+#: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
 msgstr "Укључен"
 
-#: ../capplet/gsm-properties-dialog.c:563
+#: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
 msgstr "Иконица"
 
-#: ../capplet/gsm-properties-dialog.c:575
+#: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
 msgstr "Програм"
 
-#: ../capplet/gsm-properties-dialog.c:783
+#: ../capplet/gsm-properties-dialog.c:748
 msgid "Startup Applications Preferences"
 msgstr "Поставке почетних програма"
 
@@ -64,7 +64,7 @@ msgstr "Без назива"
 msgid "No description"
 msgstr "Без описа"
 
-#: ../capplet/main.c:35 ../mate-session/main.c:557
+#: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
 msgstr "Издање овог програма"
 
@@ -72,62 +72,62 @@ msgstr "Издање овог програма"
 msgid "Could not display help document"
 msgstr "Не могу да прикажем документ помоћи"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
 msgstr "Време покретања текуће сесије"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:2
+#: ../data/org.mate.session.gschema.xml.in.h:2
 msgid "Unix time of the start of the current session."
 msgstr "Униксово време покретања текуће сесије."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:3
+#: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
 msgstr "Чува сесије"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:4
+#: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
 msgstr "Ако је укључено, мејтова сесија ће сама сачувати сесију."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:5
+#: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
 msgstr "Упит одјављивања"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:6
+#: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr "Ако је укључено, мејтова сесија ће питати корисника пре окончања сесије."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:7
+#: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
 msgstr "Време за одјављивање"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
 msgstr "Ако је упит одјављивања укључен, овде подешавате временски рок у секундама пре самосталног одјављивања. Ако је 0, самостално одјављивање је искључено."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
 msgstr "Време након кога сесија постаје неактивна"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr "Време неактивности у секундама након кога се сесија сматра неактивном."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
 msgstr "Основна сесија"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.h:12
 msgid "List of applications that are part of the default session."
 msgstr "Списак програма који су део основне сесије."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Required session components"
 msgstr "Потребни састојци сесије"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.h:14
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -137,44 +137,54 @@ msgid ""
 "if they do get removed."
 msgstr "Списак састојака који су потребни као део сесије. (Сваки назив елемента је кључ под „/org/mate/desktop/session/required_components“). Алат поставки почетних програма неће допустити корисницима да уклоне потребан састојак из сесије, а управник сесије ће сам да дода потребне састојке назад у сесију за време пријављивања ако су уклоњени."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
 msgstr "Покретање састојка гномове сагласности"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.h:16
 msgid "Control which compatibility components to start."
 msgstr "Одлучите који ће састојци сагласности бити покренути."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:17
+#: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
 msgstr "Управник прозора"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr "Управник прозорима исцртава насловну линију и оквире прозора и омогућава померање и промену величине прозора."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:19
+#: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
 msgstr "Панел"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:20
+#: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr "Панел поставља линију на врх или дно радне површи која садржи изборнике, списак прозора, иконице стања, сат и друго."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:21
+#: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
 msgstr "Управник датотека"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:22
+#: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
 msgstr "Управник датотекама истиче иконице на радној површи и омогућава рад са сачуваним датотекама."
+
+#: ../data/org.mate.session.gschema.xml.in.h:23
+msgid "Dock"
+msgstr "Лука"
+
+#: ../data/org.mate.session.gschema.xml.in.h:24
+msgid ""
+"A dock provides a dockable area, similar to a panel, for launching and "
+"switching applications."
+msgstr "Лука обезбеђује прикачиву област, слично панелу, за покретање и пребацивање између програма."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -188,7 +198,7 @@ msgstr "Ова сесија вас пријављује у Мејт"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Неки програми још увек раде:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:707
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -301,58 +311,58 @@ msgstr "Могућности управљања сесијом:"
 msgid "Show session management options"
 msgstr "Приказује могућности управљања сесијом"
 
-#: ../mate-session/gsm-inhibit-dialog.c:258
+#: ../mate-session/gsm-inhibit-dialog.c:256
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Иконица „%s“ није нађена"
 
-#: ../mate-session/gsm-inhibit-dialog.c:657
+#: ../mate-session/gsm-inhibit-dialog.c:655
 msgid "Unknown"
 msgstr "Непознато"
 
-#: ../mate-session/gsm-inhibit-dialog.c:708
+#: ../mate-session/gsm-inhibit-dialog.c:706
 msgid "A program is still running:"
 msgstr "Програм још увек ради:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:712
+#: ../mate-session/gsm-inhibit-dialog.c:710
 msgid "Some programs are still running:"
 msgstr "Неки програми још увек раде:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:713
+#: ../mate-session/gsm-inhibit-dialog.c:711
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr "Чекам да програми заврше са радом.  Излазак из ових програма може довести до губитка ваших радова."
 
-#: ../mate-session/gsm-inhibit-dialog.c:943
+#: ../mate-session/gsm-inhibit-dialog.c:941
 msgid "Switch User Anyway"
 msgstr "Ипак промени корисника"
 
-#: ../mate-session/gsm-inhibit-dialog.c:946
+#: ../mate-session/gsm-inhibit-dialog.c:944
 msgid "Log Out Anyway"
 msgstr "Ипак ме одјави"
 
-#: ../mate-session/gsm-inhibit-dialog.c:949
+#: ../mate-session/gsm-inhibit-dialog.c:947
 msgid "Suspend Anyway"
 msgstr "Ипак обустави"
 
-#: ../mate-session/gsm-inhibit-dialog.c:952
+#: ../mate-session/gsm-inhibit-dialog.c:950
 msgid "Hibernate Anyway"
 msgstr "Ипак замрзни"
 
-#: ../mate-session/gsm-inhibit-dialog.c:955
+#: ../mate-session/gsm-inhibit-dialog.c:953
 msgid "Shut Down Anyway"
 msgstr "Ипак искључи"
 
-#: ../mate-session/gsm-inhibit-dialog.c:958
+#: ../mate-session/gsm-inhibit-dialog.c:956
 msgid "Reboot Anyway"
 msgstr "Ипак поново покрени"
 
-#: ../mate-session/gsm-inhibit-dialog.c:966
+#: ../mate-session/gsm-inhibit-dialog.c:964
 msgid "Lock Screen"
 msgstr "Закључај екран"
 
-#: ../mate-session/gsm-inhibit-dialog.c:969
+#: ../mate-session/gsm-inhibit-dialog.c:967
 msgid "Cancel"
 msgstr "Откажи"
 
@@ -409,18 +419,18 @@ msgstr "_Поново покрени"
 msgid "_Shut Down"
 msgstr "_Искључи"
 
-#: ../mate-session/gsm-manager.c:1443 ../mate-session/gsm-manager.c:2162
+#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
 msgid "Not responding"
 msgstr "Не даје одзив"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: ../mate-session/gsm-xsmp-client.c:567
+#: ../mate-session/gsm-xsmp-client.c:565
 msgid "Remembered Application"
 msgstr "Запамћени програм"
 
-#: ../mate-session/gsm-xsmp-client.c:1205
+#: ../mate-session/gsm-xsmp-client.c:1203
 msgid "This program is blocking logout."
 msgstr "Овај програм онемогућава одјављивање."
 
@@ -441,68 +451,69 @@ msgstr "Не могу да направим прикључницу ИЦЕ осл
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Не могу да покренем сесију пријављивања (и не могу да се повежем са Х сервером)"
 
-#: ../mate-session/main.c:554
+#: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
 msgstr "Заобилази уобичајене директоријуме самопокретања"
 
-#: ../mate-session/main.c:555
+#: ../mate-session/main.c:587
 msgid "Enable debugging code"
 msgstr "Укључује кôд прочишћавања"
 
-#: ../mate-session/main.c:556
+#: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
 msgstr "Не учитава програме које је задао корисник"
 
-#: ../mate-session/main.c:577
+#: ../mate-session/main.c:609
 msgid " - the MATE session manager"
 msgstr " — управник Мејтовом сесијом"
 
-#: ../tools/mate-session-save.c:65
+#: ../tools/mate-session-save.c:69
 msgid "Log out"
 msgstr "Одјављује"
 
-#: ../tools/mate-session-save.c:66
+#: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"
 msgstr "Одјављује, занемарујући постојеће ометаче"
 
-#: ../tools/mate-session-save.c:67
+#: ../tools/mate-session-save.c:71
 msgid "Show logout dialog"
 msgstr "Приказује прозорче одјављивања"
 
-#: ../tools/mate-session-save.c:68
+#: ../tools/mate-session-save.c:72
 msgid "Show shutdown dialog"
 msgstr "Приказује прозорче искључивања"
 
-#: ../tools/mate-session-save.c:69
+#: ../tools/mate-session-save.c:73
 msgid "Use dialog boxes for errors"
 msgstr "Користи поља прозорчића за грешке"
 
 #. deprecated options
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:75
 msgid "Set the current session name"
 msgstr "Поставља назив текуће сесије"
 
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:75
 msgid "NAME"
 msgstr "НАЗИВ"
 
-#: ../tools/mate-session-save.c:72
+#: ../tools/mate-session-save.c:76
 msgid "Kill session"
 msgstr "Убија сесију"
 
-#: ../tools/mate-session-save.c:73
+#: ../tools/mate-session-save.c:77
 msgid "Do not require confirmation"
 msgstr "Не захтева потврђивање"
 
-#: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
 msgid "Could not connect to the session manager"
 msgstr "Не могу да се повежем са управником сесије"
 
-#: ../tools/mate-session-save.c:287
+#: ../tools/mate-session-save.c:276
 msgid "Program called with conflicting options"
 msgstr "Програм је позван са сукобљавајућим могућностима"
 
-#: ../tools/mate-session-inhibit.c:114
+#: ../tools/mate-session-inhibit.c:115
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -520,13 +531,13 @@ msgid ""
 "If no --inhibit option is specified, idle is assumed.\n"
 msgstr "%s [ОПЦИЈА...] НАРЕДБА\n\nИзвршите НАРЕДБУ док спречавате неке функције сесије.\n\n  -h, --help        Приказује ову помоћ\n  --version         Приказује издање програма\n  --app-id ИБ       Иб програма за коришћење\n                    приликом спречавања (изборно)\n  --reason РАЗЛОГ   Разлог спречавања (изборно)\n  --inhibit АРГ     Зарезом одвојен списак ствари које ће бити спречене:\n                    loogout (одјава), switch-user (промена корисника),\n                    suspend (обустава), idle (мировање), automount\n                    (самостално качење)\n\nАко није наведена опција „--inhibit“, подразумева се „idle“ (мировање).\n"
 
-#: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
-#: ../tools/mate-session-inhibit.c:188
+#: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
+#: ../tools/mate-session-inhibit.c:189
 #, c-format
 msgid "%s requires an argument\n"
 msgstr "„%s“ захтева аргумент\n"
 
-#: ../tools/mate-session-inhibit.c:224
+#: ../tools/mate-session-inhibit.c:225
 #, c-format
 msgid "Failed to execute %s\n"
 msgstr "Нисам успео да извршим „%s“\n"

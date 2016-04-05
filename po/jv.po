@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 15:06+0200\n"
-"PO-Revision-Date: 2015-10-08 03:46+0000\n"
-"Last-Translator: Martin Wimpress <code@flexion.org>\n"
+"POT-Creation-Date: 2015-12-14 13:15+0300\n"
+"PO-Revision-Date: 2015-12-14 10:18+0000\n"
+"Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Javanese (http://www.transifex.com/mate/MATE/language/jv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Program"
 msgstr ""
 
-#: ../capplet/gsm-properties-dialog.c:746
+#: ../capplet/gsm-properties-dialog.c:748
 msgid "Startup Applications Preferences"
 msgstr ""
 
@@ -61,7 +61,7 @@ msgstr "Boten wonten asma"
 msgid "No description"
 msgstr ""
 
-#: ../capplet/main.c:35 ../mate-session/main.c:574
+#: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
 msgstr ""
 
@@ -171,6 +171,16 @@ msgstr ""
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:23
+msgid "Dock"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:24
+msgid ""
+"A dock provides a dockable area, similar to a panel, for launching and "
+"switching applications."
 msgstr ""
 
 #: ../data/mate.desktop.in.h:1
@@ -404,7 +414,7 @@ msgstr ""
 msgid "_Shut Down"
 msgstr ""
 
-#: ../mate-session/gsm-manager.c:1442 ../mate-session/gsm-manager.c:2161
+#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
 msgid "Not responding"
 msgstr ""
 
@@ -436,64 +446,65 @@ msgstr ""
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 
-#: ../mate-session/main.c:571
+#: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
 msgstr ""
 
-#: ../mate-session/main.c:572
+#: ../mate-session/main.c:587
 msgid "Enable debugging code"
 msgstr ""
 
-#: ../mate-session/main.c:573
+#: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
 msgstr ""
 
-#: ../mate-session/main.c:594
+#: ../mate-session/main.c:609
 msgid " - the MATE session manager"
 msgstr ""
 
-#: ../tools/mate-session-save.c:65
+#: ../tools/mate-session-save.c:69
 msgid "Log out"
 msgstr ""
 
-#: ../tools/mate-session-save.c:66
+#: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"
 msgstr ""
 
-#: ../tools/mate-session-save.c:67
+#: ../tools/mate-session-save.c:71
 msgid "Show logout dialog"
 msgstr ""
 
-#: ../tools/mate-session-save.c:68
+#: ../tools/mate-session-save.c:72
 msgid "Show shutdown dialog"
 msgstr ""
 
-#: ../tools/mate-session-save.c:69
+#: ../tools/mate-session-save.c:73
 msgid "Use dialog boxes for errors"
 msgstr ""
 
 #. deprecated options
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:75
 msgid "Set the current session name"
 msgstr ""
 
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:75
 msgid "NAME"
 msgstr ""
 
-#: ../tools/mate-session-save.c:72
+#: ../tools/mate-session-save.c:76
 msgid "Kill session"
 msgstr ""
 
-#: ../tools/mate-session-save.c:73
+#: ../tools/mate-session-save.c:77
 msgid "Do not require confirmation"
 msgstr ""
 
-#: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
 msgid "Could not connect to the session manager"
 msgstr ""
 
-#: ../tools/mate-session-save.c:287
+#: ../tools/mate-session-save.c:276
 msgid "Program called with conflicting options"
 msgstr ""
 

@@ -3,19 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Zuza Software Foundation <info@translate.org.za>, 2004
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 13:15+0300\n"
-"PO-Revision-Date: 2015-12-14 10:18+0000\n"
+"PO-Revision-Date: 2016-03-28 18:23+0000\n"
 "Last-Translator: monsta <monsta@inbox.ru>\n"
-"Language-Team: Northern Sotho (http://www.transifex.com/mate/MATE/language/nso/)\n"
+"Language-Team: Spanish (Argentina) (http://www.transifex.com/mate/MATE/language/es_AR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nso\n"
+"Language: es_AR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../capplet/gsm-app-dialog.c:125
@@ -24,15 +23,15 @@ msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:197
 msgid "Add Startup Program"
-msgstr "Oketša Lenaneo la go Thoma"
+msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:201
 msgid "Edit Startup Program"
-msgstr "Lokiša Lenaneo la go Thoma"
+msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:490
 msgid "The startup command cannot be empty"
-msgstr "Taelo ya go thoma ga se ya swanela go se be le selo"
+msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:496
 msgid "The startup command is not valid"
@@ -48,7 +47,7 @@ msgstr ""
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
-msgstr "Lenaneo"
+msgstr ""
 
 #: ../capplet/gsm-properties-dialog.c:748
 msgid "Startup Applications Preferences"
@@ -80,7 +79,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
-msgstr "Boloka mananeo"
+msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
@@ -88,11 +87,11 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
-msgstr "Go akgofiša ga go tšwa"
+msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Ge e ba le kgontšhwa, mate-session e tla akgofiša mošomisi pele a ka fetša lenaneo."
+msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -146,7 +145,7 @@ msgstr ""
 #: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
-msgstr "Molaodi wa Lefesetere"
+msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
@@ -186,7 +185,7 @@ msgstr ""
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr ""
+msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
@@ -212,11 +211,11 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
-msgstr "Mananeo a oketšegilego _a go thoma:"
+msgstr ""
 
 #: ../data/session-properties.ui.h:2
 msgid "Startup Programs"
-msgstr "Mananeo a go Thongwa"
+msgstr ""
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
@@ -316,7 +315,7 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:655
 msgid "Unknown"
-msgstr "Ga e tsebje"
+msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:706
 msgid "A program is still running:"
@@ -362,7 +361,7 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:967
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: ../mate-session/gsm-logout-dialog.c:332
 #, c-format
@@ -494,7 +493,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:76
 msgid "Kill session"
-msgstr "Bolaya lenaneo"
+msgstr ""
 
 #: ../tools/mate-session-save.c:77
 msgid "Do not require confirmation"
@@ -503,7 +502,7 @@ msgstr ""
 #. Okay, it wasn't the upgrade case, so now we can give up.
 #: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
 msgid "Could not connect to the session manager"
-msgstr "Ga e kgone go kgokagana le molaodi wa lenaneo"
+msgstr ""
 
 #: ../tools/mate-session-save.c:276
 msgid "Program called with conflicting options"

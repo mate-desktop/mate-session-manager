@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# muzaffar habibullayev <muzaffarlearner@gmail.com>, 2016
 # Nurali Abdurahmonov <mavnur@gmail.com>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 13:27+0000\n"
-"Last-Translator: infirit <infirit@gmail.com>\n"
-"Language-Team: Uzbek (http://www.transifex.com/projects/p/MATE/language/uz/)\n"
+"POT-Creation-Date: 2015-12-14 13:15+0300\n"
+"PO-Revision-Date: 2016-04-03 12:01+0000\n"
+"Last-Translator: muzaffar habibullayev <muzaffarlearner@gmail.com>\n"
+"Language-Team: Uzbek (http://www.transifex.com/mate/MATE/language/uz/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,47 +23,47 @@ msgstr ""
 msgid "Select Command"
 msgstr "Buyruqni tanlash"
 
-#: ../capplet/gsm-app-dialog.c:198
+#: ../capplet/gsm-app-dialog.c:197
 msgid "Add Startup Program"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:202
+#: ../capplet/gsm-app-dialog.c:201
 msgid "Edit Startup Program"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:491
+#: ../capplet/gsm-app-dialog.c:490
 msgid "The startup command cannot be empty"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:497
+#: ../capplet/gsm-app-dialog.c:496
 msgid "The startup command is not valid"
 msgstr ""
 
-#: ../capplet/gsm-properties-dialog.c:551
+#: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
 msgstr "Yoqilgan"
 
-#: ../capplet/gsm-properties-dialog.c:563
+#: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
 msgstr "Nishoncha"
 
-#: ../capplet/gsm-properties-dialog.c:575
+#: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
 msgstr "Dastur"
 
-#: ../capplet/gsm-properties-dialog.c:783
+#: ../capplet/gsm-properties-dialog.c:748
 msgid "Startup Applications Preferences"
 msgstr ""
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr ""
+msgstr "Nomsiz"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
 msgstr "Taʼrif yoʻq"
 
-#: ../capplet/main.c:35 ../mate-session/main.c:557
+#: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
 msgstr "Dastur versiyasi"
 
@@ -70,62 +71,62 @@ msgstr "Dastur versiyasi"
 msgid "Could not display help document"
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:2
+#: ../data/org.mate.session.gschema.xml.in.h:2
 msgid "Unix time of the start of the current session."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:3
+#: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
 msgstr "Seanslarni saqlash"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:4
+#: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:5
+#: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:6
+#: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr "Agar belgilansa , mate-session seansni tugatishdan avval foydalanuvchini ogohlantiradi."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:7
+#: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
 msgstr "Andoza seans"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.h:12
 msgid "List of applications that are part of the default session."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Required session components"
 msgstr "Kerakli seans komponentlari"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.h:14
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -135,43 +136,53 @@ msgid ""
 "if they do get removed."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.h:16
 msgid "Control which compatibility components to start."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:17
+#: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
 msgstr "Oyna boshqaruvchisi"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:19
+#: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
 msgstr "Panel"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:20
+#: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:21
+#: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
 msgstr "Fayl boshqaruvchisi"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:22
+#: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:23
+msgid "Dock"
+msgstr "Dok"
+
+#: ../data/org.mate.session.gschema.xml.in.h:24
+msgid ""
+"A dock provides a dockable area, similar to a panel, for launching and "
+"switching applications."
 msgstr ""
 
 #: ../data/mate.desktop.in.h:1
@@ -186,7 +197,7 @@ msgstr "Ushbu seans MATE'ga kirishingizni taʼminlaydi"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Baʼzi dasturlar hozir ham ishlamoqda:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:707
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -194,11 +205,11 @@ msgstr ""
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
-msgstr ""
+msgstr "Ishga tushuvchi Dasturlar"
 
 #: ../data/mate-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr ""
+msgstr "Tizimga kirganda ishga tushuvchi dasturlarni tanlang"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
@@ -222,7 +233,7 @@ msgstr "Parametrlar"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
-msgstr ""
+msgstr "Ko'rish..."
 
 #: ../data/session-properties.ui.h:7
 msgid "Comm_ent:"
@@ -239,7 +250,7 @@ msgstr "_Nomi:"
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr ""
+msgstr "Fayl yaroqli .desktop fayl emas"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
@@ -254,7 +265,7 @@ msgstr "%s ishga tushirilmoqda"
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "Dastur hujjatlarni buyruq satrida qabul qilmaydi"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
@@ -299,58 +310,58 @@ msgstr ""
 msgid "Show session management options"
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:258
+#: ../mate-session/gsm-inhibit-dialog.c:256
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' nishonchasi topildi"
 
-#: ../mate-session/gsm-inhibit-dialog.c:657
+#: ../mate-session/gsm-inhibit-dialog.c:655
 msgid "Unknown"
 msgstr "Nomaʼlum"
 
-#: ../mate-session/gsm-inhibit-dialog.c:708
+#: ../mate-session/gsm-inhibit-dialog.c:706
 msgid "A program is still running:"
-msgstr ""
+msgstr "Dastur hali ham ishlamoqda:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:712
+#: ../mate-session/gsm-inhibit-dialog.c:710
 msgid "Some programs are still running:"
-msgstr ""
+msgstr "Ayrim dasturlar hali ham ishlamoqda:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:713
+#: ../mate-session/gsm-inhibit-dialog.c:711
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:943
+#: ../mate-session/gsm-inhibit-dialog.c:941
 msgid "Switch User Anyway"
-msgstr ""
+msgstr "Baribir Foydalanuvchini O'zgartirish"
 
-#: ../mate-session/gsm-inhibit-dialog.c:946
+#: ../mate-session/gsm-inhibit-dialog.c:944
 msgid "Log Out Anyway"
-msgstr ""
+msgstr "Baribir Chiqish"
 
-#: ../mate-session/gsm-inhibit-dialog.c:949
+#: ../mate-session/gsm-inhibit-dialog.c:947
 msgid "Suspend Anyway"
-msgstr ""
+msgstr "Baribir Kutish Usuliga o'tish"
 
-#: ../mate-session/gsm-inhibit-dialog.c:952
+#: ../mate-session/gsm-inhibit-dialog.c:950
 msgid "Hibernate Anyway"
-msgstr ""
+msgstr "Baribir Uyqu Rejimiga O'tish"
 
-#: ../mate-session/gsm-inhibit-dialog.c:955
+#: ../mate-session/gsm-inhibit-dialog.c:953
 msgid "Shut Down Anyway"
-msgstr ""
+msgstr "Baribir O'chirish"
 
-#: ../mate-session/gsm-inhibit-dialog.c:958
+#: ../mate-session/gsm-inhibit-dialog.c:956
 msgid "Reboot Anyway"
-msgstr ""
+msgstr "Baribir O'chirib-yoqish"
 
-#: ../mate-session/gsm-inhibit-dialog.c:966
+#: ../mate-session/gsm-inhibit-dialog.c:964
 msgid "Lock Screen"
 msgstr "Ekranni qulflash"
 
-#: ../mate-session/gsm-inhibit-dialog.c:969
+#: ../mate-session/gsm-inhibit-dialog.c:967
 msgid "Cancel"
 msgstr "Bekor qilish"
 
@@ -358,22 +369,22 @@ msgstr "Bekor qilish"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
+msgstr[0] "Siz %d  soniyada avtomatik tarzda chiqib ketasiz"
 
 #: ../mate-session/gsm-logout-dialog.c:340
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
+msgstr[0] "Tizim %d  soniyada avtomatik tarzda o'chiriladi"
 
 #: ../mate-session/gsm-logout-dialog.c:386
 #, c-format
 msgid "You are currently logged in as \"%s\"."
-msgstr ""
+msgstr "Hozir siz \"%s\" sifatida tizmga kirgansiz."
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Log out of this system now?"
-msgstr ""
+msgstr "Tizimdan hozir chiqilsinmi?"
 
 #: ../mate-session/gsm-logout-dialog.c:473
 msgid "_Switch User"
@@ -381,7 +392,7 @@ msgstr "Foydalanuvchini _oʻzgartirish"
 
 #: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Log Out"
-msgstr ""
+msgstr "_Chiqish"
 
 #: ../mate-session/gsm-logout-dialog.c:488
 msgid "Shut down this system now?"
@@ -403,20 +414,20 @@ msgstr "_Oʻchirib-yoqish"
 msgid "_Shut Down"
 msgstr "_Oʻchirish"
 
-#: ../mate-session/gsm-manager.c:1443 ../mate-session/gsm-manager.c:2162
+#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
 msgid "Not responding"
 msgstr "Javob bermayapti"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: ../mate-session/gsm-xsmp-client.c:567
+#: ../mate-session/gsm-xsmp-client.c:565
 msgid "Remembered Application"
 msgstr ""
 
-#: ../mate-session/gsm-xsmp-client.c:1205
+#: ../mate-session/gsm-xsmp-client.c:1203
 msgid "This program is blocking logout."
-msgstr ""
+msgstr "Dastur chiqishga xalal bermoqda."
 
 #: ../mate-session/gsm-xsmp-server.c:325
 msgid ""
@@ -435,68 +446,69 @@ msgstr ""
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 
-#: ../mate-session/main.c:554
+#: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
 msgstr ""
 
-#: ../mate-session/main.c:555
+#: ../mate-session/main.c:587
 msgid "Enable debugging code"
 msgstr ""
 
-#: ../mate-session/main.c:556
+#: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
 msgstr "Foydalanuvchi dasturlari ishga tushirilmasin"
 
-#: ../mate-session/main.c:577
+#: ../mate-session/main.c:609
 msgid " - the MATE session manager"
 msgstr " - MATE seans boshqaruvchisi"
 
-#: ../tools/mate-session-save.c:65
+#: ../tools/mate-session-save.c:69
 msgid "Log out"
-msgstr "Seansni tugatish"
+msgstr "Seansdan chiqish"
 
-#: ../tools/mate-session-save.c:66
+#: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"
-msgstr ""
+msgstr "Barcha mavjud to'siqlarga qaramay, tizimdan chiqish"
 
-#: ../tools/mate-session-save.c:67
+#: ../tools/mate-session-save.c:71
 msgid "Show logout dialog"
 msgstr "Seansni tugatish dialogini koʻrsatish"
 
-#: ../tools/mate-session-save.c:68
+#: ../tools/mate-session-save.c:72
 msgid "Show shutdown dialog"
 msgstr "Kompyuterni oʻchirish dialogini koʻrsatish"
 
-#: ../tools/mate-session-save.c:69
+#: ../tools/mate-session-save.c:73
 msgid "Use dialog boxes for errors"
 msgstr "Xatolar uchun dialog qutisidan foydalanish"
 
 #. deprecated options
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:75
 msgid "Set the current session name"
 msgstr "Joriy seans nomini belgilash"
 
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:75
 msgid "NAME"
 msgstr "NOMI"
 
-#: ../tools/mate-session-save.c:72
+#: ../tools/mate-session-save.c:76
 msgid "Kill session"
-msgstr ""
+msgstr "Seansni tugatish"
 
-#: ../tools/mate-session-save.c:73
+#: ../tools/mate-session-save.c:77
 msgid "Do not require confirmation"
 msgstr "Tasdiqlash soʻralmasin"
 
-#: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
 msgid "Could not connect to the session manager"
 msgstr "Seans boshqaruvchisiga bogʻlanib boʻlmadi"
 
-#: ../tools/mate-session-save.c:287
+#: ../tools/mate-session-save.c:276
 msgid "Program called with conflicting options"
 msgstr ""
 
-#: ../tools/mate-session-inhibit.c:114
+#: ../tools/mate-session-inhibit.c:115
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -514,13 +526,13 @@ msgid ""
 "If no --inhibit option is specified, idle is assumed.\n"
 msgstr ""
 
-#: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
-#: ../tools/mate-session-inhibit.c:188
+#: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
+#: ../tools/mate-session-inhibit.c:189
 #, c-format
 msgid "%s requires an argument\n"
 msgstr ""
 
-#: ../tools/mate-session-inhibit.c:224
+#: ../tools/mate-session-inhibit.c:225
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "%s ni bajarib bo'lmadi\n\n"

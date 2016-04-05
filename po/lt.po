@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 13:15+0300\n"
-"PO-Revision-Date: 2016-02-15 19:37+0000\n"
+"PO-Revision-Date: 2016-03-17 16:30+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -84,11 +84,11 @@ msgstr "Esamo seanso pradžios Unix laikas"
 
 #: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
-msgstr "Išsaugoti seansus"
+msgstr "Įrašyti seansus"
 
 #: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr "Jeigu įjungta, mate-session automatiškai išsaugos seansą."
+msgstr "Jeigu įjungta, mate-session automatiškai įrašys seansą."
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
@@ -176,7 +176,7 @@ msgstr "Failų tvarkytuvė"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Failų tvarkytuvė suteikia darbalaukio piktogramas ir leidžia valdyti įrašytus failus."
+msgstr "Failų tvarkytuvė pateikia darbalaukio piktogramas ir leidžia valdyti įrašytus failus."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -186,7 +186,7 @@ msgstr "Dokas"
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr ""
+msgstr "Dokas suteikia, į skydelį panašią dokinę sritį, skirtą paleisti ir perjungti programas."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"

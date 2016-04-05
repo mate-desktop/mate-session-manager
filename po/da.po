@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Allan Nordhøy <epost@anotheragency.no>, 2016
 # askhl <asklarsen@gmail.com>, 2007
 # Birger Langkjer <birger.langkjer@image.dk>, 1999
 # Joe Hansen <joedalton2@yahoo.dk>, 2014-2016
@@ -14,8 +15,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 13:15+0300\n"
-"PO-Revision-Date: 2016-02-13 10:13+0000\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"PO-Revision-Date: 2016-03-25 17:09+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Danish (http://www.transifex.com/mate/MATE/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -530,7 +531,7 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [TILVALG...] KOMMANDO\n\nKør KOMMANDO mens nogen sessionsfunktionalitet hæmmes.\n\n  -h, --help        Vis denne hjælpetekst\n  --version         Vis programversion\n  --app-id ID       Applikations-id at bruge under hæmning (valgfri)\n  --reason REASON   Årsagen for hæmning (valgfri)\n  --inhibit ARG     Ting at hæmme, kolonseparareret liste af:\n                    logout, switch-user, suspend, idle, automount\n\nHvis no --inhibit tilvalg er specificeret, antages idle (ledig).\n"
+msgstr "%s [TILVALG…] KOMMANDO\n\nKør KOMMANDO mens nogen sessionsfunktionalitet hæmmes.\n\n  -h, --help        Vis denne hjælpetekst\n  --version         Vis programversion\n  --app-id ID       Applikations-id at bruge under hæmning (valgfri)\n  --reason REASON   Årsagen for hæmning (valgfri)\n  --inhibit ARG     Ting at hæmme, kolonseparareret liste af:\n                    logout, switch-user, suspend, idle, automount\n\nHvis no --inhibit tilvalg er specificeret, antages idle (ledig).\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

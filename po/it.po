@@ -5,7 +5,7 @@
 # Translators:
 # Christopher R. Gabriel <cgabriel@pluto.linux.it>, 1997, 1998, 1999, 2000, 2001, 2002
 # Giuseppe Pignataro <rogepix@gmail.com>, 2015
-# dardin88 <linkin88mail@gmail.com>, 2015
+# Dario Di Nucci <linkin88mail@gmail.com>, 2015
 # Luca Ferretti <elle.uca@libero.it>, 2004, 2005, 2006, 2007, 2008, 2009, 2010
 # Marco Bartolucci <nap.84@live.it>, 2016
 # Stefano Karapetsas <stefano@karapetsas.com>, 2014

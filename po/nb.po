@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Allan Nordhøy <epost@anotheragency.no>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 13:15+0300\n"
-"PO-Revision-Date: 2016-02-10 19:58+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-03-25 20:03+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/mate/MATE/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,11 +72,11 @@ msgstr "Kunne ikke vise hjelp"
 
 #: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Starttid for gjeldende økt"
 
 #: ../data/org.mate.session.gschema.xml.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Unix-tid for start av gjeldende økt."
 
 #: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
@@ -95,13 +96,13 @@ msgstr "Aktiveres hvis brukeren ønsker en spørsmålsdialog før sesjonen avslu
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "Tidsavbrudd for utlogging"
 
 #: ../data/org.mate.session.gschema.xml.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "Hvis utloggingsspørring er påslått, vil dette sette tidsutløp i sekunder før utlogging inntreffer automatisk. Hvis 0, er automatisk utlogging avskrudd."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
@@ -132,15 +133,15 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr ""
+msgstr "Liste med komponenter som kreves i økta. (Hvert element navngir en nøkkel under «/org/mate/desktop/session/required_components».) Dialog for egenskaper for økt vil vanligvis ikke la brukere fjerne en påkrevet komponent fra økta. Økthåndtereren vil automatisk legge tilbake påkrevede komponenter i økta hvis de fjernes."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "Kontroller GNOME-kompabilitetskomponentsoppstart"
 
 #: ../data/org.mate.session.gschema.xml.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "Kontroller hvilke kompabilitetskomponenter som skal starte."
 
 #: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -175,13 +176,13 @@ msgstr "Filhåndterer gir deg skrivebordsikoner og lar deg håndtere dine filer.
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
-msgstr ""
+msgstr "Samtalevindu"
 
 #: ../data/org.mate.session.gschema.xml.in.h:24
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr ""
+msgstr "En dokk tilbyr et dokkingsområde, tilsvarende et panel, for start og bytte av programmer."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -367,15 +368,15 @@ msgstr "Avbryt"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Du vil automatisk bli utlogget om %d sekund"
+msgstr[1] "Du vil automatisk bli utlogget om %d sekunder"
 
 #: ../mate-session/gsm-logout-dialog.c:340
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Systemet vil bli slått automatisk av om %d sekund."
+msgstr[1] "Systemet vil bli slått automatisk av om %d sekunder."
 
 #: ../mate-session/gsm-logout-dialog.c:386
 #, c-format
@@ -423,7 +424,7 @@ msgstr "Svarer ikke"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:565
 msgid "Remembered Application"
-msgstr ""
+msgstr "Husket program"
 
 #: ../mate-session/gsm-xsmp-client.c:1203
 msgid "This program is blocking logout."
@@ -524,15 +525,15 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s [Valg …] KOMMANDO\n\nKjør KOMMANDO mens noe øktfunksjonalitet hemmes.\n\n-h, --help Vis denne hjelpeteksten\n--version Vis programversjon\n--app-id ID Applikations-ID å bruke under hemming (valgfri)\n--reason REASON Årsak for hemming (valgfri)\n--inhibit ARG Ting at hemme, kommainndelt liste av:\nlogout, switch-user, suspend, idle, automount\n\nHvis no --inhibit tilvalg er spesofosert, antas idle (ledig).\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s krever at det oppgis et argument\n"
 
 #: ../tools/mate-session-inhibit.c:225
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "Kunne ikke kjøre %s\n"

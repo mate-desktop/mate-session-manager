@@ -4,17 +4,19 @@
 # 
 # Translators:
 # Changwoo Ryu <cwryu@debian.org>, 2007, 2008, 2009, 2010
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2014
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2015
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2016
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2014-2015
 # Updated by Sung-Hyun Nam <namsh@kldp.org>, 2000
 # Updated by Young-Ho Cha <ganadist@chollian.net>, 2000, 2001, 2006, 2007
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-13 14:22+0100\n"
-"PO-Revision-Date: 2015-01-13 13:27+0000\n"
-"Last-Translator: infirit <infirit@gmail.com>\n"
-"Language-Team: Korean (http://www.transifex.com/projects/p/MATE/language/ko/)\n"
+"POT-Creation-Date: 2015-12-14 13:15+0300\n"
+"PO-Revision-Date: 2016-03-31 10:40+0000\n"
+"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
+"Language-Team: Korean (http://www.transifex.com/mate/MATE/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,35 +27,35 @@ msgstr ""
 msgid "Select Command"
 msgstr "명령 선택"
 
-#: ../capplet/gsm-app-dialog.c:198
+#: ../capplet/gsm-app-dialog.c:197
 msgid "Add Startup Program"
 msgstr "시작 프로그램 추가"
 
-#: ../capplet/gsm-app-dialog.c:202
+#: ../capplet/gsm-app-dialog.c:201
 msgid "Edit Startup Program"
 msgstr "시작 프로그램 편집"
 
-#: ../capplet/gsm-app-dialog.c:491
+#: ../capplet/gsm-app-dialog.c:490
 msgid "The startup command cannot be empty"
 msgstr "시작 프로그램을 비워 둘 수 없습니다"
 
-#: ../capplet/gsm-app-dialog.c:497
+#: ../capplet/gsm-app-dialog.c:496
 msgid "The startup command is not valid"
 msgstr "시작 프로그램이 올바르지 않습니다"
 
-#: ../capplet/gsm-properties-dialog.c:551
+#: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
 msgstr "사용하기"
 
-#: ../capplet/gsm-properties-dialog.c:563
+#: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
 msgstr "아이콘"
 
-#: ../capplet/gsm-properties-dialog.c:575
+#: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
 msgstr "프로그램"
 
-#: ../capplet/gsm-properties-dialog.c:783
+#: ../capplet/gsm-properties-dialog.c:748
 msgid "Startup Applications Preferences"
 msgstr "시작 프로그램 기본 설정"
 
@@ -65,7 +67,7 @@ msgstr "이름 없음"
 msgid "No description"
 msgstr "설명 없음"
 
-#: ../capplet/main.c:35 ../mate-session/main.c:557
+#: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
 msgstr "이 프로그램의 버전"
 
@@ -73,62 +75,62 @@ msgstr "이 프로그램의 버전"
 msgid "Could not display help document"
 msgstr "도움말 문서를 표시할 수 없습니다"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
 msgstr "현제 세션 시작 시간"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:2
+#: ../data/org.mate.session.gschema.xml.in.h:2
 msgid "Unix time of the start of the current session."
 msgstr "현재 세션을 시작한 유닉스 시간입니다."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:3
+#: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
 msgstr "세션 저장"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:4
+#: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr "활성화하면, mate-session에서 세션을 자동으로 저장합니다."
+msgstr "활성화하면, 마테-세션에서 세션을 자동으로 저장합니다."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:5
+#: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
 msgstr "로그아웃 물어보기"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:6
+#: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "참이면 mate-session이 끝나기 전에 사용자에게 물어봅니다."
+msgstr "참이면 마테-세션이 끝나기 전에 사용자에게 물어봅니다."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:7
+#: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "로그아웃 대기 시간"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "로그아웃 프롬프트를 활성화하면, 로그아웃을 자동으로 처리할 초 단위 대기 시간을 설정합니다. 0 값으로 설정하면, 자동 로그아웃을 비활성화합니다."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
 msgstr "세션에 입력이 없어 중지할 시간"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr "세션이 중지 상태라고 판단할 입력이 없는 시간, 분 단위."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
 msgstr "기본 세션"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.h:12
 msgid "List of applications that are part of the default session."
 msgstr "기본 세션에 들어 있는 프로그램의 목록."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Required session components"
 msgstr "필요한 세션 구성 요소"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.h:14
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -138,58 +140,68 @@ msgid ""
 "if they do get removed."
 msgstr "세션의 일부로 필요한 요소 목록입니다(각각의 요소는 \"/org/mate/desktop/session/required_components\"의 키에 이름을 부여합니다). 시작 프로그램 기본 설정 도구는 보통 세션에서 필요한 구성요소를 사용자가 지우지 못하게 하며, 해당 항목이 제거되었다면 세션 관리자에서 자동으로 필요한 구성 요소를 로그인 시간에 다시 설정해놓습니다."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "그놈 호환 구성 요소 시작 제어"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "시작할 호환 구성 요소를 처리합니다."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:17
+#: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
 msgstr "창 관리자"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr "창 관리자는 창의 제목 표시줄과 창 테두리를 만들고, 창을 옮기고 창 크기를 바꾸는 데 사용하는 프로그램입니다."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:19
+#: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
 msgstr "패널"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:20
+#: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr "화면의 위와 아래에 있는 패널에 메뉴, 창 목록, 상태 아이콘, 시계 등이 있습니다."
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:21
+#: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
 msgstr "파일 관리자"
 
-#: ../data/org.mate.session.gschema.xml.in.in.h:22
+#: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
 msgstr "파일 관리자에 바탕 화면 아이콘이 있어서 이 아이콘으로 저장한 파일을 이용할 수 있습니다."
 
+#: ../data/org.mate.session.gschema.xml.in.h:23
+msgid "Dock"
+msgstr "도크"
+
+#: ../data/org.mate.session.gschema.xml.in.h:24
+msgid ""
+"A dock provides a dockable area, similar to a panel, for launching and "
+"switching applications."
+msgstr "도크는 실행하거나 바꿀 수 있는 어플리케이션들을 둘 수 있는, 패널과 비슷한, 자리를 제공합니다."
+
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr "그놈"
+msgstr "마테"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
-msgstr "이 세션을 사용하면 그놈에 로그인합니다"
+msgstr "이 세션을 사용하면 마테에 로그인합니다"
 
 #: ../data/gsm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>실행 중인 프로그램이 있습니다:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:709
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:707
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -302,58 +314,58 @@ msgstr "세션 관리 옵션:"
 msgid "Show session management options"
 msgstr "세션 관리 옵션을 표시합니다"
 
-#: ../mate-session/gsm-inhibit-dialog.c:258
+#: ../mate-session/gsm-inhibit-dialog.c:256
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' 아이콘이 없습니다"
 
-#: ../mate-session/gsm-inhibit-dialog.c:657
+#: ../mate-session/gsm-inhibit-dialog.c:655
 msgid "Unknown"
 msgstr "모름"
 
-#: ../mate-session/gsm-inhibit-dialog.c:708
+#: ../mate-session/gsm-inhibit-dialog.c:706
 msgid "A program is still running:"
 msgstr "한 프로그램이 실행 중입니다:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:712
+#: ../mate-session/gsm-inhibit-dialog.c:710
 msgid "Some programs are still running:"
 msgstr "프로그램이 실행 중입니다:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:713
+#: ../mate-session/gsm-inhibit-dialog.c:711
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr "프로그램이 끝나기를 기다리는 중입니다. 이 프로그램을 중단하면 작업하던 내용을 잃어버릴 수도 있습니다."
 
-#: ../mate-session/gsm-inhibit-dialog.c:943
+#: ../mate-session/gsm-inhibit-dialog.c:941
 msgid "Switch User Anyway"
 msgstr "그래도 사용자 바꾸기"
 
-#: ../mate-session/gsm-inhibit-dialog.c:946
+#: ../mate-session/gsm-inhibit-dialog.c:944
 msgid "Log Out Anyway"
 msgstr "그래도 로그아웃"
 
-#: ../mate-session/gsm-inhibit-dialog.c:949
+#: ../mate-session/gsm-inhibit-dialog.c:947
 msgid "Suspend Anyway"
 msgstr "그래도 절전"
 
-#: ../mate-session/gsm-inhibit-dialog.c:952
+#: ../mate-session/gsm-inhibit-dialog.c:950
 msgid "Hibernate Anyway"
 msgstr "그래도 최대 절전"
 
-#: ../mate-session/gsm-inhibit-dialog.c:955
+#: ../mate-session/gsm-inhibit-dialog.c:953
 msgid "Shut Down Anyway"
 msgstr "그래도 시스템 종료"
 
-#: ../mate-session/gsm-inhibit-dialog.c:958
+#: ../mate-session/gsm-inhibit-dialog.c:956
 msgid "Reboot Anyway"
 msgstr "그래도 다시 시작"
 
-#: ../mate-session/gsm-inhibit-dialog.c:966
+#: ../mate-session/gsm-inhibit-dialog.c:964
 msgid "Lock Screen"
 msgstr "화면 잠그기"
 
-#: ../mate-session/gsm-inhibit-dialog.c:969
+#: ../mate-session/gsm-inhibit-dialog.c:967
 msgid "Cancel"
 msgstr "취소"
 
@@ -406,18 +418,18 @@ msgstr "다시 시작(_R)"
 msgid "_Shut Down"
 msgstr "끄기(_S)"
 
-#: ../mate-session/gsm-manager.c:1443 ../mate-session/gsm-manager.c:2162
+#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
 msgid "Not responding"
 msgstr "응답 없음"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: ../mate-session/gsm-xsmp-client.c:567
+#: ../mate-session/gsm-xsmp-client.c:565
 msgid "Remembered Application"
-msgstr ""
+msgstr "기억한 프로그램"
 
-#: ../mate-session/gsm-xsmp-client.c:1205
+#: ../mate-session/gsm-xsmp-client.c:1203
 msgid "This program is blocking logout."
 msgstr "이 프로그램이 로그 아웃을 멈췄습니다."
 
@@ -438,68 +450,69 @@ msgstr "ICE 리스닝 소켓을 만들 수 없습니다: %s"
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "로그인 세션을 시작할 수 없습니다 (X 서버에 연결할 수 없습니다)"
 
-#: ../mate-session/main.c:554
+#: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
 msgstr "기본 자동 시작 디렉토리 대신 사용합니다"
 
-#: ../mate-session/main.c:555
+#: ../mate-session/main.c:587
 msgid "Enable debugging code"
 msgstr "디버깅 코드를 사용합니다"
 
-#: ../mate-session/main.c:556
+#: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
 msgstr "사용자가 지정한 프로그램을 읽어들이지 않습니다"
 
-#: ../mate-session/main.c:577
+#: ../mate-session/main.c:609
 msgid " - the MATE session manager"
-msgstr "- 그놈 세션 관리자"
+msgstr "- 마테 세션 관리자"
 
-#: ../tools/mate-session-save.c:65
+#: ../tools/mate-session-save.c:69
 msgid "Log out"
 msgstr "로그아웃"
 
-#: ../tools/mate-session-save.c:66
+#: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"
 msgstr "로그아웃하면서 걸림돌이 있어도 무시합니다"
 
-#: ../tools/mate-session-save.c:67
+#: ../tools/mate-session-save.c:71
 msgid "Show logout dialog"
 msgstr "로그아웃 대화 상자를 표시합니다"
 
-#: ../tools/mate-session-save.c:68
+#: ../tools/mate-session-save.c:72
 msgid "Show shutdown dialog"
 msgstr "끄기 대화 상자를 표시합니다"
 
-#: ../tools/mate-session-save.c:69
+#: ../tools/mate-session-save.c:73
 msgid "Use dialog boxes for errors"
 msgstr "오류를 보이기 위해 대화 상자를 사용합니다"
 
 #. deprecated options
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:75
 msgid "Set the current session name"
 msgstr "현재 세션의 이름을 지정합니다"
 
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:75
 msgid "NAME"
 msgstr "<이름>"
 
-#: ../tools/mate-session-save.c:72
+#: ../tools/mate-session-save.c:76
 msgid "Kill session"
 msgstr "세션을 끝냅니다"
 
-#: ../tools/mate-session-save.c:73
+#: ../tools/mate-session-save.c:77
 msgid "Do not require confirmation"
 msgstr "확인을 받지 않습니다"
 
-#: ../tools/mate-session-save.c:117 ../tools/mate-session-save.c:125
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
 msgid "Could not connect to the session manager"
 msgstr "세션 관리자에 연결할 수 없습니다"
 
-#: ../tools/mate-session-save.c:287
+#: ../tools/mate-session-save.c:276
 msgid "Program called with conflicting options"
 msgstr "함께 사용할 수 없는 옵션을 같이 사용했습니다"
 
-#: ../tools/mate-session-inhibit.c:114
+#: ../tools/mate-session-inhibit.c:115
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -515,15 +528,15 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s <옵션...> 명령\n\n일부 세션 기능을 금지할 명령을 실행합니다.\n\n  -h, --help        이 도움말을 표시합니다\n  --version         프로그램 버전을 표시합니다\n  --app-id ID       금지 지정시 사용할 프로그램 ID\n                    (추가)\n  --reason REASON   금지 이유 (추가)\n  --inhibit ARG     콤마로 구분한 금지 대상 목록:\n                    logout, switch-user, suspend, idle, automount\n\n--inhibit 옵션이 없으면, idle로 가정합니다.\n"
 
-#: ../tools/mate-session-inhibit.c:168 ../tools/mate-session-inhibit.c:178
-#: ../tools/mate-session-inhibit.c:188
+#: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
+#: ../tools/mate-session-inhibit.c:189
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s에게 매개변수가 필요합니다\n"
 
-#: ../tools/mate-session-inhibit.c:224
+#: ../tools/mate-session-inhibit.c:225
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "%s 실행 실패\n"
