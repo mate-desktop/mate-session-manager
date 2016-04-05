@@ -1,9 +1,12 @@
 1.13.0
-  * drop obsolete build flags
-  * drop MateConf migration script
-  * fix some build warnings
-  * GTK3: fix some deprecations
-  * fix compiling for upower 0.99 series
+  * Drop MateConf migration script
+  * GTK+3: fix some deprecations
+  * Some more fixes and cleanups
+  * Translations update
+
+1.12.2
+  * Fix rare build failure with upower >= 0.99 when both systemd and upower
+    support are enabled
 
 1.12.1
   * Get rid of dependency on libmate-desktop
