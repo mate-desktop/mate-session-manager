@@ -1,4 +1,4 @@
-1.13.0
+1.14.0
   * Drop MateConf migration script
   * GTK+3: fix some deprecations
   * Some more fixes and cleanups
