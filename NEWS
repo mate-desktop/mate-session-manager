@@ -3,6 +3,7 @@
   * GTK+3: fix some deprecations
   * Some more fixes and cleanups
   * Translations update
+  * Add Changelog generation
 
 1.12.2
   * Fix rare build failure with upower >= 0.99 when both systemd and upower
