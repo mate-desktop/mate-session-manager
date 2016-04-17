@@ -27,10 +27,6 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#ifdef HAVE_UPOWER
-#include <upower.h>
-#endif
-
 #include "gsm-logout-dialog.h"
 #ifdef HAVE_SYSTEMD
 #include "gsm-systemd.h"
@@ -58,9 +54,6 @@ typedef enum {
 struct _GsmLogoutDialogPrivate
 {
         GsmDialogLogoutType  type;
-#ifdef HAVE_UPOWER
-        UpClient            *up_client;
-#endif
 #ifdef HAVE_SYSTEMD
         GsmSystemd          *systemd;
 #endif
@@ -156,9 +149,6 @@ gsm_logout_dialog_init (GsmLogoutDialog *logout_dialog)
         gtk_window_set_skip_taskbar_hint (GTK_WINDOW (logout_dialog), TRUE);
         gtk_window_set_keep_above (GTK_WINDOW (logout_dialog), TRUE);
         gtk_window_stick (GTK_WINDOW (logout_dialog));
-#ifdef HAVE_UPOWER
-        logout_dialog->priv->up_client = up_client_new ();
-#endif
 #ifdef HAVE_SYSTEMD
         if (LOGIND_RUNNING())
             logout_dialog->priv->systemd = gsm_get_systemd ();
@@ -185,12 +175,6 @@ gsm_logout_dialog_destroy (GsmLogoutDialog *logout_dialog,
                 g_source_remove (logout_dialog->priv->timeout_id);
                 logout_dialog->priv->timeout_id = 0;
         }
-#ifdef HAVE_UPOWER
-        if (logout_dialog->priv->up_client) {
-                g_object_unref (logout_dialog->priv->up_client);
-                logout_dialog->priv->up_client = NULL;
-        }
-#endif
 #ifdef HAVE_SYSTEMD
         if (logout_dialog->priv->systemd) {
                 g_object_unref (logout_dialog->priv->systemd);
@@ -214,13 +198,9 @@ gsm_logout_supports_system_suspend (GsmLogoutDialog *logout_dialog)
 #ifdef HAVE_SYSTEMD
         if (LOGIND_RUNNING())
             ret = gsm_systemd_can_suspend (logout_dialog->priv->systemd);
-#endif
-#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER_HIBERNATE_SUSPEND)
         else
 #endif
-#ifdef HAVE_UPOWER_HIBERNATE_SUSPEND
-        ret = up_client_get_can_suspend (logout_dialog->priv->up_client);
-#endif
+        ret = gsm_consolekit_can_suspend (logout_dialog->priv->consolekit);
         return ret;
 }
 
@@ -232,13 +212,9 @@ gsm_logout_supports_system_hibernate (GsmLogoutDialog *logout_dialog)
 #ifdef HAVE_SYSTEMD
         if (LOGIND_RUNNING())
             ret = gsm_systemd_can_hibernate (logout_dialog->priv->systemd);
-#endif
-#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER_HIBERNATE_SUSPEND)
         else
 #endif
-#ifdef HAVE_UPOWER_HIBERNATE_SUSPEND
-        ret = up_client_get_can_hibernate (logout_dialog->priv->up_client);
-#endif
+        ret = gsm_consolekit_can_hibernate (logout_dialog->priv->consolekit);
         return ret;
 }
 

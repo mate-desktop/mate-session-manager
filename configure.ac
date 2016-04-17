@@ -45,7 +45,6 @@ GLIB_REQUIRED=2.36.0
 GIO_REQUIRED=2.25.0
 GTK_REQUIRED=3.14.0
 DBUS_GLIB_REQUIRED=0.76
-UPOWER_REQUIRED=0.9.0
 
 dnl ====================================================================
 dnl Dependency Checks
@@ -115,32 +114,6 @@ if test "x$with_systemd" != "xno" ; then
 fi
 AM_CONDITIONAL(HAVE_SYSTEMD, test "x$use_systemd" = "xyes")
 AC_SUBST(HAVE_SYSTEMD)
-
-dnl ====================================================================
-dnl UPOWER
-dnl ====================================================================
-
-AC_ARG_ENABLE(upower,
-              AS_HELP_STRING([--enable-upower],
-              [Use upower to suspend/hibernate]),
-              enable_upower=$enableval,
-              enable_upower=no)
-if test "x$enable_upower" = "xyes"; then
-    PKG_CHECK_MODULES([UPOWER], [upower-glib >= $UPOWER_REQUIRED], has_upower=yes, has_upower=no)
-
-    if test "x$has_upower" = "xyes"; then
-        AC_DEFINE(HAVE_UPOWER, 1, [upower support])
-        AC_SUBST(UPOWER_CFLAGS)
-        AC_SUBST(UPOWER_LIBS)
-    fi
-    PKG_CHECK_MODULES([UPOWER_HIBERNATE], [upower-glib < 0.99], has_upower_hibernate_suspend=yes, has_upower_hibernate_suspend=no)
-    if test "x$has_upower_hibernate_suspend" = "xyes"; then
-        AC_DEFINE(HAVE_UPOWER_HIBERNATE_SUSPEND, 1, [upower based support for hibernate and suspend (< 0.99)])
-    fi
-
-fi
-AM_CONDITIONAL(HAVE_UPOWER, test "x$has_upower" = "xyes")
-AC_SUBST(HAVE_UPOWER)
 
 dnl ====================================================================
 dnl Check for XSync extension
@@ -368,7 +341,6 @@ echo "
 
         Default WM:               ${with_default_wm}
         Systemd support:          ${use_systemd}
-        Upower support:           ${enable_upower}
         IPv6 support:             ${have_full_ipv6}
         Backtrace support:        ${have_backtrace}
         XRender support:          ${have_xrender}

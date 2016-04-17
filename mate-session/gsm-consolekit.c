@@ -480,6 +480,65 @@ gsm_consolekit_attempt_stop (GsmConsolekit *manager)
         }
 }
 
+void
+gsm_consolekit_attempt_suspend (GsmConsolekit *manager)
+{
+        gboolean res;
+        GError  *error;
+
+        error = NULL;
+
+        if (!gsm_consolekit_ensure_ck_connection (manager, &error)) {
+                g_warning ("Could not connect to ConsoleKit: %s",
+                           error->message);
+                g_error_free (error);
+                return;
+        }
+
+        res = dbus_g_proxy_call_with_timeout (manager->priv->ck_proxy,
+                                              "Suspend",
+                                              INT_MAX,
+                                              &error,
+                                              G_TYPE_BOOLEAN, TRUE, /* interactive */
+                                              G_TYPE_INVALID,
+                                              G_TYPE_INVALID);
+
+        if (!res) {
+                g_warning ("Unable to suspend system: %s", error->message);
+                g_error_free (error);
+        }
+}
+
+void
+gsm_consolekit_attempt_hibernate (GsmConsolekit *manager)
+{
+        gboolean res;
+        GError  *error;
+
+        error = NULL;
+
+        if (!gsm_consolekit_ensure_ck_connection (manager, &error)) {
+                g_warning ("Could not connect to ConsoleKit: %s",
+                           error->message);
+                g_error_free (error);
+                return;
+        }
+
+        res = dbus_g_proxy_call_with_timeout (manager->priv->ck_proxy,
+                                              "Hibernate",
+                                              INT_MAX,
+                                              &error,
+                                              G_TYPE_BOOLEAN, TRUE, /* interactive */
+                                              G_TYPE_INVALID,
+                                              G_TYPE_INVALID);
+
+
+        if (!res) {
+                g_warning ("Unable to hibernate system: %s", error->message);
+                g_error_free (error);
+        }
+}
+
 static gboolean
 get_current_session_id (DBusConnection *connection,
                         char          **session_id)
@@ -834,6 +893,80 @@ gsm_consolekit_can_stop (GsmConsolekit *manager)
         }
 
         return can_stop;
+}
+
+gboolean
+gsm_consolekit_can_suspend (GsmConsolekit *manager)
+{
+        gboolean res;
+        gboolean can_suspend;
+        gchar *retval;
+        GError *error = NULL;
+
+        if (!gsm_consolekit_ensure_ck_connection (manager, &error)) {
+                g_warning ("Could not connect to ConsoleKit: %s",
+                           error->message);
+                g_error_free (error);
+                return FALSE;
+        }
+
+        res = dbus_g_proxy_call_with_timeout (manager->priv->ck_proxy,
+                                              "CanSuspend",
+                                              INT_MAX,
+                                              &error,
+                                              G_TYPE_INVALID,
+                                              G_TYPE_STRING, &retval,
+                                              G_TYPE_INVALID);
+
+        if (res == FALSE) {
+                g_warning ("Could not make DBUS call: %s",
+                           error->message);
+                g_error_free (error);
+                return FALSE;
+        }
+
+        can_suspend = g_strcmp0 (retval, "yes") == 0 ||
+                      g_strcmp0 (retval, "challenge") == 0;
+
+        g_free (retval);
+        return can_suspend;
+}
+
+gboolean
+gsm_consolekit_can_hibernate (GsmConsolekit *manager)
+{
+        gboolean res;
+        gboolean can_hibernate;
+        gchar *retval;
+        GError *error = NULL;
+
+        if (!gsm_consolekit_ensure_ck_connection (manager, &error)) {
+                g_warning ("Could not connect to ConsoleKit: %s",
+                           error->message);
+                g_error_free (error);
+                return FALSE;
+        }
+
+        res = dbus_g_proxy_call_with_timeout (manager->priv->ck_proxy,
+                                              "CanHibernate",
+                                              INT_MAX,
+                                              &error,
+                                              G_TYPE_INVALID,
+                                              G_TYPE_STRING, &retval,
+                                              G_TYPE_INVALID);
+
+        if (res == FALSE) {
+                g_warning ("Could not make DBUS call: %s",
+                           error->message);
+                g_error_free (error);
+                return FALSE;
+        }
+
+        can_hibernate = g_strcmp0 (retval, "yes") == 0 ||
+                        g_strcmp0 (retval, "challenge") == 0;
+
+        g_free (retval);
+        return can_hibernate;
 }
 
 gchar *
