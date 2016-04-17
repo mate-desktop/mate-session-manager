@@ -38,10 +38,6 @@
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
-#ifdef HAVE_UPOWER
-#include <upower.h>
-#endif
-
 #include <gtk/gtk.h> /* for logout dialog */
 #include <gio/gio.h> /* for gsettings */
 
@@ -150,10 +146,6 @@ struct GsmManagerPrivate
 
         DBusGProxy             *bus_proxy;
         DBusGConnection        *connection;
-#ifdef HAVE_UPOWER
-        /* Interface with other parts of the system */
-        UpClient               *up_client;
-#endif
 };
 
 enum {
@@ -1178,26 +1170,16 @@ manager_attempt_hibernate (GsmManager *manager)
 
                 gsm_systemd_attempt_hibernate (systemd);
         }
-#endif
-#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER_HIBERNATE_SUSPEND)
-        else {
-#endif
-#ifdef HAVE_UPOWER_HIBERNATE_SUSPEND
-        gboolean can_hibernate = up_client_get_can_hibernate (manager->priv->up_client);
+#else
+	GsmConsolekit *consolekit;
+	consolekit = gsm_get_consolekit ();
+
+        gboolean can_hibernate = gsm_consolekit_can_hibernate (consolekit);
         if (can_hibernate) {
                 /* lock the screen before we suspend */
                 manager_perhaps_lock (manager);
 
-                GError *error = NULL;
-                gboolean ret = up_client_hibernate_sync (manager->priv->up_client, NULL, &error);
-                if (!ret) {
-                        g_warning ("Unexpected hibernate failure: %s",
-                                   error->message);
-                        g_error_free (error);
-                }
-        }
-#endif
-#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER_HIBERNATE_SUSPEND)
+                gsm_consolekit_attempt_hibernate (consolekit);
         }
 #endif
 }
@@ -1217,27 +1199,18 @@ manager_attempt_suspend (GsmManager *manager)
 
                 gsm_systemd_attempt_suspend (systemd);
         }
-#endif
-#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER_HIBERNATE_SUSPEND)
-        else {
-#endif
-#ifdef HAVE_UPOWER_HIBERNATE_SUSPEND
-        gboolean can_suspend = up_client_get_can_suspend (manager->priv->up_client);
+#else
+	GsmConsolekit *consolekit;
+	consolekit = gsm_get_consolekit ();
+
+        gboolean can_suspend = gsm_consolekit_can_suspend (consolekit);
         if (can_suspend) {
                 /* lock the screen before we suspend */
                 manager_perhaps_lock (manager);
 
-                GError *error = NULL;
-                gboolean ret = up_client_suspend_sync (manager->priv->up_client, NULL, &error);
-                if (!ret) {
-                        g_warning ("Unexpected suspend failure: %s",
-                                   error->message);
-                        g_error_free (error);
-                }
+                gsm_consolekit_attempt_suspend (consolekit);
         }
-#endif
-#if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER_HIBERNATE_SUSPEND)
-        }
+
 #endif
 }
 
@@ -2452,12 +2425,6 @@ gsm_manager_dispose (GObject *object)
                 g_object_unref (manager->priv->settings_screensaver);
                 manager->priv->settings_screensaver = NULL;
         }
-#ifdef HAVE_UPOWER
-        if (manager->priv->up_client != NULL) {
-                g_object_unref (manager->priv->up_client);
-                manager->priv->up_client = NULL;
-        }
-#endif
         G_OBJECT_CLASS (gsm_manager_parent_class)->dispose (object);
 }
 
@@ -2664,9 +2631,6 @@ gsm_manager_init (GsmManager *manager)
                           "status-changed",
                           G_CALLBACK (on_presence_status_changed),
                           manager);
-#ifdef HAVE_UPOWER
-        manager->priv->up_client = up_client_new ();
-#endif
         g_signal_connect (manager->priv->settings_session,
                           "changed",
                           G_CALLBACK (on_gsettings_key_changed),
@@ -3376,14 +3340,6 @@ gsm_manager_can_shutdown (GsmManager *manager,
 #ifdef HAVE_SYSTEMD
         GsmSystemd *systemd;
 #endif
-        gboolean can_suspend = FALSE;
-        gboolean can_hibernate = FALSE;
-#ifdef HAVE_UPOWER
-        g_object_get (manager->priv->up_client,
-                      "can-suspend", &can_suspend,
-                      "can-hibernate", &can_hibernate,
-                      NULL);
-#endif
         g_debug ("GsmManager: CanShutdown called");
 
         g_return_val_if_fail (GSM_IS_MANAGER (manager), FALSE);
@@ -3403,8 +3359,8 @@ gsm_manager_can_shutdown (GsmManager *manager,
         *shutdown_available = !_log_out_is_locked_down (manager) &&
 	                      (gsm_consolekit_can_stop (consolekit)
                                || gsm_consolekit_can_restart (consolekit)
-                               || can_suspend
-                               || can_hibernate);
+                               || gsm_consolekit_can_suspend (consolekit)
+                               || gsm_consolekit_can_hibernate (consolekit));
         g_object_unref (consolekit);
 #ifdef HAVE_SYSTEMD
         }

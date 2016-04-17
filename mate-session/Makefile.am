@@ -7,7 +7,6 @@ noinst_PROGRAMS = 		\
 AM_CPPFLAGS =					\
 	$(MATE_SESSION_CFLAGS)		\
 	$(SYSTEMD_CFLAGS)			\
-	$(UPOWER_CFLAGS)			\
 	$(DISABLE_DEPRECATED_CFLAGS)
 
 AM_CFLAGS = $(WARN_CFLAGS)
@@ -81,7 +80,6 @@ mate_session_LDADD =				\
 	$(XEXT_LIBS)				\
 	$(MATE_SESSION_LIBS)			\
 	$(SYSTEMD_LIBS)				\
-	$(UPOWER_LIBS)				\
 	$(EXECINFO_LIBS)
 
 libgsmutil_la_SOURCES =				\
