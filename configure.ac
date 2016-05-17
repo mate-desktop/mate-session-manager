@@ -41,29 +41,11 @@ if test "x$enable_deprecations" = "xyes"; then
    AC_SUBST([DISABLE_DEPRECATED_CFLAGS])
 fi
 
-AC_MSG_CHECKING([which gtk+ version to compile against])
-AC_ARG_WITH([gtk],
-  [AS_HELP_STRING([--with-gtk=2.0|3.0],[which gtk+ version to compile against (default: 2.0)])],
-  [case "$with_gtk" in
-     2.0|3.0) ;;
-     *) AC_MSG_ERROR([invalid gtk version specified]) ;;
-   esac],
-  [with_gtk=2.0])
-AC_MSG_RESULT([$with_gtk])
-
 GLIB_REQUIRED=2.36.0
 GIO_REQUIRED=2.25.0
+GTK_REQUIRED=3.14.0
 DBUS_GLIB_REQUIRED=0.76
 UPOWER_REQUIRED=0.9.0
-
-case "$with_gtk" in
-  2.0) GTK_API_VERSION=2.0
-       GTK_REQUIRED=2.24.0
-       ;;
-  3.0) GTK_API_VERSION=3.0
-       GTK_REQUIRED=3.0.0
-       ;;
-esac
 
 dnl ====================================================================
 dnl Dependency Checks
@@ -73,13 +55,13 @@ PKG_PROG_PKG_CONFIG()
 PKG_CHECK_MODULES(MATE_SESSION,
         glib-2.0 >= $GLIB_REQUIRED
         gio-2.0 >= $GIO_REQUIRED
-        gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
+        gtk+-3.0 >= $GTK_REQUIRED
         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
 )
 
 PKG_CHECK_MODULES(SESSION_PROPERTIES,
         glib-2.0 >= $GLIB_REQUIRED
-        gtk+-$GTK_API_VERSION >= $GTK_REQUIRED
+        gtk+-3.0 >= $GTK_REQUIRED
 )
 
 PKG_CHECK_MODULES(X11, x11)
@@ -89,7 +71,7 @@ PKG_CHECK_MODULES(XEXT, xext xau)
 
 PKG_CHECK_MODULES(DBUS_GLIB, dbus-glib-1 >= $DBUS_GLIB_REQUIRED)
 
-PKG_CHECK_MODULES(EGG_SMCLIENT, gtk+-$GTK_API_VERSION)
+PKG_CHECK_MODULES(EGG_SMCLIENT, gtk+-3.0)
 
 
 dnl ====================================================================
@@ -378,7 +360,6 @@ echo "
         Maintainer mode:          ${USE_MAINTAINER_MODE}
         Warn about deprecations:  ${enable_deprecations}
 
-        GTK+ version:             ${with_gtk}
         Default WM:               ${with_default_wm}
         Systemd support:          ${use_systemd}
         Upower support:           ${enable_upower}

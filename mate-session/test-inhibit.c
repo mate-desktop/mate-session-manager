@@ -93,11 +93,7 @@ do_inhibit_for_window (GdkWindow *window)
         app_id = "caja";
         reason = "A file transfer is in progress.";
 #endif
-#if GTK_CHECK_VERSION (3, 0, 0)
         toplevel_xid = gdk_x11_window_get_xid (window);
-#else
-        toplevel_xid = GDK_DRAWABLE_XID (window);
-#endif
 
         flags = GSM_INHIBITOR_FLAG_LOGOUT
                 | GSM_INHIBITOR_FLAG_SWITCH_USER

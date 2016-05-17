@@ -224,11 +224,7 @@ _find_icon (GtkIconTheme  *icon_theme,
 
         if (info) {
                 retval = g_strdup (gtk_icon_info_get_filename (info));
-#if GTK_CHECK_VERSION (3, 8, 0)
                 g_object_unref (info);
-#else
-                gtk_icon_info_free (info);
-#endif
         } else
                 retval = NULL;
 
@@ -316,43 +312,6 @@ scale_pixbuf (GdkPixbuf *pixbuf,
 }
 
 #ifdef HAVE_XRENDER
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-/* adapted from marco */
-static GdkColormap*
-get_cmap (GdkPixmap *pixmap)
-{
-        GdkColormap *cmap;
-
-        cmap = gdk_drawable_get_colormap (pixmap);
-        if (cmap) {
-                g_object_ref (G_OBJECT (cmap));
-        }
-
-        if (cmap == NULL) {
-                if (gdk_drawable_get_depth (pixmap) == 1) {
-                        g_debug ("Using NULL colormap for snapshotting bitmap\n");
-                        cmap = NULL;
-                } else {
-                        g_debug ("Using system cmap to snapshot pixmap\n");
-                        cmap = gdk_screen_get_system_colormap (gdk_drawable_get_screen (pixmap));
-
-                        g_object_ref (G_OBJECT (cmap));
-                }
-        }
-
-        /* Be sure we aren't going to blow up due to visual mismatch */
-        if (cmap &&
-            (gdk_visual_get_depth (gdk_colormap_get_visual (cmap)) !=
-             gdk_drawable_get_depth (pixmap))) {
-                cmap = NULL;
-                g_debug ("Switching back to NULL cmap because of depth mismatch\n");
-        }
-
-        return cmap;
-}
-#endif
-
 static GdkPixbuf *
 pixbuf_get_from_pixmap (Display *display,
                         Pixmap xpixmap,
@@ -360,19 +319,12 @@ pixbuf_get_from_pixmap (Display *display,
                         int height)
 {
         GdkPixbuf   *retval;
-#if GTK_CHECK_VERSION (3, 0, 0)
         cairo_surface_t *surface;
         Visual *visual;
-#else
-        GdkDrawable *drawable;
-        GdkColormap *cmap;
-        cmap = NULL;
-#endif
         retval = NULL;
 
         g_debug ("GsmInhibitDialog: getting foreign pixmap for %u", (guint)xpixmap);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
         visual = DefaultVisual (display, 0);
         surface = cairo_xlib_surface_create (display,
                                              xpixmap,
@@ -386,27 +338,6 @@ pixbuf_get_from_pixmap (Display *display,
                                                       width, height);
                 cairo_surface_destroy (surface);
         }
-#else
-        drawable = gdk_pixmap_foreign_new (xpixmap);
-        if (GDK_IS_PIXMAP (drawable)) {
-                cmap = get_cmap (drawable);
-
-                g_debug ("GsmInhibitDialog: getting pixbuf w=%d h=%d", width, height);
-
-                retval = gdk_pixbuf_get_from_drawable (NULL,
-                                                       drawable,
-                                                       cmap,
-                                                       0, 0,
-                                                       0, 0,
-                                                       width, height);
-        }
-        if (cmap) {
-                g_object_unref (G_OBJECT (cmap));
-        }
-        if (drawable) {
-                g_object_unref (G_OBJECT (drawable));
-        }
-#endif
 
         return retval;
 }
@@ -495,11 +426,7 @@ get_pixbuf_for_window (GdkDisplay *gdkdisplay,
                 gdk_error_trap_push ();
                 XFreePixmap (display, xpixmap);
                 gdk_display_sync (gdkdisplay);
-#if GTK_CHECK_VERSION (3, 0, 0)
                 gdk_error_trap_pop_ignored ();
-#else
-                gdk_error_trap_pop ();
-#endif
         }
 
         if (pixbuf != NULL) {
@@ -1040,11 +967,7 @@ gsm_inhibit_dialog_constructor (GType                  type,
                 dialog->priv->have_xrender = FALSE;
         }
         gdk_display_sync (gdkdisplay);
-#if GTK_CHECK_VERSION (3, 0, 0)
         gdk_error_trap_pop_ignored ();
-#else
-        gdk_error_trap_pop ();
-#endif
 #endif /* HAVE_XRENDER */
 
         /* FIXME: turn this on when it is ready */

@@ -196,11 +196,7 @@ msm_compat_gnome_smproxy_startup (void)
                    (unsigned char *) (void *) &gnome_smproxy_window, 1);
 
   XSync (dpy, False);
-#if GTK_CHECK_VERSION (3, 0, 0)
   gdk_error_trap_pop_ignored ();
-#else
-  gdk_error_trap_pop ();
-#endif
 }
 
 
@@ -215,11 +211,7 @@ msm_compat_gnome_smproxy_shutdown (void)
       XSync (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), False);
       gnome_smproxy_window = None;
     }
-#if GTK_CHECK_VERSION (3, 0, 0)
   gdk_error_trap_pop_ignored ();
-#else
-  gdk_error_trap_pop ();
-#endif
 }
 
 
