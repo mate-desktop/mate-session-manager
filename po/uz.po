@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 13:15+0300\n"
-"PO-Revision-Date: 2016-04-03 12:01+0000\n"
+"PO-Revision-Date: 2016-05-08 13:43+0000\n"
 "Last-Translator: muzaffar habibullayev <muzaffarlearner@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/mate/MATE/language/uz/)\n"
 "MIME-Version: 1.0\n"
@@ -25,19 +25,19 @@ msgstr "Buyruqni tanlash"
 
 #: ../capplet/gsm-app-dialog.c:197
 msgid "Add Startup Program"
-msgstr ""
+msgstr "Ishga tushadigan Dasturni Qo'shish"
 
 #: ../capplet/gsm-app-dialog.c:201
 msgid "Edit Startup Program"
-msgstr ""
+msgstr "Ishga tushadigan Dasturni Tahrirlash"
 
 #: ../capplet/gsm-app-dialog.c:490
 msgid "The startup command cannot be empty"
-msgstr ""
+msgstr "Ishga tushish buyrug'i bo'sh bo'lishi mumkin emas"
 
 #: ../capplet/gsm-app-dialog.c:496
 msgid "The startup command is not valid"
-msgstr ""
+msgstr "Ishga tushish buyrug'i yaroqli emas"
 
 #: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
@@ -53,7 +53,7 @@ msgstr "Dastur"
 
 #: ../capplet/gsm-properties-dialog.c:748
 msgid "Startup Applications Preferences"
-msgstr ""
+msgstr "Ishga tushuvchi Dasturlar Xususiyatlari"
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
@@ -69,11 +69,11 @@ msgstr "Dastur versiyasi"
 
 #: ../capplet/main.c:54
 msgid "Could not display help document"
-msgstr ""
+msgstr "Yordam hujjatini koʻrsatib boʻlmadi"
 
 #: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Joriy seans boshlanish vaqti"
 
 #: ../data/org.mate.session.gschema.xml.in.h:2
 msgid "Unix time of the start of the current session."
@@ -85,7 +85,7 @@ msgstr "Seanslarni saqlash"
 
 #: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr ""
+msgstr "Agar yoqilsa,mate-session seansni avtomatik saqlaydi."
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
@@ -284,7 +284,7 @@ msgstr "Element ishga tushiriladigan emas"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "Seans boshqaruvchisiga bogʻlanishni o'chirish"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -304,11 +304,11 @@ msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr ""
+msgstr "Seans boshqaruvi xossalari:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr ""
+msgstr "Seans boshqaruvi xossalarini ko'rsatish"
 
 #: ../mate-session/gsm-inhibit-dialog.c:256
 #, c-format
@@ -331,7 +331,7 @@ msgstr "Ayrim dasturlar hali ham ishlamoqda:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr ""
+msgstr "Dasturlar yakunlanishi kutilmoqda. Ushbu dasturlarga xalal berish ishingiz yo'qolishiga sabab bo'lishi mumkin."
 
 #: ../mate-session/gsm-inhibit-dialog.c:941
 msgid "Switch User Anyway"

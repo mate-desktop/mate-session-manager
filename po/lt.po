@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 13:15+0300\n"
-"PO-Revision-Date: 2016-03-17 16:30+0000\n"
+"PO-Revision-Date: 2016-05-23 08:36+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -358,7 +358,7 @@ msgstr "Vis tiek išjungti"
 
 #: ../mate-session/gsm-inhibit-dialog.c:956
 msgid "Reboot Anyway"
-msgstr "Įkelti iš naujo bet kokiu atveju"
+msgstr "Paleisti iš naujo bet kokiu atveju"
 
 #: ../mate-session/gsm-inhibit-dialog.c:964
 msgid "Lock Screen"
@@ -407,7 +407,7 @@ msgstr "Išjungti sistemą dabar?"
 
 #: ../mate-session/gsm-logout-dialog.c:494
 msgid "S_uspend"
-msgstr "_Užmigdyti"
+msgstr "_Pristabdyti"
 
 #: ../mate-session/gsm-logout-dialog.c:500
 msgid "_Hibernate"
