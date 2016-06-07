@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 13:15+0300\n"
-"PO-Revision-Date: 2016-03-31 16:01+0000\n"
+"PO-Revision-Date: 2016-05-09 15:34+0000\n"
 "Last-Translator: Alexandre Raymond\n"
 "Language-Team: Franco-Provençal (Arpitan) (http://www.transifex.com/mate/MATE/language/frp/)\n"
 "MIME-Version: 1.0\n"
@@ -115,7 +115,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
-msgstr ""
+msgstr "Sèssions prèdèfinia"
 
 #: ../data/org.mate.session.gschema.xml.in.h:12
 msgid "List of applications that are part of the default session."
@@ -389,7 +389,7 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:473
 msgid "_Switch User"
-msgstr ""
+msgstr "Changér d’usancér"
 
 #: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Log Out"
