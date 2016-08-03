@@ -441,7 +441,9 @@ gsm_get_dialog (GsmDialogLogoutType type,
                 guint32             activate_time)
 {
         GsmLogoutDialog *logout_dialog;
+#if !GTK_CHECK_VERSION (3, 0, 0)
         GtkWidget       *dialog_image;
+#endif
         GtkWidget       *hbox;
         const char      *primary_text;
         const char      *icon_name;
@@ -520,8 +522,9 @@ gsm_get_dialog (GsmDialogLogoutType type,
         default:
                 g_assert_not_reached ();
         }
-
+#if !GTK_CHECK_VERSION (3, 0, 0)
         dialog_image = gtk_message_dialog_get_image (GTK_MESSAGE_DIALOG (logout_dialog));
+#endif
 
 #if GTK_CHECK_VERSION (3, 0, 0)
         hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
@@ -539,8 +542,10 @@ gsm_get_dialog (GsmDialogLogoutType type,
         gtk_widget_show_all (hbox);
         gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (logout_dialog))), hbox);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
         gtk_image_set_from_icon_name (GTK_IMAGE (dialog_image),
                                       icon_name, GTK_ICON_SIZE_DIALOG);
+#endif
         gtk_window_set_icon_name (GTK_WINDOW (logout_dialog), icon_name);
         gtk_window_set_position (GTK_WINDOW (logout_dialog), GTK_WIN_POS_CENTER_ALWAYS);
         gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (logout_dialog), primary_text);
