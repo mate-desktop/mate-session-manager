@@ -441,7 +441,6 @@ gsm_get_dialog (GsmDialogLogoutType type,
                 guint32             activate_time)
 {
         GsmLogoutDialog *logout_dialog;
-        GtkWidget       *dialog_image;
         GtkWidget       *hbox;
         const char      *primary_text;
         const char      *icon_name;
@@ -521,8 +520,6 @@ gsm_get_dialog (GsmDialogLogoutType type,
                 g_assert_not_reached ();
         }
 
-        dialog_image = gtk_message_dialog_get_image (GTK_MESSAGE_DIALOG (logout_dialog));
-
         hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
         logout_dialog->priv->progressbar = gtk_progress_bar_new ();
         gtk_progress_bar_set_show_text (GTK_PROGRESS_BAR (logout_dialog->priv->progressbar), TRUE);
@@ -533,8 +530,6 @@ gsm_get_dialog (GsmDialogLogoutType type,
         gtk_widget_show_all (hbox);
         gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (logout_dialog))), hbox);
 
-        gtk_image_set_from_icon_name (GTK_IMAGE (dialog_image),
-                                      icon_name, GTK_ICON_SIZE_DIALOG);
         gtk_window_set_icon_name (GTK_WINDOW (logout_dialog), icon_name);
         gtk_window_set_position (GTK_WINDOW (logout_dialog), GTK_WIN_POS_CENTER_ALWAYS);
         gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (logout_dialog), primary_text);
