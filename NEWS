@@ -1,3 +1,7 @@
+1.14.1
+  * GTK+3: fix critical warning in logout/shutdown dialogs
+  * Translations update
+
 1.14.0
   * Drop MateConf migration script
   * GTK+3: fix some deprecations
