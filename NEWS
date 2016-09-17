@@ -1,7 +1,11 @@
-1.15.0
-
+1.16.0
+  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and --with-gtk
+    build option
   * Translations update
-  * require GTK+ >= 3.14, drop GTK+2 code and --with-gtk build option
+
+1.14.1
+  * GTK+3: fix critical warning in logout/shutdown dialogs
+  * Translations update
 
 1.14.0
   * Drop MateConf migration script
