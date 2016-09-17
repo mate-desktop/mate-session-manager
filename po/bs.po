@@ -5,13 +5,14 @@
 # Translators:
 # Kemal Sanjta <gomez@lugzdk.ba>, 2004
 # Samir Marić <samir@lugbih.org>, 2002
+# Sky Lion <xskylionx@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 13:15+0300\n"
-"PO-Revision-Date: 2015-12-14 10:18+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2016-07-01 14:35+0300\n"
+"PO-Revision-Date: 2016-09-05 14:46+0000\n"
+"Last-Translator: Sky Lion <xskylionx@gmail.com>\n"
 "Language-Team: Bosnian (http://www.transifex.com/mate/MATE/language/bs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,11 +32,11 @@ msgstr "Dodaj startup program"
 msgid "Edit Startup Program"
 msgstr "Izmjeni startup program"
 
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/gsm-app-dialog.c:486
 msgid "The startup command cannot be empty"
 msgstr "Startup komanda ne može biti prazna"
 
-#: ../capplet/gsm-app-dialog.c:496
+#: ../capplet/gsm-app-dialog.c:492
 msgid "The startup command is not valid"
 msgstr ""
 
@@ -45,27 +46,27 @@ msgstr ""
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr ""
+msgstr "Ikona"
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/gsm-properties-dialog.c:748
+#: ../capplet/gsm-properties-dialog.c:741
 msgid "Startup Applications Preferences"
 msgstr ""
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr ""
+msgstr "Bez imena"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
-msgstr ""
+msgstr "Bez opisa"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr ""
+msgstr "Verzija ove aplikacije"
 
 #: ../capplet/main.c:54
 msgid "Could not display help document"
@@ -157,7 +158,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
-msgstr ""
+msgstr "Ploča"
 
 #: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
@@ -167,7 +168,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr ""
+msgstr "Upravitelj datoteka"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
@@ -187,7 +188,7 @@ msgstr ""
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr ""
+msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
@@ -197,7 +198,7 @@ msgstr ""
 msgid "<b>Some programs are still running:</b>"
 msgstr ""
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:707
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:634
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -229,7 +230,7 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr ""
+msgstr "Opcije"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
@@ -241,11 +242,11 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
-msgstr ""
+msgstr "Ko_manda:"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr ""
+msgstr "_Ime:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
@@ -260,7 +261,7 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr ""
+msgstr "Pokrećem %s"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
@@ -280,7 +281,7 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:1385
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "Nije moguće pokrenuti"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
@@ -292,7 +293,7 @@ msgstr ""
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr ""
+msgstr "FAJL"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
@@ -310,60 +311,60 @@ msgstr ""
 msgid "Show session management options"
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:256
+#: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
 msgid "Icon '%s' not found"
-msgstr ""
+msgstr "Ikona '%s' nije pronađena"
 
-#: ../mate-session/gsm-inhibit-dialog.c:655
+#: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
 msgstr "Nepoznat"
 
-#: ../mate-session/gsm-inhibit-dialog.c:706
+#: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
-msgstr ""
+msgstr "Jedan program je još uvijek pokrenut:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:710
+#: ../mate-session/gsm-inhibit-dialog.c:637
 msgid "Some programs are still running:"
-msgstr ""
+msgstr "Neki programi su još uvijek pokrenuti:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:711
+#: ../mate-session/gsm-inhibit-dialog.c:638
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:941
+#: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:944
+#: ../mate-session/gsm-inhibit-dialog.c:871
 msgid "Log Out Anyway"
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:947
+#: ../mate-session/gsm-inhibit-dialog.c:874
 msgid "Suspend Anyway"
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:950
+#: ../mate-session/gsm-inhibit-dialog.c:877
 msgid "Hibernate Anyway"
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:953
+#: ../mate-session/gsm-inhibit-dialog.c:880
 msgid "Shut Down Anyway"
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:956
+#: ../mate-session/gsm-inhibit-dialog.c:883
 msgid "Reboot Anyway"
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:964
+#: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
-msgstr ""
+msgstr "Zaključaj Ekran"
 
-#: ../mate-session/gsm-inhibit-dialog.c:967
+#: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
-msgstr ""
+msgstr "Odustani"
 
 #: ../mate-session/gsm-logout-dialog.c:332
 #, c-format
@@ -493,7 +494,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:75
 msgid "NAME"
-msgstr ""
+msgstr "IME"
 
 #: ../tools/mate-session-save.c:76
 msgid "Kill session"
