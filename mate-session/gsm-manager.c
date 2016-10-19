@@ -1086,7 +1086,7 @@ manager_switch_user (GsmManager *manager)
                         g_error_free (error);
                 }
         }
-        else if (process_is_running("gdm") || process_is_running("gdm3")) {
+        else if (process_is_running("gdm") || process_is_running("gdm3") || process_is_running("gdm-binary")) {
                 /* GDM */
                 command = g_strdup_printf ("%s %s",
                                                GDM_FLEXISERVER_COMMAND,
