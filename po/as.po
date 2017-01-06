@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 13:15+0300\n"
+"POT-Creation-Date: 2016-07-01 14:35+0300\n"
 "PO-Revision-Date: 2015-12-14 10:18+0000\n"
 "Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Assamese (http://www.transifex.com/mate/MATE/language/as/)\n"
@@ -30,11 +30,11 @@ msgstr "প্ৰাৰম্ভিক কাৰ্য্যক্ৰম যো�
 msgid "Edit Startup Program"
 msgstr "প্ৰাৰম্ভিক কাৰ্য্যক্ৰম সম্পাদন কৰক"
 
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/gsm-app-dialog.c:486
 msgid "The startup command cannot be empty"
 msgstr "প্ৰাৰম্ভিক আদেশ ৰিক্ত ৰখা নাযাব"
 
-#: ../capplet/gsm-app-dialog.c:496
+#: ../capplet/gsm-app-dialog.c:492
 msgid "The startup command is not valid"
 msgstr "প্ৰাৰম্ভিক আদেশ অবৈধ"
 
@@ -50,7 +50,7 @@ msgstr "আইকন"
 msgid "Program"
 msgstr "কাৰ্য্যক্ৰম"
 
-#: ../capplet/gsm-properties-dialog.c:748
+#: ../capplet/gsm-properties-dialog.c:741
 msgid "Startup Applications Preferences"
 msgstr "প্ৰাৰম্ভিক অনুপ্ৰয়োগ সংক্ৰান্ত পছন্দ"
 
@@ -196,7 +196,7 @@ msgstr "এই অধিবেশনে আপোনাক MATE ত প্ৰৱ
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>কিছুমান কাৰ্য্যক্ৰম এতিয়াও চলি আছে:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:707
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:634
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -309,58 +309,58 @@ msgstr "অধিবেশন পৰিচালনা সংক্ৰান্�
 msgid "Show session management options"
 msgstr "অধিবেশন পৰিচালনা সংক্ৰান্ত বিকল্প প্ৰদৰ্শন কৰা হ'ব"
 
-#: ../mate-session/gsm-inhibit-dialog.c:256
+#: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' নামক আইকন পোৱা নাযায়"
 
-#: ../mate-session/gsm-inhibit-dialog.c:655
+#: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
 msgstr "অজ্ঞাত"
 
-#: ../mate-session/gsm-inhibit-dialog.c:706
+#: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
 msgstr "এটা অনুপ্ৰয়োগ বৰ্তমানে চলি আছে:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:710
+#: ../mate-session/gsm-inhibit-dialog.c:637
 msgid "Some programs are still running:"
 msgstr "কিছুমান অনুপ্ৰয়োগ চলি আছে:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:711
+#: ../mate-session/gsm-inhibit-dialog.c:638
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr "অনুপ্ৰয়োগ সমাপ্তিৰ অপেক্ষা কৰা হৈছে । অনুপ্ৰয়োগ বিঘ্নিত হ'লে সঞ্চালিত কামৰ ফল আঁতৰুৱাৰ সম্ভাৱনা আছে ।"
 
-#: ../mate-session/gsm-inhibit-dialog.c:941
+#: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
 msgstr "তথাপিও ব্যৱহাৰকৰ্তা হিচাপ পৰিবৰ্তন কৰা হ'ব"
 
-#: ../mate-session/gsm-inhibit-dialog.c:944
+#: ../mate-session/gsm-inhibit-dialog.c:871
 msgid "Log Out Anyway"
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:947
+#: ../mate-session/gsm-inhibit-dialog.c:874
 msgid "Suspend Anyway"
 msgstr "তথাপিও স্থগিত কৰা হ'ব"
 
-#: ../mate-session/gsm-inhibit-dialog.c:950
+#: ../mate-session/gsm-inhibit-dialog.c:877
 msgid "Hibernate Anyway"
 msgstr "তথাপিও নিদ্ৰিত কৰা হ'ব"
 
-#: ../mate-session/gsm-inhibit-dialog.c:953
+#: ../mate-session/gsm-inhibit-dialog.c:880
 msgid "Shut Down Anyway"
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:956
+#: ../mate-session/gsm-inhibit-dialog.c:883
 msgid "Reboot Anyway"
 msgstr "তথাপিও পুনৰাৰম্ভ কৰা হ'ব"
 
-#: ../mate-session/gsm-inhibit-dialog.c:964
+#: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
 msgstr "পৰ্দা লক কৰক"
 
-#: ../mate-session/gsm-inhibit-dialog.c:967
+#: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
 msgstr "বাতিল কৰক"
 

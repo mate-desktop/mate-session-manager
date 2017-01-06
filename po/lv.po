@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 13:15+0300\n"
+"POT-Creation-Date: 2016-07-01 14:35+0300\n"
 "PO-Revision-Date: 2015-12-14 10:18+0000\n"
 "Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Latvian (http://www.transifex.com/mate/MATE/language/lv/)\n"
@@ -34,11 +34,11 @@ msgstr "Pievienot starta programmu"
 msgid "Edit Startup Program"
 msgstr "Rediģēt starta programmu"
 
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/gsm-app-dialog.c:486
 msgid "The startup command cannot be empty"
 msgstr "Starta komanda nevar būt tukša"
 
-#: ../capplet/gsm-app-dialog.c:496
+#: ../capplet/gsm-app-dialog.c:492
 msgid "The startup command is not valid"
 msgstr "Starta komanda nav derīga"
 
@@ -54,7 +54,7 @@ msgstr "Ikona"
 msgid "Program"
 msgstr "Programma"
 
-#: ../capplet/gsm-properties-dialog.c:748
+#: ../capplet/gsm-properties-dialog.c:741
 msgid "Startup Applications Preferences"
 msgstr "Starta programmu iestatījumi"
 
@@ -200,7 +200,7 @@ msgstr "Šī sesija piesaka jūs MATE videi"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Dažas programmas joprojām darbojas:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:707
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:634
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -313,58 +313,58 @@ msgstr "Sesijas vadības opcijas:"
 msgid "Show session management options"
 msgstr "Rādīt sesijas vadības opcijas"
 
-#: ../mate-session/gsm-inhibit-dialog.c:256
+#: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Ikona '%s' netika atrasta"
 
-#: ../mate-session/gsm-inhibit-dialog.c:655
+#: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
 msgstr "Nezināms"
 
-#: ../mate-session/gsm-inhibit-dialog.c:706
+#: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
 msgstr "Programma joprojām darbojas:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:710
+#: ../mate-session/gsm-inhibit-dialog.c:637
 msgid "Some programs are still running:"
 msgstr "Dažas programmas joprojām darbojas:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:711
+#: ../mate-session/gsm-inhibit-dialog.c:638
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr "Gaida programmu darbības beigas. Programmu pārtraukšana var novest pie jūsu darba rezultātu zaudēšanas."
 
-#: ../mate-session/gsm-inhibit-dialog.c:941
+#: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
 msgstr "Tomēr nomainīt lietotāju"
 
-#: ../mate-session/gsm-inhibit-dialog.c:944
+#: ../mate-session/gsm-inhibit-dialog.c:871
 msgid "Log Out Anyway"
 msgstr "Atteikties jebkurā gadījumā"
 
-#: ../mate-session/gsm-inhibit-dialog.c:947
+#: ../mate-session/gsm-inhibit-dialog.c:874
 msgid "Suspend Anyway"
 msgstr "Tomēr iesnaudināt"
 
-#: ../mate-session/gsm-inhibit-dialog.c:950
+#: ../mate-session/gsm-inhibit-dialog.c:877
 msgid "Hibernate Anyway"
 msgstr "Tomēr sastindzināt"
 
-#: ../mate-session/gsm-inhibit-dialog.c:953
+#: ../mate-session/gsm-inhibit-dialog.c:880
 msgid "Shut Down Anyway"
 msgstr "Izslēgt jebkurā gadījumā"
 
-#: ../mate-session/gsm-inhibit-dialog.c:956
+#: ../mate-session/gsm-inhibit-dialog.c:883
 msgid "Reboot Anyway"
 msgstr "Tomēr pārstartēt"
 
-#: ../mate-session/gsm-inhibit-dialog.c:964
+#: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
 msgstr "Noslēgt ekrānu"
 
-#: ../mate-session/gsm-inhibit-dialog.c:967
+#: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
 msgstr "Atcelt"
 

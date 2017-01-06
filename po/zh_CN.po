@@ -7,14 +7,14 @@
 # liushuyu011 <liushuyu011@gmail.com>, 2015
 # Tao Wei <weitao1979@gmail.com>, 2009
 # Updated by Funda Wang <fundawang@linux.net.cn>, 2003
-# Wylmer Wang <wantinghard@gmail.com>, 2014
+# Wylmer Wang, 2014
 # Yang Zhang <zyangmath@gmail.com>, 2009
 # Mingcong Bai <jeffbai@aosc.xyz>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 13:15+0300\n"
+"POT-Creation-Date: 2016-07-01 14:35+0300\n"
 "PO-Revision-Date: 2015-12-14 10:28+0000\n"
 "Last-Translator: liushuyu011 <liushuyu011@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/mate/MATE/language/zh_CN/)\n"
@@ -36,11 +36,11 @@ msgstr "添加启动程序"
 msgid "Edit Startup Program"
 msgstr "编辑启动程序"
 
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/gsm-app-dialog.c:486
 msgid "The startup command cannot be empty"
 msgstr "启动命令不能为空"
 
-#: ../capplet/gsm-app-dialog.c:496
+#: ../capplet/gsm-app-dialog.c:492
 msgid "The startup command is not valid"
 msgstr "启动命令无效"
 
@@ -56,7 +56,7 @@ msgstr "图标"
 msgid "Program"
 msgstr "程序"
 
-#: ../capplet/gsm-properties-dialog.c:748
+#: ../capplet/gsm-properties-dialog.c:741
 msgid "Startup Applications Preferences"
 msgstr "启动应用程序首选项"
 
@@ -202,7 +202,7 @@ msgstr "此会话将您登录到 MATE"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>某些程序仍在运行中：</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:707
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:634
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -315,58 +315,58 @@ msgstr "会话管理选项："
 msgid "Show session management options"
 msgstr "显示会话管理选项"
 
-#: ../mate-session/gsm-inhibit-dialog.c:256
+#: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "图标“%s”未找到"
 
-#: ../mate-session/gsm-inhibit-dialog.c:655
+#: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
 msgstr "未知"
 
-#: ../mate-session/gsm-inhibit-dialog.c:706
+#: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
 msgstr "程序仍在运行中："
 
-#: ../mate-session/gsm-inhibit-dialog.c:710
+#: ../mate-session/gsm-inhibit-dialog.c:637
 msgid "Some programs are still running:"
 msgstr "程序仍在运行中："
 
-#: ../mate-session/gsm-inhibit-dialog.c:711
+#: ../mate-session/gsm-inhibit-dialog.c:638
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr "正在等候程序完成。中断程序可能导致您的工作成果丢失。"
 
-#: ../mate-session/gsm-inhibit-dialog.c:941
+#: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
 msgstr "强制切换用户"
 
-#: ../mate-session/gsm-inhibit-dialog.c:944
+#: ../mate-session/gsm-inhibit-dialog.c:871
 msgid "Log Out Anyway"
 msgstr "强制注销"
 
-#: ../mate-session/gsm-inhibit-dialog.c:947
+#: ../mate-session/gsm-inhibit-dialog.c:874
 msgid "Suspend Anyway"
 msgstr "强制挂起"
 
-#: ../mate-session/gsm-inhibit-dialog.c:950
+#: ../mate-session/gsm-inhibit-dialog.c:877
 msgid "Hibernate Anyway"
 msgstr "强制休眠"
 
-#: ../mate-session/gsm-inhibit-dialog.c:953
+#: ../mate-session/gsm-inhibit-dialog.c:880
 msgid "Shut Down Anyway"
 msgstr "强制关机"
 
-#: ../mate-session/gsm-inhibit-dialog.c:956
+#: ../mate-session/gsm-inhibit-dialog.c:883
 msgid "Reboot Anyway"
 msgstr "强制重新启动"
 
-#: ../mate-session/gsm-inhibit-dialog.c:964
+#: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
 msgstr "锁定屏幕"
 
-#: ../mate-session/gsm-inhibit-dialog.c:967
+#: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
 msgstr "取消"
 

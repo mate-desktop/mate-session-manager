@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 13:15+0300\n"
+"POT-Creation-Date: 2016-07-01 14:35+0300\n"
 "PO-Revision-Date: 2016-05-20 00:43+0000\n"
 "Last-Translator: Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/mate/MATE/language/sv/)\n"
@@ -37,11 +37,11 @@ msgstr "Lägg till uppstartsprogram"
 msgid "Edit Startup Program"
 msgstr "Redigera uppstartsprogram"
 
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/gsm-app-dialog.c:486
 msgid "The startup command cannot be empty"
 msgstr "Uppstartsprogrammets kommando får inte vara tomt"
 
-#: ../capplet/gsm-app-dialog.c:496
+#: ../capplet/gsm-app-dialog.c:492
 msgid "The startup command is not valid"
 msgstr "Uppstartsprogrammets kommando är inte giltigt"
 
@@ -57,7 +57,7 @@ msgstr "Ikon"
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/gsm-properties-dialog.c:748
+#: ../capplet/gsm-properties-dialog.c:741
 msgid "Startup Applications Preferences"
 msgstr "Inställningar för uppstartsprogram"
 
@@ -203,7 +203,7 @@ msgstr "Denna session loggar in dig i MATE"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Några program är fortfarande igång:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:707
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:634
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -316,58 +316,58 @@ msgstr "Flaggor för sessionshantering:"
 msgid "Show session management options"
 msgstr "Visa flaggor för sessionshantering"
 
-#: ../mate-session/gsm-inhibit-dialog.c:256
+#: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Ikonen \"%s\" hittades inte"
 
-#: ../mate-session/gsm-inhibit-dialog.c:655
+#: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
 msgstr "Okänt"
 
-#: ../mate-session/gsm-inhibit-dialog.c:706
+#: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
 msgstr "Ett program körs fortfarande:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:710
+#: ../mate-session/gsm-inhibit-dialog.c:637
 msgid "Some programs are still running:"
 msgstr "Några program körs fortfarande:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:711
+#: ../mate-session/gsm-inhibit-dialog.c:638
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr "Väntar på att programmen ska köras färdigt.  Avbryta dessa program kan innebära att du förlorar data."
 
-#: ../mate-session/gsm-inhibit-dialog.c:941
+#: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
 msgstr "Växla användare ändå"
 
-#: ../mate-session/gsm-inhibit-dialog.c:944
+#: ../mate-session/gsm-inhibit-dialog.c:871
 msgid "Log Out Anyway"
 msgstr "Logga ut ändå"
 
-#: ../mate-session/gsm-inhibit-dialog.c:947
+#: ../mate-session/gsm-inhibit-dialog.c:874
 msgid "Suspend Anyway"
 msgstr "Försätt i vänteläge ändå"
 
-#: ../mate-session/gsm-inhibit-dialog.c:950
+#: ../mate-session/gsm-inhibit-dialog.c:877
 msgid "Hibernate Anyway"
 msgstr "Försätt i viloläge ändå"
 
-#: ../mate-session/gsm-inhibit-dialog.c:953
+#: ../mate-session/gsm-inhibit-dialog.c:880
 msgid "Shut Down Anyway"
 msgstr "Stäng av ändå"
 
-#: ../mate-session/gsm-inhibit-dialog.c:956
+#: ../mate-session/gsm-inhibit-dialog.c:883
 msgid "Reboot Anyway"
 msgstr "Starta om ändå"
 
-#: ../mate-session/gsm-inhibit-dialog.c:964
+#: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
 msgstr "Lås skärmen"
 
-#: ../mate-session/gsm-inhibit-dialog.c:967
+#: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
 msgstr "Avbryt"
 

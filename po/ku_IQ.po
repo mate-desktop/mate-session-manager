@@ -3,35 +3,36 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Rasti K5 <rasti.khdhr@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 14:35+0300\n"
-"PO-Revision-Date: 2015-12-14 10:18+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
-"Language-Team: Hausa (http://www.transifex.com/mate/MATE/language/ha/)\n"
+"PO-Revision-Date: 2016-09-16 23:35+0000\n"
+"Last-Translator: Rasti K5 <rasti.khdhr@gmail.com>\n"
+"Language-Team: Kurdish (Iraq) (http://www.transifex.com/mate/MATE/language/ku_IQ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ha\n"
+"Language: ku_IQ\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
-msgstr ""
+msgstr "هەڵبژاردنی فەرمان"
 
 #: ../capplet/gsm-app-dialog.c:197
 msgid "Add Startup Program"
-msgstr "Ƙara Shirin Farawa"
+msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:201
 msgid "Edit Startup Program"
-msgstr "Shirya Shirin Farawa"
+msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:486
 msgid "The startup command cannot be empty"
-msgstr "Umarnin farawa ba zai iya zama mai maras komai ba"
+msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:492
 msgid "The startup command is not valid"
@@ -39,15 +40,15 @@ msgstr ""
 
 #: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
-msgstr ""
+msgstr "تواناپێدراو"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr ""
+msgstr "وێنۆچکە"
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
-msgstr "Shiri"
+msgstr "بەرنامە"
 
 #: ../capplet/gsm-properties-dialog.c:741
 msgid "Startup Applications Preferences"
@@ -55,15 +56,15 @@ msgstr ""
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr ""
+msgstr "بێناو"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
-msgstr ""
+msgstr "بێ پێناسە"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr ""
+msgstr "وەشانی ئەم نەرمەواڵەیە"
 
 #: ../capplet/main.c:54
 msgid "Could not display help document"
@@ -79,7 +80,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
-msgstr "Adana zaman shawara"
+msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
@@ -87,11 +88,11 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
-msgstr "Tambaya ga fitarwa"
+msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Idan an fara, zaman shawarar-mate zai yi tambaya ga mai amfani da kwamfyuta kafin ya ƙarasar da zaman shawarar."
+msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -145,7 +146,7 @@ msgstr ""
 #: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
-msgstr "Manajan Taga"
+msgstr "بەڕێوەبەری پەنجەرە"
 
 #: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
@@ -165,7 +166,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr ""
+msgstr "بەڕێوەبەری پەڕگە"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
@@ -185,7 +186,7 @@ msgstr ""
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr ""
+msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
@@ -211,11 +212,11 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
-msgstr "Ƙari na shiryoyin _farawa:"
+msgstr ""
 
 #: ../data/session-properties.ui.h:2
 msgid "Startup Programs"
-msgstr "Shiryoyin Farawa"
+msgstr ""
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
@@ -227,15 +228,15 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr ""
+msgstr "بژاردەکان"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
-msgstr ""
+msgstr "گەڕان..."
 
 #: ../data/session-properties.ui.h:7
 msgid "Comm_ent:"
-msgstr ""
+msgstr "سە_رنج:"
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
@@ -243,7 +244,7 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr ""
+msgstr "_ناو:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
@@ -290,7 +291,7 @@ msgstr ""
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr ""
+msgstr "پەڕگە"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
@@ -311,11 +312,11 @@ msgstr ""
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
 msgid "Icon '%s' not found"
-msgstr ""
+msgstr "وێنۆچکەی '%s' نەدۆزرایەوە"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "Wanda ba'a sani ba"
+msgstr "نەناسراو"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -349,7 +350,7 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:880
 msgid "Shut Down Anyway"
-msgstr ""
+msgstr "کوژاندنەوە بەهەر شێوەیەک"
 
 #: ../mate-session/gsm-inhibit-dialog.c:883
 msgid "Reboot Anyway"
@@ -361,7 +362,7 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
-msgstr ""
+msgstr "هەڵوەشاندنەوە"
 
 #: ../mate-session/gsm-logout-dialog.c:332
 #, c-format
@@ -392,11 +393,11 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:482
 msgid "_Log Out"
-msgstr ""
+msgstr "_چوونەدەر"
 
 #: ../mate-session/gsm-logout-dialog.c:488
 msgid "Shut down this system now?"
-msgstr ""
+msgstr "ئەم سیستەمە ئێستا بکوژێنەوە؟"
 
 #: ../mate-session/gsm-logout-dialog.c:494
 msgid "S_uspend"
@@ -408,11 +409,11 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:506
 msgid "_Restart"
-msgstr ""
+msgstr "_دەستپێکردنەوە"
 
 #: ../mate-session/gsm-logout-dialog.c:516
 msgid "_Shut Down"
-msgstr ""
+msgstr "_کوژاندنەوە"
 
 #: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
 msgid "Not responding"
@@ -464,7 +465,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:69
 msgid "Log out"
-msgstr ""
+msgstr "چوونەدەر"
 
 #: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"
@@ -489,11 +490,11 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:75
 msgid "NAME"
-msgstr ""
+msgstr "ناو"
 
 #: ../tools/mate-session-save.c:76
 msgid "Kill session"
-msgstr "Kashe zaman shawara"
+msgstr ""
 
 #: ../tools/mate-session-save.c:77
 msgid "Do not require confirmation"
@@ -502,7 +503,7 @@ msgstr ""
 #. Okay, it wasn't the upgrade case, so now we can give up.
 #: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
 msgid "Could not connect to the session manager"
-msgstr "An kasa haɗi zuwa manajan zaman shawara"
+msgstr ""
 
 #: ../tools/mate-session-save.c:276
 msgid "Program called with conflicting options"

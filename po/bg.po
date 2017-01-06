@@ -10,13 +10,14 @@
 # Vladimir "Kaladan" Petkov <kaladan@gmail.com>, 2004, 2005
 # Yanko Kaneti <yaneti@declera.com>, 2002
 # Yavor Doganov <yavor@gnu.org>, 2008
+# Любомир Василев, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 13:15+0300\n"
-"PO-Revision-Date: 2016-03-22 07:24+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2016-07-01 14:35+0300\n"
+"PO-Revision-Date: 2016-11-08 09:23+0000\n"
+"Last-Translator: Любомир Василев\n"
 "Language-Team: Bulgarian (http://www.transifex.com/mate/MATE/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,11 +37,11 @@ msgstr "Добавяне на програма стартираща при вл�
 msgid "Edit Startup Program"
 msgstr "Редактиране на програмите стартиращи при влизане"
 
-#: ../capplet/gsm-app-dialog.c:490
+#: ../capplet/gsm-app-dialog.c:486
 msgid "The startup command cannot be empty"
 msgstr "Командата за програма стартираща при влизане не може да е празна"
 
-#: ../capplet/gsm-app-dialog.c:496
+#: ../capplet/gsm-app-dialog.c:492
 msgid "The startup command is not valid"
 msgstr "Командата за програма стартираща при влизане е неправилна"
 
@@ -50,13 +51,13 @@ msgstr "Включена"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr "Икона"
+msgstr "Иконка"
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
 msgstr "Програма"
 
-#: ../capplet/gsm-properties-dialog.c:748
+#: ../capplet/gsm-properties-dialog.c:741
 msgid "Startup Applications Preferences"
 msgstr "Настройки за автоматично стартиране на програми"
 
@@ -78,11 +79,11 @@ msgstr "Документът от помощта не може да бъде п�
 
 #: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Начално време на текущата сесия"
 
 #: ../data/org.mate.session.gschema.xml.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Време (във формата на Юникс) на началото на текущата сесия."
 
 #: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
@@ -98,17 +99,17 @@ msgstr "Питане при изход"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Ако е включено, mate-session ще предупреди преди да приключи сесия."
+msgstr "Ако е включено, „mate-session“ ще предупреди преди да приключи сесия."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "Изчакване преди автоматичен изход"
 
 #: ../data/org.mate.session.gschema.xml.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "Ако питането преди изход е включено, това задава интервала в секунди преди автоматичното излизане. Ако е 0, автоматичното излизане ще бъде изключено."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
@@ -139,15 +140,15 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr ""
+msgstr "Списък с компоненти, които са необходими като част от сесията. (Всеки елемент е ключ от дървото „/org/mate/desktop/session/required_components“.) Обикновено програмата за настройване на сесиите не позволява потребител да премахва необходими компоненти от сесията — управлението на сесии автоматично ще добави липсващите компоненти, ако те бъдат премахнати."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "Управление на използването на компонентите за съвместимост с „gnome“"
 
 #: ../data/org.mate.session.gschema.xml.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "Управление на това кои компоненти за съвместимост да се използват."
 
 #: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -168,7 +169,7 @@ msgstr "Панел"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Панелът осигурява лентите горе и долу на екрана, които съдържат менюта, списък с прозорци, икони за състояние, часовник и т.н."
+msgstr "Панелът осигурява лентите горе и долу на екрана, които съдържат менюта, списък с прозорци, иконки за състояние, часовник и т.н."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -178,17 +179,17 @@ msgstr "Файлов мениджър"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Файловият мениджър осигурява иконите на работната среда и позволява да взаимодействате със запазените файлове."
+msgstr "Файловият мениджър осигурява иконките на работната среда и позволява да взаимодействате със запазените файлове."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
-msgstr ""
+msgstr "Док"
 
 #: ../data/org.mate.session.gschema.xml.in.h:24
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr ""
+msgstr "Докът е област за прикачане, подобна на панел, от където могат да се пускат и превключват приложения."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -202,7 +203,7 @@ msgstr "Влизане в MATE"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Някои програми все още работят:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:707
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:634
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -315,58 +316,58 @@ msgstr "Настройки на управлението на сесии:"
 msgid "Show session management options"
 msgstr "Показване на настройките за управлението на сесиите"
 
-#: ../mate-session/gsm-inhibit-dialog.c:256
+#: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
 msgid "Icon '%s' not found"
-msgstr "Иконата „%s“ не е открита"
+msgstr "Иконката „%s“ не е открита"
 
-#: ../mate-session/gsm-inhibit-dialog.c:655
+#: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
 msgstr "Непозната"
 
-#: ../mate-session/gsm-inhibit-dialog.c:706
+#: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
 msgstr "Все още работи програмата:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:710
+#: ../mate-session/gsm-inhibit-dialog.c:637
 msgid "Some programs are still running:"
 msgstr "Все още работят програмите:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:711
+#: ../mate-session/gsm-inhibit-dialog.c:638
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr "Изчакване на програмите да завършат. Прекъсването им може да доведе до загуба на информация."
 
-#: ../mate-session/gsm-inhibit-dialog.c:941
+#: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
 msgstr "Смяна на потребител"
 
-#: ../mate-session/gsm-inhibit-dialog.c:944
+#: ../mate-session/gsm-inhibit-dialog.c:871
 msgid "Log Out Anyway"
 msgstr "Изход въпреки всичко"
 
-#: ../mate-session/gsm-inhibit-dialog.c:947
+#: ../mate-session/gsm-inhibit-dialog.c:874
 msgid "Suspend Anyway"
 msgstr "Приспиване"
 
-#: ../mate-session/gsm-inhibit-dialog.c:950
+#: ../mate-session/gsm-inhibit-dialog.c:877
 msgid "Hibernate Anyway"
 msgstr "Дълбоко приспиване"
 
-#: ../mate-session/gsm-inhibit-dialog.c:953
+#: ../mate-session/gsm-inhibit-dialog.c:880
 msgid "Shut Down Anyway"
 msgstr "Спиране въпреки всичко"
 
-#: ../mate-session/gsm-inhibit-dialog.c:956
+#: ../mate-session/gsm-inhibit-dialog.c:883
 msgid "Reboot Anyway"
 msgstr "Рестартиране на компютъра"
 
-#: ../mate-session/gsm-inhibit-dialog.c:964
+#: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
 msgstr "Заключване на екрана"
 
-#: ../mate-session/gsm-inhibit-dialog.c:967
+#: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
 msgstr "Отказ"
 
@@ -374,15 +375,15 @@ msgstr "Отказ"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ще излезете от системата автоматично след %d секунда"
+msgstr[1] "Ще излезете от системата автоматично след %d секунди"
 
 #: ../mate-session/gsm-logout-dialog.c:340
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Компютърът ще се изключи автоматично след %d секунда"
+msgstr[1] "Компютърът ще се изключи автоматично след %d секунди"
 
 #: ../mate-session/gsm-logout-dialog.c:386
 #, c-format
@@ -430,7 +431,7 @@ msgstr "Не отговаря"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:565
 msgid "Remembered Application"
-msgstr ""
+msgstr "Запомнени програми"
 
 #: ../mate-session/gsm-xsmp-client.c:1203
 msgid "This program is blocking logout."
@@ -531,15 +532,15 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s [ОПЦИЯ…] КОМАНДА\n\nИзпълнява КОМАНДА като възпрепятства част от функциите на сесията.\n\n  -h, --help        Показва това съобщение\n  --version         Показва информация за версията\n  --app-id ИД       Идентификаторът на приложението,\n                    което да се използва при възпрепятстване (незадължително)\n  --reason ПРИЧИНА   Причината за възпрепятстване (незадължително)\n  --inhibit АРГУМЕНТ     Неща, които да бъдат възпрепятствани. Списък, разделен с двоеточия, като в него може да присъстват:\n                    logout (изход), switch-user (смяна на потребител), suspend (приспиване), idle (бездействие), automount (авт. монтиране)\n\nАко опцията „--inhibit“ не е зададена, се подразбира „idle“.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s изисква аргумент\n"
 
 #: ../tools/mate-session-inhibit.c:225
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "Неуспешно изпълнение на %s\n"

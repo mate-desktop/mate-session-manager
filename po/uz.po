@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 14:35+0300\n"
-"PO-Revision-Date: 2016-09-04 11:04+0000\n"
+"PO-Revision-Date: 2016-12-07 14:50+0000\n"
 "Last-Translator: muzaffar habibullayev <muzaffarlearner@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/mate/MATE/language/uz/)\n"
 "MIME-Version: 1.0\n"
@@ -107,7 +107,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr ""
+msgstr "Seans harakatsiz hisoblanuvchi vaqt"
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
@@ -423,7 +423,7 @@ msgstr "Javob bermayapti"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:565
 msgid "Remembered Application"
-msgstr ""
+msgstr "Eslab qolingan Dastur"
 
 #: ../mate-session/gsm-xsmp-client.c:1203
 msgid "This program is blocking logout."
