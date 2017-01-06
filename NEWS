@@ -1,3 +1,9 @@
+1.17.0
+
+  * sync with transifex
+  * session properties: fix vertical expand of content with window resize
+  * Also look for gdm-binary process
+
 1.16.0
   * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and --with-gtk
     build option
