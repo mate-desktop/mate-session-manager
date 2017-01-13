@@ -1,33 +1,39 @@
-1.17.0
+### mate-session-manager 1.17.0
 
   * sync with transifex
   * session properties: fix vertical expand of content with window resize
   * Also look for gdm-binary process
 
-1.16.0
+### mate-session-manager 1.16.0
+
   * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and --with-gtk
     build option
   * Translations update
 
-1.14.1
+### mate-session-manager 1.14.1
+
   * GTK+3: fix critical warning in logout/shutdown dialogs
   * Translations update
 
-1.14.0
+### mate-session-manager 1.14.0
+
   * Drop MateConf migration script
   * GTK+3: fix some deprecations
   * Some more fixes and cleanups
   * Translations update
   * Add Changelog generation
 
-1.12.2
+### mate-session-manager 1.12.2
+
   * Fix rare build failure with upower >= 0.99 when both systemd and upower
     support are enabled
 
-1.12.1
+### mate-session-manager 1.12.1
+
   * Get rid of dependency on libmate-desktop
 
-1.12.0
+### mate-session-manager 1.12.0
+
   * Add support for an optional dock, such as Plank
   * Retrieve strings directly from gschema (requires intltool 0.50.1)
   * Switch to org.gnome.SessionManager
@@ -36,28 +42,34 @@
   * Turn GTK+3 overlay scrolling on/off on start using new gsettings key
   * Some more fixes and cleanups
 
-1.10.2
+### mate-session-manager 1.10.2
+
   * Reintroduce missing help in session properties dialog
   * Set XDG_CURRENT_DESKTOP env var to MATE
   * Some bugfixes
   * Translations update
 
-1.10.1
+### mate-session-manager 1.10.1
+
   * Fix size of GtkScrolledWindow in session properties.
   * Check for running display manager when user switching.
 
-1.10.0
+### mate-session-manager 1.10.0
+
   * Disable upower support by default (use --enable-upower if you need it)
 
-1.8.1
+### mate-session-manager 1.8.1
+
   * Add autostart of accessibility apps
   * Fix build with upower disabled
 
-1.8.0
+### mate-session-manager 1.8.0
+
   * Show a progress bar in logout dialog
   * Add GTK3 support
   * Add gnome keyring support
   * Add support for X-MATE-Autostart-Delay in desktop files
 
-1.6.0
+### mate-session-manager 1.6.0
+
   * Migrate to gsettings (dropped mateconf)
