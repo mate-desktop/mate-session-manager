@@ -39,14 +39,14 @@
 #include <X11/ICE/ICEconn.h>
 #include <X11/SM/SMlib.h>
 
-#ifdef HAVE_X11_XTRANS_XTRANS_H
+#if HAVE_XTRANS
 /* Get the proto for _IceTransNoListen */
 #define ICE_t
 #define TRANS_SERVER
 #include <X11/Xtrans/Xtrans.h>
 #undef  ICE_t
 #undef TRANS_SERVER
-#endif /* HAVE_X11_XTRANS_XTRANS_H */
+#endif /* HAVE_XTRANS */
 
 #include "gsm-xsmp-server.h"
 #include "gsm-xsmp-client.h"
@@ -560,7 +560,7 @@ setup_listener (GsmXsmpServer *server)
                 gsm_util_init_error (TRUE, "Could not initialize libSM: %s", error);
         }
 
-#ifdef HAVE_X11_XTRANS_XTRANS_H
+#if HAVE_XTRANS
         /* By default, IceListenForConnections will open one socket for each
          * transport type known to X. We don't want connections from remote
          * hosts, so for security reasons it would be best if ICE didn't
@@ -612,7 +612,7 @@ setup_listener (GsmXsmpServer *server)
                 gsm_util_init_error (TRUE, "IceListenForConnections did not return a local listener!");
         }
 
-#ifdef HAVE_X11_XTRANS_XTRANS_H
+#ifdef HAVE_XTRANS
         if (server->priv->num_local_xsmp_sockets != server->priv->num_xsmp_sockets) {
                 /* Xtrans was apparently compiled with support for some
                  * non-local transport besides TCP (which we disabled above); we
