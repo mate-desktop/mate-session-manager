@@ -1,3 +1,7 @@
+### mate-session-manager 1.17.1
+
+  * build: check stricter for presence of xtrans
+
 ### mate-session-manager 1.17.0
 
   * sync with transifex
