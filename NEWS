@@ -1,3 +1,9 @@
+1.16.1
+  * Build: check stricter for presence of xtrans (ensure that mate-session
+    won't listen to TCP ports)
+  * Session properties: fix vertical expand of content with window resize
+  * Check for gdm-binary process when switching user
+
 1.16.0
   * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and --with-gtk
     build option
