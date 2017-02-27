@@ -87,9 +87,17 @@ gboolean         gsm_consolekit_can_stop        (GsmConsolekit *manager);
 
 gboolean         gsm_consolekit_can_restart     (GsmConsolekit *manager);
 
+gboolean         gsm_consolekit_can_suspend     (GsmConsolekit *manager);
+
+gboolean         gsm_consolekit_can_hibernate   (GsmConsolekit *manager);
+
 void             gsm_consolekit_attempt_stop    (GsmConsolekit *manager);
 
 void             gsm_consolekit_attempt_restart (GsmConsolekit *manager);
+
+void             gsm_consolekit_attempt_suspend (GsmConsolekit *manager);
+
+void             gsm_consolekit_attempt_hibernate (GsmConsolekit *manager);
 
 void             gsm_consolekit_set_session_idle (GsmConsolekit *manager,
                                                   gboolean       is_idle);
