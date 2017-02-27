@@ -467,7 +467,7 @@ gsm_manager_quit (GsmManager *manager)
         case GSM_MANAGER_LOGOUT_REBOOT_INTERACT:
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
 
-                #ifdef HAVE_SYSTEMD
+#ifdef HAVE_SYSTEMD
                 if (LOGIND_RUNNING()) {
                     systemd = gsm_get_systemd ();
                     g_signal_connect (systemd,
@@ -477,16 +477,16 @@ gsm_manager_quit (GsmManager *manager)
                     gsm_systemd_attempt_restart (systemd);
                 }
                 else {
-                #endif
+#endif
                 consolekit = gsm_get_consolekit ();
                 g_signal_connect (consolekit,
                                   "request-completed",
                                   G_CALLBACK (quit_request_completed_consolekit),
                                   GINT_TO_POINTER (MDM_LOGOUT_ACTION_REBOOT));
                 gsm_consolekit_attempt_restart (consolekit);
-                #ifdef HAVE_SYSTEMD
+#ifdef HAVE_SYSTEMD
                 }
-                #endif
+#endif
                 break;
         case GSM_MANAGER_LOGOUT_REBOOT_MDM:
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_REBOOT);
@@ -496,7 +496,7 @@ gsm_manager_quit (GsmManager *manager)
         case GSM_MANAGER_LOGOUT_SHUTDOWN_INTERACT:
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_NONE);
 
-                #ifdef HAVE_SYSTEMD
+#ifdef HAVE_SYSTEMD
                 if (LOGIND_RUNNING()) {
                     systemd = gsm_get_systemd ();
                     g_signal_connect (systemd,
@@ -506,16 +506,16 @@ gsm_manager_quit (GsmManager *manager)
                     gsm_systemd_attempt_stop (systemd);
                 }
                 else {
-                #endif
+#endif
                 consolekit = gsm_get_consolekit ();
                 g_signal_connect (consolekit,
                                   "request-completed",
                                   G_CALLBACK (quit_request_completed_consolekit),
                                   GINT_TO_POINTER (MDM_LOGOUT_ACTION_SHUTDOWN));
                 gsm_consolekit_attempt_stop (consolekit);
-                #ifdef HAVE_SYSTEMD
+#ifdef HAVE_SYSTEMD
                 }
-                #endif
+#endif
                 break;
         case GSM_MANAGER_LOGOUT_SHUTDOWN_MDM:
                 mdm_set_logout_action (MDM_LOGOUT_ACTION_SHUTDOWN);
