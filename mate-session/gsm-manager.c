@@ -3258,7 +3258,7 @@ user_logout (GsmManager           *manager,
         /* If the shell isn't running, and this isn't a non-interative logout request,
          * and the user has their settings configured to show a confirmation dialog for
          * logout, then go ahead and show the confirmation dialog now.
-	 */
+         */
         if (mode == GSM_MANAGER_LOGOUT_MODE_NORMAL && logout_prompt) {
                 show_logout_dialog (manager);
         } else {
@@ -3328,14 +3328,14 @@ static gboolean
 _log_out_is_locked_down (GsmManager *manager)
 {
         return g_settings_get_boolean (manager->priv->settings_lockdown,
-        KEY_LOG_OUT_DISABLE);
+                                       KEY_LOG_OUT_DISABLE);
 }
 
 static gboolean
 _switch_user_is_locked_down (GsmManager *manager)
 {
         return g_settings_get_boolean (manager->priv->settings_lockdown,
-        KEY_USER_SWITCH_DISABLE);
+                                       KEY_USER_SWITCH_DISABLE);
 }
 
 gboolean
@@ -3401,7 +3401,7 @@ gsm_manager_can_shutdown (GsmManager *manager,
 #endif
         consolekit = gsm_get_consolekit ();
         *shutdown_available = !_log_out_is_locked_down (manager) &&
-	                      (gsm_consolekit_can_stop (consolekit)
+                              (gsm_consolekit_can_stop (consolekit)
                                || gsm_consolekit_can_restart (consolekit)
                                || can_suspend
                                || can_hibernate);

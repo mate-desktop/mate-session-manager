@@ -247,14 +247,14 @@ gsm_logout_supports_switch_user (GsmLogoutDialog *logout_dialog)
 {
         GSettings *settings;
         gboolean   ret = FALSE;
-	gboolean   locked;
+        gboolean   locked;
 
         settings = g_settings_new (LOCKDOWN_SCHEMA);
 
-	locked = g_settings_get_boolean (settings, KEY_USER_SWITCHING_DISABLE);
-	g_object_unref (settings);
+        locked = g_settings_get_boolean (settings, KEY_USER_SWITCHING_DISABLE);
+        g_object_unref (settings);
 
-	if (!locked) {
+        if (!locked) {
 #ifdef HAVE_SYSTEMD
             if (LOGIND_RUNNING())
                 ret = gsm_systemd_can_switch_user (logout_dialog->priv->systemd);
