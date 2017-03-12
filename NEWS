@@ -1,15 +1,17 @@
-### mate-session-manager 1.17.2
+### mate-session-manager 1.18.0
 
+  * NEWS: use consistent, project wide, markdown-like formatting to make
+    generating release announcements easier
+  * Replace deprecated upower suspend/hibernate functions with ConsoleKit2
+    equivalents (and drop --enable-upower build option)
+  * Translations update
 
-### mate-session-manager 1.17.1
+### mate-session-manager 1.16.1
 
-  * build: check stricter for presence of xtrans
-
-### mate-session-manager 1.17.0
-
-  * sync with transifex
-  * session properties: fix vertical expand of content with window resize
-  * Also look for gdm-binary process
+  * Build: check stricter for presence of xtrans (ensure that mate-session
+    won't listen to TCP ports)
+  * Session properties: fix vertical expand of content with window resize
+  * Check for gdm-binary process when switching user
 
 ### mate-session-manager 1.16.0
 
