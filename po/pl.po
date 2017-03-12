@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>=14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -376,6 +376,7 @@ msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] "Zostaniesz automatycznie wylogowany za %d sekundę"
 msgstr[1] "Zostaniesz automatycznie wylogowany za %d sekundy"
 msgstr[2] "Zostaniesz automatycznie wylogowany za %d sekund"
+msgstr[3] "Zostaniesz automatycznie wylogowany za %d sekund"
 
 #: ../mate-session/gsm-logout-dialog.c:340
 #, c-format
@@ -384,6 +385,7 @@ msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] "Ten system zostanie automatycznie wyłączony za %d sekundę"
 msgstr[1] "Ten system zostanie automatycznie wyłączony za %d sekundy"
 msgstr[2] "Ten system zostanie automatycznie wyłączony za %d sekund"
+msgstr[3] "Ten system zostanie automatycznie wyłączony za %d sekund"
 
 #: ../mate-session/gsm-logout-dialog.c:386
 #, c-format

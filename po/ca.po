@@ -8,7 +8,7 @@
 # Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004, 2005, 2006, 2007
 # Josep Puigdemont <josep.puigdemont@gmail.com>, 2007
 # Pere O. <gotrunks@gmail.com>, 2012
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016-2017
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015-2016
 # Softcatalà <info@softcatala.org>, 2000
 msgid ""
@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 14:35+0300\n"
-"PO-Revision-Date: 2016-08-17 02:27+0000\n"
+"PO-Revision-Date: 2017-02-18 11:51+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/mate/MATE/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -452,7 +452,7 @@ msgstr "No s'ha pogut crear el sòcol ICE d'escolta: %s"
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "No s'ha pogut iniciar la sessió d'entrada (ni connectar amb el servidor X)"
+msgstr "No s'ha pogut iniciar la sessió d'entrada (ni connectar amb el servidor de les X)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
