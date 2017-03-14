@@ -646,6 +646,9 @@ int main(int argc, char** argv)
 	 */
 	gsm_util_setenv("MATE_DESKTOP_SESSION_ID", "this-is-deprecated");
 
+	/* Make QT5 apps follow the GTK style */
+	gsm_util_setenv ("QT_STYLE_OVERRIDE", "gtk");
+
 	/*
 	 * Make sure gsettings is set up correctly.  If not, then bail.
 	 */
