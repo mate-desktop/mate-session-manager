@@ -43,6 +43,8 @@
 
 #define GSM_SCHEMA "org.mate.session"
 #define GSM_GNOME_COMPAT_STARTUP_KEY "gnome-compat-startup"
+#define MATE_INTERFACE_SCHEMA "org.mate.interface"
+#define MATE_GTK_OVERLAY_SCROLL "gtk-overlay-scrolling"
 
 #define GNOME_KEYRING_DAEMON "gnome-keyring-daemon"
 
@@ -214,6 +216,23 @@ msm_compat_gnome_smproxy_shutdown (void)
   gdk_error_trap_pop_ignored ();
 }
 
+static void
+msm_gtk_set_overlay_scroll (void)
+{
+	GSettings* settings;
+	gboolean   enabled;
+
+	settings = g_settings_new (MATE_INTERFACE_SCHEMA);
+	enabled = g_settings_get_boolean (settings, MATE_GTK_OVERLAY_SCROLL);
+
+	if (enabled) {
+		g_setenv ("GTK_OVERLAY_SCROLLING", "1", TRUE);
+	} else {
+		g_setenv ("GTK_OVERLAY_SCROLLING", "0", TRUE);
+	}
+
+	g_object_unref (settings);
+}
 
 void
 msm_gnome_start (void)
@@ -247,6 +266,8 @@ msm_gnome_start (void)
     g_debug ("MsmGnome: No components found to start");
   }
   g_object_unref (settings);
+
+  msm_gtk_set_overlay_scroll ();
 }
 
 
