@@ -48,6 +48,8 @@ void        gsm_util_init_error                     (gboolean    fatal,
 
 char *      gsm_util_generate_startup_id            (void);
 
+gboolean    gsm_util_export_activation_environment  (GError     **error);
+
 void        gsm_util_setenv                         (const char *variable,
                                                      const char *value);
 
