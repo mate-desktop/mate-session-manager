@@ -620,6 +620,8 @@ int main(int argc, char** argv)
 		exit(1);
 	}
 
+        gsm_util_export_activation_environment (NULL);
+
 	mdm_log_init();
 
 	/* Allows to enable/disable debug from GSettings only if it is not set from argument */
@@ -727,3 +729,4 @@ int main(int argc, char** argv)
 
 	return 0;
 }
+
