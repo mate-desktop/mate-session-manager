@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Damir Jerovšek <jierro@windowslive.com>, 2013-2014
+# Helena S <ele@tutamail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 14:35+0300\n"
-"PO-Revision-Date: 2015-12-14 10:18+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2017-04-17 18:23+0000\n"
+"Last-Translator: Helena S <ele@tutamail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/mate/MATE/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,13 +97,13 @@ msgstr "Izbrana možnost omogoča, da bo seja MATE pred končanjem seje pozval u
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "Časovna omejitev odjave"
 
 #: ../data/org.mate.session.gschema.xml.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "V primeru omogočenega odjavnega poziva, to omogoči samodejno zakasnitev v sekundah pred odjavo. Ob vrednosti 0, je samodejno odjavljanje onemogočeno."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"

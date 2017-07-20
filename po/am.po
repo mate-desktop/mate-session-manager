@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 14:35+0300\n"
-"PO-Revision-Date: 2017-03-09 15:48+0000\n"
+"PO-Revision-Date: 2017-03-16 16:18+0000\n"
 "Last-Translator: samson <sambelet@yahoo.com>\n"
 "Language-Team: Amharic (http://www.transifex.com/mate/MATE/language/am/)\n"
 "MIME-Version: 1.0\n"
@@ -134,7 +134,7 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr ""
+msgstr "ለ ክፍለ ጊዜው የሚያስፈልጉ አካላቶች (የ እያንዳንዱ አካል ስም ቁልፍ በ \"/org/mate/desktop/session/required_components\"). የ መተግበሪያ ማስጀመሪያ መሳሪያ ምርጫ በ መደበኛ ተጠቃሚውን አያስችልም ማስወገድ የሚያስፈልግ አካላት ለ ክፍለ ጊዜ: እና የ ክፍለ ጊዜ አስተዳዳሪ ራሱ በራሱ ይጨምራል የሚያስፈልገውን አካል መልሶ ይጨምራል ለ ክፍለ ጊዜው:በ መግቢያ ጊዜ ተወግደው ከ ነበረ:"
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -526,7 +526,7 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s [ምርጫ...] ትእዛዝ\n\nትእዛዝ መፈጸሚያ አንዳንድ ክፍለ ጊዜ በ መከልከል\n\n  -እ, --እርዳታ        እርዳታ ማሳያ\n  --እትም         የ ፕሮግራም እትም ማሳያ\n  --መተግበሪያ-መለያ: መለያ       የሚጠቀሙትን መተግበሪያ መለያ\n                    በሚከለክል ጊዜ (በ ምርጫ)\n  --ምክንያት: ምክንያት   የ ተከለከለበት ምክንያት (በ ምርጫ)\n  --መከልከያ ARG     የሚከለከሉ አካሎች: በ ኮለን-የሚለያይ ዝርዝር በ:\n                    መውጫ: ተጠቃሚ-መቀየሪያ: ማገጃ: ማስተኛ: በራሱ መጫኛ\n\nምንም -- መከልከያ ምርጫ ካልተወሰነ: ማስተኛ ይወሰዳል\n\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189
