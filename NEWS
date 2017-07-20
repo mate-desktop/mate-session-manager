@@ -1,5 +1,13 @@
 ### mate-session-manager 1.19.0
 
+  * Translations update
+  * avoid deprecated gdk_screen_get_number
+  * systemd user-session needs to be updated to get all user-defined
+    enviroment when the session starts.
+  * dbus needs to be updated to get all user-defined environment when
+    the session starts.
+  * Restore Polish translation credits from GNOME
+
 ### mate-session-manager 1.18.0
 
   * NEWS: use consistent, project wide, markdown-like formatting to make
