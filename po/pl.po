@@ -7,21 +7,22 @@
 # Beniamin Pawlus <kupwzywcu@o2.pl>, 2015
 # Marcin Kralka <marcink96@gmail.com>, 2014
 # Paweł Bandura <gawelx@gmail.com>, 2015
-# Piotr Strębski <strebski@o2.pl>, 2015
+# Piotr Drąg <piotrdrag@gmail.com>, 2017
+# Piotr Strębski <strebski@gmail.com>, 2015
 # Wiktor Jezioro <wikjezioro@op.pl>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 14:35+0300\n"
-"PO-Revision-Date: 2015-12-28 09:48+0000\n"
-"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
+"PO-Revision-Date: 2017-05-20 20:33+0000\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/mate/MATE/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>=14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -142,11 +143,11 @@ msgstr "Lista składników wymaganych jako części sesji (każdy element wystę
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr "Zarządzaj procesem startu komponentu kompatybilności gnome"
+msgstr "Zarządzaj procesem startu komponentu kompatybilności GNOME"
 
 #: ../data/org.mate.session.gschema.xml.in.h:16
 msgid "Control which compatibility components to start."
-msgstr "Zarządzaj które komponenty kompatybilności uruchomić."
+msgstr "Zarządzaj, które komponenty kompatybilności uruchomić."
 
 #: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -355,7 +356,7 @@ msgstr "Zahibernuj mimo to"
 
 #: ../mate-session/gsm-inhibit-dialog.c:880
 msgid "Shut Down Anyway"
-msgstr "Shut Down Anyway"
+msgstr "Wyłącz mimo to"
 
 #: ../mate-session/gsm-inhibit-dialog.c:883
 msgid "Reboot Anyway"

@@ -3,18 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2014
+# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2014,2017
 # Gintautas Miliauskas <gintas@akl.lt>, 2006, 2007, 2008
 # brennus <jonas.ska@gmail.com>, 2014
 # Justina Klingaitė <justina.klingaite@gmail.com>, 2005
-# Moo, 2015-2016
+# Moo, 2015-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 14:35+0300\n"
-"PO-Revision-Date: 2016-06-24 13:20+0000\n"
-"Last-Translator: Moo\n"
+"PO-Revision-Date: 2017-07-05 22:53+0000\n"
+"Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,7 +56,7 @@ msgstr "Programa"
 
 #: ../capplet/gsm-properties-dialog.c:741
 msgid "Startup Applications Preferences"
-msgstr "Paleidžiamų programų nuostatos"
+msgstr "Paleidžiamų programų nustatymai"
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
@@ -137,7 +137,7 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Komponentų, kurie yra būtini seanse, sąrašas. (Kiekvienas elementas nurodo raktą, esantį „/org/mate/desktop/session/required_components“.) Paleidžiamų programų nuostatų įrankis paprastai neleidžia naudotojams pašalinti būtiną komponentą iš seanso, o seansų tvarkytuvė automatiškai vėl grąžins būtinus komponentus į seansą prisijungimo metu, jei jie kaip nors bus pašalinti."
+msgstr "Komponentų, kurie yra būtini seanse, sąrašas. (Kiekvienas elementas nurodo raktą, esantį „/org/mate/desktop/session/required_components“.) Paleidžiamų programų nustatymų įrankis paprastai neleidžia naudotojams pašalinti būtiną komponentą iš seanso, o seansų tvarkytuvė automatiškai vėl grąžins būtinus komponentus į seansą prisijungimo metu, jei jie kaip nors bus pašalinti."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -232,7 +232,7 @@ msgstr "_Atsiminti dabar veikiančias programas"
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr "Parinktys"
+msgstr "Parametrai"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
@@ -307,11 +307,11 @@ msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr "Seanso valdymo parinktys:"
+msgstr "Seanso valdymo parametrai:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "Rodyti seanso valdymo parinktis"
+msgstr "Rodyti seanso valdymo parametrus"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
@@ -500,7 +500,7 @@ msgstr "PAVADINIMAS"
 
 #: ../tools/mate-session-save.c:76
 msgid "Kill session"
-msgstr "Nužudyti seansą"
+msgstr "Nutraukti seansą"
 
 #: ../tools/mate-session-save.c:77
 msgid "Do not require confirmation"
@@ -513,7 +513,7 @@ msgstr "Nepavyko prisijungti prie seansų tvarkytuvės"
 
 #: ../tools/mate-session-save.c:276
 msgid "Program called with conflicting options"
-msgstr "Programa iškviesta naudojant konfliktuojančias parinktis"
+msgstr "Programa iškviesta naudojant konfliktuojančius parametrus"
 
 #: ../tools/mate-session-inhibit.c:115
 #, c-format
@@ -531,7 +531,7 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [PARINKTIS...] KOMANDA\n\nVykdo KOMANDĄ, drausdama kai kurį seanso funkcionalumą.\n\n  -h, --help        Rodo šią pagalbą\n  --version         Rodo programos versiją\n  --app-id ID       Draudžiant (pasirinktinai) naudojamos\n                    programos id\n  --reason PRIEŽASTIS   Draudimo (pasirinktinai) priežastis\n  --inhibit ARG     Dvitaškiais atskirtų, draudžiamų dalykų sąrašas:\n                    logout, switch-user, suspend, idle, automount\n\nJei nenurodyta parinktis --inhibit, tuomet yra numanoma idle.\n"
+msgstr "%s [PARAMETRAS...] KOMANDA\n\nVykdo KOMANDĄ, drausdama kai kurį seanso funkcionalumą.\n\n  -h, --help        Rodo šią pagalbą\n  --version         Rodo programos versiją\n  --app-id ID       Draudžiant (pasirinktinai) naudojamos\n                    programos id\n  --reason PRIEŽASTIS   Draudimo (pasirinktinai) priežastis\n  --inhibit ARG     Dvitaškiais atskirtų, draudžiamų dalykų sąrašas:\n                    logout, switch-user, suspend, idle, automount\n\nJei nenurodytas parametras --inhibit, tuomet yra numanoma idle.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189
