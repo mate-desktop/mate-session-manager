@@ -38,6 +38,15 @@ static GOptionEntry options[] = {
 
 static void dialog_response(GsmPropertiesDialog* dialog, guint response_id, gpointer data)
 {
+#if GTK_CHECK_VERSION (3, 22, 0)
+	GError* error;
+
+	if (response_id == GTK_RESPONSE_HELP)
+	{
+		error = NULL;
+		gtk_show_uri_on_window (GTK_WINDOW (dialog), "help:mate-user-guide/gosstartsession-2",
+					gtk_get_current_event_time (), &error);
+#else
 	GdkScreen* screen;
 	GError* error;
 
@@ -47,7 +56,8 @@ static void dialog_response(GsmPropertiesDialog* dialog, guint response_id, gpoi
 
 		error = NULL;
 		gtk_show_uri (screen, "help:mate-user-guide/gosstartsession-2",
-					  gtk_get_current_event_time (), &error);
+			      gtk_get_current_event_time (), &error);
+#endif
 
 		if (error != NULL)
 		{
