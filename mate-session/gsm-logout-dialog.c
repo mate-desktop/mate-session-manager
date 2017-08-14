@@ -146,6 +146,10 @@ gsm_logout_dialog_init (GsmLogoutDialog *logout_dialog)
         logout_dialog->priv->timeout = 0;
         logout_dialog->priv->default_response = GTK_RESPONSE_CANCEL;
 
+	GtkStyleContext *context;
+	context = gtk_widget_get_style_context (GTK_WIDGET (logout_dialog));
+	gtk_style_context_add_class (context, "logout-dialog");
+
         gtk_window_set_skip_taskbar_hint (GTK_WINDOW (logout_dialog), TRUE);
         gtk_window_set_keep_above (GTK_WINDOW (logout_dialog), TRUE);
         gtk_window_stick (GTK_WINDOW (logout_dialog));
