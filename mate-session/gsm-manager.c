@@ -40,6 +40,7 @@
 
 #include <gtk/gtk.h> /* for logout dialog */
 #include <gio/gio.h> /* for gsettings */
+#include <gdk/gdkx.h>
 
 #include "gsm-manager.h"
 #include "gsm-manager-glue.h"
@@ -3185,6 +3186,8 @@ show_shutdown_dialog (GsmManager *manager)
                           G_CALLBACK (logout_dialog_response),
                           manager);
         gtk_widget_show (dialog);
+        gtk_window_present_with_time (GTK_WINDOW (dialog),
+                                      gdk_x11_get_server_time (gtk_widget_get_window (GTK_WIDGET (dialog))));
 }
 
 static void
@@ -3207,6 +3210,8 @@ show_logout_dialog (GsmManager *manager)
                           G_CALLBACK (logout_dialog_response),
                           manager);
         gtk_widget_show (dialog);
+        gtk_window_present_with_time (GTK_WINDOW (dialog),
+                                      gdk_x11_get_server_time (gtk_widget_get_window (GTK_WIDGET (dialog))));
 }
 
 static void
