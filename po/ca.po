@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 14:35+0300\n"
-"PO-Revision-Date: 2017-02-18 11:51+0000\n"
+"PO-Revision-Date: 2017-09-19 13:38+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/mate/MATE/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -349,7 +349,7 @@ msgstr "Tanca la sessió de totes maneres"
 
 #: ../mate-session/gsm-inhibit-dialog.c:874
 msgid "Suspend Anyway"
-msgstr "Atura temporalment de totes maneres"
+msgstr "Suspèn de totes maneres"
 
 #: ../mate-session/gsm-inhibit-dialog.c:877
 msgid "Hibernate Anyway"
@@ -408,7 +408,7 @@ msgstr "Voleu apagar aquest sistema?"
 
 #: ../mate-session/gsm-logout-dialog.c:494
 msgid "S_uspend"
-msgstr "A_tura temporalment"
+msgstr "S_uspèn"
 
 #: ../mate-session/gsm-logout-dialog.c:500
 msgid "_Hibernate"
