@@ -1,3 +1,9 @@
+### mate-session-manager 1.18.2
+
+  * Don't lose focus when displaying logout or shutdown dialog
+  * Add style class logout-dialog
+  * Translations update
+
 ### mate-session-manager 1.18.1
 
   * Translations update
