@@ -1,3 +1,12 @@
+### mate-session-manager 1.19.1
+
+  * Translations update
+  * don't lose focus when displaying logout or shutdown dialog
+  * README: remove link to mailing list
+  * add style class logout-dialog
+  * avoid deprecated gdk_screen_make_display_name
+  * don't use deprecated gtk_show_uri
+
 ### mate-session-manager 1.19.0
 
   * Translations update
