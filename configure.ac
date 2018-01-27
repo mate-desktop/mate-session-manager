@@ -11,12 +11,6 @@ AM_MAINTAINER_MODE
 MATE_COMMON_INIT
 MATE_DEBUG_CHECK
 
-# GLib min/max required versions
-AC_DEFINE([GLIB_VERSION_MAX_ALLOWED], [GLIB_VERSION_2_36],
-	[Warn on use of APIs added after GLib 2.36])
-AC_DEFINE([GLIB_VERSION_MIN_REQUIRED], [GLIB_VERSION_2_36],
-	[Warn on use of APIs deprecated before GLib 2.36])
-
 IT_PROG_INTLTOOL([0.50.1])
 
 AC_PROG_CC
@@ -41,9 +35,9 @@ if test "x$enable_deprecations" = "xyes"; then
    AC_SUBST([DISABLE_DEPRECATED_CFLAGS])
 fi
 
-GLIB_REQUIRED=2.36.0
+GLIB_REQUIRED=2.50.0
 GIO_REQUIRED=2.25.0
-GTK_REQUIRED=3.14.0
+GTK_REQUIRED=3.22.0
 DBUS_GLIB_REQUIRED=0.76
 
 dnl ====================================================================
