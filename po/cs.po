@@ -7,8 +7,8 @@
 # George Lebl <jirka@5z.com>, 2000, 2001
 # GIS <gis@academy.cas.cz>, 1999
 # jakubtalich, 2014
-# Martin Kříž <liberte.czech@gmail.com>, 2016
-# Martin Kříž <liberte.czech@gmail.com>, 2015
+# LiberteCzech <liberte.czech@gmail.com>, 2016
+# LiberteCzech <liberte.czech@gmail.com>, 2015
 # Michal Bukovjan <bukm@centrum.cz>, 2002, 2003
 # Michal <sinope@seznam.cz>, 2014
 # Miloslav Trmač <mitr@volny.cz>, 2004, 2005, 2006
@@ -19,9 +19,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 14:35+0300\n"
+"POT-Creation-Date: 2017-11-28 15:12+0100\n"
 "PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Martin Kříž <liberte.czech@gmail.com>\n"
+"Last-Translator: LiberteCzech <liberte.czech@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/mate/MATE/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -77,7 +77,7 @@ msgstr "Bez popisu"
 msgid "Version of this application"
 msgstr "Verze této aplikace"
 
-#: ../capplet/main.c:54
+#: ../capplet/main.c:64
 msgid "Could not display help document"
 msgstr "Nelze zobrazit dokument nápovědy"
 
@@ -282,12 +282,12 @@ msgstr "Aplikace neumožňuje přijmout dokumenty v příkazovém řádku"
 msgid "Unrecognized launch option: %d"
 msgstr "Nerozpoznaná spouštěcí volba: %d"
 
-#: ../egg/eggdesktopfile.c:1364
+#: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "URI dokumentu nelze postoupit položce pracovní plochy \"Type=Link\""
 
-#: ../egg/eggdesktopfile.c:1385
+#: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
 msgstr "Není spustitelnou položkou"
@@ -375,7 +375,7 @@ msgstr "Uzamknout obrazovku"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: ../mate-session/gsm-logout-dialog.c:332
+#: ../mate-session/gsm-logout-dialog.c:312
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
@@ -383,7 +383,7 @@ msgstr[0] "Budete automaticky odhlášen(a) za %d sekund"
 msgstr[1] "Budete automaticky odhlášeni za %d sekund"
 msgstr[2] "Budete automaticky odhlášeni za %d sekund"
 
-#: ../mate-session/gsm-logout-dialog.c:340
+#: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
@@ -391,44 +391,44 @@ msgstr[0] "Tento systém bude automaticky vypnut za %d sekund"
 msgstr[1] "Tento systém bude automaticky vypnut za %d sekund"
 msgstr[2] "Tento systém bude automaticky vypnut za %d sekund"
 
-#: ../mate-session/gsm-logout-dialog.c:386
+#: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Aktuálně jste přihlášeni jako \"%s\"."
 
-#: ../mate-session/gsm-logout-dialog.c:467
+#: ../mate-session/gsm-logout-dialog.c:446
 msgid "Log out of this system now?"
 msgstr "Odhlásit se nyní z tohoto systému?"
 
-#: ../mate-session/gsm-logout-dialog.c:473
+#: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
 msgstr "_Přepnout uživatele"
 
-#: ../mate-session/gsm-logout-dialog.c:482
+#: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
 msgstr "_Odhlásit se"
 
-#: ../mate-session/gsm-logout-dialog.c:488
+#: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
 msgstr "Vypnout nyní tento systém?"
 
-#: ../mate-session/gsm-logout-dialog.c:494
+#: ../mate-session/gsm-logout-dialog.c:473
 msgid "S_uspend"
 msgstr "_Uspat do paměti"
 
-#: ../mate-session/gsm-logout-dialog.c:500
+#: ../mate-session/gsm-logout-dialog.c:479
 msgid "_Hibernate"
 msgstr "Uspat na _disk"
 
-#: ../mate-session/gsm-logout-dialog.c:506
+#: ../mate-session/gsm-logout-dialog.c:485
 msgid "_Restart"
 msgstr "_Restartovat"
 
-#: ../mate-session/gsm-logout-dialog.c:516
+#: ../mate-session/gsm-logout-dialog.c:495
 msgid "_Shut Down"
 msgstr "_Vypnout"
 
-#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
+#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
 msgid "Not responding"
 msgstr "Neodpovídá"
 

@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 14:35+0300\n"
+"POT-Creation-Date: 2017-11-28 15:12+0100\n"
 "PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
 "Language-Team: Bengali (http://www.transifex.com/mate/MATE/language/bn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,7 +70,7 @@ msgstr "কোন বর্ণনা নেই"
 msgid "Version of this application"
 msgstr "এই অ্যাপ্লিকেশনের সংস্করণ"
 
-#: ../capplet/main.c:54
+#: ../capplet/main.c:64
 msgid "Could not display help document"
 msgstr "সহায়তা নথি প্রদর্শন করতে ব্যর্থ"
 
@@ -275,12 +275,12 @@ msgstr "কমান্ড লাইনে এই অ্যাপ্লিকে
 msgid "Unrecognized launch option: %d"
 msgstr "চালুকরণের অপরিচিত অপশন: %d"
 
-#: ../egg/eggdesktopfile.c:1364
+#: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "'Type=Link' ডেস্কটপ এন্ট্রির জন্য নথির URI উল্লেখ করা যায় নয়"
 
-#: ../egg/eggdesktopfile.c:1385
+#: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
 msgstr "চালু করার অযোগ্য আইটেম"
@@ -368,58 +368,58 @@ msgstr "পর্দা লক করুন"
 msgid "Cancel"
 msgstr "বাতিল"
 
-#: ../mate-session/gsm-logout-dialog.c:332
+#: ../mate-session/gsm-logout-dialog.c:312
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:340
+#: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:386
+#: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "বর্তমানে আপনি \"%s\" নামে লগ-ইন করে আছেন।"
 
-#: ../mate-session/gsm-logout-dialog.c:467
+#: ../mate-session/gsm-logout-dialog.c:446
 msgid "Log out of this system now?"
 msgstr "এখনই সিস্টেম থেকে লগ-আউট করা হবে কি?"
 
-#: ../mate-session/gsm-logout-dialog.c:473
+#: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
 msgstr "ব্যবহারকারী পরিবর্তন করুন (_S)"
 
-#: ../mate-session/gsm-logout-dialog.c:482
+#: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
 msgstr "লগ আউট (_L)"
 
-#: ../mate-session/gsm-logout-dialog.c:488
+#: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
 msgstr "এখনই সিস্টেম বন্ধ করা হবে কি?"
 
-#: ../mate-session/gsm-logout-dialog.c:494
+#: ../mate-session/gsm-logout-dialog.c:473
 msgid "S_uspend"
 msgstr "স্থগিত করা (_u)"
 
-#: ../mate-session/gsm-logout-dialog.c:500
+#: ../mate-session/gsm-logout-dialog.c:479
 msgid "_Hibernate"
 msgstr "সুপ্ত করা (_H)"
 
-#: ../mate-session/gsm-logout-dialog.c:506
+#: ../mate-session/gsm-logout-dialog.c:485
 msgid "_Restart"
 msgstr "পুনরায় চালু করা (_R)"
 
-#: ../mate-session/gsm-logout-dialog.c:516
+#: ../mate-session/gsm-logout-dialog.c:495
 msgid "_Shut Down"
 msgstr "বন্ধ করা (_S)"
 
-#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
+#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
 msgid "Not responding"
 msgstr "সাড়া দিচ্ছে না"
 

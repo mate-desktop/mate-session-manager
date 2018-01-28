@@ -5,7 +5,7 @@
 # Translators:
 # Changwoo Ryu <cwryu@debian.org>, 2007, 2008, 2009, 2010
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2015
-# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2016
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2016-2017
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2014-2015
 # Updated by Sung-Hyun Nam <namsh@kldp.org>, 2000
 # Updated by Young-Ho Cha <ganadist@chollian.net>, 2000, 2001, 2006, 2007
@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 14:35+0300\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
+"POT-Creation-Date: 2017-11-28 15:12+0100\n"
+"PO-Revision-Date: 2017-12-25 14:20+0000\n"
 "Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/mate/MATE/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -71,7 +71,7 @@ msgstr "설명 없음"
 msgid "Version of this application"
 msgstr "이 프로그램의 버전"
 
-#: ../capplet/main.c:54
+#: ../capplet/main.c:64
 msgid "Could not display help document"
 msgstr "도움말 문서를 표시할 수 없습니다"
 
@@ -269,19 +269,19 @@ msgstr "%s 시작"
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "명령행에서 문서를 지정할 수 없는 프로그램입니다"
+msgstr "명령문에서 문서를 지정할 수 없는 프로그램입니다"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "알 수 없는 실행 옵션: %d"
 
-#: ../egg/eggdesktopfile.c:1364
+#: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "문서 URI는 'Type=Link' desktop 항목에 넘길 수 없습니다"
 
-#: ../egg/eggdesktopfile.c:1385
+#: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
 msgstr "실행할 수 있는 항목이 없습니다"
@@ -369,56 +369,56 @@ msgstr "화면 잠그기"
 msgid "Cancel"
 msgstr "취소"
 
-#: ../mate-session/gsm-logout-dialog.c:332
+#: ../mate-session/gsm-logout-dialog.c:312
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] "%d초 후 자동으로 로그아웃합니다"
 
-#: ../mate-session/gsm-logout-dialog.c:340
+#: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] "%d초 후 자동으로 시스템을 종료합니다"
 
-#: ../mate-session/gsm-logout-dialog.c:386
+#: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "\"%s\" 사용자로 로그인했습니다."
 
-#: ../mate-session/gsm-logout-dialog.c:467
+#: ../mate-session/gsm-logout-dialog.c:446
 msgid "Log out of this system now?"
 msgstr "지금 시스템에서 로그아웃하시겠습니까?"
 
-#: ../mate-session/gsm-logout-dialog.c:473
+#: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
 msgstr "사용자 바꾸기(_S)"
 
-#: ../mate-session/gsm-logout-dialog.c:482
+#: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
 msgstr "로그아웃(_L)"
 
-#: ../mate-session/gsm-logout-dialog.c:488
+#: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
 msgstr "지금 시스템을 끄시겠습니까?"
 
-#: ../mate-session/gsm-logout-dialog.c:494
+#: ../mate-session/gsm-logout-dialog.c:473
 msgid "S_uspend"
 msgstr "절전(_U)"
 
-#: ../mate-session/gsm-logout-dialog.c:500
+#: ../mate-session/gsm-logout-dialog.c:479
 msgid "_Hibernate"
 msgstr "최대 절전(_H)"
 
-#: ../mate-session/gsm-logout-dialog.c:506
+#: ../mate-session/gsm-logout-dialog.c:485
 msgid "_Restart"
 msgstr "다시 시작(_R)"
 
-#: ../mate-session/gsm-logout-dialog.c:516
+#: ../mate-session/gsm-logout-dialog.c:495
 msgid "_Shut Down"
 msgstr "끄기(_S)"
 
-#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
+#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
 msgid "Not responding"
 msgstr "응답 없음"
 

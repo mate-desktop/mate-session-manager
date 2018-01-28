@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 14:35+0300\n"
+"POT-Creation-Date: 2017-11-28 15:12+0100\n"
 "PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
 "Language-Team: Malayalam (http://www.transifex.com/mate/MATE/language/ml/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,7 +69,7 @@ msgstr "വിവരണം ഒന്നുമില്ല"
 msgid "Version of this application"
 msgstr "ഈ പ്രയോഗത്തിന്റെ പതിപ്പു്"
 
-#: ../capplet/main.c:54
+#: ../capplet/main.c:64
 msgid "Could not display help document"
 msgstr "സഹായത്തിനുള്ള വിവരണം ലഭ്യമാക്കുവാന്‍ സാധ്യമല്ല"
 
@@ -274,12 +274,12 @@ msgstr "പ്രയോഗം രചനകള്‍ ആജ്ഞ സ്ഥാന
 msgid "Unrecognized launch option: %d"
 msgstr "മനസിലാക്കാന്‍ കഴിയാത്ത തുടങ്ങാനുള്ള ഐച്ഛികം: %d"
 
-#: ../egg/eggdesktopfile.c:1364
+#: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "രചനാ യു.അര്‍.എലുകള്‍ ഒരു  'Type=Link'('തരം=ബന്ധം') പണിയിട കുറിപ്പിലേക്ക് ചേര്‍ക്കാന്‍ കഴിയില്ല"
 
-#: ../egg/eggdesktopfile.c:1385
+#: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
 msgstr "തുടങ്ങാവുന്ന വസ്തുവല്ല"
@@ -367,58 +367,58 @@ msgstr "സ്ക്രീന്‍ പൂട്ടുക"
 msgid "Cancel"
 msgstr "റദ്ദാക്കുക"
 
-#: ../mate-session/gsm-logout-dialog.c:332
+#: ../mate-session/gsm-logout-dialog.c:312
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:340
+#: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:386
+#: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "നിങ്ങള്‍ നിലവില്‍ \"%s\" ആയി ലോഗിന്‍ ചെയ്തിരിക്കുന്നു."
 
-#: ../mate-session/gsm-logout-dialog.c:467
+#: ../mate-session/gsm-logout-dialog.c:446
 msgid "Log out of this system now?"
 msgstr "ഈ സിസ്റ്റത്തില്‍ നിന്ന് ഇപ്പോള്‍ പുറത്തിറങ്ങണോ?"
 
-#: ../mate-session/gsm-logout-dialog.c:473
+#: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
 msgstr "ഉപയോക്താവിനെ മാറ്റുക"
 
-#: ../mate-session/gsm-logout-dialog.c:482
+#: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
 msgstr "പുറത്തിറങ്ങുക"
 
-#: ../mate-session/gsm-logout-dialog.c:488
+#: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
 msgstr "ഈ സിസ്റ്റം ഇപ്പോള്‍ അടച്ചുപൂട്ടണോ ?"
 
-#: ../mate-session/gsm-logout-dialog.c:494
+#: ../mate-session/gsm-logout-dialog.c:473
 msgid "S_uspend"
 msgstr "_മയങ്ങിക്കോട്ടെ"
 
-#: ../mate-session/gsm-logout-dialog.c:500
+#: ../mate-session/gsm-logout-dialog.c:479
 msgid "_Hibernate"
 msgstr "_ശിശിരനിദ്ര"
 
-#: ../mate-session/gsm-logout-dialog.c:506
+#: ../mate-session/gsm-logout-dialog.c:485
 msgid "_Restart"
 msgstr "വീണ്ടും തുടങ്ങുക"
 
-#: ../mate-session/gsm-logout-dialog.c:516
+#: ../mate-session/gsm-logout-dialog.c:495
 msgid "_Shut Down"
 msgstr "കമ്പ്യൂട്ടര്‍ അടച്ചുപൂട്ടുക"
 
-#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
+#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
 msgid "Not responding"
 msgstr "പ്രതികരിയ്ക്കുന്നില്ല"
 

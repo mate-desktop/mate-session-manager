@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 14:35+0300\n"
+"POT-Creation-Date: 2017-11-28 15:12+0100\n"
 "PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
 "Language-Team: Tamil (http://www.transifex.com/mate/MATE/language/ta/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,7 +70,7 @@ msgstr "விவரணம் இல்லை"
 msgid "Version of this application"
 msgstr "இந்த பயன்பாட்டின் பதிப்பு "
 
-#: ../capplet/main.c:54
+#: ../capplet/main.c:64
 msgid "Could not display help document"
 msgstr "உதவி ஆவணத்தை காட்ட இயலவில்லை"
 
@@ -275,12 +275,12 @@ msgstr "பயன்பாடு ஆவணங்களை கட்டளை வ
 msgid "Unrecognized launch option: %d"
 msgstr "இனம் காண இயலாத துவக்க தேர்வு: %d"
 
-#: ../egg/eggdesktopfile.c:1364
+#: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "'Type=Link' மேல்மேசை உள்ளீடுக்கு ஆவண யூஆர்ஐ ஐ கொடுக்க இயலாது."
 
-#: ../egg/eggdesktopfile.c:1385
+#: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
 msgstr "தொடங்கக்கூடிய உருப்படி அல்ல."
@@ -368,58 +368,58 @@ msgstr "திரையைப் பூட்டுக."
 msgid "Cancel"
 msgstr "ரத்து செய்க"
 
-#: ../mate-session/gsm-logout-dialog.c:332
+#: ../mate-session/gsm-logout-dialog.c:312
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:340
+#: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:386
+#: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "நீங்கள் தற்போது \"%s\" ஆக புகுபதிவு செய்துள்ளீர்கள்."
 
-#: ../mate-session/gsm-logout-dialog.c:467
+#: ../mate-session/gsm-logout-dialog.c:446
 msgid "Log out of this system now?"
 msgstr "கணினியிலிருந்து இப்போது வெளிச்செல்லவா? "
 
-#: ../mate-session/gsm-logout-dialog.c:473
+#: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
 msgstr "(_S) பயனரை மாற்றுக"
 
-#: ../mate-session/gsm-logout-dialog.c:482
+#: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
 msgstr "(_L) விலகவும்"
 
-#: ../mate-session/gsm-logout-dialog.c:488
+#: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
 msgstr "இப்போது இந்த கணினியை நிறுத்தவா? "
 
-#: ../mate-session/gsm-logout-dialog.c:494
+#: ../mate-session/gsm-logout-dialog.c:473
 msgid "S_uspend"
 msgstr "இடை நிறுத்தம் (_u)"
 
-#: ../mate-session/gsm-logout-dialog.c:500
+#: ../mate-session/gsm-logout-dialog.c:479
 msgid "_Hibernate"
 msgstr "செயலற்றிருத்தல் (_H)"
 
-#: ../mate-session/gsm-logout-dialog.c:506
+#: ../mate-session/gsm-logout-dialog.c:485
 msgid "_Restart"
 msgstr "(_R) மீட்டமை"
 
-#: ../mate-session/gsm-logout-dialog.c:516
+#: ../mate-session/gsm-logout-dialog.c:495
 msgid "_Shut Down"
 msgstr "(_S) பணி நிறுத்தம் செய்யவும்"
 
-#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
+#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
 msgid "Not responding"
 msgstr "பதிலளிக்க இல்லை"
 

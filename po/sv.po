@@ -11,13 +11,14 @@
 # Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>, 2015-2016
 # Martin Norbäck <d95mback@dtek.chalmers.se>, 2000, 2001
 # Martin Wahlen <mva@sbbs.se>, 1998
+# Tobias Lekare <lekare@linux.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 14:35+0300\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>\n"
+"POT-Creation-Date: 2017-11-28 15:12+0100\n"
+"PO-Revision-Date: 2017-12-28 12:57+0000\n"
+"Last-Translator: Tobias Lekare <lekare@linux.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/mate/MATE/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,7 +74,7 @@ msgstr "Ingen beskrivning"
 msgid "Version of this application"
 msgstr "Version av detta program"
 
-#: ../capplet/main.c:54
+#: ../capplet/main.c:64
 msgid "Could not display help document"
 msgstr "Kunde inte visa hjälpdokumentet"
 
@@ -109,7 +110,7 @@ msgstr "Tidsgräns för utloggning"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr ""
+msgstr "Om loggningsprompten är aktiverad ställer du in tidsgränsen i sekunder innan du loggar ut automatiskt. Om 0, är automatisk utloggning inaktiverad."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
@@ -144,11 +145,11 @@ msgstr "Lista över komponenter som är nödvändiga som en del av sessionen. (V
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "Kontrollera uppstart av gnome-kompatibilitetskomponent"
 
 #: ../data/org.mate.session.gschema.xml.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "Kontrollera vilken kompatibilitetskomponent att starta"
 
 #: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
@@ -183,13 +184,13 @@ msgstr "Filhanteraren tillhandahåller skrivbordsikoner och låter dig interager
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
-msgstr ""
+msgstr "Docka"
 
 #: ../data/org.mate.session.gschema.xml.in.h:24
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr ""
+msgstr "En docka ger ett dockningsområde som liknar en panel för att starta och byta applikationer."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -278,12 +279,12 @@ msgstr "Programmet tar inte emot dokument på kommandoraden"
 msgid "Unrecognized launch option: %d"
 msgstr "Okänt startalternativ: %d"
 
-#: ../egg/eggdesktopfile.c:1364
+#: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Kan inte skicka dokument-URI:er till en \"Type=Link\"-skrivbordspost"
 
-#: ../egg/eggdesktopfile.c:1385
+#: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
 msgstr "Inte ett startbart objekt"
@@ -371,58 +372,58 @@ msgstr "Lås skärmen"
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: ../mate-session/gsm-logout-dialog.c:332
+#: ../mate-session/gsm-logout-dialog.c:312
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] "Du kommer att loggas ut automatiskt om %d sekund"
 msgstr[1] "Du kommer att loggas ut automatiskt om %d sekunder"
 
-#: ../mate-session/gsm-logout-dialog.c:340
+#: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] "Systemet kommer att stängas av automatiskt om %d sekund"
 msgstr[1] "Systemet kommer att stängas av automatiskt om %d sekunder"
 
-#: ../mate-session/gsm-logout-dialog.c:386
+#: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Du är för närvarande inloggad som \"%s\"."
 
-#: ../mate-session/gsm-logout-dialog.c:467
+#: ../mate-session/gsm-logout-dialog.c:446
 msgid "Log out of this system now?"
 msgstr "Logga ut ur detta system nu?"
 
-#: ../mate-session/gsm-logout-dialog.c:473
+#: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
 msgstr "_Växla användare"
 
-#: ../mate-session/gsm-logout-dialog.c:482
+#: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
 msgstr "_Logga ut"
 
-#: ../mate-session/gsm-logout-dialog.c:488
+#: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
 msgstr "Stäng av detta system nu?"
 
-#: ../mate-session/gsm-logout-dialog.c:494
+#: ../mate-session/gsm-logout-dialog.c:473
 msgid "S_uspend"
 msgstr "Vä_nteläge"
 
-#: ../mate-session/gsm-logout-dialog.c:500
+#: ../mate-session/gsm-logout-dialog.c:479
 msgid "_Hibernate"
 msgstr "Vilolä_ge"
 
-#: ../mate-session/gsm-logout-dialog.c:506
+#: ../mate-session/gsm-logout-dialog.c:485
 msgid "_Restart"
 msgstr "Starta _om"
 
-#: ../mate-session/gsm-logout-dialog.c:516
+#: ../mate-session/gsm-logout-dialog.c:495
 msgid "_Shut Down"
 msgstr "St_äng av"
 
-#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
+#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
 msgid "Not responding"
 msgstr "Svarar inte"
 
@@ -431,7 +432,7 @@ msgstr "Svarar inte"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:565
 msgid "Remembered Application"
-msgstr ""
+msgstr "Ihågkomna program"
 
 #: ../mate-session/gsm-xsmp-client.c:1203
 msgid "This program is blocking logout."
@@ -532,7 +533,7 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr ""
+msgstr "%s [OPTION...] COMMAND\n\nKör COMMAND samtidigt som vissa sessionsfunktioner hämmas.\n\n  -h, --help        Visar denna hjälp\n  --version         Visar programversion\n  --app-id ID       Programid att använda\n                    vid hämning (valfri)\n  --reason REASON   Orsak för hämning (valfri)\n  --inhibit ARG     Saker ett hämna, kolonseparerad lista av:\n                    logout, switch-user, suspend, idle, automount\n\nOm inget --inhibit alternativ är valt antas idle.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

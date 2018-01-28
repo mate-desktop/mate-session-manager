@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Dušan Kazik <prescott66@gmail.com>, 2015
+# Dušan Kazik <prescott66@gmail.com>, 2015,2017
 # Ján Ďanovský <dagsoftware@yahoo.com>, 2013-2016
 # Marcel Telka <marcel@telka.sk>, 2005-2006,2008
 # Pavol Šimo <palo.simo@gmail.com>, 2009-2010
@@ -16,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 14:35+0300\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Ján Ďanovský <dagsoftware@yahoo.com>\n"
+"POT-Creation-Date: 2017-11-28 15:12+0100\n"
+"PO-Revision-Date: 2017-10-30 06:18+0000\n"
+"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/mate/MATE/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,7 +74,7 @@ msgstr "Bez popisu"
 msgid "Version of this application"
 msgstr "Verzia tohto programu"
 
-#: ../capplet/main.c:54
+#: ../capplet/main.c:64
 msgid "Could not display help document"
 msgstr "Nepodarilo sa zobraziť dokument pomocníka"
 
@@ -216,7 +216,7 @@ msgstr "Programy spúšťané pri štarte"
 
 #: ../data/mate-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr "Vyberte programy, ktoré sa majú spustiť po prihlásení"
+msgstr "Vyberá programy, ktoré sa majú spustiť po prihlásení"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
@@ -279,12 +279,12 @@ msgstr "Program neprijíma dokumenty v príkazovom riadku"
 msgid "Unrecognized launch option: %d"
 msgstr "Nerozpoznaný argument spustenia: %d"
 
-#: ../egg/eggdesktopfile.c:1364
+#: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Položke pracovnej plochy typu Odkaz nie je možné odovzdať URI dokumentov"
 
-#: ../egg/eggdesktopfile.c:1385
+#: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
 msgstr "Nespustiteľná položka"
@@ -372,7 +372,7 @@ msgstr "Uzamknúť obrazovku"
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: ../mate-session/gsm-logout-dialog.c:332
+#: ../mate-session/gsm-logout-dialog.c:312
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
@@ -380,7 +380,7 @@ msgstr[0] "Budete automaticky odhlásený o %d sekundu"
 msgstr[1] "Budete automaticky odhlásený o %d sekundy"
 msgstr[2] "Budete automaticky odhlásený o %d sekúnd"
 
-#: ../mate-session/gsm-logout-dialog.c:340
+#: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
@@ -388,44 +388,44 @@ msgstr[0] "Systém sa automaticky vypne o %d sekundu"
 msgstr[1] "Systém sa automaticky vypne o %d sekundy"
 msgstr[2] "Systém sa automaticky vypne o %d sekúnd"
 
-#: ../mate-session/gsm-logout-dialog.c:386
+#: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Momentálne ste prihlásený ako „%s“."
 
-#: ../mate-session/gsm-logout-dialog.c:467
+#: ../mate-session/gsm-logout-dialog.c:446
 msgid "Log out of this system now?"
 msgstr "Odhlásiť sa zo systému?"
 
-#: ../mate-session/gsm-logout-dialog.c:473
+#: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
 msgstr "_Prepnúť používateľa"
 
-#: ../mate-session/gsm-logout-dialog.c:482
+#: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
 msgstr "_Odhlásiť sa"
 
-#: ../mate-session/gsm-logout-dialog.c:488
+#: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
 msgstr "Vypnúť počítač?"
 
-#: ../mate-session/gsm-logout-dialog.c:494
+#: ../mate-session/gsm-logout-dialog.c:473
 msgid "S_uspend"
 msgstr "_Uspať"
 
-#: ../mate-session/gsm-logout-dialog.c:500
+#: ../mate-session/gsm-logout-dialog.c:479
 msgid "_Hibernate"
 msgstr "_Hibernovať"
 
-#: ../mate-session/gsm-logout-dialog.c:506
+#: ../mate-session/gsm-logout-dialog.c:485
 msgid "_Restart"
 msgstr "_Reštartovať"
 
-#: ../mate-session/gsm-logout-dialog.c:516
+#: ../mate-session/gsm-logout-dialog.c:495
 msgid "_Shut Down"
 msgstr "_Vypnúť"
 
-#: ../mate-session/gsm-manager.c:1435 ../mate-session/gsm-manager.c:2154
+#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
 msgid "Not responding"
 msgstr "Neodpovedá"
 
