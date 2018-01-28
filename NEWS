@@ -1,3 +1,9 @@
+### mate-session-manager 1.20.0
+
+    sync with transifex
+    require GTK+ 3.22 and GLib 2.50
+    gsm-manager.c: Fix build warning:
+
 ### mate-session-manager 1.19.1
 
   * Translations update
