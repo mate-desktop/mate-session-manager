@@ -454,7 +454,7 @@ gsm_get_dialog (GsmDialogLogoutType type,
                 }
 
                 gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                       GTK_STOCK_CANCEL,
+                                       "gtk-cancel",
                                        GTK_RESPONSE_CANCEL);
 
                 gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
@@ -487,7 +487,7 @@ gsm_get_dialog (GsmDialogLogoutType type,
                 }
 
                 gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                       GTK_STOCK_CANCEL,
+                                       "gtk-cancel",
                                        GTK_RESPONSE_CANCEL);
 
                 if (gsm_logout_supports_shutdown (logout_dialog)) {

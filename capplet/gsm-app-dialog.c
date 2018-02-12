@@ -111,9 +111,9 @@ on_browse_button_clicked (GtkWidget    *widget,
         chooser = gtk_file_chooser_dialog_new ("",
                                                GTK_WINDOW (dialog),
                                                GTK_FILE_CHOOSER_ACTION_OPEN,
-                                               GTK_STOCK_CANCEL,
+                                               "gtk-cancel",
                                                GTK_RESPONSE_CANCEL,
-                                               GTK_STOCK_OPEN,
+                                               "gtk-open",
                                                GTK_RESPONSE_ACCEPT,
                                                NULL);
 
@@ -189,18 +189,18 @@ setup_dialog (GsmAppDialog *dialog)
                       NULL);
 
         gtk_dialog_add_button (GTK_DIALOG (dialog),
-                               GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+                               "gtk-cancel", GTK_RESPONSE_CANCEL);
 
         if (dialog->priv->name == NULL
             && dialog->priv->command == NULL
             && dialog->priv->comment == NULL) {
                 gtk_window_set_title (GTK_WINDOW (dialog), _("Add Startup Program"));
                 gtk_dialog_add_button (GTK_DIALOG (dialog),
-                                       GTK_STOCK_ADD, GTK_RESPONSE_OK);
+                                       "gtk-add", GTK_RESPONSE_OK);
         } else {
                 gtk_window_set_title (GTK_WINDOW (dialog), _("Edit Startup Program"));
                 gtk_dialog_add_button (GTK_DIALOG (dialog),
-                                       GTK_STOCK_SAVE, GTK_RESPONSE_OK);
+                                       "gtk-save", GTK_RESPONSE_OK);
         }
 
         dialog->priv->name_entry = GTK_WIDGET (gtk_builder_get_object (xml, CAPPLET_NAME_ENTRY_WIDGET_NAME));

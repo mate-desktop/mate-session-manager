@@ -474,8 +474,8 @@ setup_dialog (GsmPropertiesDialog *dialog)
         GtkTargetList     *targetlist;
 
         gtk_dialog_add_buttons (GTK_DIALOG (dialog),
-                                GTK_STOCK_HELP, GTK_RESPONSE_HELP,
-                                GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
+                                "gtk-help", GTK_RESPONSE_HELP,
+                                "gtk-close", GTK_RESPONSE_CLOSE,
                                 NULL);
 
         dialog->priv->list_store = gtk_list_store_new (NUMBER_OF_COLUMNS,
