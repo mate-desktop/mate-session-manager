@@ -1,19 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Richard Allen <ra@ra.is>, 2003
-# Samúel Jón Gunnarsson <sammi@techattack.nu>, 2003
-# Sveinn í Felli <sv1@fellsnet.is>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic (http://www.transifex.com/mate/MATE/language/is/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Icelandic (https://www.transifex.com/mate/teams/13566/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,7 +40,7 @@ msgstr "Ræsiskipunin er ekki gild"
 
 #: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
-msgstr "Virkjað"
+msgstr "Virkt"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
@@ -68,7 +66,7 @@ msgstr "Engin lýsing"
 msgid "Version of this application"
 msgstr "Útgáfa þessa forrits"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Gat ekki birt hjálparskjal"
 
@@ -202,7 +200,9 @@ msgstr "<b>Sum forrit eru ennþá í gangi:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Bíð eftir að forritið ljúki sér af. Ef forritið er truflað gætirðu tapað einhverjum gögnum."
+msgstr ""
+"Bíð eftir að forritið ljúki sér af. Ef forritið er truflað gætirðu tapað "
+"einhverjum gögnum."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -318,7 +318,7 @@ msgstr "Táknmynd ,%s' fannst ekki"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "Óþekkt"
+msgstr "Óþekktur"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -332,7 +332,9 @@ msgstr "Sum forrit eru ennþá í gangi:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Leyfi forritunum að klára fyrst. Það að trufla þessi forrit við vinnu gæti valdið vinnutapi."
+msgstr ""
+"Leyfi forritunum að klára fyrst. Það að trufla þessi forrit við vinnu gæti "
+"valdið vinnutapi."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -370,15 +372,15 @@ msgstr "Hætta við"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Þú verður skráður sjálfvirkt út eftir %d sekúndu"
-msgstr[1] "Þú verður skráður sjálfvirkt út eftir %d sekúndur"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Tölvan slekkur sjálfvirkt á sér eftir %d sekúndu"
-msgstr[1] "Tölvan slekkur sjálfvirkt á sér eftir %d sekúndur"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -417,7 +419,7 @@ msgstr "_Endurræsa"
 msgid "_Shut Down"
 msgstr "_Slökkva"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Svarar ekki"
 
@@ -436,7 +438,9 @@ msgstr "Þetta forrit hindrar útskráningu."
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr "Leyfi biðlara ekki að tengjast vegna þess að það er verið að slökkva á þessari setu\n"
+msgstr ""
+"Leyfi biðlara ekki að tengjast vegna þess að það er verið að slökkva á "
+"þessari setu\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
@@ -447,7 +451,8 @@ msgstr "Gat ekki búið til ICE hlustunar tengi: %s"
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Gat ekki hafið innskráningarsetu (og ekki náðist að tengjast X þjóninum)"
+msgstr ""
+"Gat ekki hafið innskráningarsetu (og ekki náðist að tengjast X þjóninum)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"

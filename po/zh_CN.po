@@ -1,23 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Aron Xu <aronxu@gnome.org>, 2010
-# liushuyu011 <liushuyu011@gmail.com>, 2015
-# Tao Wei <weitao1979@gmail.com>, 2009
-# Updated by Funda Wang <fundawang@linux.net.cn>, 2003
-# Wylmer Wang, 2014
-# Yang Zhang <zyangmath@gmail.com>, 2009
-# Mingcong Bai <jeffbai@aosc.xyz>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: liushuyu011 <liushuyu011@gmail.com>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/mate/MATE/language/zh_CN/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: shuyu liu <liushuyu011@gmail.com>, 2018\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -62,7 +56,7 @@ msgstr "启动应用程序首选项"
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr "无名称"
+msgstr "未命名"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
@@ -72,7 +66,7 @@ msgstr "无描述"
 msgid "Version of this application"
 msgstr "此应用程序的版本"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "不能显示帮助文档"
 
@@ -112,12 +106,12 @@ msgstr "如开启注销提示框，将自动设置注销超时。如设置为 0�
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr "会话被认为是空闲之前的时间"
+msgstr "会话被视为空闲前等待时间"
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "会话被认为是空闲之前的不活跃分钟数。"
+msgstr "会话在被视为空闲之前的非活动分钟数。"
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -139,7 +133,8 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "列出会话所包含的必需组件。(每个元素代表了“/org/mate/:desktop/session/required_components”下的一个键)。启动应用程序首选项通常不允许用户从会话中删除所需组件，而会话管理器也会在所需组件被删除时自动在登录时添加这些组件。"
+msgstr ""
+"列出会话所包含的必需组件。(每个元素代表了“/org/mate/:desktop/session/required_components”下的一个键)。启动应用程序首选项通常不允许用户从会话中删除所需组件，而会话管理器也会在所需组件被删除时自动在登录时添加这些组件。"
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -255,12 +250,12 @@ msgstr "名称(_N)："
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "文件不是有效的 .desktop 文件"
+msgstr "不是一个有效的 .desktop 文件"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "不可识别的桌面文件版本“%s”"
+msgstr "不能识别的桌面文件版本“%s”"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
@@ -270,22 +265,22 @@ msgstr "正在启动 %s"
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "应用程序不在命令行上接受文档"
+msgstr "程序在命令行中不接收文档"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "无法识别的调用选项：%d"
+msgstr "不能识别的启动选项：%d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "无法将文档 URI 传送给“Type=Link”桌面项"
+msgstr "无法将文档 URL 传递给“Type=Link”的桌面项"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "不是可调用项"
+msgstr "非可启动项目"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
@@ -293,7 +288,7 @@ msgstr "禁止连接到会话管理器"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "指定包含已保存配置的文件"
+msgstr "指定包含有已保存配置的文件"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
@@ -419,7 +414,7 @@ msgstr "重启(_R)"
 msgid "_Shut Down"
 msgstr "关闭系统(_S)"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "无响应"
 
@@ -529,7 +524,19 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [选项……] 命令\n\n禁用一些会话功能并执行命令。\n\n-h, --help 显示此帮助信息\n--version 显示程序版本\n--app-id ID 在阻止功能时要使用的应用程序 ID（可选）\n--reason REASON 阻止功能的原因（可选）\n--inhibit ARG 要阻止启动的功能，可用列表为：\nlogout, switch-user, suspend, idle, automount\n\n如未指定 --inhibit 选项，则默认为空闲状态。\n"
+msgstr ""
+"%s [选项……] 命令\n"
+"\n"
+"禁用一些会话功能并执行命令。\n"
+"\n"
+"-h, --help 显示此帮助信息\n"
+"--version 显示程序版本\n"
+"--app-id ID 在阻止功能时要使用的应用程序 ID（可选）\n"
+"--reason REASON 阻止功能的原因（可选）\n"
+"--inhibit ARG 要阻止启动的功能，可用列表为：\n"
+"logout, switch-user, suspend, idle, automount\n"
+"\n"
+"如未指定 --inhibit 选项，则默认为空闲状态。\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Dzongkha (http://www.transifex.com/mate/MATE/language/dz/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Dzongkha (https://www.transifex.com/mate/teams/13566/dz/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,7 +44,7 @@ msgstr "ལྕོགས་ཅན་བཟོ་ཡོདཔ་"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr ""
+msgstr "ངོས་དཔར།"
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
@@ -55,7 +56,7 @@ msgstr ""
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr ""
+msgstr "མིང་མིན་འདུག"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
@@ -63,11 +64,11 @@ msgstr "འགྲེལ་བཤད་མེད"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr ""
+msgstr "གློག་རིམ་འདི་གི་ཐོན་རིམ།"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
-msgstr ""
+msgstr "གྲོགས་རམ་ཡིག་ཆ་ བཀྲམ་སྟོན་འབད་མ་ཚུགས།"
 
 #: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
@@ -91,7 +92,9 @@ msgstr "ཕྱིར་བསྐྱོད་ཀྱི་ནུས་སྤེལ
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "ལྕོགས་ཅན་བཟོ་བ་ཅིན་ ཇི་ནོམ་ལཱ་ཡུན་གྱིས་ ལཱ་ཡུན་ཅིག་མཇུག་མ་བསྡུ་བའི་ཧེ་མར་ ལག་ལེན་པ་ལུ་ ནུས་སྤེལ་བྱིནམ་ཨིན།"
+msgstr ""
+"ལྕོགས་ཅན་བཟོ་བ་ཅིན་ ཇི་ནོམ་ལཱ་ཡུན་གྱིས་ ལཱ་ཡུན་ཅིག་མཇུག་མ་བསྡུ་བའི་ཧེ་མར་ "
+"ལག་ལེན་པ་ལུ་ ནུས་སྤེལ་བྱིནམ་ཨིན།"
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -105,12 +108,14 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr ""
+msgstr "ལཱ་ཡུན་འདི་ ལས་མེད་སྦེ་ཆ་འཇོག་མ་འབད་བའི་ཧེ་མའི་ཆུ་ཚོད་"
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr ""
+"ལཱ་ཡུན་འདི་ ལས་མེད་སྦེ་ ཆ་འཇོག་མ་འབད་བའི་ཧེ་མར་ ཤུགས་མེད་སྦེ་གནས་དགོ་པའི་ "
+"སྐར་མའི་གྱངས་ཁ།"
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -155,7 +160,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
-msgstr ""
+msgstr "པེ་ནཱལ"
 
 #: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
@@ -165,7 +170,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr ""
+msgstr "ཡིག་སྣོད་འཛིན་སྐྱོང་པ།"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
@@ -219,7 +224,9 @@ msgstr "འགོ་བཙུགས་སྐབས་ཀྱི་ལས་རི
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
-msgstr "ཕྱིར་བསྐྱོད་འབད་བའི་སྐབས་ རང་བཞིན་གྱི་གཡོག་བཀོལ་བའི་སྒང་གི་འཇུག་སྤྱོད་སེམ་ཁར་བཞག(_A)"
+msgstr ""
+"ཕྱིར་བསྐྱོད་འབད་བའི་སྐབས་ "
+"རང་བཞིན་གྱི་གཡོག་བཀོལ་བའི་སྒང་གི་འཇུག་སྤྱོད་སེམ་ཁར་བཞག(_A)"
 
 #: ../data/session-properties.ui.h:4
 msgid "_Remember Currently Running Application"
@@ -227,7 +234,7 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr ""
+msgstr "གདམ་ཁ་ཚུ།"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
@@ -258,7 +265,7 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr ""
+msgstr "%s འགོ་བཙུགས་དོ།"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
@@ -278,11 +285,11 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "གསར་བཙུགས་འབད་བཏུབ་པའི་ རྣམ་གྲངས་ཅིག་མེན་པས།"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "ལཱ་ཡུན་འཛིན་སྐྱོང་པ་ལུ་ མཐུད་ལམ་ལྕོགས་མིན་བཟོ།"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -294,11 +301,11 @@ msgstr ""
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "ལཱ་ཡུན་འཛིན་སྐྱོང་གིཨའི་ཌི་ གསལ་བཀོད་འབད།"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr ""
+msgstr "ཨའི་ཌི།"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
@@ -306,12 +313,12 @@ msgstr ""
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr ""
+msgstr "ལཱ་ཡུན་འཛིན་སྐྱོང༌གི་གདམ་ཁ་ཚུ་སྟོན།"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
 msgid "Icon '%s' not found"
-msgstr ""
+msgstr "ངོས་དཔར་'%s'མ་ཐོབ།"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
@@ -357,11 +364,11 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
-msgstr ""
+msgstr "གསལ་གཞི་ལྡེ་མིག་རྐྱབས།"
 
 #: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
-msgstr ""
+msgstr "ཆ་མེད་གཏང་།"
 
 #: ../mate-session/gsm-logout-dialog.c:312
 #, c-format
@@ -386,11 +393,11 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
-msgstr ""
+msgstr "ལག་ལེན་པའི་སོར་བསྒྱུར(_S)"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
-msgstr ""
+msgstr "ཕྱིར་བསྐྱོད་འབད།(_L)"
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
@@ -412,7 +419,7 @@ msgstr ""
 msgid "_Shut Down"
 msgstr ""
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr ""
 
@@ -450,7 +457,7 @@ msgstr ""
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr ""
+msgstr "རྐྱེན་སེལ་གྱི་ཀོཌི་ ལྕོགས་ཅན་བཟོ།"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
@@ -462,7 +469,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:69
 msgid "Log out"
-msgstr ""
+msgstr "ཕྱིར་བསྐྱོད་འབད།"
 
 #: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"

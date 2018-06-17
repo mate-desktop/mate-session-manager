@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# abuyop <abuyop@gmail.com>, 2013-2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: abuyop <abuyop@gmail.com>\n"
-"Language-Team: Malay (http://www.transifex.com/mate/MATE/language/ms/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Malay (https://www.transifex.com/mate/teams/13566/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,11 +64,11 @@ msgstr "Tiada keterangan"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr "Versi aplikasi ini"
+msgstr "Versi bagi aplikasi ini"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
-msgstr "Tidak dapat papar dokumen bantuan"
+msgstr "Tidak dapat paparkan dokumen bantuan"
 
 #: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
@@ -92,7 +92,8 @@ msgstr "Maklum daftar keluar"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Jika dbenarkan, mate-session akan memaklum pengguna sebelum menamatkan sesi."
+msgstr ""
+"Jika dbenarkan, mate-session akan memaklum pengguna sebelum menamatkan sesi."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -102,7 +103,10 @@ msgstr "Had masa tamat daftar keluar"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "Jika makluman daftar keluar dibenarkan, ia tetapkan had masa tamat dalam saat sebelum mendaftar keluar secara automatik. Jika 0, daftar keluar automatik dilumpuhkan."
+msgstr ""
+"Jika makluman daftar keluar dibenarkan, ia tetapkan had masa tamat dalam "
+"saat sebelum mendaftar keluar secara automatik. Jika 0, daftar keluar "
+"automatik dilumpuhkan."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
@@ -133,7 +137,13 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Senarai komponen yang diperlukan sebagai sebahagian dari sesi. (Setiap unsur namakan kunci dibawah \"/org/desktop/mate/session/required_components\"). Alat keutamaan Aplikasi Permulaan tidak membenarkan secara normal pengguna membuang komponen yang diperlukan dari sesi, dan pengurus sesi akan tambah secara automatik komponen yang diperlukan kembali ke sesi pada masa daftar masuk jika ia dibuang."
+msgstr ""
+"Senarai komponen yang diperlukan sebagai sebahagian dari sesi. (Setiap unsur"
+" namakan kunci dibawah \"/org/desktop/mate/session/required_components\"). "
+"Alat keutamaan Aplikasi Permulaan tidak membenarkan secara normal pengguna "
+"membuang komponen yang diperlukan dari sesi, dan pengurus sesi akan tambah "
+"secara automatik komponen yang diperlukan kembali ke sesi pada masa daftar "
+"masuk jika ia dibuang."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -152,7 +162,10 @@ msgstr "Pengurus Tetingkap"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Pengurus tetingkap adalah progrma yang melukis palang tajuk dan sempadan disekeliling tetingkap, dan membolehkan anda alih dan saizkan semula tetingkap."
+msgstr ""
+"Pengurus tetingkap adalah progrma yang melukis palang tajuk dan sempadan "
+"disekeliling tetingkap, dan membolehkan anda alih dan saizkan semula "
+"tetingkap."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -162,7 +175,9 @@ msgstr "Panel"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Panel menyediakan palang pada bahagian atas dan bawah skrin yang mengandungi menu, senarai tetingkap, ikon status, jam, dan lain-lain."
+msgstr ""
+"Panel menyediakan palang pada bahagian atas dan bawah skrin yang mengandungi"
+" menu, senarai tetingkap, ikon status, jam, dan lain-lain."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -172,7 +187,9 @@ msgstr "Pengurus Fail"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Pengurus fail menyediakan ikon dektop dan membolehkan anda berinteraksi dengan fail tersimpan anda."
+msgstr ""
+"Pengurus fail menyediakan ikon dektop dan membolehkan anda berinteraksi "
+"dengan fail tersimpan anda."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -182,7 +199,9 @@ msgstr "Labuh"
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr "Satu labuh menyediakan kawasan boleh dilabuh, serupa dengan panel, untuk melancar dan menukar aplikasi."
+msgstr ""
+"Satu labuh menyediakan kawasan boleh dilabuh, serupa dengan panel, untuk "
+"melancar dan menukar aplikasi."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -200,7 +219,9 @@ msgstr "<b>Beberapa program masih berjalan:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Menunggu program untuk diselesaikan. Menyampuk program boleh menyebabkan anda kehilangan kerja yang sedang dibuat."
+msgstr ""
+"Menunggu program untuk diselesaikan. Menyampuk program boleh menyebabkan "
+"anda kehilangan kerja yang sedang dibuat."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -264,17 +285,17 @@ msgstr "Memulakan %s"
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "Aplikasi tidak menerima dokumen pada baris perintah"
+msgstr "Aplikasi tidak terima dokument pada baris perintah"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Pilihan lancar tidak dikenali: %d"
+msgstr "Pilihan lancar tidak dikenalpasti: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Tidak dapat lepaskan URL dokumen ke masukan dekstop 'Type=Link'"
+msgstr "Tidak dapat luluskan URI dokumen ke masukan desktop 'Type=Link'"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
@@ -283,15 +304,15 @@ msgstr "Bukan item boleh lancar"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "Lumpuhkan sambungan ke pengurus sesi"
+msgstr "Lumpuhkan sambungan dengan pengurus sesi"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "Nyatakan fail yang mengandungi konfigurasi tersimpan"
+msgstr "Nyatakan fail mengandungi konfigurasi tersimpan"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr "FILE"
+msgstr "FAIL"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
@@ -330,7 +351,9 @@ msgstr "Beberapa program masih berjalan:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Menunggu program diselesaikan. Menyampuk program ini boleh menyebabkan anda kehilangan kerja yang sedang dibuat."
+msgstr ""
+"Menunggu program diselesaikan. Menyampuk program ini boleh menyebabkan anda "
+"kehilangan kerja yang sedang dibuat."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -413,7 +436,7 @@ msgstr "_Mula Semula"
 msgid "_Shut Down"
 msgstr "Ma_tikan"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Tidak membalas"
 
@@ -443,7 +466,8 @@ msgstr "Tidak dapat cipta soket mendengar ICE: %s"
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Tidak boleh mulakan sesi daftar masuk (dan tidak boleh sambung ke pelayan X)"
+msgstr ""
+"Tidak boleh mulakan sesi daftar masuk (dan tidak boleh sambung ke pelayan X)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
@@ -523,7 +547,20 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [OPTION...] COMMAND\n\nLakukan COMMAND ketika merencatkan beberapa kefungsian sesi.\n\n  -h, --help        Tunjuk bantuan ini\n  --version         Tunjuk versi program\n  --app-id ID       Id aplikasi yang digunakan bila\n                    membuat perencatan (pilihan)\n  --reason REASON   Sebab membuat perencatan (pilihan)\n  --inhibit ARG     Perkara yang direncat, senarai dipisah tanda titik bertindih:\n                    logout, switch-user, suspend, idle, automount\n\nJika tiada pilihan --inhibit dinyatakan, melahu digunakan.\n"
+msgstr ""
+"%s [OPTION...] COMMAND\n"
+"\n"
+"Lakukan COMMAND ketika merencatkan beberapa kefungsian sesi.\n"
+"\n"
+"  -h, --help        Tunjuk bantuan ini\n"
+"  --version         Tunjuk versi program\n"
+"  --app-id ID       Id aplikasi yang digunakan bila\n"
+"                    membuat perencatan (pilihan)\n"
+"  --reason REASON   Sebab membuat perencatan (pilihan)\n"
+"  --inhibit ARG     Perkara yang direncat, senarai dipisah tanda titik bertindih:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"Jika tiada pilihan --inhibit dinyatakan, melahu digunakan.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

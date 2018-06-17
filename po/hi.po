@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Rajesh Ranjan <rajesh672@gmail.com>, 2009
-# Rajesh Ranjan <rajesh672@gmail.com>, 2005, 2006, 2009
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Hindi (http://www.transifex.com/mate/MATE/language/hi/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Sadgamaya <g.raghavan.g@gmail.com>, 2018\n"
+"Language-Team: Hindi (https://www.transifex.com/mate/teams/13566/hi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,7 +44,7 @@ msgstr "सक्षम"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr "प्रतीक"
+msgstr "चिह्न"
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
@@ -67,7 +66,7 @@ msgstr "कोई विवरण नहीं"
 msgid "Version of this application"
 msgstr "इस अनुप्रयोग का संस्करण"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "मदद दस्तावेज़ नहीं दिखा सका"
 
@@ -153,7 +152,9 @@ msgstr "विन्डो मैनेजर"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "यह विंडो प्रबंधक वह प्रोग्राम है जो विंडो के गिर्द शीर्षक पट्टी और किनारा बनाता है और आपको विंडो को खिसकाने व फिर आकार देने की छूट देता है."
+msgstr ""
+"यह विंडो प्रबंधक वह प्रोग्राम है जो विंडो के गिर्द शीर्षक पट्टी और किनारा "
+"बनाता है और आपको विंडो को खिसकाने व फिर आकार देने की छूट देता है."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -163,7 +164,9 @@ msgstr "पटल"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "यह पटल स्क्रीन के ऊपर या नीचे पट्टी देता है जिसमें मेन्यू, विंडो सूची, स्थिति प्रतीक, घड़ी आदि समाहित किए है."
+msgstr ""
+"यह पटल स्क्रीन के ऊपर या नीचे पट्टी देता है जिसमें मेन्यू, विंडो सूची, "
+"स्थिति प्रतीक, घड़ी आदि समाहित किए है."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -173,7 +176,9 @@ msgstr "फ़ाइल प्रबंधक"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "यह फाइल प्रबंधक डेस्कटॉप प्रतीक देता है और अपनी सहेजी फाइलों से अंतःक्रिया करने की स्वीकृति देता है."
+msgstr ""
+"यह फाइल प्रबंधक डेस्कटॉप प्रतीक देता है और अपनी सहेजी फाइलों से अंतःक्रिया "
+"करने की स्वीकृति देता है."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -260,7 +265,7 @@ msgstr "अपरिचित डेस्कटॉप फ़ाइल संस
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr "%s आरंभ हो रहा है"
+msgstr "%s शुरू हो रहा है"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
@@ -284,7 +289,7 @@ msgstr "चलाने योग्य प्रोग्राम नहीं
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "सत्र प्रबंधक में कनेक्शन निष्क्रिय करें"
+msgstr "सत्र प्रबंधक में संबंधन निष्क्रिय करें"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -308,7 +313,7 @@ msgstr "सत्र प्रबंधन विकल्प:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "सत्र प्रबंधन विकल्प दिखाएँ"
+msgstr "दिखाएँ सत्र प्रबंधन विकल्प"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
@@ -331,7 +336,9 @@ msgstr "कुछ प्रोग्राम अभी भी चल रहा 
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "समाप्त करने के लिए प्रोग्राम के लिए प्रतीक्षारत.  इन प्रोग्राम में व्यवधान आपको काम खराब करने का कारण बन सकता है."
+msgstr ""
+"समाप्त करने के लिए प्रोग्राम के लिए प्रतीक्षारत.  इन प्रोग्राम में व्यवधान "
+"आपको काम खराब करने का कारण बन सकता है."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -416,7 +423,7 @@ msgstr "पुन:आरंभ करें (_R)"
 msgid "_Shut Down"
 msgstr "बंद करें (_S)"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "कोई प्रतिक्रिया नहीं दे रहा है"
 
@@ -446,7 +453,8 @@ msgstr "ICE लाइसेंसिंग सॉकेट बना नही�
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "लॉगिन सत्र आरंभ करने में असमर्थ (और X सर्वर से कनेक्ट करने में असमर्थ)"
+msgstr ""
+"लॉगिन सत्र आरंभ करने में असमर्थ (और X सर्वर से कनेक्ट करने में असमर्थ)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"

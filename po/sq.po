@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Deep_Dark <epidamus@netscape.net>, 2002
-# Elian Myftiu <elian@alblinux.net>, 2007
-# Indrit Bashkimi <indrit.bashkimi@gmail.com>, 2015
-# Laurent Dhima <laurenti@alblinux.net>, 2003, 2004, 2005, 2006
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Albanian (http://www.transifex.com/mate/MATE/language/sq/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>, 2018\n"
+"Language-Team: Albanian (https://www.transifex.com/mate/teams/13566/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,9 +66,9 @@ msgstr "Pa përshkrim"
 msgid "Version of this application"
 msgstr "Versioni i këtij programi"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
-msgstr ""
+msgstr "E pamundur shfaqja e dokumentit të ndihmës"
 
 #: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
@@ -95,7 +92,9 @@ msgstr "Terminali i daljes"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Nëse aktivohet, seanca e mate do të nxjerre përdoruesin në terminal përpara se të mbarojë një seancë."
+msgstr ""
+"Nëse aktivohet, seanca e mate do të nxjerre përdoruesin në terminal përpara "
+"se të mbarojë një seancë."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -115,6 +114,7 @@ msgstr ""
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr ""
+"Numri i minutave pa aktivitet para se seanca të konsiderohet jo aktive."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -149,7 +149,7 @@ msgstr ""
 #: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
-msgstr "Organizuesi i dritareve"
+msgstr "Menaxheri Window"
 
 #: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
@@ -159,7 +159,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
-msgstr ""
+msgstr "Panel"
 
 #: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
@@ -169,7 +169,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr ""
+msgstr "File Manager"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
@@ -257,52 +257,52 @@ msgstr "Skedari nuk është një skedar .desktop i vlefshëm"
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr ""
+msgstr "Version i pasaktë file desktop '%s'"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr ""
+msgstr "Fillo %s"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "Aplikacioni nuk pranon dokumente në rreshtin e komandës"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr ""
+msgstr "Opsion i pasaktë nisje: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr ""
+msgstr "Nuk mund t'i kalohen URL-të e dokumenteve hyres desktopi 'Type=Link'"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "Nuk është një element i ekzekutueshëm"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "Çaktivizo lidhjen me menaxhuesin e seancës"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr ""
+msgstr "Specifikon dokumentin që përmban konfiurimin e ruajtur"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr ""
+msgstr "SKEDAR"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "Specifiko ID e menaxhuesit të seancës"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
@@ -319,7 +319,7 @@ msgstr "Ikona '%s' nuk u gjet"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "Nuk njihet"
+msgstr "Panjohur"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -361,7 +361,7 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
-msgstr ""
+msgstr "Blloko Ekranin"
 
 #: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
@@ -396,7 +396,7 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
-msgstr ""
+msgstr "_Dil jashtë"
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
@@ -418,7 +418,7 @@ msgstr "_Rindiz"
 msgid "_Shut Down"
 msgstr "_Fik"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Nuk po përgjigjet"
 
@@ -456,7 +456,7 @@ msgstr ""
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr ""
+msgstr "Aktivo kodin e debug"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
@@ -468,7 +468,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:69
 msgid "Log out"
-msgstr ""
+msgstr "Përfundo seancën"
 
 #: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"

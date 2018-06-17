@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Damir Jerovšek <jierro@windowslive.com>, 2013-2014
-# Helena S <ele@tutamail.com>, 2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-23 18:17+0000\n"
-"Last-Translator: Helena S <ele@tutamail.com>\n"
-"Language-Team: Slovenian (http://www.transifex.com/mate/MATE/language/sl/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: jetomit <timotej.lazar@araneo.si>, 2018\n"
+"Language-Team: Slovenian (https://www.transifex.com/mate/teams/13566/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,9 +64,9 @@ msgstr "Brez opisa"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr "Različica programa"
+msgstr "Različica tega programa"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Ni mogoče prikazati dokumenta pomoči"
 
@@ -93,7 +92,9 @@ msgstr "Odjavni poziv"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Izbrana možnost omogoča, da bo seja MATE pred končanjem seje pozval uporabnika."
+msgstr ""
+"Izbrana možnost omogoča, da bo seja MATE pred končanjem seje pozval "
+"uporabnika."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -103,7 +104,9 @@ msgstr "Časovna omejitev odjave"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "V primeru omogočenega odjavnega poziva, to omogoči samodejno zakasnitev v sekundah pred odjavo. Ob vrednosti 0, je samodejno odjavljanje onemogočeno."
+msgstr ""
+"V primeru omogočenega odjavnega poziva, to omogoči samodejno zakasnitev v "
+"sekundah pred odjavo. Ob vrednosti 0, je samodejno odjavljanje onemogočeno."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
@@ -112,7 +115,7 @@ msgstr "Čas, preden se seja obravnava kot nedejavna."
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Čas nedejavnosti v minutah, preden se seja obravnava kot nedejavna."
+msgstr "Število minut nedejavnosti, preden je seja obravnavana kot nedejavna."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -134,7 +137,12 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Seznam enot, ki so zahtevani kot del seje. (Vsak predmet določa ključ v \"/org/mate/desktop/session/required_components\"). Orodje za možnosti začetnih programov običajno ne dovoli uporabnikom odstraniti zahtevanih enot, upravljalnik seje pa bo samodejno dodal zahtevane enote nazaj v sejo ob prijavi, če se jih odstrani."
+msgstr ""
+"Seznam enot, ki so zahtevani kot del seje. (Vsak predmet določa ključ v "
+"\"/org/mate/desktop/session/required_components\"). Orodje za možnosti "
+"začetnih programov običajno ne dovoli uporabnikom odstraniti zahtevanih "
+"enot, upravljalnik seje pa bo samodejno dodal zahtevane enote nazaj v sejo "
+"ob prijavi, če se jih odstrani."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -153,7 +161,9 @@ msgstr "Upravljalnik oken"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Upravljalnik oken je program, ki izriše naslovno vrstico in robove okoli oken ter omogoča njihovo premikanje in spreminjanje velikosti."
+msgstr ""
+"Upravljalnik oken je program, ki izriše naslovno vrstico in robove okoli "
+"oken ter omogoča njihovo premikanje in spreminjanje velikosti."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -163,7 +173,9 @@ msgstr "Pult"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Pult omogoča vrstico na vrhu ali na dnu zaslona z meniji, seznamom oken, ikonami stanja, uro in drugimi uporabnimi možnostmi."
+msgstr ""
+"Pult omogoča vrstico na vrhu ali na dnu zaslona z meniji, seznamom oken, "
+"ikonami stanja, uro in drugimi uporabnimi možnostmi."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -173,7 +185,9 @@ msgstr "Upravljalnik datotek"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Upravljalnik datotek prikaže ikone namizja, s katerimi lahko upravljate s shranjenimi datotekami."
+msgstr ""
+"Upravljalnik datotek prikaže ikone namizja, s katerimi lahko upravljate s "
+"shranjenimi datotekami."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -201,7 +215,9 @@ msgstr "<b>Nekateri programi se še vedno izvajajo:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Čakanje na konec izvajanja programov. Prekinitev izvajanja lahko povzroči izgubo vaših podatkov."
+msgstr ""
+"Čakanje na konec izvajanja programov. Prekinitev izvajanja lahko povzroči "
+"izgubo vaših podatkov."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -250,12 +266,12 @@ msgstr "_Ime:"
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "Datoteka .desktop ni veljavna"
+msgstr "Datoteka ni veljavna .datoteka namizja"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Neznana različica datoteke namizja '%s'"
+msgstr "Neprepoznana različica datoteke namizja '%s'"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
@@ -265,17 +281,18 @@ msgstr "Začenjanje %s"
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "Program ne sprejme dokumentov preko ukazne vrstice"
+msgstr "Program ne sprejme dokumentov v ukazni vrstici"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Neznana možnost zagona: %d"
+msgstr "Neprepoznana možnost zagona: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Ni mogoče prenesti naslova URI dokumenta na vnos namizja 'Vrsta=Povezava'"
+msgstr ""
+"Ni mogoče poslati naslovov URI dokumenta na vnos namizja 'Vrsta=Povezava'"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
@@ -288,7 +305,7 @@ msgstr "Onemogoči povezavo z upravljalnikom seje"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "Določitev datoteke s shranjenimi nastavitvami"
+msgstr "Navaja datoteko s shranjenimi nastavitvami"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
@@ -331,7 +348,9 @@ msgstr "Nekateri programi se še vedno izvajajo:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Čakanje na konec izvajanja programov. Prekinitev izvajanja lahko povzroči izgubo vaših podatkov."
+msgstr ""
+"Čakanje na konec izvajanja programov. Prekinitev izvajanja lahko povzroči "
+"izgubo vaših podatkov."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -369,19 +388,19 @@ msgstr "Prekliči"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Samodejno boste odjavljeni čez %d sekundo."
-msgstr[1] "Samodejno boste odjavljeni čez %d sekundi."
-msgstr[2] "Samodejno boste odjavljeni čez %d sekund."
-msgstr[3] "Samodejno boste odjavljeni čez %d sekunde."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Sistem se bo samodejno izklopil čez %d sekundo."
-msgstr[1] "Sistem se bo samodejno izklopil čez %d sekundi."
-msgstr[2] "Sistem se bo samodejno izklopil čez %d sekund."
-msgstr[3] "Sistem se bo samodejno izklopil čez %d sekunde."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -394,7 +413,7 @@ msgstr "Ali se želite odjaviti iz sistema?"
 
 #: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
-msgstr "_Preklop uporabnika"
+msgstr "Pre_klopi uporabnika"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
@@ -420,7 +439,7 @@ msgstr "_Ponovni zagon"
 msgid "_Shut Down"
 msgstr "_Izklop"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Ni odziva"
 
@@ -439,7 +458,9 @@ msgstr "Program zavira postopek odjave."
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr "Povezave z odjemalci bodo zavrnjene, ker je trenutna seja v postopku izklopa.\n"
+msgstr ""
+"Povezave z odjemalci bodo zavrnjene, ker je trenutna seja v postopku "
+"izklopa.\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
@@ -450,7 +471,8 @@ msgstr "Ni mogoče ustvariti vtiča ICE za poslušanje: %s"
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Ni mogoče začeti prijavne seje (in ni se mogoče povezati s strežnikom X)"
+msgstr ""
+"Ni mogoče začeti prijavne seje (in ni se mogoče povezati s strežnikom X)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
@@ -458,7 +480,7 @@ msgstr "Preskoči običajne mape samodejnega zagona"
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr "Omogoči razhroščevanje kode"
+msgstr "Omogoči kodo za razhroščevanje"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"

@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-20 00:16+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Spanish (Argentina) (http://www.transifex.com/mate/MATE/language/es_AR/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Germán Herrou <german.herrou@gmail.com>, 2018\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/mate/teams/13566/es_AR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -55,17 +56,17 @@ msgstr ""
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr ""
+msgstr "Sin nombre"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
-msgstr ""
+msgstr "Sin descripción"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
 msgstr ""
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr ""
 
@@ -155,7 +156,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
-msgstr ""
+msgstr "Panel"
 
 #: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
@@ -165,7 +166,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr ""
+msgstr "Gestor de Archivos"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
@@ -227,7 +228,7 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr ""
+msgstr "Opciones"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
@@ -239,7 +240,7 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
-msgstr ""
+msgstr "Co_mando:"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
@@ -248,57 +249,59 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr ""
+msgstr "El archivo no posee un formato .desktop válido"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr ""
+msgstr "No se reconoce la versión del archivo '%s'"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr ""
+msgstr "Empezando %s"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "La aplicación no acepta documentos en la línea de comandos."
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr ""
+msgstr "No se reconoce la opción de lanzamiento: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
+"No se pueden pasar URIs de documentos a una entrada de escritorio "
+"'Type=Link'"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "No es un ítem de lanzamiento"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "Deshabilitar la conexión a la sesión de manager"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr ""
+msgstr "Especifique el archivo que contiene la configuración guardada"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr ""
+msgstr "ARCHIVO"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "Especifique el ID de la sesión de management"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
@@ -315,7 +318,7 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr ""
+msgstr "Desconocido"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -388,11 +391,11 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
-msgstr ""
+msgstr "Cambiar _Usuario"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
-msgstr ""
+msgstr "_Desconectarse"
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
@@ -414,7 +417,7 @@ msgstr ""
 msgid "_Shut Down"
 msgstr ""
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr ""
 

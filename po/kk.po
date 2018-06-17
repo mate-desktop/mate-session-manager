@@ -1,22 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2013,2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 14:45+0000\n"
-"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
-"Language-Team: Kazakh (http://www.transifex.com/mate/MATE/language/kk/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2018\n"
+"Language-Team: Kazakh (https://www.transifex.com/mate/teams/13566/kk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: kk\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -40,7 +40,7 @@ msgstr "Іске қосылатын команда дұрыс емес"
 
 #: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
-msgstr "Іске қосулы"
+msgstr "Іске қосылған"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
@@ -64,9 +64,9 @@ msgstr "Анықтамасы жоқ"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr "Осы қолданбаның нұсқасы"
+msgstr "Осы бағдарламасының нұсқасы"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Көмек құжатын көрсету мүмкін емес"
 
@@ -152,7 +152,9 @@ msgstr "Терезелер басқарушысы"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Терезелер басқарушысы терезелер атауларын және шектерін салып, оларды жылжыту және өлшемдерін өзгертуді мүмкін ететін бағдарлама."
+msgstr ""
+"Терезелер басқарушысы терезелер атауларын және шектерін салып, оларды "
+"жылжыту және өлшемдерін өзгертуді мүмкін ететін бағдарлама."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -162,17 +164,21 @@ msgstr "Панель"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Панель экранның үстінде немесе астында орналасқан мәзірлері, терезелер тізімі, қалып-күй таңбашалары, сағат және т.б. нәрселері бар жолақты салады."
+msgstr ""
+"Панель экранның үстінде немесе астында орналасқан мәзірлері, терезелер "
+"тізімі, қалып-күй таңбашалары, сағат және т.б. нәрселері бар жолақты салады."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr "Файлдар басқарушысы"
+msgstr "Файлдық басқарушы"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Файлдар басқарушысы жұмыс үстел таңбашаларын ұсынады және сақталған файлдарға түрлі әрекеттерді жасауды мүмкін қылады."
+msgstr ""
+"Файлдар басқарушысы жұмыс үстел таңбашаларын ұсынады және сақталған "
+"файлдарға түрлі әрекеттерді жасауды мүмкін қылады."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -186,7 +192,7 @@ msgstr ""
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr "MATE ортасы"
+msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
@@ -200,7 +206,9 @@ msgstr "<b>Кейбір бағдарламалар әлі орындалып т�
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Бағдарламаның аяқталуын күту. Бағдарламаны ұзу сіздің жұмысыңыздың жоғалуына әкеп соғуы мүмкін."
+msgstr ""
+"Бағдарламаның аяқталуын күту. Бағдарламаны ұзу сіздің жұмысыңыздың жоғалуына"
+" әкеп соғуы мүмкін."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -208,7 +216,9 @@ msgstr "Іске қосылатын қолданбалар"
 
 #: ../data/mate-session-properties.desktop.in.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr "Сіз жүйеге кіргенде қандай қолданбалар автоматты түрде іске қосылатынын таңдаңыз"
+msgstr ""
+"Сіз жүйеге кіргенде қандай қолданбалар автоматты түрде іске қосылатынын "
+"таңдаңыз"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
@@ -259,7 +269,7 @@ msgstr "Белгісіз desktop файлдың нұсқасы '%s'"
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr "Іске қосу %s"
+msgstr "%s іске қосылуда"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
@@ -283,7 +293,7 @@ msgstr "Жөнелтілетін элемент емес"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "Сессиялар басқарушысына байланыстарды сөндіру"
+msgstr "Сессиялар менеджеріне байланыстарды сөндіру"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -291,11 +301,11 @@ msgstr "Сақталған баптаулары бар файлды көрсет
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr "ФАЙЛ"
+msgstr "FILE"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Сессия басқарушысы ID-ін көрсету"
+msgstr "Сессия менеджментінің ID-ін көрсету"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -303,11 +313,11 @@ msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr "Сессияны басқару опциялары:"
+msgstr "Сессия менеджмент опциялары:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "Сессия басқарушысы опцияларын көрсету"
+msgstr "Сессия менеджмент опцияларын көрсету"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
@@ -330,7 +340,9 @@ msgstr "Кейбір бағдарламалар әлі орындалып тұр
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Бағдарламалардың аяқталуын күту. Бағдарламаларды ұзу сіздің жұмысыңыздың жоғалуына әкеп соғуы мүмкін."
+msgstr ""
+"Бағдарламалардың аяқталуын күту. Бағдарламаларды ұзу сіздің жұмысыңыздың "
+"жоғалуына әкеп соғуы мүмкін."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -358,7 +370,7 @@ msgstr "Сонда да қайта іске қосу"
 
 #: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
-msgstr "Бұғаттау экраны"
+msgstr "Экранды блоктау"
 
 #: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
@@ -368,13 +380,15 @@ msgstr "Ба_с тарту"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Сіз жүйеден автоматты түрде %d секундтан кейін шығасыз"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Жүйе автоматты түрде %d секундтан кейін сөндіріледі"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -413,7 +427,7 @@ msgstr "Қа_йта қосу"
 msgid "_Shut Down"
 msgstr "_Сөндіру"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Жауап бермейді"
 
@@ -443,7 +457,9 @@ msgstr "ICE тындаушы сокетін жасау мүмкін емес: %s
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Жүйеге кіру сессиясын бастау мүмкін емес (және X серверіне байланысу мүмкін емес)"
+msgstr ""
+"Жүйеге кіру сессиясын бастау мүмкін емес (және X серверіне байланысу мүмкін "
+"емес)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
@@ -463,7 +479,7 @@ msgstr " - MATE сессияларын басқарушысы"
 
 #: ../tools/mate-session-save.c:69
 msgid "Log out"
-msgstr "Жүйеден шығу"
+msgstr "Шығу үшін"
 
 #: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"

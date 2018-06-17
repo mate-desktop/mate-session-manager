@@ -1,26 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2014,2017
-# Gintautas Miliauskas <gintas@akl.lt>, 2006, 2007, 2008
-# brennus <jonas.ska@gmail.com>, 2014
-# Justina Klingaitė <justina.klingaite@gmail.com>, 2005
-# Moo, 2015-2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>\n"
-"Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Audrius Meskauskas, 2018\n"
+"Language-Team: Lithuanian (https://www.transifex.com/mate/teams/13566/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: lt\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -44,7 +40,7 @@ msgstr "Paleidimo komanda netinkama"
 
 #: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
-msgstr "Įjungta"
+msgstr "Įjungtas"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
@@ -68,9 +64,9 @@ msgstr "Nėra aprašymo"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr "Programos versija"
+msgstr "Šios programos versija"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Nepavyko parodyti žinyno dokumento"
 
@@ -106,16 +102,19 @@ msgstr "Atsijungimui skirtas laikas"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "Jeigu įjungtas atsijungimo patvirtinimo paklausimas, tuomet tai automatiškai nustato laiką sekundėmis iki atsijungimo. Jei 0, automatinis atsijungimas yra išjungtas."
+msgstr ""
+"Jeigu įjungtas atsijungimo patvirtinimo paklausimas, tuomet tai automatiškai"
+" nustato laiką sekundėmis iki atsijungimo. Jei 0, automatinis atsijungimas "
+"yra išjungtas."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr "Laikas, po kurio seansas laikomas neaktyviu"
+msgstr "Laikas, kuriam praėjus sesija laikoma neveiklia"
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Minučių skaičius, kurioms praėjus seansas laikomas neaktyvus."
+msgstr "Neveiklumo trukmė minutėmis iki tol, kol sesija nelaikoma neveiklia."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -137,7 +136,12 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Komponentų, kurie yra būtini seanse, sąrašas. (Kiekvienas elementas nurodo raktą, esantį „/org/mate/desktop/session/required_components“.) Paleidžiamų programų nustatymų įrankis paprastai neleidžia naudotojams pašalinti būtiną komponentą iš seanso, o seansų tvarkytuvė automatiškai vėl grąžins būtinus komponentus į seansą prisijungimo metu, jei jie kaip nors bus pašalinti."
+msgstr ""
+"Komponentų, kurie yra būtini seanse, sąrašas. (Kiekvienas elementas nurodo "
+"raktą, esantį „/org/mate/desktop/session/required_components“.) Paleidžiamų "
+"programų nustatymų įrankis paprastai neleidžia naudotojams pašalinti būtiną "
+"komponentą iš seanso, o seansų tvarkytuvė automatiškai vėl grąžins būtinus "
+"komponentus į seansą prisijungimo metu, jei jie kaip nors bus pašalinti."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -156,7 +160,9 @@ msgstr "Langų tvarkytuvė"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Langų tvarkytuvė yra programa, paišanti langų antraštes ir kraštus.  Ji taip pat leidžia perkelti langus ir keisti jų dydį."
+msgstr ""
+"Langų tvarkytuvė yra programa, paišanti langų antraštes ir kraštus.  Ji taip"
+" pat leidžia perkelti langus ir keisti jų dydį."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -166,7 +172,9 @@ msgstr "Skydelis"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Skydelis suteikia sritį ekrano apačioje ar viršuje, kurioje yra meniu, langų sąrašas, būsenos piktogramos, laikrodis ir t.t."
+msgstr ""
+"Skydelis suteikia sritį ekrano apačioje ar viršuje, kurioje yra meniu, langų"
+" sąrašas, būsenos piktogramos, laikrodis ir t.t."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -176,7 +184,9 @@ msgstr "Failų tvarkytuvė"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Failų tvarkytuvė pateikia darbalaukio piktogramas ir leidžia valdyti įrašytus failus."
+msgstr ""
+"Failų tvarkytuvė pateikia darbalaukio piktogramas ir leidžia valdyti "
+"įrašytus failus."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -186,7 +196,9 @@ msgstr "Dokas"
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr "Dokas suteikia, į skydelį panašią dokinę sritį, skirtą paleisti ir perjungti programas."
+msgstr ""
+"Dokas suteikia, į skydelį panašią dokinę sritį, skirtą paleisti ir perjungti"
+" programas."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -204,7 +216,9 @@ msgstr "<b>Kai kurios programos vis dar veikia:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Laukiama, kol programa baigs darbą. Nutraukus šią programą gali būti prarasta informacija."
+msgstr ""
+"Laukiama, kol programa baigs darbą. Nutraukus šią programą gali būti "
+"prarasta informacija."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -248,12 +262,12 @@ msgstr "_Komanda:"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr "_Pavadinimas:"
+msgstr "_Vardas:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "Failas nėra taisyklingas .desktop failas"
+msgstr "Šis failas nėra taisyklingas .desktop failas"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
@@ -268,7 +282,7 @@ msgstr "Paleidžiama %s"
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "Programa nepriima dokumentų komandinėje eilutėje"
+msgstr "Programa nepriima dokumentų komandų eilutėje"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
@@ -287,11 +301,11 @@ msgstr "Nepaleidžiamas elementas"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "Išjungti prisijungimą prie seansų tvarkytuvės"
+msgstr "Išjungti ryšį su seansų tvarkytuve"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "Nurodyti failą, kuriame įrašyta konfigūracija"
+msgstr "Nurodyti failą su įrašytais nustatymais"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
@@ -299,7 +313,7 @@ msgstr "FAILAS"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Nurodyti seanso valdymo ID"
+msgstr "Nurodykite seanso valdymo ID"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -334,7 +348,9 @@ msgstr "Kai kurios programos vis dar veikia:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Laukiama, kol programos baigs darbą. Šias programas nutraukus gali būti prarasta informacija."
+msgstr ""
+"Laukiama, kol programos baigs darbą. Šias programas nutraukus gali būti "
+"prarasta informacija."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -375,6 +391,7 @@ msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] "Būsite automatiškai atjungti po %d sekundės"
 msgstr[1] "Būsite automatiškai atjungti po %d sekundžių"
 msgstr[2] "Būsite automatiškai atjungti po %d sekundžių"
+msgstr[3] "Būsite automatiškai atjungti po %d sekundės"
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
@@ -383,6 +400,7 @@ msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] "Sistema automatiškai išsijungs po %d sekundės"
 msgstr[1] "Sistema automatiškai išsijungs po %d sekundžių"
 msgstr[2] "Sistema automatiškai išsijungs po %d sekundžių"
+msgstr[3] "Sistema automatiškai išsijungs po %d sekundės"
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -399,7 +417,7 @@ msgstr "_Perjungti naudotoją"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
-msgstr "_Atsijungti"
+msgstr "At_sijungti"
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
@@ -421,7 +439,7 @@ msgstr "Paleisti iš _naujo"
 msgid "_Shut Down"
 msgstr "Išj_ungti"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Neatsako"
 
@@ -451,7 +469,9 @@ msgstr "Nepavyko sukurti ICE klausymo lizdo: %s"
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Nepavyko paleisti prisijungimo seanso (taip pat nepavyko prisijungti prie X serverio)"
+msgstr ""
+"Nepavyko paleisti prisijungimo seanso (taip pat nepavyko prisijungti prie X "
+"serverio)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
@@ -531,13 +551,28 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [PARAMETRAS...] KOMANDA\n\nVykdo KOMANDĄ, drausdama kai kurį seanso funkcionalumą.\n\n  -h, --help        Rodo šią pagalbą\n  --version         Rodo programos versiją\n  --app-id ID       Draudžiant (pasirinktinai) naudojamos\n                    programos id\n  --reason PRIEŽASTIS   Draudimo (pasirinktinai) priežastis\n  --inhibit ARG     Dvitaškiais atskirtų, draudžiamų dalykų sąrašas:\n                    logout, switch-user, suspend, idle, automount\n\nJei nenurodytas parametras --inhibit, tuomet yra numanoma idle.\n"
+msgstr ""
+"%s [PARAMETRAS...] KOMANDA\n"
+"\n"
+"Vykdo KOMANDĄ, drausdama kai kurį seanso funkcionalumą.\n"
+"\n"
+"  -h, --help        Rodo šią pagalbą\n"
+"  --version         Rodo programos versiją\n"
+"  --app-id ID       Draudžiant (pasirinktinai) naudojamos\n"
+"                    programos id\n"
+"  --reason PRIEŽASTIS   Draudimo (pasirinktinai) priežastis\n"
+"  --inhibit ARG     Dvitaškiais atskirtų, draudžiamų dalykų sąrašas:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"Jei nenurodytas parametras --inhibit, tuomet yra numanoma idle.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189
 #, c-format
 msgid "%s requires an argument\n"
-msgstr "%s reikalauja argumento\n\n"
+msgstr ""
+"%s reikalauja argumento\n"
+"\n"
 
 #: ../tools/mate-session-inhibit.c:225
 #, c-format

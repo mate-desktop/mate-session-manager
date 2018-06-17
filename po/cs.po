@@ -1,33 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# David Šauer <davids@penguin.cz>, 1999
-# George Lebl <jirka@5z.com>, 2000, 2001
-# GIS <gis@academy.cas.cz>, 1999
-# jakubtalich, 2014
-# LiberteCzech <liberte.czech@gmail.com>, 2016
-# LiberteCzech <liberte.czech@gmail.com>, 2015
-# Michal Bukovjan <bukm@centrum.cz>, 2002, 2003
-# Michal <sinope@seznam.cz>, 2014
-# Miloslav Trmač <mitr@volny.cz>, 2004, 2005, 2006
-# Petr Kovar <pmkovar@gmail.com>, 2007, 2008, 2009, 2010
-# Petr Tomeš <ptomes@gmail.com>, 2006
-# Stanislav Brabec <utx@penguin.cz>, 2000, 2001
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: LiberteCzech <liberte.czech@gmail.com>\n"
-"Language-Team: Czech (http://www.transifex.com/mate/MATE/language/cs/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Roman Horník <roman.hornik@debian-linux.cz>, 2018\n"
+"Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -67,7 +56,7 @@ msgstr "Předvolby aplikací spouštěných při přihlášení"
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr "Bez názvu"
+msgstr "Žádný název"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
@@ -77,7 +66,7 @@ msgstr "Bez popisu"
 msgid "Version of this application"
 msgstr "Verze této aplikace"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Nelze zobrazit dokument nápovědy"
 
@@ -103,7 +92,8 @@ msgstr "Dotaz na odhlášení"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Pokud je povoleno, mate-session se před ukončením sezení dotáže uživatele."
+msgstr ""
+"Pokud je povoleno, mate-session se před ukončením sezení dotáže uživatele."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -113,7 +103,10 @@ msgstr "Časový limit pro odhlášení vypršel"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "Pokud je povolena výzva při odhlášení, toto nastaví časový limit v sekundách namísto automatického odhlášení. Pokud je hodnota 0, automatické odhlášení je zakázáno."
+msgstr ""
+"Pokud je povolena výzva při odhlášení, toto nastaví časový limit v sekundách"
+" namísto automatického odhlášení. Pokud je hodnota 0, automatické odhlášení "
+"je zakázáno."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
@@ -122,7 +115,7 @@ msgstr "Doba, po které se sezení považuje za nečinné"
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Doba nečinnosti v minutách, po které se má sezení považovat za nečinné."
+msgstr "Doba nečinnosti v minutách, po které považovat sezení za nečinné."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -144,7 +137,13 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Seznam složek, které jsou nezbytné jako součást session. (Každý prvek názvu klíče pod \"/org/mate/desktop/session/ required_components\"). Nástroj Nastavení aplikací při spuštění nebude za normálních okolností umožňovat uživatelům odstranit požadovanou složku ze session, a správce session automaticky přidá požadované komponenty zpět na session v přihlašovacím čase, v případě že byly odstraněny."
+msgstr ""
+"Seznam složek, které jsou nezbytné jako součást session. (Každý prvek názvu "
+"klíče pod \"/org/mate/desktop/session/ required_components\"). Nástroj "
+"Nastavení aplikací při spuštění nebude za normálních okolností umožňovat "
+"uživatelům odstranit požadovanou složku ze session, a správce session "
+"automaticky přidá požadované komponenty zpět na session v přihlašovacím "
+"čase, v případě že byly odstraněny."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -163,7 +162,9 @@ msgstr "Správce oken"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Správce oken je program vykreslující záhlaví a okraje oken, umožňuje přesunovat a měnit velikost oken."
+msgstr ""
+"Správce oken je program vykreslující záhlaví a okraje oken, umožňuje "
+"přesunovat a měnit velikost oken."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -173,7 +174,9 @@ msgstr "Panel"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Panel poskytuje lištu v horní a dolní části obrazovky, včetně nabídek, seznamu oken, stavových ikon, hodin atd."
+msgstr ""
+"Panel poskytuje lištu v horní a dolní části obrazovky, včetně nabídek, "
+"seznamu oken, stavových ikon, hodin atd."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -183,7 +186,9 @@ msgstr "Správce souborů"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Správce souborů poskytuje ikony pracovní plochy a umožňuje zprostředkování činnosti s uloženými soubory."
+msgstr ""
+"Správce souborů poskytuje ikony pracovní plochy a umožňuje zprostředkování "
+"činnosti s uloženými soubory."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -193,7 +198,9 @@ msgstr "Dok"
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr "Dok poskytuje dokovatelný prostor, podobně jako panel pro spouštění a přepínání aplikací."
+msgstr ""
+"Dok poskytuje dokovatelný prostor, podobně jako panel pro spouštění a "
+"přepínání aplikací."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -211,7 +218,9 @@ msgstr "<b>Některé programy stále běží:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Čeká se na ukončení programu. Přerušení běhu programu může způsobit ztrátu rozdělané práce."
+msgstr ""
+"Čeká se na ukončení programu. Přerušení běhu programu může způsobit ztrátu "
+"rozdělané práce."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -239,7 +248,7 @@ msgstr "Zapa_matovat si aktuálně běžící aplikaci"
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr "Možnosti"
+msgstr "Volby"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
@@ -255,7 +264,7 @@ msgstr "_Příkaz:"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr "_Název:"
+msgstr "Jmé_no:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
@@ -265,7 +274,7 @@ msgstr "Soubor není platným souborem .desktop"
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Nerozpoznaná verze \"%s\" souboru pracovní plochy"
+msgstr "Nerozpoznaná verze „%s“ souboru pracovní plochy"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
@@ -275,22 +284,22 @@ msgstr "Spouští se %s"
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "Aplikace neumožňuje přijmout dokumenty v příkazovém řádku"
+msgstr "Aplikace nepřijímá dokumenty z příkazové řádky"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Nerozpoznaná spouštěcí volba: %d"
+msgstr "Nerozpoznaná volba spuštění: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "URI dokumentu nelze postoupit položce pracovní plochy \"Type=Link\""
+msgstr "Nelze předat URI dokumentu položce .desktop „Type=Link“"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "Není spustitelnou položkou"
+msgstr "Nespustitelná položka"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
@@ -298,7 +307,7 @@ msgstr "Vypnout spojení se správcem sezení"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "Určit soubor obsahující uložené nastavení"
+msgstr "Stanovit soubor obsahující uloženou konfiguraci"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
@@ -306,7 +315,7 @@ msgstr "SOUBOR"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Určit ID správce sezení"
+msgstr "Stanovit ID Správy sezení"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -314,11 +323,11 @@ msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr "Volby správy sezení:"
+msgstr "Možnosti Správy sezení:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "Zobrazit volby správy sezení"
+msgstr "Zobrazit možnosti Správy sezení"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
@@ -327,7 +336,7 @@ msgstr "Ikona \"%s\" nenalezena"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "Neznámé"
+msgstr "Neznámo"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -341,7 +350,9 @@ msgstr "Některé programy stále běží:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Čeká se na ukončení běhu programů. Přerušení běhu těchto programů může způsobit ztrátu dat."
+msgstr ""
+"Čeká se na ukončení běhu programů. Přerušení běhu těchto programů může "
+"způsobit ztrátu dat."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -379,17 +390,19 @@ msgstr "Zrušit"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Budete automaticky odhlášen(a) za %d sekund"
-msgstr[1] "Budete automaticky odhlášeni za %d sekund"
+msgstr[0] "Budete automaticky odhlášeni za %d sekundu"
+msgstr[1] "Budete automaticky odhlášeni za %d sekundy"
 msgstr[2] "Budete automaticky odhlášeni za %d sekund"
+msgstr[3] "Budete automaticky odhlášeni za %d sekund"
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Tento systém bude automaticky vypnut za %d sekund"
-msgstr[1] "Tento systém bude automaticky vypnut za %d sekund"
+msgstr[0] "Tento systém bude automaticky vypnut za %d sekundu"
+msgstr[1] "Tento systém bude automaticky vypnut za %d sekundy"
 msgstr[2] "Tento systém bude automaticky vypnut za %d sekund"
+msgstr[3] "Tento systém bude automaticky vypnut za %d sekund"
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -428,7 +441,7 @@ msgstr "_Restartovat"
 msgid "_Shut Down"
 msgstr "_Vypnout"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Neodpovídá"
 
@@ -447,7 +460,8 @@ msgstr "Tento program brání odhlášení."
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr "Odmítnutí spojení nového klienta, jelikož právě probíhá vypnutí sezení\n"
+msgstr ""
+"Odmítnutí spojení nového klienta, jelikož právě probíhá vypnutí sezení\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
@@ -458,7 +472,8 @@ msgstr "Nelze vytvořit socket naslouchání ICE: %s"
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Nepodařilo se spustit sezení s přihlášením (a spojit se se serverem X)"
+msgstr ""
+"Nepodařilo se spustit sezení s přihlášením (a spojit se se serverem X)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
@@ -466,7 +481,7 @@ msgstr "Přepsat standardní adresáře automatického spuštění"
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr "Zapnout ladicí kód"
+msgstr "Povolí ladící kód"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
@@ -538,7 +553,21 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [PŘEPÍNAČ...] Příkaz\n\nSpustí se příkaz, když inhibuje některé funkce relace.\n\n-h, --help Zobrazit tuto nápovědu\n--version Zobrazit verzi programu\n--app-id ID aplikace pro použití\nkdyž inhibice (volitelné)\n--reason DŮVOD Důvod pro inhibici (volitelné)\n--inhibit ARG Věci k inhibici, dvojtečkou oddělený seznam:\nOdhlášení, přepnutí uživatele, uspání, klidový režim, auto-připojení\n\nPokud není zadána žádná --inhibit možnost, je předpokládán klidový stav.\n\n"
+msgstr ""
+"%s [PŘEPÍNAČ...] Příkaz\n"
+"\n"
+"Spustí se příkaz, když inhibuje některé funkce relace.\n"
+"\n"
+"-h, --help Zobrazit tuto nápovědu\n"
+"--version Zobrazit verzi programu\n"
+"--app-id ID aplikace pro použití\n"
+"když inhibice (volitelné)\n"
+"--reason DŮVOD Důvod pro inhibici (volitelné)\n"
+"--inhibit ARG Věci k inhibici, dvojtečkou oddělený seznam:\n"
+"Odhlášení, přepnutí uživatele, uspání, klidový režim, auto-připojení\n"
+"\n"
+"Pokud není zadána žádná --inhibit možnost, je předpokládán klidový stav.\n"
+"\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

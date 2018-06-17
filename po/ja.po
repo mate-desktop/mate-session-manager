@@ -1,27 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# ABE Tsunehiko, 2015,2017
-# Akira TAGOH <tagoh@gnome.gr.jp>, 2001
-# ふうせん Fu-sen. | BALLOON a.k.a. Fu-sen., 2014
-# Eiichiro ITANI <emu@ceres.dti.ne.jp>, 1999
-# Mika Kobayashi, 2017
-# Ryoichi INAGAKI <ryo1@bc.wakwak.com>, 2002
-# Satoru SATOH <ss@gnome.gr.jp>, 2006
-# Shingo Akagaki <dora@kondara.org>, 2000
-# Yasuyuki Furukawa <yasu@on.cs.keio.ac.jp>, 1999
-# Yukihiro Nakai <Nakai@abricot.co.jp>, 1998
-# Yuusuke Tahara <tahara@gnome.gr.jp>, 2000
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: ABE Tsunehiko\n"
-"Language-Team: Japanese (http://www.transifex.com/mate/MATE/language/ja/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: semicolon <mail@semicln.com>, 2018\n"
+"Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -66,7 +56,7 @@ msgstr "自動起動するアプリの設定"
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr "名前なし"
+msgstr "ここに名前を入力してください"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
@@ -74,9 +64,9 @@ msgstr "(説明なし)"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr "このアプリのバージョンを表示する"
+msgstr "このアプリケーションのバージョンを表示する"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "ヘルプドキュメントを表示できませんでした"
 
@@ -143,7 +133,11 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "セッションの一部として必要になるコンポーネントの一覧です(各要素は \"/org/mate/desktop/session/required_components\" にキーとして格納されます)。通常、ユーザーは \"自動起動するアプリの設定\" でセッションからコンポーネントを削除することができません。また、もし削除されても、ログイン時にセッションマネージャーが必要なコンポーネントを自動的に追加します。"
+msgstr ""
+"セッションの一部として必要になるコンポーネントの一覧です(各要素は "
+"\"/org/mate/desktop/session/required_components\" にキーとして格納されます)。通常、ユーザーは "
+"\"自動起動するアプリの設定\" "
+"でセッションからコンポーネントを削除することができません。また、もし削除されても、ログイン時にセッションマネージャーが必要なコンポーネントを自動的に追加します。"
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -162,7 +156,8 @@ msgstr "ウインドウマネージャー"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "ウィンドウマネージャーはウィンドウの周りにタイトルバーや境界線を描画するプログラムです。ウィンドウを移動したり大きさを変更することができます。"
+msgstr ""
+"ウィンドウマネージャーはウィンドウの周りにタイトルバーや境界線を描画するプログラムです。ウィンドウを移動したり大きさを変更することができます。"
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -284,12 +279,12 @@ msgstr "不明な起動オプションです: %d"
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "ドキュメントの URI を 'Type=Link' な .desktop エントリには渡せません"
+msgstr "'Type=Link' の .desktop エントリーにはドキュメントの URI を渡せません"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "起動可能なアイテムではありません"
+msgstr "起動できないアイテムです"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
@@ -368,7 +363,7 @@ msgstr "とにかく再起動する"
 
 #: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
-msgstr "画面をロックする"
+msgstr "画面のロック"
 
 #: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
@@ -378,13 +373,13 @@ msgstr "キャンセル"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "%d 秒後に自動的にログアウトします"
+msgstr[0] ""
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "%d 秒後に自動的にシャットダウンします"
+msgstr[0] ""
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -423,7 +418,7 @@ msgstr "再起動(_R)"
 msgid "_Shut Down"
 msgstr "シャットダウン(_S)"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "応答なし"
 
@@ -533,7 +528,19 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [オプション...] コマンド\n\nセッションが阻害中にコマンドを実行します。\n\n-h, --help このヘルプを表示\n--version プログラムのバージョンを表示\n--app-id ID 阻害中に使用するアプリケーションの ID(オプション)\n--reason REASON 阻害されている理由(オプション)\n--inhibit ARG 阻害されているもの、以下の値のカンマ区切りのリスト:\nlogout, switch-user, suspend, idle, automount\n\nもし --inhibit が指定されていない場合、idle が指定されたものとみなします。\n"
+msgstr ""
+"%s [オプション...] コマンド\n"
+"\n"
+"セッションが阻害中にコマンドを実行します。\n"
+"\n"
+"-h, --help このヘルプを表示\n"
+"--version プログラムのバージョンを表示\n"
+"--app-id ID 阻害中に使用するアプリケーションの ID(オプション)\n"
+"--reason REASON 阻害されている理由(オプション)\n"
+"--inhibit ARG 阻害されているもの、以下の値のカンマ区切りのリスト:\n"
+"logout, switch-user, suspend, idle, automount\n"
+"\n"
+"もし --inhibit が指定されていない場合、idle が指定されたものとみなします。\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

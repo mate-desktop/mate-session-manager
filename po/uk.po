@@ -1,26 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Max Lyashuk <m_lyashuk@ukr.net>, 2015
-# Микола Ткач <znadibnyk@gmail.com>, 2013
-# Oleh, 2015
-# Stefano Karapetsas <stefano@karapetsas.com>, 2012
-# Микола Ткач <znadibnyk@gmail.com>, 2014-2016
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Микола Ткач <znadibnyk@gmail.com>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/mate/MATE/language/uk/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Bohdan Kovalchuk <neostanniy@gmail.com>, 2018\n"
+"Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -70,7 +66,7 @@ msgstr "Опис відсутній"
 msgid "Version of this application"
 msgstr "Версія цієї проґрами"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Не вдається вивести довідку"
 
@@ -88,7 +84,8 @@ msgstr "Зберігати сеанси"
 
 #: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr "Якщо цей ключ встановлено, mate-session буде автоматично зберігати сеанс."
+msgstr ""
+"Якщо цей ключ встановлено, mate-session буде автоматично зберігати сеанс."
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
@@ -96,7 +93,9 @@ msgstr "Попередження про завершення сеансу"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Якщо увімкнено, то mate-session буде попереджувати користувача перед завершенням сеансу."
+msgstr ""
+"Якщо увімкнено, то mate-session буде попереджувати користувача перед "
+"завершенням сеансу."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -106,16 +105,19 @@ msgstr "Час сеансу завершився"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "Якщо увімкнено діялоґ виходу, це встановлює час очікування у секундах, перед автоматичним виходом. При значенні, що дорівнює 0 автоматичний вихід з сеансу вимкнуто. "
+msgstr ""
+"Якщо увімкнено діялоґ виходу, це встановлює час очікування у секундах, перед"
+" автоматичним виходом. При значенні, що дорівнює 0 автоматичний вихід з "
+"сеансу вимкнуто. "
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr "Проміжок часу, по закінченню якого сеанс буде вважатися неактивним"
+msgstr "Інтервал часу, після якого сеанс вважається неактивним."
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Проміжок часу у хвилинах, по закінченню якого сеанс вважатиметься неактивним."
+msgstr "Інтервал часу, по закінченню якого сеанс вважається простоєм."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -137,7 +139,13 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Перелік компонентів, які потрібно запустити як частину цього сеансу. (Кожен елемент відповідає ключу у піддереві «/org/mate/desktop/session/required_components»). Додаток «Параметри додатків що запускаються», як правило, не дозволяє користувачу вилучати з сеансу потрібні компоненти, і керівник сеансів автоматично додасть потрібні компоненти, якщо вони були вилучені."
+msgstr ""
+"Перелік компонентів, які потрібно запустити як частину цього сеансу. (Кожен "
+"елемент відповідає ключу у піддереві "
+"«/org/mate/desktop/session/required_components»). Додаток «Параметри "
+"додатків що запускаються», як правило, не дозволяє користувачу вилучати з "
+"сеансу потрібні компоненти, і керівник сеансів автоматично додасть потрібні "
+"компоненти, якщо вони були вилучені."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -156,7 +164,9 @@ msgstr "Керування вікнами"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Керівник вікнами - це проґрама, яка малює заголовок та оздоблення вікна і дозволяє пересувати вікна й змінювати їх розмір."
+msgstr ""
+"Керівник вікнами - це проґрама, яка малює заголовок та оздоблення вікна і "
+"дозволяє пересувати вікна й змінювати їх розмір."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -166,17 +176,21 @@ msgstr "Панель"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Панель надає смугу згори та знизу екрану, що містять меню, перелік вікон, піктограми стану, годинник тощо."
+msgstr ""
+"Панель надає смугу згори та знизу екрану, що містять меню, перелік вікон, "
+"піктограми стану, годинник тощо."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr "Керування файлами"
+msgstr "Керівник файлами"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Керівник файлами надає піктограми стільниці та дозволяє працювати із збереженими файлами."
+msgstr ""
+"Керівник файлами надає піктограми стільниці та дозволяє працювати із "
+"збереженими файлами."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -186,7 +200,9 @@ msgstr "Док"
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr "Док надає закріплювану ділянку, схожу на панель, для запуску та перемикання між додатками."
+msgstr ""
+"Док надає закріплювану ділянку, схожу на панель, для запуску та перемикання "
+"між додатками."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -204,7 +220,9 @@ msgstr "<b>Деякі проґрами досі працюють:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Очікування завершення роботи проґрами.  Переривання роботи проґрами може призвести до втрати Ваших даних."
+msgstr ""
+"Очікування завершення роботи проґрами.  Переривання роботи проґрами може "
+"призвести до втрати Ваших даних."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -232,7 +250,7 @@ msgstr "_Запам'ятати запущені проґрами"
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr "Параметри"
+msgstr "Опції"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
@@ -253,41 +271,41 @@ msgstr "_Назва:"
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "Файл не є дійсним файлом .desktop"
+msgstr "Файл не є коректним файлом .desktop"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Нерозпізнана версія десктоп-файлу «%s»"
+msgstr "Невідома версія файлу .desktop «%s»"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr "Запускється «%s»"
+msgstr "Запускаю '%s'"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "Проґрама не приймає документи, вказані у командному рядку"
+msgstr "Проґрама не може приймати документи з командного рядка"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Невизначений параметр запуску: %d"
+msgstr "Невідомий параметр запуску: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Не можна передавати URI документів у десктоп-запис 'Type=Link'"
+msgstr "Неможливо передати URI документу у лейбу типу «Посилання»"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "Не є елементом, що запускається"
+msgstr "Елемент не запускається"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "Вимкнути з'єднання з керівником сеансами"
+msgstr "Заборонити під’єднання до керівника сеансами"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -299,7 +317,7 @@ msgstr "ФАЙЛ"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Вказати ідентифікатор керування сеансом"
+msgstr "Визначити ідентифікатор для керівника сеансів"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -307,11 +325,11 @@ msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr "Параметри керування сеансами:"
+msgstr "Параметри керування сеансом"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "Показати параметри керування сеансами"
+msgstr "Показати параметри взаємодії з керівником сеансів"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
@@ -320,7 +338,7 @@ msgstr "Піктограму «%s» не знайдено"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "Невідомо"
+msgstr "Невідомий"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -334,7 +352,9 @@ msgstr "Деякі проґрами досі працюють:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Очікування завершення роботи проґрам.  Переривання цих проґрам може призвести до втрати Вашої роботи."
+msgstr ""
+"Очікування завершення роботи проґрам.  Переривання цих проґрам може "
+"призвести до втрати Вашої роботи."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -372,17 +392,19 @@ msgstr "Скасувати"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Сеанс буде автоматично завершено через %d секунду"
-msgstr[1] "Сеанс буде автоматично завершено через %d секунди"
-msgstr[2] "Сеанс буде автоматично завершено через %d секунд"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Систему буде вимкнено автоматично через %d секунду"
-msgstr[1] "Систему буде вимкнено автоматично через %d секунди"
-msgstr[2] "Систему буде вимкнено автоматично через %d секунд"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -395,7 +417,7 @@ msgstr "Вийти з системи зараз?"
 
 #: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
-msgstr "_Перемикнути користувача"
+msgstr "_Змінити користувача"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
@@ -421,7 +443,7 @@ msgstr "Пе_резавантажити"
 msgid "_Shut Down"
 msgstr "_Вимкнути"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Не відповідає"
 
@@ -531,7 +553,20 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [ОПЦІЯ...] КОМАНДА\n\nВиконати КОМАНДУ в той самий час інгібуючи деякі функції сеансу.\n\n  -h, --help        Показати довідку\n  --version         Показати версію проґрами\n  --app-id ID       ID додатку для використання\n                    при інгібуванні (опційно)\n  --reason REASON   Причина для інгібування (опційно)\n  --inhibit ARG     Речі для інгібування, розділений двокрапкою перелік:\n                    вихід, перемикач користувачів, призупинка, режим очікування, автомонтування\n\nIf no --inhibit опція не вказана, означає бездіяльність.\n"
+msgstr ""
+"%s [ОПЦІЯ...] КОМАНДА\n"
+"\n"
+"Виконати КОМАНДУ в той самий час інгібуючи деякі функції сеансу.\n"
+"\n"
+"  -h, --help        Показати довідку\n"
+"  --version         Показати версію проґрами\n"
+"  --app-id ID       ID додатку для використання\n"
+"                    при інгібуванні (опційно)\n"
+"  --reason REASON   Причина для інгібування (опційно)\n"
+"  --inhibit ARG     Речі для інгібування, розділений двокрапкою перелік:\n"
+"                    вихід, перемикач користувачів, призупинка, режим очікування, автомонтування\n"
+"\n"
+"If no --inhibit опція не вказана, означає бездіяльність.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

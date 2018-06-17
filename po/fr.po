@@ -1,27 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Bruno Brouard <annoa.b@gmail.com>, 2009
-# Damien Durand <splinux@fedoraproject.org>, 2006
-# Frédéric Péters <fpeters@0d.be>, 2008
-# Joaquim Fellmann <joaquim@hrnet.fr>, 2000
-# Jonathan Ernst <jonathan@ernstfamily.ch>, 2007
-# Laurent Richard <laurent.richard@ael.be>, 2006
-# Lothaire B <translations@lothai.re>, 2015
-# mauron, 2014
-# Stéphane Raimbault <stephane.raimbault@gmail.com>, 2008
-# Sun G11n <mate_int_l10n@ireland.sun.com>, 2002
-# Tubuntu <tubuntu@testimonium.be>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Lothaire B <translations@lothai.re>\n"
-"Language-Team: French (http://www.transifex.com/mate/MATE/language/fr/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Étienne Deparis <etienne@depar.is>, 2018\n"
+"Language-Team: French (https://www.transifex.com/mate/teams/13566/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -66,7 +56,7 @@ msgstr "Préférences des applications au démarrage"
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr "Pas de nom"
+msgstr "Sans nom"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
@@ -76,7 +66,7 @@ msgstr "Pas de description"
 msgid "Version of this application"
 msgstr "Version de cette application"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Impossible d'afficher le document d'aide"
 
@@ -102,7 +92,9 @@ msgstr "Invite de déconnexion"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Si activé, mate-session interroge l'utilisateur avant de terminer une session."
+msgstr ""
+"Si activé, mate-session interroge l'utilisateur avant de terminer une "
+"session."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -112,16 +104,21 @@ msgstr "Décompte de déconnexion"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "Lorsque l'invite de déconnexion est activée, un décompte en secondes avant déconnexion est proposé automatiquement. Si la valeur est 0, le décompte automatique est désactivé."
+msgstr ""
+"Lorsque l'invite de déconnexion est activée, un décompte en secondes avant "
+"déconnexion est proposé automatiquement. Si la valeur est 0, le décompte "
+"automatique est désactivé."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr "Durée avant que la session ne soit considérée comme inactive"
+msgstr "Délai avant que la session ne soit considérée comme inactive"
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Le nombre de minutes d'inactivité avant que la session ne soit considérée comme inactive."
+msgstr ""
+"Le nombre de minutes d'inactivité avant que la session ne soit considérée "
+"comme inactive."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -143,7 +140,14 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Liste de composants devant obligatoirement faire partie de la session (chaque élément se réfère à une clef sous « /org/mate/desktop/session/required_components »). La fenêtre des préférences des applications au démarrage n'autorise normalement pas les utilisateurs à supprimer un composant nécessaire de la session, et dans le cas où un tel composant serait enlevé, le gestionnaire de session l'ajouterait automatiquement au moment de la connexion."
+msgstr ""
+"Liste de composants devant obligatoirement faire partie de la session "
+"(chaque élément se réfère à une clef sous « "
+"/org/mate/desktop/session/required_components »). La fenêtre des préférences"
+" des applications au démarrage n'autorise normalement pas les utilisateurs à"
+" supprimer un composant nécessaire de la session, et dans le cas où un tel "
+"composant serait enlevé, le gestionnaire de session l'ajouterait "
+"automatiquement au moment de la connexion."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -162,7 +166,10 @@ msgstr "Gestionnaire de fenêtres"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Le gestionnaire de fenêtres est le programme qui dessine la barre de titre et les bordures autour des fenêtres et qui vous permet de déplacer et redimensionner les fenêtres."
+msgstr ""
+"Le gestionnaire de fenêtres est le programme qui dessine la barre de titre "
+"et les bordures autour des fenêtres et qui vous permet de déplacer et "
+"redimensionner les fenêtres."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -172,7 +179,10 @@ msgstr "Tableau de bord"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Le tableau de bord fournit une barre, en haut ou en bas de l'écran, qui contient les menus, la liste des fenêtres, des icônes de notification, l'horloge, etc."
+msgstr ""
+"Le tableau de bord fournit une barre, en haut ou en bas de l'écran, qui "
+"contient les menus, la liste des fenêtres, des icônes de notification, "
+"l'horloge, etc."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -182,7 +192,9 @@ msgstr "Gestionnaire de fichiers"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Le gestionnaire de fichiers gère les icônes du bureau et vous permet d'interagir avec vos fichiers."
+msgstr ""
+"Le gestionnaire de fichiers gère les icônes du bureau et vous permet "
+"d'interagir avec vos fichiers."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -192,7 +204,9 @@ msgstr "Dock"
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr "Un dock fournit une zone ancrable, semblable à un panneau, pour le lancement et le changement d'applications."
+msgstr ""
+"Un dock fournit une zone ancrable, semblable à un panneau, pour le lancement"
+" et le changement d'applications."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -210,7 +224,9 @@ msgstr "<b>Des programmes sont encore en cours d'exécution :</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Attente de la fin du programme. L'interruption du programme risquerait de vous faire perdre certaines données."
+msgstr ""
+"Attente de la fin du programme. L'interruption du programme risquerait de "
+"vous faire perdre certaines données."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -230,7 +246,9 @@ msgstr "Programmes au démarrage"
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
-msgstr "Se souvenir _automatiquement des applications en cours d'exécution lors de la déconnexion"
+msgstr ""
+"Se souvenir _automatiquement des applications en cours d'exécution lors de "
+"la déconnexion"
 
 #: ../data/session-properties.ui.h:4
 msgid "_Remember Currently Running Application"
@@ -254,7 +272,7 @@ msgstr "_Commande :"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr "_Nom :"
+msgstr "N_om :"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
@@ -264,7 +282,7 @@ msgstr "Le fichier n'est pas un fichier .desktop valide"
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "La version « %s » du fichier desktop n'est pas reconnue"
+msgstr "Version « %s » du fichier .desktop non reconnue"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
@@ -274,22 +292,24 @@ msgstr "Démarrage de %s"
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "L'application n'accepte pas de documents en ligne de commande"
+msgstr "L'application n'accepte pas les documents en ligne de commande"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Option de démarrage non reconnue : %d"
+msgstr "Option de lancement non reconnue : %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Impossible de passer des URI de document à un fichier de bureau avec « Type=Link »"
+msgstr ""
+"Impossible de passer les URI de documents vers une entrée .desktop de type «"
+" Type=Link »"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "Cet élément ne peut être lancé"
+msgstr "L'élément ne peut pas être lancé"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
@@ -305,7 +325,7 @@ msgstr "FICHIER"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Indique l'identificateur de la gestion de sessions"
+msgstr "Indique l'ID de la gestion de sessions"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -313,11 +333,11 @@ msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr "Options de la gestion de sessions :"
+msgstr "Options de gestion de sessions :"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "Affiche les options de la gestion de sessions"
+msgstr "Afficher les options de gestion de sessions"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
@@ -340,7 +360,9 @@ msgstr "Des programmes sont toujours en cours d'exécution :"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Attente de la fin des programmes. L'interruption de ces programmes risquerait de vous faire perdre certaines données."
+msgstr ""
+"Attente de la fin des programmes. L'interruption de ces programmes "
+"risquerait de vous faire perdre certaines données."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -399,11 +421,11 @@ msgstr "Se déconnecter du système maintenant ?"
 
 #: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
-msgstr "Changer d'_utilisateur"
+msgstr "Changer d'utili_sateur"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
-msgstr "_Fermer la session"
+msgstr "_Déconnexion"
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
@@ -425,7 +447,7 @@ msgstr "_Redémarrer"
 msgid "_Shut Down"
 msgstr "Ét_eindre"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Absence de réponse"
 
@@ -444,7 +466,9 @@ msgstr "Ce programme bloque la déconnexion."
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr "Refus de la connexion d'un nouveau client car la session est actuellement en cours de fermeture\n"
+msgstr ""
+"Refus de la connexion d'un nouveau client car la session est actuellement en"
+" cours de fermeture\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
@@ -463,7 +487,7 @@ msgstr "Remplace les répertoires autostart standards"
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr "Active le code de débogage"
+msgstr "Activer le code de debogage"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
@@ -535,7 +559,20 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [OPTION...] COMMANDE\n\nExécute COMMANDE lorsque certaines fonctionnalités de session sont inhibées.\n\n  -h, --help        Affiche cette Aide\n  --version         Affiche la version du programme\n  --app-id ID       L'ID de l'application à utiliser\n                    lorsque inhibée (optionel)\n  --reason RAISON   La raison de l'inhibition (optionel)\n  --inhibit ARG     Les éléments à inhiber, liste séparée par des points-virgules:\n                    logout, switch-user, suspend, idle, automount\n\nSi aucune option --inhibit est spécifiée, inactif est supposé.\n"
+msgstr ""
+"%s [OPTION...] COMMANDE\n"
+"\n"
+"Exécute COMMANDE lorsque certaines fonctionnalités de session sont inhibées.\n"
+"\n"
+"  -h, --help        Affiche cette Aide\n"
+"  --version         Affiche la version du programme\n"
+"  --app-id ID       L'ID de l'application à utiliser\n"
+"                    lorsque inhibée (optionel)\n"
+"  --reason RAISON   La raison de l'inhibition (optionel)\n"
+"  --inhibit ARG     Les éléments à inhiber, liste séparée par des points-virgules:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"Si aucune option --inhibit est spécifiée, inactif est supposé.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

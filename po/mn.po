@@ -1,19 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Sanlig Badral <badral@chinggis.com>, 2003
-# Sanlig Badral <badral@openmn.org>, 2003
-# Sanlig Badral <Badral@openmn.org>, 2003
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Mongolian (http://www.transifex.com/mate/MATE/language/mn/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Mongolian (https://www.transifex.com/mate/teams/13566/mn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,11 +40,11 @@ msgstr ""
 
 #: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
-msgstr ""
+msgstr "Нээлттэй"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr ""
+msgstr "Эмблем"
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
@@ -58,7 +56,7 @@ msgstr ""
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr ""
+msgstr "Нэр өгөөгүй байна"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
@@ -66,11 +64,11 @@ msgstr ""
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr ""
+msgstr "Энэ програмын хувилбар"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
-msgstr ""
+msgstr "Тусламж баримт үзүүлэх боломжгүй"
 
 #: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
@@ -94,7 +92,8 @@ msgstr "Горимоос гарах"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Хэрвээ нээлттэй бол mate-session хэрэглэгчийг гарахын өмнө сонордуулна."
+msgstr ""
+"Хэрвээ нээлттэй бол mate-session хэрэглэгчийг гарахын өмнө сонордуулна."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -113,7 +112,7 @@ msgstr ""
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr ""
+msgstr "Үйлдэл хийх боломжгүй байх үеээс өмнөх идэвхигүй байх минутын тоо."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -168,7 +167,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr ""
+msgstr "Файл менежер"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
@@ -188,7 +187,7 @@ msgstr ""
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr ""
+msgstr "ГНОМЕ"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
@@ -230,7 +229,7 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr ""
+msgstr "Сонголтууд"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
@@ -242,79 +241,80 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
-msgstr ""
+msgstr "Т_ушаал:"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr ""
+msgstr "_Нэр:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr ""
+msgstr "Файл нь зөв .desktop файл биш байна"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr ""
+msgstr "Дэсктоп файлын танигдахгүй Хувилбар '%s'"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr ""
+msgstr "%s-ийг эхлүүлж байна"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "Командын мөрний баримт бичгийг програм хүлээн авахгүй байна"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr ""
+msgstr "Танигдахгүй эхлүүлэх сонголт: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
+"URIs баримт бичгийг 'Type=Link' дэсктопын оролт руу оруулах боломжгүй байна"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "Нээж болох зүйл биш байна"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "Сэшн менежерт холбогдох боломжгүй болгох"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr ""
+msgstr "Тохиргоо сануулсан файлыг ялган харуулах"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr ""
+msgstr "ФАЙЛ"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "Сэшн менежментийн ID-г ялган харуулах"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr ""
+msgstr "Дугаар"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr ""
+msgstr "Сэшн менежментийн сонголтууд:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr ""
+msgstr "Сэшн менежментийн сонголтуудыг харуулах"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
 msgid "Icon '%s' not found"
-msgstr ""
+msgstr "%s Эмблем олдсонгүй"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
@@ -360,11 +360,11 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
-msgstr ""
+msgstr "Дэлгэц түгжих"
 
 #: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
-msgstr ""
+msgstr "Таслан зогсоох"
 
 #: ../mate-session/gsm-logout-dialog.c:312
 #, c-format
@@ -395,7 +395,7 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
-msgstr ""
+msgstr "_Гарах"
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
@@ -417,7 +417,7 @@ msgstr ""
 msgid "_Shut Down"
 msgstr ""
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr ""
 
@@ -455,7 +455,7 @@ msgstr ""
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr ""
+msgstr "Шалгах код идэвхижүүлэх."
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
@@ -467,7 +467,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:69
 msgid "Log out"
-msgstr ""
+msgstr "Гарах"
 
 #: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"
@@ -492,7 +492,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:75
 msgid "NAME"
-msgstr ""
+msgstr "НЭР"
 
 #: ../tools/mate-session-save.c:76
 msgid "Kill session"

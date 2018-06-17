@@ -1,25 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Benno SCHULENBERG <bensberg@justemail.net>, 2010
-# Chris PAVLINA <Pavlina.Chris@gmail.com>, 2008
-# Dominique PELLÉ <dominique.pelle@free.fr>, 2006
-# Donald ROGERS, <dero2648@clear.net.nz>, 2009
-# Guillaume SAVATON <llumeao@tuxfamily.org>, 2006
-# Joël BRICH <joel.brich@laposte.net>, 2003
-# Joop EGGEN <joop_eggen@yahoo.de>, 2008
-# kristjan <kristjan.schmidt@googlemail.com>, 2009, 2010
-# Michael MORONI, <haikara90@gmail.com >, 2009
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Esperanto (http://www.transifex.com/mate/MATE/language/eo/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Esperanto (https://www.transifex.com/mate/teams/13566/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,7 +56,7 @@ msgstr "Agordoj de startaj aplikaĵoj"
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr "Sen nomo"
+msgstr "Neniu nomo"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
@@ -74,7 +66,7 @@ msgstr "Sen priskribo"
 msgid "Version of this application"
 msgstr "Versio de ĉi tiu aplikaĵo"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Ne eblas montri helpdokumenton"
 
@@ -160,7 +152,9 @@ msgstr "Fenestroadministrilo"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "La fenestra administrilo estas la programo kiu desegas la titolbreton kaj randojn ĉirkaŭ fenestroj, kaj ebligas al vi movi kaj aligrandigi fenestrojn."
+msgstr ""
+"La fenestra administrilo estas la programo kiu desegas la titolbreton kaj "
+"randojn ĉirkaŭ fenestroj, kaj ebligas al vi movi kaj aligrandigi fenestrojn."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -170,7 +164,9 @@ msgstr "Panelo"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "La panelo provizas la breton je la supro aŭ malsupro de la ekrano enhavantan menuojn, la fenestroliston, statpiktogramojn, la horloĝon, k.t.p."
+msgstr ""
+"La panelo provizas la breton je la supro aŭ malsupro de la ekrano enhavantan"
+" menuojn, la fenestroliston, statpiktogramojn, la horloĝon, k.t.p."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -180,7 +176,9 @@ msgstr "Dosieradministrilo"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "La dosieradministrilo provizas la labortablajn piktogramojn kaj ebligas al vi interagi kun viaj konservitaj dosieroj."
+msgstr ""
+"La dosieradministrilo provizas la labortablajn piktogramojn kaj ebligas al "
+"vi interagi kun viaj konservitaj dosieroj."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -262,12 +260,12 @@ msgstr "Dosiero ne estas valida .desktop-dosiero"
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Nerekonata labortrabla dosierversio '%s'"
+msgstr "Nerekonata versio de labortabla dosiero '%s'"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr "Lanĉante %s"
+msgstr "Startigado de %s"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
@@ -277,25 +275,25 @@ msgstr "Aplikaĵo ne akceptas dokumentojn per komandlinio"
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Nerekonata lanĉparametro: %d"
+msgstr "Nerekonata rulparametro: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Ne eblas transdoni dokument-URIojn al labortabla elemento 'Type=Link'"
+msgstr "URI-dokumentoj al labortabla elemento 'Type=Link' ne transdoneblas"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "Ne estas lanĉebla elemento"
+msgstr "Nelanĉebla ero"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "Elŝalti konekton al la seancoadministrilo"
+msgstr "Malŝalti konekton al seanco-administrilo"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "Specifi dosieron kiun enhavas konservitan agordon"
+msgstr "Specifi dosieron, kiun enhavas konservitan agordon"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
@@ -303,11 +301,11 @@ msgstr "DOSIERO"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Specifi seancoadministran identigilon"
+msgstr "Specifi identigilon de seancoadministrilo"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr "ID"
+msgstr "Identigilo"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
@@ -315,7 +313,7 @@ msgstr "Opcioj de seancoadministrilo:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "Montri opciojn de seancoadministrilo"
+msgstr "Montri seancoadministrilajn opciojn"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
@@ -324,7 +322,7 @@ msgstr "Piktogramo '%s' ne trovita"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "Nekonate"
+msgstr "Nekonata"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -338,7 +336,9 @@ msgstr "Iuj programoj ankoraŭ rulas:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Atendas ĝis programoj finiĝas. Interrompi ĉi tiujn programojn eble perdigos laboron al vi."
+msgstr ""
+"Atendas ĝis programoj finiĝas. Interrompi ĉi tiujn programojn eble perdigos "
+"laboron al vi."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -423,7 +423,7 @@ msgstr "_Restarti"
 msgid "_Shut Down"
 msgstr "_Elŝalti"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Ne respondas"
 
@@ -453,7 +453,8 @@ msgstr "Ne povis krei ICE-aŭskultantan kontaktoskatolon: %s"
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Ne povas startigi ensalutan seancon (kaj ne povas konekti al la X-servilo)"
+msgstr ""
+"Ne povas startigi ensalutan seancon (kaj ne povas konekti al la X-servilo)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"

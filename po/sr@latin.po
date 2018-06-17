@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Miloš Popović <gpopac@gmail.com>, 2010
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Serbian (Latin) (http://www.transifex.com/mate/MATE/language/sr%40latin/)\n"
+"POT-Creation-Date: 2018-03-17 15:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Ivan Pejić <ipejic@gmail.com>, 2018\n"
+"Language-Team: Serbian (Latin) (https://www.transifex.com/mate/teams/13566/sr%40latin/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,7 +44,7 @@ msgstr "Uključen"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr "Ikonica"
+msgstr "Ikona"
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
@@ -56,7 +56,7 @@ msgstr "Postavke programa za pokretanje po učitavanju"
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr "Bez imena"
+msgstr "Nepoznat naziv"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
@@ -64,9 +64,9 @@ msgstr "Bez opisa"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr "Izdanje ovog programa"
+msgstr "Verzija ovog programa"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Ne mogu da prikažem dokument za pomoć"
 
@@ -92,7 +92,8 @@ msgstr "Pitanje pred odjavu"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Ukoliko je uključeno, mate-session će pitati korisnika pre okončanja sesije."
+msgstr ""
+"Ukoliko je uključeno, mate-session će pitati korisnika pre okončanja sesije."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -106,12 +107,12 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr "Vreme nakon koga je sesija neaktivna"
+msgstr "Vreme nakon koga sesija postaje neaktivna"
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Broj minuta nakon kojih se sesija smatra neaktivnom."
+msgstr "Vreme neaktivnosti (u minutima) pre pokretanja čuvara ekrana."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -152,7 +153,9 @@ msgstr "Upravnik prozora"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Upravnik prozorima iscrtava naslovnu liniju i okvire prozora i omogućava pomeranje i promenu veličine prozora."
+msgstr ""
+"Upravnik prozorima iscrtava naslovnu liniju i okvire prozora i omogućava "
+"pomeranje i promenu veličine prozora."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -162,7 +165,9 @@ msgstr "Panel"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Panel postavlja liniju na vrh ili dno radne površi koja sadrži menije, spisak prozora, obaveštajne ikonice, sat i drugo."
+msgstr ""
+"Panel postavlja liniju na vrh ili dno radne površi koja sadrži menije, "
+"spisak prozora, obaveštajne ikonice, sat i drugo."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -172,7 +177,9 @@ msgstr "Upravnik datotekama"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Upravnik datotekama ističe ikonice na radnoj površi i omogućava rad sa sačuvanim datotekama."
+msgstr ""
+"Upravnik datotekama ističe ikonice na radnoj površi i omogućava rad sa "
+"sačuvanim datotekama."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -249,17 +256,17 @@ msgstr "_Ime:"
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "Ovo nije ispravna .desktop datoteka"
+msgstr "Nije ispravna .desktop datoteka"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Nije prepoznato izdanje desktop datoteke „%s“"
+msgstr "Nepoznato izdanje desktop datoteke „%s“"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr "Pokrećem %s"
+msgstr "Pokreće se %s"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
@@ -269,25 +276,25 @@ msgstr "Program ne prihvata dokumente iz komandne linije"
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Nije prepoznata mogućnost za pokretanje: %d"
+msgstr "Nepoznata opcija pri pokretanju: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Ne mogu da prosledim adresu dokumenta u „Type=Link“ unos desktop datoteke"
+msgstr "Ne mogu da prosledim adresu dokumenta u unos „Type=Adresa“"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "Stavka ne se može pokretati"
+msgstr "Ovaj tip je nemoguće pokrenuti"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "Onemogući povezivanje sa upravnikom sesije"
+msgstr "Onemogući vezu sa upravniko sesije"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "Odredite datoteku koja sadrži sačuvane postavke"
+msgstr "Odredite datoteku koja sadrži sačuvana podešavanja"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
@@ -295,7 +302,7 @@ msgstr "DATOTEKA"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Odredite IB upravnika sesije"
+msgstr "Odredite IB upravnika sesijom"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -303,11 +310,11 @@ msgstr "IB"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr "Opcije upravnika sesijama:"
+msgstr "Opcije upravnika sesijom:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "Prikaži opcije upravnika sesijama"
+msgstr "Prikaži opcije upravnika sesijom"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
@@ -316,7 +323,7 @@ msgstr "Nije nađena ikonica „%s“"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "Nepoznato"
+msgstr "Nepoznat"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -330,7 +337,9 @@ msgstr "Neki programi su još uvek pokrenuti:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Čekam da programi završe sa radom.  Izlazak iz ovih programa može dovesti do gubitka vaših radova."
+msgstr ""
+"Čekam da programi završe sa radom.  Izlazak iz ovih programa može dovesti do"
+" gubitka vaših radova."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -395,7 +404,7 @@ msgstr "Promeni _korisnika"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
-msgstr "_Odjavi se"
+msgstr "O_djava"
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
@@ -417,7 +426,7 @@ msgstr "_Ponovo pokreni"
 msgid "_Shut Down"
 msgstr "_Isključi"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Ne daje odziv"
 
@@ -447,7 +456,8 @@ msgstr "Ne mogu da napravim ICE soket: %s"
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Ne mogu da pokrenem prijavnu sesiju (i ne mogu da se povežem na X server)"
+msgstr ""
+"Ne mogu da pokrenem prijavnu sesiju (i ne mogu da se povežem na X server)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
@@ -455,7 +465,7 @@ msgstr "Zaobiđi standardne direktorijume sa programima po učitavalju"
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr "Omogući kod za uklanjanje grešaka"
+msgstr "Omogući ispis za traženje grešaka"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
