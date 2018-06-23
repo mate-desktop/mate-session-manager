@@ -1,5 +1,9 @@
 ### mate-session-manager 1.21.0
 
+    sync with transifex
+    Fix broken link in man pages
+    avoid deprecated GtkStock
+
 ### mate-session-manager 1.20.0
 
     sync with transifex
