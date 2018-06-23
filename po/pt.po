@@ -1,22 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# alfalb_mansil, 2014
-# Carlos Moreira, 2014-2015
-# Diogo Oliveira <diogodesigns@gmail.com>, 2016
-# José Vieira <jvieira33@sapo.pt>, 2017
-# alfalb_mansil, 2015
-# Sérgio Marques <smarquespt@gmail.com>, 2012
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-23 18:17+0000\n"
-"Last-Translator: José Vieira <jvieira33@sapo.pt>\n"
-"Language-Team: Portuguese (http://www.transifex.com/mate/MATE/language/pt/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: José Vieira <jvieira33@sapo.pt>, 2018\n"
+"Language-Team: Portuguese (https://www.transifex.com/mate/teams/13566/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,7 +40,7 @@ msgstr "O comando de arranque não é válido"
 
 #: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
-msgstr "Ativado"
+msgstr "Ativo"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
@@ -71,7 +66,7 @@ msgstr "Sem descrição"
 msgid "Version of this application"
 msgstr "Versão desta aplicação"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Não foi possível mostrar o documento da ajuda"
 
@@ -97,7 +92,8 @@ msgstr "Janela de Fechar Sessão"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Se ativada, mate-session irá exibir uma janela antes de terminar a sessão."
+msgstr ""
+"Se ativada, mate-session irá exibir uma janela antes de terminar a sessão."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -107,7 +103,10 @@ msgstr "Fim de sessão expirado"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "Se for ativada a caixa de fim de sessão, isto define o tempo-limite em segundos antes do fim de sessão automático. Se for 0, é desativado o fim de sessão automático. "
+msgstr ""
+"Se for ativada a caixa de fim de sessão, isto define o tempo-limite em "
+"segundos antes do fim de sessão automático. Se for 0, é desativado o fim de "
+"sessão automático. "
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
@@ -116,7 +115,8 @@ msgstr "O tempo antes da sessão ser considerada inativa"
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "O número de minutos de inatividade antes da sessão ser considerada inativa."
+msgstr ""
+"O número de minutos de inatividade antes da sessão ser considerada inativa."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -138,7 +138,14 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Lista de componentes que são necessários como parte da sessão. (Cada elemento nomeia uma chave sob \"/org/mate/desktop/session/required_components\"). A ferramenta de preferências Aplicações de Arranque não permite normalmente aos utilizadores que removam um componente necessário para a sessão, e o gestor de sessões irá adicionar automaticamente os componentes necessários novamente ao iniciar sessão, se estes tiverem sido removidos."
+msgstr ""
+"Lista de componentes que são necessários como parte da sessão. (Cada "
+"elemento nomeia uma chave sob "
+"\"/org/mate/desktop/session/required_components\"). A ferramenta de "
+"preferências Aplicações de Arranque não permite normalmente aos utilizadores"
+" que removam um componente necessário para a sessão, e o gestor de sessões "
+"irá adicionar automaticamente os componentes necessários novamente ao "
+"iniciar sessão, se estes tiverem sido removidos."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -157,7 +164,9 @@ msgstr "Gestor de Janelas"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "O gestor de janelas é o programa que mostra a barra de título e as margens das janelas, e permite-lhe também mover e redimensionar as janelas."
+msgstr ""
+"O gestor de janelas é o programa que mostra a barra de título e as margens "
+"das janelas, e permite-lhe também mover e redimensionar as janelas."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -167,7 +176,9 @@ msgstr "Painel"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "O painel disponibiliza a barra no topo ou na base do ecrã, contendo os menus, a lista de janelas, ícones de estado, o relógio, etc."
+msgstr ""
+"O painel disponibiliza a barra no topo ou na base do ecrã, contendo os "
+"menus, a lista de janelas, ícones de estado, o relógio, etc."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -177,7 +188,9 @@ msgstr "Gestor de Ficheiros"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "O gestor de ficheiros disponibiliza os ícones no ambiente de trabalho, e permite-lhe interagir com os seus ficheiros guardados."
+msgstr ""
+"O gestor de ficheiros disponibiliza os ícones no ambiente de trabalho, e "
+"permite-lhe interagir com os seus ficheiros guardados."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -187,7 +200,9 @@ msgstr "Doca"
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr "Uma doca providencia uma área de docagem, semelhante a um painel, para lançar aplicações e alternar entre elas."
+msgstr ""
+"Uma doca providencia uma área de docagem, semelhante a um painel, para "
+"lançar aplicações e alternar entre elas."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -205,7 +220,9 @@ msgstr "<b>Alguns programas ainda estão em execução:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "À espera que o programa termine. Interromper o programa poderá fazer perder o seu trabalho."
+msgstr ""
+"À espera que o programa termine. Interromper o programa poderá fazer perder "
+"o seu trabalho."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -225,7 +242,8 @@ msgstr "Programas de Arranque"
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
-msgstr "_Ao terminar a sessão, lembrar automaticamente das aplicações em execução"
+msgstr ""
+"_Ao terminar a sessão, lembrar automaticamente das aplicações em execução"
 
 #: ../data/session-properties.ui.h:4
 msgid "_Remember Currently Running Application"
@@ -259,7 +277,7 @@ msgstr "O ficheiro não é um ficheiro .desktop válido"
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Versão do ficheiro .desktop desconhecida %s"
+msgstr "Versão de ficheiro .desktop \"%s\" não reconhecida"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
@@ -274,12 +292,14 @@ msgstr "A aplicação não aceita documentos na linha de comando"
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Opção de início desconhecida: %d"
+msgstr "Opção de arranque desconhecida: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Não pode enviar URIs de documento para uma entrada da área de trabalho 'Tipo=Hiperligação'"
+msgstr ""
+"Não pode enviar URIs de documento para uma entrada da área de trabalho "
+"'Tipo=Hiperligação'"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
@@ -288,7 +308,7 @@ msgstr "Não é um item de iniciação"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "Desative a ligação ao gestor de sessão"
+msgstr "Desativar a ligação ao gestor de sessões"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -300,7 +320,7 @@ msgstr "FICHEIRO"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Indique a ID do gestor de sessão"
+msgstr "Especifique a ID de gestão de sessão"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -312,7 +332,7 @@ msgstr "Opções do gestor de sessão:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "Mostrar as opções do gestor de sessão"
+msgstr "Mostrar as opções de gestão de sessões"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
@@ -335,7 +355,9 @@ msgstr "Ainda existem alguns programas em execução:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "À espera do final dos programas. Interromper este programas pode fazer perder o seu trabalho."
+msgstr ""
+"À espera do final dos programas. Interromper este programas pode fazer "
+"perder o seu trabalho."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -373,15 +395,15 @@ msgstr "Cancelar"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Você irá terminar a sessão automaticamente em %d segundo."
-msgstr[1] "Você irá terminar a sessão automaticamente em %d segundos."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Este sistema irá desligar automaticamente em %d segundo"
-msgstr[1] "Este sistema irá desligar automaticamente em %d segundos"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -394,11 +416,11 @@ msgstr "Sair agora do sistema?"
 
 #: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
-msgstr "_Trocar utilizador"
+msgstr "_Trocar de Utilizador"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
-msgstr "_Sair"
+msgstr "_Terminar Sessão"
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
@@ -420,7 +442,7 @@ msgstr "_Reiniciar"
 msgid "_Shut Down"
 msgstr "_Desligar"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Não está a responder"
 
@@ -458,7 +480,7 @@ msgstr "Substituir diretórios de arranque automático"
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr "Ativar depuração"
+msgstr "Ativar o código de depuração"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
@@ -530,7 +552,20 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [OPÇÃO...] COMANDO\n\nExecutar COMANDO ao inibir alguma funcionalidade da sessão.\n\n  -h, --help        Mostrar esta ajuda\n  --version         Mostrar versão do programa\n  --app-id ID       A ID da aplicação a usar\n                    ao inibir (opcional)\n  --reason RAZÃO   A razão para inibir (opcional)\n  --inhibit ARG     Coisas a inibir, lista separada por ponto e vírgulas de:\n                    logout, switch-user, suspend, idle, automount\n\nSe não é especificado --inhibit, então é assumido idle.\n"
+msgstr ""
+"%s [OPÇÃO...] COMANDO\n"
+"\n"
+"Executar COMANDO ao inibir alguma funcionalidade da sessão.\n"
+"\n"
+"  -h, --help        Mostrar esta ajuda\n"
+"  --version         Mostrar versão do programa\n"
+"  --app-id ID       A ID da aplicação a usar\n"
+"                    ao inibir (opcional)\n"
+"  --reason RAZÃO   A razão para inibir (opcional)\n"
+"  --inhibit ARG     Coisas a inibir, lista separada por ponto e vírgulas de:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"Se não é especificado --inhibit, então é assumido idle.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

@@ -1,22 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Changwoo Ryu <cwryu@debian.org>, 2007, 2008, 2009, 2010
-# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2015
-# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2016-2017
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2014-2015
-# Updated by Sung-Hyun Nam <namsh@kldp.org>, 2000
-# Updated by Young-Ho Cha <ganadist@chollian.net>, 2000, 2001, 2006, 2007
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-12-25 14:20+0000\n"
-"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
-"Language-Team: Korean (http://www.transifex.com/mate/MATE/language/ko/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Korean (https://www.transifex.com/mate/teams/13566/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,7 +40,7 @@ msgstr "시작 프로그램이 올바르지 않습니다"
 
 #: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
-msgstr "사용하기"
+msgstr "사용중"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
@@ -71,7 +66,7 @@ msgstr "설명 없음"
 msgid "Version of this application"
 msgstr "이 프로그램의 버전"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "도움말 문서를 표시할 수 없습니다"
 
@@ -107,16 +102,18 @@ msgstr "로그아웃 대기 시간"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "로그아웃 프롬프트를 활성화하면, 로그아웃을 자동으로 처리할 초 단위 대기 시간을 설정합니다. 0 값으로 설정하면, 자동 로그아웃을 비활성화합니다."
+msgstr ""
+"로그아웃 프롬프트를 활성화하면, 로그아웃을 자동으로 처리할 초 단위 대기 시간을 설정합니다. 0 값으로 설정하면, 자동 로그아웃을 "
+"비활성화합니다."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr "세션에 입력이 없어 중지할 시간"
+msgstr "세션이 입력 없는 상태라고 판단하기 전 시간"
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "세션이 중지 상태라고 판단할 입력이 없는 시간, 분 단위."
+msgstr "세션이 정지되었다고 판단되는 시간(분)."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -138,7 +135,11 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "세션의 일부로 필요한 요소 목록입니다(각각의 요소는 \"/org/mate/desktop/session/required_components\"의 키에 이름을 부여합니다). 시작 프로그램 기본 설정 도구는 보통 세션에서 필요한 구성요소를 사용자가 지우지 못하게 하며, 해당 항목이 제거되었다면 세션 관리자에서 자동으로 필요한 구성 요소를 로그인 시간에 다시 설정해놓습니다."
+msgstr ""
+"세션의 일부로 필요한 요소 목록입니다(각각의 요소는 "
+"\"/org/mate/desktop/session/required_components\"의 키에 이름을 부여합니다). 시작 프로그램 기본"
+" 설정 도구는 보통 세션에서 필요한 구성요소를 사용자가 지우지 못하게 하며, 해당 항목이 제거되었다면 세션 관리자에서 자동으로 필요한 "
+"구성 요소를 로그인 시간에 다시 설정해놓습니다."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -304,7 +305,7 @@ msgstr "세션 관리 ID를 지정합니다"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr "<ID>"
+msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
@@ -321,7 +322,7 @@ msgstr "'%s' 아이콘이 없습니다"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "모름"
+msgstr "알 수 없음"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -373,13 +374,13 @@ msgstr "취소"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "%d초 후 자동으로 로그아웃합니다"
+msgstr[0] ""
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "%d초 후 자동으로 시스템을 종료합니다"
+msgstr[0] ""
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -418,7 +419,7 @@ msgstr "다시 시작(_R)"
 msgid "_Shut Down"
 msgstr "끄기(_S)"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "응답 없음"
 
@@ -456,7 +457,7 @@ msgstr "기본 자동 시작 디렉토리 대신 사용합니다"
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr "디버깅 코드를 사용합니다"
+msgstr "디버깅 코드 사용"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
@@ -528,7 +529,20 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s <옵션...> 명령\n\n일부 세션 기능을 금지할 명령을 실행합니다.\n\n  -h, --help        이 도움말을 표시합니다\n  --version         프로그램 버전을 표시합니다\n  --app-id ID       금지 지정시 사용할 프로그램 ID\n                    (추가)\n  --reason REASON   금지 이유 (추가)\n  --inhibit ARG     콤마로 구분한 금지 대상 목록:\n                    logout, switch-user, suspend, idle, automount\n\n--inhibit 옵션이 없으면, idle로 가정합니다.\n"
+msgstr ""
+"%s <옵션...> 명령\n"
+"\n"
+"일부 세션 기능을 금지할 명령을 실행합니다.\n"
+"\n"
+"  -h, --help        이 도움말을 표시합니다\n"
+"  --version         프로그램 버전을 표시합니다\n"
+"  --app-id ID       금지 지정시 사용할 프로그램 ID\n"
+"                    (추가)\n"
+"  --reason REASON   금지 이유 (추가)\n"
+"  --inhibit ARG     콤마로 구분한 금지 대상 목록:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"--inhibit 옵션이 없으면, idle로 가정합니다.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

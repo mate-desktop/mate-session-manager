@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 17:23+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Urdu (http://www.transifex.com/mate/MATE/language/ur/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Urdu (https://www.transifex.com/mate/teams/13566/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,7 +66,7 @@ msgstr "بِلا تفصیل"
 msgid "Version of this application"
 msgstr "اس اطلاقیے کا نسخہ"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "ہدایات کی دستاویز نہیں دکھائی جاسکتی"
 
@@ -145,13 +146,16 @@ msgstr ""
 #: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
-msgstr "دریچہ منیجر"
+msgstr "ونڈو منتظم"
 
 #: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "دریچہ منیجر ایک پروگرام ہوتا ہے جو عنوان کی پٹی اور دریچوں کے کناروں کی ترسیم کرتا ہے اور آپ کو دریچوں کو حرکت دینے اور ان کا حجم بدلنے کی صلاحیت دیتا ہے."
+msgstr ""
+"دریچہ منیجر ایک پروگرام ہوتا ہے جو عنوان کی پٹی اور دریچوں کے کناروں کی "
+"ترسیم کرتا ہے اور آپ کو دریچوں کو حرکت دینے اور ان کا حجم بدلنے کی صلاحیت "
+"دیتا ہے."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -161,7 +165,9 @@ msgstr "پینل"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "پینل سکرین کے اوپر اور نیچے پٹیاں فراہم کرتے ہیں جن میں فہرستیں، دریچوں کی فہرستیں، حالت کے آئکن، گھڑی وغیرہ ہوتی ہے"
+msgstr ""
+"پینل سکرین کے اوپر اور نیچے پٹیاں فراہم کرتے ہیں جن میں فہرستیں، دریچوں کی "
+"فہرستیں، حالت کے آئکن، گھڑی وغیرہ ہوتی ہے"
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -171,7 +177,9 @@ msgstr "فائل منیجر"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "فائل منیجر ڈیسک ٹاپ کی آئکن فراہم کرتا ہے اور آپ کو اپنی محفوظ کردہ فائلوں سے تعامل کی صلاحیت دیتا ہے."
+msgstr ""
+"فائل منیجر ڈیسک ٹاپ کی آئکن فراہم کرتا ہے اور آپ کو اپنی محفوظ کردہ فائلوں "
+"سے تعامل کی صلاحیت دیتا ہے."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -185,7 +193,7 @@ msgstr ""
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr ""
+msgstr "میٹ"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
@@ -253,7 +261,7 @@ msgstr "فائل موزوں .desktop فائل نہیں ہے"
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "غیر تسلیم شُدہ ڈیسک ٹاپ فائل نسخہ '%s'"
+msgstr "غیر تسلیم شدہ ڈیسک ٹاپ فائل نسخہ '%s'"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
@@ -263,7 +271,7 @@ msgstr "شروع کیا جارہا ہے %s"
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "اطلاقیہ کمانڈ لائن پہ دستاویزات قبول نہیں کرتا"
+msgstr "اطلاقیہ کمانڈ لائن سے دستاویزات قبول نہیں کرتا"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
@@ -273,7 +281,7 @@ msgstr "چلانے کا غیر تسلیم شُدہ اختیار: %d"
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr ""
+msgstr "دستاویز کا ربط پاس کرنے سے قاصر تا 'Type=Link' ڈیسک ٹاپ اندراج"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
@@ -294,7 +302,7 @@ msgstr "فائل"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "نشست ادارت آئی ڈی مُتعین کریں"
+msgstr "نشست ادارت آئی ڈی متعین کریں"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -329,7 +337,9 @@ msgstr "کچھ پروگرام ابھی تک چل رہے ہیں:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "پروگراموں کے ختم ہونے کا انتظار کیا جارہا ہے.  ان پروگراموں میں مداخلت آپ کے کام کے نقصان پر منتج ہوسکتی ہے."
+msgstr ""
+"پروگراموں کے ختم ہونے کا انتظار کیا جارہا ہے.  ان پروگراموں میں مداخلت آپ کے"
+" کام کے نقصان پر منتج ہوسکتی ہے."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -414,7 +424,7 @@ msgstr "_دوبارہ چلائیں"
 msgid "_Shut Down"
 msgstr "_بند کریں"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "جواب نہیں دے رہا"
 
@@ -433,7 +443,8 @@ msgstr ""
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr "نئے موکل کا اتصال مسترد کیا جارہا ہے کیونکہ نشست اس وقت بند کی جارہی ہے\n"
+msgstr ""
+"نئے موکل کا اتصال مسترد کیا جارہا ہے کیونکہ نشست اس وقت بند کی جارہی ہے\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format

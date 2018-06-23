@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# ciaran, 2014,2016
-# www.gyfieithu.co.uk <kyfieithu@dotmon.com>, 2003
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: ciaran\n"
-"Language-Team: Welsh (http://www.transifex.com/mate/MATE/language/cy/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Welsh (https://www.transifex.com/mate/teams/13566/cy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -57,7 +56,7 @@ msgstr "Dewisiadau rhaglenni wrth gychwyn"
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr "Dim enw"
+msgstr "Dienw"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
@@ -67,7 +66,7 @@ msgstr "Dim disgrifiad"
 msgid "Version of this application"
 msgstr "Fersiwn y rhaglen hon"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Methwyd dangos y ddogfen gymorth"
 
@@ -93,7 +92,9 @@ msgstr "Annog allgofnodi"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Os galluogir hyn, fe fydd mate-session yn gofyn am gadarnhad cyn diweddu sesiwn."
+msgstr ""
+"Os galluogir hyn, fe fydd mate-session yn gofyn am gadarnhad cyn diweddu "
+"sesiwn."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -113,6 +114,8 @@ msgstr ""
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr ""
+"Sawl munud sydd raid bod heb weithredu cyn i'r sesiwn gael ei ystyried yn "
+"segur."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -167,7 +170,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr "Rheolydd Ffeiliau"
+msgstr "Rheolydd ffeiliau"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
@@ -241,7 +244,7 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
-msgstr ""
+msgstr "_Gorchymyn:"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
@@ -250,7 +253,7 @@ msgstr "_Enw:"
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "Nid yw'r ffeil yn un .desktop ddilys"
+msgstr "Nid yw hon yn ffeil .desktop ddilys"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
@@ -280,11 +283,11 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "Nid yw'n eitem y gellir lansio"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "Analluogi cysylltiad â'r rheolwr sesiynau"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -296,7 +299,7 @@ msgstr "FFEIL"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "Penodi ID rheolaeth sesiynau"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -304,11 +307,11 @@ msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr "Dewisiadau rheoli'r sesiwn:"
+msgstr "Dewisiadau rheoli sesiynau:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "Dangos dewisiadau rheoli'r sesiwn"
+msgstr "Dangos dewisiadau rheoli sesiynau"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
@@ -359,7 +362,7 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
-msgstr ""
+msgstr "Cloi'r Sgrin"
 
 #: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
@@ -420,7 +423,7 @@ msgstr "_Ailgychwyn"
 msgid "_Shut Down"
 msgstr "_Diffodd"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Ddim yn ymateb"
 
@@ -458,7 +461,7 @@ msgstr ""
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr ""
+msgstr "Galluogi cod datnamu"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"

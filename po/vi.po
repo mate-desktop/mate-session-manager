@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Horazone Detex <thmmt2017d@gmail.com>, 2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Horazone Detex <thmmt2017d@gmail.com>\n"
-"Language-Team: Vietnamese (http://www.transifex.com/mate/MATE/language/vi/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Horazone Detex <thmmt2017d@gmail.com>, 2018\n"
+"Language-Team: Vietnamese (https://www.transifex.com/mate/teams/13566/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,9 +64,9 @@ msgstr "Không mô tả"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr "Phiên bản của ứng dụng"
+msgstr "Phiên bản ứng dụng này"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Không thể hiển thị tài liệu trợ giúp"
 
@@ -92,7 +92,8 @@ msgstr "Nhắc đăng xuất"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Nếu bật, mate-session sẽ nhắc người dùng trước khi kết thúc phiên chạy."
+msgstr ""
+"Nếu bật, mate-session sẽ nhắc người dùng trước khi kết thúc phiên chạy."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -102,16 +103,18 @@ msgstr "Định giờ đăng xuất"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "Nếu nhắc đăng xuất đã được bật, mục này sẽ định giờ theo giây trước khi đăng xuất tự động. Nếu đặt 0, đăng xuất tự động sẽ bị vô hiệu hóa."
+msgstr ""
+"Nếu nhắc đăng xuất đã được bật, mục này sẽ định giờ theo giây trước khi đăng"
+" xuất tự động. Nếu đặt 0, đăng xuất tự động sẽ bị vô hiệu hóa."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr "Khoảng thời gian trước khi phiên chạy được thấy là « nghỉ »"
+msgstr "Thời gian trước khi phiên chạy được xem là nghỉ"
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Số các phút không hoạt động trước khi phiên chạy được thấy là « nghỉ »."
+msgstr "Số phút không dùng trước khi phiên chạy được xem là nghỉ."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -133,7 +136,13 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Danh sách những thành phần được yêu cầu như một phần của phiên. (Mỗi phần tử được đặt tên cho mỗi khóa tại  \"/org/mate/desktop/session/required_components\"). Bộ tùy chỉnh Ứng dụng Khởi động bình thường sẽ không cho phép người dùng xóa bỏ một thành phần bắt buộc từ phiên, và trình quản lí phiên sẽ tự động thêm các thành phần bắt buộc trở lại phiên khi đăng nhập vào nếu như chúng đã bị xóa bỏ."
+msgstr ""
+"Danh sách những thành phần được yêu cầu như một phần của phiên. (Mỗi phần tử"
+" được đặt tên cho mỗi khóa tại  "
+"\"/org/mate/desktop/session/required_components\"). Bộ tùy chỉnh Ứng dụng "
+"Khởi động bình thường sẽ không cho phép người dùng xóa bỏ một thành phần bắt"
+" buộc từ phiên, và trình quản lí phiên sẽ tự động thêm các thành phần bắt "
+"buộc trở lại phiên khi đăng nhập vào nếu như chúng đã bị xóa bỏ."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -146,13 +155,15 @@ msgstr "Kiểm soát những thành phần tương thích nào khởi động."
 #: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
-msgstr "Bộ quản lý cửa sổ"
+msgstr "Trình Quản lý cửa sổ:"
 
 #: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Bộ quản lý cửa sổ là chương trình mà vẽ thanh tựa đề và các viền chung quanh cửa sổ, và cho phép bạn di chuyển và co giãn cửa sổ."
+msgstr ""
+"Bộ quản lý cửa sổ là chương trình mà vẽ thanh tựa đề và các viền chung quanh"
+" cửa sổ, và cho phép bạn di chuyển và co giãn cửa sổ."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -162,7 +173,9 @@ msgstr "Bảng"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Bảng điều khiển cung cấp thanh ở đầu/cưới màn hình mà chứa các trình đơn, danh sách các cửa sổ, các biểu tượng trạng thái, đồng hồ v.v."
+msgstr ""
+"Bảng điều khiển cung cấp thanh ở đầu/cưới màn hình mà chứa các trình đơn, "
+"danh sách các cửa sổ, các biểu tượng trạng thái, đồng hồ v.v."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -172,7 +185,9 @@ msgstr "Bộ Quản lý Tập tin"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Bộ quản lý tập tin thì cung cấp các biểu tượng trên màn hình và cho phép bạn tương tác với các tập tin đã lưu của mình."
+msgstr ""
+"Bộ quản lý tập tin thì cung cấp các biểu tượng trên màn hình và cho phép bạn"
+" tương tác với các tập tin đã lưu của mình."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -182,7 +197,9 @@ msgstr "Dock"
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr "Một thanh dock tạo một khu vực có thể ghim được, tương tự như một thanh bảng, để chạy và chuyển đổi các ứng dụng."
+msgstr ""
+"Một thanh dock tạo một khu vực có thể ghim được, tương tự như một thanh "
+"bảng, để chạy và chuyển đổi các ứng dụng."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -200,7 +217,9 @@ msgstr "<b>Vài chương trình vẫn đang hoạt đọng:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Đang chờ chương trình kết thúc. Ngắt những chương trình này có thể dẫn đến mất dữ liệu."
+msgstr ""
+"Đang chờ chương trình kết thúc. Ngắt những chương trình này có thể dẫn đến "
+"mất dữ liệu."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -244,17 +263,17 @@ msgstr "Lệ_nh:"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr "_Tên:"
+msgstr "Tê_n:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "Tập tin không phải là một tập tin .desktop hợp lệ"
+msgstr "Tập tin không phải là dạng tập tin .desktop hợp lệ"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Không nhận ra tập tin màn hình nền phiên bản « %s »"
+msgstr "Không nhận ra tập tin màn hình nền phiên bản '%s'"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
@@ -274,12 +293,12 @@ msgstr "Không nhận ra tùy chọn khởi chạy: %d"
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Không thể gởi địa chỉ URI của tài liệu cho một mục nhập màn hình nền « Kiểu=Liên_kết »"
+msgstr "Không thể chuyển URI của tài liệu cho mục desktop 'Type=Link'"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "Không phải một mục có thể khởi chạy"
+msgstr "Không phải mục có thể khởi chạy"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
@@ -287,19 +306,19 @@ msgstr "Tắt kết nối với trình quản lý phiên chạy"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "Ghi rõ tập tin chứa cấu hình đã lưu"
+msgstr "Xác định tập tin chứa cấu hình đã lưu"
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr "TẬP_TIN"
+msgstr "TẬP TIN"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Xác định mã số quản lý phiên chạy"
+msgstr "Xác định mã số quản lý phiên làm việc"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr "MÃ_SỐ"
+msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
@@ -316,7 +335,7 @@ msgstr "Không thấy biểu tượng '%s'"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "Không biết"
+msgstr "Không rõ"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -330,7 +349,9 @@ msgstr "Vài chương trình vẫn đang chạy:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Đang chờ chương trình kết thúc. Ngắt những chương trình này có thể dẫn đến mất dữ liệu."
+msgstr ""
+"Đang chờ chương trình kết thúc. Ngắt những chương trình này có thể dẫn đến "
+"mất dữ liệu."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -368,13 +389,13 @@ msgstr "Thôi"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Bạn sẽ bị tự động đăng xuất trong vòng %d giây."
+msgstr[0] ""
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Hệ thống này sẽ tự động tắt trong vòng %d giây."
+msgstr[0] ""
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -387,7 +408,7 @@ msgstr "Đăng xuất ra hệ thống này ngay bây giờ ?"
 
 #: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
-msgstr "Chu_yển đổi người dùng"
+msgstr "_Chuyển đổi người dùng"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
@@ -413,7 +434,7 @@ msgstr "_Khởi chạy lại"
 msgid "_Shut Down"
 msgstr "_Tắt máy"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Không trả lời"
 
@@ -443,7 +464,9 @@ msgstr "Không thể tạo ổ cắm lắng nghe ICE: %s"
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Không thể khởi chạy buổi hợp đăng nhập (và không thể kết nối đến trình phục vụ X)"
+msgstr ""
+"Không thể khởi chạy buổi hợp đăng nhập (và không thể kết nối đến trình phục "
+"vụ X)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
@@ -451,7 +474,7 @@ msgstr "Đè thư mục autostart chuẩn"
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr "Bật mã hỗ trợ tìm lỗi"
+msgstr "Bật chạy mã gỡ lỗi"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
@@ -523,7 +546,20 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [TÙY CHỌN...] LỆNH\n\nThực thi LỆNH khi đang ức chế chức năng của một số phiên.\n\n -h, --help           Hiện trợ giúp này\n --version            Hiện phiên bản chương trình\n --app-id ID         Id ứng dụng để sử dụng\n                   khi đang ức chế (tùy thích)\n --reason LÍ DO  Lí do cho việc ức chế (tùy thích)\n --inhibit ARG    Những thứ để ức chế, danh sách tùy chọn:\n                        logout, switch-user, suspend, idle, automount\n\nNếu không có tùy chọn --inhibit được xác định, idle được mặc định.\n"
+msgstr ""
+"%s [TÙY CHỌN...] LỆNH\n"
+"\n"
+"Thực thi LỆNH khi đang ức chế chức năng của một số phiên.\n"
+"\n"
+" -h, --help           Hiện trợ giúp này\n"
+" --version            Hiện phiên bản chương trình\n"
+" --app-id ID         Id ứng dụng để sử dụng\n"
+"                   khi đang ức chế (tùy thích)\n"
+" --reason LÍ DO  Lí do cho việc ức chế (tùy thích)\n"
+" --inhibit ARG    Những thứ để ức chế, danh sách tùy chọn:\n"
+"                        logout, switch-user, suspend, idle, automount\n"
+"\n"
+"Nếu không có tùy chọn --inhibit được xác định, idle được mặc định.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

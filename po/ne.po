@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# chautari <chautari@gmail.com>, 2017
-# Nabin Gautam <nabin@mpp.org.np>, 2007
-# Pawan Chitrakar <pawan@nplinux.org>, 2004
-# Shiva Prasad Pokharel <pokharelshiva@hotmail.com>, 2005
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-11-13 09:04+0000\n"
-"Last-Translator: chautari <chautari@gmail.com>\n"
-"Language-Team: Nepali (http://www.transifex.com/mate/MATE/language/ne/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: chautari <chautari@gmail.com>, 2018\n"
+"Language-Team: Nepali (https://www.transifex.com/mate/teams/13566/ne/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,7 +44,7 @@ msgstr "सक्षम"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr ""
+msgstr "प्रतिमा"
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
@@ -59,7 +56,7 @@ msgstr ""
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr ""
+msgstr "नाम छैन"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
@@ -67,11 +64,11 @@ msgstr "वर्णन छैन"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr ""
+msgstr "यस अनुप्रयोगको संस्करण"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
-msgstr ""
+msgstr "मद्दत कागजात प्रदर्शन गर्न सकेन"
 
 #: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
@@ -95,7 +92,9 @@ msgstr "तत्काल लगआउट"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "सक्षम भएमा, जिनोम सत्रले सत्र अन्त्य हुनुभन्दा पहिला प्रयोगकर्तालाई प्रोत्साहन दिन्छ ।"
+msgstr ""
+"सक्षम भएमा, जिनोम सत्रले सत्र अन्त्य हुनुभन्दा पहिला प्रयोगकर्तालाई "
+"प्रोत्साहन दिन्छ ।"
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -109,12 +108,12 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr ""
+msgstr "सत्रलाई निष्प्रयोजन ठान्नु पहिलेको समय"
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr ""
+msgstr "सत्रलाई निष्प्रयोजन ठान्नु पहिले निस्क्रियता मिनेटको सङ्ख्या ।"
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -159,7 +158,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
-msgstr ""
+msgstr "प्यानल"
 
 #: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
@@ -169,7 +168,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr ""
+msgstr "फाइल प्रबन्धक"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
@@ -189,7 +188,7 @@ msgstr ""
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr ""
+msgstr "मेट"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
@@ -231,7 +230,7 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr ""
+msgstr "विकल्पहरु"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
@@ -243,7 +242,7 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
-msgstr ""
+msgstr "आदेश:"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
@@ -252,7 +251,7 @@ msgstr "नाम:"
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr ""
+msgstr "फाइल मान्य .डेस्कटप फाइल होइन"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
@@ -262,7 +261,7 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr ""
+msgstr "%s सुरु गर्दै"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
@@ -272,7 +271,7 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr ""
+msgstr "अपरिचित सुरु विकल्प: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
@@ -282,11 +281,11 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "एउटा सुरुआतयोग्य वस्तु होइन"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "सत्र प्रबन्धकमा जडान गर्न असक्षम"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -294,28 +293,28 @@ msgstr ""
 
 #: ../egg/eggsmclient.c:228
 msgid "FILE"
-msgstr ""
+msgstr "फाइल"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "सत्र प्रबन्धक आईडी निर्दिष्ट गर्नुहोस्"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr ""
+msgstr "आईडी"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
-msgstr ""
+msgstr "सत्र प्रबन्ध विकल्प:"
 
 #: ../egg/eggsmclient.c:253
 msgid "Show session management options"
-msgstr ""
+msgstr "सत्र प्रबन्ध विकल्प देखाउनुहोस्"
 
 #: ../mate-session/gsm-inhibit-dialog.c:252
 #, c-format
 msgid "Icon '%s' not found"
-msgstr ""
+msgstr "प्रतिमा '%s' फेला परेन"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
@@ -361,11 +360,11 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
-msgstr ""
+msgstr "पर्दामा ताल्चा लगाउनुहोस्"
 
 #: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द गर्नुहोस्"
 
 #: ../mate-session/gsm-logout-dialog.c:312
 #, c-format
@@ -392,11 +391,11 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
-msgstr ""
+msgstr "स्विच प्रयोगकर्ता"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
-msgstr ""
+msgstr "लगआउट गर्नुहोस्"
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
@@ -418,7 +417,7 @@ msgstr ""
 msgid "_Shut Down"
 msgstr ""
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr ""
 
@@ -456,7 +455,7 @@ msgstr ""
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr ""
+msgstr "त्रुटि सच्याउने कोड सक्षम पार्नुहोस्"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
@@ -468,7 +467,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:69
 msgid "Log out"
-msgstr ""
+msgstr "बाहिर निस्क"
 
 #: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"

@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Nils-Christoph Fiedler <fiedler@medienkompanie.de>, 2009
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Low German (http://www.transifex.com/mate/MATE/language/nds/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Low German (https://www.transifex.com/mate/teams/13566/nds/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,7 +44,7 @@ msgstr "Aktivert"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr "Symbol"
+msgstr "Icon"
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
@@ -66,7 +66,7 @@ msgstr "Keen Beschrievens"
 msgid "Version of this application"
 msgstr "Verschoon vun düssem Programm"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr ""
 
@@ -106,12 +106,12 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr ""
+msgstr "Tiet bevor de Törn schlopen geiht"
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr ""
+msgstr "Minuten de Inaktivität, bevor de Törn slopen gahn schall."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -146,7 +146,7 @@ msgstr ""
 #: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
-msgstr "Finsteroppasser"
+msgstr "Fenstermanager"
 
 #: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
@@ -249,12 +249,12 @@ msgstr "_Naam:"
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr ""
+msgstr "Datei is keene valide .desktop Datei"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr ""
+msgstr "Dateiverschoon '%s' vu'm Schrievdisk nich erkannt"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
@@ -269,7 +269,7 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr ""
+msgstr "Unbekannte Startoption: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
@@ -279,11 +279,11 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "Düsses Element is nich startbar"
+msgstr "Keen startbares Element"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "Deaktivert de Verbinnen to'm Törnoppasser"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -295,7 +295,7 @@ msgstr "FILE"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "Törnoppassens ID ingeven"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -389,7 +389,7 @@ msgstr "Nu Avmellen?"
 
 #: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
-msgstr "Bruker we_sseln"
+msgstr "_Bruker ännern"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
@@ -415,7 +415,7 @@ msgstr "_Nejstart"
 msgid "_Shut Down"
 msgstr "_Daalfahrt"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Antert nich"
 
@@ -453,7 +453,7 @@ msgstr ""
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr ""
+msgstr "Debugging code möglich maken"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"

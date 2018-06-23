@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Zuza Software Foundation <info@translate.org.za>, 2004
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Northern Sotho (http://www.transifex.com/mate/MATE/language/nso/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Northern Sotho (https://www.transifex.com/mate/teams/13566/nso/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr ""
+msgstr "Leswao"
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
@@ -56,7 +56,7 @@ msgstr ""
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr ""
+msgstr "Ga go na leina"
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Version of this application"
 msgstr ""
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr ""
 
@@ -92,7 +92,9 @@ msgstr "Go akgofiša ga go tšwa"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Ge e ba le kgontšhwa, mate-session e tla akgofiša mošomisi pele a ka fetša lenaneo."
+msgstr ""
+"Ge e ba le kgontšhwa, mate-session e tla akgofiša mošomisi pele a ka fetša "
+"lenaneo."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -166,7 +168,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr ""
+msgstr "Molaodi wa Faele"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
@@ -186,7 +188,7 @@ msgstr ""
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr ""
+msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
@@ -240,11 +242,11 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
-msgstr ""
+msgstr "Ta_elo:"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr ""
+msgstr "_Leina:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
@@ -259,7 +261,7 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr ""
+msgstr "Go thoma %s"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
@@ -279,11 +281,11 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "Ga se selo se se ka tsebagatwago"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "Palediša kgokagano e yago go molaodi wa lenaneo"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -295,11 +297,11 @@ msgstr ""
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "Bontšha boitsebišo bja taolo ya lenaneo"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr ""
+msgstr "Boitsebišo"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
@@ -362,7 +364,7 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
-msgstr ""
+msgstr "Khansela"
 
 #: ../mate-session/gsm-logout-dialog.c:312
 #, c-format
@@ -415,7 +417,7 @@ msgstr ""
 msgid "_Shut Down"
 msgstr ""
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr ""
 
@@ -465,7 +467,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:69
 msgid "Log out"
-msgstr ""
+msgstr "E-tšwa"
 
 #: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"
@@ -490,7 +492,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:75
 msgid "NAME"
-msgstr ""
+msgstr "LEINA"
 
 #: ../tools/mate-session-save.c:76
 msgid "Kill session"

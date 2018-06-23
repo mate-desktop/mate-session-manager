@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Rasti K5 <rasti.khdhr@gmail.com>, 2016
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-21 12:29+0000\n"
-"Last-Translator: Rasti K5 <rasti.khdhr@gmail.com>\n"
-"Language-Team: Kurdish (Iraq) (http://www.transifex.com/mate/MATE/language/ku_IQ/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Rasti K5 <rasti.khdhr@gmail.com>, 2018\n"
+"Language-Team: Kurdish (Iraq) (https://www.transifex.com/mate/teams/13566/ku_IQ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -66,7 +66,7 @@ msgstr "بێ پێناسە"
 msgid "Version of this application"
 msgstr "وەشانی ئەم نەرمەواڵەیە"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr ""
 
@@ -299,7 +299,7 @@ msgstr ""
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr ""
+msgstr "پێناسە"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
@@ -316,7 +316,7 @@ msgstr "وێنۆچکەی '%s' نەدۆزرایەوە"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "نەناسراو"
+msgstr "نەزانراو"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -415,7 +415,7 @@ msgstr "_دەستپێکردنەوە"
 msgid "_Shut Down"
 msgstr "_کوژاندنەوە"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr ""
 

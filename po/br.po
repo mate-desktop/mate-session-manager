@@ -1,25 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Alan Monfort <alan.monfort@free.fr>, 2015
-# Giulia <EMAIL@ADDRESS>, 2006
-# Jamy <jamybzh@free.fr>, 2009
-# Jeremy <EMAIL@ADDRESS>, 2006
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Breton (http://www.transifex.com/mate/MATE/language/br/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Alan Monfort <alan.monfort@free.fr>, 2018\n"
+"Language-Team: Breton (https://www.transifex.com/mate/teams/13566/br/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: br\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=5; plural=((n%10 == 1) && (n%100 != 11) && (n%100 !=71) && (n%100 !=91) ? 0 :(n%10 == 2) && (n%100 != 12) && (n%100 !=72) && (n%100 !=92) ? 1 :(n%10 ==3 || n%10==4 || n%10==9) && (n%100 < 10 || n% 100 > 19) && (n%100 < 70 || n%100 > 79) && (n%100 < 90 || n%100 > 99) ? 2 :(n != 0 && n % 1000000 == 0) ? 3 : 4);\n"
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -67,9 +64,9 @@ msgstr "Deskrivadur ebet"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr "Handelv an arload-mañ"
+msgstr "Handlev an arload"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "N'haller ket skrammañ an teul skoazell"
 
@@ -87,7 +84,8 @@ msgstr "Gwareziñ an estezioù"
 
 #: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr "Mar gweredekaet e vo enrollet an estez ent emgefreek gant 'mate-session'."
+msgstr ""
+"Mar gweredekaet e vo enrollet an estez ent emgefreek gant 'mate-session'."
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
@@ -95,7 +93,9 @@ msgstr "Pedadenn dilugañ"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Ma vez enaouet, e kelaouo mate-sessions an arveriad-ez a-raok echuiñ gant an estez."
+msgstr ""
+"Ma vez enaouet, e kelaouo mate-sessions an arveriad-ez a-raok echuiñ gant an"
+" estez."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -105,7 +105,10 @@ msgstr "Dale kent digennaskañ"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "Mard eo bet gweredekaet pedadenn an digennaskañ e tespiz an dra-mañ an dale e eilennoù kent digennaskañ ent emgefreek. Mar 0 ez eo diweredekaet an digennaskañ emgefreek."
+msgstr ""
+"Mard eo bet gweredekaet pedadenn an digennaskañ e tespiz an dra-mañ an dale "
+"e eilennoù kent digennaskañ ent emgefreek. Mar 0 ez eo diweredekaet an "
+"digennaskañ emgefreek."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
@@ -136,7 +139,13 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Roll ar parzhioù a rank bezañ e-barzh an estez. (Pep elfenn he deus un alc'hwez anvet dindan \"/desktop/mate/session/required_components\"). Ne zlefe ket ket aotreet, gant ostilh gwellvezioù an arloadoù loc'hañ, dilemel ur parzh ret d'an estez gant an arveriaded hag ardoer an estez a ouzhpennoù ent emgefreek ar parzhioù ret en-dro en estez pa vo kennasket outi mard int bet dilamet."
+msgstr ""
+"Roll ar parzhioù a rank bezañ e-barzh an estez. (Pep elfenn he deus un "
+"alc'hwez anvet dindan \"/desktop/mate/session/required_components\"). Ne "
+"zlefe ket ket aotreet, gant ostilh gwellvezioù an arloadoù loc'hañ, dilemel "
+"ur parzh ret d'an estez gant an arveriaded hag ardoer an estez a ouzhpennoù "
+"ent emgefreek ar parzhioù ret en-dro en estez pa vo kennasket outi mard int "
+"bet dilamet."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -155,7 +164,9 @@ msgstr "ardoer prenestroù"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Gant an ardoer prenestroù e c'hellit tresañ barrennad titl ha riblennoù war dro prenestroù hag e c'hellit diblasañ ha mentiñ prenestroù."
+msgstr ""
+"Gant an ardoer prenestroù e c'hellit tresañ barrennad titl ha riblennoù war "
+"dro prenestroù hag e c'hellit diblasañ ha mentiñ prenestroù."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -165,7 +176,9 @@ msgstr "Panel"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Ur barrenn ez eus gant an daolenn stur, uhel ouzh izel ar skramm, gant lañseroù, listennad prenestroù, arlunioù diwall, an eurier, hag all."
+msgstr ""
+"Ur barrenn ez eus gant an daolenn stur, uhel ouzh izel ar skramm, gant "
+"lañseroù, listennad prenestroù, arlunioù diwall, an eurier, hag all."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -175,7 +188,9 @@ msgstr "Ardoer restroù"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Merañ a ra merour restroù an arluniù burev ha gallout a rit etreoberiañ gant ho restroù."
+msgstr ""
+"Merañ a ra merour restroù an arluniù burev ha gallout a rit etreoberiañ gant"
+" ho restroù."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -203,7 +218,9 @@ msgstr "<b>Arloadoù a lobour c'hoazh:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Emañ o c'hortoz ma'z echuo ar goulev. Mar bez arsavet ar goulev e kollot ul lod eus ho labour marteze."
+msgstr ""
+"Emañ o c'hortoz ma'z echuo ar goulev. Mar bez arsavet ar goulev e kollot ul "
+"lod eus ho labour marteze."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -247,7 +264,7 @@ msgstr "A_rc'had :"
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr "A_nv :"
+msgstr "_Anv"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
@@ -262,27 +279,29 @@ msgstr "Handelv '%s' restr ar burev n'eo ket bet anavezet"
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr "O kregiñ gant %s"
+msgstr "O loc'hañ %s"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "An arload ne zedegemer ket an teulioù dre arroudennoù arc'had"
+msgstr "An arload ne zegemer ket an teulioù dre arc'had"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Dibarzh lañsañ dianavezet : %d"
+msgstr "Dibarzh loc'hañ dianavezet : %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "N'haller lakaat URIoù an teul da dremen d'un enankad war ar burev evel 'Type=Link'"
+msgstr ""
+"N'hall ket lakaat URIioù un teul d'un enankad mod .desktop e rizh "
+"'Type=Link'"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "N'eo ket un dra a c'haller lañsañ"
+msgstr "N'eo ket un dra da loc'hañ"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
@@ -371,15 +390,21 @@ msgstr "Nullañ"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Digennasket e viot ent emgefreet a-benn %d eilenn"
-msgstr[1] "Digennasket e viot ent emgefreet a-benn %d eilenn"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Lazhet e vo ar reizhiad-mañ ent emgefreek a-benn %d eilenn"
-msgstr[1] "Lazhet e vo ar reizhiad-mañ ent emgefreek a-benn %d eilenn"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -418,7 +443,7 @@ msgstr "_Adloc'hañ"
 msgid "_Shut Down"
 msgstr "_Lazhañ"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Respont ebet"
 
@@ -437,7 +462,8 @@ msgstr "O virout ouzh an digennaskañ emañ ar goulev-mañ."
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr "N'eo ket aotret ar c'hennask nevez arval rak eo an estez a-vremañ o serriñ\n"
+msgstr ""
+"N'eo ket aotret ar c'hennask nevez arval rak eo an estez a-vremañ o serriñ\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
@@ -528,7 +554,20 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [DIBARZHIOÙ...] COMMAND\n\nErounit COMMAND e-pad m'emañ o sparlañ arc'hwelerezhioù zo eus an estez.\n\n  -h, --help        Diskouez ar skoazell-mañ\n  --version         Diskouez handelv ar goulev\n  --app-id ID       naoudi an arload da arverañ\n                    pa vez o sparlañ (diret)\n  --reason REASON   An abeg evit ar sparlañ (diret)\n  --inhibit ARG     Traoù da sparlañ, roll dispartiet gant ur skejig eus :\n                    digennaskañ, trec'haoliñ d'un arloade all, arsaviñ, dioberiant, emsevel\n\nIf no --inhibit erspizet eo an dibarzh, goulakaet eo dioberiant.\n"
+msgstr ""
+"%s [DIBARZHIOÙ...] COMMAND\n"
+"\n"
+"Erounit COMMAND e-pad m'emañ o sparlañ arc'hwelerezhioù zo eus an estez.\n"
+"\n"
+"  -h, --help        Diskouez ar skoazell-mañ\n"
+"  --version         Diskouez handelv ar goulev\n"
+"  --app-id ID       naoudi an arload da arverañ\n"
+"                    pa vez o sparlañ (diret)\n"
+"  --reason REASON   An abeg evit ar sparlañ (diret)\n"
+"  --inhibit ARG     Traoù da sparlañ, roll dispartiet gant ur skejig eus :\n"
+"                    digennaskañ, trec'haoliñ d'un arloade all, arsaviñ, dioberiant, emsevel\n"
+"\n"
+"If no --inhibit erspizet eo an dibarzh, goulakaet eo dioberiant.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

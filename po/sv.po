@@ -1,25 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Anders Carlsson <anders.carlsson@tordata.se>, 1999
-# Andreas Hyden  <a.hyden@cyberpoint.se>, 2000
-# Patrik Nilsson <asavartzeth@gmail.com>, 2014
-# Christian Rose <menthos@menthos.com>, 2000, 2001, 2002, 2003, 2004, 2005
-# Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010
-# Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>, 2015-2016
-# Martin Norbäck <d95mback@dtek.chalmers.se>, 2000, 2001
-# Martin Wahlen <mva@sbbs.se>, 1998
-# Tobias Lekare <lekare@linux.com>, 2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-12-28 12:57+0000\n"
-"Last-Translator: Tobias Lekare <lekare@linux.com>\n"
-"Language-Team: Swedish (http://www.transifex.com/mate/MATE/language/sv/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Tobias Lekare <lekare@linux.com>, 2018\n"
+"Language-Team: Swedish (https://www.transifex.com/mate/teams/13566/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,7 +40,7 @@ msgstr "Uppstartsprogrammets kommando är inte giltigt"
 
 #: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
-msgstr "Aktiverat"
+msgstr "Aktiverad"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
@@ -72,9 +64,9 @@ msgstr "Ingen beskrivning"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr "Version av detta program"
+msgstr "Detta programs versionsnummer"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Kunde inte visa hjälpdokumentet"
 
@@ -92,7 +84,8 @@ msgstr "Spara sessioner"
 
 #: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr "Om detta är aktiverat kommer mate-session att spara sessionen automatiskt."
+msgstr ""
+"Om detta är aktiverat kommer mate-session att spara sessionen automatiskt."
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
@@ -100,7 +93,9 @@ msgstr "Utloggningsfråga"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Om detta är aktiverat kommer mate-session att fråga användaren innan en session avslutas."
+msgstr ""
+"Om detta är aktiverat kommer mate-session att fråga användaren innan en "
+"session avslutas."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -110,16 +105,20 @@ msgstr "Tidsgräns för utloggning"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "Om loggningsprompten är aktiverad ställer du in tidsgränsen i sekunder innan du loggar ut automatiskt. Om 0, är automatisk utloggning inaktiverad."
+msgstr ""
+"Om loggningsprompten är aktiverad ställer du in tidsgränsen i sekunder innan"
+" du loggar ut automatiskt. Om 0, är automatisk utloggning inaktiverad."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr "Tid innan sessionen anses vara overksam"
+msgstr "Tid innan sessionen anses som overksam"
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Antalet minuters inaktivitet innan sessionen anses vara overksam."
+msgstr ""
+"Antal minuter efter att skärmsläckaren aktiverats innan sessionen anses som "
+"inaktiv."
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
@@ -141,7 +140,14 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Lista över komponenter som är nödvändiga som en del av sessionen. (Varje element namnger en nyckel under \"/org/mate/desktop/session/required_components\"). Inställningsverktyget Uppstartsprogram kommer vanligtvis inte att tillåta användare att ta bort en nödvändig komponent från sessionen, och sessionshanteraren kommer automatiskt att lägga tillbaka till de nödvändiga komponenterna till sessionen vid inloggning om de blir borttagna."
+msgstr ""
+"Lista över komponenter som är nödvändiga som en del av sessionen. (Varje "
+"element namnger en nyckel under "
+"\"/org/mate/desktop/session/required_components\"). Inställningsverktyget "
+"Uppstartsprogram kommer vanligtvis inte att tillåta användare att ta bort en"
+" nödvändig komponent från sessionen, och sessionshanteraren kommer "
+"automatiskt att lägga tillbaka till de nödvändiga komponenterna till "
+"sessionen vid inloggning om de blir borttagna."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -160,7 +166,9 @@ msgstr "Fönsterhanterare"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Fönsterhanteraren är det program som ritar upp titellisten och ramar runt fönster samt låter dig flytta och ändra storlek på fönster."
+msgstr ""
+"Fönsterhanteraren är det program som ritar upp titellisten och ramar runt "
+"fönster samt låter dig flytta och ändra storlek på fönster."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -170,7 +178,9 @@ msgstr "Panel"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Panelen tillhandahåller raden på övre eller nedre delen av skärmen och innehåller menyer, fönsterlistan, statusikoner, klockan, etc."
+msgstr ""
+"Panelen tillhandahåller raden på övre eller nedre delen av skärmen och "
+"innehåller menyer, fönsterlistan, statusikoner, klockan, etc."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -180,7 +190,9 @@ msgstr "Filhanterare"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Filhanteraren tillhandahåller skrivbordsikoner och låter dig interagera med dina sparade filer."
+msgstr ""
+"Filhanteraren tillhandahåller skrivbordsikoner och låter dig interagera med "
+"dina sparade filer."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -190,7 +202,9 @@ msgstr "Docka"
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr "En docka ger ett dockningsområde som liknar en panel för att starta och byta applikationer."
+msgstr ""
+"En docka ger ett dockningsområde som liknar en panel för att starta och byta"
+" applikationer."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -208,7 +222,9 @@ msgstr "<b>Några program är fortfarande igång:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Väntar på att programmet ska köras färdigt.  Avbryta programmet kan innebära att du förlorar data."
+msgstr ""
+"Väntar på att programmet ska köras färdigt.  Avbryta programmet kan innebära"
+" att du förlorar data."
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -262,7 +278,7 @@ msgstr "Filen är inte en giltig .desktop-fil"
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Okänd version i skrivbordsfil \"%s\""
+msgstr "Okänd Version \"%s\" i skrivbordsfil"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
@@ -272,22 +288,22 @@ msgstr "Startar %s"
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "Programmet tar inte emot dokument på kommandoraden"
+msgstr "Programmet tar inte emot några dokument på kommandoraden"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Okänt startalternativ: %d"
+msgstr "Okänd startflagga: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Kan inte skicka dokument-URI:er till en \"Type=Link\"-skrivbordspost"
+msgstr "Kan inte skicka dokument-URI:er till ett \"Type=Link\"-skrivbordsobjekt"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "Inte ett startbart objekt"
+msgstr "Inte ett körbart objekt"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
@@ -303,7 +319,7 @@ msgstr "FIL"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Ange sessionshanterings-id"
+msgstr "Ange id för sessionshantering"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -338,7 +354,9 @@ msgstr "Några program körs fortfarande:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Väntar på att programmen ska köras färdigt.  Avbryta dessa program kan innebära att du förlorar data."
+msgstr ""
+"Väntar på att programmen ska köras färdigt.  Avbryta dessa program kan "
+"innebära att du förlorar data."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -366,7 +384,7 @@ msgstr "Starta om ändå"
 
 #: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
-msgstr "Lås skärmen"
+msgstr "Låsskärm"
 
 #: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
@@ -376,15 +394,15 @@ msgstr "Avbryt"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Du kommer att loggas ut automatiskt om %d sekund"
-msgstr[1] "Du kommer att loggas ut automatiskt om %d sekunder"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Systemet kommer att stängas av automatiskt om %d sekund"
-msgstr[1] "Systemet kommer att stängas av automatiskt om %d sekunder"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -397,7 +415,7 @@ msgstr "Logga ut ur detta system nu?"
 
 #: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
-msgstr "_Växla användare"
+msgstr "_Byt användare"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
@@ -423,7 +441,7 @@ msgstr "Starta _om"
 msgid "_Shut Down"
 msgstr "St_äng av"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Svarar inte"
 
@@ -442,7 +460,9 @@ msgstr "Detta program blockerar utloggningen."
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr "Avvisar ny klientanslutning på grund av att sessionen är på väg att stängas av\n"
+msgstr ""
+"Avvisar ny klientanslutning på grund av att sessionen är på väg att stängas "
+"av\n"
 
 #: ../mate-session/gsm-xsmp-server.c:587
 #, c-format
@@ -453,7 +473,8 @@ msgstr "Kunde inte skapa lyssnande ICE-uttag: %s"
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "Kunde inte starta inloggningssession (och kan inte ansluta till X-servern)"
+msgstr ""
+"Kunde inte starta inloggningssession (och kan inte ansluta till X-servern)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
@@ -533,7 +554,20 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [OPTION...] COMMAND\n\nKör COMMAND samtidigt som vissa sessionsfunktioner hämmas.\n\n  -h, --help        Visar denna hjälp\n  --version         Visar programversion\n  --app-id ID       Programid att använda\n                    vid hämning (valfri)\n  --reason REASON   Orsak för hämning (valfri)\n  --inhibit ARG     Saker ett hämna, kolonseparerad lista av:\n                    logout, switch-user, suspend, idle, automount\n\nOm inget --inhibit alternativ är valt antas idle.\n"
+msgstr ""
+"%s [OPTION...] COMMAND\n"
+"\n"
+"Kör COMMAND samtidigt som vissa sessionsfunktioner hämmas.\n"
+"\n"
+"  -h, --help        Visar denna hjälp\n"
+"  --version         Visar programversion\n"
+"  --app-id ID       Programid att använda\n"
+"                    vid hämning (valfri)\n"
+"  --reason REASON   Orsak för hämning (valfri)\n"
+"  --inhibit ARG     Saker ett hämna, kolonseparerad lista av:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"Om inget --inhibit alternativ är valt antas idle.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2005
-# Siranush <ss.m.95@mail.ru>, 2015-2016
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Siranush <ss.m.95@mail.ru>\n"
-"Language-Team: Armenian (http://www.transifex.com/mate/MATE/language/hy/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Siranush <ss.m.95@mail.ru>, 2018\n"
+"Language-Team: Armenian (https://www.transifex.com/mate/teams/13566/hy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,7 +44,7 @@ msgstr "Միացված"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
-msgstr "Պատկեր"
+msgstr "Պատկերակ"
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
@@ -67,7 +66,7 @@ msgstr "Ոչ մի Նկարագրություն"
 msgid "Version of this application"
 msgstr "Այս դիմումի տարբերակը"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Չի հաջողվել ցույց տալ օգնության փաստաթուղթը"
 
@@ -93,7 +92,9 @@ msgstr "Համակարգից դուրս գալու հուշում"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Միացնելու դեպքում գնոմ–ենթահամակարգը գործարկողին հուշում է սեանսի ավարտի մասին"
+msgstr ""
+"Միացնելու դեպքում գնոմ–ենթահամակարգը գործարկողին հուշում է սեանսի ավարտի "
+"մասին"
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -103,7 +104,10 @@ msgstr "Ավարտի սահմանված ժամանակի ավարտը"
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
-msgstr "Եթե դուրս գալու հուշումը միացված է, ապա այս սահմանում է ժամանակի ավարտը վարկյաններով, նախքան ինքնաբերաբար դուրս գալը։ Եթե 0, ապա ավտոմատ դուրս գալը անջատված է։"
+msgstr ""
+"Եթե դուրս գալու հուշումը միացված է, ապա այս սահմանում է ժամանակի ավարտը "
+"վարկյաններով, նախքան ինքնաբերաբար դուրս գալը։ Եթե 0, ապա ավտոմատ դուրս գալը "
+"անջատված է։"
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
@@ -134,7 +138,13 @@ msgid ""
 "remove a required component from the session, and the session manager will "
 "automatically add the required components back to the session at login time "
 "if they do get removed."
-msgstr "Բաղադրիչների ցանկը, որոնք անհրաժեշտ են որպես նիստի մաս։ (Յուրաքանչյուր տարրի անուները բանալիի տակ \"/org/mate/desktop/session/required_components\")։ Գործարկման Ծրագրերի նախապատվությունների գործիքը սովորաբար թույլ չի տալիս օգտվողներին հեռացնել պահանջվող նիստի բաղադրիչը և նիստ կառավարիչը ինքնաբերաբար ավելացնում է պահանջվող բաղադրիչները դեպի հետ նստաշրջանի մուտքի ժամանակ, եթե նրանք չեն հեռացվել։"
+msgstr ""
+"Բաղադրիչների ցանկը, որոնք անհրաժեշտ են որպես նիստի մաս։ (Յուրաքանչյուր տարրի"
+" անուները բանալիի տակ \"/org/mate/desktop/session/required_components\")։ "
+"Գործարկման Ծրագրերի նախապատվությունների գործիքը սովորաբար թույլ չի տալիս "
+"օգտվողներին հեռացնել պահանջվող նիստի բաղադրիչը և նիստ կառավարիչը "
+"ինքնաբերաբար ավելացնում է պահանջվող բաղադրիչները դեպի հետ նստաշրջանի մուտքի "
+"ժամանակ, եթե նրանք չեն հեռացվել։"
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
@@ -153,7 +163,10 @@ msgstr "Պատուհանի մենեջեր"
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
-msgstr "Պատուհանային կառավարիչը ծրագիր է, որը պատկերում է վերնագիր բարը և պատուհանների սահմանները շուրջը, և թույլ է տալիս Ձեզ տեղափոխել և չափափոխել պատուհանները։"
+msgstr ""
+"Պատուհանային կառավարիչը ծրագիր է, որը պատկերում է վերնագիր բարը և "
+"պատուհանների սահմանները շուրջը, և թույլ է տալիս Ձեզ տեղափոխել և չափափոխել "
+"պատուհանները։"
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -163,7 +176,10 @@ msgstr "Վահանակ"
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
-msgstr "Վահանակը ապահովում է բարը էկրանի վերևի կամ ներքևի մասում, որը պարունակում ընտրացանկերը, պատուհանի ցուցակը, կարգավիճակի պատկերանշանները, ժամացույցը և այլն։"
+msgstr ""
+"Վահանակը ապահովում է բարը էկրանի վերևի կամ ներքևի մասում, որը պարունակում "
+"ընտրացանկերը, պատուհանի ցուցակը, կարգավիճակի պատկերանշանները, ժամացույցը և "
+"այլն։"
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
@@ -173,7 +189,9 @@ msgstr "Ֆայլի Կառավարիչ"
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
-msgstr "Ֆայլային կառավարիչը ապահովում է աշխատասեղանի պատկերանշանները և թույլ է տալիս Ձեզ փոխներգործել ձեր պահպանած ֆայլերի հետ։"
+msgstr ""
+"Ֆայլային կառավարիչը ապահովում է աշխատասեղանի պատկերանշանները և թույլ է տալիս"
+" Ձեզ փոխներգործել ձեր պահպանած ֆայլերի հետ։"
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
@@ -183,7 +201,9 @@ msgstr "Կտրել"
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
-msgstr "Կտրելը ապահովումէ կտրելի տարածք, որը նման է վահանակի, գործարկելու և կիրառական ծրագրերի փոխանջատելու համար։"
+msgstr ""
+"Կտրելը ապահովումէ կտրելի տարածք, որը նման է վահանակի, գործարկելու և "
+"կիրառական ծրագրերի փոխանջատելու համար։"
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -201,7 +221,9 @@ msgstr "<b>Որոշ ծրագրեր դեռ աշխատում են:</b>"
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
-msgstr "Սպասում ծրագրի ավարտի համար։ Ծրագրի ընդհատումը կարող է առաջացնել աշխատանքի կորուստ։"
+msgstr ""
+"Սպասում ծրագրի ավարտի համար։ Ծրագրի ընդհատումը կարող է առաջացնել աշխատանքի "
+"կորուստ։"
 
 #: ../data/mate-session-properties.desktop.in.in.h:1
 msgid "Startup Applications"
@@ -275,7 +297,9 @@ msgstr "Չճանաչված գործարկչի ընտրացանկ. %d"
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Չի հաջողվել անցկացնել փաստաթղթի URI–ները աշխատաքային սեղանի մուտքի 'Type=Link'–ին "
+msgstr ""
+"Չի հաջողվել անցկացնել փաստաթղթի URI–ները աշխատաքային սեղանի մուտքի "
+"'Type=Link'–ին "
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
@@ -296,7 +320,7 @@ msgstr "ՖԱՅԼ"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Հ ատկորոշել ենթահամակարգի կառավարչի ID"
+msgstr "Հ ատկորոշել ենթահամակարգի կառավարչի ID֊ն"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
@@ -331,7 +355,9 @@ msgstr "Որոշ ծրագրեր դեռ աշխատում են:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Սպասում ծրագրի ավարտի համար։ Այդ ծրագրերը ընդհատելը կարող են առաջացնել աշխատանքի կորուստ։"
+msgstr ""
+"Սպասում ծրագրի ավարտի համար։ Այդ ծրագրերը ընդհատելը կարող են առաջացնել "
+"աշխատանքի կորուստ։"
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -369,15 +395,15 @@ msgstr "Չեղարկել"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Դուք պետք է ավտոմատ կերպով դուրս գաք %d վայրկյանում"
-msgstr[1] "Դուք պետք է ավտոմատ կերպով դուրս գաք %d վայրկյաններում"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Այս համակարգը կարող է ավտոմատ կերպով անջատվել %d վայրկյանում"
-msgstr[1] "Այս համակարգը կարող է ավտոմատ կերպով անջատվել %d վայրկյաններում"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -416,7 +442,7 @@ msgstr "_Վերսկսել"
 msgid "_Shut Down"
 msgstr "_Անջատել"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Չի արձագանքում"
 
@@ -526,7 +552,19 @@ msgid ""
 "                    logout, switch-user, suspend, idle, automount\n"
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
-msgstr "%s [ՏԱՐԲԵՐԱԿ...] ՀՐԱՄԱՆ\n\nԿատարել հրամանը մինչդեռ արգելակվում է  որոշ նիստի ֆունկցիոնալությունը։\n\n-h, --help Ցույց այդ օգնությունը\n--version Ցույց տալ ծրագրի նոր տարբերակը\n--app-id ID Դիմումի օգտագործած id\nերբ արգելակել (ըստ ցանկության)\n--reason ՊԱՏՃԱՌԸ Պատճառն արգելակելու (ըստ ցանկության)\n--inhibit ARG Արգելակող տարրեր, կետ-առանձնացված ցանկ:\nԴուրս գալ, օգտագործողի փոխանջատում, կասեցնել, պարապուրդ, ապատեղակայում\nԵթե ոչ --inhibit տարբերակն է նշված, ենթադրվում է պարապ է։\n"
+msgstr ""
+"%s [ՏԱՐԲԵՐԱԿ...] ՀՐԱՄԱՆ\n"
+"\n"
+"Կատարել հրամանը մինչդեռ արգելակվում է  որոշ նիստի ֆունկցիոնալությունը։\n"
+"\n"
+"-h, --help Ցույց այդ օգնությունը\n"
+"--version Ցույց տալ ծրագրի նոր տարբերակը\n"
+"--app-id ID Դիմումի օգտագործած id\n"
+"երբ արգելակել (ըստ ցանկության)\n"
+"--reason ՊԱՏՃԱՌԸ Պատճառն արգելակելու (ըստ ցանկության)\n"
+"--inhibit ARG Արգելակող տարրեր, կետ-առանձնացված ցանկ:\n"
+"Դուրս գալ, օգտագործողի փոխանջատում, կասեցնել, պարապուրդ, ապատեղակայում\n"
+"Եթե ոչ --inhibit տարբերակն է նշված, ենթադրվում է պարապ է։\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189

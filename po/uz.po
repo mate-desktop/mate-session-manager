@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# muzaffar habibullayev <muzaffarlearner@gmail.com>, 2016
-# Nurali Abdurahmonov <mavnur@gmail.com>, 2009
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: muzaffar habibullayev <muzaffarlearner@gmail.com>\n"
-"Language-Team: Uzbek (http://www.transifex.com/mate/MATE/language/uz/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: muzaffar habibullayev <muzaffarlearner@gmail.com>, 2018\n"
+"Language-Team: Uzbek (https://www.transifex.com/mate/teams/13566/uz/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,7 +66,7 @@ msgstr "Taʼrif yoʻq"
 msgid "Version of this application"
 msgstr "Dastur versiyasi"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Yordam hujjatini koʻrsatib boʻlmadi"
 
@@ -93,7 +92,9 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Agar belgilansa , mate-session seansni tugatishdan avval foydalanuvchini ogohlantiradi."
+msgstr ""
+"Agar belgilansa , mate-session seansni tugatishdan avval foydalanuvchini "
+"ogohlantiradi."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -167,7 +168,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr "Fayl boshqaruvchisi"
+msgstr "Fayl Boshqaruvchi"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
@@ -221,7 +222,8 @@ msgstr "Avto-ishga tushadigan dasturlar"
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
-msgstr "Seansdan chiqilayotganda ishlab turgan dasturlarni _avtomatik eslab qolish"
+msgstr ""
+"Seansdan chiqilayotganda ishlab turgan dasturlarni _avtomatik eslab qolish"
 
 #: ../data/session-properties.ui.h:4
 msgid "_Remember Currently Running Application"
@@ -260,7 +262,7 @@ msgstr "Aniqlanmagan '%s' desktop fayli versiyasi"
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr "%s ishga tushirilmoqda"
+msgstr "%s boshlanmoqda"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
@@ -270,7 +272,7 @@ msgstr "Dastur hujjatlarni buyruq satrida qabul qilmaydi"
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Tanilmagan ishga tushirish opsiyasi: %d"
+msgstr "Tanilmagan ishga tushirish xossasi: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
@@ -317,7 +319,7 @@ msgstr "'%s' nishonchasi topildi"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "Nomaʼlum"
+msgstr "Noma'lum"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -331,7 +333,9 @@ msgstr "Ayrim dasturlar hali ham ishlamoqda:"
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
-msgstr "Dasturlar yakunlanishi kutilmoqda. Ushbu dasturlarga xalal berish ishingiz yo'qolishiga sabab bo'lishi mumkin."
+msgstr ""
+"Dasturlar yakunlanishi kutilmoqda. Ushbu dasturlarga xalal berish ishingiz "
+"yo'qolishiga sabab bo'lishi mumkin."
 
 #: ../mate-session/gsm-inhibit-dialog.c:868
 msgid "Switch User Anyway"
@@ -369,13 +373,13 @@ msgstr "Bekor qilish"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Siz %d  soniyada avtomatik tarzda chiqib ketasiz"
+msgstr[0] ""
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Tizim %d  soniyada avtomatik tarzda o'chiriladi"
+msgstr[0] ""
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format
@@ -388,7 +392,7 @@ msgstr "Tizimdan hozir chiqilsinmi?"
 
 #: ../mate-session/gsm-logout-dialog.c:452
 msgid "_Switch User"
-msgstr "Foydalanuvchini _oʻzgartirish"
+msgstr "Foydalanuvchini _Oʻzgartirish"
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
@@ -414,7 +418,7 @@ msgstr "_Oʻchirib-yoqish"
 msgid "_Shut Down"
 msgstr "_Oʻchirish"
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr "Javob bermayapti"
 
@@ -535,4 +539,6 @@ msgstr ""
 #: ../tools/mate-session-inhibit.c:225
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr "%s ni bajarib bo'lmadi\n\n"
+msgstr ""
+"%s ni bajarib bo'lmadi\n"
+"\n"

@@ -1,19 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Kemal Sanjta <gomez@lugzdk.ba>, 2004
-# Samir Marić <samir@lugbih.org>, 2002
-# Sky Lion <xskylionx@gmail.com>, 2016
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:12+0100\n"
-"PO-Revision-Date: 2017-09-19 13:38+0000\n"
-"Last-Translator: Sky Lion <xskylionx@gmail.com>\n"
-"Language-Team: Bosnian (http://www.transifex.com/mate/MATE/language/bs/)\n"
+"POT-Creation-Date: 2018-03-17 15:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Sky Lion <xskylionx@gmail.com>, 2018\n"
+"Language-Team: Bosnian (https://www.transifex.com/mate/teams/13566/bs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,7 +40,7 @@ msgstr ""
 
 #: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
-msgstr ""
+msgstr "Uključeno"
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
@@ -68,7 +66,7 @@ msgstr "Bez opisa"
 msgid "Version of this application"
 msgstr "Verzija ove aplikacije"
 
-#: ../capplet/main.c:64
+#: ../capplet/main.c:51
 msgid "Could not display help document"
 msgstr ""
 
@@ -94,7 +92,9 @@ msgstr "Odjavni prompt"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Ukoliko je omogućeno, mate-session će potstaći korisnika prije završavanja sesije."
+msgstr ""
+"Ukoliko je omogućeno, mate-session će potstaći korisnika prije završavanja "
+"sesije."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -251,22 +251,22 @@ msgstr "_Ime:"
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr ""
+msgstr "Fajl nije validni .desktop fajl"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr ""
+msgstr "Nepoznat desktop fajl Verzija '%s'"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr "Pokrećem %s"
+msgstr "Pokrećem  %s"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "Aplikacija ne prihvaća dokumente na komandnoj liniji"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
@@ -285,7 +285,7 @@ msgstr "Nije moguće pokrenuti"
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "Onemogući spajanje sa upraviteljem sesije"
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -297,11 +297,11 @@ msgstr "FAJL"
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "Navedi ID upravitelja sesije"
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
@@ -318,7 +318,7 @@ msgstr "Ikona '%s' nije pronađena"
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "Nepoznat"
+msgstr "Nepoznato"
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -360,7 +360,7 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
-msgstr "Zaključaj Ekran"
+msgstr "Zaključaj ekran"
 
 #: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
@@ -397,7 +397,7 @@ msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:461
 msgid "_Log Out"
-msgstr ""
+msgstr "_Odjava"
 
 #: ../mate-session/gsm-logout-dialog.c:467
 msgid "Shut down this system now?"
@@ -419,7 +419,7 @@ msgstr ""
 msgid "_Shut Down"
 msgstr ""
 
-#: ../mate-session/gsm-manager.c:1414 ../mate-session/gsm-manager.c:2133
+#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
 msgid "Not responding"
 msgstr ""
 
@@ -469,7 +469,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:69
 msgid "Log out"
-msgstr ""
+msgstr "Odjava"
 
 #: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"
