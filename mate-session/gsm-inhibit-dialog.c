@@ -423,10 +423,10 @@ get_pixbuf_for_window (GdkDisplay *gdkdisplay,
         pixbuf = pixbuf_get_from_pixmap (display, xpixmap, width, height);
 
         if (xpixmap != None) {
-                gdk_error_trap_push ();
+                gdk_x11_display_error_trap_push (gdkdisplay);
                 XFreePixmap (display, xpixmap);
                 gdk_display_sync (gdkdisplay);
-                gdk_error_trap_pop_ignored ();
+                gdk_x11_display_error_trap_pop_ignored (gdkdisplay);
         }
 
         if (pixbuf != NULL) {
@@ -958,7 +958,7 @@ gsm_inhibit_dialog_constructor (GType                  type,
 
 #ifdef HAVE_XRENDER
         gdkdisplay = gdk_display_get_default ();
-        gdk_error_trap_push ();
+        gdk_x11_display_error_trap_push (gdkdisplay);
         if (XRenderQueryExtension (GDK_DISPLAY_XDISPLAY (gdkdisplay), &dialog->priv->xrender_event_base, &dialog->priv->xrender_error_base)) {
                 g_debug ("GsmInhibitDialog: Initialized XRender extension");
                 dialog->priv->have_xrender = TRUE;
@@ -967,7 +967,7 @@ gsm_inhibit_dialog_constructor (GType                  type,
                 dialog->priv->have_xrender = FALSE;
         }
         gdk_display_sync (gdkdisplay);
-        gdk_error_trap_pop_ignored ();
+        gdk_x11_display_error_trap_pop_ignored (gdkdisplay);
 #endif /* HAVE_XRENDER */
 
         /* FIXME: turn this on when it is ready */
