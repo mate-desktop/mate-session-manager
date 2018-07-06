@@ -42,7 +42,7 @@ done
 
 # WINDOW_MANAGER overrides all
 if [ -z "$WINDOW_MANAGER" ] ; then
-    WINDOW_MANAGER=`gsettings get org.mate.session.required-components windowmanager 2> /dev/null`
+    WINDOW_MANAGER=`gsettings get org.mate.session.required-components windowmanager 2> /dev/null | sed -r -e "s/^'([^']*)'$/\\1/"`
 fi
 
 # Migrate compiz to compiz-manager if possible and needed
