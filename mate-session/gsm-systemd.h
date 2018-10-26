@@ -93,6 +93,8 @@ gboolean         gsm_systemd_can_hibernate     (GsmSystemd *manager);
 
 gboolean         gsm_systemd_can_suspend     (GsmSystemd *manager);
 
+gboolean         gsm_systemd_is_last_session_for_user (GsmSystemd *manager);
+
 void             gsm_systemd_attempt_stop    (GsmSystemd *manager);
 
 void             gsm_systemd_attempt_restart (GsmSystemd *manager);
