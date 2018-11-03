@@ -859,6 +859,48 @@ _client_stop (const char *id,
         return FALSE;
 }
 
+#ifdef HAVE_SYSTEMD
+static void
+maybe_restart_user_bus (GsmManager *manager)
+{
+        GsmSystemd *systemd;
+        GDBusProxy *proxy = NULL;
+        GError *error = NULL;
+
+        if (manager->priv->dbus_disconnected)
+                return;
+
+        systemd = gsm_get_systemd ();
+
+        if (!gsm_systemd_is_last_session_for_user (systemd))
+                return;
+
+        proxy = g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SYSTEM,
+                                              G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START,
+                                              NULL,
+                                              "org.freedesktop.systemd1",
+                                              "/org/freedesktop/systemd1",
+                                              "org.freedesktop.systemd1.Manager",
+                                              NULL,
+                                              &error);
+        if (proxy != NULL) {
+                g_dbus_proxy_call_sync (proxy,
+                                        "TryRestartUnit",
+                                        g_variant_new ("(ss)", "dbus.service", "replace"),
+                                        G_DBUS_CALL_FLAGS_NONE,
+                                        -1,
+                                        NULL,
+                                        &error);
+                g_object_unref (proxy);
+        }
+
+        if (error != NULL) {
+                g_debug ("GsmManager: reloading user bus failed: %s", error->message);
+                g_error_free (error);
+        }
+}
+#endif
+
 static void
 do_phase_exit (GsmManager *manager)
 {
@@ -867,6 +909,10 @@ do_phase_exit (GsmManager *manager)
                                    (GsmStoreFunc)_client_stop,
                                    NULL);
         }
+
+#ifdef HAVE_SYSTEMD
+        maybe_restart_user_bus (manager);
+#endif
 
         end_phase (manager);
 }
