@@ -23,45 +23,16 @@
 
 #include <glib-object.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
-#define MDM_TYPE_SIGNAL_HANDLER \
-	(mdm_signal_handler_get_type())
-
-#define MDM_SIGNAL_HANDLER(o) \
-	(G_TYPE_CHECK_INSTANCE_CAST((o), MDM_TYPE_SIGNAL_HANDLER, MdmSignalHandler))
-
-#define MDM_SIGNAL_HANDLER_CLASS(k) \
-	(G_TYPE_CHECK_CLASS_CAST((k), MDM_TYPE_SIGNAL_HANDLER, MdmSignalHandlerClass))
-
-#define MDM_IS_SIGNAL_HANDLER(o) \
-	(G_TYPE_CHECK_INSTANCE_TYPE((o), MDM_TYPE_SIGNAL_HANDLER))
-
-#define MDM_IS_SIGNAL_HANDLER_CLASS(k) \
-	(G_TYPE_CHECK_CLASS_TYPE((k), MDM_TYPE_SIGNAL_HANDLER))
-
-#define MDM_SIGNAL_HANDLER_GET_CLASS(o) \
-	(G_TYPE_INSTANCE_GET_CLASS((o), MDM_TYPE_SIGNAL_HANDLER, MdmSignalHandlerClass))
-
+#define MDM_TYPE_SIGNAL_HANDLER (mdm_signal_handler_get_type())
+G_DECLARE_FINAL_TYPE (MdmSignalHandler, mdm_signal_handler, MDM, SIGNAL_HANDLER, GObject)
 
 typedef gboolean (*MdmSignalHandlerFunc)(int signal, gpointer data);
 
 typedef void (*MdmShutdownHandlerFunc)(gpointer data);
 
 typedef struct MdmSignalHandlerPrivate MdmSignalHandlerPrivate;
-
-typedef struct {
-	GObject parent;
-	MdmSignalHandlerPrivate* priv;
-} MdmSignalHandler;
-
-typedef struct {
-	GObjectClass parent_class;
-} MdmSignalHandlerClass;
-
-GType mdm_signal_handler_get_type(void);
 
 MdmSignalHandler* mdm_signal_handler_new(void);
 void mdm_signal_handler_set_fatal_func(MdmSignalHandler* handler, MdmShutdownHandlerFunc func, gpointer user_data);
@@ -71,8 +42,6 @@ guint mdm_signal_handler_add(MdmSignalHandler* handler, int signal_number, MdmSi
 void mdm_signal_handler_remove(MdmSignalHandler* handler, guint id);
 void mdm_signal_handler_remove_func(MdmSignalHandler* handler, guint signal_number, MdmSignalHandlerFunc callback, gpointer data);
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __MDM_SIGNAL_HANDLER_H */

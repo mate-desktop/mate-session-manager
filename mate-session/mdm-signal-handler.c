@@ -41,9 +41,6 @@
 
 #include "mdm-signal-handler.h"
 
-#define MDM_SIGNAL_HANDLER_GET_PRIVATE(o) \
-	(G_TYPE_INSTANCE_GET_PRIVATE((o), MDM_TYPE_SIGNAL_HANDLER, MdmSignalHandlerPrivate))
-
 #ifdef __GNUC__
 #define UNUSED_VARIABLE __attribute__ ((unused))
 #else
@@ -57,7 +54,8 @@ typedef struct {
 	guint id;
 } CallbackData;
 
-struct MdmSignalHandlerPrivate {
+struct _MdmSignalHandler {
+	GObject    parent_instance;
 	GHashTable* lookup;
 	GHashTable* id_lookup;
 	GHashTable* action_lookup;
@@ -124,7 +122,7 @@ static gboolean signal_io_watch(GIOChannel* ioc, GIOCondition condition, MdmSign
 		signum = (gint32) buf[i];
 
 		g_debug("MdmSignalHandler: handling signal %d", signum);
-		handlers = g_hash_table_lookup(handler->priv->lookup, GINT_TO_POINTER(signum));
+		handlers = g_hash_table_lookup(handler->lookup, GINT_TO_POINTER(signum));
 
 		g_debug("MdmSignalHandler: Found %u callbacks", g_slist_length(handlers));
 
@@ -133,7 +131,7 @@ static gboolean signal_io_watch(GIOChannel* ioc, GIOCondition condition, MdmSign
 			gboolean res;
 			CallbackData* data;
 
-			data = g_hash_table_lookup(handler->priv->id_lookup, l->data);
+			data = g_hash_table_lookup(handler->id_lookup, l->data);
 
 			if (data != NULL)
 			{
@@ -156,10 +154,10 @@ static gboolean signal_io_watch(GIOChannel* ioc, GIOCondition condition, MdmSign
 
 	if (is_fatal)
 	{
-		if (handler->priv->fatal_func != NULL)
+		if (handler->fatal_func != NULL)
 		{
 			g_debug("MdmSignalHandler: Caught termination signal - calling fatal func");
-			handler->priv->fatal_func(handler->priv->fatal_data);
+			handler->fatal_func(handler->fatal_data);
 		}
 		else
 		{
@@ -310,7 +308,7 @@ static void catch_signal(MdmSignalHandler *handler, int signal_number)
 
 	sigaction(signal_number, &action, old_action);
 
-	g_hash_table_insert(handler->priv->action_lookup, GINT_TO_POINTER(signal_number), old_action);
+	g_hash_table_insert(handler->action_lookup, GINT_TO_POINTER(signal_number), old_action);
 }
 
 static void uncatch_signal(MdmSignalHandler* handler, int signal_number)
@@ -319,8 +317,8 @@ static void uncatch_signal(MdmSignalHandler* handler, int signal_number)
 
 	g_debug("MdmSignalHandler: Unregistering for %d signals", signal_number);
 
-	old_action = g_hash_table_lookup(handler->priv->action_lookup, GINT_TO_POINTER(signal_number));
-	g_hash_table_remove(handler->priv->action_lookup, GINT_TO_POINTER(signal_number));
+	old_action = g_hash_table_lookup(handler->action_lookup, GINT_TO_POINTER(signal_number));
+	g_hash_table_remove(handler->action_lookup, GINT_TO_POINTER(signal_number));
 
 	sigaction(signal_number, old_action, NULL);
 
@@ -338,22 +336,22 @@ guint mdm_signal_handler_add(MdmSignalHandler* handler, int signal_number, MdmSi
 	cdata->signal_number = signal_number;
 	cdata->func = callback;
 	cdata->data = data;
-	cdata->id = handler->priv->next_id++;
+	cdata->id = handler->next_id++;
 
 	g_debug("MdmSignalHandler: Adding handler %u: signum=%d %p", cdata->id, cdata->signal_number, cdata->func);
 
-	if (g_hash_table_lookup(handler->priv->action_lookup, GINT_TO_POINTER(signal_number)) == NULL)
+	if (g_hash_table_lookup(handler->action_lookup, GINT_TO_POINTER(signal_number)) == NULL)
 	{
 		catch_signal(handler, signal_number);
 	}
 
 	/* ID lookup owns the CallbackData */
-	g_hash_table_insert(handler->priv->id_lookup, GUINT_TO_POINTER(cdata->id), cdata);
+	g_hash_table_insert(handler->id_lookup, GUINT_TO_POINTER(cdata->id), cdata);
 
-	list = g_hash_table_lookup(handler->priv->lookup, GINT_TO_POINTER(signal_number));
+	list = g_hash_table_lookup(handler->lookup, GINT_TO_POINTER(signal_number));
 	list = g_slist_prepend(list, GUINT_TO_POINTER (cdata->id));
 
-	g_hash_table_insert(handler->priv->lookup, GINT_TO_POINTER(signal_number), list);
+	g_hash_table_insert(handler->lookup, GINT_TO_POINTER(signal_number), list);
 
 	return cdata->id;
 }
@@ -380,7 +378,7 @@ static void mdm_signal_handler_remove_and_free_data(MdmSignalHandler* handler, C
 
 	g_return_if_fail(MDM_IS_SIGNAL_HANDLER(handler));
 
-	list = g_hash_table_lookup(handler->priv->lookup, GINT_TO_POINTER(cdata->signal_number));
+	list = g_hash_table_lookup(handler->lookup, GINT_TO_POINTER(cdata->signal_number));
 	list = g_slist_remove_all(list, GUINT_TO_POINTER(cdata->id));
 
 	if (list == NULL)
@@ -390,9 +388,9 @@ static void mdm_signal_handler_remove_and_free_data(MdmSignalHandler* handler, C
 
 	g_debug("MdmSignalHandler: Removing handler %u: signum=%d %p", cdata->signal_number, cdata->id, cdata->func);
 	/* put changed list back in */
-	g_hash_table_insert(handler->priv->lookup, GINT_TO_POINTER(cdata->signal_number), list);
+	g_hash_table_insert(handler->lookup, GINT_TO_POINTER(cdata->signal_number), list);
 
-	g_hash_table_remove(handler->priv->id_lookup, GUINT_TO_POINTER(cdata->id));
+	g_hash_table_remove(handler->id_lookup, GUINT_TO_POINTER(cdata->id));
 }
 
 void mdm_signal_handler_remove(MdmSignalHandler* handler, guint id)
@@ -401,7 +399,7 @@ void mdm_signal_handler_remove(MdmSignalHandler* handler, guint id)
 
 	g_return_if_fail(MDM_IS_SIGNAL_HANDLER(handler));
 
-	found = g_hash_table_lookup(handler->priv->id_lookup, GUINT_TO_POINTER(id));
+	found = g_hash_table_lookup(handler->id_lookup, GUINT_TO_POINTER(id));
 
 	if (found != NULL)
 	{
@@ -418,7 +416,7 @@ static CallbackData* find_callback_data_by_func(MdmSignalHandler* handler, guint
 
 	found = NULL;
 
-	list = g_hash_table_lookup(handler->priv->lookup, GINT_TO_POINTER(signal_number));
+	list = g_hash_table_lookup(handler->lookup, GINT_TO_POINTER(signal_number));
 
 	for (l = list; l != NULL; l = l->next)
 	{
@@ -427,7 +425,7 @@ static CallbackData* find_callback_data_by_func(MdmSignalHandler* handler, guint
 
 		id = GPOINTER_TO_UINT(l->data);
 
-		d = g_hash_table_lookup(handler->priv->id_lookup, GUINT_TO_POINTER (id));
+		d = g_hash_table_lookup(handler->id_lookup, GUINT_TO_POINTER (id));
 
 		if (d != NULL && d->func == callback && d->data == data)
 		{
@@ -461,8 +459,6 @@ static void mdm_signal_handler_class_init(MdmSignalHandlerClass* klass)
 	GObjectClass* object_class = G_OBJECT_CLASS(klass);
 
 	object_class->finalize = mdm_signal_handler_finalize;
-
-	g_type_class_add_private(klass, sizeof(MdmSignalHandlerPrivate));
 }
 
 static void signal_list_free(GSList *list)
@@ -474,21 +470,19 @@ void mdm_signal_handler_set_fatal_func(MdmSignalHandler* handler, MdmShutdownHan
 {
 	g_return_if_fail(MDM_IS_SIGNAL_HANDLER(handler));
 
-	handler->priv->fatal_func = func;
-	handler->priv->fatal_data = user_data;
+	handler->fatal_func = func;
+	handler->fatal_data = user_data;
 }
 
 static void mdm_signal_handler_init(MdmSignalHandler* handler)
 {
 	GIOChannel* ioc;
 
-	handler->priv = MDM_SIGNAL_HANDLER_GET_PRIVATE(handler);
+	handler->next_id = 1;
 
-	handler->priv->next_id = 1;
-
-	handler->priv->lookup = g_hash_table_new(NULL, NULL);
-	handler->priv->id_lookup = g_hash_table_new(NULL, NULL);
-	handler->priv->action_lookup = g_hash_table_new(NULL, NULL);
+	handler->lookup = g_hash_table_new(NULL, NULL);
+	handler->id_lookup = g_hash_table_new(NULL, NULL);
+	handler->action_lookup = g_hash_table_new(NULL, NULL);
 
 	if (pipe(signal_pipes) == -1)
 	{
@@ -514,28 +508,26 @@ static void mdm_signal_handler_finalize(GObject* object)
 
 	g_debug("MdmSignalHandler: Finalizing signal handler");
 
-	g_return_if_fail(handler->priv != NULL);
-
-	for (l = g_hash_table_get_values(handler->priv->lookup); l != NULL; l = l->next)
+	for (l = g_hash_table_get_values(handler->lookup); l != NULL; l = l->next)
 	{
 		signal_list_free((GSList*) l->data);
 	}
 
-	g_hash_table_destroy(handler->priv->lookup);
+	g_hash_table_destroy(handler->lookup);
 
-	for (l = g_hash_table_get_values(handler->priv->id_lookup); l != NULL; l = l->next)
+	for (l = g_hash_table_get_values(handler->id_lookup); l != NULL; l = l->next)
 	{
 		callback_data_free((CallbackData*) l->data);
 	}
 
-	g_hash_table_destroy(handler->priv->id_lookup);
+	g_hash_table_destroy(handler->id_lookup);
 
-	for (l = g_hash_table_get_values(handler->priv->action_lookup); l != NULL; l = l->next)
+	for (l = g_hash_table_get_values(handler->action_lookup); l != NULL; l = l->next)
 	{
 		g_free(l->data);
 	}
 
-	g_hash_table_destroy(handler->priv->action_lookup);
+	g_hash_table_destroy(handler->action_lookup);
 
 	close(signal_pipes[0]);
 	close(signal_pipes[1]);
