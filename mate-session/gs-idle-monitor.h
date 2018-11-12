@@ -25,29 +25,10 @@
 
 #include <glib-object.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define GS_TYPE_IDLE_MONITOR         (gs_idle_monitor_get_type ())
-#define GS_IDLE_MONITOR(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GS_TYPE_IDLE_MONITOR, GSIdleMonitor))
-#define GS_IDLE_MONITOR_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GS_TYPE_IDLE_MONITOR, GSIdleMonitorClass))
-#define GS_IS_IDLE_MONITOR(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GS_TYPE_IDLE_MONITOR))
-#define GS_IS_IDLE_MONITOR_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GS_TYPE_IDLE_MONITOR))
-#define GS_IDLE_MONITOR_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GS_TYPE_IDLE_MONITOR, GSIdleMonitorClass))
-
-typedef struct GSIdleMonitorPrivate GSIdleMonitorPrivate;
-
-typedef struct
-{
-        GObject               parent;
-        GSIdleMonitorPrivate *priv;
-} GSIdleMonitor;
-
-typedef struct
-{
-        GObjectClass          parent_class;
-} GSIdleMonitorClass;
+G_DECLARE_FINAL_TYPE (GSIdleMonitor, gs_idle_monitor, GS, IDLE_MONITOR, GObject)
 
 typedef gboolean (*GSIdleMonitorWatchFunc) (GSIdleMonitor *monitor,
                                             guint          id,
@@ -68,8 +49,6 @@ void            gs_idle_monitor_remove_watch   (GSIdleMonitor         *monitor,
 void            gs_idle_monitor_reset          (GSIdleMonitor         *monitor);
 
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __GS_IDLE_MONITOR_H */
