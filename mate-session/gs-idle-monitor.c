@@ -43,10 +43,8 @@ static void gs_idle_monitor_class_init (GSIdleMonitorClass *klass);
 static void gs_idle_monitor_init       (GSIdleMonitor      *idle_monitor);
 static void gs_idle_monitor_finalize   (GObject             *object);
 
-#define GS_IDLE_MONITOR_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_IDLE_MONITOR, GSIdleMonitorPrivate))
-
-struct GSIdleMonitorPrivate
-{
+struct _GSIdleMonitor {
+        GObject      parent;
         GHashTable  *watches;
         int          sync_event_base;
         XSyncCounter counter;
@@ -98,9 +96,9 @@ gs_idle_monitor_dispose (GObject *object)
 
         monitor = GS_IDLE_MONITOR (object);
 
-        if (monitor->priv->watches != NULL) {
-                g_hash_table_destroy (monitor->priv->watches);
-                monitor->priv->watches = NULL;
+        if (monitor->watches != NULL) {
+                g_hash_table_destroy (monitor->watches);
+                monitor->watches = NULL;
         }
 
         G_OBJECT_CLASS (gs_idle_monitor_parent_class)->dispose (object);
@@ -125,7 +123,7 @@ find_watch_for_alarm (GSIdleMonitor *monitor,
 {
         GSIdleMonitorWatch *watch;
 
-        watch = g_hash_table_find (monitor->priv->watches,
+        watch = g_hash_table_find (monitor->watches,
                                    (GHRFunc)_find_alarm,
                                    &alarm);
         return watch;
@@ -135,7 +133,7 @@ find_watch_for_alarm (GSIdleMonitor *monitor,
 static gboolean
 send_fake_event (GSIdleMonitor *monitor)
 {
-        if (! monitor->priv->have_xtest) {
+        if (! monitor->have_xtest) {
                 return FALSE;
         }
 
@@ -143,20 +141,20 @@ send_fake_event (GSIdleMonitor *monitor)
 
         XLockDisplay (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()));
         XTestFakeKeyEvent (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
-                           *monitor->priv->keycode,
+                           *monitor->keycode,
                            True,
                            CurrentTime);
         XTestFakeKeyEvent (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
-                           *monitor->priv->keycode,
+                           *monitor->keycode,
                            False,
                            CurrentTime);
         XUnlockDisplay (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()));
 
         /* Swap the keycode */
-        if (monitor->priv->keycode == &monitor->priv->keycode1) {
-                monitor->priv->keycode = &monitor->priv->keycode2;
+        if (monitor->keycode == &monitor->keycode1) {
+                monitor->keycode = &monitor->keycode2;
         } else {
-                monitor->priv->keycode = &monitor->priv->keycode1;
+                monitor->keycode = &monitor->keycode1;
         }
 
         return TRUE;
@@ -227,7 +225,7 @@ xevent_filter (GdkXEvent     *xevent,
         XSyncAlarmNotifyEvent *alarm_event;
 
         ev = xevent;
-        if (ev->xany.type != monitor->priv->sync_event_base + XSyncAlarmNotify) {
+        if (ev->xany.type != monitor->sync_event_base + XSyncAlarmNotify) {
                 return GDK_FILTER_CONTINUE;
         }
 
@@ -250,7 +248,7 @@ init_xsync (GSIdleMonitor *monitor)
         XSyncSystemCounter *counters;
 
         res = XSyncQueryExtension (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
-                                   &monitor->priv->sync_event_base,
+                                   &monitor->sync_event_base,
                                    &sync_error_base);
         if (! res) {
                 g_warning ("GSIdleMonitor: Sync extension not present");
@@ -267,13 +265,13 @@ init_xsync (GSIdleMonitor *monitor)
         for (i = 0; i < ncounters; i++) {
                 if (counters[i].name != NULL
                     && strcmp (counters[i].name, "IDLETIME") == 0) {
-                        monitor->priv->counter = counters[i].counter;
+                        monitor->counter = counters[i].counter;
                         break;
                 }
         }
         XSyncFreeSystemCounterList (counters);
 
-        if (monitor->priv->counter == None) {
+        if (monitor->counter == None) {
                 g_warning ("GSIdleMonitor: IDLETIME counter not found");
                 return FALSE;
         }
@@ -290,20 +288,20 @@ _init_xtest (GSIdleMonitor *monitor)
         int a, b, c, d;
 
         XLockDisplay (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()));
-        monitor->priv->have_xtest = (XTestQueryExtension (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), &a, &b, &c, &d) == True);
-        if (monitor->priv->have_xtest) {
-                monitor->priv->keycode1 = XKeysymToKeycode (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), XK_Alt_L);
-                if (monitor->priv->keycode1 == 0) {
+        monitor->have_xtest = (XTestQueryExtension (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), &a, &b, &c, &d) == True);
+        if (monitor->have_xtest) {
+                monitor->keycode1 = XKeysymToKeycode (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), XK_Alt_L);
+                if (monitor->keycode1 == 0) {
                         g_warning ("keycode1 not existent");
                 }
-                monitor->priv->keycode2 = XKeysymToKeycode (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), XK_Alt_R);
-                if (monitor->priv->keycode2 == 0) {
-                        monitor->priv->keycode2 = XKeysymToKeycode (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), XK_Alt_L);
-                        if (monitor->priv->keycode2 == 0) {
+                monitor->keycode2 = XKeysymToKeycode (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), XK_Alt_R);
+                if (monitor->keycode2 == 0) {
+                        monitor->keycode2 = XKeysymToKeycode (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), XK_Alt_L);
+                        if (monitor->keycode2 == 0) {
                                 g_warning ("keycode2 not existent");
                         }
                 }
-                monitor->priv->keycode = &monitor->priv->keycode1;
+                monitor->keycode = &monitor->keycode1;
         }
         XUnlockDisplay (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()));
 #endif /* HAVE_XTEST */
@@ -338,8 +336,6 @@ gs_idle_monitor_class_init (GSIdleMonitorClass *klass)
         object_class->finalize = gs_idle_monitor_finalize;
         object_class->dispose = gs_idle_monitor_dispose;
         object_class->constructor = gs_idle_monitor_constructor;
-
-        g_type_class_add_private (klass, sizeof (GSIdleMonitorPrivate));
 }
 
 static guint32
@@ -390,14 +386,12 @@ idle_monitor_watch_free (GSIdleMonitorWatch *watch)
 static void
 gs_idle_monitor_init (GSIdleMonitor *monitor)
 {
-        monitor->priv = GS_IDLE_MONITOR_GET_PRIVATE (monitor);
+        monitor->watches = g_hash_table_new_full (NULL,
+                                                  NULL,
+                                                  NULL,
+                                                  (GDestroyNotify)idle_monitor_watch_free);
 
-        monitor->priv->watches = g_hash_table_new_full (NULL,
-                                                        NULL,
-                                                        NULL,
-                                                        (GDestroyNotify)idle_monitor_watch_free);
-
-        monitor->priv->counter = None;
+        monitor->counter = None;
 }
 
 static void
@@ -410,7 +404,7 @@ gs_idle_monitor_finalize (GObject *object)
 
         idle_monitor = GS_IDLE_MONITOR (object);
 
-        g_return_if_fail (idle_monitor->priv != NULL);
+        g_return_if_fail (idle_monitor != NULL);
 
         G_OBJECT_CLASS (gs_idle_monitor_parent_class)->finalize (object);
 }
@@ -442,7 +436,7 @@ _xsync_alarm_set (GSIdleMonitor      *monitor,
                 | XSyncCAEvents;
 
         XSyncIntToValue (&delta, 0);
-        attr.trigger.counter = monitor->priv->counter;
+        attr.trigger.counter = monitor->counter;
         attr.trigger.value_type = XSyncAbsolute;
         attr.trigger.wait_value = watch->interval;
         attr.delta = delta;
@@ -491,7 +485,7 @@ gs_idle_monitor_add_watch (GSIdleMonitor         *monitor,
 
         _xsync_alarm_set (monitor, watch);
 
-        g_hash_table_insert (monitor->priv->watches,
+        g_hash_table_insert (monitor->watches,
                              GUINT_TO_POINTER (watch->id),
                              watch);
         return watch->id;
@@ -503,6 +497,6 @@ gs_idle_monitor_remove_watch (GSIdleMonitor *monitor,
 {
         g_return_if_fail (GS_IS_IDLE_MONITOR (monitor));
 
-        g_hash_table_remove (monitor->priv->watches,
+        g_hash_table_remove (monitor->watches,
                              GUINT_TO_POINTER (id));
 }
