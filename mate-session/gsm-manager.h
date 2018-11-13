@@ -27,26 +27,12 @@
 
 #include "gsm-store.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define GSM_TYPE_MANAGER         (gsm_manager_get_type ())
-#define GSM_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GSM_TYPE_MANAGER, GsmManager))
-#define GSM_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GSM_TYPE_MANAGER, GsmManagerClass))
-#define GSM_IS_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSM_TYPE_MANAGER))
-#define GSM_IS_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GSM_TYPE_MANAGER))
-#define GSM_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GSM_TYPE_MANAGER, GsmManagerClass))
+G_DECLARE_DERIVABLE_TYPE (GsmManager, gsm_manager, GSM, MANAGER, GObject)
 
-typedef struct GsmManagerPrivate GsmManagerPrivate;
-
-typedef struct
-{
-        GObject            parent;
-        GsmManagerPrivate *priv;
-} GsmManager;
-
-typedef struct
+struct _GsmManagerClass
 {
         GObjectClass   parent_class;
 
@@ -65,7 +51,7 @@ typedef struct
                                                const char      *id);
         void          (* inhibitor_removed)   (GsmManager      *manager,
                                                const char      *id);
-} GsmManagerClass;
+}; //GsmManagerClass;
 
 typedef enum {
         /* gsm's own startup/initialization phase */
@@ -112,7 +98,6 @@ GType               gsm_manager_error_get_type                 (void);
 #define GSM_MANAGER_TYPE_ERROR (gsm_manager_error_get_type ())
 
 GQuark              gsm_manager_error_quark                    (void);
-GType               gsm_manager_get_type                       (void);
 
 GsmManager *        gsm_manager_new                            (GsmStore       *client_store,
                                                                 gboolean        failsafe);
@@ -194,8 +179,6 @@ gboolean            gsm_manager_is_session_running             (GsmManager *mana
                                                                 gboolean *running,
                                                                 GError **error);
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __GSM_MANAGER_H */
