@@ -55,7 +55,7 @@ typedef struct {
 } CallbackData;
 
 struct _MdmSignalHandler {
-	GObject*    parent;
+	GObject    parent_instance;
 	GHashTable* lookup;
 	GHashTable* id_lookup;
 	GHashTable* action_lookup;
