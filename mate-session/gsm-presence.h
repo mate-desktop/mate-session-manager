@@ -24,27 +24,10 @@
 #include <glib-object.h>
 #include <sys/types.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define GSM_TYPE_PRESENCE            (gsm_presence_get_type ())
-#define GSM_PRESENCE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GSM_TYPE_PRESENCE, GsmPresence))
-#define GSM_PRESENCE_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), GSM_TYPE_PRESENCE, GsmPresenceClass))
-#define GSM_IS_PRESENCE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GSM_TYPE_PRESENCE))
-#define GSM_IS_PRESENCE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GSM_TYPE_PRESENCE))
-#define GSM_PRESENCE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GSM_TYPE_PRESENCE, GsmPresenceClass))
-
-typedef struct _GsmPresence        GsmPresence;
-typedef struct _GsmPresenceClass   GsmPresenceClass;
-
-typedef struct GsmPresencePrivate GsmPresencePrivate;
-
-struct _GsmPresence
-{
-        GObject             parent;
-        GsmPresencePrivate *priv;
-};
+G_DECLARE_DERIVABLE_TYPE (GsmPresence, gsm_presence, GSM, PRESENCE, GObject)
 
 struct _GsmPresenceClass
 {
@@ -76,8 +59,6 @@ GType          gsm_presence_error_get_type       (void);
 
 GQuark         gsm_presence_error_quark          (void);
 
-GType          gsm_presence_get_type             (void) G_GNUC_CONST;
-
 GsmPresence *  gsm_presence_new                  (void);
 
 void           gsm_presence_set_idle_enabled     (GsmPresence  *presence,
@@ -93,8 +74,6 @@ gboolean       gsm_presence_set_status_text      (GsmPresence  *presence,
                                                   const char   *status_text,
                                                   GError      **error);
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __GSM_PRESENCE_H__ */
