@@ -616,7 +616,7 @@ int main(int argc, char** argv)
 
 	if (show_version)
 	{
-		g_print("%s %s\n", argv [0], VERSION);
+		g_print("%s %s\n", g_get_application_name(), VERSION);
 		exit(1);
 	}
 
