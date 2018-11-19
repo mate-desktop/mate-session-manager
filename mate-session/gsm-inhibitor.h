@@ -24,32 +24,12 @@
 #include <glib-object.h>
 #include <sys/types.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define GSM_TYPE_INHIBITOR            (gsm_inhibitor_get_type ())
-#define GSM_INHIBITOR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GSM_TYPE_INHIBITOR, GsmInhibitor))
-#define GSM_INHIBITOR_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), GSM_TYPE_INHIBITOR, GsmInhibitorClass))
-#define GSM_IS_INHIBITOR(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GSM_TYPE_INHIBITOR))
-#define GSM_IS_INHIBITOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GSM_TYPE_INHIBITOR))
-#define GSM_INHIBITOR_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GSM_TYPE_INHIBITOR, GsmInhibitorClass))
-
-typedef struct _GsmInhibitor        GsmInhibitor;
-typedef struct _GsmInhibitorClass   GsmInhibitorClass;
-
-typedef struct GsmInhibitorPrivate GsmInhibitorPrivate;
-
-struct _GsmInhibitor
-{
-        GObject              parent;
-        GsmInhibitorPrivate *priv;
-};
-
-struct _GsmInhibitorClass
-{
-        GObjectClass parent_class;
-};
+#define GSM_INHIBITOR_ERROR           (gsm_inhibitor_error_quark ())
+#define GSM_INHIBITOR_TYPE_ERROR      (gsm_inhibitor_error_get_type ())
+G_DECLARE_FINAL_TYPE (GsmInhibitor, gsm_inhibitor, GSM, INHIBITOR, GObject)
 
 typedef enum {
         GSM_INHIBITOR_FLAG_LOGOUT      = 1 << 0,
@@ -65,13 +45,9 @@ typedef enum
         GSM_INHIBITOR_NUM_ERRORS
 } GsmInhibitorError;
 
-#define GSM_INHIBITOR_ERROR gsm_inhibitor_error_quark ()
 GType          gsm_inhibitor_error_get_type       (void);
-#define GSM_INHIBITOR_TYPE_ERROR (gsm_inhibitor_error_get_type ())
 
 GQuark         gsm_inhibitor_error_quark          (void);
-
-GType          gsm_inhibitor_get_type             (void) G_GNUC_CONST;
 
 GsmInhibitor * gsm_inhibitor_new                  (const char    *app_id,
                                                    guint          toplevel_xid,
@@ -112,9 +88,6 @@ gboolean       gsm_inhibitor_get_toplevel_xid     (GsmInhibitor  *inhibitor,
                                                    guint         *xid,
                                                    GError       **error);
 
-
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __GSM_INHIBITOR_H__ */

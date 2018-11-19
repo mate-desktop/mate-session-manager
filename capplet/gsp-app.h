@@ -27,21 +27,10 @@
 #include <glib-object.h>
 #include <gio/gio.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define GSP_TYPE_APP            (gsp_app_get_type ())
-#define GSP_APP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GSP_TYPE_APP, GspApp))
-#define GSP_APP_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), GSP_TYPE_APP, GspAppClass))
-#define GSP_IS_APP(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GSP_TYPE_APP))
-#define GSP_IS_APP_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GSP_TYPE_APP))
-#define GSP_APP_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GSP_TYPE_APP, GspAppClass))
-
-typedef struct _GspApp        GspApp;
-typedef struct _GspAppClass   GspAppClass;
-
-typedef struct _GspAppPrivate GspAppPrivate;
+G_DECLARE_DERIVABLE_TYPE (GspApp, gsp_app, GSP, APP, GObject)
 
 struct _GspAppClass
 {
@@ -51,14 +40,7 @@ struct _GspAppClass
         void (* removed) (GspApp *app);
 };
 
-struct _GspApp
-{
-        GObject parent_instance;
-
-        GspAppPrivate *priv;
-};
-
-GType            gsp_app_get_type          (void);
+GType            gsp_app_get_type          (void) G_GNUC_CONST;
 
 void             gsp_app_create            (const char   *name,
                                             const char   *comment,
@@ -102,8 +84,6 @@ unsigned int     gsp_app_get_xdg_system_position  (GspApp       *app);
 void             gsp_app_set_xdg_system_position  (GspApp       *app,
                                                    unsigned int  position);
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __GSP_APP_H */

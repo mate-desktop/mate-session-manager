@@ -34,10 +34,9 @@
 
 static guint32 inhibitor_serial = 1;
 
-#define GSM_INHIBITOR_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_INHIBITOR, GsmInhibitorPrivate))
-
-struct GsmInhibitorPrivate
+struct _GsmInhibitor
 {
+        GObject parent;
         char *id;
         char *bus_name;
         char *app_id;
@@ -115,8 +114,8 @@ register_inhibitor (GsmInhibitor *inhibitor)
         GError *error;
 
         error = NULL;
-        inhibitor->priv->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (inhibitor->priv->connection == NULL) {
+        inhibitor->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+        if (inhibitor->connection == NULL) {
                 if (error != NULL) {
                         g_critical ("error getting session bus: %s", error->message);
                         g_error_free (error);
@@ -124,7 +123,7 @@ register_inhibitor (GsmInhibitor *inhibitor)
                 return FALSE;
         }
 
-        dbus_g_connection_register_g_object (inhibitor->priv->connection, inhibitor->priv->id, G_OBJECT (inhibitor));
+        dbus_g_connection_register_g_object (inhibitor->connection, inhibitor->id, G_OBJECT (inhibitor));
 
         return TRUE;
 }
@@ -141,8 +140,8 @@ gsm_inhibitor_constructor (GType                  type,
                                                                                              n_construct_properties,
                                                                                              construct_properties));
 
-        g_free (inhibitor->priv->id);
-        inhibitor->priv->id = g_strdup_printf ("/org/gnome/SessionManager/Inhibitor%u", get_next_inhibitor_serial ());
+        g_free (inhibitor->id);
+        inhibitor->id = g_strdup_printf ("/org/gnome/SessionManager/Inhibitor%u", get_next_inhibitor_serial ());
         res = register_inhibitor (inhibitor);
         if (! res) {
                 g_warning ("Unable to register inhibitor with session bus");
@@ -154,7 +153,6 @@ gsm_inhibitor_constructor (GType                  type,
 static void
 gsm_inhibitor_init (GsmInhibitor *inhibitor)
 {
-        inhibitor->priv = GSM_INHIBITOR_GET_PRIVATE (inhibitor);
 }
 
 static void
@@ -163,12 +161,12 @@ gsm_inhibitor_set_bus_name (GsmInhibitor  *inhibitor,
 {
         g_return_if_fail (GSM_IS_INHIBITOR (inhibitor));
 
-        g_free (inhibitor->priv->bus_name);
+        g_free (inhibitor->bus_name);
 
         if (bus_name != NULL) {
-                inhibitor->priv->bus_name = g_strdup (bus_name);
+                inhibitor->bus_name = g_strdup (bus_name);
         } else {
-                inhibitor->priv->bus_name = g_strdup ("");
+                inhibitor->bus_name = g_strdup ("");
         }
         g_object_notify (G_OBJECT (inhibitor), "bus-name");
 }
@@ -179,9 +177,9 @@ gsm_inhibitor_set_app_id (GsmInhibitor  *inhibitor,
 {
         g_return_if_fail (GSM_IS_INHIBITOR (inhibitor));
 
-        g_free (inhibitor->priv->app_id);
+        g_free (inhibitor->app_id);
 
-        inhibitor->priv->app_id = g_strdup (app_id);
+        inhibitor->app_id = g_strdup (app_id);
         g_object_notify (G_OBJECT (inhibitor), "app-id");
 }
 
@@ -191,14 +189,14 @@ gsm_inhibitor_set_client_id (GsmInhibitor  *inhibitor,
 {
         g_return_if_fail (GSM_IS_INHIBITOR (inhibitor));
 
-        g_free (inhibitor->priv->client_id);
+        g_free (inhibitor->client_id);
 
         g_debug ("GsmInhibitor: setting client-id = %s", client_id);
 
         if (client_id != NULL) {
-                inhibitor->priv->client_id = g_strdup (client_id);
+                inhibitor->client_id = g_strdup (client_id);
         } else {
-                inhibitor->priv->client_id = g_strdup ("");
+                inhibitor->client_id = g_strdup ("");
         }
         g_object_notify (G_OBJECT (inhibitor), "client-id");
 }
@@ -209,12 +207,12 @@ gsm_inhibitor_set_reason (GsmInhibitor  *inhibitor,
 {
         g_return_if_fail (GSM_IS_INHIBITOR (inhibitor));
 
-        g_free (inhibitor->priv->reason);
+        g_free (inhibitor->reason);
 
         if (reason != NULL) {
-                inhibitor->priv->reason = g_strdup (reason);
+                inhibitor->reason = g_strdup (reason);
         } else {
-                inhibitor->priv->reason = g_strdup ("");
+                inhibitor->reason = g_strdup ("");
         }
         g_object_notify (G_OBJECT (inhibitor), "reason");
 }
@@ -225,8 +223,8 @@ gsm_inhibitor_set_cookie (GsmInhibitor  *inhibitor,
 {
         g_return_if_fail (GSM_IS_INHIBITOR (inhibitor));
 
-        if (inhibitor->priv->cookie != cookie) {
-                inhibitor->priv->cookie = cookie;
+        if (inhibitor->cookie != cookie) {
+                inhibitor->cookie = cookie;
                 g_object_notify (G_OBJECT (inhibitor), "cookie");
         }
 }
@@ -237,8 +235,8 @@ gsm_inhibitor_set_flags (GsmInhibitor  *inhibitor,
 {
         g_return_if_fail (GSM_IS_INHIBITOR (inhibitor));
 
-        if (inhibitor->priv->flags != flags) {
-                inhibitor->priv->flags = flags;
+        if (inhibitor->flags != flags) {
+                inhibitor->flags = flags;
                 g_object_notify (G_OBJECT (inhibitor), "flags");
         }
 }
@@ -249,8 +247,8 @@ gsm_inhibitor_set_toplevel_xid (GsmInhibitor  *inhibitor,
 {
         g_return_if_fail (GSM_IS_INHIBITOR (inhibitor));
 
-        if (inhibitor->priv->toplevel_xid != xid) {
-                inhibitor->priv->toplevel_xid = xid;
+        if (inhibitor->toplevel_xid != xid) {
+                inhibitor->toplevel_xid = xid;
                 g_object_notify (G_OBJECT (inhibitor), "toplevel-xid");
         }
 }
@@ -260,7 +258,7 @@ gsm_inhibitor_peek_bus_name (GsmInhibitor  *inhibitor)
 {
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), NULL);
 
-        return inhibitor->priv->bus_name;
+        return inhibitor->bus_name;
 }
 
 gboolean
@@ -270,8 +268,8 @@ gsm_inhibitor_get_app_id (GsmInhibitor *inhibitor,
 {
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), FALSE);
 
-        if (inhibitor->priv->app_id != NULL) {
-                *id = g_strdup (inhibitor->priv->app_id);
+        if (inhibitor->app_id != NULL) {
+                *id = g_strdup (inhibitor->app_id);
         } else {
                 *id = g_strdup ("");
         }
@@ -287,7 +285,7 @@ gsm_inhibitor_get_client_id (GsmInhibitor *inhibitor,
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), FALSE);
 
         /* object paths are not allowed to be NULL or blank */
-        if (IS_STRING_EMPTY (inhibitor->priv->client_id)) {
+        if (IS_STRING_EMPTY (inhibitor->client_id)) {
                 g_set_error (error,
                              GSM_INHIBITOR_ERROR,
                              GSM_INHIBITOR_ERROR_NOT_SET,
@@ -295,7 +293,7 @@ gsm_inhibitor_get_client_id (GsmInhibitor *inhibitor,
                 return FALSE;
         }
 
-        *id = g_strdup (inhibitor->priv->client_id);
+        *id = g_strdup (inhibitor->client_id);
 
         g_debug ("GsmInhibitor: getting client-id = '%s'", *id);
 
@@ -309,8 +307,8 @@ gsm_inhibitor_get_reason (GsmInhibitor *inhibitor,
 {
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), FALSE);
 
-        if (inhibitor->priv->reason != NULL) {
-                *reason = g_strdup (inhibitor->priv->reason);
+        if (inhibitor->reason != NULL) {
+                *reason = g_strdup (inhibitor->reason);
         } else {
                 *reason = g_strdup ("");
         }
@@ -325,7 +323,7 @@ gsm_inhibitor_get_flags (GsmInhibitor *inhibitor,
 {
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), FALSE);
 
-        *flags = inhibitor->priv->flags;
+        *flags = inhibitor->flags;
 
         return TRUE;
 }
@@ -337,7 +335,7 @@ gsm_inhibitor_get_toplevel_xid (GsmInhibitor *inhibitor,
 {
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), FALSE);
 
-        *xid = inhibitor->priv->toplevel_xid;
+        *xid = inhibitor->toplevel_xid;
 
         return TRUE;
 }
@@ -347,7 +345,7 @@ gsm_inhibitor_peek_id (GsmInhibitor *inhibitor)
 {
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), NULL);
 
-        return inhibitor->priv->id;
+        return inhibitor->id;
 }
 
 const char *
@@ -355,7 +353,7 @@ gsm_inhibitor_peek_app_id (GsmInhibitor  *inhibitor)
 {
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), NULL);
 
-        return inhibitor->priv->app_id;
+        return inhibitor->app_id;
 }
 
 const char *
@@ -363,7 +361,7 @@ gsm_inhibitor_peek_client_id (GsmInhibitor  *inhibitor)
 {
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), NULL);
 
-        return inhibitor->priv->client_id;
+        return inhibitor->client_id;
 }
 
 const char *
@@ -371,7 +369,7 @@ gsm_inhibitor_peek_reason (GsmInhibitor  *inhibitor)
 {
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), NULL);
 
-        return inhibitor->priv->reason;
+        return inhibitor->reason;
 }
 
 guint
@@ -379,7 +377,7 @@ gsm_inhibitor_peek_flags (GsmInhibitor  *inhibitor)
 {
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), 0);
 
-        return inhibitor->priv->flags;
+        return inhibitor->flags;
 }
 
 guint
@@ -387,7 +385,7 @@ gsm_inhibitor_peek_toplevel_xid (GsmInhibitor  *inhibitor)
 {
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), 0);
 
-        return inhibitor->priv->toplevel_xid;
+        return inhibitor->toplevel_xid;
 }
 
 guint
@@ -395,7 +393,7 @@ gsm_inhibitor_peek_cookie (GsmInhibitor  *inhibitor)
 {
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), 0);
 
-        return inhibitor->priv->cookie;
+        return inhibitor->cookie;
 }
 
 static void
@@ -448,25 +446,25 @@ gsm_inhibitor_get_property (GObject    *object,
 
         switch (prop_id) {
         case PROP_BUS_NAME:
-                g_value_set_string (value, self->priv->bus_name);
+                g_value_set_string (value, self->bus_name);
                 break;
         case PROP_APP_ID:
-                g_value_set_string (value, self->priv->app_id);
+                g_value_set_string (value, self->app_id);
                 break;
         case PROP_CLIENT_ID:
-                g_value_set_string (value, self->priv->client_id);
+                g_value_set_string (value, self->client_id);
                 break;
         case PROP_REASON:
-                g_value_set_string (value, self->priv->reason);
+                g_value_set_string (value, self->reason);
                 break;
         case PROP_FLAGS:
-                g_value_set_uint (value, self->priv->flags);
+                g_value_set_uint (value, self->flags);
                 break;
         case PROP_COOKIE:
-                g_value_set_uint (value, self->priv->cookie);
+                g_value_set_uint (value, self->cookie);
                 break;
         case PROP_TOPLEVEL_XID:
-                g_value_set_uint (value, self->priv->toplevel_xid);
+                g_value_set_uint (value, self->toplevel_xid);
                 break;
         default:
                 G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -479,11 +477,11 @@ gsm_inhibitor_finalize (GObject *object)
 {
         GsmInhibitor *inhibitor = (GsmInhibitor *) object;
 
-        g_free (inhibitor->priv->id);
-        g_free (inhibitor->priv->bus_name);
-        g_free (inhibitor->priv->app_id);
-        g_free (inhibitor->priv->client_id);
-        g_free (inhibitor->priv->reason);
+        g_free (inhibitor->id);
+        g_free (inhibitor->bus_name);
+        g_free (inhibitor->app_id);
+        g_free (inhibitor->client_id);
+        g_free (inhibitor->reason);
 
         G_OBJECT_CLASS (gsm_inhibitor_parent_class)->finalize (object);
 }
@@ -556,7 +554,6 @@ gsm_inhibitor_class_init (GsmInhibitorClass *klass)
 
         dbus_g_object_type_install_info (GSM_TYPE_INHIBITOR, &dbus_glib_gsm_inhibitor_object_info);
         dbus_g_error_domain_register (GSM_INHIBITOR_ERROR, NULL, GSM_INHIBITOR_TYPE_ERROR);
-        g_type_class_add_private (klass, sizeof (GsmInhibitorPrivate));
 }
 
 GsmInhibitor *

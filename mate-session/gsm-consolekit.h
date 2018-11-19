@@ -27,29 +27,14 @@
 #include <glib.h>
 #include <glib-object.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define GSM_TYPE_CONSOLEKIT             (gsm_consolekit_get_type ())
-#define GSM_CONSOLEKIT(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GSM_TYPE_CONSOLEKIT, GsmConsolekit))
-#define GSM_CONSOLEKIT_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST ((klass), GSM_TYPE_CONSOLEKIT, GsmConsolekitClass))
-#define GSM_IS_CONSOLEKIT(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GSM_TYPE_CONSOLEKIT))
-#define GSM_IS_CONSOLEKIT_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), GSM_TYPE_CONSOLEKIT))
-#define GSM_CONSOLEKIT_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS((obj), GSM_TYPE_CONSOLEKIT, GsmConsolekitClass))
 #define GSM_CONSOLEKIT_ERROR            (gsm_consolekit_error_quark ())
 
-typedef struct _GsmConsolekit        GsmConsolekit;
-typedef struct _GsmConsolekitClass   GsmConsolekitClass;
-typedef struct _GsmConsolekitPrivate GsmConsolekitPrivate;
+G_DECLARE_DERIVABLE_TYPE (GsmConsolekit, gsm_consolekit, GSM, CONSOLEKIT, GObject)
+
 typedef enum   _GsmConsolekitError   GsmConsolekitError;
-
-struct _GsmConsolekit
-{
-        GObject               parent;
-
-        GsmConsolekitPrivate *priv;
-};
 
 struct _GsmConsolekitClass
 {
@@ -71,7 +56,7 @@ enum _GsmConsolekitError {
 
 #define GSM_CONSOLEKIT_SESSION_TYPE_LOGIN_WINDOW "LoginWindow"
 
-GType            gsm_consolekit_get_type        (void);
+GType            gsm_consolekit_get_type        (void) G_GNUC_CONST;
 
 GQuark           gsm_consolekit_error_quark     (void);
 
@@ -106,8 +91,6 @@ gchar           *gsm_consolekit_get_current_session_type (GsmConsolekit *manager
 
 GsmConsolekit   *gsm_get_consolekit             (void);
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __GSM_CONSOLEKIT_H__ */

@@ -44,16 +44,13 @@
 #define SD_SEAT_INTERFACE    "org.freedesktop.login1.Seat"
 #define SD_SESSION_INTERFACE "org.freedesktop.login1.Session"
 
-#define GSM_SYSTEMD_GET_PRIVATE(o)                                   \
-        (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_SYSTEMD, GsmSystemdPrivate))
-
-struct _GsmSystemdPrivate
+typedef struct
 {
     DBusGConnection *dbus_connection;
     DBusGProxy      *bus_proxy;
     DBusGProxy      *sd_proxy;
     guint32          is_connected : 1;
-};
+} GsmSystemdPrivate;
 
 enum {
     PROP_0,
@@ -84,7 +81,7 @@ static void     gsm_systemd_on_name_owner_changed (DBusGProxy       *bus_proxy,
                                                    const char       *new_owner,
                                                    GsmSystemd       *manager);
 
-G_DEFINE_TYPE (GsmSystemd, gsm_systemd, G_TYPE_OBJECT);
+G_DEFINE_TYPE_WITH_PRIVATE (GsmSystemd, gsm_systemd, G_TYPE_OBJECT);
 
 static void
 gsm_systemd_get_property (GObject    *object,
@@ -92,12 +89,15 @@ gsm_systemd_get_property (GObject    *object,
                           GValue     *value,
                           GParamSpec *pspec)
 {
+    GsmSystemdPrivate *priv;
     GsmSystemd *manager = GSM_SYSTEMD (object);
+
+    priv = gsm_systemd_get_instance_private (manager);
 
     switch (prop_id) {
     case PROP_IS_CONNECTED:
         g_value_set_boolean (value,
-                             manager->priv->is_connected);
+                             priv->is_connected);
         break;
 
         default:
@@ -148,8 +148,6 @@ gsm_systemd_class_init (GsmSystemdClass *manager_class)
                           gsm_marshal_VOID__BOOLEAN_BOOLEAN_POINTER,
                           G_TYPE_NONE,
                           3, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN, G_TYPE_POINTER);
-
-    g_type_class_add_private (manager_class, sizeof (GsmSystemdPrivate));
 }
 
 static DBusHandlerResult
@@ -177,64 +175,67 @@ gsm_systemd_ensure_sd_connection (GsmSystemd  *manager,
 {
     GError  *connection_error;
     gboolean is_connected;
+    GsmSystemdPrivate *priv;
 
     connection_error = NULL;
 
-    if (manager->priv->dbus_connection == NULL) {
+    priv = gsm_systemd_get_instance_private (manager);
+
+    if (priv->dbus_connection == NULL) {
         DBusConnection *connection;
 
-        manager->priv->dbus_connection = dbus_g_bus_get (DBUS_BUS_SYSTEM,
+        priv->dbus_connection = dbus_g_bus_get (DBUS_BUS_SYSTEM,
                                                          &connection_error);
 
-        if (manager->priv->dbus_connection == NULL) {
+        if (priv->dbus_connection == NULL) {
             g_propagate_error (error, connection_error);
             is_connected = FALSE;
             goto out;
         }
 
-        connection = dbus_g_connection_get_connection (manager->priv->dbus_connection);
+        connection = dbus_g_connection_get_connection (priv->dbus_connection);
         dbus_connection_set_exit_on_disconnect (connection, FALSE);
         dbus_connection_add_filter (connection,
                                     gsm_systemd_dbus_filter,
                                     manager, NULL);
     }
 
-    if (manager->priv->bus_proxy == NULL) {
-        manager->priv->bus_proxy =
-            dbus_g_proxy_new_for_name_owner (manager->priv->dbus_connection,
+    if (priv->bus_proxy == NULL) {
+        priv->bus_proxy =
+            dbus_g_proxy_new_for_name_owner (priv->dbus_connection,
                                              DBUS_SERVICE_DBUS,
                                              DBUS_PATH_DBUS,
                                              DBUS_INTERFACE_DBUS,
                                              &connection_error);
 
-        if (manager->priv->bus_proxy == NULL) {
+        if (priv->bus_proxy == NULL) {
             g_propagate_error (error, connection_error);
             is_connected = FALSE;
             goto out;
         }
 
-        dbus_g_proxy_add_signal (manager->priv->bus_proxy,
+        dbus_g_proxy_add_signal (priv->bus_proxy,
                                  "NameOwnerChanged",
                                  G_TYPE_STRING,
                                  G_TYPE_STRING,
                                  G_TYPE_STRING,
                                  G_TYPE_INVALID);
 
-        dbus_g_proxy_connect_signal (manager->priv->bus_proxy,
+        dbus_g_proxy_connect_signal (priv->bus_proxy,
                                      "NameOwnerChanged",
                                      G_CALLBACK (gsm_systemd_on_name_owner_changed),
                                      manager, NULL);
     }
 
-    if (manager->priv->sd_proxy == NULL) {
-        manager->priv->sd_proxy =
-                dbus_g_proxy_new_for_name_owner (manager->priv->dbus_connection,
+    if (priv->sd_proxy == NULL) {
+        priv->sd_proxy =
+                dbus_g_proxy_new_for_name_owner (priv->dbus_connection,
                                                  SD_NAME,
                                                  SD_PATH,
                                                  SD_INTERFACE,
                                                  &connection_error);
 
-        if (manager->priv->sd_proxy == NULL) {
+        if (priv->sd_proxy == NULL) {
             g_propagate_error (error, connection_error);
             is_connected = FALSE;
             goto out;
@@ -244,26 +245,26 @@ gsm_systemd_ensure_sd_connection (GsmSystemd  *manager,
     is_connected = TRUE;
 
 out:
-    if (manager->priv->is_connected != is_connected) {
-        manager->priv->is_connected = is_connected;
+    if (priv->is_connected != is_connected) {
+        priv->is_connected = is_connected;
         g_object_notify (G_OBJECT (manager), "is-connected");
     }
 
     if (!is_connected) {
-        if (manager->priv->dbus_connection == NULL) {
-            if (manager->priv->bus_proxy != NULL) {
-                g_object_unref (manager->priv->bus_proxy);
-                manager->priv->bus_proxy = NULL;
+        if (priv->dbus_connection == NULL) {
+            if (priv->bus_proxy != NULL) {
+                g_object_unref (priv->bus_proxy);
+                priv->bus_proxy = NULL;
             }
 
-            if (manager->priv->sd_proxy != NULL) {
-                g_object_unref (manager->priv->sd_proxy);
-                manager->priv->sd_proxy = NULL;
+            if (priv->sd_proxy != NULL) {
+                g_object_unref (priv->sd_proxy);
+                priv->sd_proxy = NULL;
             }
-        } else if (manager->priv->bus_proxy == NULL) {
-            if (manager->priv->sd_proxy != NULL) {
-                g_object_unref (manager->priv->sd_proxy);
-                manager->priv->sd_proxy = NULL;
+        } else if (priv->bus_proxy == NULL) {
+            if (priv->sd_proxy != NULL) {
+                g_object_unref (priv->sd_proxy);
+                priv->sd_proxy = NULL;
             }
         }
     }
@@ -278,13 +279,16 @@ gsm_systemd_on_name_owner_changed (DBusGProxy    *bus_proxy,
                                    const char    *new_owner,
                                    GsmSystemd    *manager)
 {
+    GsmSystemdPrivate *priv;
+
+    priv = gsm_systemd_get_instance_private (manager);
     if (name != NULL && g_strcmp0 (name, SD_NAME) != 0) {
         return;
     }
 
-    if (manager->priv->sd_proxy != NULL) {
-        g_object_unref (manager->priv->sd_proxy);
-        manager->priv->sd_proxy = NULL;
+    if (priv->sd_proxy != NULL) {
+        g_object_unref (priv->sd_proxy);
+        priv->sd_proxy = NULL;
     }
 
     gsm_systemd_ensure_sd_connection (manager, NULL);
@@ -294,8 +298,6 @@ static void
 gsm_systemd_init (GsmSystemd *manager)
 {
     GError *error;
-
-    manager->priv = GSM_SYSTEMD_GET_PRIVATE (manager);
 
     error = NULL;
 
@@ -309,25 +311,28 @@ gsm_systemd_init (GsmSystemd *manager)
 static void
 gsm_systemd_free_dbus (GsmSystemd *manager)
 {
-    if (manager->priv->bus_proxy != NULL) {
-        g_object_unref (manager->priv->bus_proxy);
-        manager->priv->bus_proxy = NULL;
+    GsmSystemdPrivate *priv;
+
+    priv = gsm_systemd_get_instance_private (manager);
+    if (priv->bus_proxy != NULL) {
+        g_object_unref (priv->bus_proxy);
+        priv->bus_proxy = NULL;
     }
 
-    if (manager->priv->sd_proxy != NULL) {
-        g_object_unref (manager->priv->sd_proxy);
-        manager->priv->sd_proxy = NULL;
+    if (priv->sd_proxy != NULL) {
+        g_object_unref (priv->sd_proxy);
+        priv->sd_proxy = NULL;
     }
 
-    if (manager->priv->dbus_connection != NULL) {
+    if (priv->dbus_connection != NULL) {
         DBusConnection *connection;
-        connection = dbus_g_connection_get_connection (manager->priv->dbus_connection);
+        connection = dbus_g_connection_get_connection (priv->dbus_connection);
         dbus_connection_remove_filter (connection,
                                        gsm_systemd_dbus_filter,
                                        manager);
 
-        dbus_g_connection_unref (manager->priv->dbus_connection);
-        manager->priv->dbus_connection = NULL;
+        dbus_g_connection_unref (priv->dbus_connection);
+        priv->dbus_connection = NULL;
     }
 }
 
@@ -421,8 +426,10 @@ gsm_systemd_attempt_restart (GsmSystemd *manager)
 {
     gboolean res;
     GError  *error;
+    GsmSystemdPrivate *priv;
 
     error = NULL;
+    priv = gsm_systemd_get_instance_private (manager);
 
     if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
         g_warning ("Could not connect to Systemd: %s",
@@ -432,7 +439,7 @@ gsm_systemd_attempt_restart (GsmSystemd *manager)
         return;
     }
 
-    res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
+    res = dbus_g_proxy_call_with_timeout (priv->sd_proxy,
                                           "Reboot",
                                           INT_MAX,
                                           &error,
@@ -454,8 +461,10 @@ gsm_systemd_attempt_stop (GsmSystemd *manager)
 {
     gboolean res;
     GError  *error;
+    GsmSystemdPrivate *priv;
 
     error = NULL;
+    priv = gsm_systemd_get_instance_private (manager);
 
     if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
         g_warning ("Could not connect to Systemd: %s",
@@ -465,7 +474,7 @@ gsm_systemd_attempt_stop (GsmSystemd *manager)
         return;
     }
 
-    res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
+    res = dbus_g_proxy_call_with_timeout (priv->sd_proxy,
                                           "PowerOff",
                                           INT_MAX,
                                           &error,
@@ -552,8 +561,10 @@ gsm_systemd_set_session_idle (GsmSystemd *manager,
     DBusMessage    *reply;
     DBusError       dbus_error;
     DBusMessageIter iter;
+    GsmSystemdPrivate *priv;
 
     error = NULL;
+    priv = gsm_systemd_get_instance_private (manager);
 
     if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
         g_warning ("Could not connect to Systemd: %s",
@@ -562,7 +573,7 @@ gsm_systemd_set_session_idle (GsmSystemd *manager,
         return;
     }
 
-    gsm_systemd_get_session_path (dbus_g_connection_get_connection (manager->priv->dbus_connection), &session_path);
+    gsm_systemd_get_session_path (dbus_g_connection_get_connection (priv->dbus_connection), &session_path);
 
     g_return_if_fail (session_path != NULL);
 
@@ -581,7 +592,7 @@ gsm_systemd_set_session_idle (GsmSystemd *manager,
 
     /* FIXME: use async? */
     dbus_error_init (&dbus_error);
-    reply = dbus_connection_send_with_reply_and_block (dbus_g_connection_get_connection (manager->priv->dbus_connection),
+    reply = dbus_connection_send_with_reply_and_block (dbus_g_connection_get_connection (priv->dbus_connection),
                                                        message,
                                                        -1,
                                                        &dbus_error);
@@ -661,8 +672,10 @@ gsm_systemd_can_restart (GsmSystemd *manager)
     gchar   *value;
     gboolean can_restart;
     GError  *error;
+    GsmSystemdPrivate *priv;
 
     error = NULL;
+    priv = gsm_systemd_get_instance_private (manager);
 
     if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
         g_warning ("Could not connect to Systemd: %s",
@@ -671,7 +684,7 @@ gsm_systemd_can_restart (GsmSystemd *manager)
         return FALSE;
     }
 
-    res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
+    res = dbus_g_proxy_call_with_timeout (priv->sd_proxy,
                                           "CanReboot",
                                           INT_MAX,
                                           &error,
@@ -698,8 +711,10 @@ gsm_systemd_can_stop (GsmSystemd *manager)
     gchar   *value;
     gboolean can_stop;
     GError  *error;
+    GsmSystemdPrivate *priv;
 
     error = NULL;
+    priv = gsm_systemd_get_instance_private (manager);
 
     if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
         g_warning ("Could not connect to Systemd: %s",
@@ -708,7 +723,7 @@ gsm_systemd_can_stop (GsmSystemd *manager)
         return FALSE;
     }
 
-    res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
+    res = dbus_g_proxy_call_with_timeout (priv->sd_proxy,
                                           "CanPowerOff",
                                           INT_MAX,
                                           &error,
@@ -736,8 +751,10 @@ gsm_systemd_can_hibernate (GsmSystemd *manager)
   gchar   *value;
   gboolean can_hibernate;
   GError  *error;
+  GsmSystemdPrivate *priv;
   
   error = NULL;
+  priv = gsm_systemd_get_instance_private (manager);
   
   if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
     g_warning ("Could not connect to Systemd: %s",
@@ -746,7 +763,7 @@ gsm_systemd_can_hibernate (GsmSystemd *manager)
     return FALSE;
   }
   
-  res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
+  res = dbus_g_proxy_call_with_timeout (priv->sd_proxy,
 					"CanHibernate",
 					INT_MAX,
 					&error,
@@ -773,8 +790,10 @@ gsm_systemd_can_suspend (GsmSystemd *manager)
   gchar   *value;
   gboolean can_suspend;
   GError  *error;
+  GsmSystemdPrivate *priv;
   
   error = NULL;
+  priv = gsm_systemd_get_instance_private (manager);
   
   if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
     g_warning ("Could not connect to Systemd: %s",
@@ -783,7 +802,7 @@ gsm_systemd_can_suspend (GsmSystemd *manager)
     return FALSE;
   }
   
-  res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
+  res = dbus_g_proxy_call_with_timeout (priv->sd_proxy,
 					"CanSuspend",
 					INT_MAX,
 					&error,
@@ -808,8 +827,10 @@ gsm_systemd_attempt_hibernate (GsmSystemd *manager)
 {
   gboolean res;
   GError  *error;
+  GsmSystemdPrivate *priv;
   
   error = NULL;
+  priv = gsm_systemd_get_instance_private (manager);
   
   if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
     g_warning ("Could not connect to Systemd: %s",
@@ -818,7 +839,7 @@ gsm_systemd_attempt_hibernate (GsmSystemd *manager)
     return;
   }
   
-  res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
+  res = dbus_g_proxy_call_with_timeout (priv->sd_proxy,
 					"Hibernate",
 					INT_MAX,
 					&error,
@@ -839,8 +860,10 @@ gsm_systemd_attempt_suspend (GsmSystemd *manager)
 {
   gboolean res;
   GError  *error;
+  GsmSystemdPrivate *priv;
   
   error = NULL;
+  priv = gsm_systemd_get_instance_private (manager);
   
   if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
     g_warning ("Could not connect to Systemd: %s",
@@ -849,7 +872,7 @@ gsm_systemd_attempt_suspend (GsmSystemd *manager)
     return;
   }
   
-  res = dbus_g_proxy_call_with_timeout (manager->priv->sd_proxy,
+  res = dbus_g_proxy_call_with_timeout (priv->sd_proxy,
 					"Suspend",
 					INT_MAX,
 					&error,

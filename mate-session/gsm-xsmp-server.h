@@ -26,37 +26,14 @@
 
 #include "gsm-store.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define GSM_TYPE_XSMP_SERVER         (gsm_xsmp_server_get_type ())
-#define GSM_XSMP_SERVER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GSM_TYPE_XSMP_SERVER, GsmXsmpServer))
-#define GSM_XSMP_SERVER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GSM_TYPE_XSMP_SERVER, GsmXsmpServerClass))
-#define GSM_IS_XSMP_SERVER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSM_TYPE_XSMP_SERVER))
-#define GSM_IS_XSMP_SERVER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GSM_TYPE_XSMP_SERVER))
-#define GSM_XSMP_SERVER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GSM_TYPE_XSMP_SERVER, GsmXsmpServerClass))
-
-typedef struct GsmXsmpServerPrivate GsmXsmpServerPrivate;
-
-typedef struct
-{
-        GObject            parent;
-        GsmXsmpServerPrivate *priv;
-} GsmXsmpServer;
-
-typedef struct
-{
-        GObjectClass   parent_class;
-} GsmXsmpServerClass;
-
-GType               gsm_xsmp_server_get_type                       (void);
+G_DECLARE_FINAL_TYPE (GsmXsmpServer, gsm_xsmp_server, GSM, XSMP_SERVER, GObject)
 
 GsmXsmpServer *     gsm_xsmp_server_new                            (GsmStore      *client_store);
 void                gsm_xsmp_server_start                          (GsmXsmpServer *server);
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __GSM_XSMP_SERVER_H */

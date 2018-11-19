@@ -27,31 +27,14 @@
 #include <glib.h>
 #include <glib-object.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define GSM_TYPE_SYSTEMD             (gsm_systemd_get_type ())
-#define GSM_SYSTEMD(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GSM_TYPE_SYSTEMD, GsmSystemd))
-#define GSM_SYSTEMD_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST ((klass), GSM_TYPE_SYSTEMD, GsmSystemdClass))
-#define GSM_IS_SYSTEMD(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GSM_TYPE_SYSTEMD))
-#define GSM_IS_SYSTEMD_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), GSM_TYPE_SYSTEMD))
-#define GSM_SYSTEMD_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS((obj), GSM_TYPE_SYSTEMD, GsmSystemdClass))
 #define GSM_SYSTEMD_ERROR            (gsm_systemd_error_quark ())
+G_DECLARE_DERIVABLE_TYPE (GsmSystemd, gsm_systemd, GSM, SYSTEMD, GObject)
 
 #define LOGIND_RUNNING() (access("/run/systemd/seats/", F_OK) >= 0)
-
-typedef struct _GsmSystemd        GsmSystemd;
-typedef struct _GsmSystemdClass   GsmSystemdClass;
-typedef struct _GsmSystemdPrivate GsmSystemdPrivate;
 typedef enum   _GsmSystemdError   GsmSystemdError;
-
-struct _GsmSystemd
-{
-        GObject               parent;
-
-        GsmSystemdPrivate *priv;
-};
 
 struct _GsmSystemdClass
 {
@@ -73,7 +56,7 @@ enum _GsmSystemdError {
 
 #define GSM_SYSTEMD_SESSION_TYPE_LOGIN_WINDOW "greeter"
 
-GType            gsm_systemd_get_type        (void);
+GType            gsm_systemd_get_type        (void) G_GNUC_CONST;
 
 GQuark           gsm_systemd_error_quark     (void);
 
@@ -108,8 +91,6 @@ gchar           *gsm_systemd_get_current_session_type (GsmSystemd *manager);
 
 GsmSystemd      *gsm_get_systemd             (void);
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __GSM_SYSTEMD_H__ */
