@@ -61,10 +61,9 @@
 #define GSM_ICE_MAGIC_COOKIE_AUTH_NAME "MIT-MAGIC-COOKIE-1"
 #define GSM_ICE_MAGIC_COOKIE_LEN       16
 
-#define GSM_XSMP_SERVER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_XSMP_SERVER, GsmXsmpServerPrivate))
-
-struct GsmXsmpServerPrivate
+struct _GsmXsmpServer
 {
+        GObject         parent;
         GsmStore       *client_store;
 
         IceListenObj   *xsmp_sockets;
@@ -229,14 +228,14 @@ gsm_xsmp_server_start (GsmXsmpServer *server)
         GIOChannel *channel;
         int         i;
 
-        for (i = 0; i < server->priv->num_local_xsmp_sockets; i++) {
+        for (i = 0; i < server->num_local_xsmp_sockets; i++) {
                 GsmIceConnectionData *data;
 
                 data = g_new0 (GsmIceConnectionData, 1);
                 data->server = server;
-                data->listener = server->priv->xsmp_sockets[i];
+                data->listener = server->xsmp_sockets[i];
 
-                channel = g_io_channel_unix_new (IceGetListenConnectionNumber (server->priv->xsmp_sockets[i]));
+                channel = g_io_channel_unix_new (IceGetListenConnectionNumber (server->xsmp_sockets[i]));
                 g_io_add_watch_full (channel,
                                      G_PRIORITY_DEFAULT,
                                      G_IO_IN | G_IO_HUP | G_IO_ERR,
@@ -257,11 +256,11 @@ gsm_xsmp_server_set_client_store (GsmXsmpServer *xsmp_server,
                 g_object_ref (store);
         }
 
-        if (xsmp_server->priv->client_store != NULL) {
-                g_object_unref (xsmp_server->priv->client_store);
+        if (xsmp_server->client_store != NULL) {
+                g_object_unref (xsmp_server->client_store);
         }
 
-        xsmp_server->priv->client_store = store;
+        xsmp_server->client_store = store;
 }
 
 static void
@@ -296,7 +295,7 @@ gsm_xsmp_server_get_property (GObject    *object,
 
         switch (prop_id) {
         case PROP_CLIENT_STORE:
-                g_value_set_object (value, self->priv->client_store);
+                g_value_set_object (value, self->client_store);
                 break;
         default:
                 G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -319,7 +318,7 @@ accept_xsmp_connection (SmsConn        sms_conn,
         GsmIceConnectionWatch *data;
 
         /* FIXME: what about during shutdown but before gsm_xsmp_shutdown? */
-        if (server->priv->xsmp_sockets == NULL) {
+        if (server->xsmp_sockets == NULL) {
                 g_debug ("GsmXsmpServer: In shutdown, rejecting new client");
 
                 *failure_reason_ret = strdup (_("Refusing new client connection because the session is currently being shut down\n"));
@@ -334,7 +333,7 @@ accept_xsmp_connection (SmsConn        sms_conn,
 
         client = gsm_xsmp_client_new (ice_conn);
 
-        gsm_store_add (server->priv->client_store, gsm_client_peek_id (client), G_OBJECT (client));
+        gsm_store_add (server->client_store, gsm_client_peek_id (client), G_OBJECT (client));
         /* the store will own the ref */
         g_object_unref (client);
 
@@ -448,9 +447,9 @@ update_iceauthority (GsmXsmpServer *server,
                 return FALSE;
         }
 
-        our_network_ids = g_malloc (server->priv->num_local_xsmp_sockets * sizeof (char *));
-        for (i = 0; i < server->priv->num_local_xsmp_sockets; i++) {
-                our_network_ids[i] = IceGetListenConnectionString (server->priv->xsmp_sockets[i]);
+        our_network_ids = g_malloc (server->num_local_xsmp_sockets * sizeof (char *));
+        for (i = 0; i < server->num_local_xsmp_sockets; i++) {
+                our_network_ids[i] = IceGetListenConnectionString (server->xsmp_sockets[i]);
         }
 
         entries = NULL;
@@ -469,13 +468,13 @@ update_iceauthority (GsmXsmpServer *server,
                                 continue;
                         }
 
-                        for (i = 0; i < server->priv->num_local_xsmp_sockets; i++) {
+                        for (i = 0; i < server->num_local_xsmp_sockets; i++) {
                                 if (!strcmp (auth_entry->network_id, our_network_ids[i])) {
                                         IceFreeAuthFileEntry (auth_entry);
                                         break;
                                 }
                         }
-                        if (i != server->priv->num_local_xsmp_sockets) {
+                        if (i != server->num_local_xsmp_sockets) {
                                 continue;
                         }
 
@@ -503,7 +502,7 @@ update_iceauthority (GsmXsmpServer *server,
         }
 
         if (adding) {
-                for (i = 0; i < server->priv->num_local_xsmp_sockets; i++) {
+                for (i = 0; i < server->num_local_xsmp_sockets; i++) {
                         entries = g_slist_append (entries,
                                                   auth_entry_new ("ICE", our_network_ids[i]));
                         entries = g_slist_prepend (entries,
@@ -523,7 +522,7 @@ update_iceauthority (GsmXsmpServer *server,
 
  cleanup:
         IceUnlockAuthFile (filename);
-        for (i = 0; i < server->priv->num_local_xsmp_sockets; i++) {
+        for (i = 0; i < server->num_local_xsmp_sockets; i++) {
                 free (our_network_ids[i]);
         }
         g_free (our_network_ids);
@@ -579,8 +578,8 @@ setup_listener (GsmXsmpServer *server)
          */
         saved_umask = umask (0);
         umask (saved_umask);
-        res = IceListenForConnections (&server->priv->num_xsmp_sockets,
-                                       &server->priv->xsmp_sockets,
+        res = IceListenForConnections (&server->num_xsmp_sockets,
+                                       &server->xsmp_sockets,
                                        sizeof (error),
                                        error);
         if (! res) {
@@ -592,28 +591,28 @@ setup_listener (GsmXsmpServer *server)
         /* Find the local sockets in the returned socket list and move them
          * to the start of the list.
          */
-        for (i = server->priv->num_local_xsmp_sockets = 0; i < server->priv->num_xsmp_sockets; i++) {
-                char *id = IceGetListenConnectionString (server->priv->xsmp_sockets[i]);
+        for (i = server->num_local_xsmp_sockets = 0; i < server->num_xsmp_sockets; i++) {
+                char *id = IceGetListenConnectionString (server->xsmp_sockets[i]);
 
                 if (!strncmp (id, "local/", sizeof ("local/") - 1) ||
                     !strncmp (id, "unix/", sizeof ("unix/") - 1)) {
-                        if (i > server->priv->num_local_xsmp_sockets) {
+                        if (i > server->num_local_xsmp_sockets) {
                                 IceListenObj tmp;
-                                tmp = server->priv->xsmp_sockets[i];
-                                server->priv->xsmp_sockets[i] = server->priv->xsmp_sockets[server->priv->num_local_xsmp_sockets];
-                                server->priv->xsmp_sockets[server->priv->num_local_xsmp_sockets] = tmp;
+                                tmp = server->xsmp_sockets[i];
+                                server->xsmp_sockets[i] = server->xsmp_sockets[server->num_local_xsmp_sockets];
+                                server->xsmp_sockets[server->num_local_xsmp_sockets] = tmp;
                         }
-                        server->priv->num_local_xsmp_sockets++;
+                        server->num_local_xsmp_sockets++;
                 }
                 free (id);
         }
 
-        if (server->priv->num_local_xsmp_sockets == 0) {
+        if (server->num_local_xsmp_sockets == 0) {
                 gsm_util_init_error (TRUE, "IceListenForConnections did not return a local listener!");
         }
 
 #ifdef HAVE_XTRANS
-        if (server->priv->num_local_xsmp_sockets != server->priv->num_xsmp_sockets) {
+        if (server->num_local_xsmp_sockets != server->num_xsmp_sockets) {
                 /* Xtrans was apparently compiled with support for some
                  * non-local transport besides TCP (which we disabled above); we
                  * won't create IO watches on those extra sockets, so
@@ -624,10 +623,10 @@ setup_listener (GsmXsmpServer *server)
                  * stop it, the fix is to add additional _IceTransNoListen()
                  * calls above.
                  */
-                network_id_list = IceComposeNetworkIdList (server->priv->num_xsmp_sockets - server->priv->num_local_xsmp_sockets,
-                                                           server->priv->xsmp_sockets + server->priv->num_local_xsmp_sockets);
+                network_id_list = IceComposeNetworkIdList (server->num_xsmp_sockets - server->num_local_xsmp_sockets,
+                                                           server->xsmp_sockets + server->num_local_xsmp_sockets);
                 g_warning ("IceListenForConnections returned %d non-local listeners: %s",
-                           server->priv->num_xsmp_sockets - server->priv->num_local_xsmp_sockets,
+                           server->num_xsmp_sockets - server->num_local_xsmp_sockets,
                            network_id_list);
                 free (network_id_list);
         }
@@ -641,8 +640,8 @@ setup_listener (GsmXsmpServer *server)
                                      IceAuthFileName ());
         }
 
-        network_id_list = IceComposeNetworkIdList (server->priv->num_local_xsmp_sockets,
-                                                   server->priv->xsmp_sockets);
+        network_id_list = IceComposeNetworkIdList (server->num_local_xsmp_sockets,
+                                                   server->xsmp_sockets);
 
         gsm_util_setenv ("SESSION_MANAGER", network_id_list);
         g_debug ("GsmXsmpServer: SESSION_MANAGER=%s\n", network_id_list);
@@ -681,15 +680,11 @@ gsm_xsmp_server_class_init (GsmXsmpServerClass *klass)
                                                               NULL,
                                                               GSM_TYPE_STORE,
                                                               G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
-
-        g_type_class_add_private (klass, sizeof (GsmXsmpServerPrivate));
 }
 
 static void
 gsm_xsmp_server_init (GsmXsmpServer *xsmp_server)
 {
-        xsmp_server->priv = GSM_XSMP_SERVER_GET_PRIVATE (xsmp_server);
-
 }
 
 static void
@@ -702,13 +697,11 @@ gsm_xsmp_server_finalize (GObject *object)
 
         xsmp_server = GSM_XSMP_SERVER (object);
 
-        g_return_if_fail (xsmp_server->priv != NULL);
+        IceFreeListenObjs (xsmp_server->num_xsmp_sockets, 
+                           xsmp_server->xsmp_sockets);
 
-        IceFreeListenObjs (xsmp_server->priv->num_xsmp_sockets, 
-                           xsmp_server->priv->xsmp_sockets);
-
-        if (xsmp_server->priv->client_store != NULL) {
-                g_object_unref (xsmp_server->priv->client_store);
+        if (xsmp_server->client_store != NULL) {
+                g_object_unref (xsmp_server->client_store);
         }
 
         G_OBJECT_CLASS (gsm_xsmp_server_parent_class)->finalize (object);

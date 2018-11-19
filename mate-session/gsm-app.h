@@ -30,26 +30,10 @@
 #include "gsm-manager.h"
 #include "gsm-client.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define GSM_TYPE_APP            (gsm_app_get_type ())
-#define GSM_APP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GSM_TYPE_APP, GsmApp))
-#define GSM_APP_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), GSM_TYPE_APP, GsmAppClass))
-#define GSM_IS_APP(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GSM_TYPE_APP))
-#define GSM_IS_APP_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GSM_TYPE_APP))
-#define GSM_APP_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GSM_TYPE_APP, GsmAppClass))
-
-typedef struct _GsmApp        GsmApp;
-typedef struct _GsmAppClass   GsmAppClass;
-typedef struct _GsmAppPrivate GsmAppPrivate;
-
-struct _GsmApp
-{
-        GObject        parent;
-        GsmAppPrivate *priv;
-};
+G_DECLARE_DERIVABLE_TYPE (GsmApp, gsm_app, GSM, APP, GObject)
 
 struct _GsmAppClass
 {
@@ -131,8 +115,6 @@ gboolean         gsm_app_get_phase                      (GsmApp     *app,
                                                          guint      *phase,
                                                          GError    **error);
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __GSM_APP_H__ */

@@ -48,7 +48,7 @@
 #define GSP_ASP_SAVE_MASK_COMMENT  0x0010
 #define GSP_ASP_SAVE_MASK_ALL      0xffff
 
-struct _GspAppPrivate {
+typedef struct {
         char         *basename;
         char         *path;
 
@@ -77,10 +77,7 @@ struct _GspAppPrivate {
         /* after writing to file, we skip the next file monitor event of type
          * CHANGED */
         gboolean      skip_next_monitor_event;
-};
-
-#define GSP_APP_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSP_TYPE_APP, GspAppPrivate))
-
+} GspAppPrivate;
 
 enum {
         CHANGED,
@@ -91,7 +88,7 @@ enum {
 static guint gsp_app_signals[LAST_SIGNAL] = { 0 };
 
 
-G_DEFINE_TYPE (GspApp, gsp_app, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GspApp, gsp_app, G_TYPE_OBJECT)
 
 static void     gsp_app_dispose  (GObject *object);
 static void     gsp_app_finalize (GObject *object);
@@ -148,60 +145,64 @@ gsp_app_class_init (GspAppClass *class)
                               g_cclosure_marshal_VOID__VOID,
                               G_TYPE_NONE, 0);
 
-        g_type_class_add_private (class, sizeof (GspAppPrivate));
 }
 
 static void
 gsp_app_init (GspApp *app)
 {
-        app->priv = GSP_APP_GET_PRIVATE (app);
+        GspAppPrivate *priv;
 
-        memset (app->priv, 0, sizeof (GspAppPrivate));
-        app->priv->xdg_position        = G_MAXUINT;
-        app->priv->xdg_system_position = G_MAXUINT;
+        priv = gsp_app_get_instance_private (app);
+
+        memset (priv, 0, sizeof (GspAppPrivate));
+        priv->xdg_position        = G_MAXUINT;
+        priv->xdg_system_position = G_MAXUINT;
 }
 
 static void
 _gsp_app_free_reusable_data (GspApp *app)
 {
-        if (app->priv->path) {
-                g_free (app->priv->path);
-                app->priv->path = NULL;
+        GspAppPrivate *priv;
+
+        priv = gsp_app_get_instance_private (app);
+        if (priv->path) {
+                g_free (priv->path);
+                priv->path = NULL;
         }
 
-        if (app->priv->name) {
-                g_free (app->priv->name);
-                app->priv->name = NULL;
+        if (priv->name) {
+                g_free (priv->name);
+                priv->name = NULL;
         }
 
-        if (app->priv->exec) {
-                g_free (app->priv->exec);
-                app->priv->exec = NULL;
+        if (priv->exec) {
+                g_free (priv->exec);
+                priv->exec = NULL;
         }
 
-        if (app->priv->comment) {
-                g_free (app->priv->comment);
-                app->priv->comment = NULL;
+        if (priv->comment) {
+                g_free (priv->comment);
+                priv->comment = NULL;
         }
 
-        if (app->priv->icon) {
-                g_free (app->priv->icon);
-                app->priv->icon = NULL;
+        if (priv->icon) {
+                g_free (priv->icon);
+                priv->icon = NULL;
         }
 
-        if (app->priv->gicon) {
-                g_object_unref (app->priv->gicon);
-                app->priv->gicon = NULL;
+        if (priv->gicon) {
+                g_object_unref (priv->gicon);
+                priv->gicon = NULL;
         }
 
-        if (app->priv->description) {
-                g_free (app->priv->description);
-                app->priv->description = NULL;
+        if (priv->description) {
+                g_free (priv->description);
+                priv->description = NULL;
         }
 
-        if (app->priv->old_system_path) {
-                g_free (app->priv->old_system_path);
-                app->priv->old_system_path = NULL;
+        if (priv->old_system_path) {
+                g_free (priv->old_system_path);
+                priv->old_system_path = NULL;
         }
 }
 
@@ -209,16 +210,18 @@ static void
 gsp_app_dispose (GObject *object)
 {
         GspApp *app;
+        GspAppPrivate *priv;
 
         g_return_if_fail (object != NULL);
         g_return_if_fail (GSP_IS_APP (object));
 
         app = GSP_APP (object);
+        priv = gsp_app_get_instance_private (app);
 
         /* we save in dispose since we might need to reference GspAppManager */
-        if (app->priv->save_timeout) {
-                g_source_remove (app->priv->save_timeout);
-                app->priv->save_timeout = 0;
+        if (priv->save_timeout) {
+                g_source_remove (priv->save_timeout);
+                priv->save_timeout = 0;
 
                 /* save now */
                 _gsp_app_save (app);
@@ -231,15 +234,17 @@ static void
 gsp_app_finalize (GObject *object)
 {
         GspApp *app;
+        GspAppPrivate *priv;
 
         g_return_if_fail (object != NULL);
         g_return_if_fail (GSP_IS_APP (object));
 
         app = GSP_APP (object);
+        priv = gsp_app_get_instance_private (app);
 
-        if (app->priv->basename) {
-                g_free (app->priv->basename);
-                app->priv->basename = NULL;
+        if (priv->basename) {
+                g_free (priv->basename);
+                priv->basename = NULL;
         }
 
         _gsp_app_free_reusable_data (app);
@@ -264,25 +269,28 @@ _gsp_app_update_description (GspApp *app)
 {
         const char *primary;
         const char *secondary;
+        GspAppPrivate *priv;
 
-        if (!gsm_util_text_is_blank (app->priv->name)) {
-                primary = app->priv->name;
-        } else if (!gsm_util_text_is_blank (app->priv->exec)) {
-                primary = app->priv->exec;
+        priv = gsp_app_get_instance_private (app);
+
+        if (!gsm_util_text_is_blank (priv->name)) {
+                primary = priv->name;
+        } else if (!gsm_util_text_is_blank (priv->exec)) {
+                primary = priv->exec;
         } else {
                 primary = _("No name");
         }
 
-        if (!gsm_util_text_is_blank (app->priv->comment)) {
-                secondary = app->priv->comment;
+        if (!gsm_util_text_is_blank (priv->comment)) {
+                secondary = priv->comment;
         } else {
                 secondary = _("No description");
         }
 
-        g_free (app->priv->description);
-        app->priv->description = g_markup_printf_escaped ("<b>%s</b>\n%s",
-                                                          primary,
-                                                          secondary);
+        g_free (priv->description);
+        priv->description = g_markup_printf_escaped ("<b>%s</b>\n%s",
+                                                     primary,
+                                                     secondary);
 }
 
 /*
@@ -305,20 +313,22 @@ _gsp_app_user_equal_system (GspApp  *app,
                             char   **system_path)
 {
         GspAppManager *manager;
+        GspAppPrivate *priv;
         const char    *system_dir;
         char          *path;
         char          *str;
         GKeyFile      *keyfile;
 
         manager = gsp_app_manager_get ();
+        priv = gsp_app_get_instance_private (app);
         system_dir = gsp_app_manager_get_dir (manager,
-                                              app->priv->xdg_system_position);
+                                              priv->xdg_system_position);
         g_object_unref (manager);
         if (!system_dir) {
                 return FALSE;
         }
 
-        path = g_build_filename (system_dir, app->priv->basename, NULL);
+        path = g_build_filename (system_dir, priv->basename, NULL);
 
         keyfile = g_key_file_new ();
         if (!g_key_file_load_from_file (keyfile, path, G_KEY_FILE_NONE, NULL)) {
@@ -329,10 +339,10 @@ _gsp_app_user_equal_system (GspApp  *app,
 
         if (gsp_key_file_get_boolean (keyfile,
                                       G_KEY_FILE_DESKTOP_KEY_HIDDEN,
-                                      FALSE) != app->priv->hidden ||
+                                      FALSE) != priv->hidden ||
             gsp_key_file_get_boolean (keyfile,
                                       GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
-                                      TRUE) != app->priv->enabled) {
+                                      TRUE) != priv->enabled) {
                 g_free (path);
                 g_key_file_free (keyfile);
                 return FALSE;
@@ -340,7 +350,7 @@ _gsp_app_user_equal_system (GspApp  *app,
 
         str = gsp_key_file_get_locale_string (keyfile,
                                               G_KEY_FILE_DESKTOP_KEY_NAME);
-        if (!_gsp_str_equal (str, app->priv->name)) {
+        if (!_gsp_str_equal (str, priv->name)) {
                 g_free (str);
                 g_free (path);
                 g_key_file_free (keyfile);
@@ -350,7 +360,7 @@ _gsp_app_user_equal_system (GspApp  *app,
 
         str = gsp_key_file_get_locale_string (keyfile,
                                               G_KEY_FILE_DESKTOP_KEY_COMMENT);
-        if (!_gsp_str_equal (str, app->priv->comment)) {
+        if (!_gsp_str_equal (str, priv->comment)) {
                 g_free (str);
                 g_free (path);
                 g_key_file_free (keyfile);
@@ -360,7 +370,7 @@ _gsp_app_user_equal_system (GspApp  *app,
 
         str = gsp_key_file_get_string (keyfile,
                                        G_KEY_FILE_DESKTOP_KEY_EXEC);
-        if (!_gsp_str_equal (str, app->priv->exec)) {
+        if (!_gsp_str_equal (str, priv->exec)) {
                 g_free (str);
                 g_free (path);
                 g_key_file_free (keyfile);
@@ -370,7 +380,7 @@ _gsp_app_user_equal_system (GspApp  *app,
 
         str = gsp_key_file_get_locale_string (keyfile,
                                               G_KEY_FILE_DESKTOP_KEY_ICON);
-        if (!_gsp_str_equal (str, app->priv->icon)) {
+        if (!_gsp_str_equal (str, priv->icon)) {
                 g_free (str);
                 g_free (path);
                 g_key_file_free (keyfile);
@@ -388,11 +398,14 @@ _gsp_app_user_equal_system (GspApp  *app,
 static inline void
 _gsp_app_save_done_success (GspApp *app)
 {
-        app->priv->save_mask = 0;
+        GspAppPrivate *priv;
 
-        if (app->priv->old_system_path) {
-                g_free (app->priv->old_system_path);
-                app->priv->old_system_path = NULL;
+        priv = gsp_app_get_instance_private (app);
+        priv->save_mask = 0;
+
+        if (priv->old_system_path) {
+                g_free (priv->old_system_path);
+                priv->old_system_path = NULL;
         }
 }
 
@@ -403,30 +416,32 @@ _gsp_app_save (gpointer data)
         char     *use_path;
         GKeyFile *keyfile;
         GError   *error;
+        GspAppPrivate *priv;
 
         app = GSP_APP (data);
+        priv = gsp_app_get_instance_private (app);
 
         /* first check if removing the data from the user dir and using the
          * data from the system dir is enough -- this helps us keep clean the
          * user config dir by removing unneeded files */
         if (_gsp_app_user_equal_system (app, &use_path)) {
-                if (g_file_test (app->priv->path, G_FILE_TEST_EXISTS)) {
-                        g_remove (app->priv->path);
+                if (g_file_test (priv->path, G_FILE_TEST_EXISTS)) {
+                        g_remove (priv->path);
                 }
 
-                g_free (app->priv->path);
-                app->priv->path = use_path;
+                g_free (priv->path);
+                priv->path = use_path;
 
-                app->priv->xdg_position = app->priv->xdg_system_position;
+                priv->xdg_position = priv->xdg_system_position;
 
                 _gsp_app_save_done_success (app);
                 return FALSE;
         }
 
-        if (app->priv->old_system_path)
-                use_path = app->priv->old_system_path;
+        if (priv->old_system_path)
+                use_path = priv->old_system_path;
         else
-                use_path = app->priv->path;
+                use_path = priv->path;
 
         keyfile = g_key_file_new ();
 
@@ -440,80 +455,83 @@ _gsp_app_save (gpointer data)
                 gsp_key_file_populate (keyfile);
         }
 
-        if (app->priv->save_mask & GSP_ASP_SAVE_MASK_HIDDEN) {
+        if (priv->save_mask & GSP_ASP_SAVE_MASK_HIDDEN) {
                 gsp_key_file_set_boolean (keyfile,
                                           G_KEY_FILE_DESKTOP_KEY_HIDDEN,
-                                          app->priv->hidden);
+                                          priv->hidden);
         }
 
-        if (app->priv->save_mask & GSP_ASP_SAVE_MASK_ENABLED) {
+        if (priv->save_mask & GSP_ASP_SAVE_MASK_ENABLED) {
                 gsp_key_file_set_boolean (keyfile,
                                           GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
-                                          app->priv->enabled);
+                                          priv->enabled);
         }
 
-        if (app->priv->save_mask & GSP_ASP_SAVE_MASK_NAME) {
+        if (priv->save_mask & GSP_ASP_SAVE_MASK_NAME) {
                 gsp_key_file_set_locale_string (keyfile,
                                                 G_KEY_FILE_DESKTOP_KEY_NAME,
-                                                app->priv->name);
+                                                priv->name);
                 gsp_key_file_ensure_C_key (keyfile, G_KEY_FILE_DESKTOP_KEY_NAME);
         }
 
-        if (app->priv->save_mask & GSP_ASP_SAVE_MASK_COMMENT) {
+        if (priv->save_mask & GSP_ASP_SAVE_MASK_COMMENT) {
                 gsp_key_file_set_locale_string (keyfile,
                                                 G_KEY_FILE_DESKTOP_KEY_COMMENT,
-                                                app->priv->comment);
+                                                priv->comment);
                 gsp_key_file_ensure_C_key (keyfile, G_KEY_FILE_DESKTOP_KEY_COMMENT);
         }
 
-        if (app->priv->save_mask & GSP_ASP_SAVE_MASK_EXEC) {
+        if (priv->save_mask & GSP_ASP_SAVE_MASK_EXEC) {
                 gsp_key_file_set_string (keyfile,
                                          G_KEY_FILE_DESKTOP_KEY_EXEC,
-                                         app->priv->exec);
+                                         priv->exec);
         }
 
         _gsp_ensure_user_autostart_dir ();
-        if (gsp_key_file_to_file (keyfile, app->priv->path, NULL)) {
-                app->priv->skip_next_monitor_event = TRUE;
+        if (gsp_key_file_to_file (keyfile, priv->path, NULL)) {
+                priv->skip_next_monitor_event = TRUE;
                 _gsp_app_save_done_success (app);
         } else {
-                g_warning ("Could not save %s file", app->priv->path);
+                g_warning ("Could not save %s file", priv->path);
         }
 
         g_key_file_free (keyfile);
 
-        app->priv->save_timeout = 0;
+        priv->save_timeout = 0;
         return FALSE;
 }
 
 static void
 _gsp_app_queue_save (GspApp *app)
 {
-        if (app->priv->save_timeout) {
-                g_source_remove (app->priv->save_timeout);
-                app->priv->save_timeout = 0;
+        GspAppPrivate *priv;
+
+        priv = gsp_app_get_instance_private (app);
+        if (priv->save_timeout) {
+                g_source_remove (priv->save_timeout);
+                priv->save_timeout = 0;
         }
 
         /* if the file was not in the user directory, then we'll create a copy
          * there */
-        if (app->priv->xdg_position != 0) {
-                app->priv->xdg_position = 0;
+        if (priv->xdg_position != 0) {
+                priv->xdg_position = 0;
 
-                if (app->priv->old_system_path == NULL) {
-                        app->priv->old_system_path = app->priv->path;
+                if (priv->old_system_path == NULL) {
+                        priv->old_system_path = priv->path;
                         /* if old_system_path was not NULL, then it means we
                          * tried to save and we failed; in that case, we want
                          * to try again and use the old file as a basis again */
                 }
 
-                app->priv->path = g_build_filename (g_get_user_config_dir (),
-                                                    "autostart",
-                                                    app->priv->basename, NULL);
+                priv->path = g_build_filename (g_get_user_config_dir (),
+                                               "autostart",
+                                               priv->basename, NULL);
         }
 
-        app->priv->save_timeout = g_timeout_add_seconds (GSP_APP_SAVE_DELAY,
-                                                         _gsp_app_save,
-                                                         app);
+        priv->save_timeout = g_timeout_add_seconds (GSP_APP_SAVE_DELAY,
+                                                    _gsp_app_save,
+                                                    app);
 }
 
 /*
@@ -523,47 +541,67 @@ _gsp_app_queue_save (GspApp *app)
 const char *
 gsp_app_get_basename (GspApp *app)
 {
+        GspAppPrivate *priv;
+
         g_return_val_if_fail (GSP_IS_APP (app), NULL);
 
-        return app->priv->basename;
+        priv = gsp_app_get_instance_private (app);
+
+        return priv->basename;
 }
 
 const char *
 gsp_app_get_path (GspApp *app)
 {
+        GspAppPrivate *priv;
+
         g_return_val_if_fail (GSP_IS_APP (app), NULL);
 
-        return app->priv->path;
+        priv = gsp_app_get_instance_private (app);
+
+        return priv->path;
 }
 
 gboolean
 gsp_app_get_hidden (GspApp *app)
 {
+        GspAppPrivate *priv;
+
         g_return_val_if_fail (GSP_IS_APP (app), FALSE);
 
-        return app->priv->hidden;
+        priv = gsp_app_get_instance_private (app);
+
+        return priv->hidden;
 }
 
 gboolean
 gsp_app_get_enabled (GspApp *app)
 {
+        GspAppPrivate *priv;
+
         g_return_val_if_fail (GSP_IS_APP (app), FALSE);
 
-        return app->priv->enabled;
+        priv = gsp_app_get_instance_private (app);
+
+        return priv->enabled;
 }
 
 void
 gsp_app_set_enabled (GspApp   *app,
                      gboolean  enabled)
 {
+        GspAppPrivate *priv;
+
         g_return_if_fail (GSP_IS_APP (app));
 
-        if (enabled == app->priv->enabled) {
+        priv = gsp_app_get_instance_private (app);
+
+        if (enabled == priv->enabled) {
                 return;
         }
 
-        app->priv->enabled = enabled;
-        app->priv->save_mask |= GSP_ASP_SAVE_MASK_ENABLED;
+        priv->enabled = enabled;
+        priv->save_mask |= GSP_ASP_SAVE_MASK_ENABLED;
 
         _gsp_app_queue_save (app);
         _gsp_app_emit_changed (app);
@@ -572,34 +610,50 @@ gsp_app_set_enabled (GspApp   *app,
 const char *
 gsp_app_get_name (GspApp *app)
 {
+        GspAppPrivate *priv;
+
         g_return_val_if_fail (GSP_IS_APP (app), NULL);
 
-        return app->priv->name;
+        priv = gsp_app_get_instance_private (app);
+
+        return priv->name;
 }
 
 const char *
 gsp_app_get_exec (GspApp *app)
 {
+        GspAppPrivate *priv;
+
         g_return_val_if_fail (GSP_IS_APP (app), NULL);
 
-        return app->priv->exec;
+        priv = gsp_app_get_instance_private (app);
+
+        return priv->exec;
 }
 
 const char *
 gsp_app_get_comment (GspApp *app)
 {
+        GspAppPrivate *priv;
+
         g_return_val_if_fail (GSP_IS_APP (app), NULL);
 
-        return app->priv->comment;
+        priv = gsp_app_get_instance_private (app);
+
+        return priv->comment;
 }
 
 GIcon *
 gsp_app_get_icon (GspApp *app)
 {
+        GspAppPrivate *priv;
+
         g_return_val_if_fail (GSP_IS_APP (app), NULL);
 
-        if (app->priv->gicon) {
-                return g_object_ref (app->priv->gicon);
+        priv = gsp_app_get_instance_private (app);
+
+        if (priv->gicon) {
+                return g_object_ref (priv->gicon);
         } else {
                 return NULL;
         }
@@ -608,34 +662,50 @@ gsp_app_get_icon (GspApp *app)
 unsigned int
 gsp_app_get_xdg_position (GspApp *app)
 {
+        GspAppPrivate *priv;
+
         g_return_val_if_fail (GSP_IS_APP (app), G_MAXUINT);
 
-        return app->priv->xdg_position;
+        priv = gsp_app_get_instance_private (app);
+
+        return priv->xdg_position;
 }
 
 unsigned int
 gsp_app_get_xdg_system_position (GspApp *app)
 {
+        GspAppPrivate *priv;
+
         g_return_val_if_fail (GSP_IS_APP (app), G_MAXUINT);
 
-        return app->priv->xdg_system_position;
+        priv = gsp_app_get_instance_private (app);
+
+        return priv->xdg_system_position;
 }
 
 void
 gsp_app_set_xdg_system_position (GspApp       *app,
                                  unsigned int  position)
 {
+        GspAppPrivate *priv;
+
         g_return_if_fail (GSP_IS_APP (app));
 
-        app->priv->xdg_system_position = position;
+        priv = gsp_app_get_instance_private (app);
+
+        priv->xdg_system_position = position;
 }
 
 const char *
 gsp_app_get_description (GspApp *app)
 {
+        GspAppPrivate *priv;
+
         g_return_val_if_fail (GSP_IS_APP (app), NULL);
 
-        return app->priv->description;
+        priv = gsp_app_get_instance_private (app);
+
+        return priv->description;
 }
 
 /*
@@ -649,34 +719,36 @@ gsp_app_update (GspApp     *app,
                 const char *exec)
 {
         gboolean    changed;
+        GspAppPrivate *priv;
 
         g_return_if_fail (GSP_IS_APP (app));
 
         changed = FALSE;
+        priv = gsp_app_get_instance_private (app);
 
-        if (!_gsp_str_equal (name, app->priv->name)) {
+        if (!_gsp_str_equal (name, priv->name)) {
                 changed = TRUE;
-                g_free (app->priv->name);
-                app->priv->name = g_strdup (name);
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_NAME;
+                g_free (priv->name);
+                priv->name = g_strdup (name);
+                priv->save_mask |= GSP_ASP_SAVE_MASK_NAME;
         }
 
-        if (!_gsp_str_equal (comment, app->priv->comment)) {
+        if (!_gsp_str_equal (comment, priv->comment)) {
                 changed = TRUE;
-                g_free (app->priv->comment);
-                app->priv->comment = g_strdup (comment);
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_COMMENT;
+                g_free (priv->comment);
+                priv->comment = g_strdup (comment);
+                priv->save_mask |= GSP_ASP_SAVE_MASK_COMMENT;
         }
 
         if (changed) {
                 _gsp_app_update_description (app);
         }
 
-        if (!_gsp_str_equal (exec, app->priv->exec)) {
+        if (!_gsp_str_equal (exec, priv->exec)) {
                 changed = TRUE;
-                g_free (app->priv->exec);
-                app->priv->exec = g_strdup (exec);
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_EXEC;
+                g_free (priv->exec);
+                priv->exec = g_strdup (exec);
+                priv->save_mask |= GSP_ASP_SAVE_MASK_EXEC;
         }
 
         if (changed) {
@@ -688,30 +760,33 @@ gsp_app_update (GspApp     *app,
 void
 gsp_app_delete (GspApp *app)
 {
+        GspAppPrivate *priv;
+
         g_return_if_fail (GSP_IS_APP (app));
 
-        if (app->priv->xdg_position == 0 &&
-            app->priv->xdg_system_position == G_MAXUINT) {
+        priv = gsp_app_get_instance_private (app);
+        if (priv->xdg_position == 0 &&
+            priv->xdg_system_position == G_MAXUINT) {
                 /* exists in user directory only */
-                if (app->priv->save_timeout) {
-                        g_source_remove (app->priv->save_timeout);
-                        app->priv->save_timeout = 0;
+                if (priv->save_timeout) {
+                        g_source_remove (priv->save_timeout);
+                        priv->save_timeout = 0;
                 }
 
-                if (g_file_test (app->priv->path, G_FILE_TEST_EXISTS)) {
-                        g_remove (app->priv->path);
+                if (g_file_test (priv->path, G_FILE_TEST_EXISTS)) {
+                        g_remove (priv->path);
                 }
 
                 /* for extra safety */
-                app->priv->hidden = TRUE;
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_HIDDEN;
+                priv->hidden = TRUE;
+                priv->save_mask |= GSP_ASP_SAVE_MASK_HIDDEN;
 
                 _gsp_app_emit_removed (app);
         } else {
                 /* also exists in system directory, so we have to keep a file
                  * in the user directory */
-                app->priv->hidden = TRUE;
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_HIDDEN;
+                priv->hidden = TRUE;
+                priv->save_mask |= GSP_ASP_SAVE_MASK_HIDDEN;
 
                 _gsp_app_queue_save (app);
                 _gsp_app_emit_changed (app);
@@ -727,9 +802,13 @@ gsp_app_reload_at (GspApp       *app,
                    const char   *path,
                    unsigned int  xdg_position)
 {
+        GspAppPrivate *priv;
+
         g_return_if_fail (GSP_IS_APP (app));
 
-        app->priv->xdg_position = G_MAXUINT;
+        priv = gsp_app_get_instance_private (app);
+
+        priv->xdg_position = G_MAXUINT;
         gsp_app_new (path, xdg_position);
 }
 
@@ -778,34 +857,36 @@ gsp_app_new (const char   *path,
         GKeyFile      *keyfile;
         char          *basename;
         gboolean       new;
+        GspAppPrivate *priv;
 
         basename = g_path_get_basename (path);
 
         manager = gsp_app_manager_get ();
         app = gsp_app_manager_find_app_with_basename (manager, basename);
+        priv = gsp_app_get_instance_private (app);
         g_object_unref (manager);
 
         new = (app == NULL);
 
         if (!new) {
-                if (app->priv->xdg_position == xdg_position) {
-                        if (app->priv->skip_next_monitor_event) {
-                                app->priv->skip_next_monitor_event = FALSE;
+                if (priv->xdg_position == xdg_position) {
+                        if (priv->skip_next_monitor_event) {
+                                priv->skip_next_monitor_event = FALSE;
                                 return NULL;
                         }
                         /* else: the file got changed but not by us, we'll
                          * update our data from disk */
                 }
 
-                if (app->priv->xdg_position < xdg_position ||
-                    app->priv->save_timeout != 0) {
+                if (priv->xdg_position < xdg_position ||
+                    priv->save_timeout != 0) {
                         /* we don't really care about this file, since we
                          * already have something with a higher priority, or
                          * we're going to write something in the user config
                          * anyway.
                          * Note: xdg_position >= 1 so it's a system dir */
-                        app->priv->xdg_system_position = MIN (xdg_position,
-                                                              app->priv->xdg_system_position);
+                        priv->xdg_system_position = MIN (xdg_position,
+                                                              priv->xdg_system_position);
                         return NULL;
                 }
         }
@@ -825,49 +906,50 @@ gsp_app_new (const char   *path,
 
         if (new) {
                 app = g_object_new (GSP_TYPE_APP, NULL);
-                app->priv->basename = basename;
+                priv = gsp_app_get_instance_private (app);
+                priv->basename = basename;
         } else {
                 g_free (basename);
                 _gsp_app_free_reusable_data (app);
         }
 
-        app->priv->path = g_strdup (path);
+        priv->path = g_strdup (path);
 
-        app->priv->hidden = gsp_key_file_get_boolean (keyfile,
-                                                      G_KEY_FILE_DESKTOP_KEY_HIDDEN,
-                                                      FALSE);
-        app->priv->enabled = gsp_key_file_get_boolean (keyfile,
-                                                       GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
-                                                       TRUE);
+        priv->hidden = gsp_key_file_get_boolean (keyfile,
+                                                 G_KEY_FILE_DESKTOP_KEY_HIDDEN,
+                                                 FALSE);
+        priv->enabled = gsp_key_file_get_boolean (keyfile,
+                                                  GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
+                                                  TRUE);
 
-        app->priv->name = gsp_key_file_get_locale_string (keyfile,
-                                                          G_KEY_FILE_DESKTOP_KEY_NAME);
-        app->priv->exec = gsp_key_file_get_string (keyfile,
-                                                   G_KEY_FILE_DESKTOP_KEY_EXEC);
-        app->priv->comment = gsp_key_file_get_locale_string (keyfile,
-                                                             G_KEY_FILE_DESKTOP_KEY_COMMENT);
+        priv->name = gsp_key_file_get_locale_string (keyfile,
+                                                     G_KEY_FILE_DESKTOP_KEY_NAME);
+        priv->exec = gsp_key_file_get_string (keyfile,
+                                              G_KEY_FILE_DESKTOP_KEY_EXEC);
+        priv->comment = gsp_key_file_get_locale_string (keyfile,
+                                                        G_KEY_FILE_DESKTOP_KEY_COMMENT);
 
-        if (gsm_util_text_is_blank (app->priv->name)) {
-                g_free (app->priv->name);
-                app->priv->name = g_strdup (app->priv->exec);
+        if (gsm_util_text_is_blank (priv->name)) {
+                g_free (priv->name);
+                priv->name = g_strdup (priv->exec);
         }
 
-        app->priv->icon = gsp_key_file_get_locale_string (keyfile,
-                                                          G_KEY_FILE_DESKTOP_KEY_ICON);
+        priv->icon = gsp_key_file_get_locale_string (keyfile,
+                                                     G_KEY_FILE_DESKTOP_KEY_ICON);
 
-        if (app->priv->icon) {
+        if (priv->icon) {
                 /* look at icon and see if it's a themed icon or not */
-                if (g_path_is_absolute (app->priv->icon)) {
+                if (g_path_is_absolute (priv->icon)) {
                         GFile *iconfile;
 
-                        iconfile = g_file_new_for_path (app->priv->icon);
-                        app->priv->gicon = g_file_icon_new (iconfile);
+                        iconfile = g_file_new_for_path (priv->icon);
+                        priv->gicon = g_file_icon_new (iconfile);
                         g_object_unref (iconfile);
                 } else {
-                        app->priv->gicon = g_themed_icon_new (app->priv->icon);
+                        priv->gicon = g_themed_icon_new (priv->icon);
                 }
         } else {
-                app->priv->gicon = NULL;
+                priv->gicon = NULL;
         }
 
         g_key_file_free (keyfile);
@@ -875,16 +957,16 @@ gsp_app_new (const char   *path,
         _gsp_app_update_description (app);
 
         if (xdg_position > 0) {
-                g_assert (xdg_position <= app->priv->xdg_system_position);
-                app->priv->xdg_system_position = xdg_position;
+                g_assert (xdg_position <= priv->xdg_system_position);
+                priv->xdg_system_position = xdg_position;
         }
         /* else we keep the old value (which is G_MAXUINT if it wasn't set) */
-        app->priv->xdg_position = xdg_position;
+        priv->xdg_position = xdg_position;
 
-        g_assert (!new || app->priv->save_timeout == 0);
-        app->priv->save_timeout = 0;
-        app->priv->old_system_path = NULL;
-        app->priv->skip_next_monitor_event = FALSE;
+        g_assert (!new || priv->save_timeout == 0);
+        priv->save_timeout = 0;
+        priv->old_system_path = NULL;
+        priv->skip_next_monitor_event = FALSE;
 
         if (!new) {
                 _gsp_app_emit_changed (app);
@@ -956,6 +1038,7 @@ gsp_app_create (const char *name,
                 const char *exec)
 {
         GspAppManager  *manager;
+        GspAppPrivate *priv;
         GspApp         *app;
         char           *basename;
         char          **argv;
@@ -974,35 +1057,36 @@ gsp_app_create (const char *name,
         }
 
         app = g_object_new (GSP_TYPE_APP, NULL);
+        priv = gsp_app_get_instance_private (app);
 
-        app->priv->basename = basename;
-        app->priv->path = g_build_filename (g_get_user_config_dir (),
-                                            "autostart",
-                                            app->priv->basename, NULL);
+        priv->basename = basename;
+        priv->path = g_build_filename (g_get_user_config_dir (),
+                                       "autostart",
+                                       priv->basename, NULL);
 
-        app->priv->hidden = FALSE;
-        app->priv->enabled = TRUE;
+        priv->hidden = FALSE;
+        priv->enabled = TRUE;
 
         if (!gsm_util_text_is_blank (name)) {
-                app->priv->name = g_strdup (name);
+                priv->name = g_strdup (name);
         } else {
-                app->priv->name = g_strdup (exec);
+                priv->name = g_strdup (exec);
         }
-        app->priv->exec = g_strdup (exec);
-        app->priv->comment = g_strdup (comment);
-        app->priv->icon = NULL;
+        priv->exec = g_strdup (exec);
+        priv->comment = g_strdup (comment);
+        priv->icon = NULL;
 
-        app->priv->gicon = NULL;
+        priv->gicon = NULL;
         _gsp_app_update_description (app);
 
         /* by definition */
-        app->priv->xdg_position = 0;
-        app->priv->xdg_system_position = G_MAXUINT;
+        priv->xdg_position = 0;
+        priv->xdg_system_position = G_MAXUINT;
 
-        app->priv->save_timeout = 0;
-        app->priv->save_mask |= GSP_ASP_SAVE_MASK_ALL;
-        app->priv->old_system_path = NULL;
-        app->priv->skip_next_monitor_event = FALSE;
+        priv->save_timeout = 0;
+        priv->save_mask |= GSP_ASP_SAVE_MASK_ALL;
+        priv->old_system_path = NULL;
+        priv->skip_next_monitor_event = FALSE;
 
         _gsp_app_queue_save (app);
 
@@ -1016,6 +1100,7 @@ gboolean
 gsp_app_copy_desktop_file (const char *uri)
 {
         GspAppManager *manager;
+        GspAppPrivate *priv;
         GspApp        *app;
         GFile         *src_file;
         char          *src_basename;
@@ -1062,6 +1147,7 @@ gsp_app_copy_desktop_file (const char *uri)
         g_object_unref (dst_file);
 
         app = gsp_app_new (dst_path, 0);
+        priv = gsp_app_get_instance_private (app);
         if (!app) {
                 g_remove (dst_path);
                 g_free (dst_path);
@@ -1071,16 +1157,16 @@ gsp_app_copy_desktop_file (const char *uri)
         g_free (dst_path);
 
         changed = FALSE;
-        if (app->priv->hidden) {
+        if (priv->hidden) {
                 changed = TRUE;
-                app->priv->hidden = FALSE;
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_HIDDEN;
+                priv->hidden = FALSE;
+                priv->save_mask |= GSP_ASP_SAVE_MASK_HIDDEN;
         }
 
-        if (!app->priv->enabled) {
+        if (!priv->enabled) {
                 changed = TRUE;
-                app->priv->enabled = TRUE;
-                app->priv->save_mask |= GSP_ASP_SAVE_MASK_ENABLED;
+                priv->enabled = TRUE;
+                priv->save_mask |= GSP_ASP_SAVE_MASK_ENABLED;
         }
 
         if (changed) {

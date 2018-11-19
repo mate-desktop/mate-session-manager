@@ -26,27 +26,10 @@
 
 #include <X11/SM/SMlib.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define GSM_TYPE_AUTOSTART_APP            (gsm_autostart_app_get_type ())
-#define GSM_AUTOSTART_APP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GSM_TYPE_AUTOSTART_APP, GsmAutostartApp))
-#define GSM_AUTOSTART_APP_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), GSM_TYPE_AUTOSTART_APP, GsmAutostartAppClass))
-#define GSM_IS_AUTOSTART_APP(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GSM_TYPE_AUTOSTART_APP))
-#define GSM_IS_AUTOSTART_APP_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GSM_TYPE_AUTOSTART_APP))
-#define GSM_AUTOSTART_APP_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GSM_TYPE_AUTOSTART_APP, GsmAutostartAppClass))
-
-typedef struct _GsmAutostartApp        GsmAutostartApp;
-typedef struct _GsmAutostartAppClass   GsmAutostartAppClass;
-typedef struct _GsmAutostartAppPrivate GsmAutostartAppPrivate;
-
-struct _GsmAutostartApp
-{
-        GsmApp parent;
-
-        GsmAutostartAppPrivate *priv;
-};
+G_DECLARE_DERIVABLE_TYPE (GsmAutostartApp, gsm_autostart_app, GSM, AUTOSTART_APP, GsmApp)
 
 struct _GsmAutostartAppClass
 {
@@ -72,8 +55,6 @@ GsmApp *gsm_autostart_app_new                (const char *desktop_file);
 #define GSM_AUTOSTART_APP_DISCARD_KEY     "X-MATE-Autostart-discard-exec"
 #define GSM_AUTOSTART_APP_DELAY_KEY       "X-MATE-Autostart-Delay"
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __GSM_AUTOSTART_APP_H__ */

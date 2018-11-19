@@ -24,38 +24,15 @@
 #include <glib-object.h>
 #include <gtk/gtk.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define GSM_TYPE_PROPERTIES_DIALOG         (gsm_properties_dialog_get_type ())
-#define GSM_PROPERTIES_DIALOG(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GSM_TYPE_PROPERTIES_DIALOG, GsmPropertiesDialog))
-#define GSM_PROPERTIES_DIALOG_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GSM_TYPE_PROPERTIES_DIALOG, GsmPropertiesDialogClass))
-#define GSM_IS_PROPERTIES_DIALOG(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSM_TYPE_PROPERTIES_DIALOG))
-#define GSM_IS_PROPERTIES_DIALOG_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GSM_TYPE_PROPERTIES_DIALOG))
-#define GSM_PROPERTIES_DIALOG_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GSM_TYPE_PROPERTIES_DIALOG, GsmPropertiesDialogClass))
-
-typedef struct GsmPropertiesDialogPrivate GsmPropertiesDialogPrivate;
-
-typedef struct
-{
-        GtkDialog                   parent;
-        GsmPropertiesDialogPrivate *priv;
-} GsmPropertiesDialog;
-
-typedef struct
-{
-        GtkDialogClass   parent_class;
-} GsmPropertiesDialogClass;
-
-GType                  gsm_properties_dialog_get_type           (void);
+G_DECLARE_FINAL_TYPE (GsmPropertiesDialog, gsm_properties_dialog, GSM, PROPERTIES_DIALOG, GtkDialog)
 
 GtkWidget            * gsm_properties_dialog_new                (void);
 
 #define GSM_PROPERTIES_ICON_SIZE GTK_ICON_SIZE_LARGE_TOOLBAR
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __GSM_PROPERTIES_DIALOG_H */

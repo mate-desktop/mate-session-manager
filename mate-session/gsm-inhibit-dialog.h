@@ -26,18 +26,10 @@
 
 #include "gsm-store.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define GSM_TYPE_INHIBIT_DIALOG         (gsm_inhibit_dialog_get_type ())
-#define GSM_INHIBIT_DIALOG(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GSM_TYPE_INHIBIT_DIALOG, GsmInhibitDialog))
-#define GSM_INHIBIT_DIALOG_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GSM_TYPE_INHIBIT_DIALOG, GsmInhibitDialogClass))
-#define GSM_IS_INHIBIT_DIALOG(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSM_TYPE_INHIBIT_DIALOG))
-#define GSM_IS_INHIBIT_DIALOG_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GSM_TYPE_INHIBIT_DIALOG))
-#define GSM_INHIBIT_DIALOG_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GSM_TYPE_INHIBIT_DIALOG, GsmInhibitDialogClass))
-
-typedef struct GsmInhibitDialogPrivate GsmInhibitDialogPrivate;
+G_DECLARE_FINAL_TYPE (GsmInhibitDialog, gsm_inhibit_dialog, GSM, INHIBIT_DIALOG, GtkDialog)
 
 typedef enum
 {
@@ -49,26 +41,11 @@ typedef enum
         GSM_LOGOUT_ACTION_SLEEP
 } GsmLogoutAction;
 
-typedef struct
-{
-        GtkDialog                parent;
-        GsmInhibitDialogPrivate *priv;
-} GsmInhibitDialog;
-
-typedef struct
-{
-        GtkDialogClass   parent_class;
-} GsmInhibitDialogClass;
-
-GType                  gsm_inhibit_dialog_get_type           (void);
-
 GtkWidget            * gsm_inhibit_dialog_new                (GsmStore         *inhibitors,
                                                               GsmStore         *clients,
                                                               int               action);
 GtkTreeModel         * gsm_inhibit_dialog_get_model          (GsmInhibitDialog *dialog);
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __GSM_INHIBIT_DIALOG_H */

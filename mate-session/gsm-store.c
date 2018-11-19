@@ -32,13 +32,11 @@
 
 #include "gsm-store.h"
 
-#define GSM_STORE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_STORE, GsmStorePrivate))
-
-struct GsmStorePrivate
+typedef struct
 {
         GHashTable *objects;
         gboolean    locked;
-};
+} GsmStorePrivate;
 
 enum {
         ADDED,
@@ -57,7 +55,7 @@ static void     gsm_store_class_init    (GsmStoreClass *klass);
 static void     gsm_store_init          (GsmStore      *store);
 static void     gsm_store_finalize      (GObject       *object);
 
-G_DEFINE_TYPE (GsmStore, gsm_store, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GsmStore, gsm_store, G_TYPE_OBJECT)
 
 GQuark
 gsm_store_error_quark (void)
@@ -73,7 +71,9 @@ gsm_store_error_quark (void)
 guint
 gsm_store_size (GsmStore    *store)
 {
-        return g_hash_table_size (store->priv->objects);
+        GsmStorePrivate *priv;
+        priv = gsm_store_get_instance_private (store);
+        return g_hash_table_size (priv->objects);
 }
 
 gboolean
@@ -83,10 +83,12 @@ gsm_store_remove (GsmStore   *store,
         GObject *found;
         gboolean removed;
         char    *id_copy;
+        GsmStorePrivate *priv;
 
         g_return_val_if_fail (store != NULL, FALSE);
 
-        found = g_hash_table_lookup (store->priv->objects, id);
+        priv = gsm_store_get_instance_private (store);
+        found = g_hash_table_lookup (priv->objects, id);
         if (found == NULL) {
                 return FALSE;
         }
@@ -95,7 +97,7 @@ gsm_store_remove (GsmStore   *store,
 
         g_object_ref (found);
 
-        removed = g_hash_table_remove (store->priv->objects, id_copy);
+        removed = g_hash_table_remove (priv->objects, id_copy);
         g_assert (removed);
 
         g_signal_emit (store, signals [REMOVED], 0, id_copy);
@@ -113,8 +115,10 @@ gsm_store_foreach (GsmStore    *store,
 {
         g_return_if_fail (store != NULL);
         g_return_if_fail (func != NULL);
+        GsmStorePrivate *priv;
+        priv = gsm_store_get_instance_private (store);
 
-        g_hash_table_find (store->priv->objects,
+        g_hash_table_find (priv->objects,
                            (GHRFunc)func,
                            user_data);
 }
@@ -125,11 +129,13 @@ gsm_store_find (GsmStore    *store,
                 gpointer     user_data)
 {
         GObject *object;
+        GsmStorePrivate *priv;
 
         g_return_val_if_fail (store != NULL, NULL);
         g_return_val_if_fail (predicate != NULL, NULL);
+        priv = gsm_store_get_instance_private (store);
 
-        object = g_hash_table_find (store->priv->objects,
+        object = g_hash_table_find (priv->objects,
                                     (GHRFunc)predicate,
                                     user_data);
         return object;
@@ -140,11 +146,13 @@ gsm_store_lookup (GsmStore   *store,
                   const char *id)
 {
         GObject *object;
+        GsmStorePrivate *priv;
 
         g_return_val_if_fail (store != NULL, NULL);
         g_return_val_if_fail (id != NULL, NULL);
+        priv = gsm_store_get_instance_private (store);
 
-        object = g_hash_table_lookup (store->priv->objects, id);
+        object = g_hash_table_lookup (priv->objects, id);
 
         return object;
 }
@@ -180,16 +188,18 @@ gsm_store_foreach_remove (GsmStore    *store,
 {
         guint       ret;
         WrapperData data;
+        GsmStorePrivate *priv;
 
         g_return_val_if_fail (store != NULL, 0);
         g_return_val_if_fail (func != NULL, 0);
+        priv = gsm_store_get_instance_private (store);
 
         data.store = store;
         data.user_data = user_data;
         data.func = func;
         data.removed = NULL;
 
-        ret = g_hash_table_foreach_remove (store->priv->objects,
+        ret = g_hash_table_foreach_remove (priv->objects,
                                            (GHRFunc)foreach_remove_wrapper,
                                            &data);
 
@@ -231,19 +241,22 @@ gsm_store_add (GsmStore   *store,
                const char *id,
                GObject    *object)
 {
+        GsmStorePrivate *priv;
         g_return_val_if_fail (store != NULL, FALSE);
         g_return_val_if_fail (id != NULL, FALSE);
         g_return_val_if_fail (object != NULL, FALSE);
 
+        priv = gsm_store_get_instance_private (store);
+
         /* If we're locked, we don't accept any new session
            objects. */
-        if (store->priv->locked) {
+        if (priv->locked) {
                 return FALSE;
         }
 
         g_debug ("GsmStore: Adding object id %s to store", id);
 
-        g_hash_table_insert (store->priv->objects,
+        g_hash_table_insert (priv->objects,
                              g_strdup (id),
                              g_object_ref (object));
 
@@ -256,17 +269,21 @@ void
 gsm_store_set_locked (GsmStore *store,
                       gboolean  locked)
 {
+        GsmStorePrivate *priv;
         g_return_if_fail (GSM_IS_STORE (store));
+        priv = gsm_store_get_instance_private (store);
 
-        store->priv->locked = locked;
+        priv->locked = locked;
 }
 
 gboolean
 gsm_store_get_locked (GsmStore *store)
 {
+        GsmStorePrivate *priv;
         g_return_val_if_fail (GSM_IS_STORE (store), FALSE);
+        priv = gsm_store_get_instance_private (store);
 
-        return store->priv->locked;
+        return priv->locked;
 }
 
 static void
@@ -296,12 +313,14 @@ gsm_store_get_property (GObject    *object,
                         GParamSpec *pspec)
 {
         GsmStore *self;
+        GsmStorePrivate *priv;
 
         self = GSM_STORE (object);
+        priv = gsm_store_get_instance_private (self);
 
         switch (prop_id) {
         case PROP_LOCKED:
-                g_value_set_boolean (value, self->priv->locked);
+                g_value_set_boolean (value, priv->locked);
                 break;
         default:
                 G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -361,8 +380,6 @@ gsm_store_class_init (GsmStoreClass *klass)
                                                                NULL,
                                                                FALSE,
                                                                G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
-
-        g_type_class_add_private (klass, sizeof (GsmStorePrivate));
 }
 
 static void
@@ -375,28 +392,30 @@ _destroy_object (GObject *object)
 static void
 gsm_store_init (GsmStore *store)
 {
+        GsmStorePrivate *priv;
+        priv = gsm_store_get_instance_private (store);
 
-        store->priv = GSM_STORE_GET_PRIVATE (store);
-
-        store->priv->objects = g_hash_table_new_full (g_str_hash,
-                                                      g_str_equal,
-                                                      g_free,
-                                                      (GDestroyNotify) _destroy_object);
+        priv->objects = g_hash_table_new_full (g_str_hash,
+                                               g_str_equal,
+                                               g_free,
+                                               (GDestroyNotify) _destroy_object);
 }
 
 static void
 gsm_store_finalize (GObject *object)
 {
         GsmStore *store;
+        GsmStorePrivate *priv;
 
         g_return_if_fail (object != NULL);
         g_return_if_fail (GSM_IS_STORE (object));
 
         store = GSM_STORE (object);
+        priv = gsm_store_get_instance_private (store);
 
-        g_return_if_fail (store->priv != NULL);
+        g_return_if_fail (priv != NULL);
 
-        g_hash_table_destroy (store->priv->objects);
+        g_hash_table_destroy (priv->objects);
 
         G_OBJECT_CLASS (gsm_store_parent_class)->finalize (object);
 }

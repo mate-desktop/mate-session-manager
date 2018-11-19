@@ -35,8 +35,6 @@
 #include "gsp-app.h"
 #include "gsp-app-manager.h"
 
-#define GSM_PROPERTIES_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_PROPERTIES_DIALOG, GsmPropertiesDialogPrivate))
-
 #define GTKBUILDER_FILE "session-properties.ui"
 
 #define CAPPLET_TREEVIEW_WIDGET_NAME      "session_properties_treeview"
@@ -51,8 +49,9 @@
 #define SPC_CONFIG_SCHEMA   "org.mate.session"
 #define SPC_AUTOSAVE_KEY    "auto-save-session"
 
-struct GsmPropertiesDialogPrivate
+struct _GsmPropertiesDialog
 {
+        GtkDialog          parent;
         GtkBuilder        *xml;
         GtkListStore      *list_store;
         GtkTreeModel      *tree_filter;
@@ -167,12 +166,12 @@ _app_changed (GsmPropertiesDialog *dialog,
 {
         GtkTreeIter iter;
 
-        if (!find_by_app (GTK_TREE_MODEL (dialog->priv->list_store),
+        if (!find_by_app (GTK_TREE_MODEL (dialog->list_store),
                           &iter, app)) {
                 return;
         }
 
-        _fill_iter_from_app (dialog->priv->list_store, &iter, app);
+        _fill_iter_from_app (dialog->list_store, &iter, app);
 }
 
 static void
@@ -181,8 +180,8 @@ append_app (GsmPropertiesDialog *dialog,
 {
         GtkTreeIter   iter;
 
-        gtk_list_store_append (dialog->priv->list_store, &iter);
-        _fill_iter_from_app (dialog->priv->list_store, &iter, app);
+        gtk_list_store_append (dialog->list_store, &iter);
+        _fill_iter_from_app (dialog->list_store, &iter, app);
 
         g_signal_connect_swapped (app, "changed",
                                   G_CALLBACK (_app_changed), dialog);
@@ -203,7 +202,7 @@ _app_removed (GsmPropertiesDialog *dialog,
 {
         GtkTreeIter iter;
 
-        if (!find_by_app (GTK_TREE_MODEL (dialog->priv->list_store),
+        if (!find_by_app (GTK_TREE_MODEL (dialog->list_store),
                           &iter, app)) {
                 return;
         }
@@ -211,7 +210,7 @@ _app_removed (GsmPropertiesDialog *dialog,
         g_signal_handlers_disconnect_by_func (app,
                                               _app_changed,
                                               dialog);
-        gtk_list_store_remove (dialog->priv->list_store, &iter);
+        gtk_list_store_remove (dialog->list_store, &iter);
 }
 
 static void
@@ -220,7 +219,7 @@ populate_model (GsmPropertiesDialog *dialog)
         GSList *apps;
         GSList *l;
 
-        apps = gsp_app_manager_get_apps (dialog->priv->manager);
+        apps = gsp_app_manager_get_apps (dialog->manager);
         for (l = apps; l != NULL; l = l->next) {
                 append_app (dialog, GSP_APP (l->data));
         }
@@ -235,8 +234,8 @@ on_selection_changed (GtkTreeSelection    *selection,
 
         sel = gtk_tree_selection_get_selected (selection, NULL, NULL);
 
-        gtk_widget_set_sensitive (dialog->priv->edit_button, sel);
-        gtk_widget_set_sensitive (dialog->priv->delete_button, sel);
+        gtk_widget_set_sensitive (dialog->edit_button, sel);
+        gtk_widget_set_sensitive (dialog->delete_button, sel);
 }
 
 static void
@@ -248,13 +247,13 @@ on_startup_enabled_toggled (GtkCellRendererToggle *cell_renderer,
         GspApp     *app;
         gboolean    active;
 
-        if (!gtk_tree_model_get_iter_from_string (GTK_TREE_MODEL (dialog->priv->tree_filter),
+        if (!gtk_tree_model_get_iter_from_string (GTK_TREE_MODEL (dialog->tree_filter),
                                                   &iter, path)) {
                 return;
         }
 
         app = NULL;
-        gtk_tree_model_get (GTK_TREE_MODEL (dialog->priv->tree_filter),
+        gtk_tree_model_get (GTK_TREE_MODEL (dialog->tree_filter),
                             &iter,
                             STORE_COL_APP, &app,
                             -1);
@@ -312,11 +311,11 @@ on_drag_begin (GtkWidget           *widget,
         GspApp      *app;
 
         gtk_tree_view_get_cursor (GTK_TREE_VIEW (widget), &path, NULL);
-        gtk_tree_model_get_iter (GTK_TREE_MODEL (dialog->priv->tree_filter),
+        gtk_tree_model_get_iter (GTK_TREE_MODEL (dialog->tree_filter),
                                  &iter, path);
         gtk_tree_path_free (path);
 
-        gtk_tree_model_get (GTK_TREE_MODEL (dialog->priv->tree_filter),
+        gtk_tree_model_get (GTK_TREE_MODEL (dialog->tree_filter),
                             &iter,
                             STORE_COL_APP, &app,
                             -1);
@@ -384,14 +383,14 @@ on_delete_app_clicked (GtkWidget           *widget,
         GtkTreeIter       iter;
         GspApp           *app;
 
-        selection = gtk_tree_view_get_selection (dialog->priv->treeview);
+        selection = gtk_tree_view_get_selection (dialog->treeview);
 
         if (!gtk_tree_selection_get_selected (selection, NULL, &iter)) {
                 return;
         }
 
         app = NULL;
-        gtk_tree_model_get (GTK_TREE_MODEL (dialog->priv->tree_filter),
+        gtk_tree_model_get (GTK_TREE_MODEL (dialog->tree_filter),
                             &iter,
                             STORE_COL_APP, &app,
                             -1);
@@ -410,14 +409,14 @@ on_edit_app_clicked (GtkWidget           *widget,
         GtkTreeIter       iter;
         GspApp           *app;
 
-        selection = gtk_tree_view_get_selection (dialog->priv->treeview);
+        selection = gtk_tree_view_get_selection (dialog->treeview);
 
         if (!gtk_tree_selection_get_selected (selection, NULL, &iter)) {
                 return;
         }
 
         app = NULL;
-        gtk_tree_model_get (GTK_TREE_MODEL (dialog->priv->tree_filter),
+        gtk_tree_model_get (GTK_TREE_MODEL (dialog->tree_filter),
                             &iter,
                             STORE_COL_APP, &app,
                             -1);
@@ -478,24 +477,24 @@ setup_dialog (GsmPropertiesDialog *dialog)
                                 "gtk-close", GTK_RESPONSE_CLOSE,
                                 NULL);
 
-        dialog->priv->list_store = gtk_list_store_new (NUMBER_OF_COLUMNS,
-                                                       G_TYPE_BOOLEAN,
-                                                       G_TYPE_BOOLEAN,
-                                                       G_TYPE_ICON,
-                                                       G_TYPE_STRING,
-                                                       G_TYPE_OBJECT,
-                                                       G_TYPE_STRING);
-        tree_filter = gtk_tree_model_filter_new (GTK_TREE_MODEL (dialog->priv->list_store),
+        dialog->list_store = gtk_list_store_new (NUMBER_OF_COLUMNS,
+                                                 G_TYPE_BOOLEAN,
+                                                 G_TYPE_BOOLEAN,
+                                                 G_TYPE_ICON,
+                                                 G_TYPE_STRING,
+                                                 G_TYPE_OBJECT,
+                                                 G_TYPE_STRING);
+        tree_filter = gtk_tree_model_filter_new (GTK_TREE_MODEL (dialog->list_store),
                                                  NULL);
-        g_object_unref (dialog->priv->list_store);
-        dialog->priv->tree_filter = tree_filter;
+        g_object_unref (dialog->list_store);
+        dialog->tree_filter = tree_filter;
 
         gtk_tree_model_filter_set_visible_column (GTK_TREE_MODEL_FILTER (tree_filter),
                                                   STORE_COL_VISIBLE);
 
-        treeview = GTK_TREE_VIEW (gtk_builder_get_object (dialog->priv->xml,
+        treeview = GTK_TREE_VIEW (gtk_builder_get_object (dialog->xml,
                                                           CAPPLET_TREEVIEW_WIDGET_NAME));
-        dialog->priv->treeview = treeview;
+        dialog->treeview = treeview;
 
         gtk_tree_view_set_model (treeview, tree_filter);
         g_object_unref (tree_filter);
@@ -590,56 +589,56 @@ setup_dialog (GsmPropertiesDialog *dialog)
                           G_CALLBACK (on_drag_data_received),
                           dialog);
 
-        gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (dialog->priv->list_store),
+        gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (dialog->list_store),
                                               STORE_COL_DESCRIPTION,
                                               GTK_SORT_ASCENDING);
 
 
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->priv->xml,
+        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                      CAPPLET_ADD_WIDGET_NAME));
-        dialog->priv->add_button = button;
+        dialog->add_button = button;
         g_signal_connect (button,
                           "clicked",
                           G_CALLBACK (on_add_app_clicked),
                           dialog);
 
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->priv->xml,
+        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                      CAPPLET_DELETE_WIDGET_NAME));
-        dialog->priv->delete_button = button;
+        dialog->delete_button = button;
         g_signal_connect (button,
                           "clicked",
                           G_CALLBACK (on_delete_app_clicked),
                           dialog);
 
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->priv->xml,
+        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                      CAPPLET_EDIT_WIDGET_NAME));
-        dialog->priv->edit_button = button;
+        dialog->edit_button = button;
         g_signal_connect (button,
                           "clicked",
                           G_CALLBACK (on_edit_app_clicked),
                           dialog);
 
 
-        dialog->priv->settings = g_settings_new (SPC_CONFIG_SCHEMA);
+        dialog->settings = g_settings_new (SPC_CONFIG_SCHEMA);
 
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->priv->xml,
+        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                      CAPPLET_REMEMBER_WIDGET_NAME));
 
-        g_settings_bind (dialog->priv->settings, SPC_AUTOSAVE_KEY,
+        g_settings_bind (dialog->settings, SPC_AUTOSAVE_KEY,
                          button, "active", G_SETTINGS_BIND_DEFAULT);
 
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->priv->xml,
+        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                      CAPPLET_SAVE_WIDGET_NAME));
         g_signal_connect (button,
                           "clicked",
                           G_CALLBACK (on_save_session_clicked),
                           dialog);
 
-        dialog->priv->manager = gsp_app_manager_get ();
-        gsp_app_manager_fill (dialog->priv->manager);
-        g_signal_connect_swapped (dialog->priv->manager, "added",
+        dialog->manager = gsp_app_manager_get ();
+        gsp_app_manager_fill (dialog->manager);
+        g_signal_connect_swapped (dialog->manager, "added",
                                   G_CALLBACK (_app_added), dialog);
-        g_signal_connect_swapped (dialog->priv->manager, "removed",
+        g_signal_connect_swapped (dialog->manager, "removed",
                                   G_CALLBACK (_app_removed), dialog);
 
         populate_model (dialog);
@@ -653,8 +652,8 @@ gsm_properties_dialog_constructor (GType                  type,
         GsmPropertiesDialog *dialog;
 
         dialog = GSM_PROPERTIES_DIALOG (G_OBJECT_CLASS (gsm_properties_dialog_parent_class)->constructor (type,
-                                                                                                                  n_construct_properties,
-                                                                                                                  construct_properties));
+                                                                                                          n_construct_properties,
+                                                                                                          construct_properties));
 
         setup_dialog (dialog);
 
@@ -671,14 +670,14 @@ gsm_properties_dialog_dispose (GObject *object)
 
         dialog = GSM_PROPERTIES_DIALOG (object);
 
-        if (dialog->priv->xml != NULL) {
-                g_object_unref (dialog->priv->xml);
-                dialog->priv->xml = NULL;
+        if (dialog->xml != NULL) {
+                g_object_unref (dialog->xml);
+                dialog->xml = NULL;
         }
 
-        if (dialog->priv->settings != NULL) {
-                g_object_unref (dialog->priv->settings);
-                dialog->priv->settings = NULL;
+        if (dialog->settings != NULL) {
+                g_object_unref (dialog->settings);
+                dialog->settings = NULL;
         }
 
         G_OBJECT_CLASS (gsm_properties_dialog_parent_class)->dispose (object);
@@ -686,9 +685,9 @@ gsm_properties_dialog_dispose (GObject *object)
         /* it's important to do this after chaining to the parent dispose
          * method because we want to make sure the treeview has been disposed
          * and removed all its references to GspApp objects */
-        if (dialog->priv->manager != NULL) {
-                g_object_unref (dialog->priv->manager);
-                dialog->priv->manager = NULL;
+        if (dialog->manager != NULL) {
+                g_object_unref (dialog->manager);
+                dialog->manager = NULL;
         }
 }
 
@@ -700,8 +699,6 @@ gsm_properties_dialog_class_init (GsmPropertiesDialogClass *klass)
         object_class->constructor = gsm_properties_dialog_constructor;
         object_class->dispose = gsm_properties_dialog_dispose;
         object_class->finalize = gsm_properties_dialog_finalize;
-
-        g_type_class_add_private (klass, sizeof (GsmPropertiesDialogPrivate));
 }
 
 static void
@@ -711,13 +708,11 @@ gsm_properties_dialog_init (GsmPropertiesDialog *dialog)
         GtkWidget   *widget;
         GError      *error;
 
-        dialog->priv = GSM_PROPERTIES_DIALOG_GET_PRIVATE (dialog);
-
-        dialog->priv->xml = gtk_builder_new ();
-        gtk_builder_set_translation_domain (dialog->priv->xml, GETTEXT_PACKAGE);
+        dialog->xml = gtk_builder_new ();
+        gtk_builder_set_translation_domain (dialog->xml, GETTEXT_PACKAGE);
 
         error = NULL;
-        if (!gtk_builder_add_from_file (dialog->priv->xml,
+        if (!gtk_builder_add_from_file (dialog->xml,
                                         GTKBUILDER_DIR "/" GTKBUILDER_FILE,
                                         &error)) {
                 if (error) {
@@ -730,7 +725,7 @@ gsm_properties_dialog_init (GsmPropertiesDialog *dialog)
         }
 
         content_area = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
-        widget = GTK_WIDGET (gtk_builder_get_object (dialog->priv->xml,
+        widget = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                      "main-notebook"));
         gtk_box_pack_start (GTK_BOX (content_area), widget, TRUE, TRUE, 0);
 
@@ -744,14 +739,8 @@ gsm_properties_dialog_init (GsmPropertiesDialog *dialog)
 static void
 gsm_properties_dialog_finalize (GObject *object)
 {
-        GsmPropertiesDialog *dialog;
-
         g_return_if_fail (object != NULL);
         g_return_if_fail (GSM_IS_PROPERTIES_DIALOG (object));
-
-        dialog = GSM_PROPERTIES_DIALOG (object);
-
-        g_return_if_fail (dialog->priv != NULL);
 
         G_OBJECT_CLASS (gsm_properties_dialog_parent_class)->finalize (object);
 }
