@@ -2262,7 +2262,7 @@ _handle_client_end_session_response (GsmManager *manager,
                          * wanting to be last again and again. The phase
                          * timeout will take care of this issue. */
                         priv->next_query_clients = g_slist_prepend (priv->next_query_clients,
-                                                                             client);
+                                                                    client);
                 }
 
                 /* we can continue to the next step if all clients have replied
