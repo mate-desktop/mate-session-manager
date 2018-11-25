@@ -26,9 +26,9 @@
 #include "eggsmclient-private.h"
 
 static void egg_sm_client_debug_handler (const char *log_domain,
-					 GLogLevelFlags log_level,
-					 const char *message,
-					 gpointer user_data);
+                                         GLogLevelFlags log_level,
+                                         const char *message,
+                                         gpointer user_data);
 
 enum {
   SAVE_STATE,
@@ -178,9 +178,9 @@ static char *sm_config_prefix = NULL;
 
 static gboolean
 sm_client_post_parse_func (GOptionContext  *context,
-			   GOptionGroup    *group,
-			   gpointer         data,
-			   GError         **error)
+                           GOptionGroup    *group,
+                           gpointer         data,
+                           GError         **error)
 {
   EggSMClient *client = egg_sm_client_get ();
 
@@ -242,12 +242,12 @@ egg_sm_client_get_option_group (void)
 
   /* Use our own debug handler for the "EggSMClient" domain. */
   g_log_set_handler (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,
-		     egg_sm_client_debug_handler, NULL);
+                     egg_sm_client_debug_handler, NULL);
 
   group = g_option_group_new ("sm-client",
-			      _("Session management options:"),
-			      _("Show session management options"),
-			      NULL, NULL);
+                              _("Session management options:"),
+                              _("Show session management options"),
+                              NULL, NULL);
   g_option_group_add_entries (group, entries);
   g_option_group_set_parse_hooks (group, NULL, sm_client_post_parse_func);
 
@@ -312,35 +312,35 @@ EggSMClient *
 egg_sm_client_get (void)
 {
   if (!global_client)
+  {
+    if (global_client_mode != EGG_SM_CLIENT_MODE_DISABLED &&
+        !sm_client_disable)
     {
-      if (global_client_mode != EGG_SM_CLIENT_MODE_DISABLED &&
-	  !sm_client_disable)
-	{
 #if defined (GDK_WINDOWING_WIN32)
-	  global_client = egg_sm_client_win32_new ();
+      global_client = egg_sm_client_win32_new ();
 #elif defined (GDK_WINDOWING_QUARTZ)
-	  global_client = egg_sm_client_osx_new ();
+      global_client = egg_sm_client_osx_new ();
 #else
-	  /* If both D-Bus and XSMP are compiled in, try XSMP first
-	   * (since it supports state saving) and fall back to D-Bus
-	   * if XSMP isn't available.
-	   */
+      /* If both D-Bus and XSMP are compiled in, try XSMP first
+       * (since it supports state saving) and fall back to D-Bus
+       * if XSMP isn't available.
+       */
 # ifdef EGG_SM_CLIENT_BACKEND_XSMP
-	  global_client = egg_sm_client_xsmp_new ();
+      global_client = egg_sm_client_xsmp_new ();
 # endif
 # ifdef EGG_SM_CLIENT_BACKEND_DBUS
-	  if (!global_client)
-	    global_client = egg_sm_client_dbus_new ();
+      if (!global_client)
+        global_client = egg_sm_client_dbus_new ();
 # endif
 #endif
-	}
-
-      /* Fallback: create a dummy client, so that callers don't have
-       * to worry about a %NULL return value.
-       */
-      if (!global_client)
-	global_client = g_object_new (EGG_TYPE_SM_CLIENT, NULL);
     }
+
+    /* Fallback: create a dummy client, so that callers don't have
+     * to worry about a %NULL return value.
+     */
+    if (!global_client)
+      global_client = g_object_new (EGG_TYPE_SM_CLIENT, NULL);
+  }
 
   return global_client;
 }
@@ -407,7 +407,7 @@ egg_sm_client_get_state_file (EggSMClient *client)
   if (!g_key_file_load_from_file (priv->state_file, state_file_path, 0, &err))
     {
       g_warning ("Could not load SM state file '%s': %s",
-		 sm_client_state_file, err->message);
+                 sm_client_state_file, err->message);
       g_clear_error (&err);
       g_key_file_free (priv->state_file);
       priv->state_file = NULL;
@@ -432,8 +432,8 @@ egg_sm_client_get_state_file (EggSMClient *client)
  **/
 void
 egg_sm_client_set_restart_command (EggSMClient  *client,
-				   int           argc,
-				   const char  **argv)
+                                   int           argc,
+                                   const char  **argv)
 {
   g_return_if_fail (EGG_IS_SM_CLIENT (client));
 
@@ -461,7 +461,7 @@ egg_sm_client_set_restart_command (EggSMClient  *client,
  **/
 void
 egg_sm_client_will_quit (EggSMClient *client,
-			 gboolean     will_quit)
+                         gboolean     will_quit)
 {
   g_return_if_fail (EGG_IS_SM_CLIENT (client));
 
@@ -487,7 +487,7 @@ egg_sm_client_will_quit (EggSMClient *client,
  **/
 gboolean
 egg_sm_client_end_session (EggSMClientEndStyle  style,
-			   gboolean             request_confirmation)
+                           gboolean             request_confirmation)
 {
   EggSMClient *client = egg_sm_client_get ();
 
@@ -496,7 +496,7 @@ egg_sm_client_end_session (EggSMClientEndStyle  style,
   if (EGG_SM_CLIENT_GET_CLASS (client)->end_session)
     {
       return EGG_SM_CLIENT_GET_CLASS (client)->end_session (client, style,
-							    request_confirmation);
+                                                            request_confirmation);
     }
   else
     return FALSE;
@@ -572,9 +572,9 @@ egg_sm_client_quit (EggSMClient *client)
 
 static void
 egg_sm_client_debug_handler (const char *log_domain,
-			     GLogLevelFlags log_level,
-			     const char *message,
-			     gpointer user_data)
+                             GLogLevelFlags log_level,
+                             const char *message,
+                             gpointer user_data)
 {
   static int debug = -1;
 

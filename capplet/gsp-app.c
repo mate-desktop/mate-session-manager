@@ -289,8 +289,8 @@ _gsp_app_update_description (GspApp *app)
 
         g_free (priv->description);
         priv->description = g_markup_printf_escaped ("<b>%s</b>\n%s",
-                                                          primary,
-                                                          secondary);
+                                                     primary,
+                                                     secondary);
 }
 
 /*
@@ -525,13 +525,13 @@ _gsp_app_queue_save (GspApp *app)
                 }
 
                 priv->path = g_build_filename (g_get_user_config_dir (),
-                                                    "autostart",
-                                                    priv->basename, NULL);
+                                               "autostart",
+                                               priv->basename, NULL);
         }
 
         priv->save_timeout = g_timeout_add_seconds (GSP_APP_SAVE_DELAY,
-                                                         _gsp_app_save,
-                                                         app);
+                                                    _gsp_app_save,
+                                                    app);
 }
 
 /*
@@ -916,18 +916,18 @@ gsp_app_new (const char   *path,
         priv->path = g_strdup (path);
 
         priv->hidden = gsp_key_file_get_boolean (keyfile,
-                                                      G_KEY_FILE_DESKTOP_KEY_HIDDEN,
-                                                      FALSE);
+                                                 G_KEY_FILE_DESKTOP_KEY_HIDDEN,
+                                                 FALSE);
         priv->enabled = gsp_key_file_get_boolean (keyfile,
-                                                       GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
-                                                       TRUE);
+                                                  GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
+                                                  TRUE);
 
         priv->name = gsp_key_file_get_locale_string (keyfile,
-                                                          G_KEY_FILE_DESKTOP_KEY_NAME);
+                                                     G_KEY_FILE_DESKTOP_KEY_NAME);
         priv->exec = gsp_key_file_get_string (keyfile,
-                                                   G_KEY_FILE_DESKTOP_KEY_EXEC);
+                                              G_KEY_FILE_DESKTOP_KEY_EXEC);
         priv->comment = gsp_key_file_get_locale_string (keyfile,
-                                                             G_KEY_FILE_DESKTOP_KEY_COMMENT);
+                                                        G_KEY_FILE_DESKTOP_KEY_COMMENT);
 
         if (gsm_util_text_is_blank (priv->name)) {
                 g_free (priv->name);
@@ -935,7 +935,7 @@ gsp_app_new (const char   *path,
         }
 
         priv->icon = gsp_key_file_get_locale_string (keyfile,
-                                                          G_KEY_FILE_DESKTOP_KEY_ICON);
+                                                     G_KEY_FILE_DESKTOP_KEY_ICON);
 
         if (priv->icon) {
                 /* look at icon and see if it's a themed icon or not */
@@ -1061,8 +1061,8 @@ gsp_app_create (const char *name,
 
         priv->basename = basename;
         priv->path = g_build_filename (g_get_user_config_dir (),
-                                            "autostart",
-                                            priv->basename, NULL);
+                                       "autostart",
+                                       priv->basename, NULL);
 
         priv->hidden = FALSE;
         priv->enabled = TRUE;

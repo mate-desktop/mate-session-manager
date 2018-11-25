@@ -387,9 +387,9 @@ static void
 gs_idle_monitor_init (GSIdleMonitor *monitor)
 {
         monitor->watches = g_hash_table_new_full (NULL,
-                                                        NULL,
-                                                        NULL,
-                                                        (GDestroyNotify)idle_monitor_watch_free);
+                                                  NULL,
+                                                  NULL,
+                                                  (GDestroyNotify)idle_monitor_watch_free);
 
         monitor->counter = None;
 }

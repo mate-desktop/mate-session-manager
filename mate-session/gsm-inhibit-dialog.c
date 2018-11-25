@@ -901,10 +901,10 @@ setup_dialog (GsmInhibitDialog *dialog)
                           dialog);
 
         dialog->list_store = gtk_list_store_new (NUMBER_OF_COLUMNS,
-                                                       GDK_TYPE_PIXBUF,
-                                                       G_TYPE_STRING,
-                                                       G_TYPE_STRING,
-                                                       G_TYPE_STRING);
+                                                 GDK_TYPE_PIXBUF,
+                                                 G_TYPE_STRING,
+                                                 G_TYPE_STRING,
+                                                 G_TYPE_STRING);
 
         treeview = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                        "inhibitors-treeview"));
@@ -952,8 +952,8 @@ gsm_inhibit_dialog_constructor (GType                  type,
         GdkDisplay *gdkdisplay;
 #endif /* HAVE_XRENDER */
         dialog = GSM_INHIBIT_DIALOG (G_OBJECT_CLASS (gsm_inhibit_dialog_parent_class)->constructor (type,
-                                                                                                                  n_construct_properties,
-                                                                                                                  construct_properties));
+                                                                                                    n_construct_properties,
+                                                                                                    construct_properties));
 
 #ifdef HAVE_XRENDER
         gdkdisplay = gdk_display_get_default ();

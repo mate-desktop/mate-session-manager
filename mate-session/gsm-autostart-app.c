@@ -480,23 +480,23 @@ load_desktop_file (GsmAutostartApp *app)
                                         NULL);
         if (res) {
                 priv->autorestart = egg_desktop_file_get_boolean (priv->desktop_file,
-                                                                       GSM_AUTOSTART_APP_AUTORESTART_KEY,
-                                                                       NULL);
+                                                                  GSM_AUTOSTART_APP_AUTORESTART_KEY,
+                                                                  NULL);
         } else {
                 priv->autorestart = FALSE;
         }
 
         g_free (priv->condition_string);
         priv->condition_string = egg_desktop_file_get_string (priv->desktop_file,
-                                                                   "AutostartCondition",
-                                                                   NULL);
+                                                              "AutostartCondition",
+                                                              NULL);
         setup_condition_monitor (app);
 
         if (phase == GSM_MANAGER_PHASE_APPLICATION) {
                 /* Only accept an autostart delay for the application phase */
                 priv->autostart_delay = egg_desktop_file_get_integer (priv->desktop_file,
-                                                                           GSM_AUTOSTART_APP_DELAY_KEY,
-                                                                           NULL);
+                                                                      GSM_AUTOSTART_APP_DELAY_KEY,
+                                                                      NULL);
                 if (priv->autostart_delay < 0) {
                         g_warning ("Invalid autostart delay of %d for %s", priv->autostart_delay,
                                    gsm_app_peek_id (GSM_APP (app)));
@@ -891,8 +891,8 @@ autostart_app_start_spawn (GsmAutostartApp *app,
         if (success) {
                 g_debug ("GsmAutostartApp: started pid:%d", priv->pid);
                 priv->child_watch_id = g_child_watch_add (priv->pid,
-                                                               (GChildWatchFunc)app_exited,
-                                                               app);
+                                                          (GChildWatchFunc)app_exited,
+                                                          app);
         } else {
                 g_set_error (error,
                              GSM_APP_ERROR,
@@ -969,9 +969,9 @@ autostart_app_start_activate (GsmAutostartApp  *app,
                                                  NULL);
 
         priv->proxy = dbus_g_proxy_new_for_name (bus,
-                                                      name,
-                                                      path,
-                                                      GSM_SESSION_CLIENT_DBUS_INTERFACE);
+                                                 name,
+                                                 path,
+                                                 GSM_SESSION_CLIENT_DBUS_INTERFACE);
         if (priv->proxy == NULL) {
                 g_set_error (error,
                              GSM_APP_ERROR,
@@ -981,12 +981,12 @@ autostart_app_start_activate (GsmAutostartApp  *app,
         }
 
         priv->proxy_call = dbus_g_proxy_begin_call (priv->proxy,
-                                                         "Start",
-                                                         (DBusGProxyCallNotify)start_notify,
-                                                         app,
-                                                         NULL,
-                                                         G_TYPE_STRING, arguments,
-                                                         G_TYPE_INVALID);
+                                                    "Start",
+                                                    (DBusGProxyCallNotify)start_notify,
+                                                    app,
+                                                    NULL,
+                                                    G_TYPE_STRING, arguments,
+                                                    G_TYPE_INVALID);
         if (priv->proxy_call == NULL) {
                 g_object_unref (priv->proxy);
                 priv->proxy = NULL;

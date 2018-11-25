@@ -247,8 +247,8 @@ gsm_app_dialog_constructor (GType                  type,
         GsmAppDialog *dialog;
 
         dialog = GSM_APP_DIALOG (G_OBJECT_CLASS (gsm_app_dialog_parent_class)->constructor (type,
-                                                                                                                  n_construct_app,
-                                                                                                                  construct_app));
+                                                                                            n_construct_app,
+                                                                                            construct_app));
 
         setup_dialog (dialog);
 

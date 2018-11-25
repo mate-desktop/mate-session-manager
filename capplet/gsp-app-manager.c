@@ -563,7 +563,7 @@ gsp_app_manager_add (GspAppManager *manager,
         priv = gsp_app_manager_get_instance_private (manager);
 
         priv->apps = g_slist_prepend (priv->apps,
-                                               g_object_ref (app));
+                                      g_object_ref (app));
         g_signal_connect_swapped (app, "removed",
                                   G_CALLBACK (_gsp_app_manager_app_removed),
                                   manager);

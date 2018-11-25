@@ -396,9 +396,9 @@ gsm_store_init (GsmStore *store)
         priv = gsm_store_get_instance_private (store);
 
         priv->objects = g_hash_table_new_full (g_str_hash,
-                                                      g_str_equal,
-                                                      g_free,
-                                                      (GDestroyNotify) _destroy_object);
+                                               g_str_equal,
+                                               g_free,
+                                               (GDestroyNotify) _destroy_object);
 }
 
 static void

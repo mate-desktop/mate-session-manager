@@ -63,7 +63,7 @@
 
 struct _GsmXsmpServer
 {
-        GObject            parent;
+        GObject         parent;
         GsmStore       *client_store;
 
         IceListenObj   *xsmp_sockets;

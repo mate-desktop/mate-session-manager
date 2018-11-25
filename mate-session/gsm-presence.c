@@ -172,9 +172,9 @@ reset_idle_watch (GsmPresence  *presence)
                 g_debug ("GsmPresence: adding idle watch");
 
                 priv->idle_watch_id = gs_idle_monitor_add_watch (priv->idle_monitor,
-                                                                           priv->idle_timeout,
-                                                                           (GSIdleMonitorWatchFunc)on_idle_timeout,
-                                                                           presence);
+                                                                 priv->idle_timeout,
+                                                                 (GSIdleMonitorWatchFunc)on_idle_timeout,
+                                                                 presence);
         }
 }
 
@@ -236,10 +236,10 @@ on_bus_name_owner_changed (DBusGProxy  *bus_proxy,
                 /* service added */
                 error = NULL;
                 priv->screensaver_proxy = dbus_g_proxy_new_for_name_owner (priv->bus_connection,
-                                                                                     GS_NAME,
-                                                                                     GS_PATH,
-                                                                                     GS_INTERFACE,
-                                                                                     &error);
+                                                                           GS_NAME,
+                                                                           GS_PATH,
+                                                                           GS_INTERFACE,
+                                                                           &error);
                 if (priv->screensaver_proxy != NULL) {
                         g_signal_connect (priv->screensaver_proxy,
                                           "destroy",
@@ -294,8 +294,8 @@ gsm_presence_constructor (GType                  type,
         GsmPresencePrivate *priv;
 
         presence = GSM_PRESENCE (G_OBJECT_CLASS (gsm_presence_parent_class)->constructor (type,
-                                                                                             n_construct_properties,
-                                                                                             construct_properties));
+                                                                                          n_construct_properties,
+                                                                                          construct_properties));
         priv = gsm_presence_get_instance_private (presence);
 
         res = register_presence (presence);
@@ -304,9 +304,9 @@ gsm_presence_constructor (GType                  type,
         }
 
         priv->bus_proxy = dbus_g_proxy_new_for_name (priv->bus_connection,
-                                                               DBUS_SERVICE_DBUS,
-                                                               DBUS_PATH_DBUS,
-                                                               DBUS_INTERFACE_DBUS);
+                                                     DBUS_SERVICE_DBUS,
+                                                     DBUS_PATH_DBUS,
+                                                     DBUS_INTERFACE_DBUS);
         if (priv->bus_proxy != NULL) {
                 dbus_g_proxy_add_signal (priv->bus_proxy,
                                          "NameOwnerChanged",

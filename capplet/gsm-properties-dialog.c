@@ -478,12 +478,12 @@ setup_dialog (GsmPropertiesDialog *dialog)
                                 NULL);
 
         dialog->list_store = gtk_list_store_new (NUMBER_OF_COLUMNS,
-                                                       G_TYPE_BOOLEAN,
-                                                       G_TYPE_BOOLEAN,
-                                                       G_TYPE_ICON,
-                                                       G_TYPE_STRING,
-                                                       G_TYPE_OBJECT,
-                                                       G_TYPE_STRING);
+                                                 G_TYPE_BOOLEAN,
+                                                 G_TYPE_BOOLEAN,
+                                                 G_TYPE_ICON,
+                                                 G_TYPE_STRING,
+                                                 G_TYPE_OBJECT,
+                                                 G_TYPE_STRING);
         tree_filter = gtk_tree_model_filter_new (GTK_TREE_MODEL (dialog->list_store),
                                                  NULL);
         g_object_unref (dialog->list_store);
@@ -652,8 +652,8 @@ gsm_properties_dialog_constructor (GType                  type,
         GsmPropertiesDialog *dialog;
 
         dialog = GSM_PROPERTIES_DIALOG (G_OBJECT_CLASS (gsm_properties_dialog_parent_class)->constructor (type,
-                                                                                                                  n_construct_properties,
-                                                                                                                  construct_properties));
+                                                                                                          n_construct_properties,
+                                                                                                          construct_properties));
 
         setup_dialog (dialog);
 

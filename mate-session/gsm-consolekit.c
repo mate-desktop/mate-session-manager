@@ -185,7 +185,7 @@ gsm_consolekit_ensure_ck_connection (GsmConsolekit  *manager,
                 DBusConnection *connection;
 
                 priv->dbus_connection = dbus_g_bus_get (DBUS_BUS_SYSTEM,
-                                                                 &connection_error);
+                                                        &connection_error);
 
                 if (priv->dbus_connection == NULL) {
                         g_propagate_error (error, connection_error);

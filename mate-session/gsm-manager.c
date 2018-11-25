@@ -764,8 +764,8 @@ do_phase_startup (GsmManager *manager)
         if (priv->pending_apps != NULL) {
                 if (priv->phase < GSM_MANAGER_PHASE_APPLICATION) {
                         priv->phase_timeout_id = g_timeout_add_seconds (GSM_MANAGER_PHASE_TIMEOUT,
-                                                                                 (GSourceFunc)on_phase_timeout,
-                                                                                 manager);
+                                                                        (GSourceFunc)on_phase_timeout,
+                                                                        manager);
                 }
         } else {
                 end_phase (manager);
@@ -797,7 +797,7 @@ _client_end_session (GsmClient            *client,
         } else {
                 g_debug ("GsmManager: adding client to end-session clients: %s", gsm_client_peek_id (client));
                 priv->query_clients = g_slist_prepend (priv->query_clients,
-                                                                      client);
+                                                       client);
         }
 
         return FALSE;
@@ -835,8 +835,8 @@ do_phase_end_session (GsmManager *manager)
 
         if (gsm_store_size (priv->clients) > 0) {
                 priv->phase_timeout_id = g_timeout_add_seconds (GSM_MANAGER_PHASE_TIMEOUT,
-                                                                         (GSourceFunc)on_phase_timeout,
-                                                                         manager);
+                                                                (GSourceFunc)on_phase_timeout,
+                                                                manager);
 
                 gsm_store_foreach (priv->clients,
                                    (GsmStoreFunc)_client_end_session_helper,
@@ -908,8 +908,8 @@ do_phase_exit (GsmManager *manager)
         priv = gsm_manager_get_instance_private (manager);
         if (gsm_store_size (priv->clients) > 0) {
                 priv->phase_timeout_id = g_timeout_add_seconds (GSM_MANAGER_EXIT_PHASE_TIMEOUT,
-                                                                         (GSourceFunc)on_phase_timeout,
-                                                                         manager);
+                                                                (GSourceFunc)on_phase_timeout,
+                                                                manager);
 
                 gsm_store_foreach (priv->clients,
                                    (GsmStoreFunc)_client_stop,
@@ -938,8 +938,7 @@ _client_query_end_session (const char           *id,
                 /* FIXME: what should we do if we can't communicate with client? */
         } else {
                 g_debug ("GsmManager: adding client to query clients: %s", gsm_client_peek_id (client));
-                priv->query_clients = g_slist_prepend (priv->query_clients,
-                                                                      client);
+                priv->query_clients = g_slist_prepend (priv->query_clients, client);
         }
 
         return FALSE;
@@ -1130,8 +1129,8 @@ manager_switch_user (GsmManager *manager)
         else if (process_is_running("gdm") || process_is_running("gdm3") || process_is_running("gdm-binary")) {
                 /* GDM */
                 command = g_strdup_printf ("%s %s",
-                                               GDM_FLEXISERVER_COMMAND,
-                                               GDM_FLEXISERVER_ARGS);
+                                           GDM_FLEXISERVER_COMMAND,
+                                           GDM_FLEXISERVER_ARGS);
                 
                 error = NULL;
                 res = g_spawn_command_line_sync (command, NULL, NULL, NULL, &error);
@@ -1395,8 +1394,8 @@ query_end_session_complete (GsmManager *manager)
          * inhibit dialog; the action, if the button is clicked, will be to
          * simply go to the next phase. */
         priv->inhibit_dialog = gsm_inhibit_dialog_new (priv->inhibitors,
-                                                                priv->clients,
-                                                                action);
+                                                       priv->clients,
+                                                       action);
 
         g_signal_connect (priv->inhibit_dialog,
                           "response",
@@ -1988,9 +1987,9 @@ register_manager (GsmManager *manager)
         }
 
         priv->bus_proxy = dbus_g_proxy_new_for_name (priv->connection,
-                                                              DBUS_SERVICE_DBUS,
-                                                              DBUS_PATH_DBUS,
-                                                              DBUS_INTERFACE_DBUS);
+                                                     DBUS_SERVICE_DBUS,
+                                                     DBUS_PATH_DBUS,
+                                                     DBUS_INTERFACE_DBUS);
         dbus_g_proxy_add_signal (priv->bus_proxy,
                                  "NameOwnerChanged",
                                  G_TYPE_STRING,
@@ -3185,8 +3184,8 @@ request_suspend (GsmManager *manager)
         }
 
         priv->inhibit_dialog = gsm_inhibit_dialog_new (priv->inhibitors,
-                                                                priv->clients,
-                                                                GSM_LOGOUT_ACTION_SLEEP);
+                                                       priv->clients,
+                                                       GSM_LOGOUT_ACTION_SLEEP);
 
         g_signal_connect (priv->inhibit_dialog,
                           "response",
@@ -3216,8 +3215,8 @@ request_hibernate (GsmManager *manager)
         }
 
         priv->inhibit_dialog = gsm_inhibit_dialog_new (priv->inhibitors,
-                                                                priv->clients,
-                                                                GSM_LOGOUT_ACTION_HIBERNATE);
+                                                       priv->clients,
+                                                       GSM_LOGOUT_ACTION_HIBERNATE);
 
         g_signal_connect (priv->inhibit_dialog,
                           "response",
@@ -3270,8 +3269,8 @@ request_switch_user (GsmManager *manager)
         }
 
         priv->inhibit_dialog = gsm_inhibit_dialog_new (priv->inhibitors,
-                                                                priv->clients,
-                                                                GSM_LOGOUT_ACTION_SWITCH_USER);
+                                                       priv->clients,
+                                                       GSM_LOGOUT_ACTION_SWITCH_USER);
 
         g_signal_connect (priv->inhibit_dialog,
                           "response",

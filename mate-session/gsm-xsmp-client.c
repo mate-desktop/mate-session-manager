@@ -151,10 +151,10 @@ set_description (GsmXSMPClient *client)
         g_free (priv->description);
         if (prop) {
                 priv->description = g_strdup_printf ("%p [%.*s %s]",
-                                                             client,
-                                                             prop->vals[0].length,
-                                                             (char *)prop->vals[0].value,
-                                                             id);
+                                                     client,
+                                                     prop->vals[0].length,
+                                                     (char *)prop->vals[0].value,
+                                                     id);
         } else if (id != NULL) {
                 priv->description = g_strdup_printf ("%p [%s]", client, id);
         } else {
@@ -176,9 +176,9 @@ setup_connection (GsmXSMPClient *client)
         fcntl (fd, F_SETFD, fcntl (fd, F_GETFD, 0) | FD_CLOEXEC);
         channel = g_io_channel_unix_new (fd);
         priv->watch_id = g_io_add_watch (channel,
-                                                 G_IO_IN | G_IO_ERR,
-                                                 (GIOFunc)client_iochannel_watch,
-                                                 client);
+                                         G_IO_IN | G_IO_ERR,
+                                         (GIOFunc)client_iochannel_watch,
+                                         client);
         g_io_channel_unref (channel);
 
         set_description (client);
@@ -553,9 +553,9 @@ get_desktop_file_path (GsmXSMPClient *client)
          * try to find the desktop file from its program name */
         prop = find_property (client, SmProgram, NULL);
 
-	if (!prop) {
-	        goto out;
-	}
+        if (!prop) {
+                goto out;
+        }
 
         program_name = prop->vals[0].value;
 
@@ -593,7 +593,7 @@ set_desktop_file_keys_from_client (GsmClient *client,
              * properties. But it could still be that SmProgram is not set.
              */
             name = _("Remembered Application");
-	}
+        }
 
         comment = g_strdup_printf ("Client %s which was automatically saved",
                                    gsm_client_peek_startup_id (client));
@@ -832,7 +832,7 @@ xsmp_get_app_name (GsmClient *client)
 
         prop = find_property (GSM_XSMP_CLIENT (client), SmProgram, NULL);
         if (prop) {
-	        name = prop_to_command (prop);
+                name = prop_to_command (prop);
         }
 
         return name;
@@ -1310,10 +1310,10 @@ save_yourself_done_callback (SmsConn   conn,
                  priv->description,
                  success ? "True" : "False");
 
-	if (priv->current_save_yourself != -1) {
-		SmsSaveComplete (priv->conn);
-		priv->current_save_yourself = -1;
-	}
+        if (priv->current_save_yourself != -1) {
+                SmsSaveComplete (priv->conn);
+                priv->current_save_yourself = -1;
+        }
 
         /* If success is false then the application couldn't save data. Nothing
          * the session manager can do about, though. FIXME: we could display a
