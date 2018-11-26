@@ -2717,7 +2717,7 @@ on_presence_status_changed (GsmPresence  *presence,
 static void
 gsm_manager_init (GsmManager *manager)
 {
-        const char * const *schemas;
+        gchar **schemas = NULL;
         gboolean schema_exists;
         guint i;
         GsmManagerPrivate *priv;
@@ -2728,7 +2728,7 @@ gsm_manager_init (GsmManager *manager)
         priv->settings_lockdown = g_settings_new (LOCKDOWN_SCHEMA);
 
         /* check if mate-screensaver is installed */
-        schemas = g_settings_list_schemas ();
+        g_settings_schema_source_list_schemas (g_settings_schema_source_get_default (), TRUE, &schemas, NULL);
         schema_exists = FALSE;
         for (i = 0; schemas[i] != NULL; i++) {
                 if (g_str_equal (schemas[i], SCREENSAVER_SCHEMA)) {
@@ -2736,6 +2736,9 @@ gsm_manager_init (GsmManager *manager)
                         break;
                 }
         }
+
+        g_strfreev (schemas);
+
         if (schema_exists == TRUE)
                 priv->settings_screensaver = g_settings_new (SCREENSAVER_SCHEMA);
         else
