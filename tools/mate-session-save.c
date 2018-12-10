@@ -30,9 +30,6 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
-
 #define GSM_SERVICE_DBUS "org.gnome.SessionManager"
 #define GSM_PATH_DBUS "/org/gnome/SessionManager"
 #define GSM_INTERFACE_DBUS "org.gnome.SessionManager"
@@ -95,59 +92,38 @@ static void display_error(const char* message)
 	}
 }
 
-static DBusGConnection* get_session_bus(void)
+static GDBusProxy* get_sm_proxy(void)
 {
-	GError* error = NULL;
-	DBusGConnection* bus = dbus_g_bus_get(DBUS_BUS_SESSION, &error);
+	GError *error = NULL;
+	GDBusProxy *sm_proxy = NULL;
 
-	if (bus == NULL)
-	{
-		g_warning("Couldn't connect to session bus: %s", error->message);
-		g_error_free(error);
-	}
-
-	return bus;
-}
-
-static DBusGProxy* create_proxy(DBusGConnection *connection, const char *name, const char *path, const char *iface)
-{
-	GError* error = NULL;
-	DBusGProxy* proxy = dbus_g_proxy_new_for_name_owner(connection, name, path, iface, &error);
-
-	if (proxy == NULL)
-	{
-		g_warning("Couldn't create DBus proxy: %s", error->message);
-		g_error_free(error);
-	}
-
-	return proxy;
-}
-
-static DBusGProxy* get_sm_proxy(void)
-{
-	DBusGConnection* connection;
-	DBusGProxy* sm_proxy;
-
-	connection = get_session_bus();
-
-	if (connection == NULL)
-	{
-		display_error(_("Could not connect to the session manager"));
-		return NULL;
-	}
-
-	sm_proxy = create_proxy(connection, GSM_SERVICE_DBUS, GSM_PATH_DBUS, GSM_INTERFACE_DBUS);
-
+	sm_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+	                                          G_DBUS_PROXY_FLAGS_NONE,
+	                                          NULL,
+	                                          GSM_SERVICE_DBUS,
+	                                          GSM_PATH_DBUS,
+	                                          GSM_INTERFACE_DBUS,
+	                                          NULL,
+	                                          &error);
 	if (sm_proxy == NULL)
 	{
+		g_warning ("Couldn't create DBus proxy: %s", error->message);
+		g_error_free (error);
+
 		/* Try the old name - for the case when we've just upgraded from 1.10
 		 * so the old m-s-m is currently running */
-		sm_proxy = create_proxy(connection, GSM_SERVICE_DBUS_OLD, GSM_PATH_DBUS_OLD, GSM_INTERFACE_DBUS_OLD);
-
+		sm_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+		                                          G_DBUS_PROXY_FLAGS_NONE,
+		                                          NULL,
+		                                          GSM_SERVICE_DBUS_OLD,
+		                                          GSM_PATH_DBUS_OLD,
+		                                          GSM_INTERFACE_DBUS_OLD,
+		                                          NULL,
+		                                          NULL);
 		if (sm_proxy == NULL)
 		{
 			/* Okay, it wasn't the upgrade case, so now we can give up. */
-			display_error(_("Could not connect to the session manager"));
+			display_error (_("Could not connect to the session manager"));
 			return NULL;
 		}
 	}
@@ -157,11 +133,11 @@ static DBusGProxy* get_sm_proxy(void)
 
 static void do_logout(unsigned int mode)
 {
-	DBusGProxy* sm_proxy;
+	GDBusProxy* sm_proxy;
 	GError* error;
-	gboolean res;
+	GVariant *ret;
 
-	sm_proxy = get_sm_proxy();
+	sm_proxy = get_sm_proxy ();
 
 	if (sm_proxy == NULL)
 	{
@@ -169,34 +145,34 @@ static void do_logout(unsigned int mode)
 	}
 
 	error = NULL;
-	res = dbus_g_proxy_call(sm_proxy, "Logout", &error, G_TYPE_UINT, mode, G_TYPE_INVALID, G_TYPE_INVALID);
+	ret = g_dbus_proxy_call_sync (sm_proxy, "Logout",
+	                              g_variant_new ("(u)", mode),
+	                              G_DBUS_CALL_FLAGS_NONE,
+	                              -1,
+	                              NULL,
+	                              &error);
 
-	if (!res)
+	if (ret == NULL)
 	{
-		if (error != NULL)
-		{
-			g_warning("Failed to call logout: %s", error->message);
-			g_error_free(error);
-		}
-		else
-		{
-			g_warning("Failed to call logout");
-		}
+		g_warning ("Failed to call logout: %s", error->message);
+		g_error_free (error);
+	} else {
+		g_variant_unref (ret);
 	}
 
 	if (sm_proxy != NULL)
 	{
-		g_object_unref(sm_proxy);
+		g_object_unref (sm_proxy);
 	}
 }
 
 static void do_shutdown_dialog(void)
 {
-	DBusGProxy* sm_proxy;
+	GDBusProxy* sm_proxy;
 	GError* error;
-	gboolean res;
+	GVariant *ret;
 
-	sm_proxy = get_sm_proxy();
+	sm_proxy = get_sm_proxy ();
 
 	if (sm_proxy == NULL)
 	{
@@ -204,24 +180,23 @@ static void do_shutdown_dialog(void)
 	}
 
 	error = NULL;
-	res = dbus_g_proxy_call(sm_proxy, "Shutdown", &error, G_TYPE_INVALID, G_TYPE_INVALID);
-
-	if (!res)
+	ret = g_dbus_proxy_call_sync (sm_proxy, "Shutdown",
+	                              g_variant_new ("()"),
+	                              G_DBUS_CALL_FLAGS_NONE,
+	                              -1,
+	                              NULL,
+	                              &error);
+	if (ret == NULL)
 	{
-		if (error != NULL)
-		{
-			g_warning("Failed to call shutdown: %s", error->message);
-			g_error_free(error);
-		}
-		else
-		{
-			g_warning("Failed to call shutdown");
-		}
+		g_warning ("Failed to call shutdown: %s", error->message);
+		g_error_free (error);
+	} else {
+		g_variant_unref (ret);
 	}
 
 	if (sm_proxy != NULL)
 	{
-		g_object_unref(sm_proxy);
+		g_object_unref (sm_proxy);
 	}
 }
 
