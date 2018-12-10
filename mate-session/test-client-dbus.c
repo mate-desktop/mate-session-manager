@@ -95,7 +95,7 @@ on_client_query_end_session (GDBusProxy     *proxy,
                                       -1,
                                       NULL,
                                       &error);
-        if (error != NULL) {
+        if (res == NULL) {
                 g_warning ("Failed to respond to EndSession: %s", error->message);
                 g_error_free (error);
         } else {
@@ -166,7 +166,7 @@ register_client (void)
                                       -1,
                                       NULL,
                                       &error);
-        if (error != NULL) {
+        if (res == NULL) {
                 g_warning ("Failed to register client: %s", error->message);
                 g_error_free (error);
                 return FALSE;
@@ -215,7 +215,7 @@ unregister_client (void)
                                       g_variant_new ("(o)", client_id),
                                       G_DBUS_CALL_FLAGS_NONE,
                                       -1, NULL, &error);
-        if (error != NULL) {
+        if (res == NULL) {
                 g_warning ("Failed to unregister client: %s", error->message);
                 g_error_free (error);
                 return FALSE;
