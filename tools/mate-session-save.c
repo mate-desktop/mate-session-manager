@@ -97,7 +97,7 @@ static GDBusProxy* get_sm_proxy(void)
 	GError *error = NULL;
 	GDBusProxy *sm_proxy = NULL;
 
-	sm_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
+	sm_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
 	                                          G_DBUS_PROXY_FLAGS_NONE,
 	                                          NULL,
 	                                          GSM_SERVICE_DBUS,
@@ -112,7 +112,7 @@ static GDBusProxy* get_sm_proxy(void)
 
 		/* Try the old name - for the case when we've just upgraded from 1.10
 		 * so the old m-s-m is currently running */
-		sm_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
+		sm_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
 		                                          G_DBUS_PROXY_FLAGS_NONE,
 		                                          NULL,
 		                                          GSM_SERVICE_DBUS_OLD,
