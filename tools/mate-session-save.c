@@ -81,7 +81,7 @@ static void display_error(const char* message)
 	{
 		GtkWidget* dialog = gtk_message_dialog_new(NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "%s", message);
 
-		/*gtk_window_set_default_icon_name (GTK_STOCK_SAVE);*/
+		gtk_window_set_default_icon_name ("dialog-error");
 
 		gtk_dialog_run(GTK_DIALOG(dialog));
 		gtk_widget_destroy(dialog);
