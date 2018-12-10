@@ -93,7 +93,7 @@ test_inhibit_SOURCES = test-inhibit.c
 test_inhibit_LDADD = $(MATE_SESSION_LIBS)
 
 test_client_dbus_SOURCES = test-client-dbus.c
-test_client_dbus_LDADD = $(DBUS_GLIB_LIBS)
+test_client_dbus_LDADD = $(MATE_SESSION_LIBS)
 
 gsm-marshal.c: gsm-marshal.list
 	$(AM_V_GEN)echo "#include \"gsm-marshal.h\"" > $@ && \
