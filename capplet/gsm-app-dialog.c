@@ -186,19 +186,22 @@ setup_dialog (GsmAppDialog *dialog)
                       "resizable", FALSE,
                       NULL);
 
-        gtk_dialog_add_button (GTK_DIALOG (dialog),
-                               "gtk-cancel", GTK_RESPONSE_CANCEL);
+        gsm_util_dialog_add_button (GTK_DIALOG (dialog),
+                                    _("_Cancel"), "process-stop",
+                                    GTK_RESPONSE_CANCEL);
 
         if (dialog->name == NULL
             && dialog->command == NULL
             && dialog->comment == NULL) {
                 gtk_window_set_title (GTK_WINDOW (dialog), _("Add Startup Program"));
-                gtk_dialog_add_button (GTK_DIALOG (dialog),
-                                       "gtk-add", GTK_RESPONSE_OK);
+                gsm_util_dialog_add_button (GTK_DIALOG (dialog),
+                                            _("_Add"), "list-add",
+                                            GTK_RESPONSE_OK);
         } else {
                 gtk_window_set_title (GTK_WINDOW (dialog), _("Edit Startup Program"));
-                gtk_dialog_add_button (GTK_DIALOG (dialog),
-                                       "gtk-save", GTK_RESPONSE_OK);
+                gsm_util_dialog_add_button (GTK_DIALOG (dialog),
+                                            _("_Save"), "document-save",
+                                            GTK_RESPONSE_OK);
         }
 
         dialog->name_entry = GTK_WIDGET (gtk_builder_get_object (xml, CAPPLET_NAME_ENTRY_WIDGET_NAME));

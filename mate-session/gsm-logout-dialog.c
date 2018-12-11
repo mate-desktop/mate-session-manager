@@ -33,6 +33,7 @@
 #endif
 #include "gsm-consolekit.h"
 #include "mdm.h"
+#include "gsm-util.h"
 
 #define GSM_ICON_LOGOUT   "system-log-out"
 #define GSM_ICON_SHUTDOWN "system-shutdown"
@@ -447,9 +448,9 @@ gsm_get_dialog (GsmDialogLogoutType type,
                                                GSM_LOGOUT_RESPONSE_SWITCH_USER);
                 }
 
-                gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                       "gtk-cancel",
-                                       GTK_RESPONSE_CANCEL);
+                gsm_util_dialog_add_button (GTK_DIALOG (logout_dialog),
+                                            _("_Cancel"), "process-stop",
+                                            GTK_RESPONSE_CANCEL);
 
                 gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
                                        _("_Log Out"),
@@ -480,9 +481,9 @@ gsm_get_dialog (GsmDialogLogoutType type,
                                                GSM_LOGOUT_RESPONSE_REBOOT);
                 }
 
-                gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                       "gtk-cancel",
-                                       GTK_RESPONSE_CANCEL);
+                gsm_util_dialog_add_button (GTK_DIALOG (logout_dialog),
+                                            _("_Cancel"), "process-stop",
+                                            GTK_RESPONSE_CANCEL);
 
                 if (gsm_logout_supports_shutdown (logout_dialog)) {
                         gtk_dialog_add_button (GTK_DIALOG (logout_dialog),

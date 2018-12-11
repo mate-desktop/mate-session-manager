@@ -21,6 +21,7 @@
 #define __GSM_UTIL_H__
 
 #include <glib.h>
+#include <gtk/gtk.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -56,6 +57,11 @@ gboolean    gsm_util_export_user_environment        (GError     **error);
 
 void        gsm_util_setenv                         (const char *variable,
                                                      const char *value);
+
+GtkWidget*  gsm_util_dialog_add_button              (GtkDialog   *dialog,
+                                                     const gchar *button_text,
+                                                     const gchar *icon_name,
+                                                     gint         response_id);
 
 #ifdef __cplusplus
 }
