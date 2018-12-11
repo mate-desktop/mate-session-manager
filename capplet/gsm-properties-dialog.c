@@ -472,10 +472,13 @@ setup_dialog (GsmPropertiesDialog *dialog)
         GtkTreeSelection  *selection;
         GtkTargetList     *targetlist;
 
-        gtk_dialog_add_buttons (GTK_DIALOG (dialog),
-                                "gtk-help", GTK_RESPONSE_HELP,
-                                "gtk-close", GTK_RESPONSE_CLOSE,
-                                NULL);
+        gsm_util_dialog_add_button (GTK_DIALOG (dialog),
+                                    _("_Help"), "help-browser",
+                                    GTK_RESPONSE_HELP);
+
+        gsm_util_dialog_add_button (GTK_DIALOG (dialog),
+                                    _("_Close"), "window-close",
+                                    GTK_RESPONSE_CLOSE);
 
         dialog->list_store = gtk_list_store_new (NUMBER_OF_COLUMNS,
                                                  G_TYPE_BOOLEAN,
