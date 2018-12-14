@@ -44,11 +44,13 @@ GType            gsp_app_get_type          (void) G_GNUC_CONST;
 
 void             gsp_app_create            (const char   *name,
                                             const char   *comment,
-                                            const char   *exec);
+                                            const char   *exec,
+                                            guint         delay);
 void             gsp_app_update            (GspApp       *app,
                                             const char   *name,
                                             const char   *comment,
-                                            const char   *exec);
+                                            const char   *exec,
+                                            guint         delay);
 
 gboolean         gsp_app_copy_desktop_file (const char   *uri);
 
@@ -66,6 +68,7 @@ void             gsp_app_set_enabled       (GspApp       *app,
 const char      *gsp_app_get_name          (GspApp       *app);
 const char      *gsp_app_get_exec          (GspApp       *app);
 const char      *gsp_app_get_comment       (GspApp       *app);
+guint            gsp_app_get_delay         (GspApp       *app);
 
 const char      *gsp_app_get_description   (GspApp       *app);
 GIcon           *gsp_app_get_icon          (GspApp       *app);
