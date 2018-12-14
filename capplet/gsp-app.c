@@ -46,6 +46,7 @@
 #define GSP_ASP_SAVE_MASK_NAME     0x0004
 #define GSP_ASP_SAVE_MASK_EXEC     0x0008
 #define GSP_ASP_SAVE_MASK_COMMENT  0x0010
+#define GSP_ASP_SAVE_MASK_DELAY    0x0020
 #define GSP_ASP_SAVE_MASK_ALL      0xffff
 
 typedef struct {
@@ -59,6 +60,7 @@ typedef struct {
         char         *exec;
         char         *comment;
         char         *icon;
+        gint         delay;
 
         GIcon        *gicon;
         char         *description;
@@ -487,6 +489,10 @@ _gsp_app_save (gpointer data)
                                          priv->exec);
         }
 
+        if (priv->save_mask & GSP_ASP_SAVE_MASK_DELAY) {
+                gsp_key_file_set_delay (keyfile, priv->delay);
+        }
+
         _gsp_ensure_user_autostart_dir ();
         if (gsp_key_file_to_file (keyfile, priv->path, NULL)) {
                 priv->skip_next_monitor_event = TRUE;
@@ -643,6 +649,17 @@ gsp_app_get_comment (GspApp *app)
         return priv->comment;
 }
 
+guint
+gsp_app_get_delay (GspApp *app)
+{
+        GspAppPrivate *priv;
+
+        g_return_val_if_fail (GSP_IS_APP (app), 0);
+        priv = gsp_app_get_instance_private (app);
+
+        return priv->delay;
+}
+
 GIcon *
 gsp_app_get_icon (GspApp *app)
 {
@@ -716,7 +733,8 @@ void
 gsp_app_update (GspApp     *app,
                 const char *name,
                 const char *comment,
-                const char *exec)
+                const char *exec,
+                guint       delay)
 {
         gboolean    changed;
         GspAppPrivate *priv;
@@ -749,6 +767,12 @@ gsp_app_update (GspApp     *app,
                 g_free (priv->exec);
                 priv->exec = g_strdup (exec);
                 priv->save_mask |= GSP_ASP_SAVE_MASK_EXEC;
+        }
+
+        if ( delay != priv->delay) {
+                changed = TRUE;
+                priv->delay = delay;
+                priv->save_mask |= GSP_ASP_SAVE_MASK_DELAY;
         }
 
         if (changed) {
@@ -928,6 +952,7 @@ gsp_app_new (const char   *path,
                                               G_KEY_FILE_DESKTOP_KEY_EXEC);
         priv->comment = gsp_key_file_get_locale_string (keyfile,
                                                         G_KEY_FILE_DESKTOP_KEY_COMMENT);
+        priv->delay = gsp_key_file_get_delay (keyfile);
 
         if (gsm_util_text_is_blank (priv->name)) {
                 g_free (priv->name);
@@ -1035,7 +1060,8 @@ _gsp_find_free_basename (const char *suggested_basename)
 void
 gsp_app_create (const char *name,
                 const char *comment,
-                const char *exec)
+                const char *exec,
+                guint       delay)
 {
         GspAppManager  *manager;
         GspAppPrivate *priv;
@@ -1074,6 +1100,7 @@ gsp_app_create (const char *name,
         }
         priv->exec = g_strdup (exec);
         priv->comment = g_strdup (comment);
+        priv->delay = delay;
         priv->icon = NULL;
 
         priv->gicon = NULL;

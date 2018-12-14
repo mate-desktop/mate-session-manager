@@ -33,6 +33,7 @@
 #define CAPPLET_NAME_ENTRY_WIDGET_NAME    "session_properties_name_entry"
 #define CAPPLET_COMMAND_ENTRY_WIDGET_NAME "session_properties_command_entry"
 #define CAPPLET_COMMENT_ENTRY_WIDGET_NAME "session_properties_comment_entry"
+#define CAPPLET_DELAY_SPIN_WIDGET_NAME    "session_properties_delay_spin"
 #define CAPPLET_BROWSE_WIDGET_NAME        "session_properties_browse_button"
 
 #ifdef __GNUC__
@@ -47,10 +48,12 @@ struct _GsmAppDialog
         GtkWidget *name_entry;
         GtkWidget *command_entry;
         GtkWidget *comment_entry;
+        GtkWidget *delay_spin;
         GtkWidget *browse_button;
         char      *name;
         char      *command;
         char      *comment;
+        guint      delay;
 };
 
 static void     gsm_app_dialog_class_init  (GsmAppDialogClass *klass);
@@ -60,7 +63,8 @@ enum {
         PROP_0,
         PROP_NAME,
         PROP_COMMAND,
-        PROP_COMMENT
+        PROP_COMMENT,
+        PROP_DELAY
 };
 
 G_DEFINE_TYPE (GsmAppDialog, gsm_app_dialog, GTK_TYPE_DIALOG)
@@ -151,6 +155,24 @@ on_entry_activate (GtkEntry     *entry,
         gtk_dialog_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 }
 
+static gboolean
+on_spin_output (GtkSpinButton *spin, GsmAppDialog *dialog)
+{
+        GtkAdjustment *adjustment;
+        gchar *text;
+        int value;
+
+        adjustment = gtk_spin_button_get_adjustment (spin);
+        value = gtk_adjustment_get_value (adjustment);
+        dialog->delay = value;
+
+        text = g_strdup_printf (_("%d s"), value);
+        gtk_entry_set_text (GTK_ENTRY (spin), text);
+        g_free (text);
+
+        return TRUE;
+}
+
 static void
 setup_dialog (GsmAppDialog *dialog)
 {
@@ -234,6 +256,17 @@ setup_dialog (GsmAppDialog *dialog)
                 gtk_entry_set_text (GTK_ENTRY (dialog->comment_entry), dialog->comment);
         }
 
+        dialog->delay_spin = GTK_WIDGET(gtk_builder_get_object (xml, CAPPLET_DELAY_SPIN_WIDGET_NAME));
+        g_signal_connect (dialog->delay_spin,
+                          "output",
+                          G_CALLBACK (on_spin_output),
+                          dialog);
+        if (dialog->delay > 0) {
+                GtkAdjustment *adjustment;
+                adjustment = gtk_spin_button_get_adjustment (GTK_SPIN_BUTTON(dialog->delay_spin));
+                gtk_adjustment_set_value (adjustment, (gdouble) dialog->delay);
+        }
+
         if (xml != NULL) {
                 g_object_unref (xml);
         }
@@ -311,6 +344,16 @@ gsm_app_dialog_set_comment (GsmAppDialog *dialog,
         g_object_notify (G_OBJECT (dialog), "comment");
 }
 
+static void
+gsm_app_dialog_set_delay (GsmAppDialog *dialog,
+                          guint delay)
+{
+        g_return_if_fail (GSM_IS_APP_DIALOG (dialog));
+
+        dialog->delay = delay;
+        g_object_notify (G_OBJECT (dialog), "delay");
+}
+
 const char *
 gsm_app_dialog_get_name (GsmAppDialog *dialog)
 {
@@ -332,6 +375,13 @@ gsm_app_dialog_get_comment (GsmAppDialog *dialog)
         return gtk_entry_get_text (GTK_ENTRY (dialog->comment_entry));
 }
 
+guint
+gsm_app_dialog_get_delay (GsmAppDialog *dialog)
+{
+        g_return_val_if_fail (GSM_IS_APP_DIALOG (dialog), 0);
+        return dialog->delay;
+}
+
 static void
 gsm_app_dialog_set_property (GObject        *object,
                              guint           prop_id,
@@ -349,6 +399,9 @@ gsm_app_dialog_set_property (GObject        *object,
                 break;
         case PROP_COMMENT:
                 gsm_app_dialog_set_comment (dialog, g_value_get_string (value));
+                break;
+        case PROP_DELAY:
+                gsm_app_dialog_set_delay (dialog, g_value_get_uint (value));
                 break;
         default:
                 G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -373,6 +426,9 @@ gsm_app_dialog_get_property (GObject        *object,
                 break;
         case PROP_COMMENT:
                 g_value_set_string (value, dialog->comment);
+                break;
+        case PROP_DELAY:
+                g_value_set_uint (value, dialog->delay);
                 break;
         default:
                 G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -411,6 +467,15 @@ gsm_app_dialog_class_init (GsmAppDialogClass *klass)
                                                               "comment",
                                                               NULL,
                                                               G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+        g_object_class_install_property (object_class,
+                                         PROP_DELAY,
+                                         g_param_spec_uint ("delay",
+                                                            "delay",
+                                                            "delay",
+                                                             0,
+                                                             100,
+                                                             0,
+                                                             G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 }
 
 static void
@@ -422,7 +487,8 @@ gsm_app_dialog_init (GsmAppDialog *dialog)
 GtkWidget *
 gsm_app_dialog_new (const char *name,
                     const char *command,
-                    const char *comment)
+                    const char *comment,
+                    guint delay)
 {
         GObject *object;
 
@@ -430,6 +496,7 @@ gsm_app_dialog_new (const char *name,
                                "name", name,
                                "command", command,
                                "comment", comment,
+                               "delay", delay,
                                NULL);
 
         return GTK_WIDGET (object);
@@ -439,7 +506,8 @@ gboolean
 gsm_app_dialog_run (GsmAppDialog  *dialog,
                     char         **name_p,
                     char         **command_p,
-                    char         **comment_p)
+                    char         **comment_p,
+                    guint         *delay_p)
 {
         gboolean retval;
 
@@ -449,6 +517,7 @@ gsm_app_dialog_run (GsmAppDialog  *dialog,
                 const char *name;
                 const char *exec;
                 const char *comment;
+                guint       delay;
                 const char *error_msg;
                 GError     *error;
                 char      **argv;
@@ -457,6 +526,7 @@ gsm_app_dialog_run (GsmAppDialog  *dialog,
                 name = gsm_app_dialog_get_name (GSM_APP_DIALOG (dialog));
                 exec = gsm_app_dialog_get_command (GSM_APP_DIALOG (dialog));
                 comment = gsm_app_dialog_get_comment (GSM_APP_DIALOG (dialog));
+                delay = gsm_app_dialog_get_delay (GSM_APP_DIALOG (dialog));
 
                 error = NULL;
                 error_msg = NULL;
@@ -509,6 +579,10 @@ gsm_app_dialog_run (GsmAppDialog  *dialog,
 
                 if (comment_p) {
                         *comment_p = g_strdup (comment);
+                }
+
+                if (delay_p) {
+                        *delay_p = delay;
                 }
 
                 retval = TRUE;

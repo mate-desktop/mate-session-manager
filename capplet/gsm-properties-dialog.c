@@ -361,14 +361,15 @@ on_add_app_clicked (GtkWidget           *widget,
         char       *name;
         char       *exec;
         char       *comment;
+        guint       delay;
 
-        add_dialog = gsm_app_dialog_new (NULL, NULL, NULL);
+        add_dialog = gsm_app_dialog_new (NULL, NULL, NULL, 0);
         gtk_window_set_transient_for (GTK_WINDOW (add_dialog),
                                       GTK_WINDOW (dialog));
 
         if (gsm_app_dialog_run (GSM_APP_DIALOG (add_dialog),
-                                &name, &exec, &comment)) {
-                gsp_app_create (name, comment, exec);
+                                &name, &exec, &comment, &delay)) {
+                gsp_app_create (name, comment, exec, delay);
                 g_free (name);
                 g_free (exec);
                 g_free (comment);
@@ -426,16 +427,18 @@ on_edit_app_clicked (GtkWidget           *widget,
                 char       *name;
                 char       *exec;
                 char       *comment;
+                guint       delay;
 
                 edit_dialog = gsm_app_dialog_new (gsp_app_get_name (app),
                                                   gsp_app_get_exec (app),
-                                                  gsp_app_get_comment (app));
+                                                  gsp_app_get_comment (app),
+                                                  gsp_app_get_delay (app));
                 gtk_window_set_transient_for (GTK_WINDOW (edit_dialog),
                                               GTK_WINDOW (dialog));
 
                 if (gsm_app_dialog_run (GSM_APP_DIALOG (edit_dialog),
-                                        &name, &exec, &comment)) {
-                        gsp_app_update (app, name, comment, exec);
+                                        &name, &exec, &comment, &delay)) {
+                        gsp_app_update (app, name, comment, exec, delay);
                         g_free (name);
                         g_free (exec);
                         g_free (comment);
