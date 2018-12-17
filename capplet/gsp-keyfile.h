@@ -34,7 +34,6 @@ extern "C" {
 #endif
 
 #define GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED "X-MATE-Autostart-enabled"
-#define GSP_KEY_FILE_DESKTOP_KEY_GNOME_DELAY       "X-GNOME-Autostart-Delay"
 #define GSP_KEY_FILE_DESKTOP_KEY_DELAY             "X-MATE-Autostart-Delay"
 
 void      gsp_key_file_populate        (GKeyFile *keyfile);
@@ -49,8 +48,7 @@ gboolean gsp_key_file_get_boolean      (GKeyFile       *keyfile,
 #define gsp_key_file_get_string(key_file, key) \
          g_key_file_get_string (key_file, G_KEY_FILE_DESKTOP_GROUP, key, NULL)
 #define gsp_key_file_get_delay(key_file) \
-         (g_key_file_get_integer (key_file, G_KEY_FILE_DESKTOP_GROUP, GSP_KEY_FILE_DESKTOP_KEY_GNOME_DELAY, NULL) + \
-         g_key_file_get_integer (key_file, G_KEY_FILE_DESKTOP_GROUP, GSP_KEY_FILE_DESKTOP_KEY_DELAY, NULL))
+         g_key_file_get_integer (key_file, G_KEY_FILE_DESKTOP_GROUP, GSP_KEY_FILE_DESKTOP_KEY_DELAY, NULL)
 #define gsp_key_file_get_locale_string(key_file, key) \
          g_key_file_get_locale_string(key_file, G_KEY_FILE_DESKTOP_GROUP, key, NULL, NULL)
 
@@ -59,11 +57,7 @@ gboolean gsp_key_file_get_boolean      (GKeyFile       *keyfile,
 #define gsp_key_file_set_string(key_file, key, value) \
          g_key_file_set_string (key_file, G_KEY_FILE_DESKTOP_GROUP, key, value)
 #define gsp_key_file_set_delay(key_file, value) \
-        do { \
-        if (g_key_file_has_key (key_file, G_KEY_FILE_DESKTOP_GROUP, GSP_KEY_FILE_DESKTOP_KEY_GNOME_DELAY, NULL)) \
-                g_key_file_remove_key (key_file, G_KEY_FILE_DESKTOP_GROUP, GSP_KEY_FILE_DESKTOP_KEY_GNOME_DELAY, NULL); \
-        g_key_file_set_integer(key_file, G_KEY_FILE_DESKTOP_GROUP, GSP_KEY_FILE_DESKTOP_KEY_DELAY, value); \
-        } while (0);
+        g_key_file_set_integer(key_file, G_KEY_FILE_DESKTOP_GROUP, GSP_KEY_FILE_DESKTOP_KEY_DELAY, value)
 void    gsp_key_file_set_locale_string (GKeyFile    *keyfile,
                                         const gchar *key,
                                         const gchar *value);
