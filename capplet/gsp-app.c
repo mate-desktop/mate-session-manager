@@ -320,6 +320,7 @@ _gsp_app_user_equal_system (GspApp  *app,
         char          *path;
         char          *str;
         GKeyFile      *keyfile;
+        guint          delay;
 
         manager = gsp_app_manager_get ();
         priv = gsp_app_get_instance_private (app);
@@ -389,6 +390,13 @@ _gsp_app_user_equal_system (GspApp  *app,
                 return FALSE;
         }
         g_free (str);
+
+        delay = gsp_key_file_get_delay(keyfile);
+        if (delay != priv->delay) {
+                g_free (path);
+                g_key_file_free (keyfile);
+                return FALSE;
+        }
 
         g_key_file_free (keyfile);
 
