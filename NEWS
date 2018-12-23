@@ -1,3 +1,9 @@
+### mate-session-manager 1.20.2
+
+    tx: sync with transifex
+    disable deprecation warnings for distcheck
+    Fixed typo in --logout-dialog option
+
 ### mate-session-manager 1.20.1
 
   * Translations update
