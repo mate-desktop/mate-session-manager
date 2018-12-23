@@ -166,7 +166,13 @@ on_spin_output (GtkSpinButton *spin, GsmAppDialog *dialog)
         value = gtk_adjustment_get_value (adjustment);
         dialog->delay = value;
 
-        text = g_strdup_printf (_("%d s"), value);
+        if (value == 1)
+                text = g_strdup_printf ("%d %s", value, _("second"));
+        else if (value > 1)
+                text = g_strdup_printf ("%d %s", value, _("seconds"));
+        else
+                text = g_strdup_printf ("%d", value);
+
         gtk_entry_set_text (GTK_ENTRY (spin), text);
         g_free (text);
 
