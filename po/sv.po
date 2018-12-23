@@ -3,14 +3,25 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Kristoffer Grundström <hamnisdude@gmail.com>, 2018
+# Erik, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Henrik Mattsson-Mårn <h@reglage.net>, 2018
+# Martin Wimpress <code@flexion.org>, 2018
+# Patrik Nilsson <asavartzeth@gmail.com>, 2018
+# Urban Berggren <pudberggren@icloud.com>, 2018
+# Tobias Lekare <lekare@linux.com>, 2018
+# Philip Andersen <renegadevi@codeofmagi.net>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-17 15:30+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Tobias Lekare <lekare@linux.com>, 2018\n"
+"PO-Revision-Date: 2018-03-12 08:05+0000\n"
+"Last-Translator: Philip Andersen <renegadevi@codeofmagi.net>, 2018\n"
 "Language-Team: Swedish (https://www.transifex.com/mate/teams/13566/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -394,15 +405,15 @@ msgstr "Avbryt"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Du kommer att loggas ut automatiskt om %d sekund"
+msgstr[1] "Du kommer att loggas ut automatiskt om %d sekunder"
 
 #: ../mate-session/gsm-logout-dialog.c:320
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Systemet kommer att stängas av automatiskt om %d sekund"
+msgstr[1] "Systemet kommer att stängas av automatiskt om %d sekunder"
 
 #: ../mate-session/gsm-logout-dialog.c:366
 #, c-format

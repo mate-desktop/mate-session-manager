@@ -3,13 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Iñigo Varela <ivarela@softastur.org>, 2018
+# Xuacu Saturio <xuacusk8@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Ḷḷumex03 <tornes@opmbx.org>, 2018
+# Martin Wimpress <code@flexion.org>, 2018
+# enolp <enolp@softastur.org>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-17 15:30+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-03-12 08:05+0000\n"
 "Last-Translator: enolp <enolp@softastur.org>, 2018\n"
 "Language-Team: Asturian (https://www.transifex.com/mate/teams/13566/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -68,7 +76,7 @@ msgstr "Versión d'esta aplicación"
 
 #: ../capplet/main.c:51
 msgid "Could not display help document"
-msgstr "Nun pudo amosase la documentación d'aida"
+msgstr "Nun pudo amosase la documentación d'ayuda"
 
 #: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"

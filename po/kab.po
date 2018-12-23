@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Slimane AMIRI, 2018
 # 
 #, fuzzy
 msgid ""
@@ -13,13 +13,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-17 15:30+0100\n"
 "PO-Revision-Date: 2018-03-12 08:05+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
-"Language-Team: Walloon (https://www.transifex.com/mate/teams/13566/wa/)\n"
+"Last-Translator: Slimane AMIRI, 2018\n"
+"Language-Team: Kabyle (https://www.transifex.com/mate/teams/13566/kab/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: wa\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: kab\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -27,15 +27,15 @@ msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:197
 msgid "Add Startup Program"
-msgstr "Radjouter on programe d' enondaedje"
+msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:201
 msgid "Edit Startup Program"
-msgstr "Candjî on programe d' enondaedje"
+msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:486
 msgid "The startup command cannot be empty"
-msgstr "Li cmande d' enondaedje ni pout nén esse vude"
+msgstr ""
 
 #: ../capplet/gsm-app-dialog.c:492
 msgid "The startup command is not valid"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: ../capplet/gsm-properties-dialog.c:518
 msgid "Enabled"
-msgstr "En alaedje"
+msgstr ""
 
 #: ../capplet/gsm-properties-dialog.c:530
 msgid "Icon"
@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../capplet/gsm-properties-dialog.c:542
 msgid "Program"
-msgstr "Programe"
+msgstr ""
 
 #: ../capplet/gsm-properties-dialog.c:741
 msgid "Startup Applications Preferences"
@@ -59,7 +59,7 @@ msgstr ""
 
 #: ../capplet/gsp-app.c:273
 msgid "No name"
-msgstr "Nou no"
+msgstr ""
 
 #: ../capplet/gsp-app.c:279
 msgid "No description"
@@ -67,7 +67,7 @@ msgstr ""
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr "Li modêye di ci programe chal"
+msgstr ""
 
 #: ../capplet/main.c:51
 msgid "Could not display help document"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
-msgstr "Schaper les sessions"
+msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
@@ -91,13 +91,11 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
-msgstr "Prompt di dislodjaedje"
+msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr ""
-"S' il est metou, mate-session dmandrè a l' uzeu d' acertiner divant di clôre"
-" li session."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
@@ -151,7 +149,7 @@ msgstr ""
 #: ../data/org.mate.session.gschema.xml.in.h:17
 #: ../data/mate-wm.desktop.in.in.h:1
 msgid "Window Manager"
-msgstr "Manaedjeu di purneas"
+msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
@@ -161,7 +159,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
-msgstr ""
+msgstr "Afeggag"
 
 #: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
@@ -171,7 +169,7 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr "Manaedjeu di fitchîs"
+msgstr "Amsefrak n ufuyla"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
@@ -217,11 +215,11 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
-msgstr "_Programes di rawete a l' enondaedje:"
+msgstr ""
 
 #: ../data/session-properties.ui.h:2
 msgid "Startup Programs"
-msgstr "Programes a l' enondaedje"
+msgstr ""
 
 #: ../data/session-properties.ui.h:3
 msgid "_Automatically remember running applications when logging out"
@@ -233,7 +231,7 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:5
 msgid "Options"
-msgstr "Tchuzes"
+msgstr "Iɣewwaṛen"
 
 #: ../data/session-properties.ui.h:6
 msgid "Browse…"
@@ -245,11 +243,11 @@ msgstr ""
 
 #: ../data/session-properties.ui.h:8
 msgid "Co_mmand:"
-msgstr "Co_mande:"
+msgstr ""
 
 #: ../data/session-properties.ui.h:9
 msgid "_Name:"
-msgstr "_No:"
+msgstr ""
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
@@ -264,7 +262,7 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr "Enondant %s"
+msgstr ""
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
@@ -284,11 +282,11 @@ msgstr ""
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "Nén on cayet enondåve"
+msgstr ""
 
 #: ../egg/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "Essocter l' adjondaedje å manaedjeu di sessions"
+msgstr ""
 
 #: ../egg/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -300,11 +298,11 @@ msgstr ""
 
 #: ../egg/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Dire l' ID pol manaedjmint del session"
+msgstr ""
 
 #: ../egg/eggsmclient.c:231
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #: ../egg/eggsmclient.c:252
 msgid "Session management options:"
@@ -321,7 +319,7 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:582
 msgid "Unknown"
-msgstr "Nén cnoxhou"
+msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:633
 msgid "A program is still running:"
@@ -363,11 +361,11 @@ msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:891
 msgid "Lock Screen"
-msgstr "Eclawer li waitroûle"
+msgstr ""
 
 #: ../mate-session/gsm-inhibit-dialog.c:894
 msgid "Cancel"
-msgstr "Rinoncî"
+msgstr ""
 
 #: ../mate-session/gsm-logout-dialog.c:312
 #, c-format
@@ -470,7 +468,7 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:69
 msgid "Log out"
-msgstr "Dislodjaedje"
+msgstr ""
 
 #: ../tools/mate-session-save.c:70
 msgid "Log out, ignoring any existing inhibitors"
@@ -495,11 +493,11 @@ msgstr ""
 
 #: ../tools/mate-session-save.c:75
 msgid "NAME"
-msgstr "NO"
+msgstr ""
 
 #: ../tools/mate-session-save.c:76
 msgid "Kill session"
-msgstr "Touwer li session"
+msgstr ""
 
 #: ../tools/mate-session-save.c:77
 msgid "Do not require confirmation"
@@ -508,7 +506,7 @@ msgstr ""
 #. Okay, it wasn't the upgrade case, so now we can give up.
 #: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
 msgid "Could not connect to the session manager"
-msgstr "Dji n' a nén parvnou a m' adjonde å manaedjeu des sessions"
+msgstr ""
 
 #: ../tools/mate-session-save.c:276
 msgid "Program called with conflicting options"
