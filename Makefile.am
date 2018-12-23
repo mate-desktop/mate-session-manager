@@ -9,6 +9,9 @@ SUBDIRS = \
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
+DISTCHECK_CONFIGURE_FLAGS = \
+	CFLAGS='-Wno-deprecated-declarations'
+
 EXTRA_DIST = \
 	autogen.sh \
 	HACKING
