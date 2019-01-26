@@ -76,8 +76,8 @@ typedef struct {
         GPid                  pid;
         guint                 child_watch_id;
 
-        DBusGProxy           *proxy;
-        DBusGProxyCall       *proxy_call;
+        GDBusConnection      *connection;
+        GDBusProxy           *proxy;
 } GsmAutostartAppPrivate;
 
 enum {
@@ -630,14 +630,14 @@ gsm_autostart_app_dispose (GObject *object)
                 priv->child_watch_id = 0;
         }
 
-        if (priv->proxy_call != NULL) {
-                dbus_g_proxy_cancel_call (priv->proxy, priv->proxy_call);
-                priv->proxy_call = NULL;
-        }
-
         if (priv->proxy != NULL) {
                 g_object_unref (priv->proxy);
                 priv->proxy = NULL;
+        }
+
+        if (priv->connection != NULL) {
+                g_object_unref (priv->connection);
+                priv->connection = NULL;
         }
 
         if (priv->condition_monitor) {
@@ -905,29 +905,37 @@ autostart_app_start_spawn (GsmAutostartApp *app,
 }
 
 static void
-start_notify (DBusGProxy      *proxy,
-              DBusGProxyCall  *call,
-              GsmAutostartApp *app)
+start_notify (GObject *source_object,
+              GAsyncResult *res,
+              gpointer data)
 {
-        gboolean res;
-        GError  *error;
+        GsmAutostartApp *app;
         GsmAutostartAppPrivate *priv;
+        GError  *error;
+        GVariant *variant;
 
+        app = data;
         priv = gsm_autostart_app_get_instance_private (app);
 
         error = NULL;
-        res = dbus_g_proxy_end_call (proxy,
-                                     call,
-                                     &error,
-                                     G_TYPE_INVALID);
-        priv->proxy_call = NULL;
+        if (priv->proxy == NULL)
+                return;
 
-        if (! res) {
+        variant = g_dbus_proxy_call_finish (priv->proxy, res, &error);
+        if (variant == NULL) {
                 g_warning ("GsmAutostartApp: Error starting application: %s", error->message);
                 g_error_free (error);
+                return;
         } else {
                 g_debug ("GsmAutostartApp: Started application %s", priv->desktop_id);
+                g_variant_unref (variant);
         }
+
+        g_object_unref (priv->proxy);
+        priv->proxy = NULL;
+
+        g_object_unref (priv->connection);
+        priv->connection = NULL;
 }
 
 static gboolean
@@ -937,15 +945,14 @@ autostart_app_start_activate (GsmAutostartApp  *app,
         const char      *name;
         char            *path;
         char            *arguments;
-        DBusGConnection *bus;
         GError          *local_error;
         GsmAutostartAppPrivate *priv;
 
         priv = gsm_autostart_app_get_instance_private (app);
 
         local_error = NULL;
-        bus = dbus_g_bus_get (DBUS_BUS_SESSION, &local_error);
-        if (bus == NULL) {
+        priv->connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &local_error);
+        if (priv->connection == NULL) {
                 if (local_error != NULL) {
                         g_warning ("error getting session bus: %s", local_error->message);
                 }
@@ -968,34 +975,28 @@ autostart_app_start_activate (GsmAutostartApp  *app,
                                                  GSM_AUTOSTART_APP_DBUS_ARGS_KEY,
                                                  NULL);
 
-        priv->proxy = dbus_g_proxy_new_for_name (bus,
-                                                 name,
-                                                 path,
-                                                 GSM_SESSION_CLIENT_DBUS_INTERFACE);
+        local_error = NULL;
+        priv->proxy = g_dbus_proxy_new_sync (priv->connection,
+                                             G_DBUS_PROXY_FLAGS_NONE,
+                                             NULL,
+                                             name,
+                                             path,
+                                             GSM_SESSION_CLIENT_DBUS_INTERFACE,
+                                             NULL,
+                                             &local_error);
         if (priv->proxy == NULL) {
-                g_set_error (error,
-                             GSM_APP_ERROR,
-                             GSM_APP_ERROR_START,
-                             "Unable to start application: unable to create proxy for client");
+                g_propagate_error (error, local_error);
                 return FALSE;
         }
 
-        priv->proxy_call = dbus_g_proxy_begin_call (priv->proxy,
-                                                    "Start",
-                                                    (DBusGProxyCallNotify)start_notify,
-                                                    app,
-                                                    NULL,
-                                                    G_TYPE_STRING, arguments,
-                                                    G_TYPE_INVALID);
-        if (priv->proxy_call == NULL) {
-                g_object_unref (priv->proxy);
-                priv->proxy = NULL;
-                g_set_error (error,
-                             GSM_APP_ERROR,
-                             GSM_APP_ERROR_START,
-                             "Unable to start application: unable to call Start on client");
-                return FALSE;
-        }
+        g_dbus_proxy_call (priv->proxy,
+                           "Start",
+                           g_variant_new ("(s)", arguments),
+                           G_DBUS_CALL_FLAGS_NONE,
+                           -1,
+                           NULL,
+                           (GAsyncReadyCallback) start_notify,
+                           app);
 
         return TRUE;
 }
