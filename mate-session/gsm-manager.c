@@ -889,6 +889,51 @@ _client_stop (const char *id,
         return FALSE;
 }
 
+#ifdef HAVE_SYSTEMD
+static void
+maybe_restart_user_bus (GsmManager *manager)
+{
+        GsmSystemd *systemd;
+        GsmManagerPrivate *priv;
+        GDBusConnection *connection;
+
+        g_autoptr(GVariant) reply = NULL;
+        g_autoptr(GError) error = NULL;
+
+        priv = gsm_manager_get_instance_private (manager);
+        if (priv->dbus_disconnected)
+                return;
+
+        systemd = gsm_get_systemd ();
+
+        if (!gsm_systemd_is_last_session_for_user (systemd))
+                return;
+
+        connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
+
+        if (error != NULL) {
+                g_debug ("GsmManager: failed to connect to session bus: %s", error->message);
+                return;
+        }
+
+        reply = g_dbus_connection_call_sync (connection,
+                                             "org.freedesktop.systemd1",
+                                             "/org/freedesktop/systemd1",
+                                             "org.freedesktop.systemd1.Manager",
+                                             "TryRestartUnit",
+                                             g_variant_new ("(ss)", "dbus.service", "replace"),
+                                             NULL,
+                                             G_DBUS_CALL_FLAGS_NONE,
+                                             -1,
+                                             NULL,
+                                             &error);
+
+        if (error != NULL) {
+                g_debug ("GsmManager: reloading user bus failed: %s", error->message);
+        }
+}
+#endif
+
 static void
 do_phase_exit (GsmManager *manager)
 {
@@ -900,6 +945,10 @@ do_phase_exit (GsmManager *manager)
                                    (GsmStoreFunc)_client_stop,
                                    NULL);
         }
+
+#ifdef HAVE_SYSTEMD
+        maybe_restart_user_bus (manager);
+#endif
 
         end_phase (manager);
 }
