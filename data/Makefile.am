@@ -31,6 +31,7 @@ EXTRA_DIST =					\
 	$(xsession_in_files)			\
 	$(gsettingsschema_in_files)		\
 	$(ui_DATA)				\
+	$(desktop_in_files)			\
 	$(pixmap_DATA_dist)
 
 CLEANFILES =					\
@@ -38,8 +39,5 @@ CLEANFILES =					\
 	$(desktop_DATA)				\
 	$(gsettings_SCHEMAS)			\
 	mate-wm.desktop
-
-DISTCLEANFILES =				\
-	$(desktop_in_files)
 
 -include $(top_srcdir)/git.mk

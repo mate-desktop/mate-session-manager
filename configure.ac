@@ -295,8 +295,6 @@ doc/dbus/Makefile
 doc/dbus/mate-session.xml
 doc/man/Makefile
 data/Makefile
-data/mate-wm.desktop.in
-data/mate-session-properties.desktop.in
 data/org.mate.session.gschema.xml
 data/icons/Makefile
 data/icons/16x16/Makefile

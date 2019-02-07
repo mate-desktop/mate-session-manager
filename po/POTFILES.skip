@@ -2,6 +2,4 @@
 # translated.
 # Please keep this file sorted alphabetically.
 data/org.mate.session.gschema.xml.in
-data/mate-session-properties.desktop.in
 data/mate-session.schemas.in
-data/mate-wm.desktop.in
