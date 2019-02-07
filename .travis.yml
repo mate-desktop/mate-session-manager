@@ -5,13 +5,8 @@ language: bash
 services:
   - docker
 
-# Use travis branch for test.
-#branches:
-#  only:
-#  - travis
-
 before_install:
-  - curl -L -o docker-build https://github.com/mate-desktop/mate-dev-scripts/raw/travis/travis/docker-build
+  - curl -Ls -o docker-build https://github.com/mate-desktop/mate-dev-scripts/raw/master/travis/docker-build
   - chmod +x docker-build
 
 install:
@@ -21,7 +16,7 @@ script:
   - ./docker-build --name ${DISTRO} --verbose --config .travis.yml --build autotools
 
 env:
-  - DISTRO="base/archlinux"
+  - DISTRO="archlinux/base"
   - DISTRO="debian:sid"
   - DISTRO="fedora:29"
   - DISTRO="ubuntu:18.10"
@@ -32,26 +27,24 @@ env:
 requires:
   archlinux:
     # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/mate-session-manager
+    - dbus-glib
     - gcc
     - git
-    - make
-    # Append new requires below
-    - dbus-glib
     - gtk3
     - intltool
     - libsm
+    - make
     - mate-common
     - mate-desktop
     - python
     - systemd
+    - which
     - xtrans
 
   debian:
     # Useful URL: https://github.com/mate-desktop/debian-packages
     # Useful URL: https://salsa.debian.org/debian-mate-team/mate-session-manager
     - git
-    - make
-    # Append new requires below
     - intltool
     - libdbus-glib-1-dev
     - libglib2.0-dev
@@ -66,32 +59,30 @@ requires:
     - libxrender-dev
     - libxt-dev
     - libxtst-dev
+    - make
     - mate-common
     - xmlto
     - xsltproc
 
   fedora:
     # Useful URL: https://src.fedoraproject.org/cgit/rpms/mate-session-manager.git
-    - gcc
-    - git
-    - make
-    - redhat-rpm-config
-    # Append new requires below
     - dbus-glib-devel
     - desktop-file-utils
+    - gcc
+    - git
     - gtk3-devel
     - libSM-devel
     - libXtst-devel
+    - make
     - mate-common
     - pangox-compat-devel
+    - redhat-rpm-config
     - systemd-devel
     - xmlto
     - xorg-x11-xtrans-devel
 
   ubuntu:
     - git
-    - make
-    # Append new requires below
     - intltool
     - libdbus-glib-1-dev
     - libglib2.0-dev
@@ -106,6 +97,7 @@ requires:
     - libxrender-dev
     - libxt-dev
     - libxtst-dev
+    - make
     - mate-common
     - xmlto
     - xsltproc
@@ -114,6 +106,4 @@ variables:
   - CFLAGS="-Wall -Werror=format-security"
 
 after_scripts:
-  - make distcheck > /dev/null
-    # It will fail on debian, so it always returns 0, but can see the error message.
-  - 'if [ $? -ne 0 ];then RED="\033[0;31m"; NC="\033[0m"; printf "${RED}!!! ERROR: Run make distcheck failed.${NC}\n"; fi'
+  - make distcheck
