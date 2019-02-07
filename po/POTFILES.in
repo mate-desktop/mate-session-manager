@@ -6,9 +6,9 @@ capplet/gsp-app.c
 capplet/main.c
 [type: gettext/gsettings]data/org.mate.session.gschema.xml.in
 data/mate.desktop.in
-data/mate-wm.desktop.in.in
+data/mate-wm.desktop.in
 [type: gettext/glade]data/gsm-inhibit-dialog.ui
-data/mate-session-properties.desktop.in.in
+data/mate-session-properties.desktop.in
 [type: gettext/glade]data/session-properties.ui
 egg/eggdesktopfile.c
 egg/eggsmclient.c
