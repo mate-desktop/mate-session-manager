@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-23 17:19+0100\n"
+"POT-Creation-Date: 2019-02-09 00:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,37 +22,40 @@ msgstr ""
 msgid "Select Command"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:169
-#, c-format
-msgid "%d s"
+#: ../capplet/gsm-app-dialog.c:170
+msgid "second"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:212 ../mate-session/gsm-logout-dialog.c:452
+#: ../capplet/gsm-app-dialog.c:172
+msgid "seconds"
+msgstr ""
+
+#: ../capplet/gsm-app-dialog.c:218 ../mate-session/gsm-logout-dialog.c:452
 #: ../mate-session/gsm-logout-dialog.c:485
 msgid "_Cancel"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:218
+#: ../capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:220 ../data/session-properties.ui.h:2
+#: ../capplet/gsm-app-dialog.c:226 ../data/session-properties.ui.h:2
 msgid "_Add"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:223
+#: ../capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:225
+#: ../capplet/gsm-app-dialog.c:231
 msgid "_Save"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:538
+#: ../capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:544
+#: ../capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
 msgstr ""
 
@@ -169,8 +172,7 @@ msgstr ""
 msgid "Control which compatibility components to start."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.h:17
-#: ../data/mate-wm.desktop.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr ""
 
@@ -228,11 +230,11 @@ msgid ""
 "to lose work."
 msgstr ""
 
-#: ../data/mate-session-properties.desktop.in.in.h:1
+#: ../data/mate-session-properties.desktop.in.h:1
 msgid "Startup Applications"
 msgstr ""
 
-#: ../data/mate-session-properties.desktop.in.in.h:2
+#: ../data/mate-session-properties.desktop.in.h:2
 msgid "Choose what applications to start when you log in"
 msgstr ""
 
@@ -453,7 +455,7 @@ msgstr ""
 msgid "_Shut Down"
 msgstr ""
 
-#: ../mate-session/gsm-manager.c:1478 ../mate-session/gsm-manager.c:2241
+#: ../mate-session/gsm-manager.c:1512 ../mate-session/gsm-manager.c:2327
 msgid "Not responding"
 msgstr ""
 
