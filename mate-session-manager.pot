@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-23 17:24+0100\n"
+"POT-Creation-Date: 2019-02-09 00:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -143,8 +143,7 @@ msgstr ""
 msgid "Control which compatibility components to start."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.h:17
-#: ../data/mate-wm.desktop.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr ""
 
@@ -202,11 +201,11 @@ msgid ""
 "to lose work."
 msgstr ""
 
-#: ../data/mate-session-properties.desktop.in.in.h:1
+#: ../data/mate-session-properties.desktop.in.h:1
 msgid "Startup Applications"
 msgstr ""
 
-#: ../data/mate-session-properties.desktop.in.in.h:2
+#: ../data/mate-session-properties.desktop.in.h:2
 msgid "Choose what applications to start when you log in"
 msgstr ""
 
