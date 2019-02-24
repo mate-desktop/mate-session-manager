@@ -3,14 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Martin Wimpress <code@flexion.org>, 2018
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2018
+# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:29+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"POT-Creation-Date: 2019-02-09 00:06+0100\n"
+"PO-Revision-Date: 2018-03-12 08:06+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Korean (https://www.transifex.com/mate/teams/13566/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,47 +24,76 @@ msgstr ""
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../capplet/gsm-app-dialog.c:125
+#: ../capplet/gsm-app-dialog.c:127
 msgid "Select Command"
 msgstr "명령 선택"
 
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/gsm-app-dialog.c:170
+msgid "second"
+msgstr ""
+
+#: ../capplet/gsm-app-dialog.c:172
+msgid "seconds"
+msgstr "초"
+
+#: ../capplet/gsm-app-dialog.c:218 ../mate-session/gsm-logout-dialog.c:452
+#: ../mate-session/gsm-logout-dialog.c:485
+msgid "_Cancel"
+msgstr "취소(_C)"
+
+#: ../capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
 msgstr "시작 프로그램 추가"
 
-#: ../capplet/gsm-app-dialog.c:201
+#: ../capplet/gsm-app-dialog.c:226 ../data/session-properties.ui.h:2
+msgid "_Add"
+msgstr "추가(_A)"
+
+#: ../capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
 msgstr "시작 프로그램 편집"
 
-#: ../capplet/gsm-app-dialog.c:486
+#: ../capplet/gsm-app-dialog.c:231
+msgid "_Save"
+msgstr "저장(_S)"
+
+#: ../capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
 msgstr "시작 프로그램을 비워 둘 수 없습니다"
 
-#: ../capplet/gsm-app-dialog.c:492
+#: ../capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
 msgstr "시작 프로그램이 올바르지 않습니다"
 
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/gsm-properties-dialog.c:479
+msgid "_Help"
+msgstr "도움말(_H)"
+
+#: ../capplet/gsm-properties-dialog.c:483
+msgid "_Close"
+msgstr "닫기(_C)"
+
+#: ../capplet/gsm-properties-dialog.c:523
 msgid "Enabled"
 msgstr "사용중"
 
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/gsm-properties-dialog.c:535
 msgid "Icon"
 msgstr "아이콘"
 
-#: ../capplet/gsm-properties-dialog.c:542
+#: ../capplet/gsm-properties-dialog.c:547
 msgid "Program"
 msgstr "프로그램"
 
-#: ../capplet/gsm-properties-dialog.c:741
+#: ../capplet/gsm-properties-dialog.c:742
 msgid "Startup Applications Preferences"
 msgstr "시작 프로그램 기본 설정"
 
-#: ../capplet/gsp-app.c:273
+#: ../capplet/gsp-app.c:283
 msgid "No name"
 msgstr "이름 없음"
 
-#: ../capplet/gsp-app.c:279
+#: ../capplet/gsp-app.c:289
 msgid "No description"
 msgstr "설명 없음"
 
@@ -149,8 +184,7 @@ msgstr "그놈 호환 구성 요소 시작 제어"
 msgid "Control which compatibility components to start."
 msgstr "시작할 호환 구성 요소를 처리합니다."
 
-#: ../data/org.mate.session.gschema.xml.in.h:17
-#: ../data/mate-wm.desktop.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr "창 관리자"
 
@@ -202,17 +236,17 @@ msgstr "이 세션을 사용하면 마테에 로그인합니다"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>실행 중인 프로그램이 있습니다:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:634
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:633
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr "프로그램이 끝나기를 기다리는 중입니다. 이 프로그램을 중단하면 작업하던 내용을 잃어버릴 수도 있습니다."
 
-#: ../data/mate-session-properties.desktop.in.in.h:1
+#: ../data/mate-session-properties.desktop.in.h:1
 msgid "Startup Applications"
 msgstr " 시작 프로그램"
 
-#: ../data/mate-session-properties.desktop.in.in.h:2
+#: ../data/mate-session-properties.desktop.in.h:2
 msgid "Choose what applications to start when you log in"
 msgstr "로그인할 때 어떤 프로그램을 시작할 지 고릅니다"
 
@@ -220,37 +254,49 @@ msgstr "로그인할 때 어떤 프로그램을 시작할 지 고릅니다"
 msgid "Additional startup _programs:"
 msgstr "시작 프로그램 추가(_P):"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/session-properties.ui.h:3
+msgid "_Remove"
+msgstr "제거(_R)"
+
+#: ../data/session-properties.ui.h:4
+msgid "_Edit"
+msgstr "편집(_E)"
+
+#: ../data/session-properties.ui.h:5
 msgid "Startup Programs"
 msgstr "시작 프로그램"
 
-#: ../data/session-properties.ui.h:3
+#: ../data/session-properties.ui.h:6
 msgid "_Automatically remember running applications when logging out"
 msgstr "로그아웃할 때 자동으로 실행 중인 프로그램 기억(_A)"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/session-properties.ui.h:7
 msgid "_Remember Currently Running Application"
 msgstr "현재 실행 중인 프로그램 기억(_R)"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/session-properties.ui.h:8
 msgid "Options"
 msgstr "옵션"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/session-properties.ui.h:9
 msgid "Browse…"
 msgstr "찾아보기..."
 
-#: ../data/session-properties.ui.h:7
+#: ../data/session-properties.ui.h:10
 msgid "Comm_ent:"
 msgstr "설명(_E):"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/session-properties.ui.h:11
 msgid "Co_mmand:"
 msgstr "명령(_M):"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/session-properties.ui.h:12
 msgid "_Name:"
 msgstr "이름(_N):"
+
+#: ../data/session-properties.ui.h:13
+msgid "_Delay:"
+msgstr "지연 시간(_D):"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
@@ -287,160 +333,160 @@ msgstr "문서 URI는 'Type=Link' desktop 항목에 넘길 수 없습니다"
 msgid "Not a launchable item"
 msgstr "실행할 수 있는 항목이 없습니다"
 
-#: ../egg/eggsmclient.c:225
+#: ../egg/eggsmclient.c:221
 msgid "Disable connection to session manager"
 msgstr "세션 관리자에 연결하지 않습니다"
 
-#: ../egg/eggsmclient.c:228
+#: ../egg/eggsmclient.c:224
 msgid "Specify file containing saved configuration"
 msgstr "설정을 저장할 파일을 지정합니다"
 
-#: ../egg/eggsmclient.c:228
+#: ../egg/eggsmclient.c:224
 msgid "FILE"
 msgstr "<파일>"
 
-#: ../egg/eggsmclient.c:231
+#: ../egg/eggsmclient.c:227
 msgid "Specify session management ID"
 msgstr "세션 관리 ID를 지정합니다"
 
-#: ../egg/eggsmclient.c:231
+#: ../egg/eggsmclient.c:227
 msgid "ID"
 msgstr "ID"
 
-#: ../egg/eggsmclient.c:252
+#: ../egg/eggsmclient.c:248
 msgid "Session management options:"
 msgstr "세션 관리 옵션:"
 
-#: ../egg/eggsmclient.c:253
+#: ../egg/eggsmclient.c:249
 msgid "Show session management options"
 msgstr "세션 관리 옵션을 표시합니다"
 
-#: ../mate-session/gsm-inhibit-dialog.c:252
+#: ../mate-session/gsm-inhibit-dialog.c:251
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' 아이콘이 없습니다"
 
-#: ../mate-session/gsm-inhibit-dialog.c:582
+#: ../mate-session/gsm-inhibit-dialog.c:581
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: ../mate-session/gsm-inhibit-dialog.c:633
+#: ../mate-session/gsm-inhibit-dialog.c:632
 msgid "A program is still running:"
 msgstr "한 프로그램이 실행 중입니다:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:637
+#: ../mate-session/gsm-inhibit-dialog.c:636
 msgid "Some programs are still running:"
 msgstr "프로그램이 실행 중입니다:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:638
+#: ../mate-session/gsm-inhibit-dialog.c:637
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr "프로그램이 끝나기를 기다리는 중입니다. 이 프로그램을 중단하면 작업하던 내용을 잃어버릴 수도 있습니다."
 
-#: ../mate-session/gsm-inhibit-dialog.c:868
+#: ../mate-session/gsm-inhibit-dialog.c:867
 msgid "Switch User Anyway"
 msgstr "그래도 사용자 바꾸기"
 
-#: ../mate-session/gsm-inhibit-dialog.c:871
+#: ../mate-session/gsm-inhibit-dialog.c:870
 msgid "Log Out Anyway"
 msgstr "그래도 로그아웃"
 
-#: ../mate-session/gsm-inhibit-dialog.c:874
+#: ../mate-session/gsm-inhibit-dialog.c:873
 msgid "Suspend Anyway"
 msgstr "그래도 절전"
 
-#: ../mate-session/gsm-inhibit-dialog.c:877
+#: ../mate-session/gsm-inhibit-dialog.c:876
 msgid "Hibernate Anyway"
 msgstr "그래도 최대 절전"
 
-#: ../mate-session/gsm-inhibit-dialog.c:880
+#: ../mate-session/gsm-inhibit-dialog.c:879
 msgid "Shut Down Anyway"
 msgstr "그래도 시스템 종료"
 
-#: ../mate-session/gsm-inhibit-dialog.c:883
+#: ../mate-session/gsm-inhibit-dialog.c:882
 msgid "Reboot Anyway"
 msgstr "그래도 다시 시작"
 
-#: ../mate-session/gsm-inhibit-dialog.c:891
+#: ../mate-session/gsm-inhibit-dialog.c:890
 msgid "Lock Screen"
 msgstr "화면 잠그기"
 
-#: ../mate-session/gsm-inhibit-dialog.c:894
+#: ../mate-session/gsm-inhibit-dialog.c:893
 msgid "Cancel"
 msgstr "취소"
 
-#: ../mate-session/gsm-logout-dialog.c:312
+#: ../mate-session/gsm-logout-dialog.c:307
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
+msgstr[0] "%d초 후 자동으로 로그아웃합니다"
 
-#: ../mate-session/gsm-logout-dialog.c:320
+#: ../mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
+msgstr[0] "%d초 후 자동으로 시스템을 끕니다"
 
-#: ../mate-session/gsm-logout-dialog.c:366
+#: ../mate-session/gsm-logout-dialog.c:361
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "\"%s\" 사용자로 로그인했습니다."
 
-#: ../mate-session/gsm-logout-dialog.c:446
+#: ../mate-session/gsm-logout-dialog.c:441
 msgid "Log out of this system now?"
 msgstr "지금 시스템에서 로그아웃하시겠습니까?"
 
-#: ../mate-session/gsm-logout-dialog.c:452
+#: ../mate-session/gsm-logout-dialog.c:447
 msgid "_Switch User"
 msgstr "사용자 바꾸기(_S)"
 
-#: ../mate-session/gsm-logout-dialog.c:461
+#: ../mate-session/gsm-logout-dialog.c:456
 msgid "_Log Out"
 msgstr "로그아웃(_L)"
 
-#: ../mate-session/gsm-logout-dialog.c:467
+#: ../mate-session/gsm-logout-dialog.c:462
 msgid "Shut down this system now?"
 msgstr "지금 시스템을 끄시겠습니까?"
 
-#: ../mate-session/gsm-logout-dialog.c:473
+#: ../mate-session/gsm-logout-dialog.c:468
 msgid "S_uspend"
 msgstr "절전(_U)"
 
-#: ../mate-session/gsm-logout-dialog.c:479
+#: ../mate-session/gsm-logout-dialog.c:474
 msgid "_Hibernate"
 msgstr "최대 절전(_H)"
 
-#: ../mate-session/gsm-logout-dialog.c:485
+#: ../mate-session/gsm-logout-dialog.c:480
 msgid "_Restart"
 msgstr "다시 시작(_R)"
 
-#: ../mate-session/gsm-logout-dialog.c:495
+#: ../mate-session/gsm-logout-dialog.c:490
 msgid "_Shut Down"
 msgstr "끄기(_S)"
 
-#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
+#: ../mate-session/gsm-manager.c:1512 ../mate-session/gsm-manager.c:2327
 msgid "Not responding"
 msgstr "응답 없음"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: ../mate-session/gsm-xsmp-client.c:565
+#: ../mate-session/gsm-xsmp-client.c:595
 msgid "Remembered Application"
 msgstr "기억한 프로그램"
 
-#: ../mate-session/gsm-xsmp-client.c:1203
+#: ../mate-session/gsm-xsmp-client.c:1262
 msgid "This program is blocking logout."
 msgstr "이 프로그램이 로그 아웃을 멈췄습니다."
 
-#: ../mate-session/gsm-xsmp-server.c:325
+#: ../mate-session/gsm-xsmp-server.c:324
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "지금 세션을 끝내는 중이므로 새 클라이언트 연결을 거부합니다.\n"
 
-#: ../mate-session/gsm-xsmp-server.c:587
+#: ../mate-session/gsm-xsmp-server.c:586
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE 리스닝 소켓을 만들 수 없습니다: %s"
@@ -467,49 +513,49 @@ msgstr "사용자가 지정한 프로그램을 읽어들이지 않습니다"
 msgid " - the MATE session manager"
 msgstr "- 마테 세션 관리자"
 
-#: ../tools/mate-session-save.c:69
+#: ../tools/mate-session-save.c:66
 msgid "Log out"
 msgstr "로그아웃"
 
-#: ../tools/mate-session-save.c:70
+#: ../tools/mate-session-save.c:67
 msgid "Log out, ignoring any existing inhibitors"
 msgstr "로그아웃하면서 걸림돌이 있어도 무시합니다"
 
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:68
 msgid "Show logout dialog"
 msgstr "로그아웃 대화 상자를 표시합니다"
 
-#: ../tools/mate-session-save.c:72
+#: ../tools/mate-session-save.c:69
 msgid "Show shutdown dialog"
 msgstr "끄기 대화 상자를 표시합니다"
 
-#: ../tools/mate-session-save.c:73
+#: ../tools/mate-session-save.c:70
 msgid "Use dialog boxes for errors"
 msgstr "오류를 보이기 위해 대화 상자를 사용합니다"
 
 #. deprecated options
-#: ../tools/mate-session-save.c:75
+#: ../tools/mate-session-save.c:72
 msgid "Set the current session name"
 msgstr "현재 세션의 이름을 지정합니다"
 
-#: ../tools/mate-session-save.c:75
+#: ../tools/mate-session-save.c:72
 msgid "NAME"
 msgstr "<이름>"
 
-#: ../tools/mate-session-save.c:76
+#: ../tools/mate-session-save.c:73
 msgid "Kill session"
 msgstr "세션을 끝냅니다"
 
-#: ../tools/mate-session-save.c:77
+#: ../tools/mate-session-save.c:74
 msgid "Do not require confirmation"
 msgstr "확인을 받지 않습니다"
 
 #. Okay, it wasn't the upgrade case, so now we can give up.
-#: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
+#: ../tools/mate-session-save.c:126
 msgid "Could not connect to the session manager"
 msgstr "세션 관리자에 연결할 수 없습니다"
 
-#: ../tools/mate-session-save.c:276
+#: ../tools/mate-session-save.c:251
 msgid "Program called with conflicting options"
 msgstr "함께 사용할 수 없는 옵션을 같이 사용했습니다"
 

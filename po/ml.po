@@ -3,14 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:29+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"POT-Creation-Date: 2019-02-09 00:06+0100\n"
+"PO-Revision-Date: 2018-03-12 08:06+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Malayalam (https://www.transifex.com/mate/teams/13566/ml/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,47 +21,76 @@ msgstr ""
 "Language: ml\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/gsm-app-dialog.c:125
+#: ../capplet/gsm-app-dialog.c:127
 msgid "Select Command"
 msgstr "കമാന്‍ഡ് തെരഞ്ഞെടുക്കുക"
 
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/gsm-app-dialog.c:170
+msgid "second"
+msgstr ""
+
+#: ../capplet/gsm-app-dialog.c:172
+msgid "seconds"
+msgstr "സെക്കന്‍ഡുകള്‍"
+
+#: ../capplet/gsm-app-dialog.c:218 ../mate-session/gsm-logout-dialog.c:452
+#: ../mate-session/gsm-logout-dialog.c:485
+msgid "_Cancel"
+msgstr "_റദ്ദാക്കുക"
+
+#: ../capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
 msgstr "ആരംഭ നിര്‍ദ്ദേശം ചേര്‍ക്കുക"
 
-#: ../capplet/gsm-app-dialog.c:201
+#: ../capplet/gsm-app-dialog.c:226 ../data/session-properties.ui.h:2
+msgid "_Add"
+msgstr "_ചേര്‍ക്കുക"
+
+#: ../capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
 msgstr "ആരംഭ നിര്‍ദ്ദേശം ചിട്ടപ്പെടുത്തുക"
 
-#: ../capplet/gsm-app-dialog.c:486
+#: ../capplet/gsm-app-dialog.c:231
+msgid "_Save"
+msgstr "സംരക്ഷിക്കുക"
+
+#: ../capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
 msgstr "ആരംഭ നിര്‍ദ്ദേശം ശൂന്യമായിരിക്കുവാന്‍ പാടില്ല"
 
-#: ../capplet/gsm-app-dialog.c:492
+#: ../capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
 msgstr "ആരംഭ ആജ്ഞ ശരിയല്ല"
 
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/gsm-properties-dialog.c:479
+msgid "_Help"
+msgstr "_സഹായം"
+
+#: ../capplet/gsm-properties-dialog.c:483
+msgid "_Close"
+msgstr "_അടയ്ക്കു:"
+
+#: ../capplet/gsm-properties-dialog.c:523
 msgid "Enabled"
 msgstr "പ്രവര്‍ത്തന സജ്ജമാക്കുക"
 
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/gsm-properties-dialog.c:535
 msgid "Icon"
 msgstr "ചിഹ്നം"
 
-#: ../capplet/gsm-properties-dialog.c:542
+#: ../capplet/gsm-properties-dialog.c:547
 msgid "Program"
 msgstr "പ്രോഗ്രാം"
 
-#: ../capplet/gsm-properties-dialog.c:741
+#: ../capplet/gsm-properties-dialog.c:742
 msgid "Startup Applications Preferences"
 msgstr "പ്രാരംഭ പ്രയോഗങ്ങള്‍ക്കുള്ള മുന്‍ഗണനകള്‍"
 
-#: ../capplet/gsp-app.c:273
+#: ../capplet/gsp-app.c:283
 msgid "No name"
 msgstr "പേരില്ല"
 
-#: ../capplet/gsp-app.c:279
+#: ../capplet/gsp-app.c:289
 msgid "No description"
 msgstr "വിവരണം ഒന്നുമില്ല"
 
@@ -147,8 +179,7 @@ msgstr ""
 msgid "Control which compatibility components to start."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.h:17
-#: ../data/mate-wm.desktop.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr "ജാലക പാലകന്‍"
 
@@ -207,17 +238,17 @@ msgstr "ഈ പ്രവര്‍ത്തനവേള നിങ്ങളെ ഗ
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>ചില പ്രയോഗങ്ങള്‍ ഇപ്പോഴും പ്രവര്‍ത്തിച്ചു് കൊണ്ടിരിയ്ക്കുന്നു:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:634
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:633
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr ""
 
-#: ../data/mate-session-properties.desktop.in.in.h:1
+#: ../data/mate-session-properties.desktop.in.h:1
 msgid "Startup Applications"
 msgstr "പ്രാരംഭ പ്രയോഗങ്ങള്‍"
 
-#: ../data/mate-session-properties.desktop.in.in.h:2
+#: ../data/mate-session-properties.desktop.in.h:2
 msgid "Choose what applications to start when you log in"
 msgstr ""
 "നിങ്ങള്‍ ലോഗിന്‍ ചെയ്യുമ്പോള്‍ ആരംഭിക്കേണ്ട പ്രയോഗങ്ങള്‍ തെരഞ്ഞെടുക്കുക"
@@ -226,38 +257,50 @@ msgstr ""
 msgid "Additional startup _programs:"
 msgstr "കൂടുതല്‍ പ്രാരംഭ _പ്രയോഗങ്ങള്‍:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/session-properties.ui.h:3
+msgid "_Remove"
+msgstr "_നീക്കം ചെയ്യുക"
+
+#: ../data/session-properties.ui.h:4
+msgid "_Edit"
+msgstr "_മാറ്റം വരുത്തുക"
+
+#: ../data/session-properties.ui.h:5
 msgid "Startup Programs"
 msgstr "പ്രാരംഭ പ്രോഗ്രാമുകള്‍"
 
-#: ../data/session-properties.ui.h:3
+#: ../data/session-properties.ui.h:6
 msgid "_Automatically remember running applications when logging out"
 msgstr ""
 "പുറത്തിറങ്ങുമ്പോള്‍ പ്രവര്‍ത്തിയ്ക്കുന്ന പ്രയോഗങ്ങള്‍ ഓര്‍ത്തിരിയ്ക്കുക."
 
-#: ../data/session-properties.ui.h:4
+#: ../data/session-properties.ui.h:7
 msgid "_Remember Currently Running Application"
 msgstr "ഇപ്പോള്‍ പ്രവര്‍ത്തിക്കുന്ന പ്രയോഗം _ഓര്‍ക്കുക"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/session-properties.ui.h:8
 msgid "Options"
 msgstr "ഐച്ഛികങ്ങള്‍"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/session-properties.ui.h:9
 msgid "Browse…"
 msgstr ""
 
-#: ../data/session-properties.ui.h:7
+#: ../data/session-properties.ui.h:10
 msgid "Comm_ent:"
 msgstr "അഭിപ്രായം:"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/session-properties.ui.h:11
 msgid "Co_mmand:"
 msgstr "_ആജ്ഞ:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/session-properties.ui.h:12
 msgid "_Name:"
 msgstr "പേര്: (_N)"
+
+#: ../data/session-properties.ui.h:13
+msgid "_Delay:"
+msgstr "_താമസം:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
@@ -295,52 +338,52 @@ msgstr ""
 msgid "Not a launchable item"
 msgstr "ലഭ്യമാക്കുവാന്‍ സാധിക്കുന്ന വസ്തുവല്ല"
 
-#: ../egg/eggsmclient.c:225
+#: ../egg/eggsmclient.c:221
 msgid "Disable connection to session manager"
 msgstr "സെഷന്‍ മാനേജറിലേക്കുള്ള കണക്ഷന്‍ പ്രവര്‍ത്തന രഹിതമാക്കുക"
 
-#: ../egg/eggsmclient.c:228
+#: ../egg/eggsmclient.c:224
 msgid "Specify file containing saved configuration"
 msgstr "സൂക്ഷിച്ചിട്ടുള്ള ക്രമീകരണം അടങ്ങുന്ന ഫയല്‍ നല്‍കുക"
 
-#: ../egg/eggsmclient.c:228
+#: ../egg/eggsmclient.c:224
 msgid "FILE"
 msgstr "FILE"
 
-#: ../egg/eggsmclient.c:231
+#: ../egg/eggsmclient.c:227
 msgid "Specify session management ID"
 msgstr "സെഷന്‍ മാനേജ്മെന്റ് ID വ്യക്തമാക്കുക"
 
-#: ../egg/eggsmclient.c:231
+#: ../egg/eggsmclient.c:227
 msgid "ID"
 msgstr "ID"
 
-#: ../egg/eggsmclient.c:252
+#: ../egg/eggsmclient.c:248
 msgid "Session management options:"
 msgstr "സെഷന്‍ മാനേജ്മെന്റ് ഉപാധികള്‍:"
 
-#: ../egg/eggsmclient.c:253
+#: ../egg/eggsmclient.c:249
 msgid "Show session management options"
 msgstr "സെഷന്‍ മാനേജ്മെന്റ് ഉപാധികള്‍ കാണിക്കുക"
 
-#: ../mate-session/gsm-inhibit-dialog.c:252
+#: ../mate-session/gsm-inhibit-dialog.c:251
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' ചിഹ്നം കണ്ടില്ല"
 
-#: ../mate-session/gsm-inhibit-dialog.c:582
+#: ../mate-session/gsm-inhibit-dialog.c:581
 msgid "Unknown"
 msgstr "അപരിചിതമായ"
 
-#: ../mate-session/gsm-inhibit-dialog.c:633
+#: ../mate-session/gsm-inhibit-dialog.c:632
 msgid "A program is still running:"
 msgstr "ഒരു പ്രയോഗം ഇപ്പോഴും പ്രവര്‍ത്തിച്ചു് കൊണ്ടിരിയ്ക്കുന്നു:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:637
+#: ../mate-session/gsm-inhibit-dialog.c:636
 msgid "Some programs are still running:"
 msgstr "ചില പ്രയോഗങ്ങള്‍ ഇപ്പോഴും പ്രവര്‍ത്തിച്ചു് കൊണ്ടിരിയ്ക്കുന്നു:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:638
+#: ../mate-session/gsm-inhibit-dialog.c:637
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -349,105 +392,105 @@ msgstr ""
 "തടസ്സപ്പെടുത്തുന്നതു് നിങ്ങള്‍ ചെയ്തുകൊണ്ടിരിയ്ക്കുന്ന പണി നഷ്ടപ്പെടുവാന്‍ "
 "കാരണമായേയ്ക്കാം."
 
-#: ../mate-session/gsm-inhibit-dialog.c:868
+#: ../mate-session/gsm-inhibit-dialog.c:867
 msgid "Switch User Anyway"
 msgstr "എന്തായാലും ഉപയോക്താവിനെ മാറ്റുക"
 
-#: ../mate-session/gsm-inhibit-dialog.c:871
+#: ../mate-session/gsm-inhibit-dialog.c:870
 msgid "Log Out Anyway"
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:874
+#: ../mate-session/gsm-inhibit-dialog.c:873
 msgid "Suspend Anyway"
 msgstr "എന്തായാലും മയങ്ങുക"
 
-#: ../mate-session/gsm-inhibit-dialog.c:877
+#: ../mate-session/gsm-inhibit-dialog.c:876
 msgid "Hibernate Anyway"
 msgstr "എന്തായാലും ശിശിരനിദ്രയിലാഴുക"
 
-#: ../mate-session/gsm-inhibit-dialog.c:880
+#: ../mate-session/gsm-inhibit-dialog.c:879
 msgid "Shut Down Anyway"
 msgstr ""
 
-#: ../mate-session/gsm-inhibit-dialog.c:883
+#: ../mate-session/gsm-inhibit-dialog.c:882
 msgid "Reboot Anyway"
 msgstr "എന്തായാലും വീണ്ടും തുടങ്ങുക"
 
-#: ../mate-session/gsm-inhibit-dialog.c:891
+#: ../mate-session/gsm-inhibit-dialog.c:890
 msgid "Lock Screen"
 msgstr "സ്ക്രീന്‍ പൂട്ടുക"
 
-#: ../mate-session/gsm-inhibit-dialog.c:894
+#: ../mate-session/gsm-inhibit-dialog.c:893
 msgid "Cancel"
 msgstr "റദ്ദാക്കുക"
 
-#: ../mate-session/gsm-logout-dialog.c:312
+#: ../mate-session/gsm-logout-dialog.c:307
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:320
+#: ../mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../mate-session/gsm-logout-dialog.c:366
+#: ../mate-session/gsm-logout-dialog.c:361
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "നിങ്ങള്‍ നിലവില്‍ \"%s\" ആയി ലോഗിന്‍ ചെയ്തിരിക്കുന്നു."
 
-#: ../mate-session/gsm-logout-dialog.c:446
+#: ../mate-session/gsm-logout-dialog.c:441
 msgid "Log out of this system now?"
 msgstr "ഈ സിസ്റ്റത്തില്‍ നിന്ന് ഇപ്പോള്‍ പുറത്തിറങ്ങണോ?"
 
-#: ../mate-session/gsm-logout-dialog.c:452
+#: ../mate-session/gsm-logout-dialog.c:447
 msgid "_Switch User"
 msgstr "_മറ്റൊരുപയോക്താവാകുക"
 
-#: ../mate-session/gsm-logout-dialog.c:461
+#: ../mate-session/gsm-logout-dialog.c:456
 msgid "_Log Out"
 msgstr "_പുറത്തിറങ്ങുക"
 
-#: ../mate-session/gsm-logout-dialog.c:467
+#: ../mate-session/gsm-logout-dialog.c:462
 msgid "Shut down this system now?"
 msgstr "ഈ സിസ്റ്റം ഇപ്പോള്‍ അടച്ചുപൂട്ടണോ ?"
 
-#: ../mate-session/gsm-logout-dialog.c:473
+#: ../mate-session/gsm-logout-dialog.c:468
 msgid "S_uspend"
 msgstr "_മയങ്ങിക്കോട്ടെ"
 
-#: ../mate-session/gsm-logout-dialog.c:479
+#: ../mate-session/gsm-logout-dialog.c:474
 msgid "_Hibernate"
 msgstr "_ശിശിരനിദ്ര"
 
-#: ../mate-session/gsm-logout-dialog.c:485
+#: ../mate-session/gsm-logout-dialog.c:480
 msgid "_Restart"
 msgstr "വീണ്ടും തുടങ്ങുക"
 
-#: ../mate-session/gsm-logout-dialog.c:495
+#: ../mate-session/gsm-logout-dialog.c:490
 msgid "_Shut Down"
 msgstr "കമ്പ്യൂട്ടര്‍ അടച്ചുപൂട്ടുക"
 
-#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
+#: ../mate-session/gsm-manager.c:1512 ../mate-session/gsm-manager.c:2327
 msgid "Not responding"
 msgstr "പ്രതികരിയ്ക്കുന്നില്ല"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: ../mate-session/gsm-xsmp-client.c:565
+#: ../mate-session/gsm-xsmp-client.c:595
 msgid "Remembered Application"
 msgstr ""
 
-#: ../mate-session/gsm-xsmp-client.c:1203
+#: ../mate-session/gsm-xsmp-client.c:1262
 msgid "This program is blocking logout."
 msgstr ""
 
-#: ../mate-session/gsm-xsmp-server.c:325
+#: ../mate-session/gsm-xsmp-server.c:324
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
@@ -455,7 +498,7 @@ msgstr ""
 "പുതിയ ക്ലയന്റ് ബന്ധം നിരസിക്കുന്നു കാരണം പ്രവര്‍ത്തനവേള ഇപ്പോള്‍ അടച്ചു "
 "പൂട്ടൂകയാണു്\n"
 
-#: ../mate-session/gsm-xsmp-server.c:587
+#: ../mate-session/gsm-xsmp-server.c:586
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "'ഐസ് '(ICE) കേള്‍ക്കാനുള്ള സോക്കറ്റ് ഉണ്ടാക്കാന്‍ കഴിഞ്ഞില്ല: %s"
@@ -484,49 +527,49 @@ msgstr "ഉപയോക്താവ് വ്യക്തമാക്കിയ �
 msgid " - the MATE session manager"
 msgstr "- MATE പ്രവര്‍ത്തനവേള നടത്തിപ്പുകാരന്‍"
 
-#: ../tools/mate-session-save.c:69
+#: ../tools/mate-session-save.c:66
 msgid "Log out"
 msgstr "പുറത്തിറങ്ങുക"
 
-#: ../tools/mate-session-save.c:70
+#: ../tools/mate-session-save.c:67
 msgid "Log out, ignoring any existing inhibitors"
 msgstr "തടസ്സമുണ്ടാക്കുന്നവരെ വക വയ്ക്കാതെ പുറത്തിറങ്ങുക"
 
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:68
 msgid "Show logout dialog"
 msgstr "പുറത്തിറങ്ങുന്നതിനുള്ള സംഭാഷണം കാണിയ്ക്കുക"
 
-#: ../tools/mate-session-save.c:72
+#: ../tools/mate-session-save.c:69
 msgid "Show shutdown dialog"
 msgstr "നിര്‍ത്തി വയ്ക്കുന്നതിനുള്ള സംഭാഷണം കാണിയ്ക്കുക"
 
-#: ../tools/mate-session-save.c:73
+#: ../tools/mate-session-save.c:70
 msgid "Use dialog boxes for errors"
 msgstr "തെറ്റുകള്‍ വരുമ്പോള്‍ സംഭാഷണ കളങ്ങള്‍ ഉപയോഗിയ്ക്കുക"
 
 #. deprecated options
-#: ../tools/mate-session-save.c:75
+#: ../tools/mate-session-save.c:72
 msgid "Set the current session name"
 msgstr "ഇപ്പോഴുള്ള പ്രവര്‍ത്തനവേളയ്ക്കു് പേരു് കൊടുക്കുക"
 
-#: ../tools/mate-session-save.c:75
+#: ../tools/mate-session-save.c:72
 msgid "NAME"
 msgstr "NAME(പേര്)"
 
-#: ../tools/mate-session-save.c:76
+#: ../tools/mate-session-save.c:73
 msgid "Kill session"
 msgstr "പ്രവര്‍ത്തനവേള ഇല്ലാതാക്കുക"
 
-#: ../tools/mate-session-save.c:77
+#: ../tools/mate-session-save.c:74
 msgid "Do not require confirmation"
 msgstr "ഉറപ്പു വരുത്തേണ്ട ആവശ്യമില്ല"
 
 #. Okay, it wasn't the upgrade case, so now we can give up.
-#: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
+#: ../tools/mate-session-save.c:126
 msgid "Could not connect to the session manager"
 msgstr "പ്രവര്‍ത്തനവേള നടത്തിപ്പുകാരനുമായി ബന്ധപ്പെടാന്‍ കഴിയുന്നില്ല"
 
-#: ../tools/mate-session-save.c:276
+#: ../tools/mate-session-save.c:251
 msgid "Program called with conflicting options"
 msgstr ""
 "പരസ്പരവിരുദ്ധമായ ഐച്ഛികങ്ങളോടെയാണു് പ്രോഗ്രാമിനെ വിളിച്ചിരിയ്ക്കുന്നതു്"

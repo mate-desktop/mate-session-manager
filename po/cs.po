@@ -3,14 +3,27 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Michal Procházka <mich.procha@seznam.cz>, 2018
+# Ondřej Kolín <ondrej.kolin@gmail.com>, 2018
+# Honza K. <honza889@gmail.com>, 2018
+# Lucas Lommer <drom@kdyne.net>, 2018
+# Martin Wimpress <code@flexion.org>, 2018
+# jakubtalich, 2018
+# Stanislav Kučera <inactive+kacernator@transifex.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Michal <sinope@seznam.cz>, 2018
+# LiberteCzech <liberte.czech@gmail.com>, 2018
+# ToMáš Marný, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:29+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Stanislav Kučera <inactive+kacernator@transifex.com>, 2018\n"
+"POT-Creation-Date: 2019-02-09 00:06+0100\n"
+"PO-Revision-Date: 2018-03-12 08:06+0000\n"
+"Last-Translator: ToMáš Marný, 2019\n"
 "Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,47 +31,76 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: ../capplet/gsm-app-dialog.c:125
+#: ../capplet/gsm-app-dialog.c:127
 msgid "Select Command"
 msgstr "Vybrat příkaz"
 
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/gsm-app-dialog.c:170
+msgid "second"
+msgstr ""
+
+#: ../capplet/gsm-app-dialog.c:172
+msgid "seconds"
+msgstr "sekundách"
+
+#: ../capplet/gsm-app-dialog.c:218 ../mate-session/gsm-logout-dialog.c:452
+#: ../mate-session/gsm-logout-dialog.c:485
+msgid "_Cancel"
+msgstr "_Zrušit"
+
+#: ../capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
 msgstr "Přidat program při přihlášení"
 
-#: ../capplet/gsm-app-dialog.c:201
+#: ../capplet/gsm-app-dialog.c:226 ../data/session-properties.ui.h:2
+msgid "_Add"
+msgstr "Přid_at"
+
+#: ../capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
 msgstr "Upravit program při přihlášení"
 
-#: ../capplet/gsm-app-dialog.c:486
+#: ../capplet/gsm-app-dialog.c:231
+msgid "_Save"
+msgstr "_Uložit"
+
+#: ../capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
 msgstr "Příkaz při přihlášení nesmí být prázdný"
 
-#: ../capplet/gsm-app-dialog.c:492
+#: ../capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
 msgstr "Příkaz při přihlášení není platný"
 
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/gsm-properties-dialog.c:479
+msgid "_Help"
+msgstr "_Nápověda"
+
+#: ../capplet/gsm-properties-dialog.c:483
+msgid "_Close"
+msgstr "_Zavřít"
+
+#: ../capplet/gsm-properties-dialog.c:523
 msgid "Enabled"
 msgstr "Povoleno"
 
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/gsm-properties-dialog.c:535
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../capplet/gsm-properties-dialog.c:542
+#: ../capplet/gsm-properties-dialog.c:547
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/gsm-properties-dialog.c:741
+#: ../capplet/gsm-properties-dialog.c:742
 msgid "Startup Applications Preferences"
 msgstr "Předvolby aplikací spouštěných při přihlášení"
 
-#: ../capplet/gsp-app.c:273
+#: ../capplet/gsp-app.c:283
 msgid "No name"
 msgstr "Žádný název"
 
-#: ../capplet/gsp-app.c:279
+#: ../capplet/gsp-app.c:289
 msgid "No description"
 msgstr "Bez popisu"
 
@@ -153,8 +195,7 @@ msgstr "Kontrola kompatibilních komponent ke spuštění"
 msgid "Control which compatibility components to start."
 msgstr "Kontrola kompatibilních komponent ke startu"
 
-#: ../data/org.mate.session.gschema.xml.in.h:17
-#: ../data/mate-wm.desktop.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr "Správce oken"
 
@@ -214,7 +255,7 @@ msgstr "Toto sezení vás přihlásí do MATE"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Některé programy stále běží:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:634
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:633
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -222,11 +263,11 @@ msgstr ""
 "Čeká se na ukončení programu. Přerušení běhu programu může způsobit ztrátu "
 "rozdělané práce."
 
-#: ../data/mate-session-properties.desktop.in.in.h:1
+#: ../data/mate-session-properties.desktop.in.h:1
 msgid "Startup Applications"
 msgstr "Aplikace spouštěné při přihlášení"
 
-#: ../data/mate-session-properties.desktop.in.in.h:2
+#: ../data/mate-session-properties.desktop.in.h:2
 msgid "Choose what applications to start when you log in"
 msgstr "Vybere aplikace, které se mají spouštět při přihlášení"
 
@@ -234,37 +275,49 @@ msgstr "Vybere aplikace, které se mají spouštět při přihlášení"
 msgid "Additional startup _programs:"
 msgstr "_Další programy při přihlášení:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/session-properties.ui.h:3
+msgid "_Remove"
+msgstr "Odeb_rat"
+
+#: ../data/session-properties.ui.h:4
+msgid "_Edit"
+msgstr "_Upravit"
+
+#: ../data/session-properties.ui.h:5
 msgid "Startup Programs"
 msgstr "Programy při přihlášení"
 
-#: ../data/session-properties.ui.h:3
+#: ../data/session-properties.ui.h:6
 msgid "_Automatically remember running applications when logging out"
 msgstr "Při odhlašování si _automaticky pamatovat běžící aplikace"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/session-properties.ui.h:7
 msgid "_Remember Currently Running Application"
 msgstr "Zapa_matovat si aktuálně běžící aplikaci"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/session-properties.ui.h:8
 msgid "Options"
 msgstr "Volby"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/session-properties.ui.h:9
 msgid "Browse…"
 msgstr "Procházet..."
 
-#: ../data/session-properties.ui.h:7
+#: ../data/session-properties.ui.h:10
 msgid "Comm_ent:"
 msgstr "_Komentář:"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/session-properties.ui.h:11
 msgid "Co_mmand:"
 msgstr "_Příkaz:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/session-properties.ui.h:12
 msgid "_Name:"
 msgstr "Jmé_no:"
+
+#: ../data/session-properties.ui.h:13
+msgid "_Delay:"
+msgstr "Zpož_dění:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
@@ -301,52 +354,52 @@ msgstr "Nelze předat URI dokumentu položce .desktop „Type=Link“"
 msgid "Not a launchable item"
 msgstr "Nespustitelná položka"
 
-#: ../egg/eggsmclient.c:225
+#: ../egg/eggsmclient.c:221
 msgid "Disable connection to session manager"
 msgstr "Vypnout spojení se správcem sezení"
 
-#: ../egg/eggsmclient.c:228
+#: ../egg/eggsmclient.c:224
 msgid "Specify file containing saved configuration"
 msgstr "Stanovit soubor obsahující uloženou konfiguraci"
 
-#: ../egg/eggsmclient.c:228
+#: ../egg/eggsmclient.c:224
 msgid "FILE"
 msgstr "SOUBOR"
 
-#: ../egg/eggsmclient.c:231
+#: ../egg/eggsmclient.c:227
 msgid "Specify session management ID"
 msgstr "Stanovit ID Správy sezení"
 
-#: ../egg/eggsmclient.c:231
+#: ../egg/eggsmclient.c:227
 msgid "ID"
 msgstr "ID"
 
-#: ../egg/eggsmclient.c:252
+#: ../egg/eggsmclient.c:248
 msgid "Session management options:"
 msgstr "Možnosti Správy sezení:"
 
-#: ../egg/eggsmclient.c:253
+#: ../egg/eggsmclient.c:249
 msgid "Show session management options"
 msgstr "Zobrazit možnosti Správy sezení"
 
-#: ../mate-session/gsm-inhibit-dialog.c:252
+#: ../mate-session/gsm-inhibit-dialog.c:251
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Ikona \"%s\" nenalezena"
 
-#: ../mate-session/gsm-inhibit-dialog.c:582
+#: ../mate-session/gsm-inhibit-dialog.c:581
 msgid "Unknown"
 msgstr "Neznámo"
 
-#: ../mate-session/gsm-inhibit-dialog.c:633
+#: ../mate-session/gsm-inhibit-dialog.c:632
 msgid "A program is still running:"
 msgstr "Program stále běží:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:637
+#: ../mate-session/gsm-inhibit-dialog.c:636
 msgid "Some programs are still running:"
 msgstr "Některé programy stále běží:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:638
+#: ../mate-session/gsm-inhibit-dialog.c:637
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -354,39 +407,39 @@ msgstr ""
 "Čeká se na ukončení běhu programů. Přerušení běhu těchto programů může "
 "způsobit ztrátu dat."
 
-#: ../mate-session/gsm-inhibit-dialog.c:868
+#: ../mate-session/gsm-inhibit-dialog.c:867
 msgid "Switch User Anyway"
 msgstr "Přesto přepnout uživatele"
 
-#: ../mate-session/gsm-inhibit-dialog.c:871
+#: ../mate-session/gsm-inhibit-dialog.c:870
 msgid "Log Out Anyway"
 msgstr "Přesto se odhlásit"
 
-#: ../mate-session/gsm-inhibit-dialog.c:874
+#: ../mate-session/gsm-inhibit-dialog.c:873
 msgid "Suspend Anyway"
 msgstr "Přesto uspat do paměti"
 
-#: ../mate-session/gsm-inhibit-dialog.c:877
+#: ../mate-session/gsm-inhibit-dialog.c:876
 msgid "Hibernate Anyway"
 msgstr "Přesto uspat na disk"
 
-#: ../mate-session/gsm-inhibit-dialog.c:880
+#: ../mate-session/gsm-inhibit-dialog.c:879
 msgid "Shut Down Anyway"
 msgstr "Přesto vypnout"
 
-#: ../mate-session/gsm-inhibit-dialog.c:883
+#: ../mate-session/gsm-inhibit-dialog.c:882
 msgid "Reboot Anyway"
 msgstr "Přesto restartovat"
 
-#: ../mate-session/gsm-inhibit-dialog.c:891
+#: ../mate-session/gsm-inhibit-dialog.c:890
 msgid "Lock Screen"
 msgstr "Uzamknout obrazovku"
 
-#: ../mate-session/gsm-inhibit-dialog.c:894
+#: ../mate-session/gsm-inhibit-dialog.c:893
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: ../mate-session/gsm-logout-dialog.c:312
+#: ../mate-session/gsm-logout-dialog.c:307
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
@@ -395,7 +448,7 @@ msgstr[1] "Budete automaticky odhlášeni za %d sekundy"
 msgstr[2] "Budete automaticky odhlášeni za %d sekund"
 msgstr[3] "Budete automaticky odhlášeni za %d sekund"
 
-#: ../mate-session/gsm-logout-dialog.c:320
+#: ../mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
@@ -404,66 +457,66 @@ msgstr[1] "Tento systém bude automaticky vypnut za %d sekundy"
 msgstr[2] "Tento systém bude automaticky vypnut za %d sekund"
 msgstr[3] "Tento systém bude automaticky vypnut za %d sekund"
 
-#: ../mate-session/gsm-logout-dialog.c:366
+#: ../mate-session/gsm-logout-dialog.c:361
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Aktuálně jste přihlášeni jako \"%s\"."
 
-#: ../mate-session/gsm-logout-dialog.c:446
+#: ../mate-session/gsm-logout-dialog.c:441
 msgid "Log out of this system now?"
 msgstr "Odhlásit se nyní z tohoto systému?"
 
-#: ../mate-session/gsm-logout-dialog.c:452
+#: ../mate-session/gsm-logout-dialog.c:447
 msgid "_Switch User"
 msgstr "_Přepnout uživatele"
 
-#: ../mate-session/gsm-logout-dialog.c:461
+#: ../mate-session/gsm-logout-dialog.c:456
 msgid "_Log Out"
 msgstr "_Odhlásit se"
 
-#: ../mate-session/gsm-logout-dialog.c:467
+#: ../mate-session/gsm-logout-dialog.c:462
 msgid "Shut down this system now?"
 msgstr "Vypnout nyní tento systém?"
 
-#: ../mate-session/gsm-logout-dialog.c:473
+#: ../mate-session/gsm-logout-dialog.c:468
 msgid "S_uspend"
 msgstr "_Uspat do paměti"
 
-#: ../mate-session/gsm-logout-dialog.c:479
+#: ../mate-session/gsm-logout-dialog.c:474
 msgid "_Hibernate"
 msgstr "Uspat na _disk"
 
-#: ../mate-session/gsm-logout-dialog.c:485
+#: ../mate-session/gsm-logout-dialog.c:480
 msgid "_Restart"
 msgstr "_Restartovat"
 
-#: ../mate-session/gsm-logout-dialog.c:495
+#: ../mate-session/gsm-logout-dialog.c:490
 msgid "_Shut Down"
 msgstr "_Vypnout"
 
-#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
+#: ../mate-session/gsm-manager.c:1512 ../mate-session/gsm-manager.c:2327
 msgid "Not responding"
 msgstr "Neodpovídá"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: ../mate-session/gsm-xsmp-client.c:565
+#: ../mate-session/gsm-xsmp-client.c:595
 msgid "Remembered Application"
 msgstr "Pamatovat si aplikaci"
 
-#: ../mate-session/gsm-xsmp-client.c:1203
+#: ../mate-session/gsm-xsmp-client.c:1262
 msgid "This program is blocking logout."
 msgstr "Tento program brání odhlášení."
 
-#: ../mate-session/gsm-xsmp-server.c:325
+#: ../mate-session/gsm-xsmp-server.c:324
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 "Odmítnutí spojení nového klienta, jelikož právě probíhá vypnutí sezení\n"
 
-#: ../mate-session/gsm-xsmp-server.c:587
+#: ../mate-session/gsm-xsmp-server.c:586
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Nelze vytvořit socket naslouchání ICE: %s"
@@ -491,49 +544,49 @@ msgstr "Nenahrávat uživatelem zadané aplikace"
 msgid " - the MATE session manager"
 msgstr " - správce sezení MATE"
 
-#: ../tools/mate-session-save.c:69
+#: ../tools/mate-session-save.c:66
 msgid "Log out"
 msgstr "Odhlásit se"
 
-#: ../tools/mate-session-save.c:70
+#: ../tools/mate-session-save.c:67
 msgid "Log out, ignoring any existing inhibitors"
 msgstr "Odhlásit se, ignorovat jakékoliv existující inhibitory"
 
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:68
 msgid "Show logout dialog"
 msgstr "Zobrazit dialog odhlášení"
 
-#: ../tools/mate-session-save.c:72
+#: ../tools/mate-session-save.c:69
 msgid "Show shutdown dialog"
 msgstr "Zobrazit dialog vypnutí"
 
-#: ../tools/mate-session-save.c:73
+#: ../tools/mate-session-save.c:70
 msgid "Use dialog boxes for errors"
 msgstr "U chyb použije dialogová okna"
 
 #. deprecated options
-#: ../tools/mate-session-save.c:75
+#: ../tools/mate-session-save.c:72
 msgid "Set the current session name"
 msgstr "Nastaví název aktuálního sezení"
 
-#: ../tools/mate-session-save.c:75
+#: ../tools/mate-session-save.c:72
 msgid "NAME"
 msgstr "NÁZEV"
 
-#: ../tools/mate-session-save.c:76
+#: ../tools/mate-session-save.c:73
 msgid "Kill session"
 msgstr "Ukončí sezení"
 
-#: ../tools/mate-session-save.c:77
+#: ../tools/mate-session-save.c:74
 msgid "Do not require confirmation"
 msgstr "Nebude vyžadovat potvrzení"
 
 #. Okay, it wasn't the upgrade case, so now we can give up.
-#: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
+#: ../tools/mate-session-save.c:126
 msgid "Could not connect to the session manager"
 msgstr "Nelze se spojit se správcem sezení"
 
-#: ../tools/mate-session-save.c:276
+#: ../tools/mate-session-save.c:251
 msgid "Program called with conflicting options"
 msgstr "Program volán s kolidujícími volbami"
 

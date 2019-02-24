@@ -3,14 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Edward Sawyer <saoded@gmail.com>, 2018
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018
+# בר בוכובזה <bokovzabox@gmail.com>, 2018
+# shy tzedaka <shaytzedaka123@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:29+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: shy tzedaka <shaytzedaka123@gmail.com>, 2018\n"
+"POT-Creation-Date: 2019-02-09 00:06+0100\n"
+"PO-Revision-Date: 2018-03-12 08:06+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Hebrew (https://www.transifex.com/mate/teams/13566/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,47 +25,76 @@ msgstr ""
 "Language: he\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: ../capplet/gsm-app-dialog.c:125
+#: ../capplet/gsm-app-dialog.c:127
 msgid "Select Command"
 msgstr "בחירת פקודה"
 
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/gsm-app-dialog.c:170
+msgid "second"
+msgstr ""
+
+#: ../capplet/gsm-app-dialog.c:172
+msgid "seconds"
+msgstr "שניות"
+
+#: ../capplet/gsm-app-dialog.c:218 ../mate-session/gsm-logout-dialog.c:452
+#: ../mate-session/gsm-logout-dialog.c:485
+msgid "_Cancel"
+msgstr "_בטל"
+
+#: ../capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
 msgstr "הוספת תכנית הפעלה"
 
-#: ../capplet/gsm-app-dialog.c:201
+#: ../capplet/gsm-app-dialog.c:226 ../data/session-properties.ui.h:2
+msgid "_Add"
+msgstr "הו_ספה"
+
+#: ../capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
 msgstr "עריכת תכנית הפעלה"
 
-#: ../capplet/gsm-app-dialog.c:486
+#: ../capplet/gsm-app-dialog.c:231
+msgid "_Save"
+msgstr "_שמור"
+
+#: ../capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
 msgstr "פקודת ההפעלה לא יכולה להיות ריקה"
 
-#: ../capplet/gsm-app-dialog.c:492
+#: ../capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
 msgstr "פקודת ההפעלה אינה תקינה"
 
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/gsm-properties-dialog.c:479
+msgid "_Help"
+msgstr "ע_זרה"
+
+#: ../capplet/gsm-properties-dialog.c:483
+msgid "_Close"
+msgstr "_סגור"
+
+#: ../capplet/gsm-properties-dialog.c:523
 msgid "Enabled"
 msgstr "מופעל"
 
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/gsm-properties-dialog.c:535
 msgid "Icon"
 msgstr "סמל"
 
-#: ../capplet/gsm-properties-dialog.c:542
+#: ../capplet/gsm-properties-dialog.c:547
 msgid "Program"
 msgstr "תכנית"
 
-#: ../capplet/gsm-properties-dialog.c:741
+#: ../capplet/gsm-properties-dialog.c:742
 msgid "Startup Applications Preferences"
 msgstr "העדפות יישומי הפעלה"
 
-#: ../capplet/gsp-app.c:273
+#: ../capplet/gsp-app.c:283
 msgid "No name"
 msgstr "ללא שם"
 
-#: ../capplet/gsp-app.c:279
+#: ../capplet/gsp-app.c:289
 msgid "No description"
 msgstr "ללא תיאור"
 
@@ -145,8 +181,7 @@ msgstr ""
 msgid "Control which compatibility components to start."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.h:17
-#: ../data/mate-wm.desktop.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr "Window Manager"
 
@@ -204,17 +239,17 @@ msgstr "הפעלה זאת מחברת אותך לשולחן העבודה MATE"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>קיימות תכניות שעדיין רצות:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:634
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:633
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr "בהמתנה לסיום התכנית. הפרעה לתכנית עלולה לגרום לאבדן העבודה שלך."
 
-#: ../data/mate-session-properties.desktop.in.in.h:1
+#: ../data/mate-session-properties.desktop.in.h:1
 msgid "Startup Applications"
 msgstr "יישומי ההפעלה"
 
-#: ../data/mate-session-properties.desktop.in.in.h:2
+#: ../data/mate-session-properties.desktop.in.h:2
 msgid "Choose what applications to start when you log in"
 msgstr "בחירת אילו יישומים יופעלו בעת כניסת המשתמש"
 
@@ -222,37 +257,49 @@ msgstr "בחירת אילו יישומים יופעלו בעת כניסת המש
 msgid "Additional startup _programs:"
 msgstr "_תכניות הפעלה נוספות:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/session-properties.ui.h:3
+msgid "_Remove"
+msgstr "ה_סרה"
+
+#: ../data/session-properties.ui.h:4
+msgid "_Edit"
+msgstr "_עריכה"
+
+#: ../data/session-properties.ui.h:5
 msgid "Startup Programs"
 msgstr "תוכניות הפעלה"
 
-#: ../data/session-properties.ui.h:3
+#: ../data/session-properties.ui.h:6
 msgid "_Automatically remember running applications when logging out"
 msgstr "_זכור יישומים פעילים בזמן התנתקות"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/session-properties.ui.h:7
 msgid "_Remember Currently Running Application"
 msgstr "זכור את היישומים הפועלים _כאת"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/session-properties.ui.h:8
 msgid "Options"
 msgstr "אפשרויות"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/session-properties.ui.h:9
 msgid "Browse…"
 msgstr "דפדף…"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/session-properties.ui.h:10
 msgid "Comm_ent:"
 msgstr "הע_רה:"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/session-properties.ui.h:11
 msgid "Co_mmand:"
 msgstr "_פקודה:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/session-properties.ui.h:12
 msgid "_Name:"
 msgstr "_שם:"
+
+#: ../data/session-properties.ui.h:13
+msgid "_Delay:"
+msgstr "ה_שהייה:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
@@ -289,90 +336,90 @@ msgstr "לא ניתן להעביר כתובת מסמך לכניסת שולחן �
 msgid "Not a launchable item"
 msgstr "Not a launchable item"
 
-#: ../egg/eggsmclient.c:225
+#: ../egg/eggsmclient.c:221
 msgid "Disable connection to session manager"
 msgstr "Disable connection to session manager"
 
-#: ../egg/eggsmclient.c:228
+#: ../egg/eggsmclient.c:224
 msgid "Specify file containing saved configuration"
 msgstr "הגדר קובץ המכיל הגדרות שמורות"
 
-#: ../egg/eggsmclient.c:228
+#: ../egg/eggsmclient.c:224
 msgid "FILE"
 msgstr "קובץ"
 
-#: ../egg/eggsmclient.c:231
+#: ../egg/eggsmclient.c:227
 msgid "Specify session management ID"
 msgstr "הגדר מס\"ד ניהול עבור ה-Session"
 
-#: ../egg/eggsmclient.c:231
+#: ../egg/eggsmclient.c:227
 msgid "ID"
 msgstr "מספר סידורי"
 
-#: ../egg/eggsmclient.c:252
+#: ../egg/eggsmclient.c:248
 msgid "Session management options:"
 msgstr "Session management options:"
 
-#: ../egg/eggsmclient.c:253
+#: ../egg/eggsmclient.c:249
 msgid "Show session management options"
 msgstr "Show session management options"
 
-#: ../mate-session/gsm-inhibit-dialog.c:252
+#: ../mate-session/gsm-inhibit-dialog.c:251
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "האיקון '%s' לא נמצא"
 
-#: ../mate-session/gsm-inhibit-dialog.c:582
+#: ../mate-session/gsm-inhibit-dialog.c:581
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: ../mate-session/gsm-inhibit-dialog.c:633
+#: ../mate-session/gsm-inhibit-dialog.c:632
 msgid "A program is still running:"
 msgstr "קיימת תוכנית שעדיין רצה:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:637
+#: ../mate-session/gsm-inhibit-dialog.c:636
 msgid "Some programs are still running:"
 msgstr "קיימות תוכניות שעדיין רצות:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:638
+#: ../mate-session/gsm-inhibit-dialog.c:637
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr "ממתין לסיום תוכניות. הפרעה לתוכניות עלולה לגרום לאיבוד העבודה שלך."
 
-#: ../mate-session/gsm-inhibit-dialog.c:868
+#: ../mate-session/gsm-inhibit-dialog.c:867
 msgid "Switch User Anyway"
 msgstr "_החלף משתמש בכל מקרה"
 
-#: ../mate-session/gsm-inhibit-dialog.c:871
+#: ../mate-session/gsm-inhibit-dialog.c:870
 msgid "Log Out Anyway"
 msgstr "יציאה בכול מקרה"
 
-#: ../mate-session/gsm-inhibit-dialog.c:874
+#: ../mate-session/gsm-inhibit-dialog.c:873
 msgid "Suspend Anyway"
 msgstr "השהה בכל מקרה"
 
-#: ../mate-session/gsm-inhibit-dialog.c:877
+#: ../mate-session/gsm-inhibit-dialog.c:876
 msgid "Hibernate Anyway"
 msgstr "עבור למצב שינה בכל מקרה"
 
-#: ../mate-session/gsm-inhibit-dialog.c:880
+#: ../mate-session/gsm-inhibit-dialog.c:879
 msgid "Shut Down Anyway"
 msgstr "כיבוי בכול מקרה"
 
-#: ../mate-session/gsm-inhibit-dialog.c:883
+#: ../mate-session/gsm-inhibit-dialog.c:882
 msgid "Reboot Anyway"
 msgstr "שתחל בכל מקרה"
 
-#: ../mate-session/gsm-inhibit-dialog.c:891
+#: ../mate-session/gsm-inhibit-dialog.c:890
 msgid "Lock Screen"
 msgstr "מסך נעילה"
 
-#: ../mate-session/gsm-inhibit-dialog.c:894
+#: ../mate-session/gsm-inhibit-dialog.c:893
 msgid "Cancel"
 msgstr "ביטול"
 
-#: ../mate-session/gsm-logout-dialog.c:312
+#: ../mate-session/gsm-logout-dialog.c:307
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
@@ -381,7 +428,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: ../mate-session/gsm-logout-dialog.c:320
+#: ../mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
@@ -390,65 +437,65 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: ../mate-session/gsm-logout-dialog.c:366
+#: ../mate-session/gsm-logout-dialog.c:361
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "אתה כרגע מחובר כ־\"%s\"."
 
-#: ../mate-session/gsm-logout-dialog.c:446
+#: ../mate-session/gsm-logout-dialog.c:441
 msgid "Log out of this system now?"
 msgstr "להתנתק מהמערכת?"
 
-#: ../mate-session/gsm-logout-dialog.c:452
+#: ../mate-session/gsm-logout-dialog.c:447
 msgid "_Switch User"
 msgstr "_החלף משתמש"
 
-#: ../mate-session/gsm-logout-dialog.c:461
+#: ../mate-session/gsm-logout-dialog.c:456
 msgid "_Log Out"
 msgstr "_התנתק"
 
-#: ../mate-session/gsm-logout-dialog.c:467
+#: ../mate-session/gsm-logout-dialog.c:462
 msgid "Shut down this system now?"
 msgstr "לכבות את המערכת?"
 
-#: ../mate-session/gsm-logout-dialog.c:473
+#: ../mate-session/gsm-logout-dialog.c:468
 msgid "S_uspend"
 msgstr "_השהה"
 
-#: ../mate-session/gsm-logout-dialog.c:479
+#: ../mate-session/gsm-logout-dialog.c:474
 msgid "_Hibernate"
 msgstr "_מצב שינה"
 
-#: ../mate-session/gsm-logout-dialog.c:485
+#: ../mate-session/gsm-logout-dialog.c:480
 msgid "_Restart"
 msgstr "_אתחול"
 
-#: ../mate-session/gsm-logout-dialog.c:495
+#: ../mate-session/gsm-logout-dialog.c:490
 msgid "_Shut Down"
 msgstr "_כבה"
 
-#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
+#: ../mate-session/gsm-manager.c:1512 ../mate-session/gsm-manager.c:2327
 msgid "Not responding"
 msgstr "אין תגובה"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: ../mate-session/gsm-xsmp-client.c:565
+#: ../mate-session/gsm-xsmp-client.c:595
 msgid "Remembered Application"
 msgstr ""
 
-#: ../mate-session/gsm-xsmp-client.c:1203
+#: ../mate-session/gsm-xsmp-client.c:1262
 msgid "This program is blocking logout."
 msgstr "תכנית זו מונעת את היציאה."
 
-#: ../mate-session/gsm-xsmp-server.c:325
+#: ../mate-session/gsm-xsmp-server.c:324
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "מסרב לחיבור לקוח חדש מכיון שההפעלה נמצאת במהלך כיבוי\n"
 
-#: ../mate-session/gsm-xsmp-server.c:587
+#: ../mate-session/gsm-xsmp-server.c:586
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "לא ניתן ליצור שקע ICE: ‏%s"
@@ -475,49 +522,49 @@ msgstr "Do not load user-specified applications"
 msgid " - the MATE session manager"
 msgstr " - the MATE session manager"
 
-#: ../tools/mate-session-save.c:69
+#: ../tools/mate-session-save.c:66
 msgid "Log out"
 msgstr "Log out"
 
-#: ../tools/mate-session-save.c:70
+#: ../tools/mate-session-save.c:67
 msgid "Log out, ignoring any existing inhibitors"
 msgstr "Log out, ignoring any existing inhibitors"
 
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:68
 msgid "Show logout dialog"
 msgstr "Show logout dialog"
 
-#: ../tools/mate-session-save.c:72
+#: ../tools/mate-session-save.c:69
 msgid "Show shutdown dialog"
 msgstr "Show shutdown dialog"
 
-#: ../tools/mate-session-save.c:73
+#: ../tools/mate-session-save.c:70
 msgid "Use dialog boxes for errors"
 msgstr "Use dialog boxes for errors"
 
 #. deprecated options
-#: ../tools/mate-session-save.c:75
+#: ../tools/mate-session-save.c:72
 msgid "Set the current session name"
 msgstr "Set the current session name"
 
-#: ../tools/mate-session-save.c:75
+#: ../tools/mate-session-save.c:72
 msgid "NAME"
 msgstr "NAME"
 
-#: ../tools/mate-session-save.c:76
+#: ../tools/mate-session-save.c:73
 msgid "Kill session"
 msgstr "Kill session"
 
-#: ../tools/mate-session-save.c:77
+#: ../tools/mate-session-save.c:74
 msgid "Do not require confirmation"
 msgstr "Do not require confirmation"
 
 #. Okay, it wasn't the upgrade case, so now we can give up.
-#: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
+#: ../tools/mate-session-save.c:126
 msgid "Could not connect to the session manager"
 msgstr "לא ניתן להתחבר למנהל ההפעלה"
 
-#: ../tools/mate-session-save.c:276
+#: ../tools/mate-session-save.c:251
 msgid "Program called with conflicting options"
 msgstr "התוכנית נקראה עם אפשרויות סותרות"
 

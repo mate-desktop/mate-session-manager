@@ -3,14 +3,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Mantas Kriaučiūnas <mantas@akl.lt>, 2018
+# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2018
+# Audrius Meskauskas, 2018
+# brennus <jonas.ska@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Moo, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:29+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Audrius Meskauskas, 2018\n"
+"POT-Creation-Date: 2019-02-09 00:06+0100\n"
+"PO-Revision-Date: 2018-03-12 08:06+0000\n"
+"Last-Translator: Moo, 2019\n"
 "Language-Team: Lithuanian (https://www.transifex.com/mate/teams/13566/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,47 +26,76 @@ msgstr ""
 "Language: lt\n"
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: ../capplet/gsm-app-dialog.c:125
+#: ../capplet/gsm-app-dialog.c:127
 msgid "Select Command"
 msgstr "Pasirinkite komandą"
 
-#: ../capplet/gsm-app-dialog.c:197
+#: ../capplet/gsm-app-dialog.c:170
+msgid "second"
+msgstr "sekundė"
+
+#: ../capplet/gsm-app-dialog.c:172
+msgid "seconds"
+msgstr "sekundžių"
+
+#: ../capplet/gsm-app-dialog.c:218 ../mate-session/gsm-logout-dialog.c:452
+#: ../mate-session/gsm-logout-dialog.c:485
+msgid "_Cancel"
+msgstr "_Atsisakyti"
+
+#: ../capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
 msgstr "Pridėti paleidimo programą"
 
-#: ../capplet/gsm-app-dialog.c:201
+#: ../capplet/gsm-app-dialog.c:226 ../data/session-properties.ui.h:2
+msgid "_Add"
+msgstr "Į_dėti"
+
+#: ../capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
 msgstr "Redaguoti paleidžiamą programą"
 
-#: ../capplet/gsm-app-dialog.c:486
+#: ../capplet/gsm-app-dialog.c:231
+msgid "_Save"
+msgstr "Į_rašyti"
+
+#: ../capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
 msgstr "Paleidimo komanda negali būti tuščia"
 
-#: ../capplet/gsm-app-dialog.c:492
+#: ../capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
 msgstr "Paleidimo komanda netinkama"
 
-#: ../capplet/gsm-properties-dialog.c:518
+#: ../capplet/gsm-properties-dialog.c:479
+msgid "_Help"
+msgstr "_Žinynas"
+
+#: ../capplet/gsm-properties-dialog.c:483
+msgid "_Close"
+msgstr "_Užverti"
+
+#: ../capplet/gsm-properties-dialog.c:523
 msgid "Enabled"
 msgstr "Įjungtas"
 
-#: ../capplet/gsm-properties-dialog.c:530
+#: ../capplet/gsm-properties-dialog.c:535
 msgid "Icon"
 msgstr "Piktograma"
 
-#: ../capplet/gsm-properties-dialog.c:542
+#: ../capplet/gsm-properties-dialog.c:547
 msgid "Program"
 msgstr "Programa"
 
-#: ../capplet/gsm-properties-dialog.c:741
+#: ../capplet/gsm-properties-dialog.c:742
 msgid "Startup Applications Preferences"
 msgstr "Paleidžiamų programų nustatymai"
 
-#: ../capplet/gsp-app.c:273
+#: ../capplet/gsp-app.c:283
 msgid "No name"
 msgstr "Be pavadinimo"
 
-#: ../capplet/gsp-app.c:279
+#: ../capplet/gsp-app.c:289
 msgid "No description"
 msgstr "Nėra aprašymo"
 
@@ -151,8 +188,7 @@ msgstr "Kontroliuoti gnome suderinamumo komponento paleidimą"
 msgid "Control which compatibility components to start."
 msgstr "Kontroliuoti kuriuos suderinamumo komponentus paleisti."
 
-#: ../data/org.mate.session.gschema.xml.in.h:17
-#: ../data/mate-wm.desktop.in.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr "Langų tvarkytuvė"
 
@@ -212,7 +248,7 @@ msgstr "Šis seansas prijungia jus prie MATE"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Kai kurios programos vis dar veikia:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:634
+#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:633
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -220,11 +256,11 @@ msgstr ""
 "Laukiama, kol programa baigs darbą. Nutraukus šią programą gali būti "
 "prarasta informacija."
 
-#: ../data/mate-session-properties.desktop.in.in.h:1
+#: ../data/mate-session-properties.desktop.in.h:1
 msgid "Startup Applications"
 msgstr "Paleidžiamos programos"
 
-#: ../data/mate-session-properties.desktop.in.in.h:2
+#: ../data/mate-session-properties.desktop.in.h:2
 msgid "Choose what applications to start when you log in"
 msgstr "Pasirinkite, kokias programas paleisti jums prisijungiant"
 
@@ -232,37 +268,49 @@ msgstr "Pasirinkite, kokias programas paleisti jums prisijungiant"
 msgid "Additional startup _programs:"
 msgstr "Papildomos paleidžiamos _programos:"
 
-#: ../data/session-properties.ui.h:2
+#: ../data/session-properties.ui.h:3
+msgid "_Remove"
+msgstr "_Pašalinti"
+
+#: ../data/session-properties.ui.h:4
+msgid "_Edit"
+msgstr "_Taisa"
+
+#: ../data/session-properties.ui.h:5
 msgid "Startup Programs"
 msgstr "Pradžioje paleidžiamos programos"
 
-#: ../data/session-properties.ui.h:3
+#: ../data/session-properties.ui.h:6
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Atsijungiant, automatiškai atsiminti paleistas programas"
 
-#: ../data/session-properties.ui.h:4
+#: ../data/session-properties.ui.h:7
 msgid "_Remember Currently Running Application"
 msgstr "_Atsiminti dabar veikiančias programas"
 
-#: ../data/session-properties.ui.h:5
+#: ../data/session-properties.ui.h:8
 msgid "Options"
 msgstr "Parametrai"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/session-properties.ui.h:9
 msgid "Browse…"
 msgstr "Naršyti..."
 
-#: ../data/session-properties.ui.h:7
+#: ../data/session-properties.ui.h:10
 msgid "Comm_ent:"
 msgstr "Ko_mentaras:"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/session-properties.ui.h:11
 msgid "Co_mmand:"
 msgstr "_Komanda:"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/session-properties.ui.h:12
 msgid "_Name:"
 msgstr "_Vardas:"
+
+#: ../data/session-properties.ui.h:13
+msgid "_Delay:"
+msgstr "_Delsa:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
@@ -299,52 +347,52 @@ msgstr "Negalima perduoti dokumentų URI „Type=Link“ darbalaukio elementui"
 msgid "Not a launchable item"
 msgstr "Nepaleidžiamas elementas"
 
-#: ../egg/eggsmclient.c:225
+#: ../egg/eggsmclient.c:221
 msgid "Disable connection to session manager"
 msgstr "Išjungti ryšį su seansų tvarkytuve"
 
-#: ../egg/eggsmclient.c:228
+#: ../egg/eggsmclient.c:224
 msgid "Specify file containing saved configuration"
 msgstr "Nurodyti failą su įrašytais nustatymais"
 
-#: ../egg/eggsmclient.c:228
+#: ../egg/eggsmclient.c:224
 msgid "FILE"
 msgstr "FAILAS"
 
-#: ../egg/eggsmclient.c:231
+#: ../egg/eggsmclient.c:227
 msgid "Specify session management ID"
 msgstr "Nurodykite seanso valdymo ID"
 
-#: ../egg/eggsmclient.c:231
+#: ../egg/eggsmclient.c:227
 msgid "ID"
 msgstr "ID"
 
-#: ../egg/eggsmclient.c:252
+#: ../egg/eggsmclient.c:248
 msgid "Session management options:"
 msgstr "Seanso valdymo parametrai:"
 
-#: ../egg/eggsmclient.c:253
+#: ../egg/eggsmclient.c:249
 msgid "Show session management options"
 msgstr "Rodyti seanso valdymo parametrus"
 
-#: ../mate-session/gsm-inhibit-dialog.c:252
+#: ../mate-session/gsm-inhibit-dialog.c:251
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Piktograma „%s“ nerasta"
 
-#: ../mate-session/gsm-inhibit-dialog.c:582
+#: ../mate-session/gsm-inhibit-dialog.c:581
 msgid "Unknown"
 msgstr "Nežinoma"
 
-#: ../mate-session/gsm-inhibit-dialog.c:633
+#: ../mate-session/gsm-inhibit-dialog.c:632
 msgid "A program is still running:"
 msgstr "Programa vis dar veikia:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:637
+#: ../mate-session/gsm-inhibit-dialog.c:636
 msgid "Some programs are still running:"
 msgstr "Kai kurios programos vis dar veikia:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:638
+#: ../mate-session/gsm-inhibit-dialog.c:637
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -352,115 +400,115 @@ msgstr ""
 "Laukiama, kol programos baigs darbą. Šias programas nutraukus gali būti "
 "prarasta informacija."
 
-#: ../mate-session/gsm-inhibit-dialog.c:868
+#: ../mate-session/gsm-inhibit-dialog.c:867
 msgid "Switch User Anyway"
 msgstr "Perjungti naudotoją bet kokiu atveju"
 
-#: ../mate-session/gsm-inhibit-dialog.c:871
+#: ../mate-session/gsm-inhibit-dialog.c:870
 msgid "Log Out Anyway"
 msgstr "Vis tiek atsijungti"
 
-#: ../mate-session/gsm-inhibit-dialog.c:874
+#: ../mate-session/gsm-inhibit-dialog.c:873
 msgid "Suspend Anyway"
 msgstr "Pristabdyti bet kokiu atveju"
 
-#: ../mate-session/gsm-inhibit-dialog.c:877
+#: ../mate-session/gsm-inhibit-dialog.c:876
 msgid "Hibernate Anyway"
 msgstr "Užmigdyti bet kokiu atveju"
 
-#: ../mate-session/gsm-inhibit-dialog.c:880
+#: ../mate-session/gsm-inhibit-dialog.c:879
 msgid "Shut Down Anyway"
 msgstr "Vis tiek išjungti"
 
-#: ../mate-session/gsm-inhibit-dialog.c:883
+#: ../mate-session/gsm-inhibit-dialog.c:882
 msgid "Reboot Anyway"
 msgstr "Paleisti iš naujo bet kokiu atveju"
 
-#: ../mate-session/gsm-inhibit-dialog.c:891
+#: ../mate-session/gsm-inhibit-dialog.c:890
 msgid "Lock Screen"
 msgstr "Užrakinti ekraną"
 
-#: ../mate-session/gsm-inhibit-dialog.c:894
+#: ../mate-session/gsm-inhibit-dialog.c:893
 msgid "Cancel"
 msgstr "Atsisakyti"
 
-#: ../mate-session/gsm-logout-dialog.c:312
+#: ../mate-session/gsm-logout-dialog.c:307
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] "Būsite automatiškai atjungti po %d sekundės"
 msgstr[1] "Būsite automatiškai atjungti po %d sekundžių"
 msgstr[2] "Būsite automatiškai atjungti po %d sekundžių"
-msgstr[3] "Būsite automatiškai atjungti po %d sekundžių"
+msgstr[3] "Būsite automatiškai atjungti po %d sekundės"
 
-#: ../mate-session/gsm-logout-dialog.c:320
+#: ../mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] "Sistema automatiškai išsijungs po %d sekundės"
 msgstr[1] "Sistema automatiškai išsijungs po %d sekundžių"
 msgstr[2] "Sistema automatiškai išsijungs po %d sekundžių"
-msgstr[3] "Sistema automatiškai išsijungs po %d sekundžių"
+msgstr[3] "Sistema automatiškai išsijungs po %d sekundės"
 
-#: ../mate-session/gsm-logout-dialog.c:366
+#: ../mate-session/gsm-logout-dialog.c:361
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Esate prisijungę kaip „%s“."
 
-#: ../mate-session/gsm-logout-dialog.c:446
+#: ../mate-session/gsm-logout-dialog.c:441
 msgid "Log out of this system now?"
 msgstr "Atsijungti dabar?"
 
-#: ../mate-session/gsm-logout-dialog.c:452
+#: ../mate-session/gsm-logout-dialog.c:447
 msgid "_Switch User"
 msgstr "_Perjungti naudotoją"
 
-#: ../mate-session/gsm-logout-dialog.c:461
+#: ../mate-session/gsm-logout-dialog.c:456
 msgid "_Log Out"
 msgstr "At_sijungti"
 
-#: ../mate-session/gsm-logout-dialog.c:467
+#: ../mate-session/gsm-logout-dialog.c:462
 msgid "Shut down this system now?"
 msgstr "Išjungti sistemą dabar?"
 
-#: ../mate-session/gsm-logout-dialog.c:473
+#: ../mate-session/gsm-logout-dialog.c:468
 msgid "S_uspend"
 msgstr "_Pristabdyti"
 
-#: ../mate-session/gsm-logout-dialog.c:479
+#: ../mate-session/gsm-logout-dialog.c:474
 msgid "_Hibernate"
 msgstr "_Užmigdyti"
 
-#: ../mate-session/gsm-logout-dialog.c:485
+#: ../mate-session/gsm-logout-dialog.c:480
 msgid "_Restart"
 msgstr "Paleisti iš _naujo"
 
-#: ../mate-session/gsm-logout-dialog.c:495
+#: ../mate-session/gsm-logout-dialog.c:490
 msgid "_Shut Down"
 msgstr "Išj_ungti"
 
-#: ../mate-session/gsm-manager.c:1417 ../mate-session/gsm-manager.c:2136
+#: ../mate-session/gsm-manager.c:1512 ../mate-session/gsm-manager.c:2327
 msgid "Not responding"
 msgstr "Neatsako"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: ../mate-session/gsm-xsmp-client.c:565
+#: ../mate-session/gsm-xsmp-client.c:595
 msgid "Remembered Application"
 msgstr "Įsiminta programa"
 
-#: ../mate-session/gsm-xsmp-client.c:1203
+#: ../mate-session/gsm-xsmp-client.c:1262
 msgid "This program is blocking logout."
 msgstr "Ši programa neleidžia atsijungti"
 
-#: ../mate-session/gsm-xsmp-server.c:325
+#: ../mate-session/gsm-xsmp-server.c:324
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "Atsisakoma naujo kliento ryšio, kadangi seansas dabar išjungiamas\n"
 
-#: ../mate-session/gsm-xsmp-server.c:587
+#: ../mate-session/gsm-xsmp-server.c:586
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Nepavyko sukurti ICE klausymo lizdo: %s"
@@ -489,49 +537,49 @@ msgstr "Neįkelti naudotojo nurodytų programų"
 msgid " - the MATE session manager"
 msgstr " – MATE seansų tvarkytuvė"
 
-#: ../tools/mate-session-save.c:69
+#: ../tools/mate-session-save.c:66
 msgid "Log out"
 msgstr "Atsijungti"
 
-#: ../tools/mate-session-save.c:70
+#: ../tools/mate-session-save.c:67
 msgid "Log out, ignoring any existing inhibitors"
 msgstr "Atsijungti, ignoruojant bet kokius trukdžius"
 
-#: ../tools/mate-session-save.c:71
+#: ../tools/mate-session-save.c:68
 msgid "Show logout dialog"
 msgstr "Rodyti atsijungimo dialogą"
 
-#: ../tools/mate-session-save.c:72
+#: ../tools/mate-session-save.c:69
 msgid "Show shutdown dialog"
 msgstr "Rodyti išjungimo dialogą"
 
-#: ../tools/mate-session-save.c:73
+#: ../tools/mate-session-save.c:70
 msgid "Use dialog boxes for errors"
 msgstr "Naudoti dialogus klaidų rodymui"
 
 #. deprecated options
-#: ../tools/mate-session-save.c:75
+#: ../tools/mate-session-save.c:72
 msgid "Set the current session name"
 msgstr "Nustatyti esamo seanso pavadinimą"
 
-#: ../tools/mate-session-save.c:75
+#: ../tools/mate-session-save.c:72
 msgid "NAME"
 msgstr "PAVADINIMAS"
 
-#: ../tools/mate-session-save.c:76
+#: ../tools/mate-session-save.c:73
 msgid "Kill session"
 msgstr "Nutraukti seansą"
 
-#: ../tools/mate-session-save.c:77
+#: ../tools/mate-session-save.c:74
 msgid "Do not require confirmation"
 msgstr "Nereikalauti patvirtinimo"
 
 #. Okay, it wasn't the upgrade case, so now we can give up.
-#: ../tools/mate-session-save.c:135 ../tools/mate-session-save.c:150
+#: ../tools/mate-session-save.c:126
 msgid "Could not connect to the session manager"
 msgstr "Nepavyko prisijungti prie seansų tvarkytuvės"
 
-#: ../tools/mate-session-save.c:276
+#: ../tools/mate-session-save.c:251
 msgid "Program called with conflicting options"
 msgstr "Programa iškviesta naudojant konfliktuojančius parametrus"
 
