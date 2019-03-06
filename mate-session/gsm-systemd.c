@@ -429,16 +429,31 @@ gsm_systemd_is_last_session_for_user (GsmSystemd *manager)
         gboolean is_last_session;
         int ret, i;
 
+#ifdef HAVE_SYSTEMD
         ret = sd_pid_get_session (getpid (), &session);
+#endif
 
-        if (ret != 0) {
+        if (session == NULL) {
                 return FALSE;
         }
 
+        if (ret != 0) {
+                free (session);
+                return FALSE;
+        }
+
+#ifdef HAVE_SYSTEMD
         ret = sd_uid_get_sessions (getuid (), FALSE, &sessions);
+#endif
+
+        if (sessions == NULL) {
+                free (session);
+                return FALSE;
+        }
 
         if (ret <= 0) {
                 free (session);
+                free (sessions);
                 return FALSE;
         }
 
@@ -450,7 +465,9 @@ gsm_systemd_is_last_session_for_user (GsmSystemd *manager)
                 if (g_strcmp0 (sessions[i], session) == 0)
                         continue;
 
+#ifdef HAVE_SYSTEMD
                 ret = sd_session_get_state (sessions[i], &state);
+#endif
 
                 if (ret != 0)
                         continue;
@@ -461,7 +478,9 @@ gsm_systemd_is_last_session_for_user (GsmSystemd *manager)
                 }
                 free (state);
 
+#ifdef HAVE_SYSTEMD
                 ret = sd_session_get_type (sessions[i], &type);
+#endif
 
                 if (ret != 0)
                         continue;
