@@ -110,6 +110,31 @@ AM_CONDITIONAL(HAVE_SYSTEMD, test "x$use_systemd" = "xyes")
 AC_SUBST(HAVE_SYSTEMD)
 
 dnl ====================================================================
+dnl Check for elogind
+dnl ====================================================================
+
+AC_ARG_WITH(elogind,
+            AS_HELP_STRING([--with-elogind],
+            [Use libelogind instead of libsystemd-login]),,
+            with_elogind=auto)
+
+use_elogind=no
+if test "x$with_elogind" != "xno"; then
+    PKG_CHECK_MODULES(LIBELOGIND,[libelogind], [use_elogind=yes],
+                      [PKG_CHECK_MODULES([LIBELOGIND], [libelogind],
+                      [use_elogind=yes], [use_elogind=no])])
+
+    if test "x$use_elogind" = "xyes"; then
+        AC_DEFINE([HAVE_ELOGIND], 1, [elogind support])
+        AC_DEFINE([HAVE_SYSTEMD], 1, [Define to 1 to reduce ifdefs since elogind is a drop-in replacement for systemd])
+        AC_SUBST(LIBELOGIND_CFLAGS)
+        AC_SUBST(LIBELOGIND_LIBS)
+    fi
+fi
+AM_CONDITIONAL(HAVE_ELOGIND, [test "x$use_elogind" = "xyes"])
+AC_SUBST(HAVE_ELOGIND)
+
+dnl ====================================================================
 dnl Check for XSync extension
 dnl ====================================================================
 
@@ -333,6 +358,7 @@ echo "
 
         Default WM:               ${with_default_wm}
         Systemd support:          ${use_systemd}
+        Elogind support:          ${use_elogind}
         IPv6 support:             ${have_full_ipv6}
         Backtrace support:        ${have_backtrace}
         XRender support:          ${have_xrender}
