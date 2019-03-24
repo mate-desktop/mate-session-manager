@@ -12,15 +12,15 @@ You may download updates to the package from:
 Design notes
 ============
 
-See http://live.gnome.org/SessionManagement
+See https://wiki.gnome.org/Projects/SessionManagement/
 
 
 Installation
 ============
 
-See the file 'INSTALL'. If you are not using a released version of
-mate-session (for example, if you checked out the code from git), you
-first need to run './autogen.sh'.
+./autogen.sh
+make
+make install
 
 
 How to report bugs
