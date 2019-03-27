@@ -119,13 +119,11 @@ dnl ====================================================================
 AC_ARG_WITH(elogind,
             AS_HELP_STRING([--with-elogind],
             [Use libelogind instead of libsystemd-login]),,
-            with_elogind=auto)
+            with_elogind=no)
 
 use_elogind=no
-if test "x$with_elogind" != "xno"; then
-    PKG_CHECK_MODULES(LIBELOGIND,[libelogind], [use_elogind=yes],
-                      [PKG_CHECK_MODULES([LIBELOGIND], [libelogind],
-                      [use_elogind=yes], [use_elogind=no])])
+if test "x$with_elogind" = "xyes"; then
+    PKG_CHECK_MODULES(LIBELOGIND,[libelogind], [use_elogind=yes], [use_elogind=no])
 
     if test "x$use_elogind" = "xyes"; then
         AC_DEFINE([HAVE_ELOGIND], 1, [elogind support])
