@@ -58,6 +58,8 @@ requires:
     - git
     - intltool
     - libdbus-glib-1-dev
+    - libgl1-mesa-dev
+    - libgles2-mesa-dev
     - libglib2.0-dev
     - libgtk-3-dev
     - libice-dev
@@ -86,6 +88,7 @@ requires:
     - libXtst-devel
     - make
     - mate-common
+    - mesa-libGLES-devel
     - pangox-compat-devel
     - redhat-rpm-config
     - systemd-devel
@@ -96,6 +99,8 @@ requires:
     - git
     - intltool
     - libdbus-glib-1-dev
+    - libgl1-mesa-dev
+    - libgles2-mesa-dev
     - libglib2.0-dev
     - libgtk-3-dev
     - libice-dev
