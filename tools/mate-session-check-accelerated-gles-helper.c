@@ -38,11 +38,43 @@
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
 #include <EGL/egl.h>
+#include <EGL/eglext.h>
 #endif
 
 #include "mate-session-check-accelerated-common.h"
 
 #ifdef GDK_WINDOWING_X11
+static EGLDisplay
+get_display (void *native)
+{
+        EGLDisplay dpy = NULL;
+        const char *client_exts = eglQueryString (NULL, EGL_EXTENSIONS);
+
+        if (g_strstr_len (client_exts, -1, "EGL_KHR_platform_base")) {
+                PFNEGLGETPLATFORMDISPLAYEXTPROC get_platform_display =
+                        (void *) eglGetProcAddress ("eglGetPlatformDisplay");
+
+                if (get_platform_display)
+                        dpy = get_platform_display (EGL_PLATFORM_X11_KHR, native, NULL);
+
+                if (dpy)
+                        return dpy;
+        }
+
+        if (g_strstr_len (client_exts, -1, "EGL_EXT_platform_base")) {
+                PFNEGLGETPLATFORMDISPLAYEXTPROC get_platform_display =
+                        (void *) eglGetProcAddress ("eglGetPlatformDisplayEXT");
+
+                if (get_platform_display)
+                        dpy = get_platform_display (EGL_PLATFORM_X11_KHR, native, NULL);
+
+                if (dpy)
+                        return dpy;
+        }
+
+        return eglGetDisplay ((EGLNativeDisplayType) native);
+}
+
 static char *
 get_gles_renderer (void)
 {
@@ -61,6 +93,7 @@ get_gles_renderer (void)
         };
 
         gboolean egl_inited = FALSE;
+        GdkDisplay *gdk_dpy;
         Display *display;
         Window win = None;
         EGLContext egl_ctx = NULL;
@@ -68,10 +101,10 @@ get_gles_renderer (void)
         EGLSurface egl_surf = NULL;
         char *renderer = NULL;
 
-        gdk_error_trap_push ();
-
-        display = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
-        egl_dpy = eglGetDisplay (display);
+        gdk_dpy = gdk_display_get_default ();
+        gdk_x11_display_error_trap_push (gdk_dpy);
+        display = GDK_DISPLAY_XDISPLAY (gdk_dpy);
+        egl_dpy = get_display (display);
         if (!egl_dpy) {
                 g_warning ("eglGetDisplay() failed");
                 goto out;
@@ -150,7 +183,7 @@ get_gles_renderer (void)
         if (win != None)
                 XDestroyWindow (display, win);
 
-        gdk_error_trap_pop_ignored ();
+        gdk_x11_display_error_trap_pop_ignored (gdk_dpy);
         return renderer;
 }
 #endif
@@ -166,7 +199,6 @@ int
 main (int argc,
       char **argv)
 {
-        char *renderer = NULL;
         GOptionContext *context;
         int ret = HELPER_NO_ACCEL;
         GError *error = NULL;
@@ -184,9 +216,7 @@ main (int argc,
         }
 
 #ifdef GDK_WINDOWING_X11
-        renderer = get_gles_renderer ();
-#endif
-
+        char *renderer = get_gles_renderer ();
         if (renderer != NULL) {
                 if (print_renderer)
                         g_print ("%s", renderer);
@@ -195,6 +225,7 @@ main (int argc,
                 else
                         ret = HELPER_ACCEL;
         }
+#endif
 
 out:
         return ret;
