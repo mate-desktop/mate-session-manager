@@ -37,8 +37,10 @@ mate_session_check_accelerated_gles_helper_SOURCES =	\
 
 mate_session_check_accelerated_gles_helper_CPPFLAGS =	\
 	-DPKGDATADIR=\""$(pkgdatadir)"\"		\
+	$(AM_CPPFLAGS)					\
+	$(GTK3_CFLAGS)					\
 	$(GLES_TEST_CFLAGS)				\
-	$(GTK3_CFLAGS)
+	$(X11_CFLAGS)
 
 mate_session_check_accelerated_gles_helper_LDADD =	\
 	$(GLES_TEST_LIBS)				\
@@ -51,7 +53,9 @@ mate_session_check_accelerated_gl_helper_SOURCES =	\
 
 mate_session_check_accelerated_gl_helper_CPPFLAGS =	\
 	-DPKGDATADIR=\""$(pkgdatadir)"\"		\
-	$(GL_TEST_CFLAGS)
+	$(AM_CPPFLAGS)					\
+	$(GL_TEST_CFLAGS)				\
+	$(X11_CFLAGS)
 
 mate_session_check_accelerated_gl_helper_LDADD = 	\
 	$(GL_TEST_LIBS)					\
@@ -65,11 +69,12 @@ mate_session_check_accelerated_CPPFLAGS =	\
 	-DLIBEXECDIR=\""$(libexecdir)"\"	\
 	$(AM_CPPFLAGS)				\
 	$(GTK3_CFLAGS)				\
-	$(GL_TEST_CFLAGS)
+	$(GL_TEST_CFLAGS)			\
+	$(X11_CPPFLAGS)
 
 mate_session_check_accelerated_LDADD =	\
 	$(GTK3_LIBS)			\
-	$(X11_LIBS)			\
-	$(GL_TEST_LIBS)
+	$(GL_TEST_LIBS)			\
+	$(X11_LIBS)
 
 -include $(top_srcdir)/git.mk
