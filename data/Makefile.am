@@ -7,6 +7,9 @@ ui_DATA = \
 	session-properties.ui	\
 	gsm-inhibit-dialog.ui
 
+hwcompatdir = $(pkgdatadir)
+hwcompat_DATA = hardware-compatibility
+
 xsessiondir = $(datadir)/xsessions
 xsession_in_files = mate.desktop.in
 xsession_DATA = $(xsession_in_files:.desktop.in=.desktop)
@@ -30,6 +33,7 @@ EXTRA_DIST =					\
 	mate-wm				\
 	$(xsession_in_files)			\
 	$(gsettingsschema_in_files)		\
+	$(hwcompat_DATA)			\
 	$(ui_DATA)				\
 	$(desktop_in_files)			\
 	$(pixmap_DATA_dist)
