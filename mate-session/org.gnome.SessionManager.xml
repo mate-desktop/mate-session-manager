@@ -403,5 +403,17 @@
       </doc:doc>
     </signal>
 
+    <!-- Properties -->
+
+    <property name="Renderer" type="s" access="read">
+      <doc:doc>
+        <doc:description>
+          <doc:para>The renderer for the session that has been loaded.
+          At the moment this supports GL and GLES, and is only used for the
+          X session.</doc:para>
+        </doc:description>
+      </doc:doc>
+    </property>
+
   </interface>
 </node>

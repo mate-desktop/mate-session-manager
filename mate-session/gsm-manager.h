@@ -179,6 +179,9 @@ gboolean            gsm_manager_is_session_running             (GsmManager *mana
                                                                 gboolean *running,
                                                                 GError **error);
 
+void                _gsm_manager_set_renderer                  (GsmManager     *manager,
+                                                                const char     *renderer);
+
 G_END_DECLS
 
 #endif /* __GSM_MANAGER_H */
