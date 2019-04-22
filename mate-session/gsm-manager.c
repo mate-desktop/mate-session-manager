@@ -144,6 +144,8 @@ typedef struct {
         GSettings              *settings_lockdown;
         GSettings              *settings_screensaver;
 
+        const char             *renderer;
+
         DBusGProxy             *bus_proxy;
         DBusGConnection        *connection;
         gboolean                dbus_disconnected : 1;
@@ -152,6 +154,7 @@ typedef struct {
 enum {
         PROP_0,
         PROP_CLIENT_STORE,
+        PROP_RENDERER,
         PROP_FAILSAFE
 };
 
@@ -1676,6 +1679,15 @@ gsm_manager_start (GsmManager *manager)
         start_phase (manager);
 }
 
+void
+_gsm_manager_set_renderer (GsmManager *manager,
+                           const char *renderer)
+{
+        GsmManagerPrivate *priv;
+        priv = gsm_manager_get_instance_private (manager);
+        priv->renderer = renderer;
+}
+
 static gboolean
 _app_has_app_id (const char   *id,
                  GsmApp       *app,
@@ -2529,6 +2541,9 @@ gsm_manager_get_property (GObject    *object,
         case PROP_CLIENT_STORE:
                 g_value_set_object (value, priv->clients);
                 break;
+        case PROP_RENDERER:
+                g_value_set_string (value, priv->renderer);
+                break;
         default:
                 G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
                 break;
@@ -2733,6 +2748,14 @@ gsm_manager_class_init (GsmManagerClass *klass)
                                                               NULL,
                                                               GSM_TYPE_STORE,
                                                               G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+
+        g_object_class_install_property (object_class,
+                                         PROP_RENDERER,
+                                         g_param_spec_string ("renderer",
+                                                              NULL,
+                                                              NULL,
+                                                              NULL,
+                                                              G_PARAM_READABLE));
 
         dbus_g_object_type_install_info (GSM_TYPE_MANAGER, &dbus_glib_gsm_manager_object_info);
         dbus_g_error_domain_register (GSM_MANAGER_ERROR, NULL, GSM_MANAGER_TYPE_ERROR);

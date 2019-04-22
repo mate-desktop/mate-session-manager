@@ -82,6 +82,8 @@
 static gboolean failsafe = FALSE;
 static gboolean show_version = FALSE;
 static gboolean debug = FALSE;
+static gboolean disable_acceleration_check = FALSE;
+static char *gl_renderer = NULL;
 
 static gboolean
 initialize_gsettings (void)
@@ -569,6 +571,25 @@ static void set_overlay_scroll (void)
 	g_object_unref (settings);
 }
 
+static gboolean
+check_gl (GError **error)
+{
+	int status;
+	char *argv[] = { LIBEXECDIR "/mate-session-check-accelerated", NULL };
+
+	if (getenv ("DISPLAY") == NULL) {
+		/* Not connected to X11, someone else will take care of checking GL */
+		return TRUE;
+	}
+
+	if (!g_spawn_sync (NULL, (char **) argv, NULL, 0, NULL, NULL, &gl_renderer, NULL,
+		           &status, error)) {
+		return FALSE;
+	}
+
+	return g_spawn_check_exit_status (status, error);
+}
+
 int main(int argc, char** argv)
 {
 	struct sigaction sa;
@@ -581,12 +602,14 @@ int main(int argc, char** argv)
 	GSettings* accessibility_settings;
 	MdmSignalHandler* signal_handler;
 	static char** override_autostart_dirs = NULL;
+	gboolean gl_failed = FALSE;
 
 	static GOptionEntry entries[] = {
 		{"autostart", 'a', 0, G_OPTION_ARG_STRING_ARRAY, &override_autostart_dirs, N_("Override standard autostart directories"), NULL},
 		{"debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable debugging code"), NULL},
 		{"failsafe", 'f', 0, G_OPTION_ARG_NONE, &failsafe, N_("Do not load user-specified applications"), NULL},
 		{"version", 0, 0, G_OPTION_ARG_NONE, &show_version, N_("Version of this application"), NULL},
+		{ "disable-acceleration-check", 0, 0, G_OPTION_ARG_NONE, &disable_acceleration_check, N_("Disable hardware acceleration check"), NULL },
 		{NULL, 0, 0, 0, NULL, NULL, NULL }
 	};
 
@@ -637,6 +660,33 @@ int main(int argc, char** argv)
 	}
 
 	mdm_log_set_debug(debug);
+
+	if (disable_acceleration_check) {
+		g_debug ("hardware acceleration check is disabled");
+	} else {
+		/* Check GL, if it doesn't work out then force software fallback */
+		if (!check_gl (&error)) {
+			gl_failed = TRUE;
+
+			g_debug ("hardware acceleration check failed: %s",
+			         error? error->message : "");
+			g_clear_error (&error);
+			if (g_getenv ("LIBGL_ALWAYS_SOFTWARE") == NULL) {
+				g_setenv ("LIBGL_ALWAYS_SOFTWARE", "1", TRUE);
+				if (!check_gl (&error)) {
+					g_warning ("software acceleration check failed: %s",
+					           error? error->message : "");
+					g_clear_error (&error);
+				} else {
+					gl_failed = FALSE;
+				}
+			}
+		}
+	}
+
+	if (gl_failed) {
+		g_warning ("gl_failed!");
+	}
 
 	if (g_getenv ("XDG_CURRENT_DESKTOP") == NULL)
 		gsm_util_setenv ("XDG_CURRENT_DESKTOP", "MATE");
@@ -703,6 +753,7 @@ int main(int argc, char** argv)
 	}
 
 	gsm_xsmp_server_start(xsmp_server);
+	_gsm_manager_set_renderer (manager, gl_renderer);
 	gsm_manager_start(manager);
 
 	gtk_main();
@@ -717,6 +768,11 @@ int main(int argc, char** argv)
 		g_debug("Unreffing manager");
 		g_object_unref(manager);
 	}
+
+        if (gl_renderer != NULL)
+        {
+                g_free (gl_renderer);
+        }
 
 	if (client_store != NULL)
 	{
