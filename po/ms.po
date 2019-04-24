@@ -4,8 +4,8 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Martin Wimpress <code@flexion.org>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Martin Wimpress <code@flexion.org>, 2019
 # abuyop <abuyop@gmail.com>, 2019
 # 
 #, fuzzy
@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-09 00:06+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
+"PO-Revision-Date: 2019-03-15 20:25+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>, 2019\n"
 "Language-Team: Malay (https://www.transifex.com/mate/teams/13566/ms/)\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgstr "Pilih Perintah"
 
 #: ../capplet/gsm-app-dialog.c:170
 msgid "second"
-msgstr ""
+msgstr "saat"
 
 #: ../capplet/gsm-app-dialog.c:172
 msgid "seconds"

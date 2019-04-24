@@ -4,16 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Michal Procházka <mich.procha@seznam.cz>, 2018
-# Ondřej Kolín <ondrej.kolin@gmail.com>, 2018
-# Honza K. <honza889@gmail.com>, 2018
-# Lucas Lommer <drom@kdyne.net>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# jakubtalich, 2018
-# Stanislav Kučera <inactive+kacernator@transifex.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Michal <sinope@seznam.cz>, 2018
-# LiberteCzech <liberte.czech@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Michal Procházka <mich.procha@seznam.cz>, 2019
+# Honza K. <honza889@gmail.com>, 2019
+# Michal <sinope@seznam.cz>, 2019
+# Lucas Lommer <drom@kdyne.net>, 2019
+# Martin Wimpress <code@flexion.org>, 2019
+# jakubtalich, 2019
+# LiberteCzech <liberte.czech@gmail.com>, 2019
+# Stanislav Kučera <inactive+kacernator@transifex.com>, 2019
 # ToMáš Marný, 2019
 # 
 #, fuzzy
@@ -22,7 +21,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-09 00:06+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
+"PO-Revision-Date: 2019-03-15 20:25+0000\n"
 "Last-Translator: ToMáš Marný, 2019\n"
 "Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +36,7 @@ msgstr "Vybrat příkaz"
 
 #: ../capplet/gsm-app-dialog.c:170
 msgid "second"
-msgstr ""
+msgstr "sekunda"
 
 #: ../capplet/gsm-app-dialog.c:172
 msgid "seconds"
@@ -297,7 +296,7 @@ msgstr "Zapa_matovat si aktuálně běžící aplikaci"
 
 #: ../data/session-properties.ui.h:8
 msgid "Options"
-msgstr "Volby"
+msgstr "Možnosti"
 
 #: ../data/session-properties.ui.h:9
 msgid "Browse…"
@@ -313,7 +312,7 @@ msgstr "_Příkaz:"
 
 #: ../data/session-properties.ui.h:12
 msgid "_Name:"
-msgstr "Jmé_no:"
+msgstr "Náz_ev:"
 
 #: ../data/session-properties.ui.h:13
 msgid "_Delay:"
@@ -322,12 +321,12 @@ msgstr "Zpož_dění:"
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "Soubor není platným souborem .desktop"
+msgstr "Soubor není platným souborem typu .desktop"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Nerozpoznaná verze „%s“ souboru pracovní plochy"
+msgstr "Nerozpoznaný soubor typu .desktop ve verzi „%s“"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
@@ -342,7 +341,7 @@ msgstr "Aplikace nepřijímá dokumenty z příkazové řádky"
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Nerozpoznaná volba spuštění: %d"
+msgstr "Nerozpoznaná volba spouštění: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
@@ -352,15 +351,15 @@ msgstr "Nelze předat URI dokumentu položce .desktop „Type=Link“"
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "Nespustitelná položka"
+msgstr "Není spustitelnou položkou"
 
 #: ../egg/eggsmclient.c:221
 msgid "Disable connection to session manager"
-msgstr "Vypnout spojení se správcem sezení"
+msgstr "Zakázat napojení na správce sezení"
 
 #: ../egg/eggsmclient.c:224
 msgid "Specify file containing saved configuration"
-msgstr "Stanovit soubor obsahující uloženou konfiguraci"
+msgstr "Vyberte soubor s uloženou konfigurací"
 
 #: ../egg/eggsmclient.c:224
 msgid "FILE"
@@ -368,7 +367,7 @@ msgstr "SOUBOR"
 
 #: ../egg/eggsmclient.c:227
 msgid "Specify session management ID"
-msgstr "Stanovit ID Správy sezení"
+msgstr "Zadejte ID správce sezení"
 
 #: ../egg/eggsmclient.c:227
 msgid "ID"
@@ -376,11 +375,11 @@ msgstr "ID"
 
 #: ../egg/eggsmclient.c:248
 msgid "Session management options:"
-msgstr "Možnosti Správy sezení:"
+msgstr "Volby správce sezení:"
 
 #: ../egg/eggsmclient.c:249
 msgid "Show session management options"
-msgstr "Zobrazit možnosti Správy sezení"
+msgstr "Zobrazit volby správce sezení"
 
 #: ../mate-session/gsm-inhibit-dialog.c:251
 #, c-format

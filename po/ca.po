@@ -4,9 +4,9 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Pere O. <gotrunks@gmail.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Pere O. <gotrunks@gmail.com>, 2019
+# Martin Wimpress <code@flexion.org>, 2019
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2019
 # 
 #, fuzzy
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-09 00:06+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
+"PO-Revision-Date: 2019-03-15 20:25+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2019\n"
 "Language-Team: Catalan (https://www.transifex.com/mate/teams/13566/ca/)\n"
 "MIME-Version: 1.0\n"
