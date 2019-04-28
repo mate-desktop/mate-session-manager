@@ -266,11 +266,11 @@ static gboolean mdm_init_protocol_connection(MdmProtocolData* data)
 
 	if (g_file_test(MDM_PROTOCOL_SOCKET_PATH, G_FILE_TEST_EXISTS))
 	{
-		strcpy(addr.sun_path, MDM_PROTOCOL_SOCKET_PATH);
+		g_strlcpy (addr.sun_path, MDM_PROTOCOL_SOCKET_PATH, sizeof (addr.sun_path));
 	}
 	else if (g_file_test("/tmp/.mdm_socket", G_FILE_TEST_EXISTS))
 	{
-		strcpy(addr.sun_path, "/tmp/.mdm_socket");
+		g_strlcpy (addr.sun_path, "/tmp/.mdm_socket", sizeof (addr.sun_path));
 	}
 	else
 	{
