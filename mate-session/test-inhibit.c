@@ -34,37 +34,23 @@
 #define SM_DBUS_PATH      "/org/gnome/SessionManager"
 #define SM_DBUS_INTERFACE "org.gnome.SessionManager"
 
-#ifdef __GNUC__
-#define UNUSED_VARIABLE __attribute__ ((unused))
-#else
-#define UNUSED_VARIABLE
-#endif
-
-static DBusGConnection *bus_connection = NULL;
-static DBusGProxy      *sm_proxy = NULL;
+static GDBusProxy      *sm_proxy = NULL;
 static guint            cookie = 0;
 
 static gboolean
 session_manager_connect (void)
 {
-
-        if (bus_connection == NULL) {
-                GError *error;
-
-                error = NULL;
-                bus_connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-                if (bus_connection == NULL) {
-                        g_message ("Failed to connect to the session bus: %s",
-                                   error->message);
-                        g_error_free (error);
-                        exit (1);
-                }
+        GError *error = NULL;
+        if (sm_proxy == NULL) {
+                sm_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                                          G_DBUS_PROXY_FLAGS_NONE,
+                                                          NULL,
+                                                          SM_DBUS_NAME,
+                                                          SM_DBUS_PATH,
+                                                          SM_DBUS_INTERFACE,
+                                                          NULL,
+                                                          &error);
         }
-
-        sm_proxy = dbus_g_proxy_new_for_name (bus_connection,
-                                              SM_DBUS_NAME,
-                                              SM_DBUS_PATH,
-                                              SM_DBUS_INTERFACE);
         return (sm_proxy != NULL);
 }
 
@@ -78,21 +64,16 @@ static gboolean
 do_inhibit_for_window (GdkWindow *window)
 {
         GError     *error;
-        gboolean    res;
-        const char UNUSED_VARIABLE *startup_id;
+        GVariant   *ret;
+        const char *startup_id G_GNUC_UNUSED;
         const char *app_id;
         const char *reason;
         guint       toplevel_xid;
         guint       flags;
 
         startup_id = g_getenv ("DESKTOP_AUTOSTART_ID");
-#if 1
         app_id = "caja-cd-burner";
         reason = "A CD burn is in progress.";
-#else
-        app_id = "caja";
-        reason = "A file transfer is in progress.";
-#endif
         toplevel_xid = gdk_x11_window_get_xid (window);
 
         flags = GSM_INHIBITOR_FLAG_LOGOUT
@@ -100,22 +81,21 @@ do_inhibit_for_window (GdkWindow *window)
                 | GSM_INHIBITOR_FLAG_SUSPEND;
 
         error = NULL;
-        res = dbus_g_proxy_call (sm_proxy,
-                                 "Inhibit",
-                                 &error,
-                                 G_TYPE_STRING, app_id,
-                                 G_TYPE_UINT, toplevel_xid,
-                                 G_TYPE_STRING, reason,
-                                 G_TYPE_UINT, flags,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_UINT, &cookie,
-                                 G_TYPE_INVALID);
-        if (! res) {
+        ret = g_dbus_proxy_call_sync (sm_proxy,
+                                      "Inhibit",
+                                      g_variant_new ("(susu)", app_id, toplevel_xid, reason, flags),
+                                      G_DBUS_CALL_FLAGS_NONE,
+                                      -1,
+                                      NULL,
+                                      &error);
+        if (ret == NULL) {
                 g_warning ("Failed to inhibit: %s", error->message);
                 g_error_free (error);
                 return FALSE;
         }
 
+        g_variant_get (ret, "(u)", &cookie);
+        g_variant_unref (ret);
         g_debug ("Inhibiting session manager: %u", cookie);
 
         return TRUE;
@@ -135,21 +115,23 @@ static gboolean
 do_uninhibit (void)
 {
         GError  *error;
-        gboolean res;
+        GVariant *ret;
 
         error = NULL;
-        res = dbus_g_proxy_call (sm_proxy,
-                                 "Uninhibit",
-                                 &error,
-                                 G_TYPE_UINT, cookie,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_INVALID);
-        if (! res) {
+        ret = g_dbus_proxy_call_sync (sm_proxy,
+                                      "Uninhibit",
+                                      g_variant_new ("(u)", cookie),
+                                      G_DBUS_CALL_FLAGS_NONE,
+                                      -1,
+                                      NULL,
+                                      &error);
+        if (ret == NULL) {
                 g_warning ("Failed to uninhibit: %s", error->message);
                 g_error_free (error);
                 return FALSE;
         }
 
+        g_variant_unref (ret);
         cookie = 0;
 
         return TRUE;
