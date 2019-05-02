@@ -524,8 +524,11 @@ static gboolean require_dbus_session(int argc, char** argv, GError** error)
 	if (!execvp("dbus-launch", new_argv))
 	{
 		g_set_error(error, G_SPAWN_ERROR, G_SPAWN_ERROR_FAILED, "No session bus and could not exec dbus-launch: %s", g_strerror(errno));
+		g_free (new_argv);
 		return FALSE;
 	}
+
+	g_free (new_argv);
 
 	/* Should not be reached */
 	return TRUE;
