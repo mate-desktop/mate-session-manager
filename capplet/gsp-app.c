@@ -54,6 +54,7 @@ typedef struct {
         char         *path;
 
         gboolean      hidden;
+        gboolean      nodisplay;
         gboolean      enabled;
 
         char         *name;
@@ -621,6 +622,18 @@ gsp_app_set_enabled (GspApp   *app,
         _gsp_app_emit_changed (app);
 }
 
+gboolean
+gsp_app_get_nodisplay (GspApp *app)
+{
+        GspAppPrivate *priv;
+
+        g_return_val_if_fail (GSP_IS_APP (app), FALSE);
+
+        priv = gsp_app_get_instance_private (app);
+
+        return priv->nodisplay;
+}
+
 const char *
 gsp_app_get_name (GspApp *app)
 {
@@ -953,7 +966,9 @@ gsp_app_new (const char   *path,
         priv->enabled = gsp_key_file_get_boolean (keyfile,
                                                   GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
                                                   TRUE);
-
+        priv->nodisplay = gsp_key_file_get_boolean (keyfile,
+                                                    G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY,
+                                                    FALSE);
         priv->name = gsp_key_file_get_locale_string (keyfile,
                                                      G_KEY_FILE_DESKTOP_KEY_NAME);
         priv->exec = gsp_key_file_get_string (keyfile,
@@ -1100,6 +1115,7 @@ gsp_app_create (const char *name,
 
         priv->hidden = FALSE;
         priv->enabled = TRUE;
+        priv->nodisplay = FALSE;
 
         if (!gsm_util_text_is_blank (name)) {
                 priv->name = g_strdup (name);
