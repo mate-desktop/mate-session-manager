@@ -10,6 +10,11 @@
       <summary>Save sessions</summary>
       <description>If enabled, mate-session will save the session automatically.</description>
     </key>
+    <key name="show-hidden-apps" type="b">
+      <default>false</default>
+      <summary>Show hidden autostart applications</summary>
+      <description>If enabled, mate-session-properties will show hidden autostart applications.</description>
+    </key>
     <key name="logout-prompt" type="b">
       <default>true</default>
       <summary>Logout prompt</summary>
