@@ -181,6 +181,10 @@ append_app (GsmPropertiesDialog *dialog,
             GspApp              *app)
 {
         GtkTreeIter   iter;
+        if (find_by_app (GTK_TREE_MODEL (dialog->list_store),
+                         &iter, app)) {
+                return;
+        }
 
         gtk_list_store_append (dialog->list_store, &iter);
         _fill_iter_from_app (dialog->list_store, &iter, app);
