@@ -479,7 +479,7 @@ _gsp_app_manager_fill_from_dir (GspAppManager *manager,
                 desktop_file_path = g_build_filename (xdgdir->dir, name, NULL);
                 app = gsp_app_new (desktop_file_path, xdgdir->index);
 
-                if (app != NULL && !gsp_app_get_nodisplay(app)) {
+                if (app != NULL) {
                         gsp_app_manager_add (manager, app);
                         g_object_unref (app);
                 }

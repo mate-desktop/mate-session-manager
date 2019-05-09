@@ -43,11 +43,13 @@
 #define CAPPLET_EDIT_WIDGET_NAME          "session_properties_edit_button"
 #define CAPPLET_SAVE_WIDGET_NAME          "session_properties_save_button"
 #define CAPPLET_REMEMBER_WIDGET_NAME      "session_properties_remember_toggle"
+#define CAPPLET_SHOW_HIDDEN_WIDGET_NAME   "session_properties_show_hidden_toggle"
 
 #define STARTUP_APP_ICON     "system-run"
 
 #define SPC_CONFIG_SCHEMA   "org.mate.session"
 #define SPC_AUTOSAVE_KEY    "auto-save-session"
+#define SPC_SHOW_HIDDEN_KEY "show-hidden-apps"
 
 struct _GsmPropertiesDialog
 {
@@ -458,6 +460,37 @@ on_row_activated (GtkTreeView         *tree_view,
 }
 
 static void
+update_tree_view (GsmPropertiesDialog *dialog)
+{
+        GSList *apps;
+        GSList *l;
+        gboolean show_hidden;
+        GspApp *app;
+
+        show_hidden = g_settings_get_boolean (dialog->settings, SPC_SHOW_HIDDEN_KEY);
+
+        apps = gsp_app_manager_get_apps (dialog->manager);
+        for (l = apps; l != NULL; l = l->next) {
+                app = GSP_APP (l->data);
+                if (gsp_app_get_nodisplay(app)) {
+                        if (show_hidden) {
+                                _app_added (dialog, app, dialog->manager);
+                        }else{
+                                _app_removed (dialog, app, dialog->manager);
+                        }
+                }
+        }
+        g_slist_free (apps);
+}
+
+static void
+on_show_hidden_clicked (GtkWidget           *widget,
+                        GsmPropertiesDialog *dialog)
+{
+        update_tree_view (dialog);
+}
+
+static void
 on_save_session_clicked (GtkWidget           *widget,
                          GsmPropertiesDialog *dialog)
 {
@@ -634,6 +667,17 @@ setup_dialog (GsmPropertiesDialog *dialog)
                          button, "active", G_SETTINGS_BIND_DEFAULT);
 
         button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
+                                                     CAPPLET_SHOW_HIDDEN_WIDGET_NAME));
+
+        g_settings_bind (dialog->settings, SPC_SHOW_HIDDEN_KEY,
+                         button, "active", G_SETTINGS_BIND_DEFAULT);
+
+        g_signal_connect (button,
+                          "clicked",
+                          G_CALLBACK (on_show_hidden_clicked),
+                          dialog);
+
+        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                      CAPPLET_SAVE_WIDGET_NAME));
         g_signal_connect (button,
                           "clicked",
@@ -648,6 +692,7 @@ setup_dialog (GsmPropertiesDialog *dialog)
                                   G_CALLBACK (_app_removed), dialog);
 
         populate_model (dialog);
+        update_tree_view (dialog);
 }
 
 static GObject *
