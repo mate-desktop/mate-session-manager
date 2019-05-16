@@ -4,12 +4,12 @@ capplet/gsm-app-dialog.c
 capplet/gsm-properties-dialog.c
 capplet/gsp-app.c
 capplet/main.c
-[type: gettext/gsettings]data/org.mate.session.gschema.xml.in
+data/org.mate.session.gschema.xml.in
 data/mate.desktop.in
 data/mate-wm.desktop.in
-[type: gettext/glade]data/gsm-inhibit-dialog.ui
+data/gsm-inhibit-dialog.ui
 data/mate-session-properties.desktop.in
-[type: gettext/glade]data/session-properties.ui
+data/session-properties.ui
 egg/eggdesktopfile.c
 egg/eggsmclient.c
 mate-session/gsm-inhibit-dialog.c

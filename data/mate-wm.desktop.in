@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-_Name=Window Manager
+Name=Window Manager
 Exec=mate-wm
 Keywords=MATE;window;manager;launch;MDM;
 NoDisplay=true
