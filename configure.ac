@@ -11,13 +11,13 @@ AM_MAINTAINER_MODE
 MATE_COMMON_INIT
 MATE_DEBUG_CHECK
 
-IT_PROG_INTLTOOL([0.50.1])
-
 AC_PROG_CC
 AC_STDC_HEADERS
 AM_PROG_LIBTOOL
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
+AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_GNU_GETTEXT([external])
 dnl make sure we keep ACLOCAL_FLAGS around for maintainer builds to work
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 
@@ -217,8 +217,6 @@ GETTEXT_PACKAGE=mate-session-manager
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE",
                    [The gettext translation domain])
 AC_SUBST(GETTEXT_PACKAGE)
-
-AM_GLIB_GNU_GETTEXT
 
 dnl ====================================================================
 dnl Headers

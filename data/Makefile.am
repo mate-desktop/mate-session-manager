@@ -22,11 +22,11 @@ if USE_MATE_WM
 desktop_DATA += mate-wm.desktop
 endif
 
-@INTLTOOL_DESKTOP_RULE@
+%.desktop: %.desktop.in Makefile
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 gsettingsschema_in_files = org.mate.session.gschema.xml.in
 gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
-@INTLTOOL_XML_NOMERGE_RULE@
 @GSETTINGS_RULES@
 
 EXTRA_DIST =					\

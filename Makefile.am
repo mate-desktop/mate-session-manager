@@ -1,11 +1,11 @@
 SUBDIRS = \
+	po \
 	egg \
 	mate-session \
 	capplet \
 	tools \
 	data \
-	doc \
-	po
+	doc
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
@@ -28,7 +28,6 @@ MAINTAINERCLEANFILES = \
 	$(srcdir)/missing \
 	$(srcdir)/mkinstalldirs \
 	$(srcdir)/configure \
-	$(srcdir)/m4/intltool.m4 \
 	`find "$(srcdir)" -type f -name Makefile.in -print`
 
 # Build ChangeLog from GIT  history

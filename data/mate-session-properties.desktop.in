@@ -1,6 +1,6 @@
 [Desktop Entry]
-_Name=Startup Applications
-_Comment=Choose what applications to start when you log in
+Name=Startup Applications
+Comment=Choose what applications to start when you log in
 Exec=mate-session-properties
 Icon=mate-session-properties
 Terminal=false
