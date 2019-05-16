@@ -82,6 +82,7 @@ requires:
   debian:
     # Useful URL: https://github.com/mate-desktop/debian-packages
     # Useful URL: https://salsa.debian.org/debian-mate-team/mate-session-manager
+    - autopoint
     - clang
     - clang-tools
     - cppcheck
@@ -130,6 +131,7 @@ requires:
     - xorg-x11-xtrans-devel
 
   ubuntu:
+    - autopoint
     - clang
     - clang-tools
     - git
