@@ -194,7 +194,6 @@ after_scripts:
   -   ./gen-index -l 20
   - fi
   - make distcheck
-  - tar tf mate-session-manager-*.tar.xz |grep po
 
 releases:
   draft: false
