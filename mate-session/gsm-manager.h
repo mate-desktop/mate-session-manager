@@ -142,7 +142,7 @@ gboolean            gsm_manager_request_shutdown               (GsmManager     *
 
 gboolean            gsm_manager_request_reboot                 (GsmManager     *manager,
                                                                 GError        **error);
-                                                                
+
 gboolean            gsm_manager_shutdown                       (GsmManager     *manager,
                                                                 GError        **error);
 

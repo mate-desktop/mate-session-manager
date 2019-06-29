@@ -112,7 +112,7 @@ gsp_key_file_set_locale_string (GKeyFile    *keyfile,
         for (i = 0; langs_pointer[i] != NULL; i++) {
                 /* find first without encoding  */
                 if (strchr (langs_pointer[i], '.') == NULL) {
-                        locale = langs_pointer[i]; 
+                        locale = langs_pointer[i];
                         break;
                 }
         }

@@ -836,17 +836,17 @@ gsm_systemd_can_hibernate (GsmSystemd *manager)
   gboolean can_hibernate;
   GError  *error;
   GsmSystemdPrivate *priv;
-  
+
   error = NULL;
   priv = gsm_systemd_get_instance_private (manager);
-  
+
   if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
     g_warning ("Could not connect to Systemd: %s",
                error->message);
     g_error_free (error);
     return FALSE;
   }
-  
+
   res = dbus_g_proxy_call_with_timeout (priv->sd_proxy,
                                         "CanHibernate",
                                         INT_MAX,
@@ -860,7 +860,7 @@ gsm_systemd_can_hibernate (GsmSystemd *manager)
     g_error_free (error);
     return FALSE;
   }
-  
+
   can_hibernate = g_strcmp0 (value, "yes") == 0 ||
   g_strcmp0 (value, "challenge") == 0;
   g_free (value);
@@ -875,17 +875,17 @@ gsm_systemd_can_suspend (GsmSystemd *manager)
   gboolean can_suspend;
   GError  *error;
   GsmSystemdPrivate *priv;
-  
+
   error = NULL;
   priv = gsm_systemd_get_instance_private (manager);
-  
+
   if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
     g_warning ("Could not connect to Systemd: %s",
                error->message);
     g_error_free (error);
     return FALSE;
   }
-  
+
   res = dbus_g_proxy_call_with_timeout (priv->sd_proxy,
                                         "CanSuspend",
                                         INT_MAX,
@@ -899,7 +899,7 @@ gsm_systemd_can_suspend (GsmSystemd *manager)
     g_error_free (error);
     return FALSE;
   }
-  
+
   can_suspend = g_strcmp0 (value, "yes") == 0 ||
   g_strcmp0 (value, "challenge") == 0;
   g_free (value);
@@ -912,17 +912,17 @@ gsm_systemd_attempt_hibernate (GsmSystemd *manager)
   gboolean res;
   GError  *error;
   GsmSystemdPrivate *priv;
-  
+
   error = NULL;
   priv = gsm_systemd_get_instance_private (manager);
-  
+
   if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
     g_warning ("Could not connect to Systemd: %s",
                error->message);
     g_error_free (error);
     return;
   }
-  
+
   res = dbus_g_proxy_call_with_timeout (priv->sd_proxy,
                                         "Hibernate",
                                         INT_MAX,
@@ -936,7 +936,7 @@ gsm_systemd_attempt_hibernate (GsmSystemd *manager)
     g_error_free (error);
     return;
   }
-  
+
 }
 
 void
@@ -945,17 +945,17 @@ gsm_systemd_attempt_suspend (GsmSystemd *manager)
   gboolean res;
   GError  *error;
   GsmSystemdPrivate *priv;
-  
+
   error = NULL;
   priv = gsm_systemd_get_instance_private (manager);
-  
+
   if (!gsm_systemd_ensure_sd_connection (manager, &error)) {
     g_warning ("Could not connect to Systemd: %s",
                error->message);
     g_error_free (error);
     return;
   }
-  
+
   res = dbus_g_proxy_call_with_timeout (priv->sd_proxy,
                                         "Suspend",
                                         INT_MAX,

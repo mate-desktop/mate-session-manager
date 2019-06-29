@@ -708,7 +708,7 @@ _start_app (const char *id,
 
         delay = gsm_app_peek_autostart_delay (app);
         if (delay > 0) {
-                g_timeout_add_seconds (delay, 
+                g_timeout_add_seconds (delay,
                                        (GSourceFunc)_autostart_delay_timeout,
                                        g_object_ref (app));
                 g_debug ("GsmManager: %s is scheduled to start in %d seconds", id, delay);
@@ -1168,12 +1168,12 @@ manager_switch_user (GsmManager *manager)
                 command = g_strdup_printf ("%s %s",
                                            GDM_FLEXISERVER_COMMAND,
                                            GDM_FLEXISERVER_ARGS);
-                
+
                 error = NULL;
                 res = g_spawn_command_line_sync (command, NULL, NULL, NULL, &error);
 
                 g_free (command);
-                
+
                 if (! res) {
                         g_debug ("GsmManager: Unable to start GDM greeter: %s", error->message);
                         g_error_free (error);
@@ -3554,9 +3554,9 @@ gsm_manager_request_shutdown (GsmManager *manager,
 {
         GsmManagerPrivate *priv;
         g_debug ("GsmManager: RequestShutdown called");
-        
+
         g_return_val_if_fail(GSM_IS_MANAGER (manager), FALSE);
-        
+
         priv = gsm_manager_get_instance_private (manager);
         if (priv->phase != GSM_MANAGER_PHASE_RUNNING) {
                 g_set_error (error,
@@ -3565,9 +3565,9 @@ gsm_manager_request_shutdown (GsmManager *manager,
                              "RequestShutdown interface is only available during the Running phase");
                 return FALSE;
         }
-        
+
         request_shutdown (manager);
-        
+
         return TRUE;
 }
 
@@ -3578,9 +3578,9 @@ gsm_manager_request_reboot (GsmManager *manager,
         GsmManagerPrivate *priv;
 
         g_debug ("GsmManager: RequestReboot called");
-        
+
         g_return_val_if_fail (GSM_IS_MANAGER (manager), FALSE);
-        
+
         priv = gsm_manager_get_instance_private (manager);
         if (priv->phase != GSM_MANAGER_PHASE_RUNNING) {
                 g_set_error (error,
@@ -3589,9 +3589,9 @@ gsm_manager_request_reboot (GsmManager *manager,
                              "RequestReboot interface is only available during the running phase");
                 return FALSE;
         }
-        
+
         request_reboot (manager);
-        
+
         return TRUE;
 }
 

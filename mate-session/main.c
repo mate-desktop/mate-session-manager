@@ -105,7 +105,7 @@ initialize_gsettings (void)
 
         return ret;
 }
-	
+
 static void on_bus_name_lost(DBusGProxy* bus_proxy, const char* name, gpointer data)
 {
 	g_warning("Lost name on bus: %s, exiting", name);
