@@ -697,7 +697,7 @@ gsm_xsmp_server_finalize (GObject *object)
 
         xsmp_server = GSM_XSMP_SERVER (object);
 
-        IceFreeListenObjs (xsmp_server->num_xsmp_sockets, 
+        IceFreeListenObjs (xsmp_server->num_xsmp_sockets,
                            xsmp_server->xsmp_sockets);
 
         if (xsmp_server->client_store != NULL) {
