@@ -1,5 +1,27 @@
 ### mate-session-manager 1.23.0
 
+  * tx: sync with transifex
+  * Remove trailing whitespaces
+  * migrate from intltool to gettext
+  * Change url project's website
+  * [ci] Add cppcheck html report
+  * test-inhibit.c: migrate to gdbus
+  * Don't add apps repeatedly
+  * Add Show hidden checkbox and gsettings flag.
+  * Hide NoDisplay Apps in Startup Applications
+  * Simplify the installation process of the icons
+  * main: Potential leak of memory pointed to by 'new_argv'
+  * [Security] Use 'g_strlcpy' instead of 'strcpy'
+  * [ci] Enable Clang Static Analyzer
+  * Add missing CPPFLAGS for mate_session_check_accelerated helpers
+  * Add hardware-compatibility file
+  * Fix unable to retrieve org.gnome.SessionManager.Renderer property
+  * mate-session-check-accelerated-gles-helper
+  * Add mate_session_check_accelerated helpers
+  * add installation instructions and update URL
+  * Add ELOGIND support
+  * Guard against missing systemd
+
 ### mate-session-manager 1.22.0
 
   * Translations update
