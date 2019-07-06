@@ -4,8 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Ivan Pejić <ipejic@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Ольга Смирнова, 2019
 # 
 #, fuzzy
 msgid ""
@@ -14,98 +13,98 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-09 00:06+0100\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Serbian (Latin) (https://www.transifex.com/mate/teams/13566/sr@latin/)\n"
+"Last-Translator: Ольга Смирнова, 2019\n"
+"Language-Team: Interlingue (https://www.transifex.com/mate/teams/13566/ie/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sr@latin\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: ie\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../capplet/gsm-app-dialog.c:127
 msgid "Select Command"
-msgstr "Izaberite naredbu"
+msgstr "Selecte un comande"
 
 #: ../capplet/gsm-app-dialog.c:170
 msgid "second"
-msgstr ""
+msgstr "seconde"
 
 #: ../capplet/gsm-app-dialog.c:172
 msgid "seconds"
-msgstr "sekunde"
+msgstr "secondes"
 
 #: ../capplet/gsm-app-dialog.c:218 ../mate-session/gsm-logout-dialog.c:452
 #: ../mate-session/gsm-logout-dialog.c:485
 msgid "_Cancel"
-msgstr "_Otkaži"
+msgstr "A_nullar"
 
 #: ../capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
-msgstr "Dodaj program po učitavanju"
+msgstr "Adjunter un programma"
 
 #: ../capplet/gsm-app-dialog.c:226 ../data/session-properties.ui.h:2
 msgid "_Add"
-msgstr "_Dodaj"
+msgstr "_Adjunter"
 
 #: ../capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
-msgstr "Uredi program po učitavanju"
+msgstr "Modificar li programma"
 
 #: ../capplet/gsm-app-dialog.c:231
 msgid "_Save"
-msgstr "_Sačuvaj"
+msgstr "_Gardar"
 
 #: ../capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
-msgstr "Početna naredba se mora uneti"
+msgstr "Comande de initiament ne posse esser null."
 
 #: ../capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
-msgstr "Naredba programa za pokretanje po prijavi nije ispravna"
+msgstr "Li comande de iniciament es ínvalid"
 
 #: ../capplet/gsm-properties-dialog.c:479
 msgid "_Help"
-msgstr "_Pomoć"
+msgstr "Au_xilie"
 
 #: ../capplet/gsm-properties-dialog.c:483
 msgid "_Close"
-msgstr "_Zatvori"
+msgstr "_Cluder"
 
 #: ../capplet/gsm-properties-dialog.c:523
 msgid "Enabled"
-msgstr "Uključen"
+msgstr "Permisset"
 
 #: ../capplet/gsm-properties-dialog.c:535
 msgid "Icon"
-msgstr "Ikona"
+msgstr "Icone"
 
 #: ../capplet/gsm-properties-dialog.c:547
 msgid "Program"
-msgstr "Program"
+msgstr "Programma"
 
 #: ../capplet/gsm-properties-dialog.c:742
 msgid "Startup Applications Preferences"
-msgstr "Postavke programa za pokretanje po učitavanju"
+msgstr "Preferenties de applicationes de iniciament"
 
 #: ../capplet/gsp-app.c:283
 msgid "No name"
-msgstr "Nepoznat naziv"
+msgstr "Sin nómine"
 
 #: ../capplet/gsp-app.c:289
 msgid "No description"
-msgstr "Bez opisa"
+msgstr "Sin descrition"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr "Verzija ovog programa"
+msgstr "Version del application"
 
 #: ../capplet/main.c:51
 msgid "Could not display help document"
-msgstr "Ne mogu da prikažem dokument za pomoć"
+msgstr "Ne posset monstrar li document de auxilie"
 
 #: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Li hor de inicie del actual session"
 
 #: ../data/org.mate.session.gschema.xml.in.h:2
 msgid "Unix time of the start of the current session."
@@ -113,24 +112,23 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
-msgstr "Sačuvaj sesije"
+msgstr "Salvar sessiones"
 
 #: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr "Ukoliko je uključeno, Gnomova sesija će biti sama sačuvana."
+msgstr "Automaticmen gardar li session per mate-session."
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
-msgstr "Pitanje pred odjavu"
+msgstr "Confirmar clusura del session"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr ""
-"Ukoliko je uključeno, mate-session će pitati korisnika pre okončanja sesije."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "Retarde ante que cluder"
 
 #: ../data/org.mate.session.gschema.xml.in.h:8
 msgid ""
@@ -140,24 +138,24 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
-msgstr "Vreme nakon koga sesija postaje neaktivna"
+msgstr "Li témpor ante que egardar un session quam ínoperant"
 
 #: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Vreme neaktivnosti (u minutima) pre pokretanja čuvara ekrana."
+msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Default session"
-msgstr "Podrazumevana sesija"
+msgstr "Session predefinit"
 
 #: ../data/org.mate.session.gschema.xml.in.h:12
 msgid "List of applications that are part of the default session."
-msgstr "Spisak programa koji su deo podrazumevane sesije."
+msgstr "Un liste de applicationes quel es un parte del predefinit session."
 
 #: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Required session components"
-msgstr "Potrebni delovi sesije"
+msgstr "Besonat componentes de session"
 
 #: ../data/org.mate.session.gschema.xml.in.h:14
 msgid ""
@@ -179,15 +177,13 @@ msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
-msgstr "Upravnik prozora"
+msgstr "Gerentiator de fenestres"
 
 #: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr ""
-"Upravnik prozorima iscrtava naslovnu liniju i okvire prozora i omogućava "
-"pomeranje i promenu veličine prozora."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -198,24 +194,24 @@ msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr ""
-"Panel postavlja liniju na vrh ili dno radne površi koja sadrži menije, "
-"spisak prozora, obaveštajne ikonice, sat i drugo."
+"Li panel provide li barra ad up de ecran que contene menús, li liste de "
+"fenestres, icones de statu, li horloge, etc."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"
-msgstr "Upravnik datotekama"
+msgstr "Gerentiator de files"
 
 #: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
 msgstr ""
-"Upravnik datotekama ističe ikonice na radnoj površi i omogućava rad sa "
-"sačuvanim datotekama."
+"Li gerente de files provide li icones del Pupitre e permisse vos operar con "
+"vor gardat files."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "Dock"
-msgstr ""
+msgstr "Dock"
 
 #: ../data/org.mate.session.gschema.xml.in.h:24
 msgid ""
@@ -225,345 +221,346 @@ msgstr ""
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
-msgstr "Gnom"
+msgstr "MATE"
 
 #: ../data/mate.desktop.in.h:2
 msgid "This session logs you into MATE"
-msgstr "Ova sesija vas prijavljuje u Gnom"
+msgstr "Ti es li session de MATE"
 
 #: ../data/gsm-inhibit-dialog.ui.h:1
 msgid "<b>Some programs are still running:</b>"
-msgstr "<b>Neki programi su još uvek pokrenuti:</b>"
+msgstr "<b>Alcun programmas es ancor lansat:</b>"
 
 #: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:633
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr ""
+"Atendente fine del programma. Si on interrupte it, vor labores posse esser "
+"perdit."
 
 #: ../data/mate-session-properties.desktop.in.h:1
 msgid "Startup Applications"
-msgstr "Programi po učitavanju"
+msgstr "Applicationes de initiament"
 
 #: ../data/mate-session-properties.desktop.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr "Izaberite programe za pokretanje po prijavi na računar"
+msgstr "Selecte applicationes quel vu vole lansar al inicie"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
-msgstr "Dodatni programi po u_čitavanju:"
+msgstr "Extra _programmas de iniciament:"
 
 #: ../data/session-properties.ui.h:3
 msgid "_Remove"
-msgstr "_Ukloni"
+msgstr "_Remover"
 
 #: ../data/session-properties.ui.h:4
 msgid "_Edit"
-msgstr "_Uređivanje"
+msgstr "_Modificar"
 
 #: ../data/session-properties.ui.h:5
 msgid "Startup Programs"
-msgstr "Programi pri učitavanju"
+msgstr "Programmas de initiament"
 
 #: ../data/session-properties.ui.h:6
 msgid "_Automatically remember running applications when logging out"
-msgstr "_Sam zapamti pokrenute programe pri odjavi"
+msgstr "_Automaticmen memorar lansat applicationes ante que cluder"
 
 #: ../data/session-properties.ui.h:7
 msgid "_Remember Currently Running Application"
-msgstr "_Zapamti trenutno pokrenute programe"
+msgstr "_Memorar applicationes presentmen lansat"
 
 #: ../data/session-properties.ui.h:8
 msgid "Options"
-msgstr "Mogućnosti"
+msgstr "Optiones"
 
 #: ../data/session-properties.ui.h:9
 msgid "Browse…"
-msgstr ""
+msgstr "Trovar..."
 
 #: ../data/session-properties.ui.h:10
 msgid "Comm_ent:"
-msgstr "Pri_medba:"
+msgstr "N_ota:"
 
 #: ../data/session-properties.ui.h:11
 msgid "Co_mmand:"
-msgstr "_Naredba:"
+msgstr "Co_mande:"
 
 #: ../data/session-properties.ui.h:12
 msgid "_Name:"
-msgstr "_Ime:"
+msgstr "_Nómine:"
 
 #: ../data/session-properties.ui.h:13
 msgid "_Delay:"
-msgstr "_Zastoj:"
+msgstr "Retar_de:"
 
 #: ../egg/eggdesktopfile.c:152
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "Nije ispravna .desktop datoteka"
+msgstr "Li file ne esset un file .desktop valid"
 
 #: ../egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Nepoznato izdanje desktop datoteke „%s“"
+msgstr "Ínconosset version '%s' de file desktop"
 
 #: ../egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
-msgstr "Pokreće se %s"
+msgstr "Startante %s"
 
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "Program ne prihvata dokumente iz komandne linije"
+msgstr "Li application ne accepte documentes in li linea de comandes"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Nepoznata opcija pri pokretanju: %d"
+msgstr "Ínreconosset option de lansa: %d"
 
 #: ../egg/eggdesktopfile.c:1363
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Ne mogu da prosledim adresu dokumenta u unos „Type=Adresa“"
+msgstr ""
+"Es impossibil passar URIs de documentes a un element desktop de 'Type=Link'"
 
 #: ../egg/eggdesktopfile.c:1384
 #, c-format
 msgid "Not a launchable item"
-msgstr "Ovaj tip je nemoguće pokrenuti"
+msgstr "Elemente ne es lansabil"
 
 #: ../egg/eggsmclient.c:221
 msgid "Disable connection to session manager"
-msgstr "Onemogući vezu sa upravniko sesije"
+msgstr "Despermisser conexion al gerentiator de session"
 
 #: ../egg/eggsmclient.c:224
 msgid "Specify file containing saved configuration"
-msgstr "Odredite datoteku koja sadrži sačuvana podešavanja"
+msgstr "Provider un file contenent un salvat configuration"
 
 #: ../egg/eggsmclient.c:224
 msgid "FILE"
-msgstr "DATOTEKA"
+msgstr "FILE"
 
 #: ../egg/eggsmclient.c:227
 msgid "Specify session management ID"
-msgstr "Odredite IB upravnika sesijom"
+msgstr "Provider un ID de gerentie de session"
 
 #: ../egg/eggsmclient.c:227
 msgid "ID"
-msgstr "IB"
+msgstr "ID"
 
 #: ../egg/eggsmclient.c:248
 msgid "Session management options:"
-msgstr "Opcije upravnika sesijom:"
+msgstr "Optiones de gerentie de session:"
 
 #: ../egg/eggsmclient.c:249
 msgid "Show session management options"
-msgstr "Prikaži opcije upravnika sesijom"
+msgstr "Monstra optiones de gerentie de session"
 
 #: ../mate-session/gsm-inhibit-dialog.c:251
 #, c-format
 msgid "Icon '%s' not found"
-msgstr "Nije nađena ikonica „%s“"
+msgstr "Icone '%s' ne es trovat"
 
 #: ../mate-session/gsm-inhibit-dialog.c:581
 msgid "Unknown"
-msgstr "Nepoznat"
+msgstr "Ínconosset"
 
 #: ../mate-session/gsm-inhibit-dialog.c:632
 msgid "A program is still running:"
-msgstr "Program je još uvek pokrenut:"
+msgstr "Un programma ancor es lansat:"
 
 #: ../mate-session/gsm-inhibit-dialog.c:636
 msgid "Some programs are still running:"
-msgstr "Neki programi su još uvek pokrenuti:"
+msgstr "Alcun programmas ancor es lansat:"
 
 #: ../mate-session/gsm-inhibit-dialog.c:637
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
-"Čekam da programi završe sa radom.  Izlazak iz ovih programa može dovesti do"
-" gubitka vaših radova."
+"Atendente fine del programmas. Si on interrupte it, vor labores posse esser "
+"perdit."
 
 #: ../mate-session/gsm-inhibit-dialog.c:867
 msgid "Switch User Anyway"
-msgstr "Ipak promeni korisnika"
+msgstr "Cambiar li usator sin egarda"
 
 #: ../mate-session/gsm-inhibit-dialog.c:870
 msgid "Log Out Anyway"
-msgstr ""
+msgstr "Cluder li session sin egarda"
 
 #: ../mate-session/gsm-inhibit-dialog.c:873
 msgid "Suspend Anyway"
-msgstr "Ipak obustavi rad"
+msgstr "Suspender sin egarda"
 
 #: ../mate-session/gsm-inhibit-dialog.c:876
 msgid "Hibernate Anyway"
-msgstr "Ipak zamrzni računar"
+msgstr "Hivernar sin egarda"
 
 #: ../mate-session/gsm-inhibit-dialog.c:879
 msgid "Shut Down Anyway"
-msgstr ""
+msgstr "Extinter sin egarda"
 
 #: ../mate-session/gsm-inhibit-dialog.c:882
 msgid "Reboot Anyway"
-msgstr "Ipak ponovo pokreni računar"
+msgstr "Reiniciar sin egarda"
 
 #: ../mate-session/gsm-inhibit-dialog.c:890
 msgid "Lock Screen"
-msgstr "Zaključaj ekran"
+msgstr "Serrar li ecran"
 
 #: ../mate-session/gsm-inhibit-dialog.c:893
 msgid "Cancel"
-msgstr "Otkaži"
+msgstr "Anullar"
 
 #: ../mate-session/gsm-logout-dialog.c:307
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Li session va cluder automaticmen pos %d seconde"
+msgstr[1] "Li session va cluder automaticmen pos %d secondes"
 
 #: ../mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Li sistema va extinter se automaticmen pos %d seconde"
+msgstr[1] "Li sistema va extinter se automaticmen pos %d secondes"
 
 #: ../mate-session/gsm-logout-dialog.c:361
 #, c-format
 msgid "You are currently logged in as \"%s\"."
-msgstr "Prijavljeni ste kao „%s“."
+msgstr "Vu have un apert session quam «%s»."
 
 #: ../mate-session/gsm-logout-dialog.c:441
 msgid "Log out of this system now?"
-msgstr "Da li da se odjavim sa sistema?"
+msgstr "Cluder li session sur ti-ci sistema nu?"
 
 #: ../mate-session/gsm-logout-dialog.c:447
 msgid "_Switch User"
-msgstr "Promeni _korisnika"
+msgstr "_Cambiar li usator"
 
 #: ../mate-session/gsm-logout-dialog.c:456
 msgid "_Log Out"
-msgstr "O_djava"
+msgstr "C_luder li session"
 
 #: ../mate-session/gsm-logout-dialog.c:462
 msgid "Shut down this system now?"
-msgstr "Da li da isključim računar?"
+msgstr "Extinter li sistema nu?"
 
 #: ../mate-session/gsm-logout-dialog.c:468
 msgid "S_uspend"
-msgstr "_Obustavi rad"
+msgstr "S_uspender"
 
 #: ../mate-session/gsm-logout-dialog.c:474
 msgid "_Hibernate"
-msgstr "_Zamrzni"
+msgstr "_Hivernar"
 
 #: ../mate-session/gsm-logout-dialog.c:480
 msgid "_Restart"
-msgstr "_Ponovo pokreni"
+msgstr "_Restartar"
 
 #: ../mate-session/gsm-logout-dialog.c:490
 msgid "_Shut Down"
-msgstr "_Isključi"
+msgstr "E_xtinter"
 
 #: ../mate-session/gsm-manager.c:1512 ../mate-session/gsm-manager.c:2327
 msgid "Not responding"
-msgstr "Ne daje odziv"
+msgstr "Ínresponsiv"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:595
 msgid "Remembered Application"
-msgstr ""
+msgstr "Memorisat application"
 
 #: ../mate-session/gsm-xsmp-client.c:1262
 msgid "This program is blocking logout."
-msgstr ""
+msgstr "Ti-ci programma impedi clusion del session."
 
 #: ../mate-session/gsm-xsmp-server.c:324
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr "Odbacujem vezu sa novim klijentom jer je u toku gašenje sesije.\n"
+msgstr ""
+"Refusante un nov conexion de client pro que li session bentost ea terminat\n"
 
 #: ../mate-session/gsm-xsmp-server.c:586
 #, c-format
 msgid "Could not create ICE listening socket: %s"
-msgstr "Ne mogu da napravim ICE soket: %s"
+msgstr "Ne successat crear un socket ICE por escutar: %s"
 
 #. Oh well, no X for you!
 #: ../mate-session/gsm-util.c:355
 #, c-format
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr ""
-"Ne mogu da pokrenem prijavnu sesiju (i ne mogu da se povežem na X server)"
+msgstr "Ne successar lansar li session de inicie (e conexer al servitore X)"
 
 #: ../mate-session/main.c:586
 msgid "Override standard autostart directories"
-msgstr "Zaobiđi standardne direktorijume sa programima po učitavalju"
+msgstr "Redefinir standard directorias de auto-lansament"
 
 #: ../mate-session/main.c:587
 msgid "Enable debugging code"
-msgstr "Omogući ispis za traženje grešaka"
+msgstr "Activar li code de debug"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
-msgstr "Ne učitavaj programe koje je zadao korisnik"
+msgstr "Ne lansar applicationes providet per usator"
 
 #: ../mate-session/main.c:609
 msgid " - the MATE session manager"
-msgstr "— Gnomov upravnik sesijama"
+msgstr " - gerentiator de session de MATE"
 
 #: ../tools/mate-session-save.c:66
 msgid "Log out"
-msgstr "Odjavi se"
+msgstr "Cluder li session"
 
 #: ../tools/mate-session-save.c:67
 msgid "Log out, ignoring any existing inhibitors"
-msgstr "Odjavi se zanemarivši postojeće zabrane"
+msgstr "Cluder li session ignorante omni existent inhibitores"
 
 #: ../tools/mate-session-save.c:68
 msgid "Show logout dialog"
-msgstr "Prikaži prozorče za odjavu"
+msgstr "Monstrar un dialog ante que cluder"
 
 #: ../tools/mate-session-save.c:69
 msgid "Show shutdown dialog"
-msgstr "Prikaži prozorče za gašenje računara"
+msgstr "Monstrar un dialog de extintion"
 
 #: ../tools/mate-session-save.c:70
 msgid "Use dialog boxes for errors"
-msgstr "Koristi prozorčiće za prikaz grešaka"
+msgstr "Monstrar errores per dialogs"
 
 #. deprecated options
 #: ../tools/mate-session-save.c:72
 msgid "Set the current session name"
-msgstr "Postavi ime tekuće sesije"
+msgstr "Assignar li nómine del actual session"
 
 #: ../tools/mate-session-save.c:72
 msgid "NAME"
-msgstr "IME"
+msgstr "NOMINE"
 
 #: ../tools/mate-session-save.c:73
 msgid "Kill session"
-msgstr "Okončaj sesiju"
+msgstr "Terminar li session"
 
 #: ../tools/mate-session-save.c:74
 msgid "Do not require confirmation"
-msgstr "Ne traži potvrdu"
+msgstr "Ne besonar confirmation"
 
 #. Okay, it wasn't the upgrade case, so now we can give up.
 #: ../tools/mate-session-save.c:126
 msgid "Could not connect to the session manager"
-msgstr "Ne može se povezati sa upravljačem sesije"
+msgstr "Ne successat conexer al gerente de session"
 
 #: ../tools/mate-session-save.c:251
 msgid "Program called with conflicting options"
-msgstr "Program je pozvan sa nesaglasnim mogućnostima"
+msgstr "Programma esset invocat con conflictente optiones"
 
 #: ../tools/mate-session-inhibit.c:115
 #, c-format
@@ -582,14 +579,27 @@ msgid ""
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
 msgstr ""
+"%s [OPTION...] COMANDE\n"
+"\n"
+"Executar COMANDE inhibiente alcun functionalitá de session.\n"
+"\n"
+"  -h, --help        Monstrar ti-ci textu\n"
+"  --version         Monstrar li version de programma\n"
+"  --app-id ID       ID de application a usar durante inhibition (facult.)\n"
+"  --reason CAUSE    Li cause de inhibition (facultatativ)\n"
+"  --inhibit ARG     Quo inhibir, un liste separat per commas de:\n"
+"                    logout (cluder li session), switch-user (cambiar li usator),\n"
+"                    suspend, idle (ínoperation), automount\n"
+"\n"
+"Si null parametre --inhibit es present, \"idle\" es suposit.\n"
 
 #: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
 #: ../tools/mate-session-inhibit.c:189
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s besona un argument\n"
 
 #: ../tools/mate-session-inhibit.c:225
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "Ne successat executer %s\n"

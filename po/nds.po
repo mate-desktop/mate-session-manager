@@ -5,8 +5,8 @@
 # 
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2018
-# Benedikt Straub <benedikt-straub@web.de>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Benedikt Straub <benedikt-straub@web.de>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-09 00:06+0100\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"Last-Translator: Benedikt Straub <benedikt-straub@web.de>, 2019\n"
 "Language-Team: Low German (https://www.transifex.com/mate/teams/13566/nds/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +29,7 @@ msgstr "Order utwählen"
 
 #: ../capplet/gsm-app-dialog.c:170
 msgid "second"
-msgstr ""
+msgstr "Sekünn"
 
 #: ../capplet/gsm-app-dialog.c:172
 msgid "seconds"
@@ -86,7 +86,7 @@ msgstr "Programm"
 
 #: ../capplet/gsm-properties-dialog.c:742
 msgid "Startup Applications Preferences"
-msgstr ""
+msgstr "Instellens för Systemstartprogrammen"
 
 #: ../capplet/gsp-app.c:283
 msgid "No name"
@@ -102,15 +102,15 @@ msgstr "Verschoon vun düssem Programm"
 
 #: ../capplet/main.c:51
 msgid "Could not display help document"
-msgstr ""
+msgstr "Kunn dat Hülp-Dokument nich wiesen"
 
 #: ../data/org.mate.session.gschema.xml.in.h:1
 msgid "Current session start time"
-msgstr ""
+msgstr "Start-Tied vun de aktuellen Törn"
 
 #: ../data/org.mate.session.gschema.xml.in.h:2
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Unix-Tied am Begünn vun de aktuellen Törn"
 
 #: ../data/org.mate.session.gschema.xml.in.h:3
 msgid "Save sessions"
@@ -118,7 +118,7 @@ msgstr "Törns spiekern"
 
 #: ../data/org.mate.session.gschema.xml.in.h:4
 msgid "If enabled, mate-session will save the session automatically."
-msgstr ""
+msgstr "Wenn jau, sekert mate-session de Törn automatisk."
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
 msgid "Logout prompt"
@@ -126,17 +126,20 @@ msgstr "Avmellensdialog"
 
 #: ../data/org.mate.session.gschema.xml.in.h:6
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr ""
+msgstr "Wenn jau, fraggt mate-session de Bruker ehr een Törn endt word."
 
 #: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout timeout"
-msgstr ""
+msgstr "Ofmellen-Wachttied"
 
 #: ../data/org.mate.session.gschema.xml.in.h:8
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
 msgstr ""
+"Wenn de Ofmellensdialog anknipst is, laggt dat fast, wo völe Sekünnen wacht "
+"word, ehr dat Ofmellen automatisk passeert. Wenn dat 0 is, gifft 't keen "
+"automatisk Ofmellen."
 
 #: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Time before session is considered idle"
@@ -153,11 +156,11 @@ msgstr "Standardtörn"
 
 #: ../data/org.mate.session.gschema.xml.in.h:12
 msgid "List of applications that are part of the default session."
-msgstr ""
+msgstr "List vun Programmen, wat een Deel vun de normaalen Törn sünd."
 
 #: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Required session components"
-msgstr ""
+msgstr "Nödige Törn-Delen"
 
 #: ../data/org.mate.session.gschema.xml.in.h:14
 msgid ""
@@ -168,14 +171,19 @@ msgid ""
 "automatically add the required components back to the session at login time "
 "if they do get removed."
 msgstr ""
+"List vun Programmen, wat een Törn hebben mutt. (Elkeen Ding is een Slötel "
+"unner »/org/mate/desktop/session/required_components«). De Instellens för "
+"Systemstartprogrammen verlööven Brukers normaal nich, een nödiges Programm "
+"ut de Törn to lösken, un de Törn-Uppasser föögt de nödigen Programmen bi'm "
+"Anmellen automatisk weer tum Törn to, wenn se doch lösket worden."
 
 #: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "Starten vun Gnome-Verdragelkheids-Programmen stüren"
 
 #: ../data/org.mate.session.gschema.xml.in.h:16
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "Sett fast, welke Verdragelkheids-Programmen start worden sallen."
 
 #: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
@@ -186,6 +194,9 @@ msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr ""
+"De Fensteruppasser is dat Programm, wat de Titelbalken un de Grenz vun "
+"Fensters tekent un di verlöövt, Fensters to verschuven un hör Grött to "
+"ännern."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
 msgid "Panel"
@@ -196,6 +207,8 @@ msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr ""
+"De Balken is de Rieg boven oder unnern am Billschirm, wat Menüs, de "
+"Fensterlist, Tostands-Tekens, de Klock un so wieder enthollt."
 
 #: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "File Manager"

@@ -31,7 +31,7 @@ msgstr "Оберіть команду"
 
 #: ../capplet/gsm-app-dialog.c:170
 msgid "second"
-msgstr ""
+msgstr "секунда"
 
 #: ../capplet/gsm-app-dialog.c:172
 msgid "seconds"

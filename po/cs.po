@@ -37,7 +37,7 @@ msgstr "Vybrat příkaz"
 
 #: ../capplet/gsm-app-dialog.c:170
 msgid "second"
-msgstr ""
+msgstr "sekunda"
 
 #: ../capplet/gsm-app-dialog.c:172
 msgid "seconds"

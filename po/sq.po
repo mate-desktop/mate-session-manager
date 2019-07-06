@@ -40,7 +40,7 @@ msgstr "sekonda"
 #: ../capplet/gsm-app-dialog.c:218 ../mate-session/gsm-logout-dialog.c:452
 #: ../mate-session/gsm-logout-dialog.c:485
 msgid "_Cancel"
-msgstr ""
+msgstr "_Anulo"
 
 #: ../capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"

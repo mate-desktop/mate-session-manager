@@ -29,7 +29,7 @@ msgstr "Pilih Perintah"
 
 #: ../capplet/gsm-app-dialog.c:170
 msgid "second"
-msgstr ""
+msgstr "saat"
 
 #: ../capplet/gsm-app-dialog.c:172
 msgid "seconds"

@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# se7entime <se7entime@openmailbox.org>, 2018
+# se7entime <se7entime@disroot.org>, 2018
 # Ibnu Daru Aji, 2018
 # Martin Wimpress <code@flexion.org>, 2018
 # Rendiyono Wahyu Saputro <rendi.7936@gmail.com>, 2018
