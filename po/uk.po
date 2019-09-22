@@ -6,9 +6,9 @@
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # zubr139, 2019
-# Микола Ткач <chistomov@gmail.com>, 2019
 # Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2019
 # Bohdan Kovalchuk <neostanniy@gmail.com>, 2019
+# Микола Ткач <chistomov@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-09 00:06+0100\n"
 "PO-Revision-Date: 2019-03-15 20:25+0000\n"
-"Last-Translator: Bohdan Kovalchuk <neostanniy@gmail.com>, 2019\n"
+"Last-Translator: Микола Ткач <chistomov@gmail.com>, 2019\n"
 "Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +31,7 @@ msgstr "Оберіть команду"
 
 #: ../capplet/gsm-app-dialog.c:170
 msgid "second"
-msgstr ""
+msgstr "секунда"
 
 #: ../capplet/gsm-app-dialog.c:172
 msgid "seconds"
@@ -193,14 +193,14 @@ msgstr "Перевірте які компоненти сумісности бу
 
 #: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
-msgstr "Керування вікнами"
+msgstr "Керівник вікон"
 
 #: ../data/org.mate.session.gschema.xml.in.h:18
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr ""
-"Керівник вікнами - це проґрама, яка малює заголовок та оздоблення вікна і "
+"Керівник вікон - це проґрама, яка малює заголовок та оздоблення вікна і "
 "дозволяє пересувати вікна й змінювати їх розмір."
 
 #: ../data/org.mate.session.gschema.xml.in.h:19
@@ -224,7 +224,7 @@ msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
 msgstr ""
-"Керівник файлами надає піктограми стільниці та дозволяє працювати із "
+"Керівник файлів надає піктограми стільниці та дозволяє працювати із "
 "збереженими файлами."
 
 #: ../data/org.mate.session.gschema.xml.in.h:23

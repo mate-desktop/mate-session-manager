@@ -6,7 +6,7 @@
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # 趙惟倫 <bluebat@member.fsf.org>, 2019
-# Jeff Huang <s8321414@gmail.com>, 2019
+# 黃柏諺 <s8321414@gmail.com>, 2019
 # Martin Wimpress <code@flexion.org>, 2019
 # 
 #, fuzzy
