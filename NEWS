@@ -1,10 +1,18 @@
+### mate-session-manager 1.22.2
+
+  * Translations update
+  * Fix mate-session-properties vertical scaling
+  * Don't add apps repeatedly
+  * Add Show hidden checkbox and gsettings flag.
+  * Hide NoDisplay Apps in Startup Applications
+
 ### mate-session-manager 1.22.1
 
-    tx: sync with transifex
-    add installation instructions and update URL
-    Remove duplicate check for libelogind
-    Add ELOGIND support
-    Guard against missing systemd
+  * Translations update
+  * add installation instructions and update URL
+  * Remove duplicate check for libelogind
+  * Add ELOGIND support
+  * Guard against missing systemd
 
 ### mate-session-manager 1.22.0
 
