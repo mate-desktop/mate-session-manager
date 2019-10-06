@@ -48,28 +48,8 @@
 
 
 static gboolean gnome_compat_started = FALSE;
-static int keyring_lifetime_pipe[2];
 static pid_t gnome_keyring_daemon_pid = 0;
 static Window gnome_smproxy_window = None;
-
-static void
-child_setup (gpointer user_data)
-{
-  gint open_max;
-  gint fd;
-  char *fd_str;
-
-  open_max = sysconf (_SC_OPEN_MAX);
-  for (fd = 3; fd < open_max; fd++)
-    {
-      if (fd != keyring_lifetime_pipe[0])
-        fcntl (fd, F_SETFD, FD_CLOEXEC);
-    }
-
-  fd_str = g_strdup_printf ("%d", keyring_lifetime_pipe[0]);
-  g_setenv ("GNOME_KEYRING_LIFETIME_FD", fd_str, TRUE);
-  g_free (fd_str);
-}
 
 
 static void
@@ -87,25 +67,14 @@ gnome_keyring_daemon_startup (void)
   gchar       *name;
   const gchar *value;
 
-  /* Pipe to slave keyring lifetime to */
-  if (pipe (keyring_lifetime_pipe))
-    {
-      g_warning ("Failed to set up pipe for gnome-keyring: %s", strerror (errno));
-      return;
-    }
-
   error = NULL;
   argv[0] = GNOME_KEYRING_DAEMON;
   argv[1] = "--start";
   argv[2] = NULL;
   g_spawn_sync (NULL, argv, NULL,
-                G_SPAWN_SEARCH_PATH | G_SPAWN_LEAVE_DESCRIPTORS_OPEN,
-                child_setup, NULL,
+                G_SPAWN_SEARCH_PATH,
+                NULL, NULL,
                 &sout, NULL, &status, &error);
-
-  close (keyring_lifetime_pipe[0]);
-  /* We leave keyring_lifetime_pipe[1] open for the lifetime of the session,
-     in order to slave the keyring daemon lifecycle to the session. */
 
   if (error != NULL)
     {
