@@ -1,14 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
+# Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the mate-session-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-07-06 08:22+0200\n"
+"POT-Creation-Date: 2019-11-18 20:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +38,7 @@ msgstr ""
 msgid "Add Startup Program"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:85
+#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
 msgid "_Add"
 msgstr ""
 
@@ -271,51 +270,51 @@ msgstr ""
 msgid "Additional startup _programs:"
 msgstr ""
 
-#: data/session-properties.ui:100
+#: data/session-properties.ui:101
 msgid "_Remove"
 msgstr ""
 
-#: data/session-properties.ui:116
+#: data/session-properties.ui:117
 msgid "_Edit"
 msgstr ""
 
-#: data/session-properties.ui:146
+#: data/session-properties.ui:147
 msgid "_Show hidden"
 msgstr ""
 
-#: data/session-properties.ui:165
+#: data/session-properties.ui:168
 msgid "Startup Programs"
 msgstr ""
 
-#: data/session-properties.ui:180
+#: data/session-properties.ui:183
 msgid "_Automatically remember running applications when logging out"
 msgstr ""
 
-#: data/session-properties.ui:222
+#: data/session-properties.ui:225
 msgid "_Remember Currently Running Application"
 msgstr ""
 
-#: data/session-properties.ui:256
+#: data/session-properties.ui:259
 msgid "Options"
 msgstr ""
 
-#: data/session-properties.ui:294
+#: data/session-properties.ui:297
 msgid "Browse…"
 msgstr ""
 
-#: data/session-properties.ui:337
+#: data/session-properties.ui:340
 msgid "Comm_ent:"
 msgstr ""
 
-#: data/session-properties.ui:351
+#: data/session-properties.ui:354
 msgid "Co_mmand:"
 msgstr ""
 
-#: data/session-properties.ui:365
+#: data/session-properties.ui:368
 msgid "_Name:"
 msgstr ""
 
-#: data/session-properties.ui:379
+#: data/session-properties.ui:382
 msgid "_Delay:"
 msgstr ""
 
