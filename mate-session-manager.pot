@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-18 20:39+0100\n"
+"POT-Creation-Date: 2019-11-19 13:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -232,11 +232,13 @@ msgstr ""
 msgid "Type=Application"
 msgstr ""
 
-#: data/mate.desktop.in:10
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
 msgstr ""
 
-#: data/mate-wm.desktop.in:6
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
 msgstr ""
 
@@ -258,11 +260,13 @@ msgstr ""
 msgid "Choose what applications to start when you log in"
 msgstr ""
 
-#: data/mate-session-properties.desktop.in:6
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/mate-session-properties.desktop.in:7
 msgid "mate-session-properties"
 msgstr ""
 
-#: data/mate-session-properties.desktop.in:11
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
 msgstr ""
 
