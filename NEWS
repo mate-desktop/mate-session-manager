@@ -1,3 +1,9 @@
+### mate-session-manager 1.22.3
+
+  * Translations update
+  * Fix timeout with gnome-keyring 3.34
+  * Remove GNOME_KEYRING_LIFETIME_FD
+
 ### mate-session-manager 1.22.2
 
   * Translations update
