@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-09 00:06+0100\n"
+"POT-Creation-Date: 2019-09-22 13:15+0200\n"
 "PO-Revision-Date: 2019-03-15 20:25+0000\n"
 "Last-Translator: Martin Wimpress <code@flexion.org>, 2019\n"
 "Language-Team: Serbian (https://www.transifex.com/mate/teams/13566/sr/)\n"
@@ -64,35 +64,35 @@ msgstr "Наредба почетног програма се мора унет�
 msgid "The startup command is not valid"
 msgstr "Наредба почетног програма није исправна"
 
-#: ../capplet/gsm-properties-dialog.c:479
+#: ../capplet/gsm-properties-dialog.c:516
 msgid "_Help"
 msgstr "По_моћ"
 
-#: ../capplet/gsm-properties-dialog.c:483
+#: ../capplet/gsm-properties-dialog.c:520
 msgid "_Close"
 msgstr "_Затвори"
 
-#: ../capplet/gsm-properties-dialog.c:523
+#: ../capplet/gsm-properties-dialog.c:560
 msgid "Enabled"
 msgstr "Укључен"
 
-#: ../capplet/gsm-properties-dialog.c:535
+#: ../capplet/gsm-properties-dialog.c:572
 msgid "Icon"
 msgstr "Иконица"
 
-#: ../capplet/gsm-properties-dialog.c:547
+#: ../capplet/gsm-properties-dialog.c:584
 msgid "Program"
 msgstr "Програм"
 
-#: ../capplet/gsm-properties-dialog.c:742
+#: ../capplet/gsm-properties-dialog.c:791
 msgid "Startup Applications Preferences"
 msgstr "Поставке почетних програма"
 
-#: ../capplet/gsp-app.c:283
+#: ../capplet/gsp-app.c:284
 msgid "No name"
 msgstr "Без назива"
 
-#: ../capplet/gsp-app.c:289
+#: ../capplet/gsp-app.c:290
 msgid "No description"
 msgstr "Без описа"
 
@@ -121,19 +121,28 @@ msgid "If enabled, mate-session will save the session automatically."
 msgstr "Ако је укључено, мејтова сесија ће сама сачувати сесију."
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
+msgid "Show hidden autostart applications"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:6
+msgid ""
+"If enabled, mate-session-properties will show hidden autostart applications."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout prompt"
 msgstr "Упит одјављивања"
 
-#: ../data/org.mate.session.gschema.xml.in.h:6
+#: ../data/org.mate.session.gschema.xml.in.h:8
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr ""
 "Ако је укључено, мејтова сесија ће питати корисника пре окончања сесије."
 
-#: ../data/org.mate.session.gschema.xml.in.h:7
+#: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Logout timeout"
 msgstr "Време за одјављивање"
 
-#: ../data/org.mate.session.gschema.xml.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
@@ -141,29 +150,29 @@ msgstr ""
 "Ако је упит одјављивања укључен, овде подешавате временски рок у секундама "
 "пре самосталног одјављивања. Ако је 0, самостално одјављивање је искључено."
 
-#: ../data/org.mate.session.gschema.xml.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Time before session is considered idle"
 msgstr "Време након кога сесија постаје неактивна"
 
-#: ../data/org.mate.session.gschema.xml.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.h:12
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr ""
 "Време неактивности у секундама након кога се сесија сматра неактивном."
 
-#: ../data/org.mate.session.gschema.xml.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Default session"
 msgstr "Основна сесија"
 
-#: ../data/org.mate.session.gschema.xml.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.h:14
 msgid "List of applications that are part of the default session."
 msgstr "Списак програма који су део основне сесије."
 
-#: ../data/org.mate.session.gschema.xml.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Required session components"
 msgstr "Потребни састојци сесије"
 
-#: ../data/org.mate.session.gschema.xml.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.h:16
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -178,19 +187,19 @@ msgstr ""
 "сесије, а управник сесије ће сам да дода потребне састојке назад у сесију за"
 " време пријављивања ако су уклоњени."
 
-#: ../data/org.mate.session.gschema.xml.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.h:17
 msgid "Control gnome compatibility component startup"
 msgstr "Покретање састојка гномове сагласности"
 
-#: ../data/org.mate.session.gschema.xml.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.h:18
 msgid "Control which compatibility components to start."
 msgstr "Одлучите који ће састојци сагласности бити покренути."
 
-#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:19 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr "Управник прозора"
 
-#: ../data/org.mate.session.gschema.xml.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
@@ -198,11 +207,11 @@ msgstr ""
 "Управник прозорима исцртава насловну линију и оквире прозора и омогућава "
 "померање и промену величине прозора."
 
-#: ../data/org.mate.session.gschema.xml.in.h:19
+#: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "Panel"
 msgstr "Панел"
 
-#: ../data/org.mate.session.gschema.xml.in.h:20
+#: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
@@ -210,11 +219,11 @@ msgstr ""
 "Панел поставља линију на врх или дно радне површи која садржи изборнике, "
 "списак прозора, иконице стања, сат и друго."
 
-#: ../data/org.mate.session.gschema.xml.in.h:21
+#: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "File Manager"
 msgstr "Управник датотека"
 
-#: ../data/org.mate.session.gschema.xml.in.h:22
+#: ../data/org.mate.session.gschema.xml.in.h:24
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
@@ -222,11 +231,11 @@ msgstr ""
 "Управник датотекама истиче иконице на радној површи и омогућава рад са "
 "сачуваним датотекама."
 
-#: ../data/org.mate.session.gschema.xml.in.h:23
+#: ../data/org.mate.session.gschema.xml.in.h:25
 msgid "Dock"
 msgstr "Лука"
 
-#: ../data/org.mate.session.gschema.xml.in.h:24
+#: ../data/org.mate.session.gschema.xml.in.h:26
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
@@ -275,38 +284,42 @@ msgid "_Edit"
 msgstr "_Уреди"
 
 #: ../data/session-properties.ui.h:5
+msgid "_Show hidden"
+msgstr ""
+
+#: ../data/session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Почетни програми"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Сам запамти покренуте програме приликом одјављивања"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/session-properties.ui.h:8
 msgid "_Remember Currently Running Application"
 msgstr "_Запамти тренутно покренуте програме"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/session-properties.ui.h:9
 msgid "Options"
 msgstr "Могућности"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/session-properties.ui.h:10
 msgid "Browse…"
 msgstr "Разгледај…"
 
-#: ../data/session-properties.ui.h:10
+#: ../data/session-properties.ui.h:11
 msgid "Comm_ent:"
 msgstr "На_помена:"
 
-#: ../data/session-properties.ui.h:11
+#: ../data/session-properties.ui.h:12
 msgid "Co_mmand:"
 msgstr "Н_аредба:"
 
-#: ../data/session-properties.ui.h:12
+#: ../data/session-properties.ui.h:13
 msgid "_Name:"
 msgstr "_Назив:"
 
-#: ../data/session-properties.ui.h:13
+#: ../data/session-properties.ui.h:14
 msgid "_Delay:"
 msgstr "_Застој:"
 

@@ -13,9 +13,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-09 00:06+0100\n"
+"POT-Creation-Date: 2019-09-22 13:15+0200\n"
 "PO-Revision-Date: 2019-03-15 20:25+0000\n"
 "Last-Translator: Gaman Gabriel <inactive+crystalgalaxy@transifex.com>, 2019\n"
 "Language-Team: Romanian (https://www.transifex.com/mate/teams/13566/ro/)\n"
@@ -66,35 +66,35 @@ msgstr "Comanda de pornire nu poate fi nulă"
 msgid "The startup command is not valid"
 msgstr "Comanda de start nu este validă"
 
-#: ../capplet/gsm-properties-dialog.c:479
+#: ../capplet/gsm-properties-dialog.c:516
 msgid "_Help"
 msgstr "_Ajutor"
 
-#: ../capplet/gsm-properties-dialog.c:483
+#: ../capplet/gsm-properties-dialog.c:520
 msgid "_Close"
 msgstr "În_chide"
 
-#: ../capplet/gsm-properties-dialog.c:523
+#: ../capplet/gsm-properties-dialog.c:560
 msgid "Enabled"
 msgstr "Activat"
 
-#: ../capplet/gsm-properties-dialog.c:535
+#: ../capplet/gsm-properties-dialog.c:572
 msgid "Icon"
 msgstr "Pictogramă"
 
-#: ../capplet/gsm-properties-dialog.c:547
+#: ../capplet/gsm-properties-dialog.c:584
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/gsm-properties-dialog.c:742
+#: ../capplet/gsm-properties-dialog.c:791
 msgid "Startup Applications Preferences"
 msgstr "Preferințe aplicații pornire"
 
-#: ../capplet/gsp-app.c:283
+#: ../capplet/gsp-app.c:284
 msgid "No name"
 msgstr "Fără nume"
 
-#: ../capplet/gsp-app.c:289
+#: ../capplet/gsp-app.c:290
 msgid "No description"
 msgstr "Nicio descriere"
 
@@ -123,20 +123,29 @@ msgid "If enabled, mate-session will save the session automatically."
 msgstr "Dacă este activat, mate-session va salva sesiunea automat."
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
+msgid "Show hidden autostart applications"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:6
+msgid ""
+"If enabled, mate-session-properties will show hidden autostart applications."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout prompt"
 msgstr "Întrebare deconectare"
 
-#: ../data/org.mate.session.gschema.xml.in.h:6
+#: ../data/org.mate.session.gschema.xml.in.h:8
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr ""
 "Dacă este activat, mate-session va întreba utilizatorul înainte de "
 "terminarea sesiunii."
 
-#: ../data/org.mate.session.gschema.xml.in.h:7
+#: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Logout timeout"
 msgstr "Limită de timp deconectare"
 
-#: ../data/org.mate.session.gschema.xml.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
@@ -145,30 +154,30 @@ msgstr ""
 "timp în secunde înainte de deconectarea automată. Dacă este 0, deconectarea "
 "automată este dezactivată."
 
-#: ../data/org.mate.session.gschema.xml.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Time before session is considered idle"
 msgstr "Timp scurs înainte ca sesiunea să fie considerată inactivă"
 
-#: ../data/org.mate.session.gschema.xml.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.h:12
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr ""
 "Numărul de minute de inactivitate după care sesiunea este considerată "
 "inactivă."
 
-#: ../data/org.mate.session.gschema.xml.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Default session"
 msgstr "Sesiune implicită"
 
-#: ../data/org.mate.session.gschema.xml.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.h:14
 msgid "List of applications that are part of the default session."
 msgstr "Lista aplicațiilor care sunt parte a sesiunii implicite."
 
-#: ../data/org.mate.session.gschema.xml.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Required session components"
 msgstr "Componentele necesare sesiunii"
 
-#: ../data/org.mate.session.gschema.xml.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.h:16
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -185,19 +194,19 @@ msgstr ""
 "adăuga automat componentele necesare înapoi în sesiune la autentificare dacă"
 " sunt eliminate."
 
-#: ../data/org.mate.session.gschema.xml.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.h:17
 msgid "Control gnome compatibility component startup"
 msgstr "Controlează pornirea componentei de compatibilitate gnome"
 
-#: ../data/org.mate.session.gschema.xml.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.h:18
 msgid "Control which compatibility components to start."
 msgstr "Controlați ce componente de compatibilitate să pornească"
 
-#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:19 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr "Administrator de ferestre"
 
-#: ../data/org.mate.session.gschema.xml.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
@@ -206,11 +215,11 @@ msgstr ""
 "marginile de jur împrejurul ferestrelor și permite mutarea sau "
 "redimensionarea acestora."
 
-#: ../data/org.mate.session.gschema.xml.in.h:19
+#: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "Panel"
 msgstr "Panou"
 
-#: ../data/org.mate.session.gschema.xml.in.h:20
+#: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
@@ -218,11 +227,11 @@ msgstr ""
 "Panoul furnizează bara din partea de sus sau jos a ecranului ce conține "
 "meniuri, lista de ferestre, pictograme de stare, ceasul etc."
 
-#: ../data/org.mate.session.gschema.xml.in.h:21
+#: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "File Manager"
 msgstr "Administrator de fișiere"
 
-#: ../data/org.mate.session.gschema.xml.in.h:22
+#: ../data/org.mate.session.gschema.xml.in.h:24
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
@@ -230,11 +239,11 @@ msgstr ""
 "Administratorul de fișiere furnizează pictogramele de pe desktop și permite "
 "interacțiunea cu fișierele salvate."
 
-#: ../data/org.mate.session.gschema.xml.in.h:23
+#: ../data/org.mate.session.gschema.xml.in.h:25
 msgid "Dock"
 msgstr "Doc"
 
-#: ../data/org.mate.session.gschema.xml.in.h:24
+#: ../data/org.mate.session.gschema.xml.in.h:26
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
@@ -283,38 +292,42 @@ msgid "_Edit"
 msgstr "_Editeaza"
 
 #: ../data/session-properties.ui.h:5
+msgid "_Show hidden"
+msgstr ""
+
+#: ../data/session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Programe de pornit"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "Memorează _automat la ieșire aplicațiile ce rulează"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/session-properties.ui.h:8
 msgid "_Remember Currently Running Application"
 msgstr "Memo_rează aplicațiile ce rulează în acest moment"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/session-properties.ui.h:9
 msgid "Options"
 msgstr "Opțiuni"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/session-properties.ui.h:10
 msgid "Browse…"
 msgstr "Răsfoire…"
 
-#: ../data/session-properties.ui.h:10
+#: ../data/session-properties.ui.h:11
 msgid "Comm_ent:"
 msgstr "Com_entariu:"
 
-#: ../data/session-properties.ui.h:11
+#: ../data/session-properties.ui.h:12
 msgid "Co_mmand:"
 msgstr "Co_mandă:"
 
-#: ../data/session-properties.ui.h:12
+#: ../data/session-properties.ui.h:13
 msgid "_Name:"
 msgstr "_Nume:"
 
-#: ../data/session-properties.ui.h:13
+#: ../data/session-properties.ui.h:14
 msgid "_Delay:"
 msgstr "Î_ntârziere:"
 

@@ -19,9 +19,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-09 00:06+0100\n"
+"POT-Creation-Date: 2019-09-22 13:15+0200\n"
 "PO-Revision-Date: 2019-03-15 20:25+0000\n"
 "Last-Translator: 437c9d6e19936ed69f57bed9e0fe4716, 2019\n"
 "Language-Team: Greek (https://www.transifex.com/mate/teams/13566/el/)\n"
@@ -72,35 +72,35 @@ msgstr "Η εντολή εκκίνησης δε μπορεί να είναι κ�
 msgid "The startup command is not valid"
 msgstr "Η εντολή εκκίνησης δεν είναι έγκυρη"
 
-#: ../capplet/gsm-properties-dialog.c:479
+#: ../capplet/gsm-properties-dialog.c:516
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../capplet/gsm-properties-dialog.c:483
+#: ../capplet/gsm-properties-dialog.c:520
 msgid "_Close"
 msgstr "_Κλείσιμο"
 
-#: ../capplet/gsm-properties-dialog.c:523
+#: ../capplet/gsm-properties-dialog.c:560
 msgid "Enabled"
 msgstr "Ενεργοποιημένο"
 
-#: ../capplet/gsm-properties-dialog.c:535
+#: ../capplet/gsm-properties-dialog.c:572
 msgid "Icon"
 msgstr "Εικονίδιο"
 
-#: ../capplet/gsm-properties-dialog.c:547
+#: ../capplet/gsm-properties-dialog.c:584
 msgid "Program"
 msgstr "Πρόγραμμα"
 
-#: ../capplet/gsm-properties-dialog.c:742
+#: ../capplet/gsm-properties-dialog.c:791
 msgid "Startup Applications Preferences"
 msgstr "Προτιμήσεις προγραμμάτων εκκίνησης "
 
-#: ../capplet/gsp-app.c:283
+#: ../capplet/gsp-app.c:284
 msgid "No name"
 msgstr "Χωρίς όνομα"
 
-#: ../capplet/gsp-app.c:289
+#: ../capplet/gsp-app.c:290
 msgid "No description"
 msgstr "Χωρίς περιγραφή"
 
@@ -129,20 +129,29 @@ msgid "If enabled, mate-session will save the session automatically."
 msgstr "Αν ενεργοποιηθεί, το mate-session θα αποθηκεύει αυτόματα τη συνεδρία."
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
+msgid "Show hidden autostart applications"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:6
+msgid ""
+"If enabled, mate-session-properties will show hidden autostart applications."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout prompt"
 msgstr "Ειδοποίηση αποσύνδεσης"
 
-#: ../data/org.mate.session.gschema.xml.in.h:6
+#: ../data/org.mate.session.gschema.xml.in.h:8
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr ""
 "Αν ενεργοποιηθεί, η συνεδρία του mate θα ειδοποιεί το χρήστη πριν το τέλος "
 "της συνεδρίας."
 
-#: ../data/org.mate.session.gschema.xml.in.h:7
+#: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Logout timeout"
 msgstr "Τέλος χρόνου αποσύνδεσης. "
 
-#: ../data/org.mate.session.gschema.xml.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
@@ -151,29 +160,29 @@ msgstr ""
 "χρόνου σε δευτερόλεπτα πριν την αυτόματη αποσύνδεση. Εάν 0, η αυτόματη "
 "αποσύνδεση είναι απενεργοποιημένη."
 
-#: ../data/org.mate.session.gschema.xml.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Time before session is considered idle"
 msgstr "Ο χρόνος για να θεωρηθεί η συνεδρία αδρανής"
 
-#: ../data/org.mate.session.gschema.xml.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.h:12
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr ""
 "Ο αριθμός των λεπτών της αδράνειας για να θεωρηθεί η συνεδρία αδρανής."
 
-#: ../data/org.mate.session.gschema.xml.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Default session"
 msgstr "Προεπιλεγμένη συνεδρία"
 
-#: ../data/org.mate.session.gschema.xml.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.h:14
 msgid "List of applications that are part of the default session."
 msgstr "Λίστα με εφαρμογές που είναι μέρος της προεπιλεγμένης συνεδρίας."
 
-#: ../data/org.mate.session.gschema.xml.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Required session components"
 msgstr "Απαιτούμενα στοιχεία συνεδρίας"
 
-#: ../data/org.mate.session.gschema.xml.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.h:16
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -189,19 +198,19 @@ msgstr ""
 "εξαρτήματα από τη συνεδρία και ο διαχειριστής συνεδρίας θα τα προσθέσει "
 "αυτόματα κατά την επόμενη είσοδο του χρήστη αν αυτά έχουν αφαιρεθεί."
 
-#: ../data/org.mate.session.gschema.xml.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.h:17
 msgid "Control gnome compatibility component startup"
 msgstr "Έλεγχος συμβατότητας εκκινούμενου εξαρτήματος gnome"
 
-#: ../data/org.mate.session.gschema.xml.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.h:18
 msgid "Control which compatibility components to start."
 msgstr "Έλεγχος ποιανού συμβατού εξαρτήματος να εκκινηθεί."
 
-#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:19 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr "Διαχειριστής Παραθύρων"
 
-#: ../data/org.mate.session.gschema.xml.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
@@ -210,11 +219,11 @@ msgstr ""
 "τίτλων και τα περιγράμματα γύρω από τα παράθυρα, και σας επιτρέπει να "
 "μετακινείτε και να αλλάζετε το μέγεθος των παραθύρων."
 
-#: ../data/org.mate.session.gschema.xml.in.h:19
+#: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "Panel"
 msgstr "Πίνακας"
 
-#: ../data/org.mate.session.gschema.xml.in.h:20
+#: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
@@ -223,11 +232,11 @@ msgstr ""
 "που περιέχει τα μενού, τη λίστα παραθύρων, τα εικονίδια κατάστασης, το "
 "ρολόι, κτλ."
 
-#: ../data/org.mate.session.gschema.xml.in.h:21
+#: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "File Manager"
 msgstr "Διαχειριστής αρχείων"
 
-#: ../data/org.mate.session.gschema.xml.in.h:22
+#: ../data/org.mate.session.gschema.xml.in.h:24
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
@@ -235,11 +244,11 @@ msgstr ""
 "Ο διαχειριστής αρχείων παρέχει τα εικονίδια της επιφάνειας εργασίας σας και "
 "σας επιτρέπει να διαχειρίζεστε τα αποθηκευμένα σας αρχεία."
 
-#: ../data/org.mate.session.gschema.xml.in.h:23
+#: ../data/org.mate.session.gschema.xml.in.h:25
 msgid "Dock"
 msgstr "Σύνδεση"
 
-#: ../data/org.mate.session.gschema.xml.in.h:24
+#: ../data/org.mate.session.gschema.xml.in.h:26
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
@@ -288,38 +297,42 @@ msgid "_Edit"
 msgstr "_Επεξεργασία"
 
 #: ../data/session-properties.ui.h:5
+msgid "_Show hidden"
+msgstr ""
+
+#: ../data/session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Εκκίνηση προγραμμάτων"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Αυτόματη απομνημόνευση εκτελούμενων εφαρμογών κατά την αποσύνδεση"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/session-properties.ui.h:8
 msgid "_Remember Currently Running Application"
 msgstr "Α_πομνημόνευση εφαρμογών που εκτελούνται "
 
-#: ../data/session-properties.ui.h:8
+#: ../data/session-properties.ui.h:9
 msgid "Options"
 msgstr "Επιλογές"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/session-properties.ui.h:10
 msgid "Browse…"
 msgstr "Περιήγηση…"
 
-#: ../data/session-properties.ui.h:10
+#: ../data/session-properties.ui.h:11
 msgid "Comm_ent:"
 msgstr "_Σχόλιο:"
 
-#: ../data/session-properties.ui.h:11
+#: ../data/session-properties.ui.h:12
 msgid "Co_mmand:"
 msgstr "_Εντολή:"
 
-#: ../data/session-properties.ui.h:12
+#: ../data/session-properties.ui.h:13
 msgid "_Name:"
 msgstr "Ό_νομα:"
 
-#: ../data/session-properties.ui.h:13
+#: ../data/session-properties.ui.h:14
 msgid "_Delay:"
 msgstr "Καθυ_στέρηση:"
 

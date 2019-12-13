@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-09 00:06+0100\n"
+"POT-Creation-Date: 2019-09-22 13:15+0200\n"
 "PO-Revision-Date: 2019-03-15 20:25+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Assamese (https://www.transifex.com/mate/teams/13566/as/)\n"
@@ -62,35 +62,35 @@ msgstr "প্ৰাৰম্ভিক আদেশ ৰিক্ত ৰখা �
 msgid "The startup command is not valid"
 msgstr "প্ৰাৰম্ভিক আদেশ অবৈধ"
 
-#: ../capplet/gsm-properties-dialog.c:479
+#: ../capplet/gsm-properties-dialog.c:516
 msgid "_Help"
 msgstr "সাহায্য (_H)"
 
-#: ../capplet/gsm-properties-dialog.c:483
+#: ../capplet/gsm-properties-dialog.c:520
 msgid "_Close"
 msgstr "বন্ধ কৰক (_C)"
 
-#: ../capplet/gsm-properties-dialog.c:523
+#: ../capplet/gsm-properties-dialog.c:560
 msgid "Enabled"
 msgstr "সক্ৰিয়"
 
-#: ../capplet/gsm-properties-dialog.c:535
+#: ../capplet/gsm-properties-dialog.c:572
 msgid "Icon"
 msgstr "আইকন"
 
-#: ../capplet/gsm-properties-dialog.c:547
+#: ../capplet/gsm-properties-dialog.c:584
 msgid "Program"
 msgstr "কাৰ্য্যক্ৰম"
 
-#: ../capplet/gsm-properties-dialog.c:742
+#: ../capplet/gsm-properties-dialog.c:791
 msgid "Startup Applications Preferences"
 msgstr "প্ৰাৰম্ভিক অনুপ্ৰয়োগ সংক্ৰান্ত পছন্দ"
 
-#: ../capplet/gsp-app.c:283
+#: ../capplet/gsp-app.c:284
 msgid "No name"
 msgstr "নামবিহীন"
 
-#: ../capplet/gsp-app.c:289
+#: ../capplet/gsp-app.c:290
 msgid "No description"
 msgstr "বিৱৰণ অনুপস্থিত"
 
@@ -119,47 +119,56 @@ msgid "If enabled, mate-session will save the session automatically."
 msgstr ""
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
+msgid "Show hidden autostart applications"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:6
+msgid ""
+"If enabled, mate-session-properties will show hidden autostart applications."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout prompt"
 msgstr "প্ৰস্থান প্ৰম্পট"
 
-#: ../data/org.mate.session.gschema.xml.in.h:6
+#: ../data/org.mate.session.gschema.xml.in.h:8
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr ""
 "সক্ৰিয় থাকিলে, অধিবেশন সমাপ্ত কৰাৰ আগতে mate-session এ ব্যৱহাৰকৰ্তাক প্ৰমপ্ট"
 " কৰিব ।"
 
-#: ../data/org.mate.session.gschema.xml.in.h:7
+#: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Logout timeout"
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Time before session is considered idle"
 msgstr "সময় পূৰ্বে হলো"
 
-#: ../data/org.mate.session.gschema.xml.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.h:12
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr "সংখ্যা সৰ্বমোট মিনিট সৰ্বমোট পূৰ্বে হলো."
 
-#: ../data/org.mate.session.gschema.xml.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Default session"
 msgstr "অবিকল্পিত অধিবেশন"
 
-#: ../data/org.mate.session.gschema.xml.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.h:14
 msgid "List of applications that are part of the default session."
 msgstr "অবিকল্পিত অধিবেশনৰ বাবে অনুপ্ৰয়োগৰ তালিকা ।"
 
-#: ../data/org.mate.session.gschema.xml.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Required session components"
 msgstr "অধিবেশনৰ আৱশ্যক সামগ্ৰী"
 
-#: ../data/org.mate.session.gschema.xml.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.h:16
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -169,19 +178,19 @@ msgid ""
 "if they do get removed."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.h:17
 msgid "Control gnome compatibility component startup"
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.h:18
 msgid "Control which compatibility components to start."
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:19 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr "সংযোগক্ষেত্ৰ পৰিচালক"
 
-#: ../data/org.mate.session.gschema.xml.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
@@ -190,11 +199,11 @@ msgstr ""
 " প্ৰান্তৰেখা আঁকা হয় আৰু সংযোগক্ষেত্ৰৰ অৱস্থান আৰু মাপ পৰিবৰ্তন কৰা সম্ভৱ হয়"
 " ।"
 
-#: ../data/org.mate.session.gschema.xml.in.h:19
+#: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "Panel"
 msgstr "পেনেল"
 
-#: ../data/org.mate.session.gschema.xml.in.h:20
+#: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
@@ -202,11 +211,11 @@ msgstr ""
 "পেনেলৰ সহায়ত পৰ্দাৰ ওপৰত অথবা তলৰ অংশত তালিকা, সংযোগক্ষেত্ৰ তালিকা, "
 "অৱস্থাসূচক আইকন, ঘড়ি প্ৰভৃতি বাৰ উপলব্ধ কৰা হয় ।"
 
-#: ../data/org.mate.session.gschema.xml.in.h:21
+#: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "File Manager"
 msgstr "নথিপত্ৰ পৰিচালক"
 
-#: ../data/org.mate.session.gschema.xml.in.h:22
+#: ../data/org.mate.session.gschema.xml.in.h:24
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
@@ -214,11 +223,11 @@ msgstr ""
 "নথিপত্ৰ পৰিচালন ব্যৱস্থা দ্বাৰা ডেস্কট'প আইকন উপলব্ধ কৰা হয় আৰু সংৰক্ষিত "
 "নথিপত্ৰসমূহৰ সৈতে ইন্টাৰেক্ট কৰাৰ সুবিধা উপস্থিত কৰা হয় ।"
 
-#: ../data/org.mate.session.gschema.xml.in.h:23
+#: ../data/org.mate.session.gschema.xml.in.h:25
 msgid "Dock"
 msgstr ""
 
-#: ../data/org.mate.session.gschema.xml.in.h:24
+#: ../data/org.mate.session.gschema.xml.in.h:26
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
@@ -263,40 +272,44 @@ msgid "_Edit"
 msgstr "সম্পাদনা (_E)"
 
 #: ../data/session-properties.ui.h:5
+msgid "_Show hidden"
+msgstr ""
+
+#: ../data/session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "প্ৰাৰম্ভিক অনুপ্ৰয়োগ"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr ""
 "প্ৰস্থান কৰাৰ সময়ত চলমান অনুপ্ৰয়োগসমূহৰ তালিকা স্বয়ংক্ৰিয়ৰূপে মনত ৰখা হ'ব "
 "(_A)"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/session-properties.ui.h:8
 msgid "_Remember Currently Running Application"
 msgstr "বৰ্তমানে চলমান অনুপ্ৰয়োগৰ তালিকা মনত ৰখা হ'ব (_R)"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/session-properties.ui.h:9
 msgid "Options"
 msgstr "বিকল্প"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/session-properties.ui.h:10
 msgid "Browse…"
 msgstr ""
 
-#: ../data/session-properties.ui.h:10
+#: ../data/session-properties.ui.h:11
 msgid "Comm_ent:"
 msgstr "মন্তব্য (_e):"
 
-#: ../data/session-properties.ui.h:11
+#: ../data/session-properties.ui.h:12
 msgid "Co_mmand:"
 msgstr "আদেশ (_m):"
 
-#: ../data/session-properties.ui.h:12
+#: ../data/session-properties.ui.h:13
 msgid "_Name:"
 msgstr "নাম (_N):"
 
-#: ../data/session-properties.ui.h:13
+#: ../data/session-properties.ui.h:14
 msgid "_Delay:"
 msgstr "বিলম্ব (_D):"
 

@@ -17,9 +17,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-09 00:06+0100\n"
+"POT-Creation-Date: 2019-09-22 13:15+0200\n"
 "PO-Revision-Date: 2019-03-15 20:25+0000\n"
 "Last-Translator: Rui <xymarior@yandex.com>, 2019\n"
 "Language-Team: Portuguese (https://www.transifex.com/mate/teams/13566/pt/)\n"
@@ -70,35 +70,35 @@ msgstr "O comando de arranque não pode estar vazio"
 msgid "The startup command is not valid"
 msgstr "O comando de arranque não é válido"
 
-#: ../capplet/gsm-properties-dialog.c:479
+#: ../capplet/gsm-properties-dialog.c:516
 msgid "_Help"
 msgstr "A_juda"
 
-#: ../capplet/gsm-properties-dialog.c:483
+#: ../capplet/gsm-properties-dialog.c:520
 msgid "_Close"
 msgstr "Fe_char"
 
-#: ../capplet/gsm-properties-dialog.c:523
+#: ../capplet/gsm-properties-dialog.c:560
 msgid "Enabled"
 msgstr "Ativo"
 
-#: ../capplet/gsm-properties-dialog.c:535
+#: ../capplet/gsm-properties-dialog.c:572
 msgid "Icon"
 msgstr "Ícone"
 
-#: ../capplet/gsm-properties-dialog.c:547
+#: ../capplet/gsm-properties-dialog.c:584
 msgid "Program"
 msgstr "Programa"
 
-#: ../capplet/gsm-properties-dialog.c:742
+#: ../capplet/gsm-properties-dialog.c:791
 msgid "Startup Applications Preferences"
 msgstr "Preferências das Aplicações de Arranque"
 
-#: ../capplet/gsp-app.c:283
+#: ../capplet/gsp-app.c:284
 msgid "No name"
 msgstr "Sem nome"
 
-#: ../capplet/gsp-app.c:289
+#: ../capplet/gsp-app.c:290
 msgid "No description"
 msgstr "Sem descrição"
 
@@ -127,19 +127,28 @@ msgid "If enabled, mate-session will save the session automatically."
 msgstr "Se ativada, mate-session irá guardar a sessão automaticamente."
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
+msgid "Show hidden autostart applications"
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:6
+msgid ""
+"If enabled, mate-session-properties will show hidden autostart applications."
+msgstr ""
+
+#: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout prompt"
 msgstr "Janela de Fechar Sessão"
 
-#: ../data/org.mate.session.gschema.xml.in.h:6
+#: ../data/org.mate.session.gschema.xml.in.h:8
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr ""
 "Se ativada, mate-session irá exibir uma janela antes de terminar a sessão."
 
-#: ../data/org.mate.session.gschema.xml.in.h:7
+#: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Logout timeout"
 msgstr "Fim de sessão expirado"
 
-#: ../data/org.mate.session.gschema.xml.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
@@ -148,29 +157,29 @@ msgstr ""
 "segundos antes do fim de sessão automático. Se for 0, é desativado o fim de "
 "sessão automático. "
 
-#: ../data/org.mate.session.gschema.xml.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Time before session is considered idle"
 msgstr "O tempo antes da sessão ser considerada inativa"
 
-#: ../data/org.mate.session.gschema.xml.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.h:12
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr ""
 "O número de minutos de inatividade antes da sessão ser considerada inativa."
 
-#: ../data/org.mate.session.gschema.xml.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Default session"
 msgstr "Sessão pré-definida"
 
-#: ../data/org.mate.session.gschema.xml.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.h:14
 msgid "List of applications that are part of the default session."
 msgstr "Lista das aplicações que pertencem à sessão pré-definida."
 
-#: ../data/org.mate.session.gschema.xml.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Required session components"
 msgstr "Componentes de sessão necessários"
 
-#: ../data/org.mate.session.gschema.xml.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.h:16
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -187,19 +196,19 @@ msgstr ""
 "irá adicionar automaticamente os componentes necessários novamente ao "
 "iniciar sessão, se estes tiverem sido removidos."
 
-#: ../data/org.mate.session.gschema.xml.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.h:17
 msgid "Control gnome compatibility component startup"
 msgstr "Controle o arranque do componente de acessibilidade gnome"
 
-#: ../data/org.mate.session.gschema.xml.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.h:18
 msgid "Control which compatibility components to start."
 msgstr "Controle quais componentes de acessibilidade a iniciar."
 
-#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:19 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr "Gestor de Janelas"
 
-#: ../data/org.mate.session.gschema.xml.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
@@ -207,11 +216,11 @@ msgstr ""
 "O gestor de janelas é o programa que mostra a barra de título e as margens "
 "das janelas, e permite-lhe também mover e redimensionar as janelas."
 
-#: ../data/org.mate.session.gschema.xml.in.h:19
+#: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "Panel"
 msgstr "Painel"
 
-#: ../data/org.mate.session.gschema.xml.in.h:20
+#: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
@@ -219,11 +228,11 @@ msgstr ""
 "O painel disponibiliza a barra no topo ou na base do ecrã, contendo os "
 "menus, a lista de janelas, ícones de estado, o relógio, etc."
 
-#: ../data/org.mate.session.gschema.xml.in.h:21
+#: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "File Manager"
 msgstr "Gestor de Ficheiros"
 
-#: ../data/org.mate.session.gschema.xml.in.h:22
+#: ../data/org.mate.session.gschema.xml.in.h:24
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
@@ -231,11 +240,11 @@ msgstr ""
 "O gestor de ficheiros disponibiliza os ícones no ambiente de trabalho, e "
 "permite-lhe interagir com os seus ficheiros guardados."
 
-#: ../data/org.mate.session.gschema.xml.in.h:23
+#: ../data/org.mate.session.gschema.xml.in.h:25
 msgid "Dock"
 msgstr "Doca"
 
-#: ../data/org.mate.session.gschema.xml.in.h:24
+#: ../data/org.mate.session.gschema.xml.in.h:26
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
@@ -284,39 +293,43 @@ msgid "_Edit"
 msgstr "_Editar"
 
 #: ../data/session-properties.ui.h:5
+msgid "_Show hidden"
+msgstr ""
+
+#: ../data/session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Programas de Arranque"
 
-#: ../data/session-properties.ui.h:6
+#: ../data/session-properties.ui.h:7
 msgid "_Automatically remember running applications when logging out"
 msgstr ""
 "_Ao terminar a sessão, lembrar automaticamente das aplicações em execução"
 
-#: ../data/session-properties.ui.h:7
+#: ../data/session-properties.ui.h:8
 msgid "_Remember Currently Running Application"
 msgstr "_Lembrar da Aplicação Atualmente em Execução"
 
-#: ../data/session-properties.ui.h:8
+#: ../data/session-properties.ui.h:9
 msgid "Options"
 msgstr "Opções"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/session-properties.ui.h:10
 msgid "Browse…"
 msgstr "Navegar..."
 
-#: ../data/session-properties.ui.h:10
+#: ../data/session-properties.ui.h:11
 msgid "Comm_ent:"
 msgstr "Com_entário:"
 
-#: ../data/session-properties.ui.h:11
+#: ../data/session-properties.ui.h:12
 msgid "Co_mmand:"
 msgstr "Co_mando:"
 
-#: ../data/session-properties.ui.h:12
+#: ../data/session-properties.ui.h:13
 msgid "_Name:"
 msgstr "_Nome:"
 
-#: ../data/session-properties.ui.h:13
+#: ../data/session-properties.ui.h:14
 msgid "_Delay:"
 msgstr "_Demora:"
 

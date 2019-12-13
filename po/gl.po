@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-09 00:06+0100\n"
+"POT-Creation-Date: 2019-09-22 13:15+0200\n"
 "PO-Revision-Date: 2019-03-15 20:25+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2019\n"
 "Language-Team: Galician (https://www.transifex.com/mate/teams/13566/gl/)\n"
@@ -64,41 +64,41 @@ msgstr "A orde de inicio non pode estar baleira"
 msgid "The startup command is not valid"
 msgstr "A orde do programa de inicio é incorrecta"
 
-#: ../capplet/gsm-properties-dialog.c:479
+#: ../capplet/gsm-properties-dialog.c:516
 msgid "_Help"
 msgstr "_Axuda"
 
-#: ../capplet/gsm-properties-dialog.c:483
+#: ../capplet/gsm-properties-dialog.c:520
 msgid "_Close"
 msgstr "_Pechar"
 
-#: ../capplet/gsm-properties-dialog.c:523
+#: ../capplet/gsm-properties-dialog.c:560
 msgid "Enabled"
 msgstr "Activado"
 
-#: ../capplet/gsm-properties-dialog.c:535
+#: ../capplet/gsm-properties-dialog.c:572
 msgid "Icon"
 msgstr "Icona"
 
-#: ../capplet/gsm-properties-dialog.c:547
+#: ../capplet/gsm-properties-dialog.c:584
 msgid "Program"
 msgstr "Programa"
 
-#: ../capplet/gsm-properties-dialog.c:742
+#: ../capplet/gsm-properties-dialog.c:791
 msgid "Startup Applications Preferences"
-msgstr "Preferencias dos aplicativos de inicio"
+msgstr "Preferencias das aplicacións de inicio"
 
-#: ../capplet/gsp-app.c:283
+#: ../capplet/gsp-app.c:284
 msgid "No name"
 msgstr "Sen nome"
 
-#: ../capplet/gsp-app.c:289
+#: ../capplet/gsp-app.c:290
 msgid "No description"
 msgstr "Sen descrición"
 
 #: ../capplet/main.c:35 ../mate-session/main.c:589
 msgid "Version of this application"
-msgstr "Versión deste aplicativo"
+msgstr "Versión desta aplicación"
 
 #: ../capplet/main.c:51
 msgid "Could not display help document"
@@ -123,20 +123,31 @@ msgstr ""
 "automaticamente."
 
 #: ../data/org.mate.session.gschema.xml.in.h:5
+msgid "Show hidden autostart applications"
+msgstr "Amosar as aplicacións de inicio automático agochadas"
+
+#: ../data/org.mate.session.gschema.xml.in.h:6
+msgid ""
+"If enabled, mate-session-properties will show hidden autostart applications."
+msgstr ""
+"Se está activado, o mate-session-properties (propiedades da sesión do Mate) "
+"amosará as aplicacións de inicio automático agochadas."
+
+#: ../data/org.mate.session.gschema.xml.in.h:7
 msgid "Logout prompt"
 msgstr "Preguntar ao terminar a sesión"
 
-#: ../data/org.mate.session.gschema.xml.in.h:6
+#: ../data/org.mate.session.gschema.xml.in.h:8
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr ""
 "Se está activada, o mate-session (sesión do Mate) preguntará ao usuario "
 "antes de terminar unha sesión."
 
-#: ../data/org.mate.session.gschema.xml.in.h:7
+#: ../data/org.mate.session.gschema.xml.in.h:9
 msgid "Logout timeout"
 msgstr "Tempo de espera de saída"
 
-#: ../data/org.mate.session.gschema.xml.in.h:8
+#: ../data/org.mate.session.gschema.xml.in.h:10
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
@@ -145,30 +156,30 @@ msgstr ""
 "segundos antes de pechar a sesión automaticamente. Se é 0, o peche de sesión"
 " automático está desactivado."
 
-#: ../data/org.mate.session.gschema.xml.in.h:9
+#: ../data/org.mate.session.gschema.xml.in.h:11
 msgid "Time before session is considered idle"
 msgstr "Tempo antes de que a sesión se considere inactiva"
 
-#: ../data/org.mate.session.gschema.xml.in.h:10
+#: ../data/org.mate.session.gschema.xml.in.h:12
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr ""
 "O número de minutos de tempo inactivo antes de considerar a sesión como "
 "inactiva."
 
-#: ../data/org.mate.session.gschema.xml.in.h:11
+#: ../data/org.mate.session.gschema.xml.in.h:13
 msgid "Default session"
 msgstr "Sesión predeterminada"
 
-#: ../data/org.mate.session.gschema.xml.in.h:12
+#: ../data/org.mate.session.gschema.xml.in.h:14
 msgid "List of applications that are part of the default session."
-msgstr "Lista de aplicativos que forman parte da sesión predeterminada."
+msgstr "Lista de aplicacións que forman parte da sesión predeterminada."
 
-#: ../data/org.mate.session.gschema.xml.in.h:13
+#: ../data/org.mate.session.gschema.xml.in.h:15
 msgid "Required session components"
 msgstr "Compoñentes requiridos na sesión"
 
-#: ../data/org.mate.session.gschema.xml.in.h:14
+#: ../data/org.mate.session.gschema.xml.in.h:16
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -179,24 +190,24 @@ msgid ""
 msgstr ""
 "Lista de compoñentes que se requiren como parte da sesión. (Cada elemento "
 "nomea unha chave baixo «/org/mate/desktop/session/required_components»). "
-"Xeralmente, a ferramenta Preferencias de aplicativos de inicio non permitirá"
+"Xeralmente, a ferramenta Preferencias de aplicacións de inicio non permitirá"
 " que os usuarios eliminen un compoñente requirido da sesión, polo que o "
 "xestor de sesións engadirá automaticamente os compoñentes á sesión cando "
 "esta se inicie, en caso de que sexan eliminados."
 
-#: ../data/org.mate.session.gschema.xml.in.h:15
+#: ../data/org.mate.session.gschema.xml.in.h:17
 msgid "Control gnome compatibility component startup"
 msgstr "Controlar o inicio do compoñente de compatibilidade do Gnome"
 
-#: ../data/org.mate.session.gschema.xml.in.h:16
+#: ../data/org.mate.session.gschema.xml.in.h:18
 msgid "Control which compatibility components to start."
 msgstr "Controlar que compoñentes de compatibilidade iniciar."
 
-#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
+#: ../data/org.mate.session.gschema.xml.in.h:19 ../data/mate-wm.desktop.in.h:1
 msgid "Window Manager"
 msgstr "Xestor de xanelas"
 
-#: ../data/org.mate.session.gschema.xml.in.h:18
+#: ../data/org.mate.session.gschema.xml.in.h:20
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
@@ -204,11 +215,11 @@ msgstr ""
 "O xestor de xanelas é o programa que debuxa a barra de título e os bordos "
 "das xanelas e que lle permite mover e redimensionar as xanelas."
 
-#: ../data/org.mate.session.gschema.xml.in.h:19
+#: ../data/org.mate.session.gschema.xml.in.h:21
 msgid "Panel"
 msgstr "Panel"
 
-#: ../data/org.mate.session.gschema.xml.in.h:20
+#: ../data/org.mate.session.gschema.xml.in.h:22
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
@@ -216,11 +227,11 @@ msgstr ""
 "O panel amosa a barra ao principio ou ao final da pantalla que contén os "
 "menús, a lista de xanelas, as iconas de estado, o reloxo etc."
 
-#: ../data/org.mate.session.gschema.xml.in.h:21
+#: ../data/org.mate.session.gschema.xml.in.h:23
 msgid "File Manager"
 msgstr "Xestor de ficheiros"
 
-#: ../data/org.mate.session.gschema.xml.in.h:22
+#: ../data/org.mate.session.gschema.xml.in.h:24
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
@@ -228,17 +239,17 @@ msgstr ""
 "O xestor de ficheiros proporciona as iconas de escritorio e permítelle "
 "realizar accións cos ficheiros que teña gardados."
 
-#: ../data/org.mate.session.gschema.xml.in.h:23
+#: ../data/org.mate.session.gschema.xml.in.h:25
 msgid "Dock"
 msgstr "Doca"
 
-#: ../data/org.mate.session.gschema.xml.in.h:24
+#: ../data/org.mate.session.gschema.xml.in.h:26
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
 msgstr ""
-"Unha doca fornece unha área amoreábel, semellante ao panel para iniciar e "
-"alternar aplicativos."
+"Unha doca fornece unha área ancorábel, semellante ao panel para iniciar e "
+"alternar aplicacións."
 
 #: ../data/mate.desktop.in.h:1
 msgid "MATE"
@@ -262,11 +273,11 @@ msgstr ""
 
 #: ../data/mate-session-properties.desktop.in.h:1
 msgid "Startup Applications"
-msgstr "Aplicativos de inicio"
+msgstr "Aplicacións de inicio"
 
 #: ../data/mate-session-properties.desktop.in.h:2
 msgid "Choose what applications to start when you log in"
-msgstr "Seleccione que aplicativos iniciaranse coa sesión"
+msgstr "Seleccione que aplicacións se iniciaran coa sesión"
 
 #: ../data/session-properties.ui.h:1
 msgid "Additional startup _programs:"
@@ -281,38 +292,42 @@ msgid "_Edit"
 msgstr "_Editar"
 
 #: ../data/session-properties.ui.h:5
+msgid "_Show hidden"
+msgstr "Amo_sar os agochados"
+
+#: ../data/session-properties.ui.h:6
 msgid "Startup Programs"
 msgstr "Programas de inicio"
 
-#: ../data/session-properties.ui.h:6
-msgid "_Automatically remember running applications when logging out"
-msgstr "Lembrar _automaticamente os aplicativos en execución ao desconectar"
-
 #: ../data/session-properties.ui.h:7
-msgid "_Remember Currently Running Application"
-msgstr "_Lembrar o aplicativo que está executandose"
+msgid "_Automatically remember running applications when logging out"
+msgstr "Lembrar _automaticamente as aplicacións en execución ao desconectar"
 
 #: ../data/session-properties.ui.h:8
+msgid "_Remember Currently Running Application"
+msgstr "_Lembrar a aplicación que está executándose"
+
+#: ../data/session-properties.ui.h:9
 msgid "Options"
 msgstr "Opcións"
 
-#: ../data/session-properties.ui.h:9
+#: ../data/session-properties.ui.h:10
 msgid "Browse…"
 msgstr "Navegar..."
 
-#: ../data/session-properties.ui.h:10
+#: ../data/session-properties.ui.h:11
 msgid "Comm_ent:"
 msgstr "Com_entario:"
 
-#: ../data/session-properties.ui.h:11
+#: ../data/session-properties.ui.h:12
 msgid "Co_mmand:"
 msgstr "Or_de:"
 
-#: ../data/session-properties.ui.h:12
+#: ../data/session-properties.ui.h:13
 msgid "_Name:"
 msgstr "_Nome:"
 
-#: ../data/session-properties.ui.h:13
+#: ../data/session-properties.ui.h:14
 msgid "_Delay:"
 msgstr "_Atraso:"
 
@@ -334,7 +349,7 @@ msgstr "Iniciando %s"
 #: ../egg/eggdesktopfile.c:1097
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "O aplicativo non acepta documentos na liña de ordes"
+msgstr "A aplicación non acepta documentos na liña de ordes"
 
 #: ../egg/eggdesktopfile.c:1165
 #, c-format
@@ -498,7 +513,7 @@ msgstr "Non responde"
 #. * properties. But it could still be that SmProgram is not set.
 #: ../mate-session/gsm-xsmp-client.c:595
 msgid "Remembered Application"
-msgstr "Aplicativo lembrado"
+msgstr "Aplicación lembrada"
 
 #: ../mate-session/gsm-xsmp-client.c:1262
 msgid "This program is blocking logout."
@@ -534,7 +549,7 @@ msgstr "Activar o código de depuración"
 
 #: ../mate-session/main.c:588
 msgid "Do not load user-specified applications"
-msgstr "Non cargar os aplicativos especificados polo usuario"
+msgstr "Non cargar as aplicacións especificadas polo usuario"
 
 #: ../mate-session/main.c:609
 msgid " - the MATE session manager"
@@ -609,7 +624,7 @@ msgstr ""
 "\n"
 "  -h, --help     Amosar esta axuda\n"
 "  --version      Amosar a versión do programa\n"
-"  --app-id ID    O ID do aplicativo que usar\n"
+"  --app-id ID    O ID da aplicación que usar\n"
 "                 ao inhibir (opcional)\n"
 "  --reason RAZÓN A razón para inhibir (opcional)\n"
 "  --inhibit ARG  Qué inhibir, lista de elementos separados por dous puntos de:\n"
