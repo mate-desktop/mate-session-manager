@@ -40,8 +40,6 @@ struct _GsmAutostartAppClass
                                         gboolean condition);
 };
 
-GType   gsm_autostart_app_get_type           (void) G_GNUC_CONST;
-
 GsmApp *gsm_autostart_app_new                (const char *desktop_file);
 
 #define GSM_AUTOSTART_APP_ENABLED_KEY     "X-MATE-Autostart-enabled"

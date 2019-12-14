@@ -56,8 +56,6 @@ enum _GsmConsolekitError {
 
 #define GSM_CONSOLEKIT_SESSION_TYPE_LOGIN_WINDOW "LoginWindow"
 
-GType            gsm_consolekit_get_type        (void) G_GNUC_CONST;
-
 GQuark           gsm_consolekit_error_quark     (void);
 
 GsmConsolekit   *gsm_consolekit_new             (void) G_GNUC_MALLOC;

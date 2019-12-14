@@ -53,8 +53,6 @@ struct _GsmXSMPClientClass
 
 };
 
-GType       gsm_xsmp_client_get_type             (void) G_GNUC_CONST;
-
 GsmClient  *gsm_xsmp_client_new                  (IceConn         ice_conn);
 
 void        gsm_xsmp_client_connect              (GsmXSMPClient  *client,

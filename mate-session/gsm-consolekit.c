@@ -64,8 +64,6 @@ enum {
 
 static guint signals[LAST_SIGNAL] = { 0 };
 
-static void     gsm_consolekit_class_init   (GsmConsolekitClass *klass);
-static void     gsm_consolekit_init         (GsmConsolekit      *ck);
 static void     gsm_consolekit_finalize     (GObject            *object);
 
 static void     gsm_consolekit_free_dbus    (GsmConsolekit      *manager);

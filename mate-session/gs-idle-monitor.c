@@ -39,8 +39,6 @@
 
 #include "gs-idle-monitor.h"
 
-static void gs_idle_monitor_class_init (GSIdleMonitorClass *klass);
-static void gs_idle_monitor_init       (GSIdleMonitor      *idle_monitor);
 static void gs_idle_monitor_finalize   (GObject             *object);
 
 struct _GSIdleMonitor {

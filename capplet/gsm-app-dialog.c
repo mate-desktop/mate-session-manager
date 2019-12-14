@@ -56,9 +56,6 @@ struct _GsmAppDialog
         guint      delay;
 };
 
-static void     gsm_app_dialog_class_init  (GsmAppDialogClass *klass);
-static void     gsm_app_dialog_init        (GsmAppDialog      *app_dialog);
-
 enum {
         PROP_0,
         PROP_NAME,

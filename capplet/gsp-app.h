@@ -40,8 +40,6 @@ struct _GspAppClass
         void (* removed) (GspApp *app);
 };
 
-GType            gsp_app_get_type          (void) G_GNUC_CONST;
-
 void             gsp_app_create            (const char   *name,
                                             const char   *comment,
                                             const char   *exec,

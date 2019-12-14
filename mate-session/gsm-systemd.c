@@ -65,8 +65,6 @@ enum {
 
 static guint signals[LAST_SIGNAL] = { 0 };
 
-static void     gsm_systemd_class_init   (GsmSystemdClass *klass);
-static void     gsm_systemd_init         (GsmSystemd      *sd);
 static void     gsm_systemd_finalize     (GObject         *object);
 
 static void     gsm_systemd_free_dbus    (GsmSystemd      *manager);

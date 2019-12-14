@@ -64,9 +64,7 @@ struct _MdmSignalHandler {
 	gpointer fatal_data;
 };
 
-static void mdm_signal_handler_class_init(MdmSignalHandlerClass* klass);
-static void mdm_signal_handler_init(MdmSignalHandler* signal_handler);
-static void mdm_signal_handler_finalize(GObject* object);
+static void mdm_signal_handler_finalize (GObject* object);
 
 static gpointer signal_handler_object = NULL;
 static int signal_pipes[2];
