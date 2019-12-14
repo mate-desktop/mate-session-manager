@@ -51,8 +51,6 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
-static void     gsm_store_class_init    (GsmStoreClass *klass);
-static void     gsm_store_init          (GsmStore      *store);
 static void     gsm_store_finalize      (GObject       *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (GsmStore, gsm_store, G_TYPE_OBJECT)

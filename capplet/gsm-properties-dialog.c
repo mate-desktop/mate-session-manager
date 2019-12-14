@@ -78,8 +78,6 @@ enum {
         NUMBER_OF_COLUMNS
 };
 
-static void     gsm_properties_dialog_class_init  (GsmPropertiesDialogClass *klass);
-static void     gsm_properties_dialog_init        (GsmPropertiesDialog      *properties_dialog);
 static void     gsm_properties_dialog_finalize    (GObject                  *object);
 
 G_DEFINE_TYPE (GsmPropertiesDialog, gsm_properties_dialog, GTK_TYPE_DIALOG)

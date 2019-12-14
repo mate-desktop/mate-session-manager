@@ -35,8 +35,6 @@ typedef gboolean (*GSIdleMonitorWatchFunc) (GSIdleMonitor *monitor,
                                             gboolean       condition,
                                             gpointer       user_data);
 
-GType           gs_idle_monitor_get_type       (void);
-
 GSIdleMonitor * gs_idle_monitor_new            (void);
 
 guint           gs_idle_monitor_add_watch      (GSIdleMonitor         *monitor,

@@ -56,8 +56,6 @@ enum _GsmSystemdError {
 
 #define GSM_SYSTEMD_SESSION_TYPE_LOGIN_WINDOW "greeter"
 
-GType            gsm_systemd_get_type        (void) G_GNUC_CONST;
-
 GQuark           gsm_systemd_error_quark     (void);
 
 GsmSystemd      *gsm_systemd_new             (void) G_GNUC_MALLOC;

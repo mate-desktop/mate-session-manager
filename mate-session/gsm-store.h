@@ -51,7 +51,6 @@ typedef gboolean (*GsmStoreFunc) (const char *id,
                                   gpointer    user_data);
 
 GQuark              gsm_store_error_quark              (void);
-GType               gsm_store_get_type                 (void) G_GNUC_CONST;
 
 GsmStore *          gsm_store_new                      (void);
 

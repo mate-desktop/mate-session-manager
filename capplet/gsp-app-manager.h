@@ -43,8 +43,6 @@ struct _GspAppManagerClass
                           GspApp        *app);
 };
 
-GType           gsp_app_manager_get_type               (void) G_GNUC_CONST;
-
 GspAppManager  *gsp_app_manager_get                    (void);
 
 void            gsp_app_manager_fill                   (GspAppManager *manager);

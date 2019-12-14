@@ -71,8 +71,6 @@ struct _EggSMClientClass
   void (*_egg_reserved4) (void);
 };
 
-GType            egg_sm_client_get_type            (void) G_GNUC_CONST;
-
 GOptionGroup    *egg_sm_client_get_option_group    (void);
 
 /* Initialization */

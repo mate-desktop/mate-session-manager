@@ -171,8 +171,6 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
-static void     gsm_manager_class_init  (GsmManagerClass *klass);
-static void     gsm_manager_init        (GsmManager      *manager);
 static void     gsm_manager_finalize    (GObject         *object);
 
 static gboolean _log_out_is_locked_down     (GsmManager *manager);

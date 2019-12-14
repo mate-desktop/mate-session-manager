@@ -75,7 +75,6 @@ typedef enum
 #define GSM_APP_ERROR gsm_app_error_quark ()
 
 GQuark           gsm_app_error_quark                    (void);
-GType            gsm_app_get_type                       (void) G_GNUC_CONST;
 
 gboolean         gsm_app_peek_autorestart               (GsmApp     *app);
 

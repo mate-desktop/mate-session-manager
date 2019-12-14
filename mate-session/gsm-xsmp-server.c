@@ -77,8 +77,6 @@ enum {
         PROP_CLIENT_STORE
 };
 
-static void     gsm_xsmp_server_class_init  (GsmXsmpServerClass *klass);
-static void     gsm_xsmp_server_init        (GsmXsmpServer      *xsmp_server);
 static void     gsm_xsmp_server_finalize    (GObject         *object);
 
 static gpointer xsmp_server_object = NULL;
