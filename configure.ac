@@ -349,6 +349,7 @@ echo "
         source code location:     ${srcdir}
         compiler:                 ${CC}
         cflags:                   ${CFLAGS}
+        Warning flags:            ${WARN_CFLAGS}
         Maintainer mode:          ${USE_MAINTAINER_MODE}
         Warn about deprecations:  ${enable_deprecations}
 
