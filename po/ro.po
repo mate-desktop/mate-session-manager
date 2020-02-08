@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the mate-session-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -10,12 +10,11 @@
 # Daniel <danny3@tutanota.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # 
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-09 00:06+0100\n"
+"Project-Id-Version: mate-session-manager 1.23.0\n"
+"Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
+"POT-Creation-Date: 2019-11-19 13:25+0100\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Romanian (https://www.transifex.com/mate/teams/13566/ro/)\n"
@@ -25,118 +24,127 @@ msgstr ""
 "Language: ro\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: ../capplet/gsm-app-dialog.c:127
+#: capplet/gsm-app-dialog.c:127
 msgid "Select Command"
 msgstr "Alegere comandă"
 
-#: ../capplet/gsm-app-dialog.c:170
+#: capplet/gsm-app-dialog.c:170
 msgid "second"
 msgstr ""
 
-#: ../capplet/gsm-app-dialog.c:172
+#: capplet/gsm-app-dialog.c:172
 msgid "seconds"
 msgstr "secunde"
 
-#: ../capplet/gsm-app-dialog.c:218 ../mate-session/gsm-logout-dialog.c:452
-#: ../mate-session/gsm-logout-dialog.c:485
+#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:452
+#: mate-session/gsm-logout-dialog.c:485
 msgid "_Cancel"
 msgstr "_Renunță"
 
-#: ../capplet/gsm-app-dialog.c:224
+#: capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
 msgstr "Adaugă un program de pornit"
 
-#: ../capplet/gsm-app-dialog.c:226 ../data/session-properties.ui.h:2
+#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
 msgid "_Add"
 msgstr "_Adaugă"
 
-#: ../capplet/gsm-app-dialog.c:229
+#: capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
 msgstr "Editare program de pornit"
 
-#: ../capplet/gsm-app-dialog.c:231
+#: capplet/gsm-app-dialog.c:231
 msgid "_Save"
 msgstr "_Salvează"
 
-#: ../capplet/gsm-app-dialog.c:544
+#: capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
 msgstr "Comanda de pornire nu poate fi nulă"
 
-#: ../capplet/gsm-app-dialog.c:550
+#: capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
 msgstr "Comanda de start nu este validă"
 
-#: ../capplet/gsm-properties-dialog.c:479
+#: capplet/gsm-properties-dialog.c:516
 msgid "_Help"
 msgstr "_Ajutor"
 
-#: ../capplet/gsm-properties-dialog.c:483
+#: capplet/gsm-properties-dialog.c:520
 msgid "_Close"
 msgstr "În_chide"
 
-#: ../capplet/gsm-properties-dialog.c:523
+#: capplet/gsm-properties-dialog.c:560
 msgid "Enabled"
 msgstr "Activat"
 
-#: ../capplet/gsm-properties-dialog.c:535
+#: capplet/gsm-properties-dialog.c:572
 msgid "Icon"
 msgstr "Pictogramă"
 
-#: ../capplet/gsm-properties-dialog.c:547
+#: capplet/gsm-properties-dialog.c:584
 msgid "Program"
 msgstr "Program"
 
-#: ../capplet/gsm-properties-dialog.c:742
+#: capplet/gsm-properties-dialog.c:791
 msgid "Startup Applications Preferences"
 msgstr "Preferințe aplicații pornire"
 
-#: ../capplet/gsp-app.c:283
+#: capplet/gsp-app.c:284
 msgid "No name"
 msgstr "Fără nume"
 
-#: ../capplet/gsp-app.c:289
+#: capplet/gsp-app.c:290
 msgid "No description"
 msgstr "Nicio descriere"
 
-#: ../capplet/main.c:35 ../mate-session/main.c:589
+#: capplet/main.c:35 mate-session/main.c:614
 msgid "Version of this application"
 msgstr "Versiunea acestei aplicații"
 
-#: ../capplet/main.c:51
+#: capplet/main.c:51
 msgid "Could not display help document"
 msgstr "Nu se poate afișa documentul de ajutor"
 
-#: ../data/org.mate.session.gschema.xml.in.h:1
+#: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
 msgstr "Oră pornire sesiune actuală"
 
-#: ../data/org.mate.session.gschema.xml.in.h:2
+#: data/org.mate.session.gschema.xml.in:6
 msgid "Unix time of the start of the current session."
 msgstr "Oră Unix a începerii sesiunii actuale."
 
-#: ../data/org.mate.session.gschema.xml.in.h:3
+#: data/org.mate.session.gschema.xml.in:10
 msgid "Save sessions"
 msgstr "Salvează sesiunile"
 
-#: ../data/org.mate.session.gschema.xml.in.h:4
+#: data/org.mate.session.gschema.xml.in:11
 msgid "If enabled, mate-session will save the session automatically."
 msgstr "Dacă este activat, mate-session va salva sesiunea automat."
 
-#: ../data/org.mate.session.gschema.xml.in.h:5
+#: data/org.mate.session.gschema.xml.in:15
+msgid "Show hidden autostart applications"
+msgstr ""
+
+#: data/org.mate.session.gschema.xml.in:16
+msgid ""
+"If enabled, mate-session-properties will show hidden autostart applications."
+msgstr ""
+
+#: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
 msgstr "Întrebare deconectare"
 
-#: ../data/org.mate.session.gschema.xml.in.h:6
+#: data/org.mate.session.gschema.xml.in:21
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr ""
 "Dacă este activat, mate-session va întreba utilizatorul înainte de "
 "terminarea sesiunii."
 
-#: ../data/org.mate.session.gschema.xml.in.h:7
+#: data/org.mate.session.gschema.xml.in:26
 msgid "Logout timeout"
 msgstr "Limită de timp deconectare"
 
-#: ../data/org.mate.session.gschema.xml.in.h:8
+#: data/org.mate.session.gschema.xml.in:27
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
@@ -145,30 +153,30 @@ msgstr ""
 "timp în secunde înainte de deconectarea automată. Dacă este 0, deconectarea "
 "automată este dezactivată."
 
-#: ../data/org.mate.session.gschema.xml.in.h:9
+#: data/org.mate.session.gschema.xml.in:31
 msgid "Time before session is considered idle"
 msgstr "Timp scurs înainte ca sesiunea să fie considerată inactivă"
 
-#: ../data/org.mate.session.gschema.xml.in.h:10
+#: data/org.mate.session.gschema.xml.in:32
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
 msgstr ""
 "Numărul de minute de inactivitate după care sesiunea este considerată "
 "inactivă."
 
-#: ../data/org.mate.session.gschema.xml.in.h:11
+#: data/org.mate.session.gschema.xml.in:36
 msgid "Default session"
 msgstr "Sesiune implicită"
 
-#: ../data/org.mate.session.gschema.xml.in.h:12
+#: data/org.mate.session.gschema.xml.in:37
 msgid "List of applications that are part of the default session."
 msgstr "Lista aplicațiilor care sunt parte a sesiunii implicite."
 
-#: ../data/org.mate.session.gschema.xml.in.h:13
+#: data/org.mate.session.gschema.xml.in:41
 msgid "Required session components"
 msgstr "Componentele necesare sesiunii"
 
-#: ../data/org.mate.session.gschema.xml.in.h:14
+#: data/org.mate.session.gschema.xml.in:42
 msgid ""
 "List of components that are required as part of the session. (Each element "
 "names a key under \"/org/mate/desktop/session/required_components\"). The "
@@ -185,19 +193,19 @@ msgstr ""
 "adăuga automat componentele necesare înapoi în sesiune la autentificare dacă"
 " sunt eliminate."
 
-#: ../data/org.mate.session.gschema.xml.in.h:15
+#: data/org.mate.session.gschema.xml.in:46
 msgid "Control gnome compatibility component startup"
 msgstr "Controlează pornirea componentei de compatibilitate gnome"
 
-#: ../data/org.mate.session.gschema.xml.in.h:16
+#: data/org.mate.session.gschema.xml.in:47
 msgid "Control which compatibility components to start."
 msgstr "Controlați ce componente de compatibilitate să pornească"
 
-#: ../data/org.mate.session.gschema.xml.in.h:17 ../data/mate-wm.desktop.in.h:1
+#: data/org.mate.session.gschema.xml.in:54 data/mate-wm.desktop.in:4
 msgid "Window Manager"
 msgstr "Administrator de ferestre"
 
-#: ../data/org.mate.session.gschema.xml.in.h:18
+#: data/org.mate.session.gschema.xml.in:55
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
@@ -206,11 +214,11 @@ msgstr ""
 "marginile de jur împrejurul ferestrelor și permite mutarea sau "
 "redimensionarea acestora."
 
-#: ../data/org.mate.session.gschema.xml.in.h:19
+#: data/org.mate.session.gschema.xml.in:59
 msgid "Panel"
 msgstr "Panou"
 
-#: ../data/org.mate.session.gschema.xml.in.h:20
+#: data/org.mate.session.gschema.xml.in:60
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
@@ -218,11 +226,11 @@ msgstr ""
 "Panoul furnizează bara din partea de sus sau jos a ecranului ce conține "
 "meniuri, lista de ferestre, pictograme de stare, ceasul etc."
 
-#: ../data/org.mate.session.gschema.xml.in.h:21
+#: data/org.mate.session.gschema.xml.in:64
 msgid "File Manager"
 msgstr "Administrator de fișiere"
 
-#: ../data/org.mate.session.gschema.xml.in.h:22
+#: data/org.mate.session.gschema.xml.in:65
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
@@ -230,11 +238,11 @@ msgstr ""
 "Administratorul de fișiere furnizează pictogramele de pe desktop și permite "
 "interacțiunea cu fișierele salvate."
 
-#: ../data/org.mate.session.gschema.xml.in.h:23
+#: data/org.mate.session.gschema.xml.in:69
 msgid "Dock"
 msgstr "Doc"
 
-#: ../data/org.mate.session.gschema.xml.in.h:24
+#: data/org.mate.session.gschema.xml.in:70
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
@@ -242,19 +250,35 @@ msgstr ""
 "Un doc oferă o zonă andocabilă, similară unui panou, pentru lansarea și "
 "comutarea aplicațiilor."
 
-#: ../data/mate.desktop.in.h:1
+#: data/mate.desktop.in:3
 msgid "MATE"
 msgstr "MATE"
 
-#: ../data/mate.desktop.in.h:2
+#: data/mate.desktop.in:4
 msgid "This session logs you into MATE"
 msgstr "Această sesiune vă va autentifica în MATE"
 
-#: ../data/gsm-inhibit-dialog.ui.h:1
+#: data/mate.desktop.in:8
+msgid "Type=Application"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/mate.desktop.in:11
+msgid "launch;MATE;desktop;session;"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/mate-wm.desktop.in:7
+msgid "MATE;window;manager;launch;MDM;"
+msgstr ""
+
+#: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>O parte din programe sunt încă în funcțiune:</b>"
 
-#: ../data/gsm-inhibit-dialog.ui.h:2 ../mate-session/gsm-inhibit-dialog.c:633
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:633
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -262,143 +286,155 @@ msgstr ""
 "Se așteaptă ca programul să termine. Întreruperea programului poate duce la "
 "pierderea activității."
 
-#: ../data/mate-session-properties.desktop.in.h:1
+#: data/mate-session-properties.desktop.in:3
 msgid "Startup Applications"
 msgstr "Aplicații pornite după autentificare"
 
-#: ../data/mate-session-properties.desktop.in.h:2
+#: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
 msgstr "Alegeți ce aplicații să fie pornite după ce vă autentificați"
 
-#: ../data/session-properties.ui.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: data/mate-session-properties.desktop.in:7
+msgid "mate-session-properties"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/mate-session-properties.desktop.in:13
+msgid "MATE;session;properties;applications;login;start;"
+msgstr ""
+
+#: data/session-properties.ui:35
 msgid "Additional startup _programs:"
 msgstr "_Programe suplimetare de pornit:"
 
-#: ../data/session-properties.ui.h:3
+#: data/session-properties.ui:101
 msgid "_Remove"
 msgstr "Ște_rge"
 
-#: ../data/session-properties.ui.h:4
+#: data/session-properties.ui:117
 msgid "_Edit"
 msgstr "_Editeaza"
 
-#: ../data/session-properties.ui.h:5
+#: data/session-properties.ui:147
+msgid "_Show hidden"
+msgstr ""
+
+#: data/session-properties.ui:168
 msgid "Startup Programs"
 msgstr "Programe de pornit"
 
-#: ../data/session-properties.ui.h:6
+#: data/session-properties.ui:183
 msgid "_Automatically remember running applications when logging out"
 msgstr "Memorează _automat la ieșire aplicațiile ce rulează"
 
-#: ../data/session-properties.ui.h:7
+#: data/session-properties.ui:225
 msgid "_Remember Currently Running Application"
 msgstr "Memo_rează aplicațiile ce rulează în acest moment"
 
-#: ../data/session-properties.ui.h:8
+#: data/session-properties.ui:259
 msgid "Options"
 msgstr "Opțiuni"
 
-#: ../data/session-properties.ui.h:9
+#: data/session-properties.ui:297
 msgid "Browse…"
 msgstr "Răsfoire…"
 
-#: ../data/session-properties.ui.h:10
+#: data/session-properties.ui:340
 msgid "Comm_ent:"
 msgstr "Com_entariu:"
 
-#: ../data/session-properties.ui.h:11
+#: data/session-properties.ui:354
 msgid "Co_mmand:"
 msgstr "Co_mandă:"
 
-#: ../data/session-properties.ui.h:12
+#: data/session-properties.ui:368
 msgid "_Name:"
 msgstr "_Nume:"
 
-#: ../data/session-properties.ui.h:13
+#: data/session-properties.ui:382
 msgid "_Delay:"
 msgstr "Î_ntârziere:"
 
-#: ../egg/eggdesktopfile.c:152
-#, c-format
+#: egg/eggdesktopfile.c:152
 msgid "File is not a valid .desktop file"
 msgstr "Fișierul nu este un fișier .desktop valid"
 
-#: ../egg/eggdesktopfile.c:172
+#: egg/eggdesktopfile.c:172
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Versiune fișier desktop nerecunoscută „%s”"
 
-#: ../egg/eggdesktopfile.c:956
+#: egg/eggdesktopfile.c:956
 #, c-format
 msgid "Starting %s"
 msgstr "Se pornește %s"
 
-#: ../egg/eggdesktopfile.c:1097
-#, c-format
+#: egg/eggdesktopfile.c:1097
 msgid "Application does not accept documents on command line"
 msgstr "Aplicația nu acceptă documente în linia de comandă"
 
-#: ../egg/eggdesktopfile.c:1165
+#: egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Opțiune de lansare nerecunoscută: %d"
 
-#: ../egg/eggdesktopfile.c:1363
-#, c-format
+#: egg/eggdesktopfile.c:1363
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Nu se pot pasa URI-uri document către o intrare desktop de tip link"
 
-#: ../egg/eggdesktopfile.c:1384
-#, c-format
+#: egg/eggdesktopfile.c:1384
 msgid "Not a launchable item"
 msgstr "Nu este un element lansabil"
 
-#: ../egg/eggsmclient.c:221
+#: egg/eggsmclient.c:221
 msgid "Disable connection to session manager"
 msgstr "Dezactivează conexiunea la administratorul de sesiune"
 
-#: ../egg/eggsmclient.c:224
+#: egg/eggsmclient.c:224
 msgid "Specify file containing saved configuration"
 msgstr "Specifică fișierul ce conține configurația salvată"
 
-#: ../egg/eggsmclient.c:224
+#: egg/eggsmclient.c:224
 msgid "FILE"
 msgstr "FIȘIER"
 
-#: ../egg/eggsmclient.c:227
+#: egg/eggsmclient.c:227
 msgid "Specify session management ID"
 msgstr "Specifică ID-ul administratorului de sesiune"
 
-#: ../egg/eggsmclient.c:227
+#: egg/eggsmclient.c:227
 msgid "ID"
 msgstr "ID"
 
-#: ../egg/eggsmclient.c:248
+#: egg/eggsmclient.c:248
 msgid "Session management options:"
 msgstr "Opțiuni administrator de sesiune:"
 
-#: ../egg/eggsmclient.c:249
+#: egg/eggsmclient.c:249
 msgid "Show session management options"
 msgstr "Afișează opțiunile administratorului de sesiune"
 
-#: ../mate-session/gsm-inhibit-dialog.c:251
+#: mate-session/gsm-inhibit-dialog.c:251
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Pictograma „%s” nu a fost găsită"
 
-#: ../mate-session/gsm-inhibit-dialog.c:581
+#: mate-session/gsm-inhibit-dialog.c:581
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: ../mate-session/gsm-inhibit-dialog.c:632
+#: mate-session/gsm-inhibit-dialog.c:632
 msgid "A program is still running:"
 msgstr "Un program este încă în funcțiune:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:636
+#: mate-session/gsm-inhibit-dialog.c:636
 msgid "Some programs are still running:"
 msgstr "Unele programe sunt încă în funcțiune:"
 
-#: ../mate-session/gsm-inhibit-dialog.c:637
+#: mate-session/gsm-inhibit-dialog.c:637
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -406,39 +442,39 @@ msgstr ""
 "Se așteaptă ca programele să termine. Întreruperea acestora poate duce la "
 "pierderea activității."
 
-#: ../mate-session/gsm-inhibit-dialog.c:867
+#: mate-session/gsm-inhibit-dialog.c:867
 msgid "Switch User Anyway"
 msgstr "Schimbă oricum utilizatorul"
 
-#: ../mate-session/gsm-inhibit-dialog.c:870
+#: mate-session/gsm-inhibit-dialog.c:870
 msgid "Log Out Anyway"
 msgstr "Deconectează oricum"
 
-#: ../mate-session/gsm-inhibit-dialog.c:873
+#: mate-session/gsm-inhibit-dialog.c:873
 msgid "Suspend Anyway"
 msgstr "Suspendă oricum"
 
-#: ../mate-session/gsm-inhibit-dialog.c:876
+#: mate-session/gsm-inhibit-dialog.c:876
 msgid "Hibernate Anyway"
 msgstr "Hibernează oricum"
 
-#: ../mate-session/gsm-inhibit-dialog.c:879
+#: mate-session/gsm-inhibit-dialog.c:879
 msgid "Shut Down Anyway"
 msgstr "Oprește oricum"
 
-#: ../mate-session/gsm-inhibit-dialog.c:882
+#: mate-session/gsm-inhibit-dialog.c:882
 msgid "Reboot Anyway"
 msgstr "Repornește oricum"
 
-#: ../mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:890
 msgid "Lock Screen"
 msgstr "Blochează ecranul"
 
-#: ../mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:893
 msgid "Cancel"
 msgstr "Renunță"
 
-#: ../mate-session/gsm-logout-dialog.c:307
+#: mate-session/gsm-logout-dialog.c:307
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
@@ -446,7 +482,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: ../mate-session/gsm-logout-dialog.c:315
+#: mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
@@ -454,59 +490,59 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: ../mate-session/gsm-logout-dialog.c:361
+#: mate-session/gsm-logout-dialog.c:361
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Sunteți autentificat ca „%s”."
 
-#: ../mate-session/gsm-logout-dialog.c:441
+#: mate-session/gsm-logout-dialog.c:441
 msgid "Log out of this system now?"
 msgstr "Vă deconectați de pe acest sistem acum?"
 
-#: ../mate-session/gsm-logout-dialog.c:447
+#: mate-session/gsm-logout-dialog.c:447
 msgid "_Switch User"
 msgstr "_Schimbare utilizator"
 
-#: ../mate-session/gsm-logout-dialog.c:456
+#: mate-session/gsm-logout-dialog.c:456
 msgid "_Log Out"
 msgstr "_Deconectează"
 
-#: ../mate-session/gsm-logout-dialog.c:462
+#: mate-session/gsm-logout-dialog.c:462
 msgid "Shut down this system now?"
 msgstr "Opriți sistemul acum?"
 
-#: ../mate-session/gsm-logout-dialog.c:468
+#: mate-session/gsm-logout-dialog.c:468
 msgid "S_uspend"
 msgstr "S_uspendă"
 
-#: ../mate-session/gsm-logout-dialog.c:474
+#: mate-session/gsm-logout-dialog.c:474
 msgid "_Hibernate"
 msgstr "_Hibernare"
 
-#: ../mate-session/gsm-logout-dialog.c:480
+#: mate-session/gsm-logout-dialog.c:480
 msgid "_Restart"
 msgstr "_Repornește"
 
-#: ../mate-session/gsm-logout-dialog.c:490
+#: mate-session/gsm-logout-dialog.c:490
 msgid "_Shut Down"
 msgstr "_Oprește"
 
-#: ../mate-session/gsm-manager.c:1512 ../mate-session/gsm-manager.c:2327
+#: mate-session/gsm-manager.c:1515 mate-session/gsm-manager.c:2339
 msgid "Not responding"
 msgstr "Nu răspunde"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: ../mate-session/gsm-xsmp-client.c:595
+#: mate-session/gsm-xsmp-client.c:595
 msgid "Remembered Application"
 msgstr "Aplicație memorată"
 
-#: ../mate-session/gsm-xsmp-client.c:1262
+#: mate-session/gsm-xsmp-client.c:1262
 msgid "This program is blocking logout."
 msgstr "Acest program blochează deconectarea."
 
-#: ../mate-session/gsm-xsmp-server.c:324
+#: mate-session/gsm-xsmp-server.c:324
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
@@ -514,82 +550,85 @@ msgstr ""
 "Se refuză conexiunea noului client deoarece sesiunea este în curs de "
 "oprire\n"
 
-#: ../mate-session/gsm-xsmp-server.c:586
+#: mate-session/gsm-xsmp-server.c:586
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Nu s-a putut crea socket-ul de detectare ICE: %s"
 
 #. Oh well, no X for you!
-#: ../mate-session/gsm-util.c:355
-#, c-format
+#: mate-session/gsm-util.c:355
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "Nu s-a putut porni sesiunea de autentificare (iar conexiunea la servitorul X"
 " nu a putut fi realizată)"
 
-#: ../mate-session/main.c:586
+#: mate-session/main.c:611
 msgid "Override standard autostart directories"
 msgstr "Rescrie directoarele standard de pornire automată"
 
-#: ../mate-session/main.c:587
+#: mate-session/main.c:612
 msgid "Enable debugging code"
 msgstr "Activează codul de depanare"
 
-#: ../mate-session/main.c:588
+#: mate-session/main.c:613
 msgid "Do not load user-specified applications"
 msgstr "Nu încărca aplicațiile specificate de utilizator"
 
-#: ../mate-session/main.c:609
+#: mate-session/main.c:615
+msgid "Disable hardware acceleration check"
+msgstr ""
+
+#: mate-session/main.c:635
 msgid " - the MATE session manager"
 msgstr " - Administrator de sesiune MATE"
 
-#: ../tools/mate-session-save.c:66
+#: tools/mate-session-save.c:66
 msgid "Log out"
 msgstr "Deconectare"
 
-#: ../tools/mate-session-save.c:67
+#: tools/mate-session-save.c:67
 msgid "Log out, ignoring any existing inhibitors"
 msgstr "Deconectează, ignorând orice inhibator existent"
 
-#: ../tools/mate-session-save.c:68
+#: tools/mate-session-save.c:68
 msgid "Show logout dialog"
 msgstr "Afișează dialogul de deconectare"
 
-#: ../tools/mate-session-save.c:69
+#: tools/mate-session-save.c:69
 msgid "Show shutdown dialog"
 msgstr "Afișează dialogul de oprire"
 
-#: ../tools/mate-session-save.c:70
+#: tools/mate-session-save.c:70
 msgid "Use dialog boxes for errors"
 msgstr "Folosește casete de dialog pentru erori"
 
 #. deprecated options
-#: ../tools/mate-session-save.c:72
+#: tools/mate-session-save.c:72
 msgid "Set the current session name"
 msgstr "Stabilește numele sesiunii actuale"
 
-#: ../tools/mate-session-save.c:72
+#: tools/mate-session-save.c:72
 msgid "NAME"
 msgstr "NUME"
 
-#: ../tools/mate-session-save.c:73
+#: tools/mate-session-save.c:73
 msgid "Kill session"
 msgstr "Închide forțat sesiunea"
 
-#: ../tools/mate-session-save.c:74
+#: tools/mate-session-save.c:74
 msgid "Do not require confirmation"
 msgstr "Nu cere confirmare"
 
 #. Okay, it wasn't the upgrade case, so now we can give up.
-#: ../tools/mate-session-save.c:126
+#: tools/mate-session-save.c:126
 msgid "Could not connect to the session manager"
 msgstr "Nu s-a putut realiza conectarea la administratorul de sesiuni"
 
-#: ../tools/mate-session-save.c:251
+#: tools/mate-session-save.c:251
 msgid "Program called with conflicting options"
 msgstr "Program apelat cu opțiuni care întră în conflict"
 
-#: ../tools/mate-session-inhibit.c:115
+#: tools/mate-session-inhibit.c:115
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -620,13 +659,13 @@ msgstr ""
 "\n"
 "Dacă nicio opțiune --inhibit nu este specificată, idle este asumată.\n"
 
-#: ../tools/mate-session-inhibit.c:169 ../tools/mate-session-inhibit.c:179
-#: ../tools/mate-session-inhibit.c:189
+#: tools/mate-session-inhibit.c:169 tools/mate-session-inhibit.c:179
+#: tools/mate-session-inhibit.c:189
 #, c-format
 msgid "%s requires an argument\n"
 msgstr "%s necesită un argument\n"
 
-#: ../tools/mate-session-inhibit.c:225
+#: tools/mate-session-inhibit.c:225
 #, c-format
 msgid "Failed to execute %s\n"
 msgstr "Eșuare la executarea %s\n"
