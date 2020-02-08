@@ -1,6 +1,17 @@
+### mate-session-manager 1.24.0
+
+  * Translations update
+  * build: show warning flags on configure summary
+  * avoid redundant redeclarations
+  * desktop files: add translator hints
+  * Fix timeout with gnome-keyring 3.34
+  * Remove GNOME_KEYRING_LIFETIME_FD
+  * po/Makevars: Set COPYRIGHT_HOLDER to The MATE Team
+  * Fix mate-session-properties vertical scaling
+
 ### mate-session-manager 1.23.0
 
-  * tx: sync with transifex
+  * Translations update
   * Remove trailing whitespaces
   * migrate from intltool to gettext
   * Change url project's website
