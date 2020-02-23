@@ -1,0 +1,99 @@
+##########################################################
+# THE FOLLOWING LINES IS USED BY docker-build
+##########################################################
+requires:
+  archlinux:
+    # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/mate-session-manager
+    - dbus-glib
+    - gcc
+    - git
+    - gtk3
+    - intltool
+    - libsm
+    - make
+    - mate-common
+    - mate-desktop
+    - python
+    - systemd
+    - which
+    - xtrans
+
+  debian:
+    # Useful URL: https://github.com/mate-desktop/debian-packages
+    # Useful URL: https://salsa.debian.org/debian-mate-team/mate-session-manager
+    - git
+    - intltool
+    - libdbus-glib-1-dev
+    - libglib2.0-dev
+    - libgtk-3-dev
+    - libice-dev
+    - libsm-dev
+    - libstartup-notification0-dev
+    - libsystemd-dev
+    - libx11-dev
+    - libxau-dev
+    - libxext-dev
+    - libxrender-dev
+    - libxt-dev
+    - libxtst-dev
+    - make
+    - mate-common
+    - xmlto
+    - xsltproc
+
+  fedora:
+    # Useful URL: https://src.fedoraproject.org/cgit/rpms/mate-session-manager.git
+    - dbus-glib-devel
+    - desktop-file-utils
+    - gcc
+    - git
+    - gtk3-devel
+    - libSM-devel
+    - libXtst-devel
+    - make
+    - mate-common
+    - pangox-compat-devel
+    - redhat-rpm-config
+    - systemd-devel
+    - xmlto
+    - xorg-x11-xtrans-devel
+
+  ubuntu:
+    - git
+    - intltool
+    - libdbus-glib-1-dev
+    - libglib2.0-dev
+    - libgtk-3-dev
+    - libice-dev
+    - libsm-dev
+    - libstartup-notification0-dev
+    - libsystemd-dev
+    - libx11-dev
+    - libxau-dev
+    - libxext-dev
+    - libxrender-dev
+    - libxt-dev
+    - libxtst-dev
+    - make
+    - mate-common
+    - xmlto
+    - xsltproc
+
+variables:
+  - CFLAGS="-Wall -Werror=format-security"
+
+after_scripts:
+  - make distcheck
+
+releases:
+  draft: false
+  prerelease: false
+  checksum: true
+  file_glob: true
+  files: mate-session-manager-*.tar.xz
+  github_release:
+    tags: true
+    overwrite: true
+    base_version: 1.20.0
+    notify_servers:
+      - https://release.mate-desktop.org/release
