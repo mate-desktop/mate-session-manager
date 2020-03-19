@@ -167,7 +167,7 @@ EggDesktopFile* egg_desktop_file_new_from_key_file(GKeyFile* key_file, const cha
 		{
 			g_warning("Invalid Version string '%s' in %s", version, source ? source : "(unknown)");
 		}
-		else if (version_num > 1.0)
+		else if (version_num > 1.1)
 		{
 			g_set_error(error, EGG_DESKTOP_FILE_ERROR, EGG_DESKTOP_FILE_ERROR_INVALID, _("Unrecognized desktop file Version '%s'"), version);
 			g_free(version);
