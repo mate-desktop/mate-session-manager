@@ -74,6 +74,7 @@ requires:
     - autopoint
     - clang
     - clang-tools
+    - gcc
     - git
     - intltool
     - libdbus-glib-1-dev
