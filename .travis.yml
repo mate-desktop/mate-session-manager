@@ -20,6 +20,7 @@ script:
 
 deploy:
   - provider: script
+    edge: true
     script: ./docker-build --verbose --config .build.yml --release github
     on:
       tags: true
