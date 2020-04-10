@@ -10,6 +10,7 @@ AM_MAINTAINER_MODE
 
 MATE_COMMON_INIT
 MATE_DEBUG_CHECK
+MATE_COMPILE_WARNINGS
 
 AC_PROG_CC
 AC_STDC_HEADERS
@@ -22,8 +23,6 @@ dnl make sure we keep ACLOCAL_FLAGS around for maintainer builds to work
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 
 MATE_MAINTAINER_MODE_DEFINES
-
-MATE_COMPILE_WARNINGS(maximum)
 
 AC_ARG_ENABLE(deprecations,
               [AC_HELP_STRING([--enable-deprecations],
