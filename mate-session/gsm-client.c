@@ -25,7 +25,6 @@
 
 #include "eggdesktopfile.h"
 
-#include "gsm-marshal.h"
 #include "gsm-client.h"
 #include "gsm-client-glue.h"
 
@@ -329,8 +328,7 @@ gsm_client_class_init (GsmClientClass *klass)
                               G_OBJECT_CLASS_TYPE (object_class),
                               G_SIGNAL_RUN_LAST,
                               G_STRUCT_OFFSET (GsmClientClass, disconnected),
-                              NULL, NULL,
-                              g_cclosure_marshal_VOID__VOID,
+                              NULL, NULL, NULL,
                               G_TYPE_NONE,
                               0);
         signals[END_SESSION_RESPONSE] =
@@ -338,8 +336,7 @@ gsm_client_class_init (GsmClientClass *klass)
                               G_OBJECT_CLASS_TYPE (object_class),
                               G_SIGNAL_RUN_LAST,
                               G_STRUCT_OFFSET (GsmClientClass, end_session_response),
-                              NULL, NULL,
-                              gsm_marshal_VOID__BOOLEAN_BOOLEAN_BOOLEAN_STRING,
+                              NULL, NULL, NULL,
                               G_TYPE_NONE,
                               4, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN, G_TYPE_STRING);
 

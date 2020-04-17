@@ -2667,7 +2667,7 @@ gsm_manager_class_init (GsmManagerClass *klass)
                               G_STRUCT_OFFSET (GsmManagerClass, phase_changed),
                               NULL,
                               NULL,
-                              g_cclosure_marshal_VOID__STRING,
+                              NULL,
                               G_TYPE_NONE,
                               1, G_TYPE_STRING);
 
@@ -2678,7 +2678,7 @@ gsm_manager_class_init (GsmManagerClass *klass)
                               G_STRUCT_OFFSET (GsmManagerClass, session_running),
                               NULL,
                               NULL,
-                              g_cclosure_marshal_VOID__VOID,
+                              NULL,
                               G_TYPE_NONE,
                               0);
 
@@ -2687,8 +2687,7 @@ gsm_manager_class_init (GsmManagerClass *klass)
                               G_OBJECT_CLASS_TYPE (object_class),
                               G_SIGNAL_RUN_LAST,
                               G_STRUCT_OFFSET (GsmManagerClass, session_over),
-                              NULL, NULL,
-                              g_cclosure_marshal_VOID__VOID,
+                              NULL, NULL, NULL,
                               G_TYPE_NONE,
                               0);
         signals [CLIENT_ADDED] =
@@ -2698,7 +2697,7 @@ gsm_manager_class_init (GsmManagerClass *klass)
                               G_STRUCT_OFFSET (GsmManagerClass, client_added),
                               NULL,
                               NULL,
-                              g_cclosure_marshal_VOID__BOXED,
+                              NULL,
                               G_TYPE_NONE,
                               1, DBUS_TYPE_G_OBJECT_PATH);
         signals [CLIENT_REMOVED] =
@@ -2708,7 +2707,7 @@ gsm_manager_class_init (GsmManagerClass *klass)
                               G_STRUCT_OFFSET (GsmManagerClass, client_removed),
                               NULL,
                               NULL,
-                              g_cclosure_marshal_VOID__BOXED,
+                              NULL,
                               G_TYPE_NONE,
                               1, DBUS_TYPE_G_OBJECT_PATH);
         signals [INHIBITOR_ADDED] =
@@ -2718,7 +2717,7 @@ gsm_manager_class_init (GsmManagerClass *klass)
                               G_STRUCT_OFFSET (GsmManagerClass, inhibitor_added),
                               NULL,
                               NULL,
-                              g_cclosure_marshal_VOID__BOXED,
+                              NULL,
                               G_TYPE_NONE,
                               1, DBUS_TYPE_G_OBJECT_PATH);
         signals [INHIBITOR_REMOVED] =
@@ -2728,7 +2727,7 @@ gsm_manager_class_init (GsmManagerClass *klass)
                               G_STRUCT_OFFSET (GsmManagerClass, inhibitor_removed),
                               NULL,
                               NULL,
-                              g_cclosure_marshal_VOID__BOXED,
+                              NULL,
                               G_TYPE_NONE,
                               1, DBUS_TYPE_G_OBJECT_PATH);
 

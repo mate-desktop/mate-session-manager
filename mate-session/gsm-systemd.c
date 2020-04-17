@@ -35,7 +35,6 @@
 #include <systemd/sd-login.h>
 #endif
 
-#include "gsm-marshal.h"
 #include "gsm-systemd.h"
 
 #define SD_NAME              "org.freedesktop.login1"
@@ -132,7 +131,7 @@ gsm_systemd_class_init (GsmSystemdClass *manager_class)
                           G_STRUCT_OFFSET (GsmSystemdClass, request_completed),
                           NULL,
                           NULL,
-                          g_cclosure_marshal_VOID__POINTER,
+                          NULL,
                           G_TYPE_NONE,
                           1, G_TYPE_POINTER);
 
@@ -143,7 +142,7 @@ gsm_systemd_class_init (GsmSystemdClass *manager_class)
                           G_STRUCT_OFFSET (GsmSystemdClass, privileges_completed),
                           NULL,
                           NULL,
-                          gsm_marshal_VOID__BOOLEAN_BOOLEAN_POINTER,
+                          NULL,
                           G_TYPE_NONE,
                           3, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN, G_TYPE_POINTER);
 }

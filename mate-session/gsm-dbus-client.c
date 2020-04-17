@@ -33,7 +33,6 @@
 #include <dbus/dbus-glib-lowlevel.h>
 
 #include "gsm-dbus-client.h"
-#include "gsm-marshal.h"
 
 #include "gsm-manager.h"
 #include "gsm-util.h"

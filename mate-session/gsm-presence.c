@@ -521,7 +521,7 @@ gsm_presence_class_init (GsmPresenceClass *klass)
                               G_STRUCT_OFFSET (GsmPresenceClass, status_changed),
                               NULL,
                               NULL,
-                              g_cclosure_marshal_VOID__UINT,
+                              NULL,
                               G_TYPE_NONE,
                               1, G_TYPE_UINT);
         signals [STATUS_TEXT_CHANGED] =
@@ -531,7 +531,7 @@ gsm_presence_class_init (GsmPresenceClass *klass)
                               G_STRUCT_OFFSET (GsmPresenceClass, status_text_changed),
                               NULL,
                               NULL,
-                              g_cclosure_marshal_VOID__STRING,
+                              NULL,
                               G_TYPE_NONE,
                               1, G_TYPE_STRING);
 

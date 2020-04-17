@@ -31,7 +31,6 @@
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
-#include "gsm-marshal.h"
 #include "gsm-consolekit.h"
 
 #define CK_NAME      "org.freedesktop.ConsoleKit"
@@ -131,7 +130,7 @@ gsm_consolekit_class_init (GsmConsolekitClass *manager_class)
                               G_STRUCT_OFFSET (GsmConsolekitClass, request_completed),
                               NULL,
                               NULL,
-                              g_cclosure_marshal_VOID__POINTER,
+                              NULL,
                               G_TYPE_NONE,
                               1, G_TYPE_POINTER);
 
@@ -142,7 +141,7 @@ gsm_consolekit_class_init (GsmConsolekitClass *manager_class)
                               G_STRUCT_OFFSET (GsmConsolekitClass, privileges_completed),
                               NULL,
                               NULL,
-                              gsm_marshal_VOID__BOOLEAN_BOOLEAN_POINTER,
+                              NULL,
                               G_TYPE_NONE,
                               3, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN, G_TYPE_POINTER);
 
