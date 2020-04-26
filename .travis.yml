@@ -38,7 +38,7 @@ notifications:
 deploy:
   - provider: pages
     edge: true
-    github-token: $GITHUB_TOKEN
+    token: $GITHUB_TOKEN
     keep_history: false
     committer_from_gh: true
     target_branch: gh-pages
