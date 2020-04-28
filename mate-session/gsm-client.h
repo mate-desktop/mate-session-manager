@@ -90,9 +90,6 @@ typedef enum
 } GsmClientError;
 
 #define GSM_CLIENT_ERROR gsm_client_error_quark ()
-#define GSM_CLIENT_TYPE_ERROR (gsm_client_error_get_type ())
-
-GType                 gsm_client_error_get_type             (void);
 GQuark                gsm_client_error_quark                (void);
 
 const char           *gsm_client_peek_id                    (GsmClient  *client);
@@ -121,23 +118,8 @@ void                  gsm_client_disconnected               (GsmClient  *client)
 
 GKeyFile             *gsm_client_save                       (GsmClient  *client,
                                                              GError    **error);
-/* exported to bus */
+
 gboolean              gsm_client_stop                       (GsmClient  *client,
-                                                             GError    **error);
-gboolean              gsm_client_get_startup_id             (GsmClient  *client,
-                                                             char      **startup_id,
-                                                             GError    **error);
-gboolean              gsm_client_get_app_id                 (GsmClient  *client,
-                                                             char      **app_id,
-                                                             GError    **error);
-gboolean              gsm_client_get_restart_style_hint     (GsmClient  *client,
-                                                             guint      *hint,
-                                                             GError    **error);
-gboolean              gsm_client_get_status                 (GsmClient  *client,
-                                                             guint      *status,
-                                                             GError    **error);
-gboolean              gsm_client_get_unix_process_id        (GsmClient  *client,
-                                                             guint      *pid,
                                                              GError    **error);
 
 /* private */

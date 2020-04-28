@@ -73,8 +73,8 @@ static guint signals[LAST_SIGNAL] = { 0 };
 G_DEFINE_TYPE_WITH_PRIVATE (GsmXSMPClient, gsm_xsmp_client, GSM_TYPE_CLIENT)
 
 static gboolean
-client_iochannel_watch (GIOChannel    *channel,
-                        GIOCondition   condition,
+client_iochannel_watch (GIOChannel    *channel G_GNUC_UNUSED,
+                        GIOCondition   condition G_GNUC_UNUSED,
                         GsmXSMPClient *client)
 {
         gboolean keep_going;
@@ -279,7 +279,7 @@ debug_print_property (SmProp *prop)
 }
 
 static void
-set_properties_callback (SmsConn     conn,
+set_properties_callback (SmsConn     conn G_GNUC_UNUSED,
                          SmPointer   manager_data,
                          int         num_props,
                          SmProp    **props)
@@ -307,7 +307,7 @@ set_properties_callback (SmsConn     conn,
 }
 
 static void
-delete_properties_callback (SmsConn     conn,
+delete_properties_callback (SmsConn     conn G_GNUC_UNUSED,
                             SmPointer   manager_data,
                             int         num_props,
                             char      **prop_names)
@@ -920,17 +920,17 @@ gsm_xsmp_client_finalize (GObject *object)
         gsm_xsmp_client_disconnect (client);
 
         g_free (priv->description);
-        g_ptr_array_foreach (priv->props, (GFunc)SmFreeProperty, NULL);
+        g_ptr_array_foreach (priv->props, (GFunc) SmFreeProperty, NULL);
         g_ptr_array_free (priv->props, TRUE);
 
         G_OBJECT_CLASS (gsm_xsmp_client_parent_class)->finalize (object);
 }
 
 static gboolean
-_boolean_handled_accumulator (GSignalInvocationHint *ihint,
+_boolean_handled_accumulator (GSignalInvocationHint *ihint G_GNUC_UNUSED,
                               GValue                *return_accu,
                               const GValue          *handler_return,
-                              gpointer               dummy)
+                              gpointer               dummy G_GNUC_UNUSED)
 {
         gboolean    continue_emission;
         gboolean    signal_handled;
@@ -1150,7 +1150,7 @@ register_client_callback (SmsConn    conn,
 }
 
 static void
-save_yourself_request_callback (SmsConn   conn,
+save_yourself_request_callback (SmsConn   conn G_GNUC_UNUSED,
                                 SmPointer manager_data,
                                 int       save_type,
                                 Bool      shutdown,
@@ -1215,7 +1215,7 @@ save_yourself_request_callback (SmsConn   conn,
 }
 
 static void
-save_yourself_phase2_request_callback (SmsConn   conn,
+save_yourself_phase2_request_callback (SmsConn   conn G_GNUC_UNUSED,
                                        SmPointer manager_data)
 {
         GsmXSMPClientPrivate *priv;
@@ -1236,7 +1236,7 @@ save_yourself_phase2_request_callback (SmsConn   conn,
 }
 
 static void
-interact_request_callback (SmsConn   conn,
+interact_request_callback (SmsConn   conn G_GNUC_UNUSED,
                            SmPointer manager_data,
                            int       dialog_type)
 {
@@ -1274,7 +1274,7 @@ interact_request_callback (SmsConn   conn,
 }
 
 static void
-interact_done_callback (SmsConn   conn,
+interact_done_callback (SmsConn   conn G_GNUC_UNUSED,
                         SmPointer manager_data,
                         Bool      cancel_shutdown)
 {
@@ -1293,7 +1293,7 @@ interact_done_callback (SmsConn   conn,
 }
 
 static void
-save_yourself_done_callback (SmsConn   conn,
+save_yourself_done_callback (SmsConn   conn G_GNUC_UNUSED,
                              SmPointer manager_data,
                              Bool      success)
 {
@@ -1329,7 +1329,7 @@ save_yourself_done_callback (SmsConn   conn,
 }
 
 static void
-close_connection_callback (SmsConn     conn,
+close_connection_callback (SmsConn     conn G_GNUC_UNUSED,
                            SmPointer   manager_data,
                            int         count,
                            char      **reason_msgs)

@@ -22,13 +22,11 @@
 
 #include "config.h"
 
-#include <dbus/dbus-glib.h>
-
 #include "eggdesktopfile.h"
 
 #include "gsm-marshal.h"
 #include "gsm-client.h"
-#include "gsm-client-glue.h"
+#include "org.gnome.SessionManager.Client.h"
 
 static guint32 client_serial = 1;
 
@@ -38,7 +36,8 @@ typedef struct {
         char            *startup_id;
         char            *app_id;
         guint            status;
-        DBusGConnection *connection;
+        GsmExportedClient *skeleton;
+        GDBusConnection *connection;
 } GsmClientPrivate;
 
 enum {
@@ -59,37 +58,23 @@ static guint signals[LAST_SIGNAL] = { 0 };
 
 G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (GsmClient, gsm_client, G_TYPE_OBJECT)
 
+#define GSM_CLIENT_DBUS_IFACE "org.gnome.SessionManager.Client"
+
+static const GDBusErrorEntry gsm_client_error_entries[] = {
+        { GSM_CLIENT_ERROR_GENERAL, GSM_CLIENT_DBUS_IFACE ".GeneralError" },
+        { GSM_CLIENT_ERROR_NOT_REGISTERED, GSM_CLIENT_DBUS_IFACE ".NotRegistered" }
+};
+
 GQuark
 gsm_client_error_quark (void)
 {
-        static GQuark ret = 0;
-        if (ret == 0) {
-                ret = g_quark_from_static_string ("gsm_client_error");
-        }
+    static volatile gsize quark_volatile = 0;
 
-        return ret;
-}
-
-#define ENUM_ENTRY(NAME, DESC) { NAME, "" #NAME "", DESC }
-
-GType
-gsm_client_error_get_type (void)
-{
-        static GType etype = 0;
-
-        if (etype == 0) {
-                static const GEnumValue values[] = {
-                        ENUM_ENTRY (GSM_CLIENT_ERROR_GENERAL, "GeneralError"),
-                        ENUM_ENTRY (GSM_CLIENT_ERROR_NOT_REGISTERED, "NotRegistered"),
-                        { 0, 0, 0 }
-                };
-
-                g_assert (GSM_CLIENT_NUM_ERRORS == G_N_ELEMENTS (values) - 1);
-
-                etype = g_enum_register_static ("GsmClientError", values);
-        }
-
-        return etype;
+    g_dbus_error_register_error_domain ("gsm_client_error",
+                                        &quark_volatile,
+                                        gsm_client_error_entries,
+                                        G_N_ELEMENTS (gsm_client_error_entries));
+    return quark_volatile;
 }
 
 static guint32
@@ -107,23 +92,121 @@ get_next_client_serial (void)
 }
 
 static gboolean
+gsm_client_get_startup_id (GsmExportedClient     *skeleton,
+                           GDBusMethodInvocation *invocation,
+                           GsmClient             *client)
+{
+    GsmClientPrivate *priv;
+
+    priv = gsm_client_get_instance_private (client);
+    gsm_exported_client_complete_get_startup_id (skeleton, invocation, priv->startup_id);
+    return TRUE;
+}
+
+static gboolean
+gsm_client_get_app_id (GsmExportedClient     *skeleton,
+                       GDBusMethodInvocation *invocation,
+                       GsmClient             *client)
+{
+    GsmClientPrivate *priv;
+
+    priv = gsm_client_get_instance_private (client);
+    gsm_exported_client_complete_get_app_id (skeleton, invocation, priv->app_id);
+    return TRUE;
+}
+
+static gboolean
+gsm_client_get_restart_style_hint (GsmExportedClient     *skeleton,
+                                   GDBusMethodInvocation *invocation,
+                                   GsmClient             *client)
+{
+    guint hint;
+
+    hint = GSM_CLIENT_GET_CLASS (client)->impl_get_restart_style_hint (client);
+    gsm_exported_client_complete_get_restart_style_hint (skeleton, invocation, hint);
+    return TRUE;
+}
+
+static gboolean
+gsm_client_get_status (GsmExportedClient     *skeleton,
+                       GDBusMethodInvocation *invocation,
+                       GsmClient             *client)
+{
+    GsmClientPrivate *priv;
+
+    priv = gsm_client_get_instance_private (client);
+    gsm_exported_client_complete_get_status (skeleton, invocation, priv->status);
+    return TRUE;
+}
+
+static gboolean
+gsm_client_get_unix_process_id (GsmExportedClient     *skeleton,
+                                GDBusMethodInvocation *invocation,
+                                GsmClient             *client)
+{
+    guint pid;
+
+    pid = GSM_CLIENT_GET_CLASS (client)->impl_get_unix_process_id (client);
+    gsm_exported_client_complete_get_unix_process_id (skeleton, invocation, pid);
+    return TRUE;
+}
+
+static gboolean
+gsm_client_stop_dbus (GsmExportedClient     *skeleton,
+                      GDBusMethodInvocation *invocation,
+                      GsmClient             *client)
+{
+    GError *error = NULL;
+    gsm_client_stop (client, &error);
+
+    if (error != NULL) {
+        g_dbus_method_invocation_take_error (invocation, error);
+    } else {
+        gsm_exported_client_complete_stop (skeleton, invocation);
+    }
+    return TRUE;
+}
+
+static gboolean
 register_client (GsmClient *client)
 {
-        GError *error;
+        GError *error = NULL;
+        GsmExportedClient *skeleton;
         GsmClientPrivate *priv;
 
-        error = NULL;
         priv = gsm_client_get_instance_private (client);
-        priv->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+        priv->connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
         if (priv->connection == NULL) {
-                if (error != NULL) {
-                        g_critical ("error getting session bus: %s", error->message);
-                        g_error_free (error);
-                }
+            g_critical ("error getting session bus: %s", error->message);
+            g_error_free (error);
+            return FALSE;
+        }
+
+        skeleton = gsm_exported_client_skeleton_new ();
+        priv->skeleton = skeleton;
+        g_debug ("exporting client to object path: %s", priv->id);
+        g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
+                                          priv->connection,
+                                          priv->id, &error);
+
+        if (error != NULL) {
+                g_critical ("error exporting client on session bus: %s", error->message);
+                g_error_free (error);
                 return FALSE;
         }
 
-        dbus_g_connection_register_g_object (priv->connection, priv->id, G_OBJECT (client));
+        g_signal_connect (skeleton, "handle-get-app-id",
+                          G_CALLBACK (gsm_client_get_app_id), client);
+        g_signal_connect (skeleton, "handle-get-restart-style-hint",
+                          G_CALLBACK (gsm_client_get_restart_style_hint), client);
+        g_signal_connect (skeleton, "handle-get-startup-id",
+                          G_CALLBACK (gsm_client_get_startup_id), client);
+        g_signal_connect (skeleton, "handle-get-status",
+                          G_CALLBACK (gsm_client_get_status), client);
+        g_signal_connect (skeleton, "handle-get-unix-process-id",
+                          G_CALLBACK (gsm_client_get_unix_process_id), client);
+        g_signal_connect (skeleton, "handle-stop",
+                          G_CALLBACK (gsm_client_stop_dbus), client);
 
         return TRUE;
 }
@@ -153,7 +236,7 @@ gsm_client_constructor (GType                  type,
 }
 
 static void
-gsm_client_init (GsmClient *client)
+gsm_client_init (GsmClient *client G_GNUC_UNUSED)
 {
 }
 
@@ -174,6 +257,14 @@ gsm_client_finalize (GObject *object)
         g_free (priv->id);
         g_free (priv->startup_id);
         g_free (priv->app_id);
+
+        if (priv->skeleton != NULL) {
+                g_dbus_interface_skeleton_unexport_from_connection (G_DBUS_INTERFACE_SKELETON (priv->skeleton),
+                                                                    priv->connection);
+                g_clear_object (&priv->skeleton);
+        }
+
+        g_clear_object (&priv->connection);
 
         G_OBJECT_CLASS (gsm_client_parent_class)->finalize (object);
 }
@@ -286,7 +377,7 @@ gsm_client_get_property (GObject    *object,
 
 static gboolean
 default_stop (GsmClient *client,
-              GError   **error)
+              GError   **error G_GNUC_UNUSED)
 {
         g_return_val_if_fail (GSM_IS_CLIENT (client), FALSE);
 
@@ -367,8 +458,6 @@ gsm_client_class_init (GsmClientClass *klass)
                                                             G_MAXINT,
                                                             GSM_CLIENT_UNREGISTERED,
                                                             G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
-
-        dbus_g_object_type_install_info (GSM_TYPE_CLIENT, &dbus_glib_gsm_client_object_info);
 }
 
 const char *
@@ -431,75 +520,6 @@ gsm_client_peek_restart_style_hint (GsmClient *client)
         g_return_val_if_fail (GSM_IS_CLIENT (client), GSM_CLIENT_RESTART_NEVER);
 
         return GSM_CLIENT_GET_CLASS (client)->impl_get_restart_style_hint (client);
-}
-
-gboolean
-gsm_client_get_startup_id (GsmClient *client,
-                           char     **id,
-                           GError   **error)
-{
-        GsmClientPrivate *priv;
-        g_return_val_if_fail (GSM_IS_CLIENT (client), FALSE);
-
-        priv = gsm_client_get_instance_private (client);
-
-        *id = g_strdup (priv->startup_id);
-
-        return TRUE;
-}
-
-gboolean
-gsm_client_get_app_id (GsmClient *client,
-                       char     **id,
-                       GError   **error)
-{
-        GsmClientPrivate *priv;
-        g_return_val_if_fail (GSM_IS_CLIENT (client), FALSE);
-
-        priv = gsm_client_get_instance_private (client);
-
-        *id = g_strdup (priv->app_id);
-
-        return TRUE;
-}
-
-gboolean
-gsm_client_get_restart_style_hint (GsmClient *client,
-                                   guint     *hint,
-                                   GError   **error)
-{
-        g_return_val_if_fail (GSM_IS_CLIENT (client), FALSE);
-
-        *hint = GSM_CLIENT_GET_CLASS (client)->impl_get_restart_style_hint (client);
-
-        return TRUE;
-}
-
-gboolean
-gsm_client_get_status (GsmClient *client,
-                       guint     *status,
-                       GError   **error)
-{
-        GsmClientPrivate *priv;
-        g_return_val_if_fail (GSM_IS_CLIENT (client), FALSE);
-
-        priv = gsm_client_get_instance_private (client);
-
-        *status = priv->status;
-
-        return TRUE;
-}
-
-gboolean
-gsm_client_get_unix_process_id (GsmClient  *client,
-                                guint      *pid,
-                                GError    **error)
-{
-        g_return_val_if_fail (GSM_IS_CLIENT (client), FALSE);
-
-        *pid = GSM_CLIENT_GET_CLASS (client)->impl_get_unix_process_id (client);
-
-        return TRUE;
 }
 
 /**

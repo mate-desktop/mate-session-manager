@@ -150,7 +150,7 @@ gsm_systemd_class_init (GsmSystemdClass *manager_class)
 }
 
 static DBusHandlerResult
-gsm_systemd_dbus_filter (DBusConnection *connection,
+gsm_systemd_dbus_filter (DBusConnection *connection G_GNUC_UNUSED,
                          DBusMessage    *message,
                          void           *user_data)
 {
@@ -272,10 +272,10 @@ out:
 }
 
 static void
-gsm_systemd_on_name_owner_changed (DBusGProxy    *bus_proxy,
+gsm_systemd_on_name_owner_changed (DBusGProxy    *bus_proxy G_GNUC_UNUSED,
                                    const char    *name,
-                                   const char    *prev_owner,
-                                   const char    *new_owner,
+                                   const char    *prev_owner G_GNUC_UNUSED,
+                                   const char    *new_owner G_GNUC_UNUSED,
                                    GsmSystemd    *manager)
 {
     GsmSystemdPrivate *priv;
@@ -421,7 +421,7 @@ emit_stop_complete (GsmSystemd *manager,
 }
 
 gboolean
-gsm_systemd_is_last_session_for_user (GsmSystemd *manager)
+gsm_systemd_is_last_session_for_user (GsmSystemd *manager G_GNUC_UNUSED)
 {
         char **sessions = NULL;
         char *session = NULL;

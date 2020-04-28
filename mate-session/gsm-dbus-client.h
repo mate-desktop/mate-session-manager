@@ -29,19 +29,19 @@ G_BEGIN_DECLS
 #define GSM_TYPE_DBUS_CLIENT            (gsm_dbus_client_get_type ())
 G_DECLARE_FINAL_TYPE (GsmDBusClient, gsm_dbus_client, GSM, DBUS_CLIENT, GsmClient)
 
-typedef enum
-{
-        GSM_DBUS_CLIENT_ERROR_GENERAL = 0,
-        GSM_DBUS_CLIENT_ERROR_NOT_CLIENT,
-        GSM_DBUS_CLIENT_NUM_ERRORS
-} GsmDBusClientError;
+//typedef enum
+//{
+//        GSM_DBUS_CLIENT_ERROR_GENERAL = 0,
+//        GSM_DBUS_CLIENT_ERROR_NOT_CLIENT,
+//        GSM_DBUS_CLIENT_NUM_ERRORS
+//} GsmDBusClientError;
 
-#define GSM_DBUS_CLIENT_ERROR gsm_dbus_client_error_quark ()
+//#define GSM_DBUS_CLIENT_ERROR gsm_dbus_client_error_quark ()
+//
+//GType          gsm_dbus_client_error_get_type     (void);
+//#define GSM_DBUS_CLIENT_TYPE_ERROR (gsm_dbus_client_error_get_type ())
 
-GType          gsm_dbus_client_error_get_type     (void);
-#define GSM_DBUS_CLIENT_TYPE_ERROR (gsm_dbus_client_error_get_type ())
-
-GQuark         gsm_dbus_client_error_quark        (void);
+//GQuark         gsm_dbus_client_error_quark        (void);
 
 GsmClient *    gsm_dbus_client_new                (const char     *startup_id,
                                                    const char     *bus_name);

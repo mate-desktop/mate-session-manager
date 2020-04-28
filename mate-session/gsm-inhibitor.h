@@ -29,7 +29,6 @@ G_BEGIN_DECLS
 
 #define GSM_TYPE_INHIBITOR            (gsm_inhibitor_get_type ())
 #define GSM_INHIBITOR_ERROR           (gsm_inhibitor_error_quark ())
-#define GSM_INHIBITOR_TYPE_ERROR      (gsm_inhibitor_error_get_type ())
 G_DECLARE_FINAL_TYPE (GsmInhibitor, gsm_inhibitor, GSM, INHIBITOR, GObject)
 
 typedef enum {
@@ -45,8 +44,6 @@ typedef enum
         GSM_INHIBITOR_ERROR_NOT_SET,
         GSM_INHIBITOR_NUM_ERRORS
 } GsmInhibitorError;
-
-GType          gsm_inhibitor_error_get_type       (void);
 
 GQuark         gsm_inhibitor_error_quark          (void);
 
@@ -71,23 +68,6 @@ const char *   gsm_inhibitor_peek_bus_name        (GsmInhibitor  *inhibitor);
 guint          gsm_inhibitor_peek_cookie          (GsmInhibitor  *inhibitor);
 guint          gsm_inhibitor_peek_flags           (GsmInhibitor  *inhibitor);
 guint          gsm_inhibitor_peek_toplevel_xid    (GsmInhibitor  *inhibitor);
-
-/* exported to bus */
-gboolean       gsm_inhibitor_get_app_id           (GsmInhibitor  *inhibitor,
-                                                   char         **id,
-                                                   GError       **error);
-gboolean       gsm_inhibitor_get_client_id        (GsmInhibitor  *inhibitor,
-                                                   char         **id,
-                                                   GError       **error);
-gboolean       gsm_inhibitor_get_reason           (GsmInhibitor  *inhibitor,
-                                                   char         **reason,
-                                                   GError       **error);
-gboolean       gsm_inhibitor_get_flags            (GsmInhibitor  *inhibitor,
-                                                   guint         *flags,
-                                                   GError       **error);
-gboolean       gsm_inhibitor_get_toplevel_xid     (GsmInhibitor  *inhibitor,
-                                                   guint         *xid,
-                                                   GError       **error);
 
 G_END_DECLS
 

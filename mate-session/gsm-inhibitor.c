@@ -27,11 +27,9 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <dbus/dbus-glib.h>
-
 #include "gsm-inhibitor.h"
-#include "gsm-inhibitor-glue.h"
 #include "gsm-util.h"
+#include "org.gnome.SessionManager.Inhibitor.h"
 
 static guint32 inhibitor_serial = 1;
 
@@ -46,7 +44,8 @@ struct _GsmInhibitor
         guint flags;
         guint toplevel_xid;
         guint cookie;
-        DBusGConnection *connection;
+        GDBusConnection *connection;
+        GsmExportedInhibitor *skeleton;
 };
 
 enum {
@@ -62,37 +61,96 @@ enum {
 
 G_DEFINE_TYPE (GsmInhibitor, gsm_inhibitor, G_TYPE_OBJECT)
 
+#define GSM_INHIBITOR_DBUS_IFACE "org.gnome.SessionManager.Inhibitor"
+
+static const GDBusErrorEntry gsm_inhibitor_error_entries[] = {
+        { GSM_INHIBITOR_ERROR_GENERAL, GSM_INHIBITOR_DBUS_IFACE ".GeneralError" },
+        { GSM_INHIBITOR_ERROR_NOT_SET, GSM_INHIBITOR_DBUS_IFACE ".NotSet" }
+};
+
 GQuark
 gsm_inhibitor_error_quark (void)
 {
-        static GQuark ret = 0;
-        if (ret == 0) {
-                ret = g_quark_from_static_string ("gsm_inhibitor_error");
-        }
+        static volatile gsize quark_volatile = 0;
 
-        return ret;
+        g_dbus_error_register_error_domain ("gsm_inhibitor_error",
+                                            &quark_volatile,
+                                            gsm_inhibitor_error_entries,
+                                            G_N_ELEMENTS (gsm_inhibitor_error_entries));
+        return quark_volatile;
 }
 
-#define ENUM_ENTRY(NAME, DESC) { NAME, "" #NAME "", DESC }
-
-GType
-gsm_inhibitor_error_get_type (void)
+static gboolean
+gsm_inhibitor_get_app_id (GsmExportedInhibitor  *skeleton,
+                          GDBusMethodInvocation *invocation,
+                          GsmInhibitor          *inhibitor)
 {
-        static GType etype = 0;
+        const gchar *id;
 
-        if (etype == 0) {
-                static const GEnumValue values[] = {
-                        ENUM_ENTRY (GSM_INHIBITOR_ERROR_GENERAL, "GeneralError"),
-                        ENUM_ENTRY (GSM_INHIBITOR_ERROR_NOT_SET, "NotSet"),
-                        { 0, 0, 0 }
-                };
-
-                g_assert (GSM_INHIBITOR_NUM_ERRORS == G_N_ELEMENTS (values) - 1);
-
-                etype = g_enum_register_static ("GsmInhibitorError", values);
+        if (inhibitor->app_id != NULL) {
+                id = inhibitor->app_id;
+        } else {
+                id = "";
         }
 
-        return etype;
+        gsm_exported_inhibitor_complete_get_app_id (skeleton, invocation, id);
+
+        return TRUE;
+}
+
+static gboolean
+gsm_inhibitor_get_client_id (GsmExportedInhibitor  *skeleton,
+                             GDBusMethodInvocation *invocation,
+                             GsmInhibitor          *inhibitor)
+{
+        /* object paths are not allowed to be NULL or blank */
+        if (IS_STRING_EMPTY (inhibitor->client_id)) {
+                g_dbus_method_invocation_return_error (invocation,
+                                                       GSM_INHIBITOR_ERROR,
+                                                       GSM_INHIBITOR_ERROR_NOT_SET,
+                                                       "Value is not set");
+                return TRUE;
+        }
+
+        gsm_exported_inhibitor_complete_get_client_id (skeleton, invocation, inhibitor->client_id);
+        g_debug ("GsmInhibitor: getting client-id = '%s'", inhibitor->client_id);
+
+        return TRUE;
+}
+
+static gboolean
+gsm_inhibitor_get_reason (GsmExportedInhibitor  *skeleton,
+                          GDBusMethodInvocation *invocation,
+                          GsmInhibitor          *inhibitor)
+{
+        const gchar *reason;
+
+        if (inhibitor->reason != NULL) {
+                reason = inhibitor->reason;
+        } else {
+                reason = "";
+        }
+
+        gsm_exported_inhibitor_complete_get_reason (skeleton, invocation, reason);
+        return TRUE;
+}
+
+static gboolean
+gsm_inhibitor_get_flags (GsmExportedInhibitor  *skeleton,
+                         GDBusMethodInvocation *invocation,
+                         GsmInhibitor          *inhibitor)
+{
+        gsm_exported_inhibitor_complete_get_flags (skeleton, invocation, inhibitor->flags);
+        return TRUE;
+}
+
+static gboolean
+gsm_inhibitor_get_toplevel_xid (GsmExportedInhibitor  *skeleton,
+                                GDBusMethodInvocation *invocation,
+                                GsmInhibitor          *inhibitor)
+{
+        gsm_exported_inhibitor_complete_get_toplevel_xid (skeleton, invocation, inhibitor->toplevel_xid);
+        return TRUE;
 }
 
 static guint32
@@ -113,18 +171,39 @@ static gboolean
 register_inhibitor (GsmInhibitor *inhibitor)
 {
         GError *error;
+        GsmExportedInhibitor *skeleton;
 
         error = NULL;
-        inhibitor->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (inhibitor->connection == NULL) {
-                if (error != NULL) {
-                        g_critical ("error getting session bus: %s", error->message);
-                        g_error_free (error);
-                }
+        inhibitor->connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
+
+        if (error != NULL) {
+                g_critical ("error getting session bus: %s", error->message);
+                g_error_free (error);
                 return FALSE;
         }
 
-        dbus_g_connection_register_g_object (inhibitor->connection, inhibitor->id, G_OBJECT (inhibitor));
+        skeleton = gsm_exported_inhibitor_skeleton_new ();
+        inhibitor->skeleton = skeleton;
+        g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (skeleton),
+                                          inhibitor->connection,
+                                          inhibitor->id, &error);
+
+        if (error != NULL) {
+                g_critical ("error exporting inhibitor on session bus: %s", error->message);
+                g_error_free (error);
+                return FALSE;
+        }
+
+        g_signal_connect (skeleton, "handle-get-app-id",
+                          G_CALLBACK (gsm_inhibitor_get_app_id), inhibitor);
+        g_signal_connect (skeleton, "handle-get-client-id",
+                          G_CALLBACK (gsm_inhibitor_get_client_id), inhibitor);
+        g_signal_connect (skeleton, "handle-get-flags",
+                          G_CALLBACK (gsm_inhibitor_get_flags), inhibitor);
+        g_signal_connect (skeleton, "handle-get-reason",
+                          G_CALLBACK (gsm_inhibitor_get_reason), inhibitor);
+        g_signal_connect (skeleton, "handle-get-toplevel-xid",
+                          G_CALLBACK (gsm_inhibitor_get_toplevel_xid), inhibitor);
 
         return TRUE;
 }
@@ -152,7 +231,7 @@ gsm_inhibitor_constructor (GType                  type,
 }
 
 static void
-gsm_inhibitor_init (GsmInhibitor *inhibitor)
+gsm_inhibitor_init (GsmInhibitor *inhibitor G_GNUC_UNUSED)
 {
 }
 
@@ -260,85 +339,6 @@ gsm_inhibitor_peek_bus_name (GsmInhibitor  *inhibitor)
         g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), NULL);
 
         return inhibitor->bus_name;
-}
-
-gboolean
-gsm_inhibitor_get_app_id (GsmInhibitor *inhibitor,
-                          char        **id,
-                          GError      **error)
-{
-        g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), FALSE);
-
-        if (inhibitor->app_id != NULL) {
-                *id = g_strdup (inhibitor->app_id);
-        } else {
-                *id = g_strdup ("");
-        }
-
-        return TRUE;
-}
-
-gboolean
-gsm_inhibitor_get_client_id (GsmInhibitor *inhibitor,
-                             char        **id,
-                             GError      **error)
-{
-        g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), FALSE);
-
-        /* object paths are not allowed to be NULL or blank */
-        if (IS_STRING_EMPTY (inhibitor->client_id)) {
-                g_set_error (error,
-                             GSM_INHIBITOR_ERROR,
-                             GSM_INHIBITOR_ERROR_NOT_SET,
-                             "Value is not set");
-                return FALSE;
-        }
-
-        *id = g_strdup (inhibitor->client_id);
-
-        g_debug ("GsmInhibitor: getting client-id = '%s'", *id);
-
-        return TRUE;
-}
-
-gboolean
-gsm_inhibitor_get_reason (GsmInhibitor *inhibitor,
-                          char        **reason,
-                          GError      **error)
-{
-        g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), FALSE);
-
-        if (inhibitor->reason != NULL) {
-                *reason = g_strdup (inhibitor->reason);
-        } else {
-                *reason = g_strdup ("");
-        }
-
-        return TRUE;
-}
-
-gboolean
-gsm_inhibitor_get_flags (GsmInhibitor *inhibitor,
-                         guint        *flags,
-                         GError      **error)
-{
-        g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), FALSE);
-
-        *flags = inhibitor->flags;
-
-        return TRUE;
-}
-
-gboolean
-gsm_inhibitor_get_toplevel_xid (GsmInhibitor *inhibitor,
-                                guint        *xid,
-                                GError      **error)
-{
-        g_return_val_if_fail (GSM_IS_INHIBITOR (inhibitor), FALSE);
-
-        *xid = inhibitor->toplevel_xid;
-
-        return TRUE;
 }
 
 const char *
@@ -484,6 +484,14 @@ gsm_inhibitor_finalize (GObject *object)
         g_free (inhibitor->client_id);
         g_free (inhibitor->reason);
 
+        if (inhibitor->skeleton != NULL) {
+                g_dbus_interface_skeleton_unexport_from_connection (G_DBUS_INTERFACE_SKELETON (inhibitor->skeleton),
+                                                                    inhibitor->connection);
+                g_clear_object (&inhibitor->skeleton);
+        }
+
+        g_clear_object (&inhibitor->connection);
+
         G_OBJECT_CLASS (gsm_inhibitor_parent_class)->finalize (object);
 }
 
@@ -553,8 +561,6 @@ gsm_inhibitor_class_init (GsmInhibitorClass *klass)
                                                             0,
                                                             G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 
-        dbus_g_object_type_install_info (GSM_TYPE_INHIBITOR, &dbus_glib_gsm_inhibitor_object_info);
-        dbus_g_error_domain_register (GSM_INHIBITOR_ERROR, NULL, GSM_INHIBITOR_TYPE_ERROR);
 }
 
 GsmInhibitor *
