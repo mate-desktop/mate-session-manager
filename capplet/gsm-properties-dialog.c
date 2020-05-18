@@ -79,6 +79,8 @@ enum {
 };
 
 static void     gsm_properties_dialog_finalize    (GObject                  *object);
+static gboolean     gsm_properties_dialog_page_scroll_event_cb (GtkWidget        *notebook,
+                                                                GdkEventScroll   *event);
 
 G_DEFINE_TYPE (GsmPropertiesDialog, gsm_properties_dialog, GTK_TYPE_DIALOG)
 
@@ -780,6 +782,13 @@ gsm_properties_dialog_init (GsmPropertiesDialog *dialog)
         content_area = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
         widget = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                      "main-notebook"));
+
+        gtk_widget_add_events (widget, GDK_SCROLL_MASK);
+        g_signal_connect (widget,
+                          "scroll-event",
+                          G_CALLBACK (gsm_properties_dialog_page_scroll_event_cb),
+                          NULL);
+
         gtk_box_pack_start (GTK_BOX (content_area), widget, TRUE, TRUE, 0);
 
         gtk_window_set_resizable (GTK_WINDOW (dialog), TRUE);
@@ -807,4 +816,47 @@ gsm_properties_dialog_new (void)
                                NULL);
 
         return GTK_WIDGET (object);
+}
+
+static gboolean
+gsm_properties_dialog_page_scroll_event_cb (GtkWidget        *widget,
+                                            GdkEventScroll   *event)
+
+{
+        GtkNotebook *notebook = GTK_NOTEBOOK (widget);
+        GtkWidget *child, *event_widget, *action_widget;
+
+        child = gtk_notebook_get_nth_page (notebook, gtk_notebook_get_current_page (notebook));
+        if (child == NULL)
+                return FALSE;
+
+        event_widget = gtk_get_event_widget ((GdkEvent*) event);
+
+        /* Ignore scroll events from the content of the page */
+        if (event_widget == NULL || event_widget == child || gtk_widget_is_ancestor (event_widget, child))
+                return FALSE;
+
+        /* And also from the action widgets */
+        action_widget = gtk_notebook_get_action_widget (notebook, GTK_PACK_START);
+        if (event_widget == action_widget || (action_widget != NULL && gtk_widget_is_ancestor (event_widget, action_widget)))
+                return FALSE;
+
+        action_widget = gtk_notebook_get_action_widget (notebook, GTK_PACK_END);
+        if (event_widget == action_widget || (action_widget != NULL && gtk_widget_is_ancestor (event_widget, action_widget)))
+                return FALSE;
+
+        switch (event->direction) {
+                case GDK_SCROLL_RIGHT:
+                case GDK_SCROLL_DOWN:
+                        gtk_notebook_next_page (notebook);
+                        break;
+                case GDK_SCROLL_LEFT:
+                case GDK_SCROLL_UP:
+                        gtk_notebook_prev_page (notebook);
+                        break;
+                case GDK_SCROLL_SMOOTH:
+                        break;
+        }
+
+        return TRUE;
 }
