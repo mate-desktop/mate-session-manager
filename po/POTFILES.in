@@ -10,8 +10,8 @@ data/mate-wm.desktop.in
 data/gsm-inhibit-dialog.ui
 data/mate-session-properties.desktop.in
 data/session-properties.ui
-egg/eggdesktopfile.c
-egg/eggsmclient.c
+mate-submodules/libegg/eggdesktopfile.c
+mate-submodules/libegg/eggsmclient.c
 mate-session/gsm-inhibit-dialog.c
 mate-session/gsm-logout-dialog.c
 mate-session/gsm-manager.c

@@ -63,7 +63,7 @@ mate_session_CPPFLAGS =			\
 	$(SM_CFLAGS)				\
 	$(ICE_CFLAGS)				\
 	$(XEXT_CFLAGS)				\
-	-I$(top_srcdir)/egg			\
+	-I$(top_srcdir)/mate-submodules/libegg			\
 	-DLOCALE_DIR=\""$(datadir)/locale"\"	\
 	-DDATA_DIR=\""$(datadir)/mate-session"\" \
 	-DLIBEXECDIR=\"$(libexecdir)\"		\
@@ -73,7 +73,7 @@ mate_session_CPPFLAGS =			\
 mate_session_LDADD =				\
 	libgsmutil.la 				\
 	$(X11_LIBS)                             \
-	$(top_builddir)/egg/libeggdesktopfile.la \
+	$(top_builddir)/mate-submodules/libegg/libegg.la \
 	$(SM_LIBS)				\
 	$(ICE_LIBS)				\
 	$(XRENDER_LIBS)				\

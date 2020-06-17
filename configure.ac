@@ -65,7 +65,7 @@ PKG_CHECK_MODULES(GL_TEST, xcomposite gl glib-2.0 epoxy)
 
 PKG_CHECK_MODULES(DBUS_GLIB, dbus-glib-1 >= $DBUS_GLIB_REQUIRED)
 
-PKG_CHECK_MODULES(EGG_SMCLIENT, gtk+-3.0)
+PKG_CHECK_MODULES(LIBEGG, sm ice gtk+-3.0)
 
 dnl ====================================================================
 dnl GLESV2 (optional)
@@ -335,7 +335,8 @@ doc/man/Makefile
 data/Makefile
 data/org.mate.session.gschema.xml
 data/icons/Makefile
-egg/Makefile
+mate-submodules/Makefile
+mate-submodules/libegg/Makefile
 mate-session/Makefile
 tools/Makefile
 po/Makefile.in
