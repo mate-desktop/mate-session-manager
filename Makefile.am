@@ -1,6 +1,6 @@
 SUBDIRS = \
 	po \
-	egg \
+	mate-submodules \
 	mate-session \
 	capplet \
 	tools \
