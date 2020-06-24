@@ -443,18 +443,18 @@ gsm_get_dialog (GsmDialogLogoutType type,
                 logout_dialog->default_response = GSM_LOGOUT_RESPONSE_LOGOUT;
 
                 if (gsm_logout_supports_switch_user (logout_dialog)) {
-                        gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                               _("_Switch User"),
-                                               GSM_LOGOUT_RESPONSE_SWITCH_USER);
+                        gsm_util_dialog_add_button (GTK_DIALOG (logout_dialog),
+                                                    _("_Switch User"), "system-users",
+                                                    GSM_LOGOUT_RESPONSE_SWITCH_USER);
                 }
 
                 gsm_util_dialog_add_button (GTK_DIALOG (logout_dialog),
                                             _("_Cancel"), "process-stop",
                                             GTK_RESPONSE_CANCEL);
 
-                gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                       _("_Log Out"),
-                                       GSM_LOGOUT_RESPONSE_LOGOUT);
+                gsm_util_dialog_add_button (GTK_DIALOG (logout_dialog),
+                                            _("_Log Out"), "system-log-out",
+                                            GSM_LOGOUT_RESPONSE_LOGOUT);
 
                 break;
         case GSM_DIALOG_LOGOUT_TYPE_SHUTDOWN:
@@ -464,21 +464,21 @@ gsm_get_dialog (GsmDialogLogoutType type,
                 logout_dialog->default_response = GSM_LOGOUT_RESPONSE_SHUTDOWN;
 
                 if (gsm_logout_supports_system_suspend (logout_dialog)) {
-                        gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                               _("S_uspend"),
-                                               GSM_LOGOUT_RESPONSE_SLEEP);
+                        gsm_util_dialog_add_button (GTK_DIALOG (logout_dialog),
+                                                    _("S_uspend"), "battery",
+                                                    GSM_LOGOUT_RESPONSE_SLEEP);
                 }
 
                 if (gsm_logout_supports_system_hibernate (logout_dialog)) {
-                        gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                               _("_Hibernate"),
-                                               GSM_LOGOUT_RESPONSE_HIBERNATE);
+                        gsm_util_dialog_add_button (GTK_DIALOG (logout_dialog),
+                                                    _("_Hibernate"), "drive-harddisk",
+                                                    GSM_LOGOUT_RESPONSE_HIBERNATE);
                 }
 
                 if (gsm_logout_supports_reboot (logout_dialog)) {
-                        gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                               _("_Restart"),
-                                               GSM_LOGOUT_RESPONSE_REBOOT);
+                        gsm_util_dialog_add_button (GTK_DIALOG (logout_dialog),
+                                                    _("_Restart"), "view-refresh",
+                                                    GSM_LOGOUT_RESPONSE_REBOOT);
                 }
 
                 gsm_util_dialog_add_button (GTK_DIALOG (logout_dialog),
@@ -486,9 +486,9 @@ gsm_get_dialog (GsmDialogLogoutType type,
                                             GTK_RESPONSE_CANCEL);
 
                 if (gsm_logout_supports_shutdown (logout_dialog)) {
-                        gtk_dialog_add_button (GTK_DIALOG (logout_dialog),
-                                               _("_Shut Down"),
-                                               GSM_LOGOUT_RESPONSE_SHUTDOWN);
+                        gsm_util_dialog_add_button (GTK_DIALOG (logout_dialog),
+                                                    _("_Shut Down"), "system-shutdown",
+                                                    GSM_LOGOUT_RESPONSE_SHUTDOWN);
                 }
                 break;
         default:
