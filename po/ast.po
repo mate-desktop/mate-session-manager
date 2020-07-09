@@ -8,7 +8,7 @@
 # Martin Wimpress <code@flexion.org>, 2018
 # enolp <enolp@softastur.org>, 2018
 # Iñigo Varela <ivarela@softastur.org>, 2018
-# Ḷḷumex03 <tornes@opmbx.org>, 2018
+# Ḷḷumex03, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # 
 msgid ""

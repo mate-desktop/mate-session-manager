@@ -32,7 +32,7 @@ msgstr "Izberite ukaz"
 
 #: capplet/gsm-app-dialog.c:170
 msgid "second"
-msgstr ""
+msgstr "sekunda"
 
 #: capplet/gsm-app-dialog.c:172
 msgid "seconds"
@@ -258,7 +258,7 @@ msgstr "Ta seja vas prijavi na namizje MATE"
 
 #: data/mate.desktop.in:8
 msgid "Type=Application"
-msgstr ""
+msgstr "Vrsta=Program"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -477,19 +477,19 @@ msgstr "Prekliči"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Samodejno boste odjavljeni čez %dsekundo."
+msgstr[1] "Samodejno boste odjavljeni čez %dsekundi."
+msgstr[2] "Samodejno boste odjavljeni čez %d sekunde."
+msgstr[3] "Samodejno boste odjavljeni čez %dsekund. "
 
 #: mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Sistem se bo samodejno izklopil čez %dsekundo."
+msgstr[1] "Sistem se bo samodejno izklopil čez %dsekundi. "
+msgstr[2] "Sistem se bo samodejno izklopil čez %dsekund. "
+msgstr[3] "Sistem se bo samodejno izklopil čez %dsekund. "
 
 #: mate-session/gsm-logout-dialog.c:361
 #, c-format
@@ -537,7 +537,7 @@ msgstr "Ni odziva"
 #. * properties. But it could still be that SmProgram is not set.
 #: mate-session/gsm-xsmp-client.c:595
 msgid "Remembered Application"
-msgstr ""
+msgstr "Zapomnjeni programi"
 
 #: mate-session/gsm-xsmp-client.c:1262
 msgid "This program is blocking logout."
@@ -576,7 +576,7 @@ msgstr "Ne naloži uporabniško določenih programov"
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr ""
+msgstr "Onemogoči preverjanje strojne pospešitve"
 
 #: mate-session/main.c:635
 msgid " - the MATE session manager"
@@ -650,9 +650,9 @@ msgstr ""
 #: tools/mate-session-inhibit.c:189
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s zahteva argument\n"
 
 #: tools/mate-session-inhibit.c:225
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "Ni bilo mogoče izvesti %s\n"
