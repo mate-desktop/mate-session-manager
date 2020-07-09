@@ -1,3 +1,19 @@
+### mate-session-manager 1.25.0
+
+  * Build: disable Serbian translations to fix building
+  * Translations update
+  * Change some icons by other always available
+  * gsm-properties-dialog: Refactor notebook scroll event
+  * Update compilation instructions
+  * Using #include with system libraries
+  * use libegg submodule
+  * Add git.mk to generate .gitignore
+  * Add tab scrolling support for GTK3
+  * build: silent build warnings for distcheck
+  * Accept Desktop Entry Specification v1.1
+  * build: do not override the default value for MATE_COMPILE_WARNINGS
+  * build: make libglesv2 optional
+
 ### mate-session-manager 1.24.0
 
   * Translations update
