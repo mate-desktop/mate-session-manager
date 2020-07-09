@@ -113,7 +113,8 @@ si
 sk
 sl
 sq
-sr
+# disabled, see https://github.com/mate-desktop/mate-session-manager/issues/258
+# sr
 sr@latin
 sv
 ta
