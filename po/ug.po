@@ -4,21 +4,21 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Uighur (https://www.transifex.com/mate/teams/13566/ug/)\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
+"Language-Team: Uyghur (https://www.transifex.com/mate/teams/13566/ug/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ug\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: capplet/gsm-app-dialog.c:127
 msgid "Select Command"
@@ -458,12 +458,14 @@ msgstr "ۋاز كەچ"
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:361
 #, c-format

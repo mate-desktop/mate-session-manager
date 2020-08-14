@@ -4,20 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Mantas Kriaučiūnas <mantas@akl.lt>, 2018
-# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2018
-# Audrius Meskauskas, 2018
-# brennus <jonas.ska@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Moo, 2019
+# Mantas Kriaučiūnas Baltix <mantas@akl.lt>, 2020
+# brennus <jonas.ska@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Moo, 2020
+# Audrius Meskauskas, 2020
+# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Moo, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2020\n"
 "Language-Team: Lithuanian (https://www.transifex.com/mate/teams/13566/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -256,19 +256,19 @@ msgstr "Šis seansas prijungia jus prie MATE"
 
 #: data/mate.desktop.in:8
 msgid "Type=Application"
-msgstr ""
+msgstr "Tipas=Programa"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "launch;MATE;desktop;session;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr ""
+msgstr "MATE;langų;tvarkyklė;paleisti;MDM;"
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
@@ -294,13 +294,13 @@ msgstr "Pasirinkite, kokias programas paleisti jums prisijungiant"
 #. file name)!
 #: data/mate-session-properties.desktop.in:7
 msgid "mate-session-properties"
-msgstr ""
+msgstr "mate-session-properties"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
-msgstr ""
+msgstr "MATE;sesija;ypatybės;programos;prisijungti;pradėti;pradžia"
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
@@ -477,7 +477,7 @@ msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] "Būsite automatiškai atjungti po %d sekundės"
 msgstr[1] "Būsite automatiškai atjungti po %d sekundžių"
 msgstr[2] "Būsite automatiškai atjungti po %d sekundžių"
-msgstr[3] "Būsite automatiškai atjungti po %d sekundės"
+msgstr[3] "Būsite automatiškai atjungti po %d sekundžių"
 
 #: mate-session/gsm-logout-dialog.c:315
 #, c-format
@@ -486,7 +486,7 @@ msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] "Sistema automatiškai išsijungs po %d sekundės"
 msgstr[1] "Sistema automatiškai išsijungs po %d sekundžių"
 msgstr[2] "Sistema automatiškai išsijungs po %d sekundžių"
-msgstr[3] "Sistema automatiškai išsijungs po %d sekundės"
+msgstr[3] "Sistema automatiškai išsijungs po %d sekundžių"
 
 #: mate-session/gsm-logout-dialog.c:361
 #, c-format
@@ -572,7 +572,7 @@ msgstr "Neįkelti naudotojo nurodytų programų"
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr ""
+msgstr "Išjungti aparatinio spartinimo patikrinimą"
 
 #: mate-session/main.c:635
 msgid " - the MATE session manager"

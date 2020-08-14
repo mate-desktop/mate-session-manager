@@ -4,27 +4,27 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Дмитрий Михирев, 2018
-# Aleksey Kabanov <ak099@mail.ru>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Dmitry Mandryk <dmandryk@gmail.com>, 2018
-# monsta <monsta@inbox.ru>, 2018
-# Иван <pentuh@tut.by>, 2018
-# theirix <theirix@gmail.com>, 2018
-# павел назаров <nazar12101@gmail.com>, 2018
-# Dmitriy Kulikov <kulikov@dima.perm.ru>, 2018
-# Alex Putz, 2018
-# Alexei Sorokin <sor.alexei@meowr.ru>, 2018
-# AlexL <loginov.alex.valer@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Alexei Sorokin, 2020
+# Aleksey Kabanov <ak099@mail.ru>, 2020
+# AlexL <loginov.alex.valer@gmail.com>, 2020
+# Martin Wimpress <code@flexion.org>, 2020
+# Dmitry Mandryk <dmandryk@gmail.com>, 2020
+# monsta <monsta@inbox.ru>, 2020
+# Иван <pentuh@tut.by>, 2020
+# theirix <theirix@gmail.com>, 2020
+# павел назаров <nazar12101@gmail.com>, 2020
+# Dmitriy Kulikov <kulikov@dima.perm.ru>, 2020
+# Olesya Gerasimenko <gammaray@basealt.ru>, 2020
+# Anna Vyalkova <cybertailor@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: Anna Vyalkova <cybertailor@gmail.com>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +38,7 @@ msgstr "Выберите команду"
 
 #: capplet/gsm-app-dialog.c:170
 msgid "second"
-msgstr ""
+msgstr "секунда"
 
 #: capplet/gsm-app-dialog.c:172
 msgid "seconds"
@@ -75,7 +75,7 @@ msgstr "Автоматически запускаемая программа н�
 
 #: capplet/gsm-properties-dialog.c:516
 msgid "_Help"
-msgstr "_Помощь"
+msgstr "_Справка"
 
 #: capplet/gsm-properties-dialog.c:520
 msgid "_Close"
@@ -132,12 +132,14 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr ""
+msgstr "Показать спрятанные автоматически запускаемые приложения"
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
+"Если этот ключ установлен, mate-session-properties будет показывать скрытые "
+"автоматически запускаемые приложения."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -234,7 +236,7 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:64
 msgid "File Manager"
-msgstr "Менеджер файлов"
+msgstr "Файловый менеджер"
 
 #: data/org.mate.session.gschema.xml.in:65
 msgid ""
@@ -266,19 +268,19 @@ msgstr "Этот сеанс позволяет вам войти в MATE"
 
 #: data/mate.desktop.in:8
 msgid "Type=Application"
-msgstr ""
+msgstr "Type=Application"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "запуск;MATE;рабочий;сессия;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr ""
+msgstr "MATE;окна;диспетчер;запуск;MDM;"
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
@@ -304,13 +306,13 @@ msgstr "Выберите приложения, запускаемые при в�
 #. file name)!
 #: data/mate-session-properties.desktop.in:7
 msgid "mate-session-properties"
-msgstr ""
+msgstr "mate-session-properties"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
-msgstr ""
+msgstr "MATE;сессия;свойства;приложения;вход;старт;"
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
@@ -326,7 +328,7 @@ msgstr "_Правка"
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
-msgstr ""
+msgstr "_Показать скрытые"
 
 #: data/session-properties.ui:168
 msgid "Startup Programs"
@@ -390,7 +392,7 @@ msgstr "Неизвестный параметр запуска: %d"
 #: egg/eggdesktopfile.c:1363
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
-"Невозможно передать адреса документов записи 'Type=Link' файла desktop"
+"Невозможно передать URI-адреса документов записи 'Type=Link' файла desktop"
 
 #: egg/eggdesktopfile.c:1384
 msgid "Not a launchable item"
@@ -398,11 +400,11 @@ msgstr "Незапускаемый объект"
 
 #: egg/eggsmclient.c:221
 msgid "Disable connection to session manager"
-msgstr "Не соединиться с менеджером сеансов"
+msgstr "Не соединяться с менеджером сеансов"
 
 #: egg/eggsmclient.c:224
 msgid "Specify file containing saved configuration"
-msgstr "Указать файл, содержащий сохраненную конфигурацию"
+msgstr "Указать файл, содержащий сохранённую конфигурацию"
 
 #: egg/eggsmclient.c:224
 msgid "FILE"
@@ -431,7 +433,7 @@ msgstr "Значок «%s» не найден"
 
 #: mate-session/gsm-inhibit-dialog.c:581
 msgid "Unknown"
-msgstr "Неизвестный"
+msgstr "Неизвестная"
 
 #: mate-session/gsm-inhibit-dialog.c:632
 msgid "A program is still running:"
@@ -485,19 +487,19 @@ msgstr "Отмена"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Вы автоматически выйдете из системы через %d секунду"
-msgstr[1] "Вы автоматически выйдете из системы через %d секунд"
-msgstr[2] "Вы автоматически выйдете из системы через %d секунд"
-msgstr[3] "Вы автоматически выйдете из системы через %d секунд"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Система будет выключена автоматически через %d секунду"
-msgstr[1] "Система будет выключена автоматически через %d секунд"
-msgstr[2] "Система будет выключена автоматически через %d секунд"
-msgstr[3] "Система будет выключена автоматически через %d секунд"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: mate-session/gsm-logout-dialog.c:361
 #, c-format
@@ -583,7 +585,7 @@ msgstr "Не загружать выбранные пользователем п
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr ""
+msgstr "Отключить проверку аппаратного ускорения"
 
 #: mate-session/main.c:635
 msgid " - the MATE session manager"

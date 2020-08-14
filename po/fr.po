@@ -4,25 +4,25 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# mauron, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Nicolas Dobigeon <dobigeon@gmail.com>, 2018
-# Benjamin Teissier <enatheme@enatheme.org>, 2018
-# Lothaire B <translations@lothai.re>, 2018
-# Étienne Deparis <etienne@depar.is>, 2018
-# Tubuntu <tubuntu@testimonium.be>, 2018
-# Charles Monzat <c.monzat@laposte.net>, 2018
-# jeremy shields <jeremy.shields@orange.fr>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# David D, 2019
+# mauron, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Tubuntu <tubuntu@testimonium.be>, 2020
+# clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# Charles Monzat <c.monzat@laposte.net>, 2020
+# Martin Wimpress <code@flexion.org>, 2020
+# Nicolas Dobigeon <dobigeon@gmail.com>, 2020
+# Lothaire B <translations@lothai.re>, 2020
+# David D, 2020
+# Laurent Napias, 2020
+# Rox fr <roxfr@outlook.fr>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: David D, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: Rox fr <roxfr@outlook.fr>, 2020\n"
 "Language-Team: French (https://www.transifex.com/mate/teams/13566/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -129,12 +129,14 @@ msgstr "Si activé, mate-session enregistre la session automatiquement."
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr ""
+msgstr "Afficher les applications masquées au démarrage automatique"
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
+"Si elle est activée, mate-session-properties affichera les applications "
+"masquées qui s’exécutent automatiquement au démarrage"
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -305,7 +307,7 @@ msgstr "Choisir les applications à lancer à la connexion"
 #. file name)!
 #: data/mate-session-properties.desktop.in:7
 msgid "mate-session-properties"
-msgstr ""
+msgstr "mate-session-properties"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -327,7 +329,7 @@ msgstr "_Editer"
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
-msgstr ""
+msgstr "_Afficher les éléments cachés"
 
 #: data/session-properties.ui:168
 msgid "Startup Programs"
@@ -489,15 +491,15 @@ msgstr "Annuler"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Vous serez automatiquement déconnecté dans %d seconde"
-msgstr[1] "Vous serez automatiquement déconnecté dans %d secondes"
+msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Cet ordinateur va s'éteindre automatiquement dans %d seconde"
-msgstr[1] "Cet ordinateur va s'éteindre automatiquement dans %d secondes"
+msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:361
 #, c-format

@@ -4,22 +4,24 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Martin Wimpress <code@flexion.org>, 2018
-# Marco Bartolucci <nap.84@live.it>, 2018
-# Marco Z. <minaz666@gmail.com>, 2018
-# l3nn4rt, 2018
-# Dario Di Nucci <linkin88mail@gmail.com>, 2018
-# Giuseppe Pignataro <rogepix@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Enrico B. <enricobe@hotmail.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# Martin Wimpress <code@flexion.org>, 2020
+# Dario Di Nucci <linkin88mail@gmail.com>, 2020
+# Giuseppe Pignataro <rogepix@gmail.com>, 2020
+# Enrico B. <enricobe@hotmail.com>, 2020
+# Marco Bartolucci <nap.84@live.it>, 2020
+# Marco Z. <minaz666@gmail.com>, 2020
+# l3nn4rt, 2020
+# Alessandro Volturno <alelvb@inwind.it>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Enrico B. <enricobe@hotmail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -385,7 +387,7 @@ msgstr "L'applicazione non accetta documenti sulla riga di comando"
 #: egg/eggdesktopfile.c:1165
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Opzione di lancio non riconosciuta: %d"
+msgstr "Opzione di avvio non riconosciuta: %d"
 
 #: egg/eggdesktopfile.c:1363
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
@@ -410,7 +412,7 @@ msgstr "FILE"
 
 #: egg/eggsmclient.c:227
 msgid "Specify session management ID"
-msgstr "Specifica l'ID di gestione sessione"
+msgstr "Specifica l'ID della gestione della sessione"
 
 #: egg/eggsmclient.c:227
 msgid "ID"
@@ -418,7 +420,7 @@ msgstr "ID"
 
 #: egg/eggsmclient.c:248
 msgid "Session management options:"
-msgstr "Opzioni di gestione sessione:"
+msgstr "Opzioni di gestione della sessione:"
 
 #: egg/eggsmclient.c:249
 msgid "Show session management options"
@@ -485,7 +487,7 @@ msgstr "Annulla"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "La sessione verrà terminata automaticamente tra%d secondo"
+msgstr[0] "La sessione verrà terminata automaticamente tra %d secondo"
 msgstr[1] "La sessione verrà terminata automaticamente tra %d secondi"
 
 #: mate-session/gsm-logout-dialog.c:315

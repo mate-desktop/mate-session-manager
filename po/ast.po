@@ -4,20 +4,21 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xuacu Saturio <xuacusk8@gmail.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# enolp <enolp@softastur.org>, 2018
-# Iñigo Varela <ivarela@softastur.org>, 2018
-# Ḷḷumex03 <tornes@opmbx.org>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Iñigo Varela <ivarela@softastur.org>, 2020
+# Xuacu Saturio <xuacusk8@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Ḷḷumex03, 2020
+# clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# Martin Wimpress <code@flexion.org>, 2020
+# enolp <enolp@softastur.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: enolp <enolp@softastur.org>, 2020\n"
 "Language-Team: Asturian (https://www.transifex.com/mate/teams/13566/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -219,7 +220,7 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:64
 msgid "File Manager"
-msgstr "Remanador de ficheros"
+msgstr "Xestor de ficheros"
 
 #: data/org.mate.session.gschema.xml.in:65
 msgid ""
@@ -373,7 +374,7 @@ msgstr "Opción de llanzamientu non reconocida: %d"
 #: egg/eggdesktopfile.c:1363
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
-"Nun se puen pasar los URIs de documentos a entraes d'escritoriu 'Type=Link'"
+"Nun puen pasase los URIs de documentos a entraes d'escritoriu 'Type=Link'"
 
 #: egg/eggdesktopfile.c:1384
 msgid "Not a launchable item"
@@ -489,7 +490,7 @@ msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:447
 msgid "_Switch User"
-msgstr "Camudar d'U_suariu"
+msgstr "Camudar _usuariu"
 
 #: mate-session/gsm-logout-dialog.c:456
 msgid "_Log Out"

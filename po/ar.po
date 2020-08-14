@@ -4,21 +4,21 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Mubarak Qahtani <abu-q76@hotmail.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# alibacha19 <alibacha19@gmail.com>, 2018
-# Hayder Majid <cteehayder@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# مهدي السطيفي <chinoune.mehdi@gmail.com>, 2018
-# Mosaab Alzoubi <moceap@hotmail.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Mosaab Alzoubi <moceap@hotmail.com>, 2020
+# Mubarak Qahtani <abu-q76@hotmail.com>, 2020
+# Martin Wimpress <code@flexion.org>, 2020
+# مهدي السطيفي <chinoune.mehdi@gmail.com>, 2020
+# alibacha19 <alibacha19@gmail.com>, 2020
+# Hayder Majid <cteehayder@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Mosaab Alzoubi <moceap@hotmail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: Hayder Majid <cteehayder@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/mate/teams/13566/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Martin Wimpress <code@flexion.org>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Martin Wimpress <code@flexion.org>, 2020
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020\n"
 "Language-Team: Serbian (https://www.transifex.com/mate/teams/13566/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgstr "Изабери наредбу"
 
 #: capplet/gsm-app-dialog.c:170
 msgid "second"
-msgstr ""
+msgstr "секунда"
 
 #: capplet/gsm-app-dialog.c:172
 msgid "seconds"
@@ -121,12 +121,14 @@ msgstr "Ако је укључено, мејтова сесија ће сама 
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr ""
+msgstr "Приказује скривене самопокретачке програме"
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
+"Ако је укључено, својства мејтове сесије шриказаће скривене самопокретачке "
+"програме."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -252,19 +254,19 @@ msgstr "Ова сесија вас пријављује у Мејт"
 
 #: data/mate.desktop.in:8
 msgid "Type=Application"
-msgstr ""
+msgstr "Врста=Програм"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "покрени;Мејт;радна површ;сесија;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr ""
+msgstr "Мејт;прозор;управник;покретање;МДМ;"
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
@@ -290,13 +292,13 @@ msgstr "Изаберите који ће се програми покренут�
 #. file name)!
 #: data/mate-session-properties.desktop.in:7
 msgid "mate-session-properties"
-msgstr ""
+msgstr "mate-session-properties"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
-msgstr ""
+msgstr "Мејт;сесија;својства;програми;пријава;покретање;"
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
@@ -312,7 +314,7 @@ msgstr "_Уреди"
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
-msgstr ""
+msgstr "Прикажи _скривене"
 
 #: data/session-properties.ui:168
 msgid "Startup Programs"
@@ -470,17 +472,17 @@ msgstr "Откажи"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Бићете одјављени са за %d секунду"
+msgstr[1] "Бићете одјављени са за %d секунде"
+msgstr[2] "Бићете одјављени са за %d секунди"
 
 #: mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Систем ће се искључити за %d секунду"
+msgstr[1] "Систем ће се искључити за %d секунде"
+msgstr[2] "Систем ће се искључити за %d секунди"
 
 #: mate-session/gsm-logout-dialog.c:361
 #, c-format
@@ -566,7 +568,7 @@ msgstr "Не учитава програме које је задао корис
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr ""
+msgstr "Искључи проверу хардверског убрзања"
 
 #: mate-session/main.c:635
 msgid " - the MATE session manager"

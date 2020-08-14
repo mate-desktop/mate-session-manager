@@ -4,27 +4,29 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Piotr Strębski <strebski@gmail.com>, 2018
-# Bogusław B. <penknife1@gmail.com>, 2018
-# Marcin Kralka <marcink96@gmail.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# elzear <babciaroziazpogwizdowa@wp.pl>, 2018
-# Paweł Bandura <gawelx@gmail.com>, 2018
-# Wiktor Jezioro <wikjezioro@op.pl>, 2018
-# Beniamin Pawlus <kupwzywcu@o2.pl>, 2018
-# Pawel Pavroo <pavrroo@gmail.com>, 2018
-# Piotr Drąg <piotrdrag@gmail.com>, 2018
-# Przemek P <ppjg@dami.pl>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# pietrasagh <pietrasagh@gmail.com>, 2019
+# Piotr Drąg <piotrdrag@gmail.com>, 2020
+# Piotr Strębski <strebski@gmail.com>, 2020
+# Bogusław B. <penknife1@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Marcin Kralka <marcink96@gmail.com>, 2020
+# clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# Martin Wimpress <code@flexion.org>, 2020
+# elzear <babciaroziazpogwizdowa@wp.pl>, 2020
+# Paweł Bandura <gawelx@gmail.com>, 2020
+# Wiktor Jezioro <wikjezioro@op.pl>, 2020
+# Beniamin Pawlus <kupwzywcu@o2.pl>, 2020
+# Pawel Pavroo <pavrroo@gmail.com>, 2020
+# Przemek P <ppjg@dami.pl>, 2020
+# pietrasagh <pietrasagh@gmail.com>, 2020
+# Daniel Tokarzewski <bezimo@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: pietrasagh <pietrasagh@gmail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: Daniel Tokarzewski <bezimo@gmail.com>, 2020\n"
 "Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -75,11 +77,11 @@ msgstr "Polecenie startowe jest nieprawidłowe"
 
 #: capplet/gsm-properties-dialog.c:516
 msgid "_Help"
-msgstr "P_omoc"
+msgstr "_Pomoc"
 
 #: capplet/gsm-properties-dialog.c:520
 msgid "_Close"
-msgstr "Za_mknij"
+msgstr "_Zamknij"
 
 #: capplet/gsm-properties-dialog.c:560
 msgid "Enabled"
@@ -324,7 +326,7 @@ msgstr "_Usuń"
 
 #: data/session-properties.ui:117
 msgid "_Edit"
-msgstr "_Modyfikuj"
+msgstr "_Edycja"
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
@@ -487,19 +489,19 @@ msgstr "Anuluj"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Automatyczne wylogowanie nastąpi za %d sekundę"
-msgstr[1] "Automatyczne wylogowanie nastąpi za %d sekundy"
-msgstr[2] "Automatyczne wylogowanie nastąpi za %d sekund"
-msgstr[3] "Automatyczne wylogowanie nastąpi za %d sekund"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Automatyczne wyłączenie komputera nastąpi za %d sekundę"
-msgstr[1] "Automatyczne wyłączenie komputera nastąpi za %d sekundy"
-msgstr[2] "Automatyczne wyłączenie komputera nastąpi za %d sekund"
-msgstr[3] "Automatyczne wyłączenie komputera nastąpi za %d sekund"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: mate-session/gsm-logout-dialog.c:361
 #, c-format

@@ -4,23 +4,24 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# alfalb_mansil, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Diogo Oliveira <diogodesigns@gmail.com>, 2018
-# Manuela Silva <manuelarodsilva@gmail.com>, 2018
-# Carlos Moreira, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# José Vieira <jvieira33@sapo.pt>, 2018
-# Sérgio Marques <smarquespt@gmail.com>, 2019
-# Rui <xymarior@yandex.com>, 2019
+# Sérgio Marques <smarquespt@gmail.com>, 2020
+# Carlos Moreira, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# fc2d9c36d73e741383fbbf46a4aac49f_013445b, 2020
+# Martin Wimpress <code@flexion.org>, 2020
+# Diogo Oliveira <diogodesigns@gmail.com>, 2020
+# Rui <xymarior@yandex.com>, 2020
+# Manuela Silva <manuelarodsilva@gmail.com>, 2020
+# José Vieira <jvieira33@sapo.pt>, 2020
+# Guilherme Campos <guilhermemiguel97@hotmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Rui <xymarior@yandex.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: Guilherme Campos <guilhermemiguel97@hotmail.com>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/mate/teams/13566/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -261,13 +262,13 @@ msgstr "Esta sessão inicia-o no MATE"
 
 #: data/mate.desktop.in:8
 msgid "Type=Application"
-msgstr ""
+msgstr "Tipo=Aplicação"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "lançar;MATE;ambiente de trabalho;sessão;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -299,7 +300,7 @@ msgstr "Escolha as aplicações a lançar quando inicia a sessão"
 #. file name)!
 #: data/mate-session-properties.desktop.in:7
 msgid "mate-session-properties"
-msgstr ""
+msgstr "mate-session-properties"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -321,7 +322,7 @@ msgstr "_Editar"
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
-msgstr ""
+msgstr "_Mostrar ocultas"
 
 #: data/session-properties.ui:168
 msgid "Startup Programs"
@@ -482,15 +483,15 @@ msgstr "Cancelar"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Irá terminar a sessão automaticamente em %d segundo"
-msgstr[1] "Irá terminar a sessão automaticamente em %d segundos"
+msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Este sistema irá desligar automaticamente em %d segundo"
-msgstr[1] "Este sistema irá desligar automaticamente em %d segundos"
+msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:361
 #, c-format

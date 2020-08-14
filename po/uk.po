@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# zubr139, 2018
-# Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2018
-# Bohdan Kovalchuk <neostanniy@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Микола Ткач <chistomov@gmail.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# zubr139, 2020
+# Микола Ткач <chistomov@gmail.com>, 2020
+# Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2020
+# Bohdan Kovalchuk <neostanniy@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Микола Ткач <chistomov@gmail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: Bohdan Kovalchuk <neostanniy@gmail.com>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -124,14 +124,14 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr "Показати приховані програми автоматичного запуску"
+msgstr "Показати приховані програми самочинного запуску"
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
 "Якщо увімкнено, mate-session-properties  буде показувати приховані програми "
-"автозапуску."
+"самозапуску."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -153,8 +153,8 @@ msgid ""
 "automatically. If 0, automatic logout is disabled."
 msgstr ""
 "Якщо увімкнено діялоґ виходу, це встановлює час очікування у секундах, перед"
-" автоматичним виходом. При значенні, що дорівнює 0 автоматичний вихід з "
-"сеансу вимкнуто. "
+" автоматичним виходом. При значенні, що дорівнює 0 самочинний вихід з сеансу"
+" вимкнуто. "
 
 #: data/org.mate.session.gschema.xml.in:31
 msgid "Time before session is considered idle"
@@ -419,7 +419,7 @@ msgstr "Показати параметри взаємодії з керівни
 #: mate-session/gsm-inhibit-dialog.c:251
 #, c-format
 msgid "Icon '%s' not found"
-msgstr "Піктограму «%s» не знайдено"
+msgstr "Піктограми «%s» не знайдено"
 
 #: mate-session/gsm-inhibit-dialog.c:581
 msgid "Unknown"
@@ -477,19 +477,19 @@ msgstr "Скасувати"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Ви автоматично вийдете із системи через %d секунду"
-msgstr[1] "Ви автоматично вийдете із системи через %d секунди"
-msgstr[2] "Ви автоматично вийдете із системи через %d секунд"
-msgstr[3] "Ви автоматично вийдете із системи через %d секунд"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Систему буде вимкнено автоматично через %d секунду"
-msgstr[1] "Систему буде вимкнено автоматично через %d секунди"
-msgstr[2] "Систему буде вимкнено автоматично через %d секунд"
-msgstr[3] "Систему буде вимкнено автоматично через %d секунд"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: mate-session/gsm-logout-dialog.c:361
 #, c-format

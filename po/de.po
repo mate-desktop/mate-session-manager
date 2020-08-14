@@ -4,23 +4,24 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Ettore Atalan <atalanttore@googlemail.com>, 2018
-# Moritz Bruder <muesli4@gmail.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# qazwsxedc <qazwsxedc@gmx.net>, 2018
-# Wolfgang Ulbrich <mate@raveit.de>, 2018
-# Julian Rüger <jr98@gmx.net>, 2018
-# valsu <valsu@hylia.de>, 2018
-# Tobias Bannert <tobannert@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Ettore Atalan <atalanttore@googlemail.com>, 2020
+# Moritz Bruder <muesli4@gmail.com>, 2020
+# Tobias Bannert <tobannert@gmail.com>, 2020
+# clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# Martin Wimpress <code@flexion.org>, 2020
+# qazwsxedc <qazwsxedc@gmx.net>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Julian Rüger <jr98@gmx.net>, 2020
+# valsu <valsu@hylia.de>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: valsu <valsu@hylia.de>, 2020\n"
 "Language-Team: German (https://www.transifex.com/mate/teams/13566/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -484,15 +485,15 @@ msgstr "Abbrechen"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Sie werden in %d Sekunde automatisch abgemeldet"
-msgstr[1] "Sie werden in %d Sekunden automatisch abgemeldet"
+msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Das System wird in %d Sekunde automatisch heruntergefahren"
-msgstr[1] "Das System wird in %d Sekunden automatisch heruntergefahren"
+msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:361
 #, c-format

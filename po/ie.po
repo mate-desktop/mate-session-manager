@@ -4,15 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Caarmi, 2019
+# clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# Caarmi, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.23.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 13:25+0100\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Caarmi, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:58+0000\n"
+"Last-Translator: Caarmi, 2020\n"
 "Language-Team: Interlingue (https://www.transifex.com/mate/teams/13566/ie/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +36,7 @@ msgstr "secondes"
 #: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:452
 #: mate-session/gsm-logout-dialog.c:485
 msgid "_Cancel"
-msgstr "A_nullar"
+msgstr "_Anullar"
 
 #: capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
@@ -67,7 +68,7 @@ msgstr "Au_xilie"
 
 #: capplet/gsm-properties-dialog.c:520
 msgid "_Close"
-msgstr "_Cluder"
+msgstr "_Clúder"
 
 #: capplet/gsm-properties-dialog.c:560
 msgid "Enabled"
@@ -207,7 +208,7 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:64
 msgid "File Manager"
-msgstr "Gerentiator de files"
+msgstr "Gerente de files"
 
 #: data/org.mate.session.gschema.xml.in:65
 msgid ""
@@ -293,7 +294,7 @@ msgstr "_Remover"
 
 #: data/session-properties.ui:117
 msgid "_Edit"
-msgstr "_Modificar"
+msgstr "_Redacter"
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
@@ -381,7 +382,7 @@ msgstr "FILE"
 
 #: egg/eggsmclient.c:227
 msgid "Specify session management ID"
-msgstr "Provider un ID de gerentie de session"
+msgstr "Monstrar ID de gerentie de session"
 
 #: egg/eggsmclient.c:227
 msgid "ID"
@@ -393,7 +394,7 @@ msgstr "Optiones de gerentie de session:"
 
 #: egg/eggsmclient.c:249
 msgid "Show session management options"
-msgstr "Monstra optiones de gerentie de session"
+msgstr "Monstrar optiones de gerentie de session"
 
 #: mate-session/gsm-inhibit-dialog.c:251
 #, c-format
@@ -456,15 +457,15 @@ msgstr "Anullar"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Li session va cluder automaticmen pos %d seconde"
-msgstr[1] "Li session va cluder automaticmen pos %d secondes"
+msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:315
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Li sistema va extinter se automaticmen pos %d seconde"
-msgstr[1] "Li sistema va extinter se automaticmen pos %d secondes"
+msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:361
 #, c-format
