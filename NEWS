@@ -1,3 +1,12 @@
+### mate-session-manager 1.24.1
+
+  * Translations update
+  * Using #include with system libraries
+  * build: silent build warnings for distcheck
+  * Accept Desktop Entry Specification v1.1
+  * use default MATE_COMPILE_WARNINGS for stable branch
+  * build: make libglesv2 optional
+
 ### mate-session-manager 1.24.0
 
   * Translations update
