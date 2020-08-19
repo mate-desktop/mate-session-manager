@@ -23,8 +23,6 @@ mate_session_SOURCES =				\
 	gsm-xsmp-client.c			\
 	gsm-dbus-client.h			\
 	gsm-dbus-client.c			\
-	gsm-marshal.h				\
-	gsm-marshal.c				\
 	gsm-consolekit.c			\
 	gsm-consolekit.h			\
 	gsm-systemd.c 				\
@@ -55,15 +53,16 @@ mate_session_SOURCES =				\
 	gsm-session-save.c			\
 	gsm-session-save.h			\
 	gsm-xsmp-server.c			\
-	gsm-xsmp-server.h
+	gsm-xsmp-server.h			\
+	$(BUILT_SOURCES)
 
 mate_session_CPPFLAGS =			\
 	$(AM_CPPFLAGS)				\
-	$(X11_CFLAGS)                           \
+	$(X11_CFLAGS)				\
 	$(SM_CFLAGS)				\
 	$(ICE_CFLAGS)				\
 	$(XEXT_CFLAGS)				\
-	-I$(top_srcdir)/mate-submodules/libegg			\
+	-I$(top_srcdir)/mate-submodules/libegg	\
 	-DLOCALE_DIR=\""$(datadir)/locale"\"	\
 	-DDATA_DIR=\""$(datadir)/mate-session"\" \
 	-DLIBEXECDIR=\"$(libexecdir)\"		\
@@ -72,7 +71,7 @@ mate_session_CPPFLAGS =			\
 
 mate_session_LDADD =				\
 	libgsmutil.la 				\
-	$(X11_LIBS)                             \
+	$(X11_LIBS)				\
 	$(top_builddir)/mate-submodules/libegg/libegg.la \
 	$(SM_LIBS)				\
 	$(ICE_LIBS)				\
@@ -84,11 +83,11 @@ mate_session_LDADD =				\
 	$(LIBELOGIND_LIBS)			\
 	$(EXECINFO_LIBS)
 
-libgsmutil_la_SOURCES =				\
-	gsm-util.c				\
+libgsmutil_la_SOURCES =		\
+	gsm-util.c		\
 	gsm-util.h
 
-libgsmutil_la_LIBADD = 				\
+libgsmutil_la_LIBADD = 		\
 	$(MATE_SESSION_LIBS)
 
 test_inhibit_SOURCES = test-inhibit.c
@@ -97,18 +96,11 @@ test_inhibit_LDADD = $(MATE_SESSION_LIBS)
 test_client_dbus_SOURCES = test-client-dbus.c
 test_client_dbus_LDADD = $(MATE_SESSION_LIBS)
 
-gsm-marshal.c: gsm-marshal.list
-	$(AM_V_GEN)echo "#include \"gsm-marshal.h\"" > $@ && \
-	$(GLIB_GENMARSHAL) $< --prefix=gsm_marshal --body >> $@
-
-gsm-marshal.h: gsm-marshal.list
-	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --prefix=gsm_marshal --header > $@
-
 org.gnome.SessionManager.h: org.gnome.SessionManager.xml Makefile.am
 	$(AM_V_GEN) gdbus-codegen --interface-prefix org.gnome.SessionManager. \
 	--generate-c-code org.gnome.SessionManager \
 	--c-namespace Gsm \
-        --annotate "org.gnome.SessionManager" "org.gtk.GDBus.C.Name" ExportedManager \
+	--annotate "org.gnome.SessionManager" "org.gtk.GDBus.C.Name" ExportedManager \
 	$(srcdir)/org.gnome.SessionManager.xml
 org.gnome.SessionManager.c: org.gnome.SessionManager.h
 	@: # generated as a side-effect
@@ -117,7 +109,7 @@ org.gnome.SessionManager.Client.h: org.gnome.SessionManager.Client.xml Makefile.
 	$(AM_V_GEN) gdbus-codegen --interface-prefix org.gnome.SessionManager.Client. \
 	--generate-c-code org.gnome.SessionManager.Client \
 	--c-namespace Gsm \
-        --annotate "org.gnome.SessionManager.Client" "org.gtk.GDBus.C.Name" ExportedClient \
+	--annotate "org.gnome.SessionManager.Client" "org.gtk.GDBus.C.Name" ExportedClient \
 	$(srcdir)/org.gnome.SessionManager.Client.xml
 org.gnome.SessionManager.Client.c: org.gnome.SessionManager.Client.h
 	@: # generated as a side-effect
@@ -126,7 +118,7 @@ org.gnome.SessionManager.ClientPrivate.h: org.gnome.SessionManager.ClientPrivate
 	$(AM_V_GEN) gdbus-codegen --interface-prefix org.gnome.SessionManager.ClientPrivate. \
 	--generate-c-code org.gnome.SessionManager.ClientPrivate \
 	--c-namespace Gsm \
-        --annotate "org.gnome.SessionManager.ClientPrivate" "org.gtk.GDBus.C.Name" ExportedClientPrivate \
+	--annotate "org.gnome.SessionManager.ClientPrivate" "org.gtk.GDBus.C.Name" ExportedClientPrivate \
 	$(srcdir)/org.gnome.SessionManager.ClientPrivate.xml
 org.gnome.SessionManager.ClientPrivate.c: org.gnome.SessionManager.ClientPrivate.h
 	@: # generated as a side-effect
@@ -135,7 +127,7 @@ org.gnome.SessionManager.App.h: org.gnome.SessionManager.App.xml Makefile.am
 	$(AM_V_GEN) gdbus-codegen --interface-prefix org.gnome.SessionManager.App. \
 	--generate-c-code org.gnome.SessionManager.App \
 	--c-namespace Gsm \
-        --annotate "org.gnome.SessionManager.App" "org.gtk.GDBus.C.Name" ExportedApp \
+	--annotate "org.gnome.SessionManager.App" "org.gtk.GDBus.C.Name" ExportedApp \
 	$(srcdir)/org.gnome.SessionManager.App.xml
 org.gnome.SessionManager.App.c: org.gnome.SessionManager.App.h
 	@: # generated as a side-effect
@@ -144,7 +136,7 @@ org.gnome.SessionManager.Inhibitor.h: org.gnome.SessionManager.Inhibitor.xml Mak
 	$(AM_V_GEN) gdbus-codegen --interface-prefix org.gnome.SessionManager.Inhibitor. \
 	--generate-c-code org.gnome.SessionManager.Inhibitor \
 	--c-namespace Gsm \
-        --annotate "org.gnome.SessionManager.Inhibitor" "org.gtk.GDBus.C.Name" ExportedInhibitor \
+	--annotate "org.gnome.SessionManager.Inhibitor" "org.gtk.GDBus.C.Name" ExportedInhibitor \
 	$(srcdir)/org.gnome.SessionManager.Inhibitor.xml
 org.gnome.SessionManager.Inhibitor.c: org.gnome.SessionManager.Inhibitor.h
 	@: # generated as a side-effect
@@ -153,7 +145,7 @@ org.gnome.SessionManager.Presence.h: org.gnome.SessionManager.Presence.xml Makef
 	$(AM_V_GEN) gdbus-codegen --interface-prefix org.gnome.SessionManager.Presence. \
 	--generate-c-code org.gnome.SessionManager.Presence \
 	--c-namespace Gsm \
-        --annotate "org.gnome.SessionManager.Presence" "org.gtk.GDBus.C.Name" ExportedPresence \
+	--annotate "org.gnome.SessionManager.Presence" "org.gtk.GDBus.C.Name" ExportedPresence \
 	$(srcdir)/org.gnome.SessionManager.Presence.xml
 org.gnome.SessionManager.Presence.c: org.gnome.SessionManager.Presence.h
 	@: # generated as a side-effect
@@ -176,7 +168,6 @@ BUILT_SOURCES =			\
 
 EXTRA_DIST =						\
 	README						\
-	gsm-marshal.list				\
 	org.gnome.SessionManager.xml			\
 	org.gnome.SessionManager.App.xml		\
 	org.gnome.SessionManager.Client.xml		\

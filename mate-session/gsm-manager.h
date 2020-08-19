@@ -114,6 +114,7 @@ void                gsm_manager_start                          (GsmManager     *
 
 /* exported methods */
 
+#if 0
 gboolean            gsm_manager_register_client                (GsmManager            *manager,
                                                                 const char            *app_id,
                                                                 const char            *client_startup_id,
@@ -180,6 +181,7 @@ gboolean            gsm_manager_is_session_running             (GsmManager *mana
 
 void                _gsm_manager_set_renderer                  (GsmManager     *manager,
                                                                 const char     *renderer);
+#endif
 
 G_END_DECLS
 
