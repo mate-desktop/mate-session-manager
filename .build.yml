@@ -67,7 +67,7 @@ requires:
     - make
     - mate-common
     - mesa-libGLES-devel
-    - pangox-compat-devel
+    - pango-devel
     - redhat-rpm-config
     - systemd-devel
     - xmlto
