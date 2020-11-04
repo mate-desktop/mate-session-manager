@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2006 Vincent Untz
  * Copyright (C) 2008 Red Hat, Inc.
+ * Copyright (C) 2020 Gordon N. Squash.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -20,6 +21,7 @@
  *
  * Authors:
  *	Vincent Untz <vuntz@gnome.org>
+ *      Gordon N. Squash
  */
 
 #include <config.h>
@@ -51,14 +53,20 @@ typedef enum {
 
 struct _GsmLogoutDialog
 {
-        GtkMessageDialog     parent;
+        GtkDialog            parent;
         GsmDialogLogoutType  type;
 #ifdef HAVE_SYSTEMD
         GsmSystemd          *systemd;
 #endif
         GsmConsolekit       *consolekit;
 
+        GtkWidget           *primary_label;
+        GtkWidget           *secondary_label;
+
+        GtkWidget           *progress_overlay;
         GtkWidget           *progressbar;
+        GtkStyleProvider    *progressbar_style_provider;
+        GtkWidget           *progress_label;
 
         int                  timeout;
         unsigned int         timeout_id;
@@ -76,62 +84,20 @@ static void gsm_logout_dialog_destroy  (GsmLogoutDialog *logout_dialog,
 static void gsm_logout_dialog_show     (GsmLogoutDialog *logout_dialog,
                                         gpointer         data);
 
+static void gsm_logout_dialog_progress_label_size_allocate (GtkWidget       *label,
+                                                            GdkRectangle    *allocation,
+                                                            gpointer         data);
+
 enum {
         PROP_0,
         PROP_MESSAGE_TYPE
 };
 
-G_DEFINE_TYPE (GsmLogoutDialog, gsm_logout_dialog, GTK_TYPE_MESSAGE_DIALOG);
-
-static void
-gsm_logout_dialog_set_property (GObject      *object,
-                                guint         prop_id,
-                                const GValue *value,
-                                GParamSpec   *pspec)
-{
-        switch (prop_id) {
-        case PROP_MESSAGE_TYPE:
-                break;
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-gsm_logout_dialog_get_property (GObject     *object,
-                                guint        prop_id,
-                                GValue      *value,
-                                GParamSpec  *pspec)
-{
-        switch (prop_id) {
-        case PROP_MESSAGE_TYPE:
-                g_value_set_enum (value, GTK_MESSAGE_WARNING);
-                break;
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
+G_DEFINE_TYPE (GsmLogoutDialog, gsm_logout_dialog, GTK_TYPE_DIALOG);
 
 static void
 gsm_logout_dialog_class_init (GsmLogoutDialogClass *klass)
 {
-        GObjectClass *gobject_class;
-
-        gobject_class = G_OBJECT_CLASS (klass);
-
-        /* This is a workaround to avoid a stupid crash: libmateui
-         * listens for the "show" signal on all GtkMessageDialog and
-         * gets the "message-type" of the dialogs. We will crash when
-         * it accesses this property if we don't override it since we
-         * didn't define it. */
-        gobject_class->set_property = gsm_logout_dialog_set_property;
-        gobject_class->get_property = gsm_logout_dialog_get_property;
-
-        g_object_class_override_property (gobject_class,
-                                          PROP_MESSAGE_TYPE,
-                                          "message-type");
 }
 
 static void
@@ -367,12 +333,11 @@ gsm_logout_dialog_timeout (gpointer data)
 
         gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (logout_dialog->progressbar),
                                        logout_dialog->timeout / 60.0);
-        gtk_progress_bar_set_text (GTK_PROGRESS_BAR (logout_dialog->progressbar),
-                                   seconds_warning);
+        gtk_label_set_text (GTK_LABEL (logout_dialog->progress_label),
+                            seconds_warning);
 
-        gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (logout_dialog),
-                                                  secondary_text,
-                                                  NULL);
+        gtk_label_set_text (GTK_LABEL (logout_dialog->secondary_label),
+                            secondary_text);
 
         logout_dialog->timeout--;
 
@@ -404,10 +369,40 @@ gsm_logout_dialog_set_timeout (GsmLogoutDialog *logout_dialog)
                                                            logout_dialog);
         }
         else {
-                gtk_widget_hide (logout_dialog->progressbar);
+                gtk_widget_hide (logout_dialog->progress_overlay);
         }
 
         g_object_unref (settings);
+}
+
+/*
+ * This function is a callback which is called when the `size-allocate` signal
+ * is emitted by our custom progress label.  This function determines the new
+ * height of the progress label and then resizes the progress bar trough and
+ * indicator to match the height of the label text.  This is necessary because
+ * otherwise there is no guarantee that the label text will fit within the
+ * constraints of the progress trough, and if the text does not fit within the
+ * trough, the text will "fall off" the progress bar, which looks ugly.
+ */
+static void
+gsm_logout_dialog_progress_label_size_allocate (GtkWidget       *label,
+                                                GdkRectangle    *allocation,
+                                                gpointer         data)
+{
+  GsmLogoutDialog *logout_dialog = GSM_LOGOUT_DIALOG (data);
+  char            *css_text;
+
+  css_text = g_strdup_printf ("progressbar trough,\n"
+                              "progressbar progress\n"
+                              "{\n"
+                              "  min-height: %dpx;\n"
+                              "}\n",
+                              allocation->height);
+
+  gtk_css_provider_load_from_data (GTK_CSS_PROVIDER (logout_dialog->progressbar_style_provider),
+                                   css_text, -1, NULL);
+
+  g_free (css_text);
 }
 
 static GtkWidget *
@@ -416,7 +411,9 @@ gsm_get_dialog (GsmDialogLogoutType type,
                 guint32             activate_time)
 {
         GsmLogoutDialog *logout_dialog;
-        GtkWidget       *hbox;
+        GtkWidget       *grid;
+        GtkWidget       *dialog_icon;
+        GtkSizeGroup    *size_group;
         const char      *primary_text;
         const char      *icon_name;
 
@@ -429,6 +426,7 @@ gsm_get_dialog (GsmDialogLogoutType type,
         current_dialog = logout_dialog;
 
         gtk_window_set_title (GTK_WINDOW (logout_dialog), "");
+        gtk_window_set_resizable (GTK_WINDOW (logout_dialog), FALSE);
 
         logout_dialog->type = type;
 
@@ -495,19 +493,64 @@ gsm_get_dialog (GsmDialogLogoutType type,
                 g_assert_not_reached ();
         }
 
-        hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+        /* Set up the dialog with all the necessary user interface jazz. */
+        grid = gtk_grid_new ();
+        gtk_grid_set_row_spacing     (GTK_GRID (grid), 15);
+        gtk_grid_set_column_spacing  (GTK_GRID (grid), 10);
+        gtk_widget_set_margin_top    (grid, 5);
+        gtk_widget_set_margin_start  (grid, 5);
+        gtk_widget_set_margin_bottom (grid, 15);
+        gtk_widget_set_margin_end    (grid, 5);
+
+        dialog_icon = gtk_image_new_from_icon_name (icon_name,
+                                                    GTK_ICON_SIZE_DIALOG);
+        gtk_widget_set_valign (dialog_icon, GTK_ALIGN_START);
+        gtk_widget_set_halign (dialog_icon, GTK_ALIGN_START);
+        gtk_grid_attach (GTK_GRID (grid), dialog_icon,
+                         0, 0, 1, 3);
+
+        logout_dialog->primary_label = gtk_label_new (primary_text);
+        gtk_widget_set_halign (logout_dialog->primary_label, GTK_ALIGN_START);
+        gtk_widget_set_hexpand (logout_dialog->primary_label, TRUE);
+        gtk_grid_attach (GTK_GRID (grid), logout_dialog->primary_label,
+                         1, 0, 1, 1);
+        logout_dialog->secondary_label = gtk_label_new (NULL);
+        gtk_widget_set_halign (logout_dialog->secondary_label, GTK_ALIGN_START);
+        gtk_widget_set_hexpand (logout_dialog->secondary_label, TRUE);
+        gtk_grid_attach (GTK_GRID (grid), logout_dialog->secondary_label,
+                         1, 1, 1, 1);
+
+        logout_dialog->progress_overlay = gtk_overlay_new ();
+        gtk_widget_set_hexpand (logout_dialog->progress_overlay, TRUE);
         logout_dialog->progressbar = gtk_progress_bar_new ();
-        gtk_progress_bar_set_show_text (GTK_PROGRESS_BAR (logout_dialog->progressbar), TRUE);
         gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (logout_dialog->progressbar), 1.0);
-        gtk_box_pack_start (GTK_BOX (hbox),
-                            logout_dialog->progressbar,
-                            TRUE, TRUE, 12);
-        gtk_widget_show_all (hbox);
-        gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (logout_dialog))), hbox);
+        gtk_container_add (GTK_CONTAINER (logout_dialog->progress_overlay),
+                           logout_dialog->progressbar);
+
+        logout_dialog->progress_label = gtk_label_new (NULL);
+        gtk_widget_set_valign (logout_dialog->progress_label, GTK_ALIGN_CENTER);
+        gtk_overlay_add_overlay (GTK_OVERLAY (logout_dialog->progress_overlay),
+                                 logout_dialog->progress_label);
+        size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+        gtk_size_group_add_widget (size_group, logout_dialog->progressbar);
+        gtk_size_group_add_widget (size_group, logout_dialog->progress_label);
+        gtk_grid_attach (GTK_GRID (grid), logout_dialog->progress_overlay,
+                         0, 2, 2, 1);
+        gtk_widget_show_all (grid);
+        gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (logout_dialog))),
+                           grid);
+
+        logout_dialog->progressbar_style_provider = GTK_STYLE_PROVIDER (gtk_css_provider_new ());
+        gtk_style_context_add_provider (gtk_widget_get_style_context (logout_dialog->progressbar),
+                                        logout_dialog->progressbar_style_provider,
+                                        GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+        g_signal_connect (logout_dialog->progress_label,
+                          "size-allocate",
+                          G_CALLBACK (gsm_logout_dialog_progress_label_size_allocate),
+                          logout_dialog);
 
         gtk_window_set_icon_name (GTK_WINDOW (logout_dialog), icon_name);
         gtk_window_set_position (GTK_WINDOW (logout_dialog), GTK_WIN_POS_CENTER_ALWAYS);
-        gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (logout_dialog), primary_text);
 
         gtk_dialog_set_default_response (GTK_DIALOG (logout_dialog),
                                          logout_dialog->default_response);

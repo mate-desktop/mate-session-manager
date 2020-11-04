@@ -1,6 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
  *
  * Copyright (C) 2006 Vincent Untz
+ * Copyright (C) 2020 Gordon N. Squash.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -19,6 +20,7 @@
  *
  * Authors:
  *	Vincent Untz <vuntz@gnome.org>
+ *      Gordon N. Squash
  */
 
 #ifndef __GSM_LOGOUT_DIALOG_H__
@@ -29,7 +31,7 @@
 G_BEGIN_DECLS
 
 #define GSM_TYPE_LOGOUT_DIALOG         (gsm_logout_dialog_get_type ())
-G_DECLARE_FINAL_TYPE (GsmLogoutDialog, gsm_logout_dialog, GSM, LOGOUT_DIALOG, GtkMessageDialog)
+G_DECLARE_FINAL_TYPE (GsmLogoutDialog, gsm_logout_dialog, GSM, LOGOUT_DIALOG, GtkDialog)
 
 enum
 {
