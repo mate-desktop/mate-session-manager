@@ -1,7 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
  *
  * Copyright (C) 2006 Vincent Untz
- * Copyright (C) 2020 Gordon N. Squash.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -20,7 +19,6 @@
  *
  * Authors:
  *	Vincent Untz <vuntz@gnome.org>
- *      Gordon N. Squash
  */
 
 #ifndef __GSM_LOGOUT_DIALOG_H__
