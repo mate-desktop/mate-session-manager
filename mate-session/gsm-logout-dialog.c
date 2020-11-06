@@ -409,6 +409,7 @@ gsm_get_dialog (GsmDialogLogoutType type,
                 guint32             activate_time)
 {
         GsmLogoutDialog *logout_dialog;
+        GtkWidget       *button_box;
         GtkWidget       *grid;
         GtkWidget       *dialog_icon;
         GtkSizeGroup    *size_group;
@@ -425,6 +426,13 @@ gsm_get_dialog (GsmDialogLogoutType type,
 
         gtk_window_set_title (GTK_WINDOW (logout_dialog), "");
         gtk_window_set_resizable (GTK_WINDOW (logout_dialog), FALSE);
+
+        /*
+         * The following 2 lines are to stretch out the buttons at the bottom
+         * of the dialog, as is in vogue in GTK+ 3:
+         */
+        button_box = gtk_dialog_get_action_area (GTK_DIALOG (logout_dialog));
+        gtk_button_box_set_layout (GTK_BUTTON_BOX (button_box), GTK_BUTTONBOX_EXPAND);
 
         logout_dialog->type = type;
 
