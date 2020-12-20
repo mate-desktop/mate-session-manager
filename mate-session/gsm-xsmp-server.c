@@ -509,9 +509,9 @@ update_iceauthority (GsmXsmpServer *server,
         }
 
         for (e = entries; e; e = e->next) {
-                IceAuthFileEntry *auth_entry = e->data;
-                IceWriteAuthFileEntry (fp, auth_entry);
-                IceFreeAuthFileEntry (auth_entry);
+                IceAuthFileEntry *auth_file_entry = e->data;
+                IceWriteAuthFileEntry (fp, auth_file_entry);
+                IceFreeAuthFileEntry (auth_file_entry);
         }
         g_slist_free (entries);
 

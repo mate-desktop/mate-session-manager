@@ -28,8 +28,6 @@
 
 #include "gsp-app-manager.h"
 
-static GspAppManager *manager = NULL;
-
 typedef struct {
         char         *dir;
         int           index;
@@ -599,6 +597,8 @@ gsp_app_manager_find_app_with_basename (GspAppManager *manager,
 GspAppManager *
 gsp_app_manager_get (void)
 {
+        static GspAppManager *manager = NULL;
+
         if (manager == NULL) {
                 manager = g_object_new (GSP_TYPE_APP_MANAGER, NULL);
                 return manager;
