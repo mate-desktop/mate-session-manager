@@ -2172,13 +2172,13 @@ on_xsmp_client_register_request (GsmXSMPClient *client,
         if (IS_STRING_EMPTY (*id)) {
                 new_id = gsm_util_generate_startup_id ();
         } else {
-                GsmClient *client;
+                GsmClient *sm_client;
 
-                client = (GsmClient *)gsm_store_find (priv->clients,
-                                                      (GsmStoreFunc)_client_has_startup_id,
-                                                      *id);
+                sm_client = (GsmClient *)gsm_store_find (priv->clients,
+                                                         (GsmStoreFunc)_client_has_startup_id,
+                                                         *id);
                 /* We can't have two clients with the same id. */
-                if (client != NULL) {
+                if (sm_client != NULL) {
                         goto out;
                 }
 
