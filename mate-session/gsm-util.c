@@ -38,6 +38,33 @@
 
 static gchar *_saved_session_dir = NULL;
 
+gchar **
+gsm_get_screen_locker_command (void)
+{
+        const char *screen_locker_command[] = {
+                "mate-screensaver-command --lock",
+                "xscreensaver-command -lock",
+                NULL
+        };
+        gchar **screen_locker_argv = NULL;
+        gsize   i;
+
+        for (i = 0; screen_locker_command[i] != NULL && screen_locker_argv == NULL; i++) {
+                gchar **argv;
+                char   *path;
+
+                argv = g_strsplit (screen_locker_command [i], " ", -1);
+                path = g_find_program_in_path (argv[0]);
+                if (path)
+                        screen_locker_argv = g_strdupv (argv);
+
+                g_free (path);
+                g_strfreev (argv);
+        }
+
+        return screen_locker_argv;
+}
+
 char *
 gsm_util_find_desktop_file_for_app_name (const char *name,
                                          char      **autostart_dirs)

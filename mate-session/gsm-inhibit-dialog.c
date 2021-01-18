@@ -91,13 +91,24 @@ G_DEFINE_TYPE (GsmInhibitDialog, gsm_inhibit_dialog, GTK_TYPE_DIALOG)
 static void
 lock_screen (GsmInhibitDialog *dialog)
 {
-        GError *error;
-        error = NULL;
-        g_spawn_command_line_async ("mate-screensaver-command --lock", &error);
-        if (error != NULL) {
-                g_warning ("Couldn't lock screen: %s", error->message);
-                g_error_free (error);
+        gchar **screen_locker_command;
+
+        if ((screen_locker_command = gsm_get_screen_locker_command ()) != NULL) {
+                GError *error = NULL;
+
+                g_spawn_async (NULL, screen_locker_command, NULL, G_SPAWN_DEFAULT,
+                               NULL, NULL, NULL, &error);
+
+                if (error != NULL) {
+                        g_warning ("Couldn't lock screen: %s", error->message);
+                        g_error_free (error);
+                }
+
+        } else {
+                g_warning ("Couldn't find any screen locker");
         }
+
+        g_strfreev (screen_locker_command);
 }
 
 static void
