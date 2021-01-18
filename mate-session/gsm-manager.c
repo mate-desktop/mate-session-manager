@@ -1224,21 +1224,33 @@ sleep_lock_is_enabled (GsmManager *manager)
 static void
 manager_perhaps_lock (GsmManager *manager)
 {
-        GError   *error;
-        gboolean  ret;
+        gchar **screen_locker_command;
 
-        /* only lock if mate-screensaver is set to lock */
-        if (!sleep_lock_is_enabled (manager)) {
-                return;
+        if ((screen_locker_command = gsm_get_screen_locker_command ()) != NULL) {
+                GError *error = NULL;
+
+                /* only lock if mate-screensaver is set to lock */
+                if (!g_strcmp0 (screen_locker_command[0], "mate-screensaver-command") &&
+                    !sleep_lock_is_enabled (manager)) {
+                        goto clear_screen_locker_command;
+                }
+
+                /* do this sync to ensure it's on the screen when we start suspending */
+                g_spawn_sync (NULL, screen_locker_command, NULL, G_SPAWN_DEFAULT,
+                              NULL, NULL, NULL, NULL, NULL, &error);
+
+                if (error) {
+                        g_warning ("Couldn't lock screen: %s", error->message);
+                        g_error_free (error);
+                }
+
+        } else {
+                g_warning ("Couldn't find any screen locker");
         }
 
-        /* do this sync to ensure it's on the screen when we start suspending */
-        error = NULL;
-        ret = g_spawn_command_line_sync ("mate-screensaver-command --lock", NULL, NULL, NULL, &error);
-        if (!ret) {
-                g_warning ("Couldn't lock screen: %s", error->message);
-                g_error_free (error);
-        }
+clear_screen_locker_command:
+
+        g_strfreev (screen_locker_command);
 }
 
 static void

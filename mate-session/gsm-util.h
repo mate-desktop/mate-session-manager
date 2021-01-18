@@ -29,6 +29,8 @@ extern "C" {
 
 #define IS_STRING_EMPTY(x) ((x)==NULL||(x)[0]=='\0')
 
+gchar**     gsm_get_screen_locker_command           (void);
+
 char *      gsm_util_find_desktop_file_for_app_name (const char  *app_name,
                                                      char       **dirs);
 
