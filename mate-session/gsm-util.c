@@ -42,7 +42,6 @@ gchar **
 gsm_get_screen_locker_command (void)
 {
         const char *screen_locker_command[] = {
-                "mate-screensaver-command --lock",
                 "xscreensaver-command -lock",
                 NULL
         };
