@@ -224,7 +224,7 @@ AC_PATH_PROG([XSLTPROC], [xsltproc])
 dnl ====================================================================
 dnl Language Support
 dnl ====================================================================
-GETTEXT_PACKAGE=mate-session-manager
+GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE",
                    [The gettext translation domain])
 AC_SUBST(GETTEXT_PACKAGE)
