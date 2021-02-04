@@ -74,7 +74,7 @@ int main(int argc, char* argv[])
 
 	error = NULL;
 
-	if (!gtk_init_with_args(&argc, &argv, " - MATE Session Properties", options, GETTEXT_PACKAGE, &error))
+	if (!gtk_init_with_args(&argc, &argv, _("- MATE Session Properties"), options, GETTEXT_PACKAGE, &error))
 	{
 		g_warning("Unable to start: %s", error->message);
 		g_error_free(error);
