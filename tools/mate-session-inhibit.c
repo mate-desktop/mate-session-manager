@@ -24,7 +24,9 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#ifdef ENABLE_NLS
 #include <locale.h>
+#endif /* ENABLE_NLS */
 
 #include <glib.h>
 #include <glib/gi18n.h>
@@ -149,10 +151,12 @@ int main (int argc, char *argv[])
   g_set_prgname (prgname);
   g_free (prgname);
 
+#ifdef ENABLE_NLS
   setlocale (LC_ALL, "");
   bindtextdomain (GETTEXT_PACKAGE, LOCALE_DIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
+#endif /* ENABLE_NLS */
 
   for (i = 1; i < argc; i++)
     {

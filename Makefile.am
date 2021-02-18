@@ -1,5 +1,9 @@
+if USE_NLS
+PO_SUBDIR = po
+endif
+
 SUBDIRS = \
-	po \
+	$(PO_SUBDIR) \
 	mate-submodules \
 	mate-session \
 	capplet \

@@ -19,5 +19,5 @@ mate-session/gsm-xsmp-client.c
 mate-session/gsm-xsmp-server.c
 mate-session/gsm-util.c
 mate-session/main.c
-tools/mate-session-save.c
 tools/mate-session-inhibit.c
+tools/mate-session-save.c

@@ -17,8 +17,10 @@ AC_STDC_HEADERS
 AM_PROG_LIBTOOL
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
-AM_GNU_GETTEXT_VERSION([0.19.8])
 AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_CONDITIONAL([USE_NLS], [test "x${USE_NLS}" = "xyes"])
+
 dnl make sure we keep ACLOCAL_FLAGS around for maintainer builds to work
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 
@@ -375,5 +377,6 @@ echo "
         XSync support:            ${have_xsync}
         XTest support:            ${have_xtest}
         Build documentation:      ${enable_docbook_docs}
+        Native Language support:  ${USE_NLS}
 
 "

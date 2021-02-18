@@ -68,9 +68,11 @@ int main(int argc, char* argv[])
 	GError* error;
 	GtkWidget* dialog;
 
+#ifdef ENABLE_NLS
 	bindtextdomain(GETTEXT_PACKAGE, LOCALE_DIR);
 	bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
 	textdomain(GETTEXT_PACKAGE);
+#endif /* ENABLE_NLS */
 
 	error = NULL;
 
