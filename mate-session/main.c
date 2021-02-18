@@ -21,7 +21,6 @@
 
 #include <config.h>
 
-#include <libintl.h>
 #include <signal.h>
 #include <stdlib.h>
 #include <string.h>
@@ -622,9 +621,11 @@ int main(int argc, char** argv)
 		gsm_util_init_error(TRUE, "%s", error->message);
 	}
 
+#ifdef ENABLE_NLS
 	bindtextdomain(GETTEXT_PACKAGE, LOCALE_DIR);
 	bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
 	textdomain(GETTEXT_PACKAGE);
+#endif /* ENABLE_NLS */
 
 	sa.sa_handler = SIG_IGN;
 	sa.sa_flags = 0;

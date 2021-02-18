@@ -206,9 +206,11 @@ int main(int argc, char* argv[])
 	int conflicting_options;
 
 	/* Initialize the i18n stuff */
+#ifdef ENABLE_NLS
 	bindtextdomain(GETTEXT_PACKAGE, LOCALE_DIR);
 	bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
 	textdomain(GETTEXT_PACKAGE);
+#endif /* ENABLE_NLS */
 
 	error = NULL;
 

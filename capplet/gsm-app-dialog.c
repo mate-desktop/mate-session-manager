@@ -185,7 +185,9 @@ setup_dialog (GsmAppDialog *dialog)
         GError     *error;
 
         xml = gtk_builder_new ();
+#ifdef ENABLE_NLS
         gtk_builder_set_translation_domain (xml, GETTEXT_PACKAGE);
+#endif /* ENABLE_NLS */
 
         error = NULL;
         if (!gtk_builder_add_from_file (xml,
