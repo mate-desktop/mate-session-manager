@@ -22,8 +22,12 @@
  *   Frederic Crozat <fcrozat@suse.com>
  */
 
+#ifndef __MATE_SESSION_CHECK_ACCELERATED_COMMON_H__
+#define __MATE_SESSION_CHECK_ACCELERATED_COMMON_H__
+
 /* Exit value for helper */
 #define HELPER_ACCEL 0
 #define HELPER_NO_ACCEL 1
 #define HELPER_SOFTWARE_RENDERING 2
 
+#endif /* __MATE_SESSION_CHECK_ACCELERATED_COMMON_H__ */
