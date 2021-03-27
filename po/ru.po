@@ -20,9 +20,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.23.0\n"
+"Project-Id-Version: mate-session-manager 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-19 13:25+0100\n"
+"POT-Creation-Date: 2020-08-14 10:33+0200\n"
 "PO-Revision-Date: 2020-02-16 14:58+0000\n"
 "Last-Translator: Anna Vyalkova <cybertailor@gmail.com>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
@@ -32,68 +32,68 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: capplet/gsm-app-dialog.c:127
+#: capplet/gsm-app-dialog.c:124
 msgid "Select Command"
 msgstr "Выберите команду"
 
-#: capplet/gsm-app-dialog.c:170
+#: capplet/gsm-app-dialog.c:167
 msgid "second"
 msgstr "секунда"
 
-#: capplet/gsm-app-dialog.c:172
+#: capplet/gsm-app-dialog.c:169
 msgid "seconds"
 msgstr "секунд"
 
-#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:452
+#: capplet/gsm-app-dialog.c:215 mate-session/gsm-logout-dialog.c:452
 #: mate-session/gsm-logout-dialog.c:485
 msgid "_Cancel"
 msgstr "О_тмена"
 
-#: capplet/gsm-app-dialog.c:224
+#: capplet/gsm-app-dialog.c:221
 msgid "Add Startup Program"
 msgstr "Новая автоматически запускаемая программа"
 
-#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
+#: capplet/gsm-app-dialog.c:223 data/session-properties.ui:86
 msgid "_Add"
 msgstr "Д_обавить"
 
-#: capplet/gsm-app-dialog.c:229
+#: capplet/gsm-app-dialog.c:226
 msgid "Edit Startup Program"
 msgstr "Изменить автоматически запускаемую программу"
 
-#: capplet/gsm-app-dialog.c:231
+#: capplet/gsm-app-dialog.c:228
 msgid "_Save"
 msgstr "_Сохранить"
 
-#: capplet/gsm-app-dialog.c:544
+#: capplet/gsm-app-dialog.c:541
 msgid "The startup command cannot be empty"
 msgstr "Команда запуска не может быть пустой"
 
-#: capplet/gsm-app-dialog.c:550
+#: capplet/gsm-app-dialog.c:547
 msgid "The startup command is not valid"
 msgstr "Автоматически запускаемая программа недопустима"
 
-#: capplet/gsm-properties-dialog.c:516
+#: capplet/gsm-properties-dialog.c:514
 msgid "_Help"
 msgstr "_Справка"
 
-#: capplet/gsm-properties-dialog.c:520
+#: capplet/gsm-properties-dialog.c:518
 msgid "_Close"
 msgstr "_Закрыть"
 
-#: capplet/gsm-properties-dialog.c:560
+#: capplet/gsm-properties-dialog.c:558
 msgid "Enabled"
 msgstr "Включён"
 
-#: capplet/gsm-properties-dialog.c:572
+#: capplet/gsm-properties-dialog.c:570
 msgid "Icon"
 msgstr "Значок"
 
-#: capplet/gsm-properties-dialog.c:584
+#: capplet/gsm-properties-dialog.c:582
 msgid "Program"
 msgstr "Программа"
 
-#: capplet/gsm-properties-dialog.c:791
+#: capplet/gsm-properties-dialog.c:789
 msgid "Startup Applications Preferences"
 msgstr "Параметры запускаемых приложений"
 
@@ -266,10 +266,6 @@ msgstr "MATE"
 msgid "This session logs you into MATE"
 msgstr "Этот сеанс позволяет вам войти в MATE"
 
-#: data/mate.desktop.in:8
-msgid "Type=Application"
-msgstr "Type=Application"
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
@@ -286,7 +282,7 @@ msgstr "MATE;окна;диспетчер;запуск;MDM;"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Некоторые программы всё еще работают:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:633
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:631
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -301,12 +297,6 @@ msgstr "Запускаемые приложения"
 #: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
 msgstr "Выберите приложения, запускаемые при входе в сеанс"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-session-properties.desktop.in:7
-msgid "mate-session-properties"
-msgstr "mate-session-properties"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -426,24 +416,24 @@ msgstr "Параметры управления сеансом:"
 msgid "Show session management options"
 msgstr "Показать параметры управления сеансом"
 
-#: mate-session/gsm-inhibit-dialog.c:251
+#: mate-session/gsm-inhibit-dialog.c:249
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Значок «%s» не найден"
 
-#: mate-session/gsm-inhibit-dialog.c:581
+#: mate-session/gsm-inhibit-dialog.c:579
 msgid "Unknown"
 msgstr "Неизвестная"
 
-#: mate-session/gsm-inhibit-dialog.c:632
+#: mate-session/gsm-inhibit-dialog.c:630
 msgid "A program is still running:"
 msgstr "Программа всё ещё работает:"
 
-#: mate-session/gsm-inhibit-dialog.c:636
+#: mate-session/gsm-inhibit-dialog.c:634
 msgid "Some programs are still running:"
 msgstr "Некоторые программы всё ещё работают:"
 
-#: mate-session/gsm-inhibit-dialog.c:637
+#: mate-session/gsm-inhibit-dialog.c:635
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -451,35 +441,35 @@ msgstr ""
 "Ожидание завершения работы программ.  Прерывание этих программ может "
 "привести к потере вашей работы."
 
-#: mate-session/gsm-inhibit-dialog.c:867
+#: mate-session/gsm-inhibit-dialog.c:865
 msgid "Switch User Anyway"
 msgstr "Всё равно переключить пользователя"
 
-#: mate-session/gsm-inhibit-dialog.c:870
+#: mate-session/gsm-inhibit-dialog.c:868
 msgid "Log Out Anyway"
 msgstr "Всё равно выйти из системы"
 
-#: mate-session/gsm-inhibit-dialog.c:873
+#: mate-session/gsm-inhibit-dialog.c:871
 msgid "Suspend Anyway"
 msgstr "Всё равно приостановить систему"
 
-#: mate-session/gsm-inhibit-dialog.c:876
+#: mate-session/gsm-inhibit-dialog.c:874
 msgid "Hibernate Anyway"
 msgstr "Всё равно перевести в режим сна"
 
-#: mate-session/gsm-inhibit-dialog.c:879
+#: mate-session/gsm-inhibit-dialog.c:877
 msgid "Shut Down Anyway"
 msgstr "Всё равно выключить"
 
-#: mate-session/gsm-inhibit-dialog.c:882
+#: mate-session/gsm-inhibit-dialog.c:880
 msgid "Reboot Anyway"
 msgstr "Всё равно перезагрузить"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:888
 msgid "Lock Screen"
 msgstr "Заблокировать экран"
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:891
 msgid "Cancel"
 msgstr "Отмена"
 
@@ -538,7 +528,7 @@ msgstr "Пе_резагрузить"
 msgid "_Shut Down"
 msgstr "В_ыключить"
 
-#: mate-session/gsm-manager.c:1515 mate-session/gsm-manager.c:2339
+#: mate-session/gsm-manager.c:1513 mate-session/gsm-manager.c:2337
 msgid "Not responding"
 msgstr "Не отвечает"
 
@@ -553,7 +543,7 @@ msgstr "Запомненное приложение"
 msgid "This program is blocking logout."
 msgstr "Эта программа блокирует выход из сеанса."
 
-#: mate-session/gsm-xsmp-server.c:324
+#: mate-session/gsm-xsmp-server.c:322
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
@@ -561,7 +551,7 @@ msgstr ""
 "Новые клиентские подключения отклоняются, потому что сеанс сейчас "
 "завершается.\n"
 
-#: mate-session/gsm-xsmp-server.c:586
+#: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Не удалось создать сокет, слушающий ICE: %s"

@@ -8,9 +8,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.23.0\n"
+"Project-Id-Version: mate-session-manager 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-19 13:25+0100\n"
+"POT-Creation-Date: 2020-08-14 10:33+0200\n"
 "PO-Revision-Date: 2020-02-16 14:58+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Oriya (https://www.transifex.com/mate/teams/13566/or/)\n"
@@ -20,68 +20,68 @@ msgstr ""
 "Language: or\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: capplet/gsm-app-dialog.c:127
+#: capplet/gsm-app-dialog.c:124
 msgid "Select Command"
 msgstr "ନିର୍ଦ୍ଦେଶ ବାଛନ୍ତୁ"
 
-#: capplet/gsm-app-dialog.c:170
+#: capplet/gsm-app-dialog.c:167
 msgid "second"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:172
+#: capplet/gsm-app-dialog.c:169
 msgid "seconds"
 msgstr "ସେକେଣ୍ଡ"
 
-#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:452
+#: capplet/gsm-app-dialog.c:215 mate-session/gsm-logout-dialog.c:452
 #: mate-session/gsm-logout-dialog.c:485
 msgid "_Cancel"
 msgstr "ବାତିଲ କରନ୍ତୁ (_C)"
 
-#: capplet/gsm-app-dialog.c:224
+#: capplet/gsm-app-dialog.c:221
 msgid "Add Startup Program"
 msgstr "ପ୍ରାରମ୍ଭିକ ପ୍ରୋଗ୍ରାମକୁ ଯୋଗ କରନ୍ତୁ"
 
-#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
+#: capplet/gsm-app-dialog.c:223 data/session-properties.ui:86
 msgid "_Add"
 msgstr "ଯୋଗ କରନ୍ତୁ (_A)"
 
-#: capplet/gsm-app-dialog.c:229
+#: capplet/gsm-app-dialog.c:226
 msgid "Edit Startup Program"
 msgstr "ପ୍ରାରମ୍ଭିକ ପ୍ରୋଗ୍ରାମକୁ ସଂଶୋଧନ କରନ୍ତୁ"
 
-#: capplet/gsm-app-dialog.c:231
+#: capplet/gsm-app-dialog.c:228
 msgid "_Save"
 msgstr "ସଂରକ୍ଷଣ କରନ୍ତୁ (_S)"
 
-#: capplet/gsm-app-dialog.c:544
+#: capplet/gsm-app-dialog.c:541
 msgid "The startup command cannot be empty"
 msgstr "ପ୍ରାରମ୍ଭିକ ପ୍ରୋଗ୍ରାମଟି ଖାଲି ହୋଇ ପାରିବ ନାହିଁ"
 
-#: capplet/gsm-app-dialog.c:550
+#: capplet/gsm-app-dialog.c:547
 msgid "The startup command is not valid"
 msgstr "ପ୍ରାରମ୍ଭିକ ନିର୍ଦ୍ଦେଶଟି ବୈଧ ନୁହଁ"
 
-#: capplet/gsm-properties-dialog.c:516
+#: capplet/gsm-properties-dialog.c:514
 msgid "_Help"
 msgstr "ସହାୟତା (_H)"
 
-#: capplet/gsm-properties-dialog.c:520
+#: capplet/gsm-properties-dialog.c:518
 msgid "_Close"
 msgstr "ବନ୍ଦ କରନ୍ତୁ (_C)"
 
-#: capplet/gsm-properties-dialog.c:560
+#: capplet/gsm-properties-dialog.c:558
 msgid "Enabled"
 msgstr "ସକ୍ରିୟ"
 
-#: capplet/gsm-properties-dialog.c:572
+#: capplet/gsm-properties-dialog.c:570
 msgid "Icon"
 msgstr "ଚିତ୍ର ସଙ୍କେତ"
 
-#: capplet/gsm-properties-dialog.c:584
+#: capplet/gsm-properties-dialog.c:582
 msgid "Program"
 msgstr "ପ୍ରୋଗ୍ରାମ"
 
-#: capplet/gsm-properties-dialog.c:791
+#: capplet/gsm-properties-dialog.c:789
 msgid "Startup Applications Preferences"
 msgstr "ପ୍ରାରମ୍ଭିକ ପ୍ରୟୋଗ ପସନ୍ଦ"
 
@@ -241,10 +241,6 @@ msgstr "ନୋମ"
 msgid "This session logs you into MATE"
 msgstr "ଏହି ଅଧିବେଶନ ଆପଣଙ୍କୁ ନୋମ ରେ ଲଗ କରାଇଥାଏ"
 
-#: data/mate.desktop.in:8
-msgid "Type=Application"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
@@ -261,7 +257,7 @@ msgstr ""
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>କିଛି ପ୍ରଗ୍ରାମ ଏବେ ମଧ୍ଯ ଚାଲୁଅଛି:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:633
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:631
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -274,12 +270,6 @@ msgstr "ପ୍ରାରମ୍ଭିକ ପ୍ରୟୋଗଗୁଡ଼ିକ"
 #: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
 msgstr "ଆପଣ ଲଗଇନ ହେବା ସମୟରେ କେଉଁ ପ୍ରୟୋଗକୁ ଆରମ୍ଭ କରିବା ଉଚିତ ତାହା ବାଛନ୍ତୁ"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-session-properties.desktop.in:7
-msgid "mate-session-properties"
-msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -398,24 +388,24 @@ msgstr "ଅଧିବେଶନ ପରିଚାଳନା ବିକଳ୍ପଗୁ�
 msgid "Show session management options"
 msgstr "ଅଧିବେଶନ ପରିଚାଳନା ବିକଳ୍ପଗୁଡ଼ିକୁ ଦର୍ଶାନ୍ତୁ"
 
-#: mate-session/gsm-inhibit-dialog.c:251
+#: mate-session/gsm-inhibit-dialog.c:249
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "'%s' ଚିତ୍ରସଙ୍କେତ ମିଳିଲା ନାହଁ"
 
-#: mate-session/gsm-inhibit-dialog.c:581
+#: mate-session/gsm-inhibit-dialog.c:579
 msgid "Unknown"
 msgstr "ଅଜଣା"
 
-#: mate-session/gsm-inhibit-dialog.c:632
+#: mate-session/gsm-inhibit-dialog.c:630
 msgid "A program is still running:"
 msgstr "ଗୋଟିଏ ପ୍ରଗ୍ରାମ ଏପର୍ଯ୍ୟନ୍ତ ଚାଲିଅଛି:"
 
-#: mate-session/gsm-inhibit-dialog.c:636
+#: mate-session/gsm-inhibit-dialog.c:634
 msgid "Some programs are still running:"
 msgstr "କିଛି ପ୍ରଗ୍ରାମ ଏପର୍ଯ୍ୟନ୍ତ ଚାଲିଅଛି:"
 
-#: mate-session/gsm-inhibit-dialog.c:637
+#: mate-session/gsm-inhibit-dialog.c:635
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -423,35 +413,35 @@ msgstr ""
 "ପ୍ରଗ୍ରାମ ସମାପ୍ତ ହେବା ପାଇଁ ଅପେକ୍ଷା କରିଅଛି।  ଏହି ପ୍ରଗ୍ରାମଗୁଡ଼ିକୁ ବାଧା ଦେବା "
 "ଦ୍ୱାରା କାର୍ଯ୍ୟ ନଷ୍ଟ ହୋଇପାରେ।"
 
-#: mate-session/gsm-inhibit-dialog.c:867
+#: mate-session/gsm-inhibit-dialog.c:865
 msgid "Switch User Anyway"
 msgstr "ଚାଳକଙ୍କୁ ଯେକୌଣସି ଉପାୟରେ ବଦଳାନ୍ତୁ"
 
-#: mate-session/gsm-inhibit-dialog.c:870
+#: mate-session/gsm-inhibit-dialog.c:868
 msgid "Log Out Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:873
+#: mate-session/gsm-inhibit-dialog.c:871
 msgid "Suspend Anyway"
 msgstr "ଯେକୌଣସି ଉପାୟରେ ନିଲମ୍ବନ କରନ୍ତୁ"
 
-#: mate-session/gsm-inhibit-dialog.c:876
+#: mate-session/gsm-inhibit-dialog.c:874
 msgid "Hibernate Anyway"
 msgstr "ଯେକୌଣସି ପ୍ରକାରେ ସୁପ୍ତ କରନ୍ତୁ"
 
-#: mate-session/gsm-inhibit-dialog.c:879
+#: mate-session/gsm-inhibit-dialog.c:877
 msgid "Shut Down Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:882
+#: mate-session/gsm-inhibit-dialog.c:880
 msgid "Reboot Anyway"
 msgstr "ଯେକୌଣସି ପ୍ରକାରେ ପୁନର୍ଚାଳନ କରନ୍ତୁ"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:888
 msgid "Lock Screen"
 msgstr "ପରଦାକୁ ତାଲା ଦେଇ ରଖନ୍ତୁ"
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:891
 msgid "Cancel"
 msgstr "ବାତିଲ କରନ୍ତୁ"
 
@@ -506,7 +496,7 @@ msgstr "ପୁନଃ ଚାଳନ କରନ୍ତୁ (_R)"
 msgid "_Shut Down"
 msgstr "ବନ୍ଦ କରନ୍ତୁ (_S)"
 
-#: mate-session/gsm-manager.c:1515 mate-session/gsm-manager.c:2339
+#: mate-session/gsm-manager.c:1513 mate-session/gsm-manager.c:2337
 msgid "Not responding"
 msgstr "ଉତ୍ତର ଦେଉନାହିଁ"
 
@@ -521,14 +511,14 @@ msgstr ""
 msgid "This program is blocking logout."
 msgstr ""
 
-#: mate-session/gsm-xsmp-server.c:324
+#: mate-session/gsm-xsmp-server.c:322
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 "ନୂତନ କ୍ଲାଏଣ୍ଟ ସଂଯୋଗକୁ ମନାକରୁଅଛି କାରଣ ସେହି ଅଧିବେଶନଟି ବର୍ତ୍ତମାନ ବନ୍ଦ ହୋଇଛି\n"
 
-#: mate-session/gsm-xsmp-server.c:586
+#: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE କୁ ମାନୁଥିବା ସକେଟ ନିର୍ମାଣ କରିପାରିଲା ନାହିଁ: %s"

@@ -12,9 +12,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.23.0\n"
+"Project-Id-Version: mate-session-manager 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-19 13:25+0100\n"
+"POT-Creation-Date: 2020-08-14 10:33+0200\n"
 "PO-Revision-Date: 2020-02-16 14:58+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2020\n"
 "Language-Team: Danish (https://www.transifex.com/mate/teams/13566/da/)\n"
@@ -24,68 +24,68 @@ msgstr ""
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: capplet/gsm-app-dialog.c:127
+#: capplet/gsm-app-dialog.c:124
 msgid "Select Command"
 msgstr "Vælg kommando"
 
-#: capplet/gsm-app-dialog.c:170
+#: capplet/gsm-app-dialog.c:167
 msgid "second"
 msgstr "sekund"
 
-#: capplet/gsm-app-dialog.c:172
+#: capplet/gsm-app-dialog.c:169
 msgid "seconds"
 msgstr "sekunder"
 
-#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:452
+#: capplet/gsm-app-dialog.c:215 mate-session/gsm-logout-dialog.c:452
 #: mate-session/gsm-logout-dialog.c:485
 msgid "_Cancel"
 msgstr "_Afbryd"
 
-#: capplet/gsm-app-dialog.c:224
+#: capplet/gsm-app-dialog.c:221
 msgid "Add Startup Program"
 msgstr "Tilføj opstartsprogram"
 
-#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
+#: capplet/gsm-app-dialog.c:223 data/session-properties.ui:86
 msgid "_Add"
 msgstr "_Tilføj"
 
-#: capplet/gsm-app-dialog.c:229
+#: capplet/gsm-app-dialog.c:226
 msgid "Edit Startup Program"
 msgstr "Rediger opstartsprogram"
 
-#: capplet/gsm-app-dialog.c:231
+#: capplet/gsm-app-dialog.c:228
 msgid "_Save"
 msgstr "_Gem"
 
-#: capplet/gsm-app-dialog.c:544
+#: capplet/gsm-app-dialog.c:541
 msgid "The startup command cannot be empty"
 msgstr "Startkommandoen kan ikke være tom"
 
-#: capplet/gsm-app-dialog.c:550
+#: capplet/gsm-app-dialog.c:547
 msgid "The startup command is not valid"
 msgstr "Startkommandoen er ugyldig"
 
-#: capplet/gsm-properties-dialog.c:516
+#: capplet/gsm-properties-dialog.c:514
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: capplet/gsm-properties-dialog.c:520
+#: capplet/gsm-properties-dialog.c:518
 msgid "_Close"
 msgstr "_Luk"
 
-#: capplet/gsm-properties-dialog.c:560
+#: capplet/gsm-properties-dialog.c:558
 msgid "Enabled"
 msgstr "Aktiveret"
 
-#: capplet/gsm-properties-dialog.c:572
+#: capplet/gsm-properties-dialog.c:570
 msgid "Icon"
 msgstr "Ikon"
 
-#: capplet/gsm-properties-dialog.c:584
+#: capplet/gsm-properties-dialog.c:582
 msgid "Program"
 msgstr "Program"
 
-#: capplet/gsm-properties-dialog.c:791
+#: capplet/gsm-properties-dialog.c:789
 msgid "Startup Applications Preferences"
 msgstr "Indstillinger for opstartsprogrammer"
 
@@ -255,10 +255,6 @@ msgstr "MATE"
 msgid "This session logs you into MATE"
 msgstr "Denne session logger dig ind i MATE"
 
-#: data/mate.desktop.in:8
-msgid "Type=Application"
-msgstr "Type=Program"
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
@@ -275,7 +271,7 @@ msgstr "MATE;vindue;håndtering;start;MDM;"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Nogle programmer kører stadigvæk:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:633
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:631
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -290,12 +286,6 @@ msgstr "Opstartsprogrammer"
 #: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
 msgstr "Vælg hvilke programmer som skal startes når du logger ind"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-session-properties.desktop.in:7
-msgid "mate-session-properties"
-msgstr "mate-session-properties"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -414,24 +404,24 @@ msgstr "Sessionhåndteringsindstillinger:"
 msgid "Show session management options"
 msgstr "Vis sessionhåndteringsindstillinger"
 
-#: mate-session/gsm-inhibit-dialog.c:251
+#: mate-session/gsm-inhibit-dialog.c:249
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Ikonet »%s« blev ikke fundet"
 
-#: mate-session/gsm-inhibit-dialog.c:581
+#: mate-session/gsm-inhibit-dialog.c:579
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: mate-session/gsm-inhibit-dialog.c:632
+#: mate-session/gsm-inhibit-dialog.c:630
 msgid "A program is still running:"
 msgstr "Et program kører stadigvæk:"
 
-#: mate-session/gsm-inhibit-dialog.c:636
+#: mate-session/gsm-inhibit-dialog.c:634
 msgid "Some programs are still running:"
 msgstr "Nogle programmer kører stadigvæk:"
 
-#: mate-session/gsm-inhibit-dialog.c:637
+#: mate-session/gsm-inhibit-dialog.c:635
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -439,35 +429,35 @@ msgstr ""
 "Venter på at programmer afslutter. At afbryde disse programmer kan føre til "
 "at du mister data."
 
-#: mate-session/gsm-inhibit-dialog.c:867
+#: mate-session/gsm-inhibit-dialog.c:865
 msgid "Switch User Anyway"
 msgstr "Skift bruger alligevel"
 
-#: mate-session/gsm-inhibit-dialog.c:870
+#: mate-session/gsm-inhibit-dialog.c:868
 msgid "Log Out Anyway"
 msgstr "Log ud alligevel"
 
-#: mate-session/gsm-inhibit-dialog.c:873
+#: mate-session/gsm-inhibit-dialog.c:871
 msgid "Suspend Anyway"
 msgstr "Gå i hvile alligevel"
 
-#: mate-session/gsm-inhibit-dialog.c:876
+#: mate-session/gsm-inhibit-dialog.c:874
 msgid "Hibernate Anyway"
 msgstr "Gå i dvale alligevel"
 
-#: mate-session/gsm-inhibit-dialog.c:879
+#: mate-session/gsm-inhibit-dialog.c:877
 msgid "Shut Down Anyway"
 msgstr "Sluk alligevel"
 
-#: mate-session/gsm-inhibit-dialog.c:882
+#: mate-session/gsm-inhibit-dialog.c:880
 msgid "Reboot Anyway"
 msgstr "Genstart alligevel"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:888
 msgid "Lock Screen"
 msgstr "Lås skærmen"
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:891
 msgid "Cancel"
 msgstr "Annuller"
 
@@ -522,7 +512,7 @@ msgstr "_Genstart"
 msgid "_Shut Down"
 msgstr "_Sluk"
 
-#: mate-session/gsm-manager.c:1515 mate-session/gsm-manager.c:2339
+#: mate-session/gsm-manager.c:1513 mate-session/gsm-manager.c:2337
 msgid "Not responding"
 msgstr "Svarer ikke"
 
@@ -537,14 +527,14 @@ msgstr "Husket program"
 msgid "This program is blocking logout."
 msgstr "Dette program blokerer log ud."
 
-#: mate-session/gsm-xsmp-server.c:324
+#: mate-session/gsm-xsmp-server.c:322
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 "Nægter ny klientforbindelse fordi sessionen er ved at blive lukket ned\n"
 
-#: mate-session/gsm-xsmp-server.c:586
+#: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Kunne ikke oprette ICE-lyttesoklen: %s"

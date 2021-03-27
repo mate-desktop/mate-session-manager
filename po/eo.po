@@ -13,9 +13,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.23.0\n"
+"Project-Id-Version: mate-session-manager 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-19 13:25+0100\n"
+"POT-Creation-Date: 2020-08-14 10:33+0200\n"
 "PO-Revision-Date: 2020-02-16 14:58+0000\n"
 "Last-Translator: kristjan <kristjan.schmidt@googlemail.com>, 2020\n"
 "Language-Team: Esperanto (https://www.transifex.com/mate/teams/13566/eo/)\n"
@@ -25,68 +25,68 @@ msgstr ""
 "Language: eo\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: capplet/gsm-app-dialog.c:127
+#: capplet/gsm-app-dialog.c:124
 msgid "Select Command"
 msgstr "Elekti komandon"
 
-#: capplet/gsm-app-dialog.c:170
+#: capplet/gsm-app-dialog.c:167
 msgid "second"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:172
+#: capplet/gsm-app-dialog.c:169
 msgid "seconds"
 msgstr "sekundoj"
 
-#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:452
+#: capplet/gsm-app-dialog.c:215 mate-session/gsm-logout-dialog.c:452
 #: mate-session/gsm-logout-dialog.c:485
 msgid "_Cancel"
 msgstr "_Rezigni"
 
-#: capplet/gsm-app-dialog.c:224
+#: capplet/gsm-app-dialog.c:221
 msgid "Add Startup Program"
 msgstr "Aldoni lanĉan programon"
 
-#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
+#: capplet/gsm-app-dialog.c:223 data/session-properties.ui:86
 msgid "_Add"
 msgstr "_Aldoni"
 
-#: capplet/gsm-app-dialog.c:229
+#: capplet/gsm-app-dialog.c:226
 msgid "Edit Startup Program"
 msgstr "Redakti lanĉan programon"
 
-#: capplet/gsm-app-dialog.c:231
+#: capplet/gsm-app-dialog.c:228
 msgid "_Save"
 msgstr "Kon_servi"
 
-#: capplet/gsm-app-dialog.c:544
+#: capplet/gsm-app-dialog.c:541
 msgid "The startup command cannot be empty"
 msgstr "La lanĉa komando ne povas esti malplena"
 
-#: capplet/gsm-app-dialog.c:550
+#: capplet/gsm-app-dialog.c:547
 msgid "The startup command is not valid"
 msgstr "La lanĉa komando ne estas valida"
 
-#: capplet/gsm-properties-dialog.c:516
+#: capplet/gsm-properties-dialog.c:514
 msgid "_Help"
 msgstr "_Helpo"
 
-#: capplet/gsm-properties-dialog.c:520
+#: capplet/gsm-properties-dialog.c:518
 msgid "_Close"
 msgstr "_Fermu"
 
-#: capplet/gsm-properties-dialog.c:560
+#: capplet/gsm-properties-dialog.c:558
 msgid "Enabled"
 msgstr "Enŝaltite"
 
-#: capplet/gsm-properties-dialog.c:572
+#: capplet/gsm-properties-dialog.c:570
 msgid "Icon"
 msgstr "Piktogramo"
 
-#: capplet/gsm-properties-dialog.c:584
+#: capplet/gsm-properties-dialog.c:582
 msgid "Program"
 msgstr "Programo"
 
-#: capplet/gsm-properties-dialog.c:791
+#: capplet/gsm-properties-dialog.c:789
 msgid "Startup Applications Preferences"
 msgstr "Agordoj de startaj aplikaĵoj"
 
@@ -242,10 +242,6 @@ msgstr "MATE"
 msgid "This session logs you into MATE"
 msgstr "Ĉi tiu seanco ensalutas vin al MATE"
 
-#: data/mate.desktop.in:8
-msgid "Type=Application"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
@@ -262,7 +258,7 @@ msgstr ""
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Kelkaj programoj ankoraŭ rulas:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:633
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:631
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -275,12 +271,6 @@ msgstr "Komencaj aplikaĵoj"
 #: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
 msgstr "Elektu kiujn aplikaĵojn startigi kiam vi ensalutas."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-session-properties.desktop.in:7
-msgid "mate-session-properties"
-msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -399,24 +389,24 @@ msgstr "Opcioj de seancoadministrilo:"
 msgid "Show session management options"
 msgstr "Montri seancoadministrilajn opciojn"
 
-#: mate-session/gsm-inhibit-dialog.c:251
+#: mate-session/gsm-inhibit-dialog.c:249
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Piktogramo '%s' ne trovita"
 
-#: mate-session/gsm-inhibit-dialog.c:581
+#: mate-session/gsm-inhibit-dialog.c:579
 msgid "Unknown"
 msgstr "Nekonata"
 
-#: mate-session/gsm-inhibit-dialog.c:632
+#: mate-session/gsm-inhibit-dialog.c:630
 msgid "A program is still running:"
 msgstr "Programo ankoraŭ rulas:"
 
-#: mate-session/gsm-inhibit-dialog.c:636
+#: mate-session/gsm-inhibit-dialog.c:634
 msgid "Some programs are still running:"
 msgstr "Iuj programoj ankoraŭ rulas:"
 
-#: mate-session/gsm-inhibit-dialog.c:637
+#: mate-session/gsm-inhibit-dialog.c:635
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -424,35 +414,35 @@ msgstr ""
 "Atendas ĝis programoj finiĝas. Interrompi ĉi tiujn programojn eble perdigos "
 "laboron al vi."
 
-#: mate-session/gsm-inhibit-dialog.c:867
+#: mate-session/gsm-inhibit-dialog.c:865
 msgid "Switch User Anyway"
 msgstr "Tamen ŝanĝi uzanton"
 
-#: mate-session/gsm-inhibit-dialog.c:870
+#: mate-session/gsm-inhibit-dialog.c:868
 msgid "Log Out Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:873
+#: mate-session/gsm-inhibit-dialog.c:871
 msgid "Suspend Anyway"
 msgstr "Tamen paŭzigi"
 
-#: mate-session/gsm-inhibit-dialog.c:876
+#: mate-session/gsm-inhibit-dialog.c:874
 msgid "Hibernate Anyway"
 msgstr "Tamen pasivumigi"
 
-#: mate-session/gsm-inhibit-dialog.c:879
+#: mate-session/gsm-inhibit-dialog.c:877
 msgid "Shut Down Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:882
+#: mate-session/gsm-inhibit-dialog.c:880
 msgid "Reboot Anyway"
 msgstr "Tamen restarti"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:888
 msgid "Lock Screen"
 msgstr "Ŝlosi la ekranon"
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:891
 msgid "Cancel"
 msgstr "Nuligi"
 
@@ -507,7 +497,7 @@ msgstr "_Restarti"
 msgid "_Shut Down"
 msgstr "_Elŝalti"
 
-#: mate-session/gsm-manager.c:1515 mate-session/gsm-manager.c:2339
+#: mate-session/gsm-manager.c:1513 mate-session/gsm-manager.c:2337
 msgid "Not responding"
 msgstr "Ne respondas"
 
@@ -522,13 +512,13 @@ msgstr ""
 msgid "This program is blocking logout."
 msgstr ""
 
-#: mate-session/gsm-xsmp-server.c:324
+#: mate-session/gsm-xsmp-server.c:322
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "Rifuzas novan klientkonekton ĉar la seanco estas nun elsalutata.\n"
 
-#: mate-session/gsm-xsmp-server.c:586
+#: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Ne povis krei ICE-aŭskultantan kontaktoskatolon: %s"
