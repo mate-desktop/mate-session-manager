@@ -1,3 +1,8 @@
+### mate-session-manager 1.24.2
+
+  * Translations update
+  * Support xscreensaver when mate-screensaver is not available
+
 ### mate-session-manager 1.24.1
 
   * Translations update
