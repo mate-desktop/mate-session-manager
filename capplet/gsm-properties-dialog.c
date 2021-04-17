@@ -69,8 +69,7 @@ struct _GsmPropertiesDialog
 };
 
 enum {
-        STORE_COL_VISIBLE = 0,
-        STORE_COL_ENABLED,
+        STORE_COL_ENABLED = 0,
         STORE_COL_GICON,
         STORE_COL_DESCRIPTION,
         STORE_COL_APP,
@@ -112,13 +111,11 @@ _fill_iter_from_app (GtkListStore *list_store,
                      GtkTreeIter  *iter,
                      GspApp       *app)
 {
-        gboolean    hidden;
         gboolean    enabled;
         GIcon      *icon;
         const char *description;
         const char *app_name;
 
-        hidden      = gsp_app_get_hidden (app);
         enabled     = gsp_app_get_enabled (app);
         icon        = gsp_app_get_icon (app);
         description = gsp_app_get_description (app);
@@ -150,7 +147,6 @@ _fill_iter_from_app (GtkListStore *list_store,
         }
 
         gtk_list_store_set (list_store, iter,
-                            STORE_COL_VISIBLE, !hidden,
                             STORE_COL_ENABLED, enabled,
                             STORE_COL_GICON, icon,
                             STORE_COL_DESCRIPTION, description,
@@ -196,13 +192,13 @@ _app_added (GsmPropertiesDialog *dialog,
             GspApp              *app,
             GspAppManager       *manager)
 {
+        (void) manager;
         append_app (dialog, app);
 }
 
 static void
-_app_removed (GsmPropertiesDialog *dialog,
-              GspApp              *app,
-              GspAppManager       *manager)
+remove_app (GsmPropertiesDialog *dialog,
+            GspApp              *app)
 {
         GtkTreeIter iter;
 
@@ -215,6 +211,15 @@ _app_removed (GsmPropertiesDialog *dialog,
                                               _app_changed,
                                               dialog);
         gtk_list_store_remove (dialog->list_store, &iter);
+}
+
+static void
+_app_removed (GsmPropertiesDialog *dialog,
+              GspApp              *app,
+              GspAppManager       *manager)
+{
+        (void) manager;
+        remove_app (dialog, app);
 }
 
 static void
@@ -462,34 +467,11 @@ on_row_activated (GtkTreeView         *tree_view,
 }
 
 static void
-update_tree_view (GsmPropertiesDialog *dialog)
-{
-        GSList *apps;
-        GSList *l;
-        gboolean show_hidden;
-        GspApp *app;
-
-        show_hidden = g_settings_get_boolean (dialog->settings, SPC_SHOW_HIDDEN_KEY);
-
-        apps = gsp_app_manager_get_apps (dialog->manager);
-        for (l = apps; l != NULL; l = l->next) {
-                app = GSP_APP (l->data);
-                if (gsp_app_get_nodisplay(app)) {
-                        if (show_hidden) {
-                                _app_added (dialog, app, dialog->manager);
-                        }else{
-                                _app_removed (dialog, app, dialog->manager);
-                        }
-                }
-        }
-        g_slist_free (apps);
-}
-
-static void
-on_show_hidden_clicked (GtkWidget           *widget,
+on_show_hidden_toggled (GtkToggleButton     *togglebutton,
                         GsmPropertiesDialog *dialog)
 {
-        update_tree_view (dialog);
+        (void) togglebutton;
+        gtk_tree_model_filter_refilter (GTK_TREE_MODEL_FILTER (dialog->tree_filter));
 }
 
 static void
@@ -557,11 +539,43 @@ on_main_notebook_scroll_event (GtkWidget        *widget,
         return TRUE;
 }
 
+static gboolean
+visible_func (GtkTreeModel *model,
+              GtkTreeIter  *iter,
+              gpointer      data)
+{
+        gboolean           visible = FALSE;
+        GtkToggleButton   *toggle_button = data;;
+        GspApp            *app;
+        gboolean           show_hidden;
+
+        show_hidden = gtk_toggle_button_get_active (toggle_button);
+
+        gtk_tree_model_get (model, iter,
+                            STORE_COL_APP, &app,
+                            -1);
+
+        if (app) {
+                gboolean hidden;
+                gboolean nodisplay;
+
+                hidden = gsp_app_get_hidden (app);
+                nodisplay = gsp_app_get_nodisplay (app);
+                visible = !hidden && (show_hidden || !nodisplay);
+                g_object_unref (app);
+        } else {
+                visible = show_hidden;
+        }
+
+        return visible;
+}
+
 static void
 setup_dialog (GsmPropertiesDialog *dialog)
 {
         GtkTreeView       *treeview;
         GtkWidget         *button;
+        GtkToggleButton   *toggle_button;
         GtkTreeModel      *tree_filter;
         GtkTreeViewColumn *column;
         GtkCellRenderer   *renderer;
@@ -576,8 +590,19 @@ setup_dialog (GsmPropertiesDialog *dialog)
                                     _("_Close"), "window-close",
                                     GTK_RESPONSE_CLOSE);
 
+        dialog->settings = g_settings_new (SPC_CONFIG_SCHEMA);
+
+        toggle_button = GTK_TOGGLE_BUTTON (gtk_builder_get_object (dialog->xml,
+                                                                   CAPPLET_SHOW_HIDDEN_WIDGET_NAME));
+
+        g_settings_bind (dialog->settings, SPC_SHOW_HIDDEN_KEY,
+                         toggle_button, "active", G_SETTINGS_BIND_DEFAULT);
+
+        g_signal_connect (toggle_button, "toggled",
+                          G_CALLBACK (on_show_hidden_toggled),
+                          dialog);
+
         dialog->list_store = gtk_list_store_new (NUMBER_OF_COLUMNS,
-                                                 G_TYPE_BOOLEAN,
                                                  G_TYPE_BOOLEAN,
                                                  G_TYPE_ICON,
                                                  G_TYPE_STRING,
@@ -588,8 +613,7 @@ setup_dialog (GsmPropertiesDialog *dialog)
         g_object_unref (dialog->list_store);
         dialog->tree_filter = tree_filter;
 
-        gtk_tree_model_filter_set_visible_column (GTK_TREE_MODEL_FILTER (tree_filter),
-                                                  STORE_COL_VISIBLE);
+        gtk_tree_model_filter_set_visible_func (GTK_TREE_MODEL_FILTER (tree_filter), visible_func, toggle_button, NULL);
 
         treeview = GTK_TREE_VIEW (gtk_builder_get_object (dialog->xml,
                                                           CAPPLET_TREEVIEW_WIDGET_NAME));
@@ -718,24 +742,11 @@ setup_dialog (GsmPropertiesDialog *dialog)
                           dialog);
 
 
-        dialog->settings = g_settings_new (SPC_CONFIG_SCHEMA);
-
         button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                      CAPPLET_REMEMBER_WIDGET_NAME));
 
         g_settings_bind (dialog->settings, SPC_AUTOSAVE_KEY,
                          button, "active", G_SETTINGS_BIND_DEFAULT);
-
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
-                                                     CAPPLET_SHOW_HIDDEN_WIDGET_NAME));
-
-        g_settings_bind (dialog->settings, SPC_SHOW_HIDDEN_KEY,
-                         button, "active", G_SETTINGS_BIND_DEFAULT);
-
-        g_signal_connect (button,
-                          "clicked",
-                          G_CALLBACK (on_show_hidden_clicked),
-                          dialog);
 
         button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                      CAPPLET_SAVE_WIDGET_NAME));
@@ -752,7 +763,7 @@ setup_dialog (GsmPropertiesDialog *dialog)
                                   G_CALLBACK (_app_removed), dialog);
 
         populate_model (dialog);
-        update_tree_view (dialog);
+        gtk_tree_model_filter_refilter (GTK_TREE_MODEL_FILTER (dialog->tree_filter));
 }
 
 static GObject *
