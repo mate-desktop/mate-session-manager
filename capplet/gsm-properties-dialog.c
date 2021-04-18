@@ -251,14 +251,11 @@ on_startup_enabled_toggled (GtkCellRendererToggle *cell_renderer,
         GspApp     *app;
         gboolean    active;
 
-        if (!gtk_tree_model_get_iter_from_string (GTK_TREE_MODEL (dialog->tree_filter),
-                                                  &iter, path)) {
+        if (!gtk_tree_model_get_iter_from_string (dialog->tree_filter, &iter, path)) {
                 return;
         }
 
-        app = NULL;
-        gtk_tree_model_get (GTK_TREE_MODEL (dialog->tree_filter),
-                            &iter,
+        gtk_tree_model_get (dialog->tree_filter, &iter,
                             STORE_COL_APP, &app,
                             -1);
 
@@ -315,12 +312,10 @@ on_drag_begin (GtkWidget           *widget,
         GspApp      *app;
 
         gtk_tree_view_get_cursor (GTK_TREE_VIEW (widget), &path, NULL);
-        gtk_tree_model_get_iter (GTK_TREE_MODEL (dialog->tree_filter),
-                                 &iter, path);
+        gtk_tree_model_get_iter (dialog->tree_filter, &iter, path);
         gtk_tree_path_free (path);
 
-        gtk_tree_model_get (GTK_TREE_MODEL (dialog->tree_filter),
-                            &iter,
+        gtk_tree_model_get (dialog->tree_filter, &iter,
                             STORE_COL_APP, &app,
                             -1);
 
@@ -394,9 +389,7 @@ on_delete_app_clicked (GtkWidget           *widget,
                 return;
         }
 
-        app = NULL;
-        gtk_tree_model_get (GTK_TREE_MODEL (dialog->tree_filter),
-                            &iter,
+        gtk_tree_model_get (dialog->tree_filter, &iter,
                             STORE_COL_APP, &app,
                             -1);
 
@@ -420,9 +413,7 @@ on_edit_app_clicked (GtkWidget           *widget,
                 return;
         }
 
-        app = NULL;
-        gtk_tree_model_get (GTK_TREE_MODEL (dialog->tree_filter),
-                            &iter,
+        gtk_tree_model_get (dialog->tree_filter, &iter,
                             STORE_COL_APP, &app,
                             -1);
 
@@ -560,9 +551,7 @@ on_main_notebook_scroll_event (GtkWidget        *widget,
 static void
 setup_dialog (GsmPropertiesDialog *dialog)
 {
-        GtkTreeView       *treeview;
         GtkWidget         *button;
-        GtkTreeModel      *tree_filter;
         GtkTreeViewColumn *column;
         GtkCellRenderer   *renderer;
         GtkTreeSelection  *selection;
@@ -583,28 +572,25 @@ setup_dialog (GsmPropertiesDialog *dialog)
                                                  G_TYPE_STRING,
                                                  G_TYPE_OBJECT,
                                                  G_TYPE_STRING);
-        tree_filter = gtk_tree_model_filter_new (GTK_TREE_MODEL (dialog->list_store),
-                                                 NULL);
-        g_object_unref (dialog->list_store);
-        dialog->tree_filter = tree_filter;
 
-        gtk_tree_model_filter_set_visible_column (GTK_TREE_MODEL_FILTER (tree_filter),
+        dialog->tree_filter = gtk_tree_model_filter_new (GTK_TREE_MODEL (dialog->list_store),
+                                                         NULL);
+
+        gtk_tree_model_filter_set_visible_column (GTK_TREE_MODEL_FILTER (dialog->tree_filter),
                                                   STORE_COL_VISIBLE);
 
-        treeview = GTK_TREE_VIEW (gtk_builder_get_object (dialog->xml,
-                                                          CAPPLET_TREEVIEW_WIDGET_NAME));
-        dialog->treeview = treeview;
+        dialog->treeview = GTK_TREE_VIEW (gtk_builder_get_object (dialog->xml,
+                                                                  CAPPLET_TREEVIEW_WIDGET_NAME));
 
-        gtk_tree_view_set_model (treeview, tree_filter);
-        g_object_unref (tree_filter);
+        gtk_tree_view_set_model (dialog->treeview, dialog->tree_filter);
 
-        gtk_tree_view_set_headers_visible (treeview, FALSE);
-        g_signal_connect (treeview,
+        gtk_tree_view_set_headers_visible (dialog->treeview, FALSE);
+        g_signal_connect (dialog->treeview,
                           "row-activated",
                           G_CALLBACK (on_row_activated),
                           dialog);
 
-        selection = gtk_tree_view_get_selection (treeview);
+        selection = gtk_tree_view_get_selection (dialog->treeview);
         gtk_tree_selection_set_mode (selection, GTK_SELECTION_BROWSE);
         g_signal_connect (selection,
                           "changed",
@@ -617,7 +603,7 @@ setup_dialog (GsmPropertiesDialog *dialog)
                                                            renderer,
                                                            "active", STORE_COL_ENABLED,
                                                            NULL);
-        gtk_tree_view_append_column (treeview, column);
+        gtk_tree_view_append_column (dialog->treeview, column);
         g_signal_connect (renderer,
                           "toggled",
                           G_CALLBACK (on_startup_enabled_toggled),
@@ -633,7 +619,7 @@ setup_dialog (GsmPropertiesDialog *dialog)
         g_object_set (renderer,
                       "stock-size", GSM_PROPERTIES_ICON_SIZE,
                       NULL);
-        gtk_tree_view_append_column (treeview, column);
+        gtk_tree_view_append_column (dialog->treeview, column);
 
         /* NAME COLUMN */
         renderer = gtk_cell_renderer_text_new ();
@@ -645,26 +631,26 @@ setup_dialog (GsmPropertiesDialog *dialog)
         g_object_set (renderer,
                       "ellipsize", PANGO_ELLIPSIZE_END,
                       NULL);
-        gtk_tree_view_append_column (treeview, column);
+        gtk_tree_view_append_column (dialog->treeview, column);
 
 
         gtk_tree_view_column_set_sort_column_id (column, STORE_COL_DESCRIPTION);
-        gtk_tree_view_set_search_column (treeview, STORE_COL_SEARCH);
+        gtk_tree_view_set_search_column (dialog->treeview, STORE_COL_SEARCH);
 
-        gtk_tree_view_enable_model_drag_source (treeview,
+        gtk_tree_view_enable_model_drag_source (dialog->treeview,
                                                 GDK_BUTTON1_MASK|GDK_BUTTON2_MASK,
                                                 NULL, 0,
                                                 GDK_ACTION_COPY);
-        gtk_drag_source_add_uri_targets (GTK_WIDGET (treeview));
+        gtk_drag_source_add_uri_targets (GTK_WIDGET (dialog->treeview));
 
-        gtk_drag_dest_set (GTK_WIDGET (treeview),
+        gtk_drag_dest_set (GTK_WIDGET (dialog->treeview),
                            GTK_DEST_DEFAULT_ALL,
                            NULL, 0,
                            GDK_ACTION_COPY);
-        gtk_drag_dest_add_uri_targets (GTK_WIDGET (treeview));
+        gtk_drag_dest_add_uri_targets (GTK_WIDGET (dialog->treeview));
 
         /* we don't want to accept drags coming from this widget */
-        targetlist = gtk_drag_dest_get_target_list (GTK_WIDGET (treeview));
+        targetlist = gtk_drag_dest_get_target_list (GTK_WIDGET (dialog->treeview));
         if (targetlist != NULL) {
                 GtkTargetEntry *targets;
                 gint n_targets;
@@ -673,18 +659,18 @@ setup_dialog (GsmPropertiesDialog *dialog)
                 for (i = 0; i < n_targets; i++)
                         targets[i].flags = GTK_TARGET_OTHER_WIDGET;
                 targetlist = gtk_target_list_new (targets, n_targets);
-                gtk_drag_dest_set_target_list (GTK_WIDGET (treeview), targetlist);
+                gtk_drag_dest_set_target_list (GTK_WIDGET (dialog->treeview), targetlist);
                 gtk_target_list_unref (targetlist);
                 gtk_target_table_free (targets, n_targets);
         }
 
-        g_signal_connect (treeview, "drag_begin",
+        g_signal_connect (dialog->treeview, "drag_begin",
                           G_CALLBACK (on_drag_begin),
                           dialog);
-        g_signal_connect (treeview, "drag_data_get",
+        g_signal_connect (dialog->treeview, "drag_data_get",
                           G_CALLBACK (on_drag_data_get),
                           dialog);
-        g_signal_connect (treeview, "drag_data_received",
+        g_signal_connect (dialog->treeview, "drag_data_received",
                           G_CALLBACK (on_drag_data_received),
                           dialog);
 
