@@ -102,6 +102,8 @@ find_by_app (GtkTreeModel *model,
                         g_object_unref (iter_app);
                         return TRUE;
                 }
+
+                g_object_unref (iter_app);
         } while (gtk_tree_model_iter_next (model, iter));
 
         return FALSE;
