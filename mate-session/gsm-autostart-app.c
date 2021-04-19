@@ -114,16 +114,6 @@ is_disabled (GsmApp *app)
 
         priv = gsm_autostart_app_get_instance_private (GSM_AUTOSTART_APP(app));
 
-        /* GSM_AUTOSTART_APP_ENABLED_KEY key, used by old mate-session */
-        if (egg_desktop_file_has_key (priv->desktop_file,
-                                      GSM_AUTOSTART_APP_ENABLED_KEY, NULL) &&
-            !egg_desktop_file_get_boolean (priv->desktop_file,
-                                           GSM_AUTOSTART_APP_ENABLED_KEY, NULL)) {
-                g_debug ("app %s is disabled by " GSM_AUTOSTART_APP_ENABLED_KEY,
-                         gsm_app_peek_id (app));
-                return TRUE;
-        }
-
         /* Hidden key, used by autostart spec */
         if (egg_desktop_file_get_boolean (priv->desktop_file,
                                           EGG_DESKTOP_FILE_KEY_HIDDEN, NULL)) {

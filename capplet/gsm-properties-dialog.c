@@ -116,7 +116,7 @@ _fill_iter_from_app (GtkListStore *list_store,
         const char *description;
         const char *app_name;
 
-        enabled     = gsp_app_get_enabled (app);
+        enabled     = !gsp_app_get_hidden (app);
         icon        = gsp_app_get_icon (app);
         description = gsp_app_get_description (app);
         app_name    = gsp_app_get_name (app);
@@ -268,10 +268,9 @@ on_startup_enabled_toggled (GtkCellRendererToggle *cell_renderer,
                             -1);
 
         active = gtk_cell_renderer_toggle_get_active (cell_renderer);
-        active = !active;
 
         if (app) {
-                gsp_app_set_enabled (app, active);
+                gsp_app_set_hidden (app, active);
                 g_object_unref (app);
         }
 }
@@ -556,12 +555,10 @@ visible_func (GtkTreeModel *model,
                             -1);
 
         if (app) {
-                gboolean hidden;
                 gboolean nodisplay;
 
-                hidden = gsp_app_get_hidden (app);
                 nodisplay = gsp_app_get_nodisplay (app);
-                visible = !hidden && (show_hidden || !nodisplay);
+                visible = show_hidden || !nodisplay;
                 g_object_unref (app);
         } else {
                 visible = show_hidden;
