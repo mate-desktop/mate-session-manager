@@ -96,7 +96,8 @@ lock_screen (GsmInhibitDialog *dialog)
         if ((screen_locker_command = gsm_get_screen_locker_command ()) != NULL) {
                 GError *error = NULL;
 
-                g_spawn_async (NULL, screen_locker_command, NULL, G_SPAWN_DEFAULT,
+                g_spawn_async (NULL, screen_locker_command, NULL,
+                               G_SPAWN_DEFAULT | G_SPAWN_SEARCH_PATH,
                                NULL, NULL, NULL, &error);
 
                 if (error != NULL) {

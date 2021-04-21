@@ -1236,7 +1236,8 @@ manager_perhaps_lock (GsmManager *manager)
                 }
 
                 /* do this sync to ensure it's on the screen when we start suspending */
-                g_spawn_sync (NULL, screen_locker_command, NULL, G_SPAWN_DEFAULT,
+                g_spawn_sync (NULL, screen_locker_command, NULL,
+                              G_SPAWN_DEFAULT | G_SPAWN_SEARCH_PATH,
                               NULL, NULL, NULL, NULL, NULL, &error);
 
                 if (error) {
