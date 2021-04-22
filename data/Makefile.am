@@ -4,7 +4,7 @@ bin_SCRIPTS = mate-wm
 
 uidir = $(pkgdatadir)
 ui_DATA = \
-	session-properties.ui	\
+	session-properties.ui \
 	gsm-inhibit-dialog.ui
 
 hwcompatdir = $(pkgdatadir)
@@ -40,7 +40,9 @@ EXTRA_DIST =					\
 	$(hwcompat_DATA)			\
 	$(ui_DATA)				\
 	$(desktop_in_files)			\
-	$(pixmap_DATA_dist)
+	$(pixmap_DATA_dist)			\
+	gsm-properties-dialog.ui		\
+	mate-session-properties-resources.gresource.xml
 
 CLEANFILES =					\
 	$(xsession_DATA)			\

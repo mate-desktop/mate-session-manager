@@ -35,17 +35,7 @@
 #include "gsp-app.h"
 #include "gsp-app-manager.h"
 
-#define GTKBUILDER_FILE "session-properties.ui"
-
-#define CAPPLET_TREEVIEW_WIDGET_NAME      "session_properties_treeview"
-#define CAPPLET_ADD_WIDGET_NAME           "session_properties_add_button"
-#define CAPPLET_DELETE_WIDGET_NAME        "session_properties_delete_button"
-#define CAPPLET_EDIT_WIDGET_NAME          "session_properties_edit_button"
-#define CAPPLET_SAVE_WIDGET_NAME          "session_properties_save_button"
-#define CAPPLET_REMEMBER_WIDGET_NAME      "session_properties_remember_toggle"
-#define CAPPLET_SHOW_HIDDEN_WIDGET_NAME   "session_properties_show_hidden_toggle"
-
-#define STARTUP_APP_ICON     "system-run"
+#define STARTUP_APP_ICON    "system-run"
 
 #define SPC_CONFIG_SCHEMA   "org.mate.session"
 #define SPC_AUTOSAVE_KEY    "auto-save-session"
@@ -54,14 +44,16 @@
 struct _GsmPropertiesDialog
 {
         GtkDialog          parent;
-        GtkBuilder        *xml;
+
         GtkListStore      *list_store;
         GtkTreeModel      *tree_filter;
 
-        GtkTreeView       *treeview;
-        GtkWidget         *add_button;
-        GtkWidget         *delete_button;
-        GtkWidget         *edit_button;
+        GtkWidget         *main_notebook;
+        GtkWidget         *treeview;
+        GtkWidget         *delete_app_button;
+        GtkWidget         *edit_app_button;
+        GtkWidget         *show_hidden_check_button;
+        GtkWidget         *remember_check_button;
 
         GspAppManager     *manager;
 
@@ -76,8 +68,6 @@ enum {
         STORE_COL_SEARCH,
         NUMBER_OF_COLUMNS
 };
-
-static void     gsm_properties_dialog_finalize    (GObject                  *object);
 
 G_DEFINE_TYPE (GsmPropertiesDialog, gsm_properties_dialog, GTK_TYPE_DIALOG)
 
@@ -245,8 +235,8 @@ on_selection_changed (GtkTreeSelection    *selection,
 
         sel = gtk_tree_selection_get_selected (selection, NULL, NULL);
 
-        gtk_widget_set_sensitive (dialog->edit_button, sel);
-        gtk_widget_set_sensitive (dialog->delete_button, sel);
+        gtk_widget_set_sensitive (dialog->edit_app_button, sel);
+        gtk_widget_set_sensitive (dialog->delete_app_button, sel);
 }
 
 static void
@@ -278,14 +268,14 @@ on_startup_enabled_toggled (GtkCellRendererToggle *cell_renderer,
 }
 
 static void
-on_drag_data_received (GtkWidget           *widget,
-                       GdkDragContext      *drag_context,
-                       gint                 x,
-                       gint                 y,
-                       GtkSelectionData    *data,
-                       guint                info,
-                       guint                time,
-                       GsmPropertiesDialog *dialog)
+on_treeview_drag_data_received (GtkWidget           *widget,
+                                GdkDragContext      *drag_context,
+                                gint                 x,
+                                gint                 y,
+                                GtkSelectionData    *data,
+                                guint                info,
+                                guint                time,
+                                GsmPropertiesDialog *dialog)
 {
         gboolean dnd_success;
 
@@ -312,9 +302,9 @@ on_drag_data_received (GtkWidget           *widget,
 }
 
 static void
-on_drag_begin (GtkWidget           *widget,
-               GdkDragContext      *context,
-               GsmPropertiesDialog *dialog)
+on_treeview_drag_begin (GtkWidget           *widget,
+                        GdkDragContext      *context,
+                        GsmPropertiesDialog *dialog)
 {
         GtkTreePath *path;
         GtkTreeIter  iter;
@@ -339,12 +329,12 @@ on_drag_begin (GtkWidget           *widget,
 }
 
 static void
-on_drag_data_get (GtkWidget           *widget,
-                  GdkDragContext      *context,
-                  GtkSelectionData    *selection_data,
-                  guint                info,
-                  guint                time,
-                  GsmPropertiesDialog *dialog)
+on_treeview_drag_data_get (GtkWidget           *widget,
+                           GdkDragContext      *context,
+                           GtkSelectionData    *selection_data,
+                           guint                info,
+                           guint                time,
+                           GsmPropertiesDialog *dialog)
 {
         GspApp *app;
 
@@ -364,8 +354,8 @@ on_drag_data_get (GtkWidget           *widget,
 }
 
 static void
-on_add_app_clicked (GtkWidget           *widget,
-                    GsmPropertiesDialog *dialog)
+on_add_app_button_clicked (GtkWidget           *widget,
+                           GsmPropertiesDialog *dialog)
 {
         GtkWidget  *add_dialog;
         char       *name;
@@ -387,14 +377,14 @@ on_add_app_clicked (GtkWidget           *widget,
 }
 
 static void
-on_delete_app_clicked (GtkWidget           *widget,
-                       GsmPropertiesDialog *dialog)
+on_delete_app_button_clicked (GtkWidget           *widget,
+                              GsmPropertiesDialog *dialog)
 {
         GtkTreeSelection *selection;
         GtkTreeIter       iter;
         GspApp           *app;
 
-        selection = gtk_tree_view_get_selection (dialog->treeview);
+        selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (dialog->treeview));
 
         if (!gtk_tree_selection_get_selected (selection, NULL, &iter)) {
                 return;
@@ -413,14 +403,14 @@ on_delete_app_clicked (GtkWidget           *widget,
 }
 
 static void
-on_edit_app_clicked (GtkWidget           *widget,
-                     GsmPropertiesDialog *dialog)
+on_edit_app_button_clicked (GtkWidget           *widget,
+                            GsmPropertiesDialog *dialog)
 {
         GtkTreeSelection *selection;
         GtkTreeIter       iter;
         GspApp           *app;
 
-        selection = gtk_tree_view_get_selection (dialog->treeview);
+        selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (dialog->treeview));
 
         if (!gtk_tree_selection_get_selected (selection, NULL, &iter)) {
                 return;
@@ -459,25 +449,29 @@ on_edit_app_clicked (GtkWidget           *widget,
 }
 
 static void
-on_row_activated (GtkTreeView         *tree_view,
-                  GtkTreePath         *path,
-                  GtkTreeViewColumn   *column,
-                  GsmPropertiesDialog *dialog)
+on_treeview_row_activated (GtkTreeView         *tree_view,
+                           GtkTreePath         *path,
+                           GtkTreeViewColumn   *column,
+                           GsmPropertiesDialog *dialog)
 {
-        on_edit_app_clicked (NULL, dialog);
+        on_edit_app_button_clicked (NULL, dialog);
 }
 
 static void
-on_show_hidden_toggled (GtkToggleButton     *togglebutton,
-                        GsmPropertiesDialog *dialog)
+on_show_hidden_check_button_toggled (GtkToggleButton     *togglebutton,
+                                     GsmPropertiesDialog *dialog)
 {
         (void) togglebutton;
+
+        if (dialog->tree_filter == NULL)
+                return;
+
         gtk_tree_model_filter_refilter (GTK_TREE_MODEL_FILTER (dialog->tree_filter));
 }
 
 static void
-on_save_session_clicked (GtkWidget           *widget,
-                         GsmPropertiesDialog *dialog)
+on_save_session_button_clicked (GtkWidget           *widget,
+                                GsmPropertiesDialog *dialog)
 {
         g_debug ("Session saving is not implemented yet!");
 }
@@ -573,33 +567,16 @@ static void
 setup_dialog (GsmPropertiesDialog *dialog)
 {
         GtkTreeView       *treeview;
-        GtkWidget         *button;
-        GtkToggleButton   *toggle_button;
         GtkTreeModel      *tree_filter;
         GtkTreeViewColumn *column;
         GtkCellRenderer   *renderer;
         GtkTreeSelection  *selection;
         GtkTargetList     *targetlist;
 
-        gsm_util_dialog_add_button (GTK_DIALOG (dialog),
-                                    _("_Help"), "help-browser",
-                                    GTK_RESPONSE_HELP);
-
-        gsm_util_dialog_add_button (GTK_DIALOG (dialog),
-                                    _("_Close"), "window-close",
-                                    GTK_RESPONSE_CLOSE);
-
         dialog->settings = g_settings_new (SPC_CONFIG_SCHEMA);
 
-        toggle_button = GTK_TOGGLE_BUTTON (gtk_builder_get_object (dialog->xml,
-                                                                   CAPPLET_SHOW_HIDDEN_WIDGET_NAME));
-
         g_settings_bind (dialog->settings, SPC_SHOW_HIDDEN_KEY,
-                         toggle_button, "active", G_SETTINGS_BIND_DEFAULT);
-
-        g_signal_connect (toggle_button, "toggled",
-                          G_CALLBACK (on_show_hidden_toggled),
-                          dialog);
+                         dialog->show_hidden_check_button, "active", G_SETTINGS_BIND_DEFAULT);
 
         dialog->list_store = gtk_list_store_new (NUMBER_OF_COLUMNS,
                                                  G_TYPE_BOOLEAN,
@@ -612,20 +589,15 @@ setup_dialog (GsmPropertiesDialog *dialog)
         g_object_unref (dialog->list_store);
         dialog->tree_filter = tree_filter;
 
-        gtk_tree_model_filter_set_visible_func (GTK_TREE_MODEL_FILTER (tree_filter), visible_func, toggle_button, NULL);
+        gtk_tree_model_filter_set_visible_func (GTK_TREE_MODEL_FILTER (tree_filter),
+                                                visible_func,
+                                                dialog->show_hidden_check_button,
+                                                NULL);
 
-        treeview = GTK_TREE_VIEW (gtk_builder_get_object (dialog->xml,
-                                                          CAPPLET_TREEVIEW_WIDGET_NAME));
-        dialog->treeview = treeview;
+        treeview = GTK_TREE_VIEW (dialog->treeview);
 
         gtk_tree_view_set_model (treeview, tree_filter);
         g_object_unref (tree_filter);
-
-        gtk_tree_view_set_headers_visible (treeview, FALSE);
-        g_signal_connect (treeview,
-                          "row-activated",
-                          G_CALLBACK (on_row_activated),
-                          dialog);
 
         selection = gtk_tree_view_get_selection (treeview);
         gtk_tree_selection_set_mode (selection, GTK_SELECTION_BROWSE);
@@ -701,58 +673,13 @@ setup_dialog (GsmPropertiesDialog *dialog)
                 gtk_target_table_free (targets, n_targets);
         }
 
-        g_signal_connect (treeview, "drag_begin",
-                          G_CALLBACK (on_drag_begin),
-                          dialog);
-        g_signal_connect (treeview, "drag_data_get",
-                          G_CALLBACK (on_drag_data_get),
-                          dialog);
-        g_signal_connect (treeview, "drag_data_received",
-                          G_CALLBACK (on_drag_data_received),
-                          dialog);
-
         gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (dialog->list_store),
                                               STORE_COL_DESCRIPTION,
                                               GTK_SORT_ASCENDING);
 
 
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
-                                                     CAPPLET_ADD_WIDGET_NAME));
-        dialog->add_button = button;
-        g_signal_connect (button,
-                          "clicked",
-                          G_CALLBACK (on_add_app_clicked),
-                          dialog);
-
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
-                                                     CAPPLET_DELETE_WIDGET_NAME));
-        dialog->delete_button = button;
-        g_signal_connect (button,
-                          "clicked",
-                          G_CALLBACK (on_delete_app_clicked),
-                          dialog);
-
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
-                                                     CAPPLET_EDIT_WIDGET_NAME));
-        dialog->edit_button = button;
-        g_signal_connect (button,
-                          "clicked",
-                          G_CALLBACK (on_edit_app_clicked),
-                          dialog);
-
-
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
-                                                     CAPPLET_REMEMBER_WIDGET_NAME));
-
         g_settings_bind (dialog->settings, SPC_AUTOSAVE_KEY,
-                         button, "active", G_SETTINGS_BIND_DEFAULT);
-
-        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
-                                                     CAPPLET_SAVE_WIDGET_NAME));
-        g_signal_connect (button,
-                          "clicked",
-                          G_CALLBACK (on_save_session_clicked),
-                          dialog);
+                         dialog->remember_check_button, "active", G_SETTINGS_BIND_DEFAULT);
 
         dialog->manager = gsp_app_manager_get ();
         gsp_app_manager_fill (dialog->manager);
@@ -761,24 +688,13 @@ setup_dialog (GsmPropertiesDialog *dialog)
         g_signal_connect_swapped (dialog->manager, "removed",
                                   G_CALLBACK (_app_removed), dialog);
 
+        gtk_widget_add_events (dialog->main_notebook, GDK_SCROLL_MASK);
+        g_signal_connect (dialog->main_notebook, "scroll-event",
+                          G_CALLBACK (on_main_notebook_scroll_event),
+                          NULL);
+
         populate_model (dialog);
         gtk_tree_model_filter_refilter (GTK_TREE_MODEL_FILTER (dialog->tree_filter));
-}
-
-static GObject *
-gsm_properties_dialog_constructor (GType                  type,
-                                guint                  n_construct_properties,
-                                GObjectConstructParam *construct_properties)
-{
-        GsmPropertiesDialog *dialog;
-
-        dialog = GSM_PROPERTIES_DIALOG (G_OBJECT_CLASS (gsm_properties_dialog_parent_class)->constructor (type,
-                                                                                                          n_construct_properties,
-                                                                                                          construct_properties));
-
-        setup_dialog (dialog);
-
-        return G_OBJECT (dialog);
 }
 
 static void
@@ -790,11 +706,6 @@ gsm_properties_dialog_dispose (GObject *object)
         g_return_if_fail (GSM_IS_PROPERTIES_DIALOG (object));
 
         dialog = GSM_PROPERTIES_DIALOG (object);
-
-        if (dialog->xml != NULL) {
-                g_object_unref (dialog->xml);
-                dialog->xml = NULL;
-        }
 
         if (dialog->settings != NULL) {
                 g_object_unref (dialog->settings);
@@ -813,64 +724,84 @@ gsm_properties_dialog_dispose (GObject *object)
 }
 
 static void
-gsm_properties_dialog_class_init (GsmPropertiesDialogClass *klass)
-{
-        GObjectClass   *object_class = G_OBJECT_CLASS (klass);
-
-        object_class->constructor = gsm_properties_dialog_constructor;
-        object_class->dispose = gsm_properties_dialog_dispose;
-        object_class->finalize = gsm_properties_dialog_finalize;
-}
-
-static void
-gsm_properties_dialog_init (GsmPropertiesDialog *dialog)
-{
-        GtkWidget   *content_area;
-        GtkWidget   *widget;
-        GError      *error;
-
-        dialog->xml = gtk_builder_new ();
-        gtk_builder_set_translation_domain (dialog->xml, GETTEXT_PACKAGE);
-
-        error = NULL;
-        if (!gtk_builder_add_from_file (dialog->xml,
-                                        GTKBUILDER_DIR "/" GTKBUILDER_FILE,
-                                        &error)) {
-                if (error) {
-                        g_warning ("Could not load capplet UI file: %s",
-                                   error->message);
-                        g_error_free (error);
-                } else {
-                        g_warning ("Could not load capplet UI file.");
-                }
-        }
-
-        content_area = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
-        widget = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
-                                                     "main-notebook"));
-
-        gtk_widget_add_events (widget, GDK_SCROLL_MASK);
-        g_signal_connect (widget,
-                          "scroll-event",
-                          G_CALLBACK (on_main_notebook_scroll_event),
-                          NULL);
-
-        gtk_box_pack_start (GTK_BOX (content_area), widget, TRUE, TRUE, 0);
-
-        gtk_window_set_resizable (GTK_WINDOW (dialog), TRUE);
-        gtk_container_set_border_width (GTK_CONTAINER (dialog), 6);
-        gtk_box_set_spacing (GTK_BOX (content_area), 2);
-        gtk_window_set_icon_name (GTK_WINDOW (dialog), "mate-session-properties");
-        gtk_window_set_title (GTK_WINDOW (dialog), _("Startup Applications Preferences"));
-}
-
-static void
 gsm_properties_dialog_finalize (GObject *object)
 {
         g_return_if_fail (object != NULL);
         g_return_if_fail (GSM_IS_PROPERTIES_DIALOG (object));
 
         G_OBJECT_CLASS (gsm_properties_dialog_parent_class)->finalize (object);
+}
+
+static void
+gsm_properties_dialog_response (GtkDialog *dialog,
+                                gint       response_id)
+{
+        if (response_id == GTK_RESPONSE_HELP) {
+                GError *error = NULL;
+
+                gtk_show_uri_on_window (GTK_WINDOW (dialog),
+                                        "help:mate-user-guide/gosstartsession-2",
+                                        gtk_get_current_event_time (),
+                                        &error);
+
+                if (error != NULL) {
+                        GtkWidget *d = gtk_message_dialog_new (GTK_WINDOW (dialog),
+                                                               GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+                                                               GTK_MESSAGE_ERROR,
+                                                               GTK_BUTTONS_CLOSE,
+                                                               "%s", _("Could not display help document"));
+
+                        gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (d),
+                                                                  "%s", error->message);
+
+                        g_error_free (error);
+                        gtk_dialog_run (GTK_DIALOG (d));
+                        gtk_widget_destroy (d);
+                }
+        } else {
+                gtk_widget_destroy (GTK_WIDGET (dialog));
+                gtk_main_quit ();
+        }
+}
+
+static void
+gsm_properties_dialog_class_init (GsmPropertiesDialogClass *klass)
+{
+        const gchar    *resource = "/org/mate/desktop/session/properties/gsm-properties-dialog.ui";
+        GObjectClass   *object_class = G_OBJECT_CLASS (klass);
+        GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+        GtkDialogClass *dialog_class = GTK_DIALOG_CLASS (klass);
+
+        object_class->dispose = gsm_properties_dialog_dispose;
+        object_class->finalize = gsm_properties_dialog_finalize;
+
+        dialog_class->response = gsm_properties_dialog_response;
+
+        gtk_widget_class_set_template_from_resource (widget_class, resource);
+
+        gtk_widget_class_bind_template_child (widget_class, GsmPropertiesDialog, main_notebook);
+        gtk_widget_class_bind_template_child (widget_class, GsmPropertiesDialog, show_hidden_check_button);
+        gtk_widget_class_bind_template_child (widget_class, GsmPropertiesDialog, treeview);
+        gtk_widget_class_bind_template_child (widget_class, GsmPropertiesDialog, delete_app_button);
+        gtk_widget_class_bind_template_child (widget_class, GsmPropertiesDialog, edit_app_button);
+        gtk_widget_class_bind_template_child (widget_class, GsmPropertiesDialog, remember_check_button);
+
+        gtk_widget_class_bind_template_callback (widget_class, on_show_hidden_check_button_toggled);
+        gtk_widget_class_bind_template_callback (widget_class, on_treeview_row_activated);
+        gtk_widget_class_bind_template_callback (widget_class, on_treeview_drag_begin);
+        gtk_widget_class_bind_template_callback (widget_class, on_treeview_drag_data_get);
+        gtk_widget_class_bind_template_callback (widget_class, on_treeview_drag_data_received);
+        gtk_widget_class_bind_template_callback (widget_class, on_add_app_button_clicked);
+        gtk_widget_class_bind_template_callback (widget_class, on_delete_app_button_clicked);
+        gtk_widget_class_bind_template_callback (widget_class, on_edit_app_button_clicked);
+        gtk_widget_class_bind_template_callback (widget_class, on_save_session_button_clicked);
+}
+
+static void
+gsm_properties_dialog_init (GsmPropertiesDialog *dialog)
+{
+        gtk_widget_init_template (GTK_WIDGET (dialog));
+        setup_dialog (dialog);
 }
 
 GtkWidget *

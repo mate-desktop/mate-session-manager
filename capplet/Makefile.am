@@ -9,6 +9,8 @@ AM_CPPFLAGS =						\
 
 AM_CFLAGS = $(WARN_CFLAGS)
 
+BUILT_SOURCES = gsm-resources.c gsm-resources.h
+nodist_mate_session_properties_SOURCES = $(BUILT_SOURCES)
 mate_session_properties_SOURCES =			\
 	main.c						\
 	gsm-properties-dialog.h				\
@@ -25,5 +27,14 @@ mate_session_properties_SOURCES =			\
 mate_session_properties_LDADD =			\
 	$(SESSION_PROPERTIES_LIBS)			\
 	$(top_builddir)/mate-session/libgsmutil.la
+
+gsm-resources.c: $(srcdir)/../data/mate-session-properties-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/mate-session-properties-resources.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name gsm $<
+
+gsm-resources.h: $(srcdir)/../data/mate-session-properties-resources.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/../data --generate-dependencies $(srcdir)/../data/mate-session-properties-resources.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir)/../data --generate --c-name gsm $<
+
+CLEANFILES =						\
+	$(BUILT_SOURCES)
 
 -include $(top_srcdir)/git.mk

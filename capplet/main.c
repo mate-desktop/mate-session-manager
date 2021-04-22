@@ -36,37 +36,10 @@ static GOptionEntry options[] = {
 	{NULL, 0, 0, 0, NULL, NULL, NULL}
 };
 
-static void dialog_response(GsmPropertiesDialog* dialog, guint response_id, gpointer data)
-{
-	GError* error;
-
-	if (response_id == GTK_RESPONSE_HELP)
-	{
-		error = NULL;
-		gtk_show_uri_on_window (GTK_WINDOW (dialog), "help:mate-user-guide/gosstartsession-2",
-					gtk_get_current_event_time (), &error);
-
-		if (error != NULL)
-		{
-			GtkWidget* d = gtk_message_dialog_new(GTK_WINDOW(dialog), GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "%s", _("Could not display help document"));
-			gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(d), "%s", error->message);
-			g_error_free(error);
-
-			gtk_dialog_run(GTK_DIALOG (d));
-			gtk_widget_destroy(d);
-		}
-	}
-	else
-	{
-		gtk_widget_destroy(GTK_WIDGET (dialog));
-		gtk_main_quit();
-	}
-}
-
 int main(int argc, char* argv[])
 {
-	GError* error;
-	GtkWidget* dialog;
+	GError *error;
+	GtkWidget *dialog;
 
 #ifdef ENABLE_NLS
 	bindtextdomain(GETTEXT_PACKAGE, LOCALE_DIR);
@@ -89,9 +62,8 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 
-	dialog = gsm_properties_dialog_new();
-	g_signal_connect(dialog, "response", G_CALLBACK(dialog_response), NULL);
-	gtk_widget_show(dialog);
+	dialog = gsm_properties_dialog_new ();
+	gtk_widget_show (dialog);
 
 	gtk_main();
 
