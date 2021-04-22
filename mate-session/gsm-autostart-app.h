@@ -42,7 +42,6 @@ struct _GsmAutostartAppClass
 
 GsmApp *gsm_autostart_app_new                (const char *desktop_file);
 
-#define GSM_AUTOSTART_APP_ENABLED_KEY     "X-MATE-Autostart-enabled"
 #define GSM_AUTOSTART_APP_PHASE_KEY       "X-MATE-Autostart-Phase"
 #define GSM_AUTOSTART_APP_PROVIDES_KEY    "X-MATE-Provides"
 #define GSM_AUTOSTART_APP_STARTUP_ID_KEY  "X-MATE-Autostart-startup-id"
