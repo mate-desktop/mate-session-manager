@@ -42,11 +42,10 @@
 #define GSP_APP_SAVE_DELAY 2
 
 #define GSP_ASP_SAVE_MASK_HIDDEN   0x0001
-#define GSP_ASP_SAVE_MASK_ENABLED  0x0002
-#define GSP_ASP_SAVE_MASK_NAME     0x0004
-#define GSP_ASP_SAVE_MASK_EXEC     0x0008
-#define GSP_ASP_SAVE_MASK_COMMENT  0x0010
-#define GSP_ASP_SAVE_MASK_DELAY    0x0020
+#define GSP_ASP_SAVE_MASK_NAME     0x0002
+#define GSP_ASP_SAVE_MASK_EXEC     0x0004
+#define GSP_ASP_SAVE_MASK_COMMENT  0x0008
+#define GSP_ASP_SAVE_MASK_DELAY    0x0010
 #define GSP_ASP_SAVE_MASK_ALL      0xffff
 
 typedef struct {
@@ -55,7 +54,6 @@ typedef struct {
 
         gboolean      hidden;
         gboolean      nodisplay;
-        gboolean      enabled;
 
         char         *name;
         char         *exec;
@@ -343,10 +341,7 @@ _gsp_app_user_equal_system (GspApp  *app,
 
         if (gsp_key_file_get_boolean (keyfile,
                                       G_KEY_FILE_DESKTOP_KEY_HIDDEN,
-                                      FALSE) != priv->hidden ||
-            gsp_key_file_get_boolean (keyfile,
-                                      GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
-                                      TRUE) != priv->enabled) {
+                                      FALSE) != priv->hidden) {
                 g_free (path);
                 g_key_file_free (keyfile);
                 return FALSE;
@@ -472,12 +467,6 @@ _gsp_app_save (gpointer data)
                                           priv->hidden);
         }
 
-        if (priv->save_mask & GSP_ASP_SAVE_MASK_ENABLED) {
-                gsp_key_file_set_boolean (keyfile,
-                                          GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
-                                          priv->enabled);
-        }
-
         if (priv->save_mask & GSP_ASP_SAVE_MASK_NAME) {
                 gsp_key_file_set_locale_string (keyfile,
                                                 G_KEY_FILE_DESKTOP_KEY_NAME,
@@ -589,21 +578,9 @@ gsp_app_get_hidden (GspApp *app)
         return priv->hidden;
 }
 
-gboolean
-gsp_app_get_enabled (GspApp *app)
-{
-        GspAppPrivate *priv;
-
-        g_return_val_if_fail (GSP_IS_APP (app), FALSE);
-
-        priv = gsp_app_get_instance_private (app);
-
-        return priv->enabled;
-}
-
 void
-gsp_app_set_enabled (GspApp   *app,
-                     gboolean  enabled)
+gsp_app_set_hidden (GspApp   *app,
+                    gboolean  hidden)
 {
         GspAppPrivate *priv;
 
@@ -611,12 +588,12 @@ gsp_app_set_enabled (GspApp   *app,
 
         priv = gsp_app_get_instance_private (app);
 
-        if (enabled == priv->enabled) {
+        if (hidden == priv->hidden) {
                 return;
         }
 
-        priv->enabled = enabled;
-        priv->save_mask |= GSP_ASP_SAVE_MASK_ENABLED;
+        priv->hidden = hidden;
+        priv->save_mask |= GSP_ASP_SAVE_MASK_HIDDEN;
 
         _gsp_app_queue_save (app);
         _gsp_app_emit_changed (app);
@@ -963,9 +940,6 @@ gsp_app_new (const char   *path,
         priv->hidden = gsp_key_file_get_boolean (keyfile,
                                                  G_KEY_FILE_DESKTOP_KEY_HIDDEN,
                                                  FALSE);
-        priv->enabled = gsp_key_file_get_boolean (keyfile,
-                                                  GSP_KEY_FILE_DESKTOP_KEY_AUTOSTART_ENABLED,
-                                                  TRUE);
         priv->nodisplay = gsp_key_file_get_boolean (keyfile,
                                                     G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY,
                                                     FALSE);
@@ -1114,7 +1088,6 @@ gsp_app_create (const char *name,
                                        priv->basename, NULL);
 
         priv->hidden = FALSE;
-        priv->enabled = TRUE;
         priv->nodisplay = FALSE;
 
         if (!gsm_util_text_is_blank (name)) {
@@ -1212,12 +1185,6 @@ gsp_app_copy_desktop_file (const char *uri)
                 changed = TRUE;
                 priv->hidden = FALSE;
                 priv->save_mask |= GSP_ASP_SAVE_MASK_HIDDEN;
-        }
-
-        if (!priv->enabled) {
-                changed = TRUE;
-                priv->enabled = TRUE;
-                priv->save_mask |= GSP_ASP_SAVE_MASK_ENABLED;
         }
 
         if (changed) {
