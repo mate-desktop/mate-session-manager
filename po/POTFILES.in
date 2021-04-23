@@ -7,10 +7,10 @@ capplet/main.c
 data/org.mate.session.gschema.xml.in
 data/mate.desktop.in
 data/mate-wm.desktop.in
+data/gsm-app-dialog.ui
 data/gsm-inhibit-dialog.ui
 data/gsm-properties-dialog.ui
 data/mate-session-properties.desktop.in
-data/session-properties.ui
 mate-submodules/libegg/eggdesktopfile.c
 mate-submodules/libegg/eggsmclient.c
 mate-session/gsm-inhibit-dialog.c
