@@ -38,8 +38,10 @@ static GOptionEntry options[] = {
 
 int main(int argc, char* argv[])
 {
+	GOptionContext *context;
 	GError *error;
 	GtkWidget *dialog;
+	gboolean success;
 
 #ifdef ENABLE_NLS
 	bindtextdomain(GETTEXT_PACKAGE, LOCALE_DIR);
@@ -49,17 +51,25 @@ int main(int argc, char* argv[])
 
 	error = NULL;
 
-	if (!gtk_init_with_args(&argc, &argv, _("- MATE Session Properties"), options, GETTEXT_PACKAGE, &error))
+	/* Parse command line orguments */
+	context = g_option_context_new (_("- MATE Session Properties"));
+	g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
+	g_option_context_add_group (context, gtk_get_option_group (TRUE));
+	success = g_option_context_parse (context, &argc, &argv, &error);
+	g_option_context_free (context);
+
+	if (!success)
 	{
-		g_warning("Unable to start: %s", error->message);
-		g_error_free(error);
-		return 1;
+		g_print (_("%s\nRun '%s --help' to see a full list of available command line options.\n"),
+		         error->message, argv[0]);
+		g_error_free (error);
+		return EXIT_FAILURE;
 	}
 
 	if (show_version)
 	{
 		g_print("%s %s\n", argv[0], VERSION);
-		return 0;
+		return EXIT_SUCCESS;
 	}
 
 	dialog = gsm_properties_dialog_new ();
@@ -67,5 +77,5 @@ int main(int argc, char* argv[])
 
 	gtk_main();
 
-	return 0;
+	return EXIT_SUCCESS;
 }
