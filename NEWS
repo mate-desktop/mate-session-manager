@@ -1,3 +1,11 @@
+### mate-session-manager 1.24.3
+
+  * Translations update
+  * Follow freedesktop guidelines to disable autorun using Hidden key
+  * capplet: use a function to set the visibility of treeview rows
+  * Look for the location of the locking screen app using user's PATH
+  * capplet: memory leak
+
 ### mate-session-manager 1.24.2
 
   * Translations update
