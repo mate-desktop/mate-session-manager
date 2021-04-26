@@ -13,6 +13,7 @@
 # Ikuru K <kanumaiku@gmail.com>, 2020
 # semicolon <mail@semicln.com>, 2020
 # FuRuYa7 <goo.sirocat47@gmail.com>, 2020
+# Green, 2021
 # 
 msgid ""
 msgstr ""
@@ -20,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2020-08-14 10:33+0200\n"
 "PO-Revision-Date: 2020-02-16 14:58+0000\n"
-"Last-Translator: FuRuYa7 <goo.sirocat47@gmail.com>, 2020\n"
+"Last-Translator: Green, 2021\n"
 "Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +35,7 @@ msgstr "コマンドの選択"
 
 #: capplet/gsm-app-dialog.c:167
 msgid "second"
-msgstr ""
+msgstr "秒"
 
 #: capplet/gsm-app-dialog.c:169
 msgid "seconds"
@@ -127,12 +128,12 @@ msgstr "これを有効にすると、mate-session は自動的にセッショ�
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr ""
+msgstr "非表示の自動起動アプリを表示"
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
-msgstr ""
+msgstr "MATE セッションのプロパティを有効にすると、非表示の自動開始アプリケーションが表示されます。"
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -294,7 +295,7 @@ msgstr "編集(_E)"
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
-msgstr ""
+msgstr "隠しフォルダを表示(_S)"
 
 #: data/session-properties.ui:168
 msgid "Startup Programs"
@@ -540,7 +541,7 @@ msgstr "ユーザーが指定したアプリケーションを起動しない"
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr ""
+msgstr "ハードウェアアクセラレーションのチェックを無効にする"
 
 #: mate-session/main.c:635
 msgid " - the MATE session manager"
