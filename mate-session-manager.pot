@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.24.0\n"
+"Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2020-07-09 12:14+0200\n"
+"POT-Creation-Date: 2021-06-22 22:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,85 +17,89 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: capplet/gsm-app-dialog.c:124
+#: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:167
+#: capplet/gsm-app-dialog.c:168
 msgid "second"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:169
+#: capplet/gsm-app-dialog.c:170
 msgid "seconds"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:215 mate-session/gsm-logout-dialog.c:452
-#: mate-session/gsm-logout-dialog.c:485
+#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
+#: mate-session/gsm-logout-dialog.c:486
 msgid "_Cancel"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:221
+#: capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:223 data/session-properties.ui:86
+#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
 msgid "_Add"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:226
+#: capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:228
+#: capplet/gsm-app-dialog.c:231
 msgid "_Save"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:541
+#: capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:547
+#: capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
 msgstr ""
 
-#: capplet/gsm-properties-dialog.c:572
+#: capplet/gsm-properties-dialog.c:586
 msgid "_Help"
 msgstr ""
 
-#: capplet/gsm-properties-dialog.c:576
+#: capplet/gsm-properties-dialog.c:590
 msgid "_Close"
 msgstr ""
 
-#: capplet/gsm-properties-dialog.c:616
+#: capplet/gsm-properties-dialog.c:640
 msgid "Enabled"
 msgstr ""
 
-#: capplet/gsm-properties-dialog.c:628
+#: capplet/gsm-properties-dialog.c:652
 msgid "Icon"
 msgstr ""
 
-#: capplet/gsm-properties-dialog.c:640
+#: capplet/gsm-properties-dialog.c:664
 msgid "Program"
 msgstr ""
 
-#: capplet/gsm-properties-dialog.c:854
+#: capplet/gsm-properties-dialog.c:865
 msgid "Startup Applications Preferences"
 msgstr ""
 
-#: capplet/gsp-app.c:284
+#: capplet/gsp-app.c:283
 msgid "No name"
 msgstr ""
 
-#: capplet/gsp-app.c:290
+#: capplet/gsp-app.c:289
 msgid "No description"
 msgstr ""
 
-#: capplet/main.c:35 mate-session/main.c:614
+#: capplet/main.c:36 mate-session/main.c:614
 msgid "Version of this application"
 msgstr ""
 
-#: capplet/main.c:51
+#: capplet/main.c:52
 msgid "Could not display help document"
+msgstr ""
+
+#: capplet/main.c:80
+msgid "- MATE Session Properties"
 msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:5
@@ -242,7 +246,7 @@ msgstr ""
 msgid "<b>Some programs are still running:</b>"
 msgstr ""
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:631
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -372,113 +376,113 @@ msgstr ""
 msgid "Show session management options"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:249
+#: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
 msgid "Icon '%s' not found"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:579
+#: mate-session/gsm-inhibit-dialog.c:592
 msgid "Unknown"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:630
+#: mate-session/gsm-inhibit-dialog.c:643
 msgid "A program is still running:"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:634
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid "Some programs are still running:"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:635
+#: mate-session/gsm-inhibit-dialog.c:648
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:865
+#: mate-session/gsm-inhibit-dialog.c:878
 msgid "Switch User Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:868
+#: mate-session/gsm-inhibit-dialog.c:881
 msgid "Log Out Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:871
+#: mate-session/gsm-inhibit-dialog.c:884
 msgid "Suspend Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:874
+#: mate-session/gsm-inhibit-dialog.c:887
 msgid "Hibernate Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:877
+#: mate-session/gsm-inhibit-dialog.c:890
 msgid "Shut Down Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:880
+#: mate-session/gsm-inhibit-dialog.c:893
 msgid "Reboot Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:888
+#: mate-session/gsm-inhibit-dialog.c:901
 msgid "Lock Screen"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:891
+#: mate-session/gsm-inhibit-dialog.c:904
 msgid "Cancel"
 msgstr ""
 
-#: mate-session/gsm-logout-dialog.c:307
+#: mate-session/gsm-logout-dialog.c:308
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: mate-session/gsm-logout-dialog.c:315
+#: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: mate-session/gsm-logout-dialog.c:361
+#: mate-session/gsm-logout-dialog.c:362
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr ""
 
-#: mate-session/gsm-logout-dialog.c:441
+#: mate-session/gsm-logout-dialog.c:442
 msgid "Log out of this system now?"
 msgstr ""
 
-#: mate-session/gsm-logout-dialog.c:447
+#: mate-session/gsm-logout-dialog.c:448
 msgid "_Switch User"
 msgstr ""
 
-#: mate-session/gsm-logout-dialog.c:456
+#: mate-session/gsm-logout-dialog.c:457
 msgid "_Log Out"
 msgstr ""
 
-#: mate-session/gsm-logout-dialog.c:462
+#: mate-session/gsm-logout-dialog.c:463
 msgid "Shut down this system now?"
 msgstr ""
 
-#: mate-session/gsm-logout-dialog.c:468
+#: mate-session/gsm-logout-dialog.c:469
 msgid "S_uspend"
 msgstr ""
 
-#: mate-session/gsm-logout-dialog.c:474
+#: mate-session/gsm-logout-dialog.c:475
 msgid "_Hibernate"
 msgstr ""
 
-#: mate-session/gsm-logout-dialog.c:480
+#: mate-session/gsm-logout-dialog.c:481
 msgid "_Restart"
 msgstr ""
 
-#: mate-session/gsm-logout-dialog.c:490
+#: mate-session/gsm-logout-dialog.c:491
 msgid "_Shut Down"
 msgstr ""
 
-#: mate-session/gsm-manager.c:1513 mate-session/gsm-manager.c:2337
+#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
 msgid "Not responding"
 msgstr ""
 
@@ -486,27 +490,27 @@ msgstr ""
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #.
-#: mate-session/gsm-xsmp-client.c:595
+#: mate-session/gsm-xsmp-client.c:596
 msgid "Remembered Application"
 msgstr ""
 
-#: mate-session/gsm-xsmp-client.c:1262
+#: mate-session/gsm-xsmp-client.c:1263
 msgid "This program is blocking logout."
 msgstr ""
 
-#: mate-session/gsm-xsmp-server.c:322
+#: mate-session/gsm-xsmp-server.c:323
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 
-#: mate-session/gsm-xsmp-server.c:584
+#: mate-session/gsm-xsmp-server.c:585
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr ""
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:355
+#: mate-session/gsm-util.c:383
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 
@@ -526,57 +530,11 @@ msgstr ""
 msgid "Disable hardware acceleration check"
 msgstr ""
 
-#: mate-session/main.c:635
+#: mate-session/main.c:637
 msgid " - the MATE session manager"
 msgstr ""
 
-#: tools/mate-session-save.c:66
-msgid "Log out"
-msgstr ""
-
-#: tools/mate-session-save.c:67
-msgid "Log out, ignoring any existing inhibitors"
-msgstr ""
-
-#: tools/mate-session-save.c:68
-msgid "Show logout dialog"
-msgstr ""
-
-#: tools/mate-session-save.c:69
-msgid "Show shutdown dialog"
-msgstr ""
-
-#: tools/mate-session-save.c:70
-msgid "Use dialog boxes for errors"
-msgstr ""
-
-#. deprecated options
-#: tools/mate-session-save.c:72
-msgid "Set the current session name"
-msgstr ""
-
-#: tools/mate-session-save.c:72
-msgid "NAME"
-msgstr ""
-
-#: tools/mate-session-save.c:73
-msgid "Kill session"
-msgstr ""
-
-#: tools/mate-session-save.c:74
-msgid "Do not require confirmation"
-msgstr ""
-
-#. Okay, it wasn't the upgrade case, so now we can give up.
-#: tools/mate-session-save.c:126
-msgid "Could not connect to the session manager"
-msgstr ""
-
-#: tools/mate-session-save.c:251
-msgid "Program called with conflicting options"
-msgstr ""
-
-#: tools/mate-session-inhibit.c:115
+#: tools/mate-session-inhibit.c:118
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -594,13 +552,59 @@ msgid ""
 "If no --inhibit option is specified, idle is assumed.\n"
 msgstr ""
 
-#: tools/mate-session-inhibit.c:169 tools/mate-session-inhibit.c:179
-#: tools/mate-session-inhibit.c:189
+#: tools/mate-session-inhibit.c:174 tools/mate-session-inhibit.c:184
+#: tools/mate-session-inhibit.c:194
 #, c-format
 msgid "%s requires an argument\n"
 msgstr ""
 
-#: tools/mate-session-inhibit.c:225
+#: tools/mate-session-inhibit.c:230
 #, c-format
 msgid "Failed to execute %s\n"
+msgstr ""
+
+#: tools/mate-session-save.c:67
+msgid "Log out"
+msgstr ""
+
+#: tools/mate-session-save.c:68
+msgid "Log out, ignoring any existing inhibitors"
+msgstr ""
+
+#: tools/mate-session-save.c:69
+msgid "Show logout dialog"
+msgstr ""
+
+#: tools/mate-session-save.c:70
+msgid "Show shutdown dialog"
+msgstr ""
+
+#: tools/mate-session-save.c:71
+msgid "Use dialog boxes for errors"
+msgstr ""
+
+#. deprecated options
+#: tools/mate-session-save.c:73
+msgid "Set the current session name"
+msgstr ""
+
+#: tools/mate-session-save.c:73
+msgid "NAME"
+msgstr ""
+
+#: tools/mate-session-save.c:74
+msgid "Kill session"
+msgstr ""
+
+#: tools/mate-session-save.c:75
+msgid "Do not require confirmation"
+msgstr ""
+
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: tools/mate-session-save.c:127
+msgid "Could not connect to the session manager"
+msgstr ""
+
+#: tools/mate-session-save.c:254
+msgid "Program called with conflicting options"
 msgstr ""
