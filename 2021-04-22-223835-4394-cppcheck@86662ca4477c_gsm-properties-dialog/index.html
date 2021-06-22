@@ -1,0 +1,218 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - mate-session-manager</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(id) {
+        var elements = document.querySelectorAll("." + id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("d-none");
+        }
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll("input");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var el = elements[i];
+
+          if (el.checked) {
+            el.checked = false;
+          } else {
+            el.checked = true;
+          }
+
+          toggleDisplay(el.id);
+        }
+      }
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="header" class="header">
+      <h1>Cppcheck report - mate-session-manager: </h1>
+    </div>
+    <div class="wrapper">
+      <div id="menu_index">
+       <p id="filename"><a href="index.html">Defect summary;</a> </p>
+
+       <label><input type="checkbox" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="variableScope" name="variableScope" checked></td><td>18</td><td>variableScope</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="unusedStructMember" name="unusedStructMember" checked></td><td>10</td><td>unusedStructMember</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="unreadVariable" name="unreadVariable" checked></td><td>8</td><td>unreadVariable</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="varFuncNullUB" name="varFuncNullUB" checked></td><td>8</td><td>varFuncNullUB</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="knownConditionTrueFalse" name="knownConditionTrueFalse" checked></td><td>7</td><td>knownConditionTrueFalse</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="unknownMacro" name="unknownMacro" checked></td><td>7</td><td>unknownMacro</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="redundantAssignment" name="redundantAssignment" checked></td><td>5</td><td>redundantAssignment</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="nullPointerRedundantCheck" name="nullPointerRedundantCheck" checked></td><td>2</td><td>nullPointerRedundantCheck</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="ConfigurationNotChecked" name="ConfigurationNotChecked" checked></td><td>1</td><td>ConfigurationNotChecked</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="missingInclude" name="missingInclude" checked></td><td>1</td><td>missingInclude</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="unassignedVariable" name="unassignedVariable" checked></td><td>1</td><td>unassignedVariable</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="uselessAssignmentPtrArg" name="uselessAssignmentPtrArg" checked></td><td>1</td><td>uselessAssignmentPtrArg</td></tr>
+           <tr><td></td><td>69</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table>
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th></tr>
+       <tr><td colspan="5"><a href="25.html"></a></td></tr>
+         <tr class="missingInclude"><td></td><td>missingInclude</td><td></td><td>information</td><td>Cppcheck cannot find all the include files (use --check-config for details)</td></tr>
+       <tr><td colspan="5"><a href="0.html">capplet/gsm-properties-dialog.c</a></td></tr>
+       <tr class="unusedStructMember"><td><a href="0.html#line-52">52</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >struct member &apos;_GsmPropertiesDialog::add_app_button&apos; is never used.</td></tr>
+       <tr><td colspan="5"><a href="1.html">capplet/gsm-resources.c</a></td></tr>
+       <tr class="unusedStructMember"><td><a href="1.html#line-10">10</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+       <tr class="unusedStructMember"><td><a href="1.html#line-10">10</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+       <tr class="unusedStructMember"><td><a href="1.html#line-151">151</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+       <tr class="unusedStructMember"><td><a href="1.html#line-151">151</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+       <tr><td colspan="5"><a href="2.html">capplet/gsp-app-manager.c</a></td></tr>
+       <tr class="variableScope"><td><a href="2.html#line-203">203</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;xdgdir&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="2.html#line-226">226</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;xdgdir&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="2.html#line-576">576</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;app&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="3.html">capplet/gsp-keyfile.c</a></td></tr>
+       <tr class="variableScope"><td><a href="3.html#line-134">134</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;buffer&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="4.html">mate-session/gs-idle-monitor.c</a></td></tr>
+       <tr class="unusedStructMember"><td><a href="4.html#line-51">51</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >struct member &apos;_GSIdleMonitor::keycode&apos; is never used.</td></tr>
+       <tr class="unusedStructMember"><td><a href="4.html#line-52">52</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >struct member &apos;_GSIdleMonitor::keycode1&apos; is never used.</td></tr>
+       <tr class="unusedStructMember"><td><a href="4.html#line-53">53</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >struct member &apos;_GSIdleMonitor::keycode2&apos; is never used.</td></tr>
+       <tr class="redundantAssignment"><td><a href="4.html#line-443">443</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;attr.trigger.wait_value&apos; is reassigned a value before the old one has been used.</td></tr>
+       <tr><td colspan="5"><a href="5.html">mate-session/gsm-app.c</a></td></tr>
+       <tr class="unknownMacro"><td><a href="5.html#line-59">59</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+       <tr><td colspan="5"><a href="6.html">mate-session/gsm-autostart-app.c</a></td></tr>
+       <tr class="nullPointerRedundantCheck"><td><a href="6.html#line-151">151</a></td><td>nullPointerRedundantCheck</td><td><a href="https://cwe.mitre.org/data/definitions/476.html">476</a></td><td>warning</td><td >Either the condition &apos;!g_ascii_strncasecmp(condition_string,&quot;if-exists&quot;,len)&amp;&amp;key&apos; is redundant or there is possible null pointer dereference: key.</td></tr>
+       <tr class="unreadVariable"><td><a href="6.html#line-362">362</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;disabled&apos; is assigned a value that is never used.</td></tr>
+       <tr class="unreadVariable"><td><a href="6.html#line-379">379</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;disabled&apos; is assigned a value that is never used.</td></tr>
+       <tr class="unreadVariable"><td><a href="6.html#line-391">391</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;disabled&apos; is assigned a value that is never used.</td></tr>
+       <tr class="unreadVariable"><td><a href="6.html#line-393">393</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;disabled&apos; is assigned a value that is never used.</td></tr>
+       <tr class="unreadVariable"><td><a href="6.html#line-395">395</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;disabled&apos; is assigned a value that is never used.</td></tr>
+       <tr><td colspan="5"><a href="7.html">mate-session/gsm-client.c</a></td></tr>
+       <tr class="unknownMacro"><td><a href="7.html#line-59">59</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+       <tr><td colspan="5"><a href="8.html">mate-session/gsm-consolekit.c</a></td></tr>
+       <tr class="unreadVariable"><td><a href="8.html#line-675">675</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;res&apos; is assigned a value that is never used.</td></tr>
+       <tr><td colspan="5"><a href="9.html">mate-session/gsm-dbus-client.c</a></td></tr>
+       <tr class="unknownMacro"><td><a href="9.html#line-58">58</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+       <tr><td colspan="5"><a href="10.html">mate-session/gsm-inhibit-dialog.c</a></td></tr>
+       <tr class="unusedStructMember"><td><a href="10.html#line-68">68</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >struct member &apos;_GsmInhibitDialog::xrender_event_base&apos; is never used.</td></tr>
+       <tr class="unusedStructMember"><td><a href="10.html#line-69">69</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >struct member &apos;_GsmInhibitDialog::xrender_error_base&apos; is never used.</td></tr>
+       <tr class="variableScope"><td><a href="10.html#line-460">460</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;icon_name&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="10.html#line-466">466</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;search_dirs&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="11.html">mate-session/gsm-inhibitor.c</a></td></tr>
+       <tr class="unknownMacro"><td><a href="11.html#line-62">62</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+       <tr><td colspan="5"><a href="12.html">mate-session/gsm-logout-dialog.c</a></td></tr>
+       <tr class="redundantAssignment"><td><a href="12.html#line-199">199</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;ret&apos; is reassigned a value before the old one has been used.</td></tr>
+       <tr class="redundantAssignment"><td><a href="12.html#line-202">202</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;ret&apos; is reassigned a value before the old one has been used.</td></tr>
+       <tr class="redundantAssignment"><td><a href="12.html#line-213">213</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;ret&apos; is reassigned a value before the old one has been used.</td></tr>
+       <tr class="redundantAssignment"><td><a href="12.html#line-216">216</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;ret&apos; is reassigned a value before the old one has been used.</td></tr>
+       <tr><td colspan="5"><a href="13.html">mate-session/gsm-manager.c</a></td></tr>
+       <tr class="unknownMacro"><td><a href="13.html#line-191">191</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+       <tr><td colspan="5"><a href="14.html">mate-session/gsm-store.c</a></td></tr>
+       <tr class="unknownMacro"><td><a href="14.html#line-56">56</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+       <tr><td colspan="5"><a href="15.html">mate-session/gsm-systemd.c</a></td></tr>
+       <tr class="nullPointerRedundantCheck"><td><a href="15.html#line-425">425</a></td><td>nullPointerRedundantCheck</td><td><a href="https://cwe.mitre.org/data/definitions/476.html">476</a></td><td>warning</td><td >Either the condition &apos;sessions==NULL&apos; is redundant or there is possible null pointer dereference: sessions.</td></tr>
+       <tr class="unassignedVariable"><td><a href="15.html#line-428">428</a></td><td>unassignedVariable</td><td><a href="https://cwe.mitre.org/data/definitions/665.html">665</a></td><td>style</td><td >Variable &apos;ret&apos; is not assigned a value.</td></tr>
+       <tr class="knownConditionTrueFalse"><td><a href="15.html#line-434">434</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td >Condition &apos;session==NULL&apos; is always true</td></tr>
+       <tr class="knownConditionTrueFalse"><td><a href="15.html#line-590">590</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td >Condition &apos;session_id==NULL&apos; is always true</td></tr>
+       <tr class="knownConditionTrueFalse"><td><a href="15.html#line-716">716</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td >Condition &apos;session_id==NULL&apos; is always true</td></tr>
+       <tr class="knownConditionTrueFalse"><td><a href="15.html#line-727">727</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The comparison &apos;ret &gt; 0&apos; is always false.</td></tr>
+       <tr class="knownConditionTrueFalse"><td><a href="15.html#line-995">995</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td >Condition &apos;session_id==NULL&apos; is always true</td></tr>
+       <tr><td colspan="5"><a href="16.html">mate-session/gsm-util.c</a></td></tr>
+       <tr class="variableScope"><td><a href="16.html#line-189">189</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;filename&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="17.html">mate-session/gsm-xsmp-client.c</a></td></tr>
+       <tr class="variableScope"><td><a href="17.html#line-120">120</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;prop&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="18.html">mate-session/gsm-xsmp-server.c</a></td></tr>
+       <tr class="unknownMacro"><td><a href="18.html#line-84">84</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+       <tr><td colspan="5"><a href="19.html">mate-session/main.c</a></td></tr>
+       <tr class="variableScope"><td><a href="19.html#line-401">401</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;i&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="20.html">mate-session/mdm-log.c</a></td></tr>
+       <tr class="ConfigurationNotChecked"><td><a href="20.html#line-192">192</a></td><td>ConfigurationNotChecked</td><td></td><td>information</td><td >Skipping configuration &apos;LOG_PERROR&apos; since the value of &apos;LOG_PERROR&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</td></tr>
+       <tr><td colspan="5"><a href="21.html">mate-session/mdm-signal-handler.c</a></td></tr>
+       <tr class="unreadVariable"><td><a href="21.html#line-285">285</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;ignore&apos; is assigned a value that is never used.</td></tr>
+       <tr class="unreadVariable"><td><a href="21.html#line-289">289</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;ignore&apos; is assigned a value that is never used.</td></tr>
+       <tr><td colspan="5"><a href="22.html">mate-submodules/libegg/eggdesktopfile.c</a></td></tr>
+       <tr class="variableScope"><td><a href="22.html#line-497">497</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;try_exec&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="22.html#line-497">497</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;found_program&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="22.html#line-498">498</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;only_show_in&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="22.html#line-498">498</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;not_show_in&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="22.html#line-500">500</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;i&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="22.html#line-622">622</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;p&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="23.html">mate-submodules/libegg/eggsmclient-xsmp.c</a></td></tr>
+       <tr class="varFuncNullUB"><td><a href="23.html#line-286">286</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td >Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+       <tr class="varFuncNullUB"><td><a href="23.html#line-294">294</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td >Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+       <tr class="uselessAssignmentPtrArg"><td><a href="23.html#line-349">349</a></td><td>uselessAssignmentPtrArg</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>warning</td><td >Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?</td></tr>
+       <tr class="variableScope"><td><a href="23.html#line-804">804</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;discard&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="23.html#line-805">805</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;fd&apos; can be reduced.</td></tr>
+       <tr class="varFuncNullUB"><td><a href="23.html#line-817">817</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td >Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+       <tr class="varFuncNullUB"><td><a href="23.html#line-825">825</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td >Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+       <tr class="varFuncNullUB"><td><a href="23.html#line-830">830</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td >Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+       <tr class="variableScope"><td><a href="23.html#line-851">851</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;keys&apos; can be reduced.</td></tr>
+       <tr class="varFuncNullUB"><td><a href="23.html#line-956">956</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td >Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+       <tr class="varFuncNullUB"><td><a href="23.html#line-964">964</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td >Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+       <tr class="varFuncNullUB"><td><a href="23.html#line-965">965</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td >Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+       <tr><td colspan="5"><a href="24.html">mate-submodules/libegg/eggsmclient.c</a></td></tr>
+       <tr class="knownConditionTrueFalse"><td><a href="24.html#line-362">362</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td >Condition &apos;!global_client&apos; is always true</td></tr>
+       <tr class="knownConditionTrueFalse"><td><a href="24.html#line-370">370</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td >Condition &apos;!global_client&apos; is always true</td></tr>
+       </table>
+      </div> <!-- /.wrapper -->
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Cppcheck 2.3 - a tool for static C/C++ code analysis<br>
+        <br>
+        Internet: <a href="http://cppcheck.net">http://cppcheck.net</a><br>
+        IRC: <a href="irc://irc.freenode.net/cppcheck">irc://irc.freenode.net/cppcheck</a><br>
+      </p>
+    </div>
+  </body>
+</html>

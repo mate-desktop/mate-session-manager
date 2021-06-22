@@ -1,0 +1,191 @@
+<html>
+<head>
+<title>rootdir - scan-build results</title>
+<link type="text/css" rel="stylesheet" href="scanview.css"/>
+<script src="sorttable.js"></script>
+<script language='javascript' type="text/javascript">
+function SetDisplay(RowClass, DisplayVal)
+{
+  var Rows = document.getElementsByTagName("tr");
+  for ( var i = 0 ; i < Rows.length; ++i ) {
+    if (Rows[i].className == RowClass) {
+      Rows[i].style.display = DisplayVal;
+    }
+  }
+}
+
+function CopyCheckedStateToCheckButtons(SummaryCheckButton) {
+  var Inputs = document.getElementsByTagName("input");
+  for ( var i = 0 ; i < Inputs.length; ++i ) {
+    if (Inputs[i].type == "checkbox") {
+      if(Inputs[i] != SummaryCheckButton) {
+        Inputs[i].checked = SummaryCheckButton.checked;
+        Inputs[i].onclick();
+      }
+    }
+  }
+}
+
+function returnObjById( id ) {
+    if (document.getElementById)
+        var returnVar = document.getElementById(id);
+    else if (document.all)
+        var returnVar = document.all[id];
+    else if (document.layers)
+        var returnVar = document.layers[id];
+    return returnVar;
+}
+
+var NumUnchecked = 0;
+
+function ToggleDisplay(CheckButton, ClassName) {
+  if (CheckButton.checked) {
+    SetDisplay(ClassName, "");
+    if (--NumUnchecked == 0) {
+      returnObjById("AllBugsCheck").checked = true;
+    }
+  }
+  else {
+    SetDisplay(ClassName, "none");
+    NumUnchecked++;
+    returnObjById("AllBugsCheck").checked = false;
+  }
+}
+</script>
+<!-- SUMMARYENDHEAD -->
+</head>
+<body>
+<h1>rootdir - scan-build results</h1>
+
+<table>
+<tr><th>User:</th><td>root@a940b30df472</td></tr>
+<tr><th>Working Directory:</th><td>/rootdir</td></tr>
+<tr><th>Command Line:</th><td>make -j 2</td></tr>
+<tr><th>Clang Version:</th><td>clang version 11.0.0 (Fedora 11.0.0-2.fc33)
+</td></tr>
+<tr><th>Date:</th><td>Thu Apr 22 22:45:23 2021</td></tr>
+</table>
+<h2>Bug Summary</h2><table>
+<thead><tr><td>Bug Type</td><td>Quantity</td><td class="sorttable_nosort">Display?</td></tr></thead>
+<tr style="font-weight:bold"><td class="SUMM_DESC">All Bugs</td><td class="Q">31</td><td><center><input type="checkbox" id="AllBugsCheck" onClick="CopyCheckedStateToCheckButtons(this);" checked/></center></td></tr>
+<tr><th>Dead code</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Unreachable code</td><td class="Q">19</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_dead_code_unreachable_code');" checked/></center></td></tr>
+<tr><th>Dead store</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Dead assignment</td><td class="Q">5</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_dead_store_dead_assignment');" checked/></center></td></tr>
+<tr><th>Logic error</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Cast from non-struct type to struct type</td><td class="Q">4</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_cast_from_non-struct_type_to_struct_type');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Dereference of undefined pointer value</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_dereference_of_undefined_pointer_value');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Uninitialized argument value</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_uninitialized_argument_value');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Use fixed address</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_use_fixed_address');" checked/></center></td></tr>
+</table>
+<h2>Reports</h2>
+
+<table class="sortable" style="table-layout:automatic">
+<thead><tr>
+  <td>Bug Group</td>
+  <td class="sorttable_sorted">Bug Type<span id="sorttable_sortfwdind">&nbsp;&#x25BE;</span></td>
+  <td>File</td>
+  <td>Function/Method</td>
+  <td class="Q">Line</td>
+  <td class="Q">Path Length</td>
+  <td class="sorttable_nosort"></td>
+  <!-- REPORTBUGCOL -->
+</tr></thead>
+<tbody>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>mate-submodules/libegg/eggsmclient-xsmp.c</td><td class="DESC">ptrarray_prop</td><td class="Q">1232</td><td class="Q">1</td><td><a href="report-51a341.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-51a341.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>mate-submodules/libegg/eggsmclient-xsmp.c</td><td class="DESC">ptrarray_prop</td><td class="Q">1232</td><td class="Q">1</td><td><a href="report-57169c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-57169c.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>mate-submodules/libegg/eggsmclient-xsmp.c</td><td class="DESC">array_prop</td><td class="Q">1199</td><td class="Q">1</td><td><a href="report-5afb05.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-5afb05.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>mate-submodules/libegg/eggsmclient-xsmp.c</td><td class="DESC">array_prop</td><td class="Q">1199</td><td class="Q">1</td><td><a href="report-de3c2e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-de3c2e.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>mate-session/gsm-manager.c</td><td class="DESC">maybe_restart_user_bus</td><td class="Q">920</td><td class="Q">1</td><td><a href="report-5717ef.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-5717ef.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>mate-session/gsm-consolekit.c</td><td class="DESC">get_current_seat_id</td><td class="Q">675</td><td class="Q">1</td><td><a href="report-6aeb83.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-6aeb83.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>mate-session/main.c</td><td class="DESC">signal_cb</td><td class="Q">441</td><td class="Q">1</td><td><a href="report-aaeffe.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-aaeffe.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>mate-session/gsm-logout-dialog.c</td><td class="DESC">gsm_logout_supports_system_hibernate</td><td class="Q">210</td><td class="Q">1</td><td><a href="report-be384d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-be384d.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>mate-session/gsm-logout-dialog.c</td><td class="DESC">gsm_logout_supports_system_suspend</td><td class="Q">196</td><td class="Q">1</td><td><a href="report-db1c70.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-db1c70.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_undefined_pointer_value"><td class="DESC">Logic error</td><td class="DESC">Dereference of undefined pointer value</td><td>capplet/gsm-app-dialog.c</td><td class="DESC">gsm_app_dialog_run</td><td class="Q">575</td><td class="Q">9</td><td><a href="report-802bfc.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-802bfc.html" -->
+</tr>
+<tr class="bt_logic_error_uninitialized_argument_value"><td class="DESC">Logic error</td><td class="DESC">Uninitialized argument value</td><td>capplet/gsm-app-dialog.c</td><td class="DESC">gsm_app_dialog_run</td><td class="Q">582</td><td class="Q">12</td><td><a href="report-3340bc.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3340bc.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-save.c</td><td class="DESC">main</td><td class="Q">233</td><td class="Q">1</td><td><a href="report-084955.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-084955.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-save.c</td><td class="DESC">main</td><td class="Q">228</td><td class="Q">1</td><td><a href="report-0c4967.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0c4967.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-save.c</td><td class="DESC">main</td><td class="Q">274</td><td class="Q">1</td><td><a href="report-306db8.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-306db8.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-save.c</td><td class="DESC">main</td><td class="Q">243</td><td class="Q">1</td><td><a href="report-3baa2b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3baa2b.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-save.c</td><td class="DESC">main</td><td class="Q">270</td><td class="Q">1</td><td><a href="report-4195db.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-4195db.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-save.c</td><td class="DESC">main</td><td class="Q">282</td><td class="Q">1</td><td><a href="report-42cc54.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-42cc54.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-save.c</td><td class="DESC">main</td><td class="Q">248</td><td class="Q">1</td><td><a href="report-6703ec.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-6703ec.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-check-accelerated-gles-helper.c</td><td class="DESC">main</td><td class="Q">222</td><td class="Q">1</td><td><a href="report-6a908a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-6a908a.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-check-accelerated-gl-helper.c</td><td class="DESC">main</td><td class="Q">461</td><td class="Q">1</td><td><a href="report-79eb9b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-79eb9b.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-check-accelerated-gles-helper.c</td><td class="DESC">main</td><td class="Q">214</td><td class="Q">1</td><td><a href="report-7bc8de.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7bc8de.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-save.c</td><td class="DESC">main</td><td class="Q">278</td><td class="Q">1</td><td><a href="report-81084e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-81084e.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-check-accelerated-gl-helper.c</td><td class="DESC">main</td><td class="Q">504</td><td class="Q">1</td><td><a href="report-818a99.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-818a99.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>mate-session/gsm-manager.c</td><td class="DESC">gsm_manager_new</td><td class="Q">2931</td><td class="Q">1</td><td><a href="report-a0d913.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a0d913.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-save.c</td><td class="DESC">main</td><td class="Q">258</td><td class="Q">1</td><td><a href="report-a86e1c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a86e1c.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>mate-session/mdm-signal-handler.c</td><td class="DESC">signal_handler</td><td class="Q">279</td><td class="Q">1</td><td><a href="report-c15e1c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c15e1c.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-check-accelerated-gl-helper.c</td><td class="DESC">main</td><td class="Q">507</td><td class="Q">1</td><td><a href="report-cbbc03.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-cbbc03.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-save.c</td><td class="DESC">main</td><td class="Q">253</td><td class="Q">1</td><td><a href="report-ee828e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ee828e.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>capplet/main.c</td><td class="DESC">main</td><td class="Q">61</td><td class="Q">1</td><td><a href="report-f5dc17.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f5dc17.html" -->
+</tr>
+<tr class="bt_dead_code_unreachable_code"><td class="DESC">Dead code</td><td class="DESC">Unreachable code</td><td>tools/mate-session-save.c</td><td class="DESC">main</td><td class="Q">238</td><td class="Q">1</td><td><a href="report-fd1c2d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-fd1c2d.html" -->
+</tr>
+<tr class="bt_logic_error_use_fixed_address"><td class="DESC">Logic error</td><td class="DESC">Use fixed address</td><td>mate-session/main.c</td><td class="DESC">main</td><td class="Q">630</td><td class="Q">3</td><td><a href="report-7d56e9.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7d56e9.html" -->
+</tr>
+</tbody>
+</table>
+
+</body></html>
