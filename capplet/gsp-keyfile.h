@@ -2,6 +2,7 @@
  * gsp-keyfile.h: GKeyFile extensions
  *
  * Copyright (C) 2008, 2009 Novell, Inc.
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * Based on code from panel-keyfile.h (from mate-panel)
  *

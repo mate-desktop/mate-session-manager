@@ -4,6 +4,7 @@
  * Copyright (C) 2005 Red Hat, Inc.
  * Copyright (C) 2002, 2003 George Lebl
  * Copyright (C) 2001 Queen of England,
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as

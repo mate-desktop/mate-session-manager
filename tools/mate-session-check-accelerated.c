@@ -2,6 +2,7 @@
 /* Tool to set the property _GNOME_SESSION_ACCELERATED on the root window */
 /*
  * Copyright (C) 2011 Red Hat, Inc.
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
