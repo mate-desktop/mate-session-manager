@@ -13,15 +13,15 @@
 # 437c9d6e19936ed69f57bed9e0fe4716, 2018
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2018
 # thunk <thunk77@gmail.com>, 2018
-# Αλέξανδρος Καπετάνιος <alexandros@gnugr.org>, 2018
+# Alexandros Kapetanios <alexandros@gnugr.org>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Alkis Georgopoulos <alkisg@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.23.0\n"
+"Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-19 13:25+0100\n"
+"POT-Creation-Date: 2021-06-22 22:34+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Alkis Georgopoulos <alkisg@gmail.com>, 2020\n"
 "Language-Team: Greek (https://www.transifex.com/mate/teams/13566/el/)\n"
@@ -31,20 +31,20 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: capplet/gsm-app-dialog.c:127
+#: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
 msgstr "Επιλογή εντολής"
 
-#: capplet/gsm-app-dialog.c:170
+#: capplet/gsm-app-dialog.c:168
 msgid "second"
 msgstr "δευτερόλεπτο"
 
-#: capplet/gsm-app-dialog.c:172
+#: capplet/gsm-app-dialog.c:170
 msgid "seconds"
 msgstr "δευτερόλεπτα"
 
-#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:452
-#: mate-session/gsm-logout-dialog.c:485
+#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
+#: mate-session/gsm-logout-dialog.c:486
 msgid "_Cancel"
 msgstr "Α_κύρωση"
 
@@ -72,45 +72,49 @@ msgstr "Η εντολή εκκίνησης δε μπορεί να είναι κ�
 msgid "The startup command is not valid"
 msgstr "Η εντολή εκκίνησης δεν είναι έγκυρη"
 
-#: capplet/gsm-properties-dialog.c:516
+#: capplet/gsm-properties-dialog.c:586
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: capplet/gsm-properties-dialog.c:520
+#: capplet/gsm-properties-dialog.c:590
 msgid "_Close"
 msgstr "_Κλείσιμο"
 
-#: capplet/gsm-properties-dialog.c:560
+#: capplet/gsm-properties-dialog.c:640
 msgid "Enabled"
 msgstr "Ενεργοποιημένο"
 
-#: capplet/gsm-properties-dialog.c:572
+#: capplet/gsm-properties-dialog.c:652
 msgid "Icon"
 msgstr "Εικονίδιο"
 
-#: capplet/gsm-properties-dialog.c:584
+#: capplet/gsm-properties-dialog.c:664
 msgid "Program"
 msgstr "Πρόγραμμα"
 
-#: capplet/gsm-properties-dialog.c:791
+#: capplet/gsm-properties-dialog.c:865
 msgid "Startup Applications Preferences"
 msgstr "Προτιμήσεις προγραμμάτων εκκίνησης "
 
-#: capplet/gsp-app.c:284
+#: capplet/gsp-app.c:283
 msgid "No name"
 msgstr "Χωρίς όνομα"
 
-#: capplet/gsp-app.c:290
+#: capplet/gsp-app.c:289
 msgid "No description"
 msgstr "Χωρίς περιγραφή"
 
-#: capplet/main.c:35 mate-session/main.c:614
+#: capplet/main.c:36 mate-session/main.c:614
 msgid "Version of this application"
 msgstr "Η Έκδοση αυτής της εφαρμογής"
 
-#: capplet/main.c:51
+#: capplet/main.c:52
 msgid "Could not display help document"
 msgstr "Δεν είναι δυνατή η προβολή του αρχείου βοήθειας"
+
+#: capplet/main.c:80
+msgid "- MATE Session Properties"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -266,10 +270,6 @@ msgstr "ΜΑΤΕ"
 msgid "This session logs you into MATE"
 msgstr "Αυτή η συνεδρία σας συνδέει στο MATE"
 
-#: data/mate.desktop.in:8
-msgid "Type=Application"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
@@ -286,7 +286,7 @@ msgstr ""
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Μερικά προγράμματα εκτελούνται ακόμα:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:633
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -301,12 +301,6 @@ msgstr "Προγράμματα εκκίνησης"
 #: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
 msgstr "Επιλέξτε τα προγράμματα που θα εκκινούνται όταν συνδέεστε στο σύστημα"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-session-properties.desktop.in:7
-msgid "mate-session-properties"
-msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -366,85 +360,85 @@ msgstr "Ό_νομα:"
 msgid "_Delay:"
 msgstr "Καθυ_στέρηση:"
 
-#: egg/eggdesktopfile.c:152
+#: mate-submodules/libegg/eggdesktopfile.c:168
 msgid "File is not a valid .desktop file"
 msgstr "Το αρχείο δεν είναι έγκυρο αρχείο .desktop"
 
-#: egg/eggdesktopfile.c:172
+#: mate-submodules/libegg/eggdesktopfile.c:193
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Μη αναγνωρίσιμη έκδοση αρχείου desktop '%s'"
 
-#: egg/eggdesktopfile.c:956
+#: mate-submodules/libegg/eggdesktopfile.c:975
 #, c-format
 msgid "Starting %s"
 msgstr "Εκκίνηση %s"
 
-#: egg/eggdesktopfile.c:1097
+#: mate-submodules/libegg/eggdesktopfile.c:1117
 msgid "Application does not accept documents on command line"
 msgstr "Η εφαρμογή δεν δέχεται έγγραφα από τη γραμμή εντολών"
 
-#: egg/eggdesktopfile.c:1165
+#: mate-submodules/libegg/eggdesktopfile.c:1185
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Μη αναγνωρίσιμη επιλογή εκκίνησης: %d"
 
-#: egg/eggdesktopfile.c:1363
+#: mate-submodules/libegg/eggdesktopfile.c:1401
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
 "Δεν επιτρέπεται το πέρασμα διευθύνσεων (URI) εγγράφων σε εγγραφές της "
 "επιφάνειας εργασίας τύπου 'Type=Link'"
 
-#: egg/eggdesktopfile.c:1384
+#: mate-submodules/libegg/eggdesktopfile.c:1422
 msgid "Not a launchable item"
 msgstr "Μη εκκινήσιμο αντικείμενο"
 
-#: egg/eggsmclient.c:221
+#: mate-submodules/libegg/eggsmclient.c:233
 msgid "Disable connection to session manager"
 msgstr "Απενεργοποίηση σύνδεσης με τον διαχειριστή συνεδρίας"
 
-#: egg/eggsmclient.c:224
+#: mate-submodules/libegg/eggsmclient.c:238
 msgid "Specify file containing saved configuration"
 msgstr "Καθορισμός του αρχείου που περιέχει τις αποθηκευμένες ρυθμίσεις"
 
-#: egg/eggsmclient.c:224
+#: mate-submodules/libegg/eggsmclient.c:238
 msgid "FILE"
 msgstr "ΑΡΧΕΙΟ"
 
-#: egg/eggsmclient.c:227
+#: mate-submodules/libegg/eggsmclient.c:243
 msgid "Specify session management ID"
 msgstr "Καθορισμός ID διαχείρισης συνεδρίας"
 
-#: egg/eggsmclient.c:227
+#: mate-submodules/libegg/eggsmclient.c:243
 msgid "ID"
 msgstr "ID"
 
-#: egg/eggsmclient.c:248
+#: mate-submodules/libegg/eggsmclient.c:269
 msgid "Session management options:"
 msgstr "Επιλογές διαχείρισης συνεδρίας"
 
-#: egg/eggsmclient.c:249
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Show session management options"
 msgstr "Εμφάνιση επιλογών διαχείρισης συνεδρίας"
 
-#: mate-session/gsm-inhibit-dialog.c:251
+#: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Το εικονίδιο '%s'  δεν βρέθηκε "
 
-#: mate-session/gsm-inhibit-dialog.c:581
+#: mate-session/gsm-inhibit-dialog.c:592
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: mate-session/gsm-inhibit-dialog.c:632
+#: mate-session/gsm-inhibit-dialog.c:643
 msgid "A program is still running:"
 msgstr "Ένα πρόγραμμα εκτελείται ήδη:"
 
-#: mate-session/gsm-inhibit-dialog.c:636
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid "Some programs are still running:"
 msgstr "Μερικά προγράμματα εκτελούνται ακόμη:"
 
-#: mate-session/gsm-inhibit-dialog.c:637
+#: mate-session/gsm-inhibit-dialog.c:648
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -452,118 +446,118 @@ msgstr ""
 "Αναμονή για το κλείσιμο των προγραμμάτων. Η διακοπή αυτών των προγραμμάτων "
 "μπορεί να προκαλέσει απώλεια δεδομένων."
 
-#: mate-session/gsm-inhibit-dialog.c:867
+#: mate-session/gsm-inhibit-dialog.c:878
 msgid "Switch User Anyway"
 msgstr "Αλλαγή χρήστη ούτως ή άλλως"
 
-#: mate-session/gsm-inhibit-dialog.c:870
+#: mate-session/gsm-inhibit-dialog.c:881
 msgid "Log Out Anyway"
 msgstr "Αποσύνδεση ούτως ή άλλως"
 
-#: mate-session/gsm-inhibit-dialog.c:873
+#: mate-session/gsm-inhibit-dialog.c:884
 msgid "Suspend Anyway"
 msgstr "Αναστολή ούτως ή άλλως"
 
-#: mate-session/gsm-inhibit-dialog.c:876
+#: mate-session/gsm-inhibit-dialog.c:887
 msgid "Hibernate Anyway"
 msgstr "Αδρανοποίηση ούτως ή άλλως"
 
-#: mate-session/gsm-inhibit-dialog.c:879
+#: mate-session/gsm-inhibit-dialog.c:890
 msgid "Shut Down Anyway"
 msgstr "Κλείσιμο ούτως ή άλλως"
 
-#: mate-session/gsm-inhibit-dialog.c:882
+#: mate-session/gsm-inhibit-dialog.c:893
 msgid "Reboot Anyway"
 msgstr "Επανεκκίνηση ούτως ή άλλως"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:901
 msgid "Lock Screen"
 msgstr "Κλείδωμα οθόνης"
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:904
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: mate-session/gsm-logout-dialog.c:307
+#: mate-session/gsm-logout-dialog.c:308
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] "Θα αποσυνδεθείτε αυτόματα σε %d δευτερόλεπτο"
 msgstr[1] "Θα αποσυνδεθείτε αυτόματα σε %d δευτερόλεπτα"
 
-#: mate-session/gsm-logout-dialog.c:315
+#: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] "Το σύστημα θα κλείσει αυτόματα σε %d δευτερόλεπτο"
 msgstr[1] "Το σύστημα θα κλείσει αυτόματα σε %d δευτερόλεπτα"
 
-#: mate-session/gsm-logout-dialog.c:361
+#: mate-session/gsm-logout-dialog.c:362
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Είστε συνδεδεμένος ως  \"%s\"."
 
-#: mate-session/gsm-logout-dialog.c:441
+#: mate-session/gsm-logout-dialog.c:442
 msgid "Log out of this system now?"
 msgstr "Να γίνει αποσύνδεση από το σύστημα τώρα;"
 
-#: mate-session/gsm-logout-dialog.c:447
+#: mate-session/gsm-logout-dialog.c:448
 msgid "_Switch User"
 msgstr "_Αλλαγή χρήστη"
 
-#: mate-session/gsm-logout-dialog.c:456
+#: mate-session/gsm-logout-dialog.c:457
 msgid "_Log Out"
 msgstr "_Αποσύνδεση"
 
-#: mate-session/gsm-logout-dialog.c:462
+#: mate-session/gsm-logout-dialog.c:463
 msgid "Shut down this system now?"
 msgstr "Να κλείσει το σύστημα τώρα;"
 
-#: mate-session/gsm-logout-dialog.c:468
+#: mate-session/gsm-logout-dialog.c:469
 msgid "S_uspend"
 msgstr "Α_ναστολή"
 
-#: mate-session/gsm-logout-dialog.c:474
+#: mate-session/gsm-logout-dialog.c:475
 msgid "_Hibernate"
 msgstr "Α_δρανοποίηση"
 
-#: mate-session/gsm-logout-dialog.c:480
+#: mate-session/gsm-logout-dialog.c:481
 msgid "_Restart"
 msgstr "Επα_νεκκίνηση"
 
-#: mate-session/gsm-logout-dialog.c:490
+#: mate-session/gsm-logout-dialog.c:491
 msgid "_Shut Down"
 msgstr "Κ_λείσιμο συστήματος"
 
-#: mate-session/gsm-manager.c:1515 mate-session/gsm-manager.c:2339
+#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
 msgid "Not responding"
 msgstr "Δεν ανταποκρίνεται"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:595
+#: mate-session/gsm-xsmp-client.c:596
 msgid "Remembered Application"
 msgstr "Αποθηκευμένη εφαρμογή."
 
-#: mate-session/gsm-xsmp-client.c:1262
+#: mate-session/gsm-xsmp-client.c:1263
 msgid "This program is blocking logout."
 msgstr "Αυτό το πρόγραμμα εμποδίζει την αποσύνδεση."
 
-#: mate-session/gsm-xsmp-server.c:324
+#: mate-session/gsm-xsmp-server.c:323
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 "Άρνηση σύνδεσης νέου πελάτη επειδή το σύστημα τερματίζεται αυτή τη στιγμή\n"
 
-#: mate-session/gsm-xsmp-server.c:586
+#: mate-session/gsm-xsmp-server.c:585
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Αδυναμία δημιουργίας ICE listening socket: %s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:355
+#: mate-session/gsm-util.c:383
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "Αδυναμία εκκίνησης συνεδρίας με σύνδεση ( και αδυναμία σύνδεσης με "
@@ -585,57 +579,11 @@ msgstr "Να μην φορτώνονται εφαρμογές καθορισμέ
 msgid "Disable hardware acceleration check"
 msgstr "Απενεργοποίηση ελέγχου για επιτάχυνση υλικού"
 
-#: mate-session/main.c:635
+#: mate-session/main.c:637
 msgid " - the MATE session manager"
 msgstr "- Διαχείριση της συνεδρίας του MATE"
 
-#: tools/mate-session-save.c:66
-msgid "Log out"
-msgstr "Αποσύνδεση"
-
-#: tools/mate-session-save.c:67
-msgid "Log out, ignoring any existing inhibitors"
-msgstr "Αποσύνδεση, αγνοώντας όποιες παραμένουσες διεργασίες"
-
-#: tools/mate-session-save.c:68
-msgid "Show logout dialog"
-msgstr "Προβολή διαλόγου αποσύνδεσης"
-
-#: tools/mate-session-save.c:69
-msgid "Show shutdown dialog"
-msgstr "Προβολή διαλόγου κλεισίματος"
-
-#: tools/mate-session-save.c:70
-msgid "Use dialog boxes for errors"
-msgstr "Χρήση κουτιών διαλόγων για σφάλματα"
-
-#. deprecated options
-#: tools/mate-session-save.c:72
-msgid "Set the current session name"
-msgstr "Ορισμός του ονόματος της τρέχουσας συνεδρίας"
-
-#: tools/mate-session-save.c:72
-msgid "NAME"
-msgstr "ΟΝΟΜΑ"
-
-#: tools/mate-session-save.c:73
-msgid "Kill session"
-msgstr "Τερματισμός συνεδρίας"
-
-#: tools/mate-session-save.c:74
-msgid "Do not require confirmation"
-msgstr "Να μην απαιτείται επιβεβαίωση"
-
-#. Okay, it wasn't the upgrade case, so now we can give up.
-#: tools/mate-session-save.c:126
-msgid "Could not connect to the session manager"
-msgstr "Αδύνατη η σύνδεση με το διαχειριστή συνεδρίας"
-
-#: tools/mate-session-save.c:251
-msgid "Program called with conflicting options"
-msgstr "Το πρόγραμμα κλήθηκε με συγκρουόμενες επιλογές"
-
-#: tools/mate-session-inhibit.c:115
+#: tools/mate-session-inhibit.c:118
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -671,13 +619,59 @@ msgstr ""
 "αποσύνδεση, εναλλαγή χρήστη, αναμονή, αδρανοποίηση, αυτόματη ρύθμιση\n"
 "Εάν καμία επιλογή --inhibit δεν προσδιοριστεί, η αδρανοποίηση είναι υποτιθέμενη.\n"
 
-#: tools/mate-session-inhibit.c:169 tools/mate-session-inhibit.c:179
-#: tools/mate-session-inhibit.c:189
+#: tools/mate-session-inhibit.c:174 tools/mate-session-inhibit.c:184
+#: tools/mate-session-inhibit.c:194
 #, c-format
 msgid "%s requires an argument\n"
 msgstr "%s απαιτεί ένα επιχείρημα \n"
 
-#: tools/mate-session-inhibit.c:225
+#: tools/mate-session-inhibit.c:230
 #, c-format
 msgid "Failed to execute %s\n"
 msgstr "Αποτυχία εκτέλεσης %s\n"
+
+#: tools/mate-session-save.c:67
+msgid "Log out"
+msgstr "Αποσύνδεση"
+
+#: tools/mate-session-save.c:68
+msgid "Log out, ignoring any existing inhibitors"
+msgstr "Αποσύνδεση, αγνοώντας όποιες παραμένουσες διεργασίες"
+
+#: tools/mate-session-save.c:69
+msgid "Show logout dialog"
+msgstr "Προβολή διαλόγου αποσύνδεσης"
+
+#: tools/mate-session-save.c:70
+msgid "Show shutdown dialog"
+msgstr "Προβολή διαλόγου κλεισίματος"
+
+#: tools/mate-session-save.c:71
+msgid "Use dialog boxes for errors"
+msgstr "Χρήση κουτιών διαλόγων για σφάλματα"
+
+#. deprecated options
+#: tools/mate-session-save.c:73
+msgid "Set the current session name"
+msgstr "Ορισμός του ονόματος της τρέχουσας συνεδρίας"
+
+#: tools/mate-session-save.c:73
+msgid "NAME"
+msgstr "ΟΝΟΜΑ"
+
+#: tools/mate-session-save.c:74
+msgid "Kill session"
+msgstr "Τερματισμός συνεδρίας"
+
+#: tools/mate-session-save.c:75
+msgid "Do not require confirmation"
+msgstr "Να μην απαιτείται επιβεβαίωση"
+
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: tools/mate-session-save.c:127
+msgid "Could not connect to the session manager"
+msgstr "Αδύνατη η σύνδεση με το διαχειριστή συνεδρίας"
+
+#: tools/mate-session-save.c:254
+msgid "Program called with conflicting options"
+msgstr "Το πρόγραμμα κλήθηκε με συγκρουόμενες επιλογές"

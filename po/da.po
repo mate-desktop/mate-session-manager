@@ -12,9 +12,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.23.0\n"
+"Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-19 13:25+0100\n"
+"POT-Creation-Date: 2021-06-22 22:34+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2019\n"
 "Language-Team: Danish (https://www.transifex.com/mate/teams/13566/da/)\n"
@@ -24,20 +24,20 @@ msgstr ""
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: capplet/gsm-app-dialog.c:127
+#: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
 msgstr "Vælg kommando"
 
-#: capplet/gsm-app-dialog.c:170
+#: capplet/gsm-app-dialog.c:168
 msgid "second"
 msgstr "sekund"
 
-#: capplet/gsm-app-dialog.c:172
+#: capplet/gsm-app-dialog.c:170
 msgid "seconds"
 msgstr "sekunder"
 
-#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:452
-#: mate-session/gsm-logout-dialog.c:485
+#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
+#: mate-session/gsm-logout-dialog.c:486
 msgid "_Cancel"
 msgstr "_Afbryd"
 
@@ -65,45 +65,49 @@ msgstr "Startkommandoen kan ikke være tom"
 msgid "The startup command is not valid"
 msgstr "Startkommandoen er ugyldig"
 
-#: capplet/gsm-properties-dialog.c:516
+#: capplet/gsm-properties-dialog.c:586
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: capplet/gsm-properties-dialog.c:520
+#: capplet/gsm-properties-dialog.c:590
 msgid "_Close"
 msgstr "_Luk"
 
-#: capplet/gsm-properties-dialog.c:560
+#: capplet/gsm-properties-dialog.c:640
 msgid "Enabled"
 msgstr "Aktiveret"
 
-#: capplet/gsm-properties-dialog.c:572
+#: capplet/gsm-properties-dialog.c:652
 msgid "Icon"
 msgstr "Ikon"
 
-#: capplet/gsm-properties-dialog.c:584
+#: capplet/gsm-properties-dialog.c:664
 msgid "Program"
 msgstr "Program"
 
-#: capplet/gsm-properties-dialog.c:791
+#: capplet/gsm-properties-dialog.c:865
 msgid "Startup Applications Preferences"
 msgstr "Indstillinger for opstartsprogrammer"
 
-#: capplet/gsp-app.c:284
+#: capplet/gsp-app.c:283
 msgid "No name"
 msgstr "Intet navn"
 
-#: capplet/gsp-app.c:290
+#: capplet/gsp-app.c:289
 msgid "No description"
 msgstr "Ingen beskrivelse"
 
-#: capplet/main.c:35 mate-session/main.c:614
+#: capplet/main.c:36 mate-session/main.c:614
 msgid "Version of this application"
 msgstr "Version af dette programmel"
 
-#: capplet/main.c:51
+#: capplet/main.c:52
 msgid "Could not display help document"
 msgstr "Kunne ikke vise hjælpedokument"
+
+#: capplet/main.c:80
+msgid "- MATE Session Properties"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -255,10 +259,6 @@ msgstr "MATE"
 msgid "This session logs you into MATE"
 msgstr "Denne session logger dig ind i MATE"
 
-#: data/mate.desktop.in:8
-msgid "Type=Application"
-msgstr "Type=Program"
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
@@ -275,7 +275,7 @@ msgstr "MATE;vindue;håndtering;start;MDM;"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Nogle programmer kører stadigvæk:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:633
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -290,12 +290,6 @@ msgstr "Opstartsprogrammer"
 #: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
 msgstr "Vælg hvilke programmer som skal startes når du logger ind"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-session-properties.desktop.in:7
-msgid "mate-session-properties"
-msgstr "mate-session-properties"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -355,83 +349,83 @@ msgstr "_Navn:"
 msgid "_Delay:"
 msgstr "_Ventetid:"
 
-#: egg/eggdesktopfile.c:152
+#: mate-submodules/libegg/eggdesktopfile.c:168
 msgid "File is not a valid .desktop file"
 msgstr "Filen er ikke en gyldig .desktop-fil"
 
-#: egg/eggdesktopfile.c:172
+#: mate-submodules/libegg/eggdesktopfile.c:193
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Skrivebordsfilversion »%s« ikke genkendt"
 
-#: egg/eggdesktopfile.c:956
+#: mate-submodules/libegg/eggdesktopfile.c:975
 #, c-format
 msgid "Starting %s"
 msgstr "Starter %s"
 
-#: egg/eggdesktopfile.c:1097
+#: mate-submodules/libegg/eggdesktopfile.c:1117
 msgid "Application does not accept documents on command line"
 msgstr "Programmet accepterer ikke dokumenter på kommandolinjen"
 
-#: egg/eggdesktopfile.c:1165
+#: mate-submodules/libegg/eggdesktopfile.c:1185
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Ukendt opstartstilvalg: %d"
 
-#: egg/eggdesktopfile.c:1363
+#: mate-submodules/libegg/eggdesktopfile.c:1401
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Kan ikke give dokument-URI'er til et »Type=Link«-skrivebordselement"
 
-#: egg/eggdesktopfile.c:1384
+#: mate-submodules/libegg/eggdesktopfile.c:1422
 msgid "Not a launchable item"
 msgstr "Ikke et kørbart element"
 
-#: egg/eggsmclient.c:221
+#: mate-submodules/libegg/eggsmclient.c:233
 msgid "Disable connection to session manager"
 msgstr "Deaktiver forbindelse til sessionshåndtering"
 
-#: egg/eggsmclient.c:224
+#: mate-submodules/libegg/eggsmclient.c:238
 msgid "Specify file containing saved configuration"
 msgstr "Specificer fil som indeholder gemt konfiguration"
 
-#: egg/eggsmclient.c:224
+#: mate-submodules/libegg/eggsmclient.c:238
 msgid "FILE"
 msgstr "FIL"
 
-#: egg/eggsmclient.c:227
+#: mate-submodules/libegg/eggsmclient.c:243
 msgid "Specify session management ID"
 msgstr "Specificer sessionshåndterings-ID"
 
-#: egg/eggsmclient.c:227
+#: mate-submodules/libegg/eggsmclient.c:243
 msgid "ID"
 msgstr "Id"
 
-#: egg/eggsmclient.c:248
+#: mate-submodules/libegg/eggsmclient.c:269
 msgid "Session management options:"
 msgstr "Sessionhåndteringsindstillinger:"
 
-#: egg/eggsmclient.c:249
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Show session management options"
 msgstr "Vis sessionhåndteringsindstillinger"
 
-#: mate-session/gsm-inhibit-dialog.c:251
+#: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Ikonet »%s« blev ikke fundet"
 
-#: mate-session/gsm-inhibit-dialog.c:581
+#: mate-session/gsm-inhibit-dialog.c:592
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: mate-session/gsm-inhibit-dialog.c:632
+#: mate-session/gsm-inhibit-dialog.c:643
 msgid "A program is still running:"
 msgstr "Et program kører stadigvæk:"
 
-#: mate-session/gsm-inhibit-dialog.c:636
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid "Some programs are still running:"
 msgstr "Nogle programmer kører stadigvæk:"
 
-#: mate-session/gsm-inhibit-dialog.c:637
+#: mate-session/gsm-inhibit-dialog.c:648
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -439,118 +433,118 @@ msgstr ""
 "Venter på at programmer afslutter. At afbryde disse programmer kan føre til "
 "at du mister data."
 
-#: mate-session/gsm-inhibit-dialog.c:867
+#: mate-session/gsm-inhibit-dialog.c:878
 msgid "Switch User Anyway"
 msgstr "Skift bruger alligevel"
 
-#: mate-session/gsm-inhibit-dialog.c:870
+#: mate-session/gsm-inhibit-dialog.c:881
 msgid "Log Out Anyway"
 msgstr "Log ud alligevel"
 
-#: mate-session/gsm-inhibit-dialog.c:873
+#: mate-session/gsm-inhibit-dialog.c:884
 msgid "Suspend Anyway"
 msgstr "Gå i hvile alligevel"
 
-#: mate-session/gsm-inhibit-dialog.c:876
+#: mate-session/gsm-inhibit-dialog.c:887
 msgid "Hibernate Anyway"
 msgstr "Gå i dvale alligevel"
 
-#: mate-session/gsm-inhibit-dialog.c:879
+#: mate-session/gsm-inhibit-dialog.c:890
 msgid "Shut Down Anyway"
 msgstr "Sluk alligevel"
 
-#: mate-session/gsm-inhibit-dialog.c:882
+#: mate-session/gsm-inhibit-dialog.c:893
 msgid "Reboot Anyway"
 msgstr "Genstart alligevel"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:901
 msgid "Lock Screen"
 msgstr "Lås skærmen"
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:904
 msgid "Cancel"
 msgstr "Annuller"
 
-#: mate-session/gsm-logout-dialog.c:307
+#: mate-session/gsm-logout-dialog.c:308
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] "Du vil automatisk blive logget ud om %d sekund"
 msgstr[1] "Du vil automatisk blive logget ud om %d sekunder"
 
-#: mate-session/gsm-logout-dialog.c:315
+#: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] "Dette system vil automatisk lukke ned om %d sekund"
 msgstr[1] "Dette system vil automatisk lukke ned om %d sekunder"
 
-#: mate-session/gsm-logout-dialog.c:361
+#: mate-session/gsm-logout-dialog.c:362
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Du er på nuværende tidspunkt logget ind som »%s«."
 
-#: mate-session/gsm-logout-dialog.c:441
+#: mate-session/gsm-logout-dialog.c:442
 msgid "Log out of this system now?"
 msgstr "Log ud af dette system nu?"
 
-#: mate-session/gsm-logout-dialog.c:447
+#: mate-session/gsm-logout-dialog.c:448
 msgid "_Switch User"
 msgstr "_Skift bruger"
 
-#: mate-session/gsm-logout-dialog.c:456
+#: mate-session/gsm-logout-dialog.c:457
 msgid "_Log Out"
 msgstr "_Log ud"
 
-#: mate-session/gsm-logout-dialog.c:462
+#: mate-session/gsm-logout-dialog.c:463
 msgid "Shut down this system now?"
 msgstr "Sluk dette system nu?"
 
-#: mate-session/gsm-logout-dialog.c:468
+#: mate-session/gsm-logout-dialog.c:469
 msgid "S_uspend"
 msgstr "S_tandby"
 
-#: mate-session/gsm-logout-dialog.c:474
+#: mate-session/gsm-logout-dialog.c:475
 msgid "_Hibernate"
 msgstr "_Dvale"
 
-#: mate-session/gsm-logout-dialog.c:480
+#: mate-session/gsm-logout-dialog.c:481
 msgid "_Restart"
 msgstr "_Genstart"
 
-#: mate-session/gsm-logout-dialog.c:490
+#: mate-session/gsm-logout-dialog.c:491
 msgid "_Shut Down"
 msgstr "_Sluk"
 
-#: mate-session/gsm-manager.c:1515 mate-session/gsm-manager.c:2339
+#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
 msgid "Not responding"
 msgstr "Svarer ikke"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:595
+#: mate-session/gsm-xsmp-client.c:596
 msgid "Remembered Application"
 msgstr "Husket program"
 
-#: mate-session/gsm-xsmp-client.c:1262
+#: mate-session/gsm-xsmp-client.c:1263
 msgid "This program is blocking logout."
 msgstr "Dette program blokerer log ud."
 
-#: mate-session/gsm-xsmp-server.c:324
+#: mate-session/gsm-xsmp-server.c:323
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
 "Nægter ny klientforbindelse fordi sessionen er ved at blive lukket ned\n"
 
-#: mate-session/gsm-xsmp-server.c:586
+#: mate-session/gsm-xsmp-server.c:585
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Kunne ikke oprette ICE-lyttesoklen: %s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:355
+#: mate-session/gsm-util.c:383
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "Kunne ikke starte logind-session (og kunne ikke forbinde til X-serveren)"
@@ -571,57 +565,11 @@ msgstr "Hent ikke brugerangivne programmer"
 msgid "Disable hardware acceleration check"
 msgstr "Deaktiver kontrol af udstyrsacceleration"
 
-#: mate-session/main.c:635
+#: mate-session/main.c:637
 msgid " - the MATE session manager"
 msgstr " - MATE-sessionshåndteringen"
 
-#: tools/mate-session-save.c:66
-msgid "Log out"
-msgstr "Log ud"
-
-#: tools/mate-session-save.c:67
-msgid "Log out, ignoring any existing inhibitors"
-msgstr "Log ud, og ignorer eventuelle eksisterende blokeringer"
-
-#: tools/mate-session-save.c:68
-msgid "Show logout dialog"
-msgstr "Vis log ud-dialog"
-
-#: tools/mate-session-save.c:69
-msgid "Show shutdown dialog"
-msgstr "Vis sluk-dialog"
-
-#: tools/mate-session-save.c:70
-msgid "Use dialog boxes for errors"
-msgstr "Benyt vinduesbokse til fejl"
-
-#. deprecated options
-#: tools/mate-session-save.c:72
-msgid "Set the current session name"
-msgstr "Sæt det nuværende sessionsnavn"
-
-#: tools/mate-session-save.c:72
-msgid "NAME"
-msgstr "NAVN"
-
-#: tools/mate-session-save.c:73
-msgid "Kill session"
-msgstr "Afslut session"
-
-#: tools/mate-session-save.c:74
-msgid "Do not require confirmation"
-msgstr "Opkræv ikke beskæftigelse"
-
-#. Okay, it wasn't the upgrade case, so now we can give up.
-#: tools/mate-session-save.c:126
-msgid "Could not connect to the session manager"
-msgstr "Kunne ikke tilkoble til sessionshåndteringen"
-
-#: tools/mate-session-save.c:251
-msgid "Program called with conflicting options"
-msgstr "Program blev kaldt med selvmodsigende tilvalg"
-
-#: tools/mate-session-inhibit.c:115
+#: tools/mate-session-inhibit.c:118
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -651,13 +599,59 @@ msgstr ""
 "\n"
 "Hvis no --inhibit tilvalg er specificeret, antages idle (ledig).\n"
 
-#: tools/mate-session-inhibit.c:169 tools/mate-session-inhibit.c:179
-#: tools/mate-session-inhibit.c:189
+#: tools/mate-session-inhibit.c:174 tools/mate-session-inhibit.c:184
+#: tools/mate-session-inhibit.c:194
 #, c-format
 msgid "%s requires an argument\n"
 msgstr "%s kræver et argument\n"
 
-#: tools/mate-session-inhibit.c:225
+#: tools/mate-session-inhibit.c:230
 #, c-format
 msgid "Failed to execute %s\n"
 msgstr "Kunne ikke køre %s\n"
+
+#: tools/mate-session-save.c:67
+msgid "Log out"
+msgstr "Log ud"
+
+#: tools/mate-session-save.c:68
+msgid "Log out, ignoring any existing inhibitors"
+msgstr "Log ud, og ignorer eventuelle eksisterende blokeringer"
+
+#: tools/mate-session-save.c:69
+msgid "Show logout dialog"
+msgstr "Vis log ud-dialog"
+
+#: tools/mate-session-save.c:70
+msgid "Show shutdown dialog"
+msgstr "Vis sluk-dialog"
+
+#: tools/mate-session-save.c:71
+msgid "Use dialog boxes for errors"
+msgstr "Benyt vinduesbokse til fejl"
+
+#. deprecated options
+#: tools/mate-session-save.c:73
+msgid "Set the current session name"
+msgstr "Sæt det nuværende sessionsnavn"
+
+#: tools/mate-session-save.c:73
+msgid "NAME"
+msgstr "NAVN"
+
+#: tools/mate-session-save.c:74
+msgid "Kill session"
+msgstr "Afslut session"
+
+#: tools/mate-session-save.c:75
+msgid "Do not require confirmation"
+msgstr "Opkræv ikke beskæftigelse"
+
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: tools/mate-session-save.c:127
+msgid "Could not connect to the session manager"
+msgstr "Kunne ikke tilkoble til sessionshåndteringen"
+
+#: tools/mate-session-save.c:254
+msgid "Program called with conflicting options"
+msgstr "Program blev kaldt med selvmodsigende tilvalg"

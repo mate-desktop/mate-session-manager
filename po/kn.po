@@ -9,9 +9,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.23.0\n"
+"Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-19 13:25+0100\n"
+"POT-Creation-Date: 2021-06-22 22:34+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Kannada (https://www.transifex.com/mate/teams/13566/kn/)\n"
@@ -21,20 +21,20 @@ msgstr ""
 "Language: kn\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: capplet/gsm-app-dialog.c:127
+#: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
 msgstr "ಆಜ್ಞೆಯನ್ನು ಆರಿಸು"
 
-#: capplet/gsm-app-dialog.c:170
+#: capplet/gsm-app-dialog.c:168
 msgid "second"
 msgstr ""
 
-#: capplet/gsm-app-dialog.c:172
+#: capplet/gsm-app-dialog.c:170
 msgid "seconds"
 msgstr "ಸೆಕೆಂಡುಗಳು"
 
-#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:452
-#: mate-session/gsm-logout-dialog.c:485
+#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
+#: mate-session/gsm-logout-dialog.c:486
 msgid "_Cancel"
 msgstr "ರದ್ದು ಮಾಡಲಾಗಿದೆ(_C)"
 
@@ -62,45 +62,49 @@ msgstr "ಆರಂಭಿಕ ಆಜ್ಞೆಯು ಖಾಲಿ ಇರುವಂತ
 msgid "The startup command is not valid"
 msgstr "ಆರಂಭಿಕ ಆಜ್ಞೆಯು ಮಾನ್ಯವಾದುದಲ್ಲ"
 
-#: capplet/gsm-properties-dialog.c:516
+#: capplet/gsm-properties-dialog.c:586
 msgid "_Help"
 msgstr "ನೆರವು(_H)"
 
-#: capplet/gsm-properties-dialog.c:520
+#: capplet/gsm-properties-dialog.c:590
 msgid "_Close"
 msgstr "ಮುಚ್ಚು (_C)"
 
-#: capplet/gsm-properties-dialog.c:560
+#: capplet/gsm-properties-dialog.c:640
 msgid "Enabled"
 msgstr "ಶಕ್ತಗೊಂಡ"
 
-#: capplet/gsm-properties-dialog.c:572
+#: capplet/gsm-properties-dialog.c:652
 msgid "Icon"
 msgstr "ಚಿಹ್ನೆ"
 
-#: capplet/gsm-properties-dialog.c:584
+#: capplet/gsm-properties-dialog.c:664
 msgid "Program"
 msgstr "ಪ್ರೊಗ್ರಾಂ"
 
-#: capplet/gsm-properties-dialog.c:791
+#: capplet/gsm-properties-dialog.c:865
 msgid "Startup Applications Preferences"
 msgstr "ಆರಂಭಿಕ ಅನ್ವಯಗಳ ಆದ್ಯತೆಗಳು"
 
-#: capplet/gsp-app.c:284
+#: capplet/gsp-app.c:283
 msgid "No name"
 msgstr "ಹೆಸರಿಲ್ಲದ"
 
-#: capplet/gsp-app.c:290
+#: capplet/gsp-app.c:289
 msgid "No description"
 msgstr "ಯಾವುದೆ ವಿವರಣೆ ಇಲ್ಲ"
 
-#: capplet/main.c:35 mate-session/main.c:614
+#: capplet/main.c:36 mate-session/main.c:614
 msgid "Version of this application"
 msgstr "ಈ ಅನ್ವಯದ ಆವೃತ್ತಿ"
 
-#: capplet/main.c:51
+#: capplet/main.c:52
 msgid "Could not display help document"
 msgstr "ನೆರವಿನ ದಸ್ತಾವೇಜನ್ನು ತೋರಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
+
+#: capplet/main.c:80
+msgid "- MATE Session Properties"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -243,10 +247,6 @@ msgstr "MATE"
 msgid "This session logs you into MATE"
 msgstr "ಈ ಅಧಿವೇಶನವು ನಿಮ್ಮನ್ನು MATE ಗೆ ಪ್ರವೇಶಿಸುವಂತೆ ಮಾಡುತ್ತದೆ"
 
-#: data/mate.desktop.in:8
-msgid "Type=Application"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
@@ -263,7 +263,7 @@ msgstr ""
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>ಕೆಲವು ಪ್ರೊಗ್ರಾಂಗಳು ಇನ್ನೂ ಚಾಲನೆಯಲ್ಲಿವೆ:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:633
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -276,12 +276,6 @@ msgstr "ಆರಂಭಿಕ ಅನ್ವಯಗಳು"
 #: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
 msgstr "ನೀವು ಪ್ರವೇಶಿಸಿದಾಗ ಯಾವ ಅನ್ವಯವನ್ನು ಆರಂಭಿಸಬೇಕು ಎನ್ನುವುದನ್ನು ಆಯ್ಕೆ ಮಾಡಿ"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-session-properties.desktop.in:7
-msgid "mate-session-properties"
-msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -341,83 +335,83 @@ msgstr "ಹೆಸರು(_N):"
 msgid "_Delay:"
 msgstr "ವಿಳಂಬ (_D):"
 
-#: egg/eggdesktopfile.c:152
+#: mate-submodules/libegg/eggdesktopfile.c:168
 msgid "File is not a valid .desktop file"
 msgstr "ಕಡತವು ಮಾನ್ಯವಾದ .desktop ಕಡತವಾಗಿಲ್ಲ"
 
-#: egg/eggdesktopfile.c:172
+#: mate-submodules/libegg/eggdesktopfile.c:193
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "ಗುರುತಿಸಲಾಗದ ಗಣಕತೆರೆ ಕಡತ ಆವೃತ್ತಿ '%s'"
 
-#: egg/eggdesktopfile.c:956
+#: mate-submodules/libegg/eggdesktopfile.c:975
 #, c-format
 msgid "Starting %s"
 msgstr "%s ಅನ್ನು ಆರಂಭಿಸಲಾಗುತ್ತಿದೆ"
 
-#: egg/eggdesktopfile.c:1097
+#: mate-submodules/libegg/eggdesktopfile.c:1117
 msgid "Application does not accept documents on command line"
 msgstr "ಅನ್ವಯವು ಆಜ್ಞಾ ಸಾಲಿನಲ್ಲಿ ದಸ್ತಾವೇಜುಗಳನ್ನು ಅಂಗೀಕರಿಸುವುದಿಲ್ಲ"
 
-#: egg/eggdesktopfile.c:1165
+#: mate-submodules/libegg/eggdesktopfile.c:1185
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "ಗುರುತಿಸಲಾಗದ ಆರಂಭದ ಆಯ್ಕೆ: %d"
 
-#: egg/eggdesktopfile.c:1363
+#: mate-submodules/libegg/eggdesktopfile.c:1401
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "ಒಂದು 'Type=Link' ಗಣಕತೆರೆ ನಮೂದಿಗಾಗಿ ದಸ್ತಾವೇಜು URIಗಳನ್ನು ಒದಗಿಸಲಾಗಿಲ್ಲ"
 
-#: egg/eggdesktopfile.c:1384
+#: mate-submodules/libegg/eggdesktopfile.c:1422
 msgid "Not a launchable item"
 msgstr "ಆರಂಭಿಸಬಹುದಾದ ಅಂಶವಾಗಿಲ್ಲ"
 
-#: egg/eggsmclient.c:221
+#: mate-submodules/libegg/eggsmclient.c:233
 msgid "Disable connection to session manager"
 msgstr "ಅಧಿವೇಶನದ ವ್ಯವಸ್ಥಾಪಕನೊಂದಿಗಿನ ಸಂಪರ್ಕವನ್ನು ಅಶಕ್ತಗೊಳಿಸು"
 
-#: egg/eggsmclient.c:224
+#: mate-submodules/libegg/eggsmclient.c:238
 msgid "Specify file containing saved configuration"
 msgstr "ಉಳಿಸಲಾದ ಸಂರಚನೆಯನ್ನು ಹೊಂದಿರುವ ಕಡತವನ್ನು ಸೂಚಿಸಿ"
 
-#: egg/eggsmclient.c:224
+#: mate-submodules/libegg/eggsmclient.c:238
 msgid "FILE"
 msgstr "FILE"
 
-#: egg/eggsmclient.c:227
+#: mate-submodules/libegg/eggsmclient.c:243
 msgid "Specify session management ID"
 msgstr "ಅಧೀವೇಶನ ವ್ಯವಸ್ಥಾಪನಾ ID ಯನ್ನು ಸೂಚಿಸಿ"
 
-#: egg/eggsmclient.c:227
+#: mate-submodules/libegg/eggsmclient.c:243
 msgid "ID"
 msgstr "ಐಡಿ"
 
-#: egg/eggsmclient.c:248
+#: mate-submodules/libegg/eggsmclient.c:269
 msgid "Session management options:"
 msgstr "ಅಧಿವೇಶನ ವ್ಯವಸ್ಥಾಪನಾ ಆಯ್ಕೆಗಳು:"
 
-#: egg/eggsmclient.c:249
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Show session management options"
 msgstr "ಅಧಿವೇಶನ ವ್ಯವಸ್ಥಾಪನಾ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 
-#: mate-session/gsm-inhibit-dialog.c:251
+#: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "ಚಿಹ್ನೆ '%s' ಯು ಕಂಡು ಬಂದಿಲ್ಲ"
 
-#: mate-session/gsm-inhibit-dialog.c:581
+#: mate-session/gsm-inhibit-dialog.c:592
 msgid "Unknown"
 msgstr "ತಿಳಿಯದ"
 
-#: mate-session/gsm-inhibit-dialog.c:632
+#: mate-session/gsm-inhibit-dialog.c:643
 msgid "A program is still running:"
 msgstr "ಒಂದು ಪ್ರೊಗ್ರಾಂಗಳು ಇನ್ನೂ ಚಾಲನೆಯಲ್ಲಿವೆ:"
 
-#: mate-session/gsm-inhibit-dialog.c:636
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid "Some programs are still running:"
 msgstr "ಕೆಲವು ಪ್ರೊಗ್ರಾಂಗಳು ಇನ್ನೂ ಚಾಲನೆಯಲ್ಲಿವೆ:"
 
-#: mate-session/gsm-inhibit-dialog.c:637
+#: mate-session/gsm-inhibit-dialog.c:648
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -425,105 +419,105 @@ msgstr ""
 "ಪ್ರೊಗ್ರಾಂಗಳು ಅಂತ್ಯಗೊಳ್ಳುವವರೆಗೆ ಕಾಯಲಾಗುತ್ತಿದೆ.  ಈ ಪ್ರೊಗ್ರಾಂಗಳನ್ನು ಅನ್ನು "
 "ಮಧ್ಯದಲ್ಲಿ ತಡೆಯುವುದರಿಂದ ನಿಮ್ಮ ಕೆಲಸವು ನಾಶಗೊಳ್ಳಬಹುದು."
 
-#: mate-session/gsm-inhibit-dialog.c:867
+#: mate-session/gsm-inhibit-dialog.c:878
 msgid "Switch User Anyway"
 msgstr "ಪರವಾಗಿಲ್ಲ ಬಳಕೆದಾರನನ್ನು ಬದಲಾಯಿಸು"
 
-#: mate-session/gsm-inhibit-dialog.c:870
+#: mate-session/gsm-inhibit-dialog.c:881
 msgid "Log Out Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:873
+#: mate-session/gsm-inhibit-dialog.c:884
 msgid "Suspend Anyway"
 msgstr "ಪರವಾಗಿಲ್ಲ ತಾತ್ಕಾಲಿಕ ಸ್ಥಗಿತಗೊಳಿಸು"
 
-#: mate-session/gsm-inhibit-dialog.c:876
+#: mate-session/gsm-inhibit-dialog.c:887
 msgid "Hibernate Anyway"
 msgstr "ಪರವಾಗಿಲ್ಲ ಹೈಬರ್ನೇಟ್ ಮಾಡು"
 
-#: mate-session/gsm-inhibit-dialog.c:879
+#: mate-session/gsm-inhibit-dialog.c:890
 msgid "Shut Down Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:882
+#: mate-session/gsm-inhibit-dialog.c:893
 msgid "Reboot Anyway"
 msgstr "ಪರವಾಗಿಲ್ಲ ಇನ್ನೊಮ್ಮೆ ಬೂಟ್ ಮಾಡು"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:901
 msgid "Lock Screen"
 msgstr "ತೆರೆಯನ್ನು ಬಂಧಿಸು"
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:904
 msgid "Cancel"
 msgstr "ರದ್ದುಗೊಳಿಸು"
 
-#: mate-session/gsm-logout-dialog.c:307
+#: mate-session/gsm-logout-dialog.c:308
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: mate-session/gsm-logout-dialog.c:315
+#: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: mate-session/gsm-logout-dialog.c:361
+#: mate-session/gsm-logout-dialog.c:362
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "ನೀವು ಪ್ರಸಕ್ತ \"%s\" ಆಗಿ ಪ್ರವೇಶಿಸಿದ್ದೀರಿ."
 
-#: mate-session/gsm-logout-dialog.c:441
+#: mate-session/gsm-logout-dialog.c:442
 msgid "Log out of this system now?"
 msgstr "ಈ ಗಣಕದಿಂದ ಈಗಲೆ ನಿರ್ಗಮಿಸಬೇಕೆ?"
 
-#: mate-session/gsm-logout-dialog.c:447
+#: mate-session/gsm-logout-dialog.c:448
 msgid "_Switch User"
 msgstr "ಬಳಕೆದಾರನನ್ನು ಬದಲಾಯಿಸು(_S)"
 
-#: mate-session/gsm-logout-dialog.c:456
+#: mate-session/gsm-logout-dialog.c:457
 msgid "_Log Out"
 msgstr "ನಿರ್ಗಮಿಸು(_L)"
 
-#: mate-session/gsm-logout-dialog.c:462
+#: mate-session/gsm-logout-dialog.c:463
 msgid "Shut down this system now?"
 msgstr "ಈ ಗಣಕವನ್ನು ಈಗಲೆ ಮುಚ್ಚಬೇಕೆ?"
 
-#: mate-session/gsm-logout-dialog.c:468
+#: mate-session/gsm-logout-dialog.c:469
 msgid "S_uspend"
 msgstr "ತಾತ್ಕಾಲಿಕ ಸ್ಥಗಿತಗೊಳಿಸು(_u)"
 
-#: mate-session/gsm-logout-dialog.c:474
+#: mate-session/gsm-logout-dialog.c:475
 msgid "_Hibernate"
 msgstr "ಹೈಬರ್ನೇಟ್(_H)"
 
-#: mate-session/gsm-logout-dialog.c:480
+#: mate-session/gsm-logout-dialog.c:481
 msgid "_Restart"
 msgstr "ಮತ್ತೆ ಆರಂಭಿಸು(_R)"
 
-#: mate-session/gsm-logout-dialog.c:490
+#: mate-session/gsm-logout-dialog.c:491
 msgid "_Shut Down"
 msgstr "ಮುಚ್ಚು(_S)"
 
-#: mate-session/gsm-manager.c:1515 mate-session/gsm-manager.c:2339
+#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
 msgid "Not responding"
 msgstr "ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿಲ್ಲ"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:595
+#: mate-session/gsm-xsmp-client.c:596
 msgid "Remembered Application"
 msgstr ""
 
-#: mate-session/gsm-xsmp-client.c:1262
+#: mate-session/gsm-xsmp-client.c:1263
 msgid "This program is blocking logout."
 msgstr ""
 
-#: mate-session/gsm-xsmp-server.c:324
+#: mate-session/gsm-xsmp-server.c:323
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
@@ -531,13 +525,13 @@ msgstr ""
 "ಹೊಸ ಕ್ಲೈಂಟ್ ಸಂಪರ್ಕಗಳನ್ನು ತಿರಸ್ಕರಿಸಲಾಗುತ್ತಿದೆ ಏಕೆಂದರೆ ಅಧೀವೇಶವನವು ಈಗ "
 "ಮುಚ್ಚಲ್ಪಡುತ್ತಿದೆ\n"
 
-#: mate-session/gsm-xsmp-server.c:586
+#: mate-session/gsm-xsmp-server.c:585
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE ಆಲಿಸುವ ಸಾಕೆಟ್ ಅನ್ನು ನಿರ್ಮಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ: %s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:355
+#: mate-session/gsm-util.c:383
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "ಪ್ರವೇಶ ಅಧಿವೇಶನವನ್ನು ಆರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ (ಹಾಗು X ಪರಿಚಾರಕಕ್ಕೆ ಸಂಪರ್ಕ ಸಾಧಿಸಲು"
@@ -559,57 +553,11 @@ msgstr "ಬಳಕೆದಾರ-ಸೂಚಿತ ಅನ್ವಯಗಳನ್ನು 
 msgid "Disable hardware acceleration check"
 msgstr ""
 
-#: mate-session/main.c:635
+#: mate-session/main.c:637
 msgid " - the MATE session manager"
 msgstr "- MATE ಅಧಿವೇಶನ ವ್ಯವಸ್ಥಾಪಕ"
 
-#: tools/mate-session-save.c:66
-msgid "Log out"
-msgstr "ನಿರ್ಗಮಿಸು"
-
-#: tools/mate-session-save.c:67
-msgid "Log out, ignoring any existing inhibitors"
-msgstr "ಯಾವುದೆ ಪ್ರತಿರೋಧಗಳಿದ್ದರೂ ಅವನ್ನು ಆಲಕ್ಷಿಸಿ, ನಿರ್ಗಮಿಸು"
-
-#: tools/mate-session-save.c:68
-msgid "Show logout dialog"
-msgstr "ನಿರ್ಗಮನದ ಸಂವಾದವನ್ನು ತೋರಿಸು"
-
-#: tools/mate-session-save.c:69
-msgid "Show shutdown dialog"
-msgstr "ಮುಚ್ಚುವ ಸಂವಾದವನ್ನು ತೋರಿಸು"
-
-#: tools/mate-session-save.c:70
-msgid "Use dialog boxes for errors"
-msgstr "ದೋಷಗಳಿಗಾಗಿ ಸಂವಾದ ಚೌಕವನ್ನು ಉಪಯೋಗಿಸು"
-
-#. deprecated options
-#: tools/mate-session-save.c:72
-msgid "Set the current session name"
-msgstr "ಚಾಲ್ತಿಯಲ್ಲಿರುವ ಅಧಿವೇಶನಕ್ಕೆ ಹೆಸರನ್ನು ನೀಡು"
-
-#: tools/mate-session-save.c:72
-msgid "NAME"
-msgstr "NAME"
-
-#: tools/mate-session-save.c:73
-msgid "Kill session"
-msgstr "ಅಧಿವೇಶನವನ್ನು ಮುಗಿಸು"
-
-#: tools/mate-session-save.c:74
-msgid "Do not require confirmation"
-msgstr "ಖಚಿತಪಡಿಸುವ ಅಗತ್ಯವಿರುವುದಿಲ್ಲ"
-
-#. Okay, it wasn't the upgrade case, so now we can give up.
-#: tools/mate-session-save.c:126
-msgid "Could not connect to the session manager"
-msgstr "ಅಧಿವೇಶನ ವ್ಯವಸ್ಥಾಪಕನೊಂದಿಗೆ ಸಂಪರ್ಕ ಹೊಂದಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
-
-#: tools/mate-session-save.c:251
-msgid "Program called with conflicting options"
-msgstr "ಅಸಮಂಜಸ ಆಯ್ಕೆಗಳೊಂದಿಗೆ ಪ್ರೊಗ್ರಾಂ ಅನ್ನು ಕರೆಯಲಾಗಿದೆ"
-
-#: tools/mate-session-inhibit.c:115
+#: tools/mate-session-inhibit.c:118
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -627,13 +575,59 @@ msgid ""
 "If no --inhibit option is specified, idle is assumed.\n"
 msgstr ""
 
-#: tools/mate-session-inhibit.c:169 tools/mate-session-inhibit.c:179
-#: tools/mate-session-inhibit.c:189
+#: tools/mate-session-inhibit.c:174 tools/mate-session-inhibit.c:184
+#: tools/mate-session-inhibit.c:194
 #, c-format
 msgid "%s requires an argument\n"
 msgstr ""
 
-#: tools/mate-session-inhibit.c:225
+#: tools/mate-session-inhibit.c:230
 #, c-format
 msgid "Failed to execute %s\n"
 msgstr ""
+
+#: tools/mate-session-save.c:67
+msgid "Log out"
+msgstr "ನಿರ್ಗಮಿಸು"
+
+#: tools/mate-session-save.c:68
+msgid "Log out, ignoring any existing inhibitors"
+msgstr "ಯಾವುದೆ ಪ್ರತಿರೋಧಗಳಿದ್ದರೂ ಅವನ್ನು ಆಲಕ್ಷಿಸಿ, ನಿರ್ಗಮಿಸು"
+
+#: tools/mate-session-save.c:69
+msgid "Show logout dialog"
+msgstr "ನಿರ್ಗಮನದ ಸಂವಾದವನ್ನು ತೋರಿಸು"
+
+#: tools/mate-session-save.c:70
+msgid "Show shutdown dialog"
+msgstr "ಮುಚ್ಚುವ ಸಂವಾದವನ್ನು ತೋರಿಸು"
+
+#: tools/mate-session-save.c:71
+msgid "Use dialog boxes for errors"
+msgstr "ದೋಷಗಳಿಗಾಗಿ ಸಂವಾದ ಚೌಕವನ್ನು ಉಪಯೋಗಿಸು"
+
+#. deprecated options
+#: tools/mate-session-save.c:73
+msgid "Set the current session name"
+msgstr "ಚಾಲ್ತಿಯಲ್ಲಿರುವ ಅಧಿವೇಶನಕ್ಕೆ ಹೆಸರನ್ನು ನೀಡು"
+
+#: tools/mate-session-save.c:73
+msgid "NAME"
+msgstr "NAME"
+
+#: tools/mate-session-save.c:74
+msgid "Kill session"
+msgstr "ಅಧಿವೇಶನವನ್ನು ಮುಗಿಸು"
+
+#: tools/mate-session-save.c:75
+msgid "Do not require confirmation"
+msgstr "ಖಚಿತಪಡಿಸುವ ಅಗತ್ಯವಿರುವುದಿಲ್ಲ"
+
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: tools/mate-session-save.c:127
+msgid "Could not connect to the session manager"
+msgstr "ಅಧಿವೇಶನ ವ್ಯವಸ್ಥಾಪಕನೊಂದಿಗೆ ಸಂಪರ್ಕ ಹೊಂದಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
+
+#: tools/mate-session-save.c:254
+msgid "Program called with conflicting options"
+msgstr "ಅಸಮಂಜಸ ಆಯ್ಕೆಗಳೊಂದಿಗೆ ಪ್ರೊಗ್ರಾಂ ಅನ್ನು ಕರೆಯಲಾಗಿದೆ"

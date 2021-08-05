@@ -15,14 +15,16 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Mingcong Bai <jeffbai@aosc.xyz>, 2019
 # Wu Xiaotian <yetist@gmail.com>, 2020
+# liulitchi <xingzuo88@qq.com>, 2021
+# Wenbin Lv <wenbin816@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.23.0\n"
+"Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-19 13:25+0100\n"
+"POT-Creation-Date: 2021-06-22 22:34+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Wu Xiaotian <yetist@gmail.com>, 2020\n"
+"Last-Translator: Wenbin Lv <wenbin816@gmail.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,20 +32,20 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: capplet/gsm-app-dialog.c:127
+#: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
 msgstr "选择命令"
 
-#: capplet/gsm-app-dialog.c:170
+#: capplet/gsm-app-dialog.c:168
 msgid "second"
 msgstr "秒"
 
-#: capplet/gsm-app-dialog.c:172
+#: capplet/gsm-app-dialog.c:170
 msgid "seconds"
 msgstr "秒"
 
-#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:452
-#: mate-session/gsm-logout-dialog.c:485
+#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
+#: mate-session/gsm-logout-dialog.c:486
 msgid "_Cancel"
 msgstr "取消(_C)"
 
@@ -71,45 +73,49 @@ msgstr "启动命令不能为空"
 msgid "The startup command is not valid"
 msgstr "启动命令无效"
 
-#: capplet/gsm-properties-dialog.c:516
+#: capplet/gsm-properties-dialog.c:586
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: capplet/gsm-properties-dialog.c:520
+#: capplet/gsm-properties-dialog.c:590
 msgid "_Close"
 msgstr "关闭(_C)"
 
-#: capplet/gsm-properties-dialog.c:560
+#: capplet/gsm-properties-dialog.c:640
 msgid "Enabled"
 msgstr "启用"
 
-#: capplet/gsm-properties-dialog.c:572
+#: capplet/gsm-properties-dialog.c:652
 msgid "Icon"
 msgstr "图标"
 
-#: capplet/gsm-properties-dialog.c:584
+#: capplet/gsm-properties-dialog.c:664
 msgid "Program"
 msgstr "程序"
 
-#: capplet/gsm-properties-dialog.c:791
+#: capplet/gsm-properties-dialog.c:865
 msgid "Startup Applications Preferences"
 msgstr "启动应用程序首选项"
 
-#: capplet/gsp-app.c:284
+#: capplet/gsp-app.c:283
 msgid "No name"
 msgstr "未命名"
 
-#: capplet/gsp-app.c:290
+#: capplet/gsp-app.c:289
 msgid "No description"
 msgstr "无描述"
 
-#: capplet/main.c:35 mate-session/main.c:614
+#: capplet/main.c:36 mate-session/main.c:614
 msgid "Version of this application"
 msgstr "此应用程序的版本"
 
-#: capplet/main.c:51
+#: capplet/main.c:52
 msgid "Could not display help document"
 msgstr "不能显示帮助文档"
+
+#: capplet/main.c:80
+msgid "- MATE Session Properties"
+msgstr "- MATE 会话属性"
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -242,27 +248,23 @@ msgstr "MATE"
 msgid "This session logs you into MATE"
 msgstr "此会话将您登录到 MATE"
 
-#: data/mate.desktop.in:8
-msgid "Type=Application"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "launch;MATE;desktop;session;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr ""
+msgstr "MATE;window;manager;launch;MDM;"
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>某些程序仍在运行中：</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:633
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -276,17 +278,11 @@ msgstr "启动应用程序"
 msgid "Choose what applications to start when you log in"
 msgstr "选择登录时要启动的应用程序"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-session-properties.desktop.in:7
-msgid "mate-session-properties"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
-msgstr ""
+msgstr "MATE;session;properties;applications;login;start;"
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
@@ -340,197 +336,197 @@ msgstr "名称(_N)："
 msgid "_Delay:"
 msgstr "延时(_D)："
 
-#: egg/eggdesktopfile.c:152
+#: mate-submodules/libegg/eggdesktopfile.c:168
 msgid "File is not a valid .desktop file"
 msgstr "不是一个有效的 .desktop 文件"
 
-#: egg/eggdesktopfile.c:172
+#: mate-submodules/libegg/eggdesktopfile.c:193
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "不能识别的桌面文件版本“%s”"
 
-#: egg/eggdesktopfile.c:956
+#: mate-submodules/libegg/eggdesktopfile.c:975
 #, c-format
 msgid "Starting %s"
 msgstr "正在启动 %s"
 
-#: egg/eggdesktopfile.c:1097
+#: mate-submodules/libegg/eggdesktopfile.c:1117
 msgid "Application does not accept documents on command line"
 msgstr "程序在命令行中不接收文档"
 
-#: egg/eggdesktopfile.c:1165
+#: mate-submodules/libegg/eggdesktopfile.c:1185
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "不能识别的启动选项：%d"
 
-#: egg/eggdesktopfile.c:1363
+#: mate-submodules/libegg/eggdesktopfile.c:1401
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "无法将文档 URL 传递给“Type=Link”的桌面项"
 
-#: egg/eggdesktopfile.c:1384
+#: mate-submodules/libegg/eggdesktopfile.c:1422
 msgid "Not a launchable item"
 msgstr "非可启动项目"
 
-#: egg/eggsmclient.c:221
+#: mate-submodules/libegg/eggsmclient.c:233
 msgid "Disable connection to session manager"
 msgstr "禁止连接到会话管理器"
 
-#: egg/eggsmclient.c:224
+#: mate-submodules/libegg/eggsmclient.c:238
 msgid "Specify file containing saved configuration"
 msgstr "指定包含有已保存配置的文件"
 
-#: egg/eggsmclient.c:224
+#: mate-submodules/libegg/eggsmclient.c:238
 msgid "FILE"
 msgstr "文件"
 
-#: egg/eggsmclient.c:227
+#: mate-submodules/libegg/eggsmclient.c:243
 msgid "Specify session management ID"
 msgstr "指定会话管理 ID"
 
-#: egg/eggsmclient.c:227
+#: mate-submodules/libegg/eggsmclient.c:243
 msgid "ID"
 msgstr "ID"
 
-#: egg/eggsmclient.c:248
+#: mate-submodules/libegg/eggsmclient.c:269
 msgid "Session management options:"
 msgstr "会话管理选项："
 
-#: egg/eggsmclient.c:249
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Show session management options"
 msgstr "显示会话管理选项"
 
-#: mate-session/gsm-inhibit-dialog.c:251
+#: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "图标“%s”未找到"
 
-#: mate-session/gsm-inhibit-dialog.c:581
+#: mate-session/gsm-inhibit-dialog.c:592
 msgid "Unknown"
 msgstr "未知"
 
-#: mate-session/gsm-inhibit-dialog.c:632
+#: mate-session/gsm-inhibit-dialog.c:643
 msgid "A program is still running:"
 msgstr "程序仍在运行中："
 
-#: mate-session/gsm-inhibit-dialog.c:636
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid "Some programs are still running:"
 msgstr "程序仍在运行中："
 
-#: mate-session/gsm-inhibit-dialog.c:637
+#: mate-session/gsm-inhibit-dialog.c:648
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr "正在等候程序完成。中断程序可能导致您的工作成果丢失。"
 
-#: mate-session/gsm-inhibit-dialog.c:867
+#: mate-session/gsm-inhibit-dialog.c:878
 msgid "Switch User Anyway"
 msgstr "强制切换用户"
 
-#: mate-session/gsm-inhibit-dialog.c:870
+#: mate-session/gsm-inhibit-dialog.c:881
 msgid "Log Out Anyway"
 msgstr "强制注销"
 
-#: mate-session/gsm-inhibit-dialog.c:873
+#: mate-session/gsm-inhibit-dialog.c:884
 msgid "Suspend Anyway"
 msgstr "强制挂起"
 
-#: mate-session/gsm-inhibit-dialog.c:876
+#: mate-session/gsm-inhibit-dialog.c:887
 msgid "Hibernate Anyway"
 msgstr "强制休眠"
 
-#: mate-session/gsm-inhibit-dialog.c:879
+#: mate-session/gsm-inhibit-dialog.c:890
 msgid "Shut Down Anyway"
 msgstr "强制关机"
 
-#: mate-session/gsm-inhibit-dialog.c:882
+#: mate-session/gsm-inhibit-dialog.c:893
 msgid "Reboot Anyway"
 msgstr "强制重新启动"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:901
 msgid "Lock Screen"
 msgstr "锁定屏幕"
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:904
 msgid "Cancel"
 msgstr "取消"
 
-#: mate-session/gsm-logout-dialog.c:307
+#: mate-session/gsm-logout-dialog.c:308
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] "您即将在 %d 秒后自动注销"
 
-#: mate-session/gsm-logout-dialog.c:315
+#: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] "系统即将在 %d 秒后自动关机"
 
-#: mate-session/gsm-logout-dialog.c:361
+#: mate-session/gsm-logout-dialog.c:362
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "您目前以“%s”身份登录。"
 
-#: mate-session/gsm-logout-dialog.c:441
+#: mate-session/gsm-logout-dialog.c:442
 msgid "Log out of this system now?"
 msgstr "现在注销系统吗？"
 
-#: mate-session/gsm-logout-dialog.c:447
+#: mate-session/gsm-logout-dialog.c:448
 msgid "_Switch User"
 msgstr "切换用户(_S)"
 
-#: mate-session/gsm-logout-dialog.c:456
+#: mate-session/gsm-logout-dialog.c:457
 msgid "_Log Out"
 msgstr "注销(_L)"
 
-#: mate-session/gsm-logout-dialog.c:462
+#: mate-session/gsm-logout-dialog.c:463
 msgid "Shut down this system now?"
 msgstr "现在关闭此系统吗？"
 
-#: mate-session/gsm-logout-dialog.c:468
+#: mate-session/gsm-logout-dialog.c:469
 msgid "S_uspend"
 msgstr "挂起(_U)"
 
-#: mate-session/gsm-logout-dialog.c:474
+#: mate-session/gsm-logout-dialog.c:475
 msgid "_Hibernate"
 msgstr "休眠(_H)"
 
-#: mate-session/gsm-logout-dialog.c:480
+#: mate-session/gsm-logout-dialog.c:481
 msgid "_Restart"
 msgstr "重启(_R)"
 
-#: mate-session/gsm-logout-dialog.c:490
+#: mate-session/gsm-logout-dialog.c:491
 msgid "_Shut Down"
 msgstr "关闭系统(_S)"
 
-#: mate-session/gsm-manager.c:1515 mate-session/gsm-manager.c:2339
+#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
 msgid "Not responding"
 msgstr "无响应"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:595
+#: mate-session/gsm-xsmp-client.c:596
 msgid "Remembered Application"
 msgstr "已记住的应用程序"
 
-#: mate-session/gsm-xsmp-client.c:1262
+#: mate-session/gsm-xsmp-client.c:1263
 msgid "This program is blocking logout."
 msgstr "程序禁止注销。"
 
-#: mate-session/gsm-xsmp-server.c:324
+#: mate-session/gsm-xsmp-server.c:323
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "拒绝新客户连接，原因是会话正在关闭\n"
 
-#: mate-session/gsm-xsmp-server.c:586
+#: mate-session/gsm-xsmp-server.c:585
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "无法创建 ICE 监听套接字：%s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:355
+#: mate-session/gsm-util.c:383
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "无法启动登录会话(并且无法连接到 X 服务器)"
 
@@ -550,57 +546,11 @@ msgstr "不装入用户指定的应用程序"
 msgid "Disable hardware acceleration check"
 msgstr "禁用硬件加速检查"
 
-#: mate-session/main.c:635
+#: mate-session/main.c:637
 msgid " - the MATE session manager"
 msgstr "- MATE 会话管理器"
 
-#: tools/mate-session-save.c:66
-msgid "Log out"
-msgstr "注销"
-
-#: tools/mate-session-save.c:67
-msgid "Log out, ignoring any existing inhibitors"
-msgstr "注销，且忽略现有限制因素"
-
-#: tools/mate-session-save.c:68
-msgid "Show logout dialog"
-msgstr "显示注销对话框"
-
-#: tools/mate-session-save.c:69
-msgid "Show shutdown dialog"
-msgstr "显示关机对话框"
-
-#: tools/mate-session-save.c:70
-msgid "Use dialog boxes for errors"
-msgstr "出错时使用对话框"
-
-#. deprecated options
-#: tools/mate-session-save.c:72
-msgid "Set the current session name"
-msgstr "设定当前会话的名称"
-
-#: tools/mate-session-save.c:72
-msgid "NAME"
-msgstr "名称"
-
-#: tools/mate-session-save.c:73
-msgid "Kill session"
-msgstr "杀死会话"
-
-#: tools/mate-session-save.c:74
-msgid "Do not require confirmation"
-msgstr "不请求确认"
-
-#. Okay, it wasn't the upgrade case, so now we can give up.
-#: tools/mate-session-save.c:126
-msgid "Could not connect to the session manager"
-msgstr "无法连接到会话管理器"
-
-#: tools/mate-session-save.c:251
-msgid "Program called with conflicting options"
-msgstr "调用程序的选项互相冲突"
-
-#: tools/mate-session-inhibit.c:115
+#: tools/mate-session-inhibit.c:118
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -630,13 +580,59 @@ msgstr ""
 "\n"
 "如未指定 --inhibit 选项，则默认为空闲状态。\n"
 
-#: tools/mate-session-inhibit.c:169 tools/mate-session-inhibit.c:179
-#: tools/mate-session-inhibit.c:189
+#: tools/mate-session-inhibit.c:174 tools/mate-session-inhibit.c:184
+#: tools/mate-session-inhibit.c:194
 #, c-format
 msgid "%s requires an argument\n"
 msgstr "%s 需要一个参数\n"
 
-#: tools/mate-session-inhibit.c:225
+#: tools/mate-session-inhibit.c:230
 #, c-format
 msgid "Failed to execute %s\n"
 msgstr "执行 %s 失败\n"
+
+#: tools/mate-session-save.c:67
+msgid "Log out"
+msgstr "注销"
+
+#: tools/mate-session-save.c:68
+msgid "Log out, ignoring any existing inhibitors"
+msgstr "注销，且忽略现有限制因素"
+
+#: tools/mate-session-save.c:69
+msgid "Show logout dialog"
+msgstr "显示注销对话框"
+
+#: tools/mate-session-save.c:70
+msgid "Show shutdown dialog"
+msgstr "显示关机对话框"
+
+#: tools/mate-session-save.c:71
+msgid "Use dialog boxes for errors"
+msgstr "出错时使用对话框"
+
+#. deprecated options
+#: tools/mate-session-save.c:73
+msgid "Set the current session name"
+msgstr "设定当前会话的名称"
+
+#: tools/mate-session-save.c:73
+msgid "NAME"
+msgstr "名称"
+
+#: tools/mate-session-save.c:74
+msgid "Kill session"
+msgstr "杀死会话"
+
+#: tools/mate-session-save.c:75
+msgid "Do not require confirmation"
+msgstr "不请求确认"
+
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: tools/mate-session-save.c:127
+msgid "Could not connect to the session manager"
+msgstr "无法连接到会话管理器"
+
+#: tools/mate-session-save.c:254
+msgid "Program called with conflicting options"
+msgstr "调用程序的选项互相冲突"

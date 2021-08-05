@@ -6,16 +6,16 @@
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020
 # Wolfgang Ulbrich <mate@raveit.de>, 2021
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.24.0\n"
+"Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2020-07-09 12:14+0200\n"
+"POT-Creation-Date: 2021-06-22 22:34+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2021\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2021\n"
 "Language-Team: Serbian (https://www.transifex.com/mate/teams/13566/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,86 +23,90 @@ msgstr ""
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: capplet/gsm-app-dialog.c:124
+#: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
 msgstr "Изабери наредбу"
 
-#: capplet/gsm-app-dialog.c:167
+#: capplet/gsm-app-dialog.c:168
 msgid "second"
 msgstr "секунда"
 
-#: capplet/gsm-app-dialog.c:169
+#: capplet/gsm-app-dialog.c:170
 msgid "seconds"
 msgstr "секунде"
 
-#: capplet/gsm-app-dialog.c:215 mate-session/gsm-logout-dialog.c:452
-#: mate-session/gsm-logout-dialog.c:485
+#: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
+#: mate-session/gsm-logout-dialog.c:486
 msgid "_Cancel"
 msgstr "_Откажи"
 
-#: capplet/gsm-app-dialog.c:221
+#: capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
 msgstr "Додај почетни програм"
 
-#: capplet/gsm-app-dialog.c:223 data/session-properties.ui:86
+#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
 msgid "_Add"
 msgstr "_Додај"
 
-#: capplet/gsm-app-dialog.c:226
+#: capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
 msgstr "Уреди почетни програм"
 
-#: capplet/gsm-app-dialog.c:228
+#: capplet/gsm-app-dialog.c:231
 msgid "_Save"
 msgstr "_Сачувај"
 
-#: capplet/gsm-app-dialog.c:541
+#: capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
 msgstr "Наредба почетног програма се мора унети"
 
-#: capplet/gsm-app-dialog.c:547
+#: capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
 msgstr "Наредба почетног програма није исправна"
 
-#: capplet/gsm-properties-dialog.c:572
+#: capplet/gsm-properties-dialog.c:586
 msgid "_Help"
 msgstr "По_моћ"
 
-#: capplet/gsm-properties-dialog.c:576
+#: capplet/gsm-properties-dialog.c:590
 msgid "_Close"
 msgstr "_Затвори"
 
-#: capplet/gsm-properties-dialog.c:616
+#: capplet/gsm-properties-dialog.c:640
 msgid "Enabled"
 msgstr "Укључен"
 
-#: capplet/gsm-properties-dialog.c:628
+#: capplet/gsm-properties-dialog.c:652
 msgid "Icon"
 msgstr "Иконица"
 
-#: capplet/gsm-properties-dialog.c:640
+#: capplet/gsm-properties-dialog.c:664
 msgid "Program"
 msgstr "Програм"
 
-#: capplet/gsm-properties-dialog.c:854
+#: capplet/gsm-properties-dialog.c:865
 msgid "Startup Applications Preferences"
 msgstr "Поставке почетних програма"
 
-#: capplet/gsp-app.c:284
+#: capplet/gsp-app.c:283
 msgid "No name"
 msgstr "Без назива"
 
-#: capplet/gsp-app.c:290
+#: capplet/gsp-app.c:289
 msgid "No description"
 msgstr "Без описа"
 
-#: capplet/main.c:35 mate-session/main.c:614
+#: capplet/main.c:36 mate-session/main.c:614
 msgid "Version of this application"
 msgstr "Издање овог програма"
 
-#: capplet/main.c:51
+#: capplet/main.c:52
 msgid "Could not display help document"
 msgstr "Не могу да прикажем документ помоћи"
+
+#: capplet/main.c:80
+msgid "- MATE Session Properties"
+msgstr "– Својства Мејтове сесије"
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -269,7 +273,7 @@ msgstr "Мејт;прозор;управник;покретање;МДМ;"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Неки програми још увек раде:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:631
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -402,24 +406,24 @@ msgstr "Могућности управљања сесијом:"
 msgid "Show session management options"
 msgstr "Приказује могућности управљања сесијом"
 
-#: mate-session/gsm-inhibit-dialog.c:249
+#: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Нисам нашао иконицу „%s“"
 
-#: mate-session/gsm-inhibit-dialog.c:579
+#: mate-session/gsm-inhibit-dialog.c:592
 msgid "Unknown"
 msgstr "Непознато"
 
-#: mate-session/gsm-inhibit-dialog.c:630
+#: mate-session/gsm-inhibit-dialog.c:643
 msgid "A program is still running:"
 msgstr "Програм још увек ради:"
 
-#: mate-session/gsm-inhibit-dialog.c:634
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid "Some programs are still running:"
 msgstr "Неки програми још увек раде:"
 
-#: mate-session/gsm-inhibit-dialog.c:635
+#: mate-session/gsm-inhibit-dialog.c:648
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -427,39 +431,39 @@ msgstr ""
 "Чекам да програми заврше са радом.  Излазак из ових програма може довести до"
 " губитка ваших радова."
 
-#: mate-session/gsm-inhibit-dialog.c:865
+#: mate-session/gsm-inhibit-dialog.c:878
 msgid "Switch User Anyway"
 msgstr "Ипак промени корисника"
 
-#: mate-session/gsm-inhibit-dialog.c:868
+#: mate-session/gsm-inhibit-dialog.c:881
 msgid "Log Out Anyway"
 msgstr "Ипак ме одјави"
 
-#: mate-session/gsm-inhibit-dialog.c:871
+#: mate-session/gsm-inhibit-dialog.c:884
 msgid "Suspend Anyway"
 msgstr "Ипак обустави"
 
-#: mate-session/gsm-inhibit-dialog.c:874
+#: mate-session/gsm-inhibit-dialog.c:887
 msgid "Hibernate Anyway"
 msgstr "Ипак замрзни"
 
-#: mate-session/gsm-inhibit-dialog.c:877
+#: mate-session/gsm-inhibit-dialog.c:890
 msgid "Shut Down Anyway"
 msgstr "Ипак искључи"
 
-#: mate-session/gsm-inhibit-dialog.c:880
+#: mate-session/gsm-inhibit-dialog.c:893
 msgid "Reboot Anyway"
 msgstr "Ипак поново покрени"
 
-#: mate-session/gsm-inhibit-dialog.c:888
+#: mate-session/gsm-inhibit-dialog.c:901
 msgid "Lock Screen"
 msgstr "Закључај екран"
 
-#: mate-session/gsm-inhibit-dialog.c:891
+#: mate-session/gsm-inhibit-dialog.c:904
 msgid "Cancel"
 msgstr "Откажи"
 
-#: mate-session/gsm-logout-dialog.c:307
+#: mate-session/gsm-logout-dialog.c:308
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
@@ -467,7 +471,7 @@ msgstr[0] "Бићете одјављени са система за %d секу�
 msgstr[1] "Бићете одјављени са система за %d секунде"
 msgstr[2] "Бићете одјављени са система за %d секунди"
 
-#: mate-session/gsm-logout-dialog.c:315
+#: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
@@ -475,71 +479,71 @@ msgstr[0] "Систем ће се искључити за %d секунду"
 msgstr[1] "Систем ће се искључити за %d секунде"
 msgstr[2] "Систем ће се искључити за %d секунди"
 
-#: mate-session/gsm-logout-dialog.c:361
+#: mate-session/gsm-logout-dialog.c:362
 #, c-format
 msgid "You are currently logged in as \"%s\"."
 msgstr "Тренутно сте пријављени као „%s“."
 
-#: mate-session/gsm-logout-dialog.c:441
+#: mate-session/gsm-logout-dialog.c:442
 msgid "Log out of this system now?"
 msgstr "Да вас сада одјавим са система?"
 
-#: mate-session/gsm-logout-dialog.c:447
+#: mate-session/gsm-logout-dialog.c:448
 msgid "_Switch User"
 msgstr "Промени _корисника"
 
-#: mate-session/gsm-logout-dialog.c:456
+#: mate-session/gsm-logout-dialog.c:457
 msgid "_Log Out"
 msgstr "Одјави _ме"
 
-#: mate-session/gsm-logout-dialog.c:462
+#: mate-session/gsm-logout-dialog.c:463
 msgid "Shut down this system now?"
 msgstr "Да сада искључим овај систем?"
 
-#: mate-session/gsm-logout-dialog.c:468
+#: mate-session/gsm-logout-dialog.c:469
 msgid "S_uspend"
 msgstr "_Обустави"
 
-#: mate-session/gsm-logout-dialog.c:474
+#: mate-session/gsm-logout-dialog.c:475
 msgid "_Hibernate"
 msgstr "_Замрзни"
 
-#: mate-session/gsm-logout-dialog.c:480
+#: mate-session/gsm-logout-dialog.c:481
 msgid "_Restart"
 msgstr "_Поново покрени"
 
-#: mate-session/gsm-logout-dialog.c:490
+#: mate-session/gsm-logout-dialog.c:491
 msgid "_Shut Down"
 msgstr "_Искључи"
 
-#: mate-session/gsm-manager.c:1513 mate-session/gsm-manager.c:2337
+#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
 msgid "Not responding"
 msgstr "Не даје одзив"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:595
+#: mate-session/gsm-xsmp-client.c:596
 msgid "Remembered Application"
 msgstr "Запамћени програм"
 
-#: mate-session/gsm-xsmp-client.c:1262
+#: mate-session/gsm-xsmp-client.c:1263
 msgid "This program is blocking logout."
 msgstr "Овај програм онемогућава одјављивање."
 
-#: mate-session/gsm-xsmp-server.c:322
+#: mate-session/gsm-xsmp-server.c:323
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr "Одбацујем везу са новим клијентом јер је у току гашење сесије\n"
 
-#: mate-session/gsm-xsmp-server.c:584
+#: mate-session/gsm-xsmp-server.c:585
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Не могу да направим прикључницу ИЦЕ ослушкивања: %s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:355
+#: mate-session/gsm-util.c:383
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "Не могу да покренем сесију пријављивања (и не могу да се повежем са Х "
@@ -561,57 +565,11 @@ msgstr "Не учитава програме које је задао корис
 msgid "Disable hardware acceleration check"
 msgstr "Искључи проверу хардверског убрзања"
 
-#: mate-session/main.c:635
+#: mate-session/main.c:637
 msgid " - the MATE session manager"
 msgstr " — управник Мејтовом сесијом"
 
-#: tools/mate-session-save.c:66
-msgid "Log out"
-msgstr "Одјављује"
-
-#: tools/mate-session-save.c:67
-msgid "Log out, ignoring any existing inhibitors"
-msgstr "Одјављује, занемарујући постојеће ометаче"
-
-#: tools/mate-session-save.c:68
-msgid "Show logout dialog"
-msgstr "Приказује прозорче одјављивања"
-
-#: tools/mate-session-save.c:69
-msgid "Show shutdown dialog"
-msgstr "Приказује прозорче искључивања"
-
-#: tools/mate-session-save.c:70
-msgid "Use dialog boxes for errors"
-msgstr "Користи поља прозорчића за грешке"
-
-#. deprecated options
-#: tools/mate-session-save.c:72
-msgid "Set the current session name"
-msgstr "Поставља назив текуће сесије"
-
-#: tools/mate-session-save.c:72
-msgid "NAME"
-msgstr "НАЗИВ"
-
-#: tools/mate-session-save.c:73
-msgid "Kill session"
-msgstr "Убија сесију"
-
-#: tools/mate-session-save.c:74
-msgid "Do not require confirmation"
-msgstr "Не захтева потврђивање"
-
-#. Okay, it wasn't the upgrade case, so now we can give up.
-#: tools/mate-session-save.c:126
-msgid "Could not connect to the session manager"
-msgstr "Не могу да се повежем са управником сесије"
-
-#: tools/mate-session-save.c:251
-msgid "Program called with conflicting options"
-msgstr "Програм је позван са сукобљавајућим могућностима"
-
-#: tools/mate-session-inhibit.c:115
+#: tools/mate-session-inhibit.c:118
 #, c-format
 msgid ""
 "%s [OPTION...] COMMAND\n"
@@ -644,13 +602,59 @@ msgstr ""
 "\n"
 "Ако није наведена опција „--inhibit“, подразумева се „idle“ (мировање).\n"
 
-#: tools/mate-session-inhibit.c:169 tools/mate-session-inhibit.c:179
-#: tools/mate-session-inhibit.c:189
+#: tools/mate-session-inhibit.c:174 tools/mate-session-inhibit.c:184
+#: tools/mate-session-inhibit.c:194
 #, c-format
 msgid "%s requires an argument\n"
 msgstr "„%s“ захтева аргумент\n"
 
-#: tools/mate-session-inhibit.c:225
+#: tools/mate-session-inhibit.c:230
 #, c-format
 msgid "Failed to execute %s\n"
 msgstr "Нисам успео да извршим „%s“\n"
+
+#: tools/mate-session-save.c:67
+msgid "Log out"
+msgstr "Одјављује"
+
+#: tools/mate-session-save.c:68
+msgid "Log out, ignoring any existing inhibitors"
+msgstr "Одјављује, занемарујући постојеће ометаче"
+
+#: tools/mate-session-save.c:69
+msgid "Show logout dialog"
+msgstr "Приказује прозорче одјављивања"
+
+#: tools/mate-session-save.c:70
+msgid "Show shutdown dialog"
+msgstr "Приказује прозорче искључивања"
+
+#: tools/mate-session-save.c:71
+msgid "Use dialog boxes for errors"
+msgstr "Користи поља прозорчића за грешке"
+
+#. deprecated options
+#: tools/mate-session-save.c:73
+msgid "Set the current session name"
+msgstr "Поставља назив текуће сесије"
+
+#: tools/mate-session-save.c:73
+msgid "NAME"
+msgstr "НАЗИВ"
+
+#: tools/mate-session-save.c:74
+msgid "Kill session"
+msgstr "Убија сесију"
+
+#: tools/mate-session-save.c:75
+msgid "Do not require confirmation"
+msgstr "Не захтева потврђивање"
+
+#. Okay, it wasn't the upgrade case, so now we can give up.
+#: tools/mate-session-save.c:127
+msgid "Could not connect to the session manager"
+msgstr "Не могу да се повежем са управником сесије"
+
+#: tools/mate-session-save.c:254
+msgid "Program called with conflicting options"
+msgstr "Програм је позван са сукобљавајућим могућностима"

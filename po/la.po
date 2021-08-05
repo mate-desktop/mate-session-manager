@@ -4,13 +4,8 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Yasen Pramatarov <yasen@lindeas.com>, 2018
-# Georgi Georgiev (Жоро) <g.georgiev.shumen@gmail.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Любомир Василев, 2018
-# Борислав Георгиев <crazyroler@gmail.com>, 2018
-# Замфир Йончев <zamfir.yonchev@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# N. Alexander <natessner@gmail.com>, 2018
+# Vendelín Slezák <klaykap@yandex.com>, 2021
 # 
 msgid ""
 msgstr ""
@@ -18,17 +13,17 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2021-06-22 22:34+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Bulgarian (https://www.transifex.com/mate/teams/13566/bg/)\n"
+"Last-Translator: Vendelín Slezák <klaykap@yandex.com>, 2021\n"
+"Language-Team: Latin (https://www.transifex.com/mate/teams/13566/la/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: bg\n"
+"Language: la\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
-msgstr "Избор на команда"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:168
 msgid "second"
@@ -36,76 +31,76 @@ msgstr ""
 
 #: capplet/gsm-app-dialog.c:170
 msgid "seconds"
-msgstr "секунди"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
 #: mate-session/gsm-logout-dialog.c:486
 msgid "_Cancel"
-msgstr "_Отказ"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
-msgstr "Добавяне на програма стартираща при влизане"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
 msgid "_Add"
-msgstr "_Добавяне"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
-msgstr "Редактиране на програмите стартиращи при влизане"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:231
 msgid "_Save"
-msgstr "_Запазване"
+msgstr "_Servare"
 
 #: capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
-msgstr "Командата за програма стартираща при влизане не може да е празна"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
-msgstr "Командата за програма стартираща при влизане е неправилна"
+msgstr ""
 
 #: capplet/gsm-properties-dialog.c:586
 msgid "_Help"
-msgstr "_Помощ"
+msgstr ""
 
 #: capplet/gsm-properties-dialog.c:590
 msgid "_Close"
-msgstr "_Затваряне"
+msgstr ""
 
 #: capplet/gsm-properties-dialog.c:640
 msgid "Enabled"
-msgstr "Разрешено"
+msgstr ""
 
 #: capplet/gsm-properties-dialog.c:652
 msgid "Icon"
-msgstr "Иконка"
+msgstr ""
 
 #: capplet/gsm-properties-dialog.c:664
 msgid "Program"
-msgstr "Програма"
+msgstr ""
 
 #: capplet/gsm-properties-dialog.c:865
 msgid "Startup Applications Preferences"
-msgstr "Настройки за автоматично стартиране на програми"
+msgstr ""
 
 #: capplet/gsp-app.c:283
 msgid "No name"
-msgstr "Без име"
+msgstr ""
 
 #: capplet/gsp-app.c:289
 msgid "No description"
-msgstr "Без описание"
+msgstr ""
 
 #: capplet/main.c:36 mate-session/main.c:614
 msgid "Version of this application"
-msgstr "Версия на програмата"
+msgstr ""
 
 #: capplet/main.c:52
 msgid "Could not display help document"
-msgstr "Документът от помощта не може да бъде показан"
+msgstr ""
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
@@ -113,19 +108,19 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
-msgstr "Начално време на текущата сесия"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:6
 msgid "Unix time of the start of the current session."
-msgstr "Време (във формата на Юникс) на началото на текущата сесия."
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:10
 msgid "Save sessions"
-msgstr "Запазване на сесиите"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:11
 msgid "If enabled, mate-session will save the session automatically."
-msgstr "Ако е включено, mate-session автоматично ще запазва сесията."
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
@@ -138,44 +133,42 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
-msgstr "Питане при изход"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:21
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "Ако е включено, „mate-session“ ще предупреди преди да приключи сесия."
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:26
 msgid "Logout timeout"
-msgstr "Изчакване преди автоматичен изход"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:27
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
 msgstr ""
-"Ако питането преди изход е включено, това задава интервала в секунди преди "
-"автоматичното излизане. Ако е 0, автоматичното излизане ще бъде изключено."
 
 #: data/org.mate.session.gschema.xml.in:31
 msgid "Time before session is considered idle"
-msgstr "Време, за да се счете сесията за неактивна"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:32
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Броят минути време бездействие, за да се счете сесията за неактивна"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:36
 msgid "Default session"
-msgstr "Стандартна сесия"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:37
 msgid "List of applications that are part of the default session."
-msgstr "Списък с програми, които са част от стандартната сесия."
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:41
 msgid "Required session components"
-msgstr "Необходими компоненти на сесията"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:42
 msgid ""
@@ -186,67 +179,54 @@ msgid ""
 "automatically add the required components back to the session at login time "
 "if they do get removed."
 msgstr ""
-"Списък с компоненти, които са необходими като част от сесията. (Всеки "
-"елемент е ключ от дървото „/org/mate/desktop/session/required_components“.) "
-"Обикновено програмата за настройване на сесиите не позволява потребител да "
-"премахва необходими компоненти от сесията — управлението на сесии "
-"автоматично ще добави липсващите компоненти, ако те бъдат премахнати."
 
 #: data/org.mate.session.gschema.xml.in:46
 msgid "Control gnome compatibility component startup"
-msgstr "Управление на използването на компонентите за съвместимост с „gnome“"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:47
 msgid "Control which compatibility components to start."
-msgstr "Управление на това кои компоненти за съвместимост да се използват."
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:54 data/mate-wm.desktop.in:4
 msgid "Window Manager"
-msgstr "Диспечер на прозорци"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:55
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr ""
-"Мениджърът на прозорци е програмата, която рисува заглавната лента и рамките"
-" около прозорците и ви позволява да ги местите и оразмерявате."
 
 #: data/org.mate.session.gschema.xml.in:59
 msgid "Panel"
-msgstr "Панел"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:60
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr ""
-"Панелът осигурява лентите горе и долу на екрана, които съдържат менюта, "
-"списък с прозорци, иконки за състояние, часовник и т.н."
 
 #: data/org.mate.session.gschema.xml.in:64
 msgid "File Manager"
-msgstr "Файлов Мениджър"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:65
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
 msgstr ""
-"Файловият мениджър осигурява иконките на работната среда и позволява да "
-"взаимодействате със запазените файлове."
 
 #: data/org.mate.session.gschema.xml.in:69
 msgid "Dock"
-msgstr "Док"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:70
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
 msgstr ""
-"Докът е област за прикачане, подобна на панел, от където могат да се пускат "
-"и превключват приложения."
 
 #: data/mate.desktop.in:3
 msgid "MATE"
@@ -254,7 +234,7 @@ msgstr "MATE"
 
 #: data/mate.desktop.in:4
 msgid "This session logs you into MATE"
-msgstr "Влизане в MATE"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -270,24 +250,21 @@ msgstr ""
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
-msgstr "<b>Някои програми все още работят:</b>"
+msgstr ""
 
 #: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr ""
-"Изчакване на програмата да завърши. Прекъсването ѝ може да доведе до загуба "
-"на информация."
 
 #: data/mate-session-properties.desktop.in:3
 msgid "Startup Applications"
-msgstr "Автоматично стартирани програми"
+msgstr ""
 
 #: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
 msgstr ""
-"Изберете програмите, които да се стартират при влизането ви в системата"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -297,15 +274,15 @@ msgstr ""
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
-msgstr "_Допълнителни програми стартиращи при влизане:"
+msgstr ""
 
 #: data/session-properties.ui:101
 msgid "_Remove"
-msgstr "_Премахване"
+msgstr ""
 
 #: data/session-properties.ui:117
 msgid "_Edit"
-msgstr "_Редактиране"
+msgstr ""
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
@@ -313,157 +290,153 @@ msgstr ""
 
 #: data/session-properties.ui:168
 msgid "Startup Programs"
-msgstr "Програми стартиращи при влизане"
+msgstr ""
 
 #: data/session-properties.ui:183
 msgid "_Automatically remember running applications when logging out"
 msgstr ""
-"_Автоматично запомняне на стартираните програми при изход от системата"
 
 #: data/session-properties.ui:225
 msgid "_Remember Currently Running Application"
-msgstr "_Запомняне на стартираните програми при изход от системата"
+msgstr ""
 
 #: data/session-properties.ui:259
 msgid "Options"
-msgstr "Настройки"
+msgstr ""
 
 #: data/session-properties.ui:297
 msgid "Browse…"
-msgstr "Избор…"
+msgstr ""
 
 #: data/session-properties.ui:340
 msgid "Comm_ent:"
-msgstr "Ко_ментар:"
+msgstr ""
 
 #: data/session-properties.ui:354
 msgid "Co_mmand:"
-msgstr "_Команда:"
+msgstr ""
 
 #: data/session-properties.ui:368
 msgid "_Name:"
-msgstr "_Име:"
+msgstr ""
 
 #: data/session-properties.ui:382
 msgid "_Delay:"
-msgstr "З_акъснение:"
+msgstr ""
 
 #: mate-submodules/libegg/eggdesktopfile.c:168
 msgid "File is not a valid .desktop file"
-msgstr "Файлът не е във формат .desktop"
+msgstr ""
 
 #: mate-submodules/libegg/eggdesktopfile.c:193
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Непозната версия на файла: %s"
+msgstr ""
 
 #: mate-submodules/libegg/eggdesktopfile.c:975
 #, c-format
 msgid "Starting %s"
-msgstr "Стартиране на %s"
+msgstr "%s initiātur"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1117
 msgid "Application does not accept documents on command line"
-msgstr "Програмата не приема документи през командния ред"
+msgstr ""
 
 #: mate-submodules/libegg/eggdesktopfile.c:1185
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Непозната опция при стартиране: %d"
+msgstr ""
 
 #: mate-submodules/libegg/eggdesktopfile.c:1401
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
-"В обекти от вида „Type=Link“ не може да се подават адреси на документи"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1422
 msgid "Not a launchable item"
-msgstr "Не е обект за стартиране"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:233
 msgid "Disable connection to session manager"
-msgstr "Изключване на връзката с управлението на сесиите"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:238
 msgid "Specify file containing saved configuration"
-msgstr "Указване на файла със запазените настройки"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:238
 msgid "FILE"
-msgstr "ФАЙЛ"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:243
 msgid "Specify session management ID"
-msgstr "Указване на идентификатор за управлението на сесиите"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:243
 msgid "ID"
-msgstr "ИдПр"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:269
 msgid "Session management options:"
-msgstr "Настройки на управлението на сесии:"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:270
 msgid "Show session management options"
-msgstr "Показване на настройките за управлението на сесиите"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
 msgid "Icon '%s' not found"
-msgstr "Иконката „%s“ не е намерена"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:592
 msgid "Unknown"
-msgstr "Неизвестно"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:643
 msgid "A program is still running:"
-msgstr "Все още работи програмата:"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:647
 msgid "Some programs are still running:"
-msgstr "Все още работят програмите:"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:648
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
-"Изчакване на програмите да завършат. Прекъсването им може да доведе до "
-"загуба на информация."
 
 #: mate-session/gsm-inhibit-dialog.c:878
 msgid "Switch User Anyway"
-msgstr "Смяна на потребител"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:881
 msgid "Log Out Anyway"
-msgstr "Изход въпреки всичко"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:884
 msgid "Suspend Anyway"
-msgstr "Приспиване"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:887
 msgid "Hibernate Anyway"
-msgstr "Дълбоко приспиване"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:890
 msgid "Shut Down Anyway"
-msgstr "Спиране въпреки всичко"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:893
 msgid "Reboot Anyway"
-msgstr "Рестартиране на компютъра"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:901
 msgid "Lock Screen"
-msgstr "Заключване на екрана"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:904
 msgid "Cancel"
-msgstr "Отказ"
+msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:308
 #, c-format
@@ -482,87 +455,82 @@ msgstr[1] ""
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format
 msgid "You are currently logged in as \"%s\"."
-msgstr "В момента сте влезли като „%s“."
+msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:442
 msgid "Log out of this system now?"
-msgstr "Излизане от системата?"
+msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:448
 msgid "_Switch User"
-msgstr "_Смяна на потребител"
+msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:457
 msgid "_Log Out"
-msgstr "_Изход"
+msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:463
 msgid "Shut down this system now?"
-msgstr "Изключване на системата?"
+msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:469
 msgid "S_uspend"
-msgstr "_Приспиване"
+msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:475
 msgid "_Hibernate"
-msgstr "_Дълбоко приспиване"
+msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:481
 msgid "_Restart"
-msgstr "_Рестартиране"
+msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:491
 msgid "_Shut Down"
-msgstr "Изключване на _компютъра"
+msgstr ""
 
 #: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
 msgid "Not responding"
-msgstr "Не отговаря"
+msgstr ""
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #: mate-session/gsm-xsmp-client.c:596
 msgid "Remembered Application"
-msgstr "Запомнени програми"
+msgstr ""
 
 #: mate-session/gsm-xsmp-client.c:1263
 msgid "This program is blocking logout."
-msgstr "Тази програма блокира излизането."
+msgstr ""
 
 #: mate-session/gsm-xsmp-server.c:323
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
-"Отхвърляне на свързванията с нови клиенти, защото тази сесия в момента се "
-"затваря\n"
 
 #: mate-session/gsm-xsmp-server.c:585
 #, c-format
 msgid "Could not create ICE listening socket: %s"
-msgstr "Неуспех при създаването на гнездо на ICE за слушане: %s"
+msgstr ""
 
 #. Oh well, no X for you!
 #: mate-session/gsm-util.c:383
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
-"Неуспех при стартирането на входната сесия (и неуспех при свързването с X "
-"сървъра)"
 
 #: mate-session/main.c:611
 msgid "Override standard autostart directories"
 msgstr ""
-"Използване на различни от стандартните папки за стартиране при влизане"
 
 #: mate-session/main.c:612
 msgid "Enable debugging code"
-msgstr "Да се включи режим на изчистване на грешки"
+msgstr ""
 
 #: mate-session/main.c:613
 msgid "Do not load user-specified applications"
-msgstr "Да не се зареждат програми, зададени от потребителя"
+msgstr ""
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
@@ -570,7 +538,7 @@ msgstr ""
 
 #: mate-session/main.c:637
 msgid " - the MATE session manager"
-msgstr "— управление на сесиите на MATE"
+msgstr ""
 
 #: tools/mate-session-inhibit.c:118
 #, c-format
@@ -589,73 +557,60 @@ msgid ""
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
 msgstr ""
-"%s [ОПЦИЯ…] КОМАНДА\n"
-"\n"
-"Изпълнява КОМАНДА като възпрепятства част от функциите на сесията.\n"
-"\n"
-"  -h, --help        Показва това съобщение\n"
-"  --version         Показва информация за версията\n"
-"  --app-id ИД       Идентификаторът на приложението,\n"
-"                    което да се използва при възпрепятстване (незадължително)\n"
-"  --reason ПРИЧИНА   Причината за възпрепятстване (незадължително)\n"
-"  --inhibit АРГУМЕНТ     Неща, които да бъдат възпрепятствани. Списък, разделен с двоеточия, като в него може да присъстват:\n"
-"                    logout (изход), switch-user (смяна на потребител), suspend (приспиване), idle (бездействие), automount (авт. монтиране)\n"
-"\n"
-"Ако опцията „--inhibit“ не е зададена, се подразбира „idle“.\n"
 
 #: tools/mate-session-inhibit.c:174 tools/mate-session-inhibit.c:184
 #: tools/mate-session-inhibit.c:194
 #, c-format
 msgid "%s requires an argument\n"
-msgstr "%s изисква аргумент\n"
+msgstr ""
 
 #: tools/mate-session-inhibit.c:230
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr "Неуспешно изпълнение на %s\n"
+msgstr ""
 
 #: tools/mate-session-save.c:67
 msgid "Log out"
-msgstr "Изход"
+msgstr ""
 
 #: tools/mate-session-save.c:68
 msgid "Log out, ignoring any existing inhibitors"
-msgstr "Изход въпреки блокиращите програми"
+msgstr ""
 
 #: tools/mate-session-save.c:69
 msgid "Show logout dialog"
-msgstr "Показване на диалога за изход"
+msgstr ""
 
 #: tools/mate-session-save.c:70
 msgid "Show shutdown dialog"
-msgstr "Показване на диалога за изключване"
+msgstr ""
 
 #: tools/mate-session-save.c:71
 msgid "Use dialog boxes for errors"
-msgstr "Да се ползват диалогови кутии за грешките"
+msgstr ""
 
 #. deprecated options
 #: tools/mate-session-save.c:73
 msgid "Set the current session name"
-msgstr "Задаване на име на текущата  сесия"
+msgstr ""
 
 #: tools/mate-session-save.c:73
 msgid "NAME"
-msgstr "ИМЕ"
+msgstr ""
 
 #: tools/mate-session-save.c:74
 msgid "Kill session"
-msgstr "Убиване на сесия"
+msgstr ""
 
 #: tools/mate-session-save.c:75
 msgid "Do not require confirmation"
-msgstr "Без потвърждаване"
+msgstr ""
 
 #. Okay, it wasn't the upgrade case, so now we can give up.
 #: tools/mate-session-save.c:127
 msgid "Could not connect to the session manager"
-msgstr "Не може да се изгради връзка към управлението на сесии"
+msgstr ""
 
 #: tools/mate-session-save.c:254
 msgid "Program called with conflicting options"
-msgstr "Програмата е стартирана с противоречащи си опции"
+msgstr ""
