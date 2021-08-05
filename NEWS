@@ -1,3 +1,20 @@
+### mate-session-manager 1.26.0
+
+  * Translations update
+  * update copyright to 2021
+  * Follow freedesktop guidelines to disable autorun using Hidden key
+  * capplet: use a function to set the visibility of treeview rows
+  * Look for the location of the locking screen app using user's PATH
+  * capplet: memory leak
+  * Fix building Serbian translation
+  * mate-session-check-accelerated-common: missing include guard
+  * capplet: i18n parameter_string argument of gtk_init_with_args
+  * build: allow users to disable gettext support (--disable-nls)
+  * build: set GETTEXT_PACKAGE=AC_PACKAGE_NAME
+  * Support xscreensaver when mate-screensaver is not available
+  * Remove warning -Wshadow
+  * Remove USE_MATE2_MACROS from autogen.sh (legacy)
+
 ### mate-session-manager 1.25.0
 
   * Build: disable Serbian translations to fix building
