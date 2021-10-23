@@ -144,7 +144,7 @@ typedef struct {
         GSettings              *settings_lockdown;
         GSettings              *settings_screensaver;
 
-        const char             *renderer;
+        char                   *renderer;
 
         DBusGProxy             *bus_proxy;
         DBusGConnection        *connection;
@@ -1695,7 +1695,8 @@ _gsm_manager_set_renderer (GsmManager *manager,
 {
         GsmManagerPrivate *priv;
         priv = gsm_manager_get_instance_private (manager);
-        priv->renderer = renderer;
+        g_free (priv->renderer);
+        priv->renderer = g_strdup (renderer);
 }
 
 static gboolean
@@ -2656,6 +2657,9 @@ gsm_manager_dispose (GObject *object)
                 g_object_unref (priv->settings_screensaver);
                 priv->settings_screensaver = NULL;
         }
+
+        g_clear_pointer (&priv->renderer, g_free);
+
         G_OBJECT_CLASS (gsm_manager_parent_class)->dispose (object);
 }
 

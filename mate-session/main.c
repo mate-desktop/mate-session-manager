@@ -83,7 +83,6 @@ static gboolean failsafe = FALSE;
 static gboolean show_version = FALSE;
 static gboolean debug = FALSE;
 static gboolean disable_acceleration_check = FALSE;
-static char *gl_renderer = NULL;
 
 static gboolean
 initialize_gsettings (void)
@@ -575,7 +574,7 @@ static void set_overlay_scroll (void)
 }
 
 static gboolean
-check_gl (GError **error)
+check_gl (gchar **gl_renderer, GError **error)
 {
 	int status;
 	char *argv[] = { LIBEXECDIR "/mate-session-check-accelerated", NULL };
@@ -585,7 +584,7 @@ check_gl (GError **error)
 		return TRUE;
 	}
 
-	if (!g_spawn_sync (NULL, (char **) argv, NULL, 0, NULL, NULL, &gl_renderer, NULL,
+	if (!g_spawn_sync (NULL, (char **) argv, NULL, 0, NULL, NULL, gl_renderer, NULL,
 		           &status, error)) {
 		return FALSE;
 	}
@@ -605,6 +604,7 @@ int main(int argc, char** argv)
 	GSettings* accessibility_settings;
 	MdmSignalHandler* signal_handler;
 	static char** override_autostart_dirs = NULL;
+	char* gl_renderer = NULL;
 	gboolean gl_failed = FALSE;
 
 	static GOptionEntry entries[] = {
@@ -670,7 +670,7 @@ int main(int argc, char** argv)
 		g_debug ("hardware acceleration check is disabled");
 	} else {
 		/* Check GL, if it doesn't work out then force software fallback */
-		if (!check_gl (&error)) {
+		if (!check_gl (&gl_renderer, &error)) {
 			gl_failed = TRUE;
 
 			g_debug ("hardware acceleration check failed: %s",
@@ -678,7 +678,7 @@ int main(int argc, char** argv)
 			g_clear_error (&error);
 			if (g_getenv ("LIBGL_ALWAYS_SOFTWARE") == NULL) {
 				g_setenv ("LIBGL_ALWAYS_SOFTWARE", "1", TRUE);
-				if (!check_gl (&error)) {
+				if (!check_gl (&gl_renderer, &error)) {
 					g_warning ("software acceleration check failed: %s",
 					           error? error->message : "");
 					g_clear_error (&error);
@@ -759,6 +759,7 @@ int main(int argc, char** argv)
 
 	gsm_xsmp_server_start(xsmp_server);
 	_gsm_manager_set_renderer (manager, gl_renderer);
+	g_free (gl_renderer);
 	gsm_manager_start(manager);
 
 	gtk_main();
