@@ -19,7 +19,6 @@
  *
  */
 
-
 #ifndef __GSM_MANAGER_H
 #define __GSM_MANAGER_H
 
@@ -112,7 +111,6 @@ gboolean            gsm_manager_add_legacy_session_apps        (GsmManager     *
                                                                 const char     *path);
 
 void                gsm_manager_start                          (GsmManager     *manager);
-
 
 /* exported methods */
 

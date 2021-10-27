@@ -89,13 +89,11 @@ enum {
 
 static guint gsp_app_signals[LAST_SIGNAL] = { 0 };
 
-
 G_DEFINE_TYPE_WITH_PRIVATE (GspApp, gsp_app, G_TYPE_OBJECT)
 
 static void     gsp_app_dispose  (GObject *object);
 static void     gsp_app_finalize (GObject *object);
 static gboolean _gsp_app_save    (gpointer data);
-
 
 static gboolean
 _gsp_str_equal (const char *a,
@@ -115,7 +113,6 @@ _gsp_str_equal (const char *a,
 
         return FALSE;
 }
-
 
 static void
 gsp_app_class_init (GspAppClass *class)

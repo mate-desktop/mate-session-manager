@@ -545,7 +545,6 @@ gsm_consolekit_attempt_hibernate (GsmConsolekit *manager)
                                               G_TYPE_INVALID,
                                               G_TYPE_INVALID);
 
-
         if (!res) {
                 g_warning ("Unable to hibernate system: %s", error->message);
                 g_error_free (error);
@@ -709,7 +708,6 @@ gsm_consolekit_set_session_idle (GsmConsolekit *manager,
         if (!res) {
                 goto out;
         }
-
 
         g_debug ("Updating ConsoleKit idle status: %d", is_idle);
         message = dbus_message_new_method_call (CK_NAME,
@@ -1064,7 +1062,6 @@ out:
 
         return ret;
 }
-
 
 GsmConsolekit *
 gsm_get_consolekit (void)

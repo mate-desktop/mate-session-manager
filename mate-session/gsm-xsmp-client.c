@@ -215,7 +215,6 @@ gsm_xsmp_client_init (GsmXSMPClient *client)
         priv->next_save_yourself_allow_interact = FALSE;
 }
 
-
 static void
 delete_property (GsmXSMPClient *client,
                  const char    *name)
@@ -248,7 +247,6 @@ delete_property (GsmXSMPClient *client,
         SmFreeProperty (prop);
 }
 
-
 static void
 debug_print_property (SmProp *prop)
 {
@@ -279,7 +277,6 @@ debug_print_property (SmProp *prop)
                 break;
         }
 }
-
 
 static void
 set_properties_callback (SmsConn     conn,
@@ -1106,7 +1103,6 @@ register_client_callback (SmsConn    conn,
                  priv->description,
                  previous_id ? previous_id : "NULL");
 
-
         /* There are three cases:
          * 1. id is NULL - we'll use a new one
          * 2. id is known - we'll use known one
@@ -1152,7 +1148,6 @@ register_client_callback (SmsConn    conn,
 
         return TRUE;
 }
-
 
 static void
 save_yourself_request_callback (SmsConn   conn,

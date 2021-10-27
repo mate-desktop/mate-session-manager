@@ -529,7 +529,6 @@ update_iceauthority (GsmXsmpServer *server,
         return ok;
 }
 
-
 static void
 setup_listener (GsmXsmpServer *server)
 {

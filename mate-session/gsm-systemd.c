@@ -633,7 +633,6 @@ out:
     }
 }
 
-
 void
 gsm_systemd_set_session_idle (GsmSystemd *manager,
                               gboolean       is_idle)
@@ -1008,7 +1007,6 @@ gsm_systemd_get_current_session_type (GsmSystemd *manager)
 
     return session_class;
 }
-
 
 GsmSystemd *
 gsm_get_systemd (void)

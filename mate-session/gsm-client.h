@@ -97,12 +97,10 @@ GQuark                gsm_client_error_quark                (void);
 
 const char           *gsm_client_peek_id                    (GsmClient  *client);
 
-
 const char *          gsm_client_peek_startup_id            (GsmClient  *client);
 const char *          gsm_client_peek_app_id                (GsmClient  *client);
 guint                 gsm_client_peek_restart_style_hint    (GsmClient  *client);
 guint                 gsm_client_peek_status                (GsmClient  *client);
-
 
 char                 *gsm_client_get_app_name               (GsmClient  *client);
 void                  gsm_client_set_app_id                 (GsmClient  *client,

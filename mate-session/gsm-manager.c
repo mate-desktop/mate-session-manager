@@ -83,7 +83,6 @@
 #define GDM_FLEXISERVER_COMMAND "gdmflexiserver"
 #define GDM_FLEXISERVER_ARGS    "--startnew Standard"
 
-
 #define LOCKDOWN_SCHEMA              "org.mate.lockdown"
 #define KEY_LOCK_DISABLE             "disable-lock-screen"
 #define KEY_LOG_OUT_DISABLE          "disable-log-out"
@@ -767,7 +766,6 @@ typedef struct {
         GsmManager *manager;
         guint       flags;
 } ClientEndSessionData;
-
 
 static gboolean
 _client_end_session (GsmClient            *client,
@@ -1877,7 +1875,6 @@ _disconnect_client (GsmManager *manager,
                 goto out;
         }
 
-
         if (app == NULL) {
                 g_debug ("GsmManager: unable to find application for client - not restarting");
                 goto out;
@@ -2493,7 +2490,6 @@ gsm_manager_set_client_store (GsmManager *manager,
 
                 g_object_unref (priv->clients);
         }
-
 
         g_debug ("GsmManager: setting client store %p", store);
 
@@ -3349,7 +3345,6 @@ request_hibernate (GsmManager *manager)
         gtk_widget_show (priv->inhibit_dialog);
 }
 
-
 static void
 request_logout (GsmManager            *manager,
                 GsmManagerLogoutMode  mode)
@@ -4092,7 +4087,6 @@ gsm_manager_get_inhibitors (GsmManager *manager,
 
         return TRUE;
 }
-
 
 static gboolean
 _app_has_autostart_condition (const char *id,

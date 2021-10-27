@@ -190,7 +190,6 @@ handle_end_session_response (GsmDBusClient *client,
         gsm_client_end_session_response (GSM_CLIENT (client),
                                          is_ok, FALSE, FALSE, reason);
 
-
         if (! dbus_connection_send (client->connection, reply, NULL)) {
                 g_error ("No memory");
         }

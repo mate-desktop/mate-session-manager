@@ -281,7 +281,6 @@ _load_icon (GtkIconTheme  *icon_theme,
         return retval;
 }
 
-
 static GdkPixbuf *
 scale_pixbuf (GdkPixbuf *pixbuf,
               int        max_width,
@@ -733,7 +732,6 @@ gsm_inhibit_dialog_set_inhibitor_store (GsmInhibitDialog *dialog,
 
                 g_object_unref (dialog->inhibitors);
         }
-
 
         g_debug ("GsmInhibitDialog: setting store %p", store);
 
