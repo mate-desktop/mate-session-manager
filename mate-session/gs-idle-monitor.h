@@ -47,7 +47,6 @@ void            gs_idle_monitor_remove_watch   (GSIdleMonitor         *monitor,
                                                 guint                  id);
 void            gs_idle_monitor_reset          (GSIdleMonitor         *monitor);
 
-
 G_END_DECLS
 
 #endif /* __GS_IDLE_MONITOR_H */

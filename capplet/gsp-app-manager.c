@@ -48,7 +48,6 @@ enum {
 
 static guint gsp_app_manager_signals[LAST_SIGNAL] = { 0 };
 
-
 G_DEFINE_TYPE_WITH_PRIVATE (GspAppManager, gsp_app_manager, G_TYPE_OBJECT)
 
 static void     gsp_app_manager_dispose      (GObject       *object);

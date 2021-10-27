@@ -1054,7 +1054,6 @@ gsm_autostart_app_provides (GsmApp     *app,
         GsmAutostartApp *aapp;
         GsmAutostartAppPrivate *priv;
 
-
         g_return_val_if_fail (GSM_IS_APP (app), FALSE);
 
         aapp = GSM_AUTOSTART_APP (app);

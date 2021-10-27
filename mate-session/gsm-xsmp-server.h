@@ -19,7 +19,6 @@
  *
  */
 
-
 #ifndef __GSM_XSMP_SERVER_H
 #define __GSM_XSMP_SERVER_H
 

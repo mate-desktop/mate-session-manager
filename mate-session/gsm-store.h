@@ -19,7 +19,6 @@
  *
  */
 
-
 #ifndef __GSM_STORE_H
 #define __GSM_STORE_H
 

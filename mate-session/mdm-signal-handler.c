@@ -233,7 +233,6 @@ static gboolean crashlogger_get_backtrace(void)
 	return success;
 }
 
-
 static void mdm_signal_handler_backtrace(void)
 {
 	struct stat s;

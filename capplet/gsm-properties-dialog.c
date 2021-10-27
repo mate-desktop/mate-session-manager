@@ -671,7 +671,6 @@ setup_dialog (GsmPropertiesDialog *dialog)
                       NULL);
         gtk_tree_view_append_column (treeview, column);
 
-
         gtk_tree_view_column_set_sort_column_id (column, STORE_COL_DESCRIPTION);
         gtk_tree_view_set_search_column (treeview, STORE_COL_SEARCH);
 
@@ -716,7 +715,6 @@ setup_dialog (GsmPropertiesDialog *dialog)
                                               STORE_COL_DESCRIPTION,
                                               GTK_SORT_ASCENDING);
 
-
         button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                      CAPPLET_ADD_WIDGET_NAME));
         dialog->add_button = button;
@@ -740,7 +738,6 @@ setup_dialog (GsmPropertiesDialog *dialog)
                           "clicked",
                           G_CALLBACK (on_edit_app_clicked),
                           dialog);
-
 
         button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
                                                      CAPPLET_REMEMBER_WIDGET_NAME));

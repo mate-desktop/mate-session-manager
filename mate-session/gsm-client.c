@@ -526,7 +526,6 @@ gsm_client_cancel_end_session (GsmClient *client,
         return GSM_CLIENT_GET_CLASS (client)->impl_cancel_end_session (client, error);
 }
 
-
 gboolean
 gsm_client_query_end_session (GsmClient *client,
                               guint      flags,

@@ -235,7 +235,6 @@ gsm_util_get_saved_session_dir (void)
         return _saved_session_dir;
 }
 
-
 char **
 gsm_util_get_autostart_dirs ()
 {

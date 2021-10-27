@@ -47,7 +47,6 @@
 
 #define GNOME_KEYRING_DAEMON "gnome-keyring-daemon"
 
-
 static gboolean gnome_compat_started = FALSE;
 static Window gnome_smproxy_window = None;
 
@@ -91,8 +90,6 @@ gnome_keyring_daemon_startup (void)
   g_child_watch_add (pid, gnome_keyring_daemon_finished, NULL);
 }
 
-
-
 static void
 msm_compat_gnome_smproxy_startup (void)
 {
@@ -129,7 +126,6 @@ msm_compat_gnome_smproxy_startup (void)
   gdk_x11_display_error_trap_pop_ignored (gdkdisplay);
 }
 
-
 static void
 msm_compat_gnome_smproxy_shutdown (void)
 {
@@ -146,7 +142,6 @@ msm_compat_gnome_smproxy_shutdown (void)
     }
   gdk_x11_display_error_trap_pop_ignored (gdkdisplay);
 }
-
 
 void
 msm_gnome_start (void)
@@ -181,7 +176,6 @@ msm_gnome_start (void)
   }
   g_object_unref (settings);
 }
-
 
 void
 msm_gnome_stop (void)

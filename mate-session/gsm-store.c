@@ -156,7 +156,6 @@ gsm_store_lookup (GsmStore   *store,
         return object;
 }
 
-
 typedef struct
 {
         GsmStoreFunc func;
