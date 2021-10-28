@@ -73,7 +73,7 @@ static GOptionEntry options[] = {
 	{"session-name", 's', G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_STRING, &session_name, N_("Set the current session name"), N_("NAME")},
 	{"kill", '\0', G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_NONE, &kill_session, N_("Kill session"), NULL},
 	{"silent", '\0', G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_NONE, &no_interaction, N_("Do not require confirmation"), NULL},
-	{NULL}
+	{NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL}
 };
 
 static void display_error(const char* message)

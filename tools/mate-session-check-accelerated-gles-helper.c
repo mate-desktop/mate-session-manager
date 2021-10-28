@@ -193,7 +193,7 @@ static gboolean print_renderer = FALSE;
 
 static const GOptionEntry entries[] = {
         { "print-renderer", 'p', 0, G_OPTION_ARG_NONE, &print_renderer, "Print EGL renderer name", NULL },
-        { NULL },
+        { NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL },
 };
 
 int
