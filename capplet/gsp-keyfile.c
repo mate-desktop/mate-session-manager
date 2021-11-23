@@ -43,39 +43,6 @@ gsp_key_file_populate (GKeyFile *keyfile)
                                  "/bin/false");
 }
 
-//FIXME: kill this when bug #309224 is fixed
-gboolean
-gsp_key_file_to_file (GKeyFile     *keyfile,
-                      const gchar  *path,
-                      GError      **error)
-{
-        GError  *write_error;
-        gchar   *data;
-        gsize    length;
-        gboolean res;
-
-        g_return_val_if_fail (keyfile != NULL, FALSE);
-        g_return_val_if_fail (path != NULL, FALSE);
-
-        write_error = NULL;
-        data = g_key_file_to_data (keyfile, &length, &write_error);
-
-        if (write_error) {
-                g_propagate_error (error, write_error);
-                return FALSE;
-        }
-
-        res = g_file_set_contents (path, data, length, &write_error);
-        g_free (data);
-
-        if (write_error) {
-                g_propagate_error (error, write_error);
-                return FALSE;
-        }
-
-        return res;
-}
-
 gboolean
 gsp_key_file_get_boolean (GKeyFile    *keyfile,
                           const gchar *key,
