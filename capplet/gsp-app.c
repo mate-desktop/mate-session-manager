@@ -490,7 +490,7 @@ _gsp_app_save (gpointer data)
         }
 
         _gsp_ensure_user_autostart_dir ();
-        if (gsp_key_file_to_file (keyfile, priv->path, NULL)) {
+        if (g_key_file_save_to_file (keyfile, priv->path, NULL)) {
                 priv->skip_next_monitor_event = TRUE;
                 _gsp_app_save_done_success (app);
         } else {

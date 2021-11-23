@@ -38,10 +38,6 @@ extern "C" {
 
 void      gsp_key_file_populate        (GKeyFile *keyfile);
 
-gboolean  gsp_key_file_to_file         (GKeyFile       *keyfile,
-                                        const gchar    *path,
-                                        GError        **error);
-
 gboolean gsp_key_file_get_boolean      (GKeyFile       *keyfile,
                                         const gchar    *key,
                                         gboolean        default_value);
