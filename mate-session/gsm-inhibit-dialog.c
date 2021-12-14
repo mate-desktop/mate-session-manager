@@ -308,8 +308,8 @@ scale_pixbuf (GdkPixbuf *pixbuf,
 
         /* always scale down, allow to disable scaling up */
         if (scale_factor < 1.0 || !no_stretch_hint) {
-                int scale_x = (int) (pw * scale_factor);
-                int scale_y = (int) (ph * scale_factor);
+                int scale_x = (int) (scale_factor * (float) pw);
+                int scale_y = (int) (scale_factor * (float) ph);
                 g_debug ("Scaling to %dx%d", scale_x, scale_y);
                 return gdk_pixbuf_scale_simple (pixbuf,
                                                 scale_x,
