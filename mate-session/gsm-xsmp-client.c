@@ -439,7 +439,7 @@ do_save_yourself (GsmXSMPClient *client,
                 g_debug ("GsmXSMPClient:   queuing new SaveYourself for '%s'",
                          priv->description);
                 priv->next_save_yourself = save_type;
-                priv->next_save_yourself_allow_interact = allow_interact;
+                priv->next_save_yourself_allow_interact = (allow_interact != FALSE);
         } else {
                 priv->current_save_yourself = save_type;
                 /* make sure we don't have anything queued */

@@ -245,7 +245,7 @@ gsm_systemd_ensure_sd_connection (GsmSystemd  *manager,
 
 out:
     if (priv->is_connected != is_connected) {
-        priv->is_connected = is_connected;
+        priv->is_connected = (is_connected != FALSE);
         g_object_notify (G_OBJECT (manager), "is-connected");
     }
 
