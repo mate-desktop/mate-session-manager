@@ -327,7 +327,7 @@ if test "x$enable_rebuilds" = "xyes" && \
 fi
 AC_SUBST(REBUILD)
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 capplet/Makefile
 doc/Makefile
@@ -343,6 +343,7 @@ mate-session/Makefile
 tools/Makefile
 po/Makefile.in
 ])
+AC_OUTPUT
 
 dnl ---------------------------------------------------------------------------
 dnl - Show summary
