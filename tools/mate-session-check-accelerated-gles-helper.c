@@ -226,8 +226,10 @@ main (int argc,
                 else
                         ret = HELPER_ACCEL;
         }
+        g_free (renderer);
 #endif
 
 out:
+        g_option_context_free (context);
         return ret;
 }
