@@ -158,6 +158,7 @@ main (int argc, char **argv)
                 renderer_string = get_gtk_gles_renderer ();
                 if (renderer_string) {
                         g_print ("%s", renderer_string);
+                        g_free (renderer_string);
                         return 0;
                 }
                 return 1;

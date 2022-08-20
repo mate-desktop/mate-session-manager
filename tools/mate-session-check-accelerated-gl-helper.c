@@ -510,6 +510,7 @@ main (int argc, char **argv)
 out:
         if (display)
                 XCloseDisplay (display);
+        g_option_context_free (context);
         g_free (renderer);
 
         return ret;
