@@ -9,9 +9,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.25.0\n"
+"Project-Id-Version: mate-session-manager 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
+"POT-Creation-Date: 2022-10-29 15:25+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Tamil (https://www.transifex.com/mate/teams/13566/ta/)\n"
@@ -82,15 +82,15 @@ msgstr "சின்னம்"
 msgid "Program"
 msgstr "நிரல்"
 
-#: capplet/gsm-properties-dialog.c:865
+#: capplet/gsm-properties-dialog.c:862
 msgid "Startup Applications Preferences"
 msgstr "துவக்க பயன்பாடுகள் விருப்பங்கள்"
 
-#: capplet/gsp-app.c:283
+#: capplet/gsp-app.c:280
 msgid "No name"
 msgstr "பெயர் இல்லை"
 
-#: capplet/gsp-app.c:289
+#: capplet/gsp-app.c:286
 msgid "No description"
 msgstr "விவரணம் இல்லை"
 
@@ -258,7 +258,7 @@ msgstr ""
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b> சில நிரல்கள் இன்னும் ஒடுகிறன</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:643
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -397,53 +397,53 @@ msgstr "அமர்வு மேலாண்மை விருப்பங்�
 msgid "Icon '%s' not found"
 msgstr "'%s' சின்னம் காணப்படவில்லை"
 
-#: mate-session/gsm-inhibit-dialog.c:592
+#: mate-session/gsm-inhibit-dialog.c:591
 msgid "Unknown"
 msgstr "தெரியாத"
 
-#: mate-session/gsm-inhibit-dialog.c:643
+#: mate-session/gsm-inhibit-dialog.c:642
 msgid "A program is still running:"
 msgstr "ஒரு நிரல் இன்னும்  ஒடுகிறது:"
 
-#: mate-session/gsm-inhibit-dialog.c:647
+#: mate-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
 msgstr "நிரல்கள் சில இன்னும் ஒடுகின்றன:"
 
-#: mate-session/gsm-inhibit-dialog.c:648
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr " காத்திருத்தல் க்கு  வரை முடி நிரல்கள் வரை."
 
-#: mate-session/gsm-inhibit-dialog.c:878
+#: mate-session/gsm-inhibit-dialog.c:876
 msgid "Switch User Anyway"
 msgstr "எப்படியும் பயனரை மாற்று"
 
-#: mate-session/gsm-inhibit-dialog.c:881
+#: mate-session/gsm-inhibit-dialog.c:879
 msgid "Log Out Anyway"
 msgstr "எப்படி இருந்தாலும் வெளியேறுக."
 
-#: mate-session/gsm-inhibit-dialog.c:884
+#: mate-session/gsm-inhibit-dialog.c:882
 msgid "Suspend Anyway"
 msgstr "எப்படியும் இடை நிறுத்தம் செய்க"
 
-#: mate-session/gsm-inhibit-dialog.c:887
+#: mate-session/gsm-inhibit-dialog.c:885
 msgid "Hibernate Anyway"
 msgstr "எப்படி இருந்தாலும் உள்நுழையவும்."
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:888
 msgid "Shut Down Anyway"
 msgstr "எப்படி இருந்தாலும் கணினியை நிறுத்தவும்"
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:891
 msgid "Reboot Anyway"
 msgstr "எப்படி இருந்தாலும் மீள்துவக்கவும்"
 
-#: mate-session/gsm-inhibit-dialog.c:901
+#: mate-session/gsm-inhibit-dialog.c:899
 msgid "Lock Screen"
 msgstr "திரையைப் பூட்டுக."
 
-#: mate-session/gsm-inhibit-dialog.c:904
+#: mate-session/gsm-inhibit-dialog.c:902
 msgid "Cancel"
 msgstr "ரத்து செய்க"
 
@@ -498,18 +498,18 @@ msgstr "(_R) மீட்டமை"
 msgid "_Shut Down"
 msgstr "(_S) பணி நிறுத்தம் செய்யவும்"
 
-#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
 msgid "Not responding"
 msgstr "பதிலளிக்க இல்லை"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:596
+#: mate-session/gsm-xsmp-client.c:593
 msgid "Remembered Application"
 msgstr ""
 
-#: mate-session/gsm-xsmp-client.c:1263
+#: mate-session/gsm-xsmp-client.c:1258
 msgid "This program is blocking logout."
 msgstr "இந்த நிரல் வெளியேறுவதை தடுக்கிறது"
 
@@ -520,13 +520,13 @@ msgid ""
 msgstr ""
 "புதிய சார்ந்தோன் இணைப்பை மறுக்கிறது; ஏனெனில் இப்போதைய அமர்வு மூடப்படுகிறது\n"
 
-#: mate-session/gsm-xsmp-server.c:585
+#: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ஐஸ் கேட்கும் பொருத்துவாயை உருவாக்க முடியவில்லை : %s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:383
+#: mate-session/gsm-util.c:382
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "உள்நுழைவு அமர்வை துவக்க முடியவில்லை ( மற்றும் எக்ஸ் சேவையகத்துடன் இணைக்க  "

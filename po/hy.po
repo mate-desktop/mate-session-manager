@@ -11,9 +11,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.25.0\n"
+"Project-Id-Version: mate-session-manager 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
+"POT-Creation-Date: 2022-10-29 15:25+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Avag Sayan <avo777772012@gmail.com>, 2020\n"
 "Language-Team: Armenian (https://www.transifex.com/mate/teams/13566/hy/)\n"
@@ -84,15 +84,15 @@ msgstr "Պատկերակ"
 msgid "Program"
 msgstr "Ծրագիր"
 
-#: capplet/gsm-properties-dialog.c:865
+#: capplet/gsm-properties-dialog.c:862
 msgid "Startup Applications Preferences"
 msgstr "Մեկնարկի դիմումների արտոնությունները"
 
-#: capplet/gsp-app.c:283
+#: capplet/gsp-app.c:280
 msgid "No name"
 msgstr "Անանուն"
 
-#: capplet/gsp-app.c:289
+#: capplet/gsp-app.c:286
 msgid "No description"
 msgstr "Ոչ մի Նկարագրություն"
 
@@ -275,7 +275,7 @@ msgstr ""
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Որոշ ծրագրեր դեռ աշխատում են:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:643
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -415,19 +415,19 @@ msgstr "Ցույց տալ սեսիայի կառավարման ընտրացանկ
 msgid "Icon '%s' not found"
 msgstr "Պատկերակը '%s' չի գտնվել"
 
-#: mate-session/gsm-inhibit-dialog.c:592
+#: mate-session/gsm-inhibit-dialog.c:591
 msgid "Unknown"
 msgstr "Անհայտ"
 
-#: mate-session/gsm-inhibit-dialog.c:643
+#: mate-session/gsm-inhibit-dialog.c:642
 msgid "A program is still running:"
 msgstr "Ծրագիրը դեռ աշխատում է:"
 
-#: mate-session/gsm-inhibit-dialog.c:647
+#: mate-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
 msgstr "Որոշ ծրագրեր դեռ աշխատում են:"
 
-#: mate-session/gsm-inhibit-dialog.c:648
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -435,35 +435,35 @@ msgstr ""
 "Սպասում ծրագրի ավարտի համար։ Այդ ծրագրերը ընդհատելը կարող են առաջացնել "
 "աշխատանքի կորուստ։"
 
-#: mate-session/gsm-inhibit-dialog.c:878
+#: mate-session/gsm-inhibit-dialog.c:876
 msgid "Switch User Anyway"
 msgstr "Ամեն դեպքում Փոխանջատել Օգտատիրոջը"
 
-#: mate-session/gsm-inhibit-dialog.c:881
+#: mate-session/gsm-inhibit-dialog.c:879
 msgid "Log Out Anyway"
 msgstr "Դուրս գալ Ամեն դեպքում"
 
-#: mate-session/gsm-inhibit-dialog.c:884
+#: mate-session/gsm-inhibit-dialog.c:882
 msgid "Suspend Anyway"
 msgstr "Կասեցնել Ամեն դեպքում"
 
-#: mate-session/gsm-inhibit-dialog.c:887
+#: mate-session/gsm-inhibit-dialog.c:885
 msgid "Hibernate Anyway"
 msgstr "Ձմեռել Ամեն դեպքում"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:888
 msgid "Shut Down Anyway"
 msgstr "Անջատել Ամեն դեպքում"
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:891
 msgid "Reboot Anyway"
 msgstr "Վերագործարկել Ամեն դեպքում"
 
-#: mate-session/gsm-inhibit-dialog.c:901
+#: mate-session/gsm-inhibit-dialog.c:899
 msgid "Lock Screen"
 msgstr "Արգելափակել էկրանը"
 
-#: mate-session/gsm-inhibit-dialog.c:904
+#: mate-session/gsm-inhibit-dialog.c:902
 msgid "Cancel"
 msgstr "Չեղարկել"
 
@@ -518,18 +518,18 @@ msgstr "_Վերսկսել"
 msgid "_Shut Down"
 msgstr "_Անջատել"
 
-#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
 msgid "Not responding"
 msgstr "Չի արձագանքում"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:596
+#: mate-session/gsm-xsmp-client.c:593
 msgid "Remembered Application"
 msgstr "Հիշված Դիմում"
 
-#: mate-session/gsm-xsmp-client.c:1263
+#: mate-session/gsm-xsmp-client.c:1258
 msgid "This program is blocking logout."
 msgstr "Այս ծրագիրն արգելափակում է ավարտը։"
 
@@ -539,13 +539,13 @@ msgid ""
 "down\n"
 msgstr "Նոր կլիենտի կապի մերժում, որովհետև նիստը ներկայումս փակվում է\n"
 
-#: mate-session/gsm-xsmp-server.c:585
+#: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Չհաջողվեց ստեղծել ICE լսելու սոկետ: %s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:383
+#: mate-session/gsm-util.c:382
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Անհմար է սկսվել մուտքը դեպի համակարգ (և անհնար է միանալ X սերվերին)"
 

@@ -8,9 +8,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.25.0\n"
+"Project-Id-Version: mate-session-manager 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
+"POT-Creation-Date: 2022-10-29 15:25+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Assamese (https://www.transifex.com/mate/teams/13566/as/)\n"
@@ -81,15 +81,15 @@ msgstr "আইকন"
 msgid "Program"
 msgstr "কাৰ্য্যক্ৰম"
 
-#: capplet/gsm-properties-dialog.c:865
+#: capplet/gsm-properties-dialog.c:862
 msgid "Startup Applications Preferences"
 msgstr "প্ৰাৰম্ভিক অনুপ্ৰয়োগ সংক্ৰান্ত পছন্দ"
 
-#: capplet/gsp-app.c:283
+#: capplet/gsp-app.c:280
 msgid "No name"
 msgstr "নামবিহীন"
 
-#: capplet/gsp-app.c:289
+#: capplet/gsp-app.c:286
 msgid "No description"
 msgstr "বিৱৰণ অনুপস্থিত"
 
@@ -260,7 +260,7 @@ msgstr ""
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>কিছুমান কাৰ্য্যক্ৰম এতিয়াও চলি আছে:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:643
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -398,19 +398,19 @@ msgstr "অধিবেশন পৰিচালনা সংক্ৰান্�
 msgid "Icon '%s' not found"
 msgstr "'%s' নামক আইকন পোৱা নাযায়"
 
-#: mate-session/gsm-inhibit-dialog.c:592
+#: mate-session/gsm-inhibit-dialog.c:591
 msgid "Unknown"
 msgstr "অজ্ঞাত"
 
-#: mate-session/gsm-inhibit-dialog.c:643
+#: mate-session/gsm-inhibit-dialog.c:642
 msgid "A program is still running:"
 msgstr "এটা অনুপ্ৰয়োগ বৰ্তমানে চলি আছে:"
 
-#: mate-session/gsm-inhibit-dialog.c:647
+#: mate-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
 msgstr "কিছুমান অনুপ্ৰয়োগ চলি আছে:"
 
-#: mate-session/gsm-inhibit-dialog.c:648
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -418,35 +418,35 @@ msgstr ""
 "অনুপ্ৰয়োগ সমাপ্তিৰ অপেক্ষা কৰা হৈছে । অনুপ্ৰয়োগ বিঘ্নিত হ'লে সঞ্চালিত কামৰ "
 "ফল আঁতৰুৱাৰ সম্ভাৱনা আছে ।"
 
-#: mate-session/gsm-inhibit-dialog.c:878
+#: mate-session/gsm-inhibit-dialog.c:876
 msgid "Switch User Anyway"
 msgstr "তথাপিও ব্যৱহাৰকৰ্তা হিচাপ পৰিবৰ্তন কৰা হ'ব"
 
-#: mate-session/gsm-inhibit-dialog.c:881
+#: mate-session/gsm-inhibit-dialog.c:879
 msgid "Log Out Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:884
+#: mate-session/gsm-inhibit-dialog.c:882
 msgid "Suspend Anyway"
 msgstr "তথাপিও স্থগিত কৰা হ'ব"
 
-#: mate-session/gsm-inhibit-dialog.c:887
+#: mate-session/gsm-inhibit-dialog.c:885
 msgid "Hibernate Anyway"
 msgstr "তথাপিও নিদ্ৰিত কৰা হ'ব"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:888
 msgid "Shut Down Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:891
 msgid "Reboot Anyway"
 msgstr "তথাপিও পুনৰাৰম্ভ কৰা হ'ব"
 
-#: mate-session/gsm-inhibit-dialog.c:901
+#: mate-session/gsm-inhibit-dialog.c:899
 msgid "Lock Screen"
 msgstr "পৰ্দা লক কৰক"
 
-#: mate-session/gsm-inhibit-dialog.c:904
+#: mate-session/gsm-inhibit-dialog.c:902
 msgid "Cancel"
 msgstr "বাতিল কৰক"
 
@@ -501,18 +501,18 @@ msgstr "পুনৰাৰম্ভ (_R)"
 msgid "_Shut Down"
 msgstr "বন্ধ কৰক (_S)"
 
-#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
 msgid "Not responding"
 msgstr "কোনো প্ৰতিক্ৰিয়া নাই"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:596
+#: mate-session/gsm-xsmp-client.c:593
 msgid "Remembered Application"
 msgstr ""
 
-#: mate-session/gsm-xsmp-client.c:1263
+#: mate-session/gsm-xsmp-client.c:1258
 msgid "This program is blocking logout."
 msgstr ""
 
@@ -524,13 +524,13 @@ msgstr ""
 "প্ৰণালী বৰ্তমানে বন্ধ কৰাৰ প্ৰচেষ্টা কৰা হৈছে আৰু এই কাৰণে নতুন গ্ৰাহকৰ সৈতে"
 " সংযোগ স্থাপনৰ অনুৰোধ প্ৰত্যাখ্যান কৰা হৈছে ।\n"
 
-#: mate-session/gsm-xsmp-server.c:585
+#: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE অপেক্ষাৰ ছ'কেট নিৰ্মাণ কৰিবলৈ ব্যৰ্থ: %s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:383
+#: mate-session/gsm-util.c:382
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "প্ৰৱেশ অধিবেশন আৰম্ভ কৰিবলৈ ব্যৰ্থ (X সেৱকৰ সৈতে সংযোগ স্থাপন কৰিবলৈ ব্যৰ্থ)"

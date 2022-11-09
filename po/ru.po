@@ -13,19 +13,20 @@
 # theirix <theirix@gmail.com>, 2018
 # павел назаров <nazar12101@gmail.com>, 2018
 # Dmitriy Kulikov <kulikov@dima.perm.ru>, 2018
-# Alex Putz, 2018
-# Alexei Sorokin, 2018
+# Alex Puts, 2018
+# XRevan86, 2018
 # AlexL <loginov.alex.valer@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Anna Vyalkova <cybertailor@gmail.com>, 2020
+# Cyber Tailor <cyber@sysrq.in>, 2020
+# Павел Коваленко, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.25.0\n"
+"Project-Id-Version: mate-session-manager 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
+"POT-Creation-Date: 2022-10-29 15:25+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Anna Vyalkova <cybertailor@gmail.com>, 2020\n"
+"Last-Translator: Павел Коваленко, 2021\n"
 "Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,15 +95,15 @@ msgstr "Значок"
 msgid "Program"
 msgstr "Программа"
 
-#: capplet/gsm-properties-dialog.c:865
+#: capplet/gsm-properties-dialog.c:862
 msgid "Startup Applications Preferences"
 msgstr "Параметры запускаемых приложений"
 
-#: capplet/gsp-app.c:283
+#: capplet/gsp-app.c:280
 msgid "No name"
 msgstr "Без имени"
 
-#: capplet/gsp-app.c:289
+#: capplet/gsp-app.c:286
 msgid "No description"
 msgstr "Нет описания"
 
@@ -116,7 +117,7 @@ msgstr "Не удалось показать документацию"
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
-msgstr ""
+msgstr "- свойства сессии MATE"
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -287,7 +288,7 @@ msgstr "MATE;окна;диспетчер;запуск;MDM;"
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Некоторые программы всё еще работают:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:643
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -426,19 +427,19 @@ msgstr "Показать параметры управления сеансом"
 msgid "Icon '%s' not found"
 msgstr "Значок «%s» не найден"
 
-#: mate-session/gsm-inhibit-dialog.c:592
+#: mate-session/gsm-inhibit-dialog.c:591
 msgid "Unknown"
 msgstr "Неизвестный"
 
-#: mate-session/gsm-inhibit-dialog.c:643
+#: mate-session/gsm-inhibit-dialog.c:642
 msgid "A program is still running:"
 msgstr "Программа всё ещё работает:"
 
-#: mate-session/gsm-inhibit-dialog.c:647
+#: mate-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
 msgstr "Некоторые программы всё ещё работают:"
 
-#: mate-session/gsm-inhibit-dialog.c:648
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -446,35 +447,35 @@ msgstr ""
 "Ожидание завершения работы программ.  Прерывание этих программ может "
 "привести к потере вашей работы."
 
-#: mate-session/gsm-inhibit-dialog.c:878
+#: mate-session/gsm-inhibit-dialog.c:876
 msgid "Switch User Anyway"
 msgstr "Всё равно переключить пользователя"
 
-#: mate-session/gsm-inhibit-dialog.c:881
+#: mate-session/gsm-inhibit-dialog.c:879
 msgid "Log Out Anyway"
 msgstr "Всё равно выйти из системы"
 
-#: mate-session/gsm-inhibit-dialog.c:884
+#: mate-session/gsm-inhibit-dialog.c:882
 msgid "Suspend Anyway"
 msgstr "Всё равно приостановить систему"
 
-#: mate-session/gsm-inhibit-dialog.c:887
+#: mate-session/gsm-inhibit-dialog.c:885
 msgid "Hibernate Anyway"
 msgstr "Всё равно перевести в режим сна"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:888
 msgid "Shut Down Anyway"
 msgstr "Всё равно выключить"
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:891
 msgid "Reboot Anyway"
 msgstr "Всё равно перезагрузить"
 
-#: mate-session/gsm-inhibit-dialog.c:901
+#: mate-session/gsm-inhibit-dialog.c:899
 msgid "Lock Screen"
 msgstr "Заблокировать экран"
 
-#: mate-session/gsm-inhibit-dialog.c:904
+#: mate-session/gsm-inhibit-dialog.c:902
 msgid "Cancel"
 msgstr "Отмена"
 
@@ -533,18 +534,18 @@ msgstr "Пе_резагрузить"
 msgid "_Shut Down"
 msgstr "В_ыключить"
 
-#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
 msgid "Not responding"
 msgstr "Не отвечает"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:596
+#: mate-session/gsm-xsmp-client.c:593
 msgid "Remembered Application"
 msgstr "Запомненное приложение"
 
-#: mate-session/gsm-xsmp-client.c:1263
+#: mate-session/gsm-xsmp-client.c:1258
 msgid "This program is blocking logout."
 msgstr "Эта программа блокирует выход из сеанса."
 
@@ -556,13 +557,13 @@ msgstr ""
 "Новые клиентские подключения отклоняются, потому что сеанс сейчас "
 "завершается.\n"
 
-#: mate-session/gsm-xsmp-server.c:585
+#: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "Не удалось создать сокет, слушающий ICE: %s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:383
+#: mate-session/gsm-util.c:382
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Не удалось запустить сеанс (и подключиться к X-серверу)"
 

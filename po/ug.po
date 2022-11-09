@@ -8,9 +8,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.25.0\n"
+"Project-Id-Version: mate-session-manager 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
+"POT-Creation-Date: 2022-10-29 15:25+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Uyghur (https://www.transifex.com/mate/teams/13566/ug/)\n"
@@ -81,15 +81,15 @@ msgstr "سىنبەلگە"
 msgid "Program"
 msgstr "پروگرامما"
 
-#: capplet/gsm-properties-dialog.c:865
+#: capplet/gsm-properties-dialog.c:862
 msgid "Startup Applications Preferences"
 msgstr "قوزغىلىش پروگرامما مايىللىقى"
 
-#: capplet/gsp-app.c:283
+#: capplet/gsp-app.c:280
 msgid "No name"
 msgstr "نامسىز"
 
-#: capplet/gsp-app.c:289
+#: capplet/gsp-app.c:286
 msgid "No description"
 msgstr "چۈشەندۈرۈش يوق"
 
@@ -258,7 +258,7 @@ msgstr ""
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>بەزى پروگراممىلار يەنىلا ئىجرا قىلىنىۋاتىدۇ:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:643
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -395,19 +395,19 @@ msgstr "ئەڭگىمە باشقۇرغۇچ تاللانمىلىرىنى كۆرس�
 msgid "Icon '%s' not found"
 msgstr "سىنبەلگە '%s' تېپىلمىدى"
 
-#: mate-session/gsm-inhibit-dialog.c:592
+#: mate-session/gsm-inhibit-dialog.c:591
 msgid "Unknown"
 msgstr "نامەلۇم"
 
-#: mate-session/gsm-inhibit-dialog.c:643
+#: mate-session/gsm-inhibit-dialog.c:642
 msgid "A program is still running:"
 msgstr "پروگرامما يەنىلا ئىجرا قىلىنىۋاتىدۇ:"
 
-#: mate-session/gsm-inhibit-dialog.c:647
+#: mate-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
 msgstr "بەزى پروگراممىلار يەنىلا ئىجرا قىلىنىۋاتىدۇ:"
 
-#: mate-session/gsm-inhibit-dialog.c:648
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -415,35 +415,35 @@ msgstr ""
 "پروگراممىنىڭ تاماملىنىشىنى ساقلاۋاتىدۇ. ئەگەر مەجبۇرى توختىتىۋېتىلسە بىر "
 "قىسىم خىزمەتلەر يوق بولۇپ كېتىشى مۇمكىن."
 
-#: mate-session/gsm-inhibit-dialog.c:878
+#: mate-session/gsm-inhibit-dialog.c:876
 msgid "Switch User Anyway"
 msgstr "ئىشلەتكۈچىنى مەجبۇرىي ئالماشتۇر"
 
-#: mate-session/gsm-inhibit-dialog.c:881
+#: mate-session/gsm-inhibit-dialog.c:879
 msgid "Log Out Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:884
+#: mate-session/gsm-inhibit-dialog.c:882
 msgid "Suspend Anyway"
 msgstr "مەجبۇرىي ئېسىپ قوي"
 
-#: mate-session/gsm-inhibit-dialog.c:887
+#: mate-session/gsm-inhibit-dialog.c:885
 msgid "Hibernate Anyway"
 msgstr "مەجبۇرىي ئۇخلات"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:888
 msgid "Shut Down Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:891
 msgid "Reboot Anyway"
 msgstr "مەجبۇرىي قايتا قوزغات"
 
-#: mate-session/gsm-inhibit-dialog.c:901
+#: mate-session/gsm-inhibit-dialog.c:899
 msgid "Lock Screen"
 msgstr "ئېكراننى قۇلۇپلا"
 
-#: mate-session/gsm-inhibit-dialog.c:904
+#: mate-session/gsm-inhibit-dialog.c:902
 msgid "Cancel"
 msgstr "ۋاز كەچ"
 
@@ -498,18 +498,18 @@ msgstr "قايتا قوزغات(_R)"
 msgid "_Shut Down"
 msgstr "توكىنى ئۈز(_S)"
 
-#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
 msgid "Not responding"
 msgstr "ئىنكاس يوق"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:596
+#: mate-session/gsm-xsmp-client.c:593
 msgid "Remembered Application"
 msgstr ""
 
-#: mate-session/gsm-xsmp-client.c:1263
+#: mate-session/gsm-xsmp-client.c:1258
 msgid "This program is blocking logout."
 msgstr ""
 
@@ -519,13 +519,13 @@ msgid ""
 "down\n"
 msgstr "يېڭى ئىشلەتكۈچىنىڭ باغلىنىشى رەت قىلىندى،  چۈنكى ئەڭگىمە ئېتىلىۋاتىدۇ\n"
 
-#: mate-session/gsm-xsmp-server.c:585
+#: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE تىڭشاش روزېتكىسى قۇرالمىدى: %s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:383
+#: mate-session/gsm-util.c:382
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "كىرىش ئەڭگىمەسىنى قوزغىتالمىدى (X مۇلازىمېتىرىغا ئۇلىنالمىدى)"
 

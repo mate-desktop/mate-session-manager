@@ -8,9 +8,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.25.0\n"
+"Project-Id-Version: mate-session-manager 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
+"POT-Creation-Date: 2022-10-29 15:25+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Malayalam (https://www.transifex.com/mate/teams/13566/ml/)\n"
@@ -81,15 +81,15 @@ msgstr "ചിഹ്നം"
 msgid "Program"
 msgstr "പ്രോഗ്രാം"
 
-#: capplet/gsm-properties-dialog.c:865
+#: capplet/gsm-properties-dialog.c:862
 msgid "Startup Applications Preferences"
 msgstr "പ്രാരംഭ പ്രയോഗങ്ങള്‍ക്കുള്ള മുന്‍ഗണനകള്‍"
 
-#: capplet/gsp-app.c:283
+#: capplet/gsp-app.c:280
 msgid "No name"
 msgstr "പേരില്ല"
 
-#: capplet/gsp-app.c:289
+#: capplet/gsp-app.c:286
 msgid "No description"
 msgstr "വിവരണം ഒന്നുമില്ല"
 
@@ -262,7 +262,7 @@ msgstr ""
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>ചില പ്രയോഗങ്ങള്‍ ഇപ്പോഴും പ്രവര്‍ത്തിച്ചു് കൊണ്ടിരിയ്ക്കുന്നു:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:643
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -401,19 +401,19 @@ msgstr "സെഷന്‍ മാനേജ്മെന്റ് ഉപാധി�
 msgid "Icon '%s' not found"
 msgstr "'%s' ചിഹ്നം കണ്ടില്ല"
 
-#: mate-session/gsm-inhibit-dialog.c:592
+#: mate-session/gsm-inhibit-dialog.c:591
 msgid "Unknown"
 msgstr "അപരിചിതമായ"
 
-#: mate-session/gsm-inhibit-dialog.c:643
+#: mate-session/gsm-inhibit-dialog.c:642
 msgid "A program is still running:"
 msgstr "ഒരു പ്രയോഗം ഇപ്പോഴും പ്രവര്‍ത്തിച്ചു് കൊണ്ടിരിയ്ക്കുന്നു:"
 
-#: mate-session/gsm-inhibit-dialog.c:647
+#: mate-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
 msgstr "ചില പ്രയോഗങ്ങള്‍ ഇപ്പോഴും പ്രവര്‍ത്തിച്ചു് കൊണ്ടിരിയ്ക്കുന്നു:"
 
-#: mate-session/gsm-inhibit-dialog.c:648
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -422,35 +422,35 @@ msgstr ""
 "തടസ്സപ്പെടുത്തുന്നതു് നിങ്ങള്‍ ചെയ്തുകൊണ്ടിരിയ്ക്കുന്ന പണി നഷ്ടപ്പെടുവാന്‍ "
 "കാരണമായേയ്ക്കാം."
 
-#: mate-session/gsm-inhibit-dialog.c:878
+#: mate-session/gsm-inhibit-dialog.c:876
 msgid "Switch User Anyway"
 msgstr "എന്തായാലും ഉപയോക്താവിനെ മാറ്റുക"
 
-#: mate-session/gsm-inhibit-dialog.c:881
+#: mate-session/gsm-inhibit-dialog.c:879
 msgid "Log Out Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:884
+#: mate-session/gsm-inhibit-dialog.c:882
 msgid "Suspend Anyway"
 msgstr "എന്തായാലും മയങ്ങുക"
 
-#: mate-session/gsm-inhibit-dialog.c:887
+#: mate-session/gsm-inhibit-dialog.c:885
 msgid "Hibernate Anyway"
 msgstr "എന്തായാലും ശിശിരനിദ്രയിലാഴുക"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:888
 msgid "Shut Down Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:891
 msgid "Reboot Anyway"
 msgstr "എന്തായാലും വീണ്ടും തുടങ്ങുക"
 
-#: mate-session/gsm-inhibit-dialog.c:901
+#: mate-session/gsm-inhibit-dialog.c:899
 msgid "Lock Screen"
 msgstr "സ്ക്രീന്‍ പൂട്ടുക"
 
-#: mate-session/gsm-inhibit-dialog.c:904
+#: mate-session/gsm-inhibit-dialog.c:902
 msgid "Cancel"
 msgstr "റദ്ദാക്കുക"
 
@@ -505,18 +505,18 @@ msgstr "വീണ്ടും തുടങ്ങുക"
 msgid "_Shut Down"
 msgstr "കമ്പ്യൂട്ടര്‍ അടച്ചുപൂട്ടുക"
 
-#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
 msgid "Not responding"
 msgstr "പ്രതികരിയ്ക്കുന്നില്ല"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:596
+#: mate-session/gsm-xsmp-client.c:593
 msgid "Remembered Application"
 msgstr ""
 
-#: mate-session/gsm-xsmp-client.c:1263
+#: mate-session/gsm-xsmp-client.c:1258
 msgid "This program is blocking logout."
 msgstr ""
 
@@ -528,13 +528,13 @@ msgstr ""
 "പുതിയ ക്ലയന്റ് ബന്ധം നിരസിക്കുന്നു കാരണം പ്രവര്‍ത്തനവേള ഇപ്പോള്‍ അടച്ചു "
 "പൂട്ടൂകയാണു്\n"
 
-#: mate-session/gsm-xsmp-server.c:585
+#: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "'ഐസ് '(ICE) കേള്‍ക്കാനുള്ള സോക്കറ്റ് ഉണ്ടാക്കാന്‍ കഴിഞ്ഞില്ല: %s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:383
+#: mate-session/gsm-util.c:382
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "അകത്തുകയറുമ്പോഴുള്ള പ്രവര്‍ത്തനവേള തുടങ്ങാന്‍ കഴിഞ്ഞില്ല "

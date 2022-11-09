@@ -13,14 +13,15 @@
 # mauron, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Sabri Ünal <yakushabb@gmail.com>, 2019
+# Sabri Ünal <libreajans@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.25.0\n"
+"Project-Id-Version: mate-session-manager 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
+"POT-Creation-Date: 2022-10-29 15:25+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Sabri Ünal <yakushabb@gmail.com>, 2019\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>, 2022\n"
 "Language-Team: Turkish (https://www.transifex.com/mate/teams/13566/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,15 +90,15 @@ msgstr "İkon"
 msgid "Program"
 msgstr "Program"
 
-#: capplet/gsm-properties-dialog.c:865
+#: capplet/gsm-properties-dialog.c:862
 msgid "Startup Applications Preferences"
 msgstr "Başlangıç Uygulamaları Tercihleri"
 
-#: capplet/gsp-app.c:283
+#: capplet/gsp-app.c:280
 msgid "No name"
 msgstr "İsimsiz"
 
-#: capplet/gsp-app.c:289
+#: capplet/gsp-app.c:286
 msgid "No description"
 msgstr "Açıklama yok"
 
@@ -111,7 +112,7 @@ msgstr "Yardım belgesi görüntülenemedi"
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
-msgstr ""
+msgstr "- MATE Oturum Özellikleri"
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -131,16 +132,18 @@ msgstr "Eğer seçiliyse, mate-session oturumu otomatik olarak kaydedecektir."
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr ""
+msgstr "Gizli otomatik başlangıç uygulamalarını göster"
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
+"Etkinleştirilirse, mate-session-properties gizli başlangıç uygulamalarını "
+"gösterir."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
-msgstr "Çıkış istemi"
+msgstr "Oturum kapatma istemi"
 
 #: data/org.mate.session.gschema.xml.in:21
 msgid "If enabled, mate-session will prompt the user before ending a session."
@@ -150,16 +153,16 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:26
 msgid "Logout timeout"
-msgstr "Çıkış Zaman Aşımı"
+msgstr "Oturum kapatma zaman aşımı"
 
 #: data/org.mate.session.gschema.xml.in:27
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
 msgstr ""
-"Eğer çıkış komutu etkinleştirildiyse, ayarlanmış süre içerisinde çıkış "
-"kendiliğinden gerçekleşir. Eğer süre 0 olarak ayarlanmışsa, kendiliğinden "
-"çıkış devre dışı kalır."
+"Eğer oturumu kapat istemi etkinleştirildiyse, ayarlanmış süre içerisinde "
+"oturumu kapatma otomatik gerçekleşir. Eğer süre 0 olarak ayarlanmışsa, "
+"otomatik oturum kapatma devre dışı kalır."
 
 #: data/org.mate.session.gschema.xml.in:31
 msgid "Time before session is considered idle"
@@ -196,8 +199,8 @@ msgstr ""
 "Oturumun parçası olarak gerekli bileşenlerin listesi. (Her öğe ismi "
 "\"/org/mate/desktop/session/required_components\" anahtarı altındadır). "
 "Başlangıç Uygulamaları tercihleri aracı kullanıcıların normal olarak "
-"oturumdan gerekli bileşenleri silmesine izin vermez ve oturum yöneticisi "
-"gerekli bileşenleri silinirlerse oturuma kendiliğinden ekler."
+"oturumdan gerekli bileşenleri kaldırmasına izin vermez ve oturum yöneticisi "
+"gerekli bileşenleri kaldırılırsa oturuma kendiliğinden ekler."
 
 #: data/org.mate.session.gschema.xml.in:46
 msgid "Control gnome compatibility component startup"
@@ -230,7 +233,7 @@ msgid ""
 "menus, the window list, status icons, the clock, etc."
 msgstr ""
 "Panel, ekranın üstünde ya da altında menüler, pencere listesi, durum "
-"simgeleri, saat vb. öğeler içeren çubuk sağlar."
+"ikonları, saat vb. öğeler içeren çubuk sağlar."
 
 #: data/org.mate.session.gschema.xml.in:64
 msgid "File Manager"
@@ -241,7 +244,7 @@ msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
 msgstr ""
-"Dosya yöneticisi, masaüstü simgeleri ile kayıtlı dosyalarınızla etkileşim "
+"Dosya yöneticisi, masaüstü ikonları ile kayıtlı dosyalarınızla etkileşim "
 "olanağı sağlar."
 
 #: data/org.mate.session.gschema.xml.in:69
@@ -268,19 +271,19 @@ msgstr "Bu oturum MATE girişi yapmanızı sağlar"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "başlat;MATE;masaüstü;oturum;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr ""
+msgstr "MATE;pencere;yönetici;başlat;MDM;"
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>Bazı programlar hala çalışıyor:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:643
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -301,6 +304,7 @@ msgstr "Giriş yaptığınızda hangi uygulamaların başlatılacağını seçin
 #: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
 msgstr ""
+"MATE;oturum;özellikler;uygulamalar;giriş;oturum açma;başlangıç;başlat;"
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
@@ -308,7 +312,7 @@ msgstr "Ek başlangıç _programları:"
 
 #: data/session-properties.ui:101
 msgid "_Remove"
-msgstr "_Sil"
+msgstr "_Kaldır"
 
 #: data/session-properties.ui:117
 msgid "_Edit"
@@ -316,7 +320,7 @@ msgstr "_Düzenle"
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
-msgstr ""
+msgstr "_Gizlileri göster"
 
 #: data/session-properties.ui:168
 msgid "Startup Programs"
@@ -416,21 +420,21 @@ msgstr "Ortam yönetimi seçeneklerini göster"
 #: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
 msgid "Icon '%s' not found"
-msgstr "Simge '%s' bulunamadı"
+msgstr "İkon '%s' bulunamadı"
 
-#: mate-session/gsm-inhibit-dialog.c:592
+#: mate-session/gsm-inhibit-dialog.c:591
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: mate-session/gsm-inhibit-dialog.c:643
+#: mate-session/gsm-inhibit-dialog.c:642
 msgid "A program is still running:"
 msgstr "Bir program hala çalışıyor:"
 
-#: mate-session/gsm-inhibit-dialog.c:647
+#: mate-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
 msgstr "Bazı programlar hala çalışıyor:"
 
-#: mate-session/gsm-inhibit-dialog.c:648
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -438,35 +442,35 @@ msgstr ""
 "Programların bitmesi bekleniyor.  Bu programları kesmek yaptığınız işlerin "
 "kaybolmasına sebep olabilir."
 
-#: mate-session/gsm-inhibit-dialog.c:878
+#: mate-session/gsm-inhibit-dialog.c:876
 msgid "Switch User Anyway"
 msgstr "Yine de Kullanıcıyı Değiştir"
 
-#: mate-session/gsm-inhibit-dialog.c:881
+#: mate-session/gsm-inhibit-dialog.c:879
 msgid "Log Out Anyway"
 msgstr "Yine de Oturumu Sonlandır"
 
-#: mate-session/gsm-inhibit-dialog.c:884
+#: mate-session/gsm-inhibit-dialog.c:882
 msgid "Suspend Anyway"
 msgstr "Yine de Beklemeye Geç"
 
-#: mate-session/gsm-inhibit-dialog.c:887
+#: mate-session/gsm-inhibit-dialog.c:885
 msgid "Hibernate Anyway"
 msgstr "Yine de Uyku Kipine Geç"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:888
 msgid "Shut Down Anyway"
 msgstr "Yine de Bilgisayarı Kapat"
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:891
 msgid "Reboot Anyway"
 msgstr "Yine de Yeniden Başlat"
 
-#: mate-session/gsm-inhibit-dialog.c:901
+#: mate-session/gsm-inhibit-dialog.c:899
 msgid "Lock Screen"
 msgstr "Ekranı Kilitle"
 
-#: mate-session/gsm-inhibit-dialog.c:904
+#: mate-session/gsm-inhibit-dialog.c:902
 msgid "Cancel"
 msgstr "İptal"
 
@@ -475,7 +479,7 @@ msgstr "İptal"
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] "%d saniye içerisinde otomatik olarak çıkış yaptırılacaksınız."
-msgstr[1] "%d saniye içerisinde otomatik olarak çıkış yaptırılacaksınız."
+msgstr[1] "%d saniye içerisinde oturumunuz otomatik olarak kapatılacaktır"
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
@@ -521,18 +525,18 @@ msgstr "_Yeniden Başlat"
 msgid "_Shut Down"
 msgstr "_Kapat"
 
-#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
 msgid "Not responding"
 msgstr "Cevap vermiyor"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:596
+#: mate-session/gsm-xsmp-client.c:593
 msgid "Remembered Application"
 msgstr "Hatırlanan Uygulama"
 
-#: mate-session/gsm-xsmp-client.c:1263
+#: mate-session/gsm-xsmp-client.c:1258
 msgid "This program is blocking logout."
 msgstr "Bu program oturumun kapatılmasına mâni oluyor."
 
@@ -542,13 +546,13 @@ msgid ""
 "down\n"
 msgstr "Oturum şu anda kapatıldığı için yeni istemci bağlantısı reddediliyor\n"
 
-#: mate-session/gsm-xsmp-server.c:585
+#: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE dinleme soketi oluşturulamadı: %s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:383
+#: mate-session/gsm-util.c:382
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr "Giriş oturumu başlatılamıyor (ve X sunucuya bağlanılamıyor)"
 
@@ -566,7 +570,7 @@ msgstr "Kullanıcıya özel programları yükleme"
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr ""
+msgstr "Donanım hızlandırma denetimini devre dışı bırak"
 
 #: mate-session/main.c:637
 msgid " - the MATE session manager"
@@ -593,7 +597,7 @@ msgstr ""
 "\n"
 "KOMUT gerçekltirilirken bazı oturum fonksiyonları engellenebilir\n"
 "\n"
-"-h, --yardım Bu yardımı gösterir\n"
+"-h, --help Bu yardımı gösterir\n"
 "--version Yazılım sürümünü gösterir\n"
 "--app-id ID Uygulama kimliğin kullanmak için\n"
 "Engellerken (opsiyonel)\n"
@@ -602,8 +606,6 @@ msgstr ""
 "logout,switch-user,suspend,idle,automount\n"
 "\n"
 "Eğer --inhibit option belirtilmediyse, boşta varsayılır\n"
-"\n"
-"\n"
 
 #: tools/mate-session-inhibit.c:174 tools/mate-session-inhibit.c:184
 #: tools/mate-session-inhibit.c:194
@@ -618,15 +620,15 @@ msgstr "Gerçekleştirilemedi %s\n"
 
 #: tools/mate-session-save.c:67
 msgid "Log out"
-msgstr "Çıkış"
+msgstr "Oturumu kapat"
 
 #: tools/mate-session-save.c:68
 msgid "Log out, ignoring any existing inhibitors"
-msgstr "Çıkış, mevcut tüm engelleyiciler yok sayılıyor"
+msgstr "Oturumu kapat, mevcut tüm engelleyiciler yok sayılıyor"
 
 #: tools/mate-session-save.c:69
 msgid "Show logout dialog"
-msgstr "Çıkış penceresini göster"
+msgstr "Oturum kapatma penceresini göster"
 
 #: tools/mate-session-save.c:70
 msgid "Show shutdown dialog"

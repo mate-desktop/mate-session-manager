@@ -8,12 +8,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.25.0\n"
+"Project-Id-Version: mate-session-manager 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
+"POT-Creation-Date: 2022-10-29 15:25+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Oriya (https://www.transifex.com/mate/teams/13566/or/)\n"
+"Language-Team: Odia (https://www.transifex.com/mate/teams/13566/or/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,15 +81,15 @@ msgstr "ଚିତ୍ର ସଙ୍କେତ"
 msgid "Program"
 msgstr "ପ୍ରୋଗ୍ରାମ"
 
-#: capplet/gsm-properties-dialog.c:865
+#: capplet/gsm-properties-dialog.c:862
 msgid "Startup Applications Preferences"
 msgstr "ପ୍ରାରମ୍ଭିକ ପ୍ରୟୋଗ ପସନ୍ଦ"
 
-#: capplet/gsp-app.c:283
+#: capplet/gsp-app.c:280
 msgid "No name"
 msgstr "କୌଣସି ନାମ ନାହିଁ"
 
-#: capplet/gsp-app.c:289
+#: capplet/gsp-app.c:286
 msgid "No description"
 msgstr "କୌଣସି ବର୍ଣ୍ଣନା ନାହିଁ"
 
@@ -261,7 +261,7 @@ msgstr ""
 msgid "<b>Some programs are still running:</b>"
 msgstr "<b>କିଛି ପ୍ରଗ୍ରାମ ଏବେ ମଧ୍ଯ ଚାଲୁଅଛି:</b>"
 
-#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
+#: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:643
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
@@ -397,19 +397,19 @@ msgstr "ଅଧିବେଶନ ପରିଚାଳନା ବିକଳ୍ପଗୁ�
 msgid "Icon '%s' not found"
 msgstr "'%s' ଚିତ୍ରସଙ୍କେତ ମିଳିଲା ନାହଁ"
 
-#: mate-session/gsm-inhibit-dialog.c:592
+#: mate-session/gsm-inhibit-dialog.c:591
 msgid "Unknown"
 msgstr "ଅଜଣା"
 
-#: mate-session/gsm-inhibit-dialog.c:643
+#: mate-session/gsm-inhibit-dialog.c:642
 msgid "A program is still running:"
 msgstr "ଗୋଟିଏ ପ୍ରଗ୍ରାମ ଏପର୍ଯ୍ୟନ୍ତ ଚାଲିଅଛି:"
 
-#: mate-session/gsm-inhibit-dialog.c:647
+#: mate-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
 msgstr "କିଛି ପ୍ରଗ୍ରାମ ଏପର୍ଯ୍ୟନ୍ତ ଚାଲିଅଛି:"
 
-#: mate-session/gsm-inhibit-dialog.c:648
+#: mate-session/gsm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
@@ -417,35 +417,35 @@ msgstr ""
 "ପ୍ରଗ୍ରାମ ସମାପ୍ତ ହେବା ପାଇଁ ଅପେକ୍ଷା କରିଅଛି।  ଏହି ପ୍ରଗ୍ରାମଗୁଡ଼ିକୁ ବାଧା ଦେବା "
 "ଦ୍ୱାରା କାର୍ଯ୍ୟ ନଷ୍ଟ ହୋଇପାରେ।"
 
-#: mate-session/gsm-inhibit-dialog.c:878
+#: mate-session/gsm-inhibit-dialog.c:876
 msgid "Switch User Anyway"
 msgstr "ଚାଳକଙ୍କୁ ଯେକୌଣସି ଉପାୟରେ ବଦଳାନ୍ତୁ"
 
-#: mate-session/gsm-inhibit-dialog.c:881
+#: mate-session/gsm-inhibit-dialog.c:879
 msgid "Log Out Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:884
+#: mate-session/gsm-inhibit-dialog.c:882
 msgid "Suspend Anyway"
 msgstr "ଯେକୌଣସି ଉପାୟରେ ନିଲମ୍ବନ କରନ୍ତୁ"
 
-#: mate-session/gsm-inhibit-dialog.c:887
+#: mate-session/gsm-inhibit-dialog.c:885
 msgid "Hibernate Anyway"
 msgstr "ଯେକୌଣସି ପ୍ରକାରେ ସୁପ୍ତ କରନ୍ତୁ"
 
-#: mate-session/gsm-inhibit-dialog.c:890
+#: mate-session/gsm-inhibit-dialog.c:888
 msgid "Shut Down Anyway"
 msgstr ""
 
-#: mate-session/gsm-inhibit-dialog.c:893
+#: mate-session/gsm-inhibit-dialog.c:891
 msgid "Reboot Anyway"
 msgstr "ଯେକୌଣସି ପ୍ରକାରେ ପୁନର୍ଚାଳନ କରନ୍ତୁ"
 
-#: mate-session/gsm-inhibit-dialog.c:901
+#: mate-session/gsm-inhibit-dialog.c:899
 msgid "Lock Screen"
 msgstr "ପରଦାକୁ ତାଲା ଦେଇ ରଖନ୍ତୁ"
 
-#: mate-session/gsm-inhibit-dialog.c:904
+#: mate-session/gsm-inhibit-dialog.c:902
 msgid "Cancel"
 msgstr "ବାତିଲ କରନ୍ତୁ"
 
@@ -500,18 +500,18 @@ msgstr "ପୁନଃ ଚାଳନ କରନ୍ତୁ (_R)"
 msgid "_Shut Down"
 msgstr "ବନ୍ଦ କରନ୍ତୁ (_S)"
 
-#: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
 msgid "Not responding"
 msgstr "ଉତ୍ତର ଦେଉନାହିଁ"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
-#: mate-session/gsm-xsmp-client.c:596
+#: mate-session/gsm-xsmp-client.c:593
 msgid "Remembered Application"
 msgstr ""
 
-#: mate-session/gsm-xsmp-client.c:1263
+#: mate-session/gsm-xsmp-client.c:1258
 msgid "This program is blocking logout."
 msgstr ""
 
@@ -522,13 +522,13 @@ msgid ""
 msgstr ""
 "ନୂତନ କ୍ଲାଏଣ୍ଟ ସଂଯୋଗକୁ ମନାକରୁଅଛି କାରଣ ସେହି ଅଧିବେଶନଟି ବର୍ତ୍ତମାନ ବନ୍ଦ ହୋଇଛି\n"
 
-#: mate-session/gsm-xsmp-server.c:585
+#: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
 msgstr "ICE କୁ ମାନୁଥିବା ସକେଟ ନିର୍ମାଣ କରିପାରିଲା ନାହିଁ: %s"
 
 #. Oh well, no X for you!
-#: mate-session/gsm-util.c:383
+#: mate-session/gsm-util.c:382
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
 "ଲଗଇନ ଅଧିବେଶନ ଆରମ୍ଭ କରିବାରେ ଅସମର୍ଥ (ଏବଂ X ସର୍ଭର ସହିତ ସଂଯୋଗ ହେବାରେ ଅସମର୍ଥ)"
