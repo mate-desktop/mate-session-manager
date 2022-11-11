@@ -1,3 +1,13 @@
+### mate-session-manager 1.27.0
+
+  * tx: sync with transifex
+  * tx: update resource
+  * tx: migrate config file
+  * Fix memory leaks (#284)
+  * build warning: AC_OUTPUT should be used without arguments
+  * ci: drop -Wunused-parameter compiler cflag from debian build
+  * Use a blank line at most
+
 ### mate-session-manager 1.26.0
 
   * Translations update
