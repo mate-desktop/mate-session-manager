@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Muzaffar Habibullayev <muzaffarlearner@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Muzaffar Habibullayev <muzaffarlearner@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Uzbek (https://www.transifex.com/mate/teams/13566/uz/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: Muzaffar Habibullayev <muzaffarlearner@gmail.com>, 2021\n"
+"Language-Team: Uzbek (https://app.transifex.com/mate/teams/13566/uz/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -327,62 +327,62 @@ msgstr "_Nomi:"
 msgid "_Delay:"
 msgstr "_Kechikish:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Fayl yaroqli .desktop fayl emas"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Aniqlanmagan '%s' desktop fayli versiyasi"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "%s boshlanmoqda"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "Dastur hujjatlarni buyruq satrida qabul qilmaydi"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Tanilmagan ishga tushirish xossasi: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "Element ishga tushiriladigan emas"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Seans boshqaruvchisiga bogʻlanishni o'chirish"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Saqlangan moslamalar mavjud boʻlgan faylni koʻrsating"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "FAYL"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Seans boshqaruvi ID'ni koʻrsating"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Seans boshqaruvi xossalari:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Seans boshqaruvi xossalarini ko'rsatish"
 

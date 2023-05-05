@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Jose Alfredo Murcia Andrés <joamuran@gmail.com>, 2018
-# Pilar Embid <embid.mar@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Jose Alfredo Murcia Andrés <joamuran@gmail.com>, 2021
+# Pilar Embid <embid.mar@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Catalan (Valencian) (https://www.transifex.com/mate/teams/13566/ca@valencia/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: Pilar Embid <embid.mar@gmail.com>, 2021\n"
+"Language-Team: Catalan (Valencian) (https://app.transifex.com/mate/teams/13566/ca@valencia/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -351,64 +351,64 @@ msgstr "_Nom:"
 msgid "_Delay:"
 msgstr "_Retard:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Aquest no és un fitxer .desktop vàlid"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "No es reconeix la versió «%s» del fitxer d'escriptori"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "S'està iniciant %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "L'aplicació no accepta documents des de la línia d'ordres"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "No és reconeix l'opció d'execució: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
 "No es poden especificar URI de document en una entrada d'escriptori "
 "«Type=Link»"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "No és un element executable"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Inhabilita la connexió al gestor de la sessió"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Especifiqueu el fitxer que conté la configuració guardada"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "FITXER"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Especifiqueu l'identificador del gestor de la sessió"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Opcions del gestor de la sessió:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Mostra les opcions del gestor de la sessió"
 
@@ -473,15 +473,15 @@ msgstr "Cancel·la"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Es tancarà automàticament la sessió en %d segon"
-msgstr[1] "Es tancarà automàticament la sessió en %d segons"
+msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Automàticament s'apagarà el sistema en %d segon"
-msgstr[1] "Automàticament s'apagarà el sistema en %d segons"
+msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format

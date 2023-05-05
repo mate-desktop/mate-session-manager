@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Cédric Valmary <cvalmary@yahoo.fr>, 2019
-# Quentin PAGÈS, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Cédric Valmary <cvalmary@yahoo.fr>, 2021
+# Quentin PAGÈS, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Quentin PAGÈS, 2021\n"
-"Language-Team: Occitan (post 1500) (https://www.transifex.com/mate/teams/13566/oc/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: Quentin PAGÈS, 2022\n"
+"Language-Team: Occitan (post 1500) (https://app.transifex.com/mate/teams/13566/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -113,7 +113,7 @@ msgstr "Temps d’aviada de la session actuala"
 
 #: data/org.mate.session.gschema.xml.in:6
 msgid "Unix time of the start of the current session."
-msgstr "Temps UNIX d’aviada de la session actuala"
+msgstr "Temps UNIX d’aviada de la session actuala."
 
 #: data/org.mate.session.gschema.xml.in:10
 msgid "Save sessions"
@@ -132,7 +132,7 @@ msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
 "Se activat, mate-session-properties mostrarà las aplicacions amagadas "
-"lançadas automaticament"
+"lançadas automaticament."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -153,6 +153,9 @@ msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
 msgstr ""
+"Se la fenèstra de desconnexion es activada, aquò definís lo relambi en "
+"segondas abans desconnexion automatica. Se definit a 0, la desconnexion "
+"automatica es desactivada."
 
 #: data/org.mate.session.gschema.xml.in:31
 msgid "Time before session is considered idle"
@@ -186,14 +189,21 @@ msgid ""
 "automatically add the required components back to the session at login time "
 "if they do get removed."
 msgstr ""
+"Lista de compausants que devon obligatòriament far partida de la session "
+"(cada element se referís a una clau jos « "
+"/org/mata/desktop/session/required_components»). La fenèstra de las "
+"preferéncias de las aplicacions a l’aviada autoriza normalament pas los "
+"utilizaires a suprimir un compausant necessari de la session, e dins lo cas "
+"ont un tal compausant seriá levat, lo gestionari de session l'ajustariá "
+"automaticament al moment de la connexion."
 
 #: data/org.mate.session.gschema.xml.in:46
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "Contraròtla del compausant de d’aviada de compatibilitat de Gnome"
 
 #: data/org.mate.session.gschema.xml.in:47
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr " Contraròtla los compausants de compatibilitat d’aviar."
 
 #: data/org.mate.session.gschema.xml.in:54 data/mate-wm.desktop.in:4
 msgid "Window Manager"
@@ -204,6 +214,9 @@ msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr ""
+"Lo gestionari de fenèstra es lo programa que dessenha la barra de títol e "
+"las bordaduras a l'entorn de las fenèstras e vos permet de desplaçar e "
+"retalhar las fenèstras."
 
 #: data/org.mate.session.gschema.xml.in:59
 msgid "Panel"
@@ -214,6 +227,8 @@ msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr ""
+"Lo panèl provesís la barra ennaut o enbàs de l’ecran que conten los menús, "
+"la lista de fenèstras, las icònas d’estatut, lo relòtge, etc."
 
 #: data/org.mate.session.gschema.xml.in:64
 msgid "File Manager"
@@ -236,6 +251,8 @@ msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
 msgstr ""
+"Un dock fornís una zòna ancorabla, similara al panèl, per lançar e bascular "
+"d’aplicacions."
 
 #: data/mate.desktop.in:3
 msgid "MATE"
@@ -290,7 +307,7 @@ msgstr "_Programas suplementaris a l'aviada :"
 
 #: data/session-properties.ui:101
 msgid "_Remove"
-msgstr "_Levar"
+msgstr "_Suprimir"
 
 #: data/session-properties.ui:117
 msgid "_Edit"
@@ -332,70 +349,70 @@ msgstr "_Comanda :"
 
 #: data/session-properties.ui:368
 msgid "_Name:"
-msgstr "_Nom :"
+msgstr "_Nom :"
 
 #: data/session-properties.ui:382
 msgid "_Delay:"
 msgstr "_Delai :"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Lo fichièr es pas un fichièr .desktop valid"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "La version « %s » del fichièr desktop es pas reconeguda"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "Aviada de %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "L'aplicacion accepta pas los documents en linha de comandas"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Opcion d'aviada pas reconeguda : %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
-"Impossible de passar d'URI de document a un fichièr de burèu amb « Type=Link"
-" »"
+"Impossible de passar d'URI de document a un fichièr de burèu amb "
+"« Type=Link »"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "L'element es pas executable"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Desactivar la connexion al gestionari de sessions"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Indicar un fichièr que conten la configuracion enregistrada"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "FICHIÈR"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Indicar l'ID de gestion de session"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "Identificador"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Opcions de gestion de sessions :"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Afichar las opcions de gestion de sessions"
 
@@ -414,7 +431,7 @@ msgstr "Un programa es encara en execucion :"
 
 #: mate-session/gsm-inhibit-dialog.c:647
 msgid "Some programs are still running:"
-msgstr "Unes programas son encara en execucion : "
+msgstr "Unes programas son encara en execucion :"
 
 #: mate-session/gsm-inhibit-dialog.c:648
 msgid ""
@@ -450,7 +467,7 @@ msgstr "Reaviar çaquelà"
 
 #: mate-session/gsm-inhibit-dialog.c:901
 msgid "Lock Screen"
-msgstr "Varrolhar l'ecran"
+msgstr "Verrolhar l'ecran"
 
 #: mate-session/gsm-inhibit-dialog.c:904
 msgid "Cancel"
@@ -460,8 +477,8 @@ msgstr "Anullar"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Seretz automaticament desconnectat d’aquí %d segonda"
-msgstr[1] "Seretz automaticament desconnectat d’aquí %d segondas"
+msgstr[0] "Seretz automaticament desconnectat d’aquí %d segonda"
+msgstr[1] "Seretz automaticament desconnectat d’aquí %d segondas"
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
@@ -577,6 +594,19 @@ msgid ""
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
 msgstr ""
+"%s [OPCION...] COMANDA\n"
+"\n"
+"Executatz COMANDA pendent que las foncionalitats son inibidas.\n"
+"\n"
+"  -h, --help        Afichar aquesta ajuda\n"
+"  --version         Afichar la version del programa\n"
+"  --app-id ID       L’ID de l’aplicacion d’utilizar\n"
+"                    pendent inibicion (opcional)\n"
+"  --reason REASON   La rason de l’inibicion (opcional)\n"
+"  --inhibit ARG     Causas d’inibir , separadas per de punts virgulas :\n"
+"                    desconnexion, bascular d’utilizaire, metre en velha, repaus, montatge auto\n"
+"\n"
+"Se cap d’opcion --inhibit es especificat, repaus es supausat.\n"
 
 #: tools/mate-session-inhibit.c:174 tools/mate-session-inhibit.c:184
 #: tools/mate-session-inhibit.c:194

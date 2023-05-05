@@ -4,21 +4,21 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Michael Moroni <michaelmoroni@disroot.org>, 2018
-# fenris <fenris@folksprak.org>, 2018
-# 9a7df1f0a3f5f4de7c0fff80f6fa8bdc_64f795c <c0e0e9e34d0b00c2c039f4b25af104bd_91457>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Forecast <taisto@web.de>, 2020
-# kristjan <kristjan.schmidt@googlemail.com>, 2020
+# kristjan <kristjan.schmidt@googlemail.com>, 2021
+# Michael Moroni <michaelmoroni@disroot.org>, 2021
+# fenris <fenris@folksprak.org>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Forecast <taisto@web.de>, 2021
+# 9a7df1f0a3f5f4de7c0fff80f6fa8bdc_64f795c <c0e0e9e34d0b00c2c039f4b25af104bd_91457>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: kristjan <kristjan.schmidt@googlemail.com>, 2020\n"
-"Language-Team: Esperanto (https://www.transifex.com/mate/teams/13566/eo/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: 9a7df1f0a3f5f4de7c0fff80f6fa8bdc_64f795c <c0e0e9e34d0b00c2c039f4b25af104bd_91457>, 2021\n"
+"Language-Team: Esperanto (https://app.transifex.com/mate/teams/13566/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,7 +72,7 @@ msgstr "_Helpo"
 
 #: capplet/gsm-properties-dialog.c:590
 msgid "_Close"
-msgstr "_Fermu"
+msgstr "_Fermi"
 
 #: capplet/gsm-properties-dialog.c:640
 msgid "Enabled"
@@ -334,62 +334,62 @@ msgstr "_Nomo:"
 msgid "_Delay:"
 msgstr ""
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Dosiero ne estas valida .desktop-dosiero"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Nerekonata versio de labortabla dosiero '%s'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "Startigado de %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "Aplikaĵo ne akceptas dokumentojn per komandlinio"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Nerekonata rulparametro: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "URI-dokumentoj al labortabla elemento 'Type=Link' ne transdoneblas"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "Nelanĉebla ero"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Malŝalti konekton al seanco-administrilo"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Specifi dosieron, kiun enhavas konservitan agordon"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "DOSIERO"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Specifi identigilon de seancoadministrilo"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "Identigilo"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Opcioj de seancoadministrilo:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Montri seancoadministrilajn opciojn"
 

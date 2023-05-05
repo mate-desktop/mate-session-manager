@@ -4,21 +4,21 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Anh Phan <vietnamesel10n@gmail.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Meongu Ng. <meongu@gmail.com>, 2018
-# Duy Truong Nguyen <truongap.ars@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Horazone Detex <thmmt2017d@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Anh Phan <vietnamesel10n@gmail.com>, 2021
+# Duy Truong Nguyen <truongap.ars@gmail.com>, 2021
+# Martin Wimpress <code@flexion.org>, 2021
+# Meongu Ng. <meongu@gmail.com>, 2021
+# Horazone Detex <thmmt2017d@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Horazone Detex <thmmt2017d@gmail.com>, 2020\n"
-"Language-Team: Vietnamese (https://www.transifex.com/mate/teams/13566/vi/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: Horazone Detex <thmmt2017d@gmail.com>, 2021\n"
+"Language-Team: Vietnamese (https://app.transifex.com/mate/teams/13566/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -348,62 +348,62 @@ msgstr "Tê_n:"
 msgid "_Delay:"
 msgstr "Khoảng _trễ:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Tập tin không phải là dạng tập tin .desktop hợp lệ"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Không nhận ra tập tin màn hình nền phiên bản '%s'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "Đang khởi chạy %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "Ứng dụng không chấp nhận tài liệu thông qua dòng lệnh"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Không nhận ra tùy chọn khởi chạy: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Không thể chuyển URI của tài liệu cho mục desktop 'Type=Link'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "Không phải mục có thể khởi chạy"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Tắt kết nối với trình quản lý phiên chạy"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Xác định tập tin chứa cấu hình đã lưu"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "TẬP TIN"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Xác định mã số quản lý phiên làm việc"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Tùy chọn quản lý phiên làm việc:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Hiển thị các tùy chọn quản lý phiên làm việc"
 
@@ -468,13 +468,13 @@ msgstr "Thôi"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Bạn sẽ bị tự động đăng xuất trong vòng %d giây"
+msgstr[0] ""
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Hệ thống này sẽ tự động tắt trong vòng %d giây."
+msgstr[0] ""
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format

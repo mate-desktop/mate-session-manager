@@ -4,19 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Martin Wimpress <code@flexion.org>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Wolfgang Ulbrich <mate@raveit.de>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Martin Wimpress <code@flexion.org>, 2021
 # Мирослав Николић <miroslavnikolic@rocketmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2021\n"
-"Language-Team: Serbian (https://www.transifex.com/mate/teams/13566/sr/)\n"
+"Language-Team: Serbian (https://app.transifex.com/mate/teams/13566/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -305,7 +304,7 @@ msgstr "_Уклони"
 
 #: data/session-properties.ui:117
 msgid "_Edit"
-msgstr "_Уреди"
+msgstr "_Уређивање"
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
@@ -347,64 +346,64 @@ msgstr "_Назив:"
 msgid "_Delay:"
 msgstr "_Застој:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Ово није исправна „.desktop“ датотека"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Непозната датотека радне површи издање „%s“"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "Покрећем „%s“"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
-msgstr "Програм не прихвата документе из линије наредби"
+msgstr "Програм не прихвата документа из линије наредби"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Непозната опција покретања: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Не могу да проследим адресе докумената на „Type=Link“ унос"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "Није ставка за покретање"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Искључује везу са управником сесије"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Наводи датотеку која садржи сачувана подешавања"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "ДАТОТЕКА"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Наводи ИБ управника сесије"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ИБ"
 
-#: mate-submodules/libegg/eggsmclient.c:269
-msgid "Session management options:"
-msgstr "Могућности управљања сесијом:"
-
 #: mate-submodules/libegg/eggsmclient.c:270
+msgid "Session management options:"
+msgstr "Опције управљања сесијом:"
+
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
-msgstr "Приказује могућности управљања сесијом"
+msgstr "Приказује опције управљања сесијом"
 
 #: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
@@ -467,17 +466,17 @@ msgstr "Откажи"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Бићете одјављени са система за %d секунду"
-msgstr[1] "Бићете одјављени са система за %d секунде"
-msgstr[2] "Бићете одјављени са система за %d секунди"
+msgstr[0] "Бићете аутоматски одјављени за %d секунду"
+msgstr[1] "Бићете аутоматски одјављени за %d секунде"
+msgstr[2] "Бићете аутоматски одјављени за %d секунди"
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Систем ће се искључити за %d секунду"
-msgstr[1] "Систем ће се искључити за %d секунде"
-msgstr[2] "Систем ће се искључити за %d секунди"
+msgstr[0] "Овај систем ће се аутоматски угасити за %d секунду"
+msgstr[1] "Овај систем ће се аутоматски угасити за %d секунде"
+msgstr[2] "Овај систем ће се аутоматски угасити за %d секунди"
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format

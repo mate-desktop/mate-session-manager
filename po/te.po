@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# parijathakumar <parijathakumar@gmail.com>, 2018
-# ప్రవీణ్ ఇళ్ళ <mail2ipn@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# ప్రవీణ్ ఇళ్ళ <mail2ipn@gmail.com>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# parijathakumar <parijathakumar@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Telugu (https://www.transifex.com/mate/teams/13566/te/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: parijathakumar <parijathakumar@gmail.com>, 2021\n"
+"Language-Team: Telugu (https://app.transifex.com/mate/teams/13566/te/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -337,62 +337,62 @@ msgstr "నామము (_N):"
 msgid "_Delay:"
 msgstr "ఆలస్యం(_D):"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "దస్త్రము చెల్లునటువంటి .desktop దస్త్రము కాదు"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "గుర్తించని డెస్కుటాపు దస్త్రము వర్షన్ '%s'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "%s ను ప్రారంభించుచున్నాము"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "అనువర్తనము ఆదేశ వరుసనందు పత్రములను ఆమోదించదు"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "గుర్తించని ప్రారంభ ఐచ్చికము: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "పత్రము URIలను Type=Link' desktop entry కు పంపలేదు."
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "ఆరంభించదగిన అంశముకాదు"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "సెషన్ నిర్వాహకునికి అనుసంధానమును అచేతనము చేయుము"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "దాయబడిన ఆకృతీకరణను కలిగివున్న ఫైలును తెలుపుము"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "FILE"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "సెషన్ నిర్వహణ IDను తెలుపుము"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ఐడి"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "సెషన్ నిర్వహణా ఐచ్చికములు:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "సెషన్ నిర్వహణా ఐచ్చికములను చూపుము"
 

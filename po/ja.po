@@ -4,24 +4,23 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# あわしろいくや <ikunya@gmail.com>, 2018
-# Mika Kobayashi, 2018
-# Rockers <sumorock@hotmail.com>, 2018
-# Ikuru K <kanumaiku@gmail.com>, 2018
-# semicolon <mail@semicln.com>, 2018
-# ABE Tsunehiko, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# FuRuYa7 <goo.sirocat47@gmail.com>, 2020
-# Green, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# ABE Tsunehiko, 2021
+# あわしろいくや <ikunya@gmail.com>, 2021
+# fbc955180bc2b956cb4ef52d00eb80a0_91487f8, 2021
+# Rockers <sumorock@hotmail.com>, 2021
+# Ikuru K <kanumaiku@gmail.com>, 2021
+# semicolon <mail@semicln.com>, 2021
+# Green <usergreen@users.osdn.me>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Green, 2021\n"
-"Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: Green <usergreen@users.osdn.me>, 2021\n"
+"Language-Team: Japanese (https://app.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,7 +58,7 @@ msgstr "自動起動するプログラムの編集"
 
 #: capplet/gsm-app-dialog.c:231
 msgid "_Save"
-msgstr "保存 (_S)"
+msgstr "保存(_S)"
 
 #: capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
@@ -222,7 +221,7 @@ msgstr "パネルは画面の上または下にメニューやウィンドウ一
 
 #: data/org.mate.session.gschema.xml.in:64
 msgid "File Manager"
-msgstr "ファイルマネージャー"
+msgstr "ファイルマネージャ"
 
 #: data/org.mate.session.gschema.xml.in:65
 msgid ""
@@ -336,62 +335,62 @@ msgstr "名前(_N):"
 msgid "_Delay:"
 msgstr "間隔(_D):"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
-msgstr "妥当な .desktop ファイルではありません"
+msgstr "ファイルは無効な .desktop ファイルです"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "バージョン '%s' の .desktop ファイルはサポートしていません"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "%s の起動中です"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
-msgstr "コマンドラインからドキュメントにはアクセスできません"
+msgstr "コマンドラインからは、文書にアクセスできません"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "不明な起動オプションです: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "'Type=Link' の .desktop エントリーにはドキュメントの URI を渡せません"
+msgstr "'Type=Link' の .desktop エントリーには文書の URI を渡せません"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "起動できないアイテムです"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "セッションマネージャーに接続しない"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "設定を保存したファイルを指定する"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
-msgstr "FILE"
+msgstr "ファイル"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "セッション管理 ID を指定する"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "セッション管理のオプション:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "セッション管理のオプションを表示する"
 

@@ -4,20 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Martin Wimpress <code@flexion.org>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Alban <nofbname@gmail.com>, 2018
-# Indrit Bashkimi <indrit.bashkimi@gmail.com>, 2018
-# Ardit Dani <ardit.dani@gmail.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Alban <nofbname@gmail.com>, 2021
+# Indrit Bashkimi <indrit.bashkimi@gmail.com>, 2021
+# Ardit Dani <ardit.dani@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Ardit Dani <ardit.dani@gmail.com>, 2019\n"
-"Language-Team: Albanian (https://www.transifex.com/mate/teams/13566/sq/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: Ardit Dani <ardit.dani@gmail.com>, 2021\n"
+"Language-Team: Albanian (https://app.transifex.com/mate/teams/13566/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -170,7 +169,7 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:37
 msgid "List of applications that are part of the default session."
-msgstr ""
+msgstr "Lista e aplikacioneve që janë pjesë e sesionit të paracaktuar."
 
 #: data/org.mate.session.gschema.xml.in:41
 msgid "Required session components"
@@ -196,7 +195,7 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:54 data/mate-wm.desktop.in:4
 msgid "Window Manager"
-msgstr "Menaxheri Window"
+msgstr "Menaxher Dritare"
 
 #: data/org.mate.session.gschema.xml.in:55
 msgid ""
@@ -330,62 +329,62 @@ msgstr "_Emri:"
 msgid "_Delay:"
 msgstr "_Vonesa:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Skedari nuk është një skedar .desktop i vlefshëm"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Version i pasaktë file desktop '%s'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "Fillo %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "Aplikacioni nuk pranon dokumente në rreshtin e komandës"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Opsion i pasaktë nisje: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Nuk mund t'i kalohen URL-të e dokumenteve hyres desktopi 'Type=Link'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "Nuk është një element i ekzekutueshëm"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Çaktivizo lidhjen me menaxhuesin e seancës"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Specifikon dokumentin që përmban konfiurimin e ruajtur"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "SKEDAR"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Specifiko ID e menaxhuesit të seancës"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Opsionet e menaxhimit të seancës:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Shfaq opsionet e menaxhimit të seancës"
 

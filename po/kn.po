@@ -4,17 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# karthik holla <karthikholla87@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# karthik holla <karthikholla87@gmail.com>, 2021
+# Sai Vinoba <saivinoba@sumati.net>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Kannada (https://www.transifex.com/mate/teams/13566/kn/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: Sai Vinoba <saivinoba@sumati.net>, 2021\n"
+"Language-Team: Kannada (https://app.transifex.com/mate/teams/13566/kn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,7 +37,7 @@ msgstr "ಸೆಕೆಂಡುಗಳು"
 #: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
 #: mate-session/gsm-logout-dialog.c:486
 msgid "_Cancel"
-msgstr "ರದ್ದು ಮಾಡಲಾಗಿದೆ(_C)"
+msgstr "ನೀಗು (_C)"
 
 #: capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
@@ -44,7 +45,7 @@ msgstr "ಆರಂಭಿಕ ಪ್ರೊಗ್ರಾಂ ಅನ್ನು ಸೇರ
 
 #: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
 msgid "_Add"
-msgstr "ಸೇರಿಸು(_A)"
+msgstr "ಸೇರಿಸು (_A)"
 
 #: capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
@@ -64,7 +65,7 @@ msgstr "ಆರಂಭಿಕ ಆಜ್ಞೆಯು ಮಾನ್ಯವಾದುದ�
 
 #: capplet/gsm-properties-dialog.c:586
 msgid "_Help"
-msgstr "ನೆರವು(_H)"
+msgstr "ನೆರವು (_H)"
 
 #: capplet/gsm-properties-dialog.c:590
 msgid "_Close"
@@ -207,7 +208,7 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:59
 msgid "Panel"
-msgstr "ಫಲಕ"
+msgstr "ಪಟ್ಟಿ"
 
 #: data/org.mate.session.gschema.xml.in:60
 msgid ""
@@ -289,11 +290,11 @@ msgstr "ಹೆಚ್ಚುವರಿ ಆರಂಭಿಕ ಪ್ರೊಗ್ರಾ�
 
 #: data/session-properties.ui:101
 msgid "_Remove"
-msgstr "ತೆಗೆದು ಹಾಕು(_R)"
+msgstr "ತೆಗೆದು ಹಾಕು (_R)"
 
 #: data/session-properties.ui:117
 msgid "_Edit"
-msgstr "ಸಂಪಾದಿಸು(_E)"
+msgstr "ತಿದ್ದು (_E)"
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
@@ -335,62 +336,62 @@ msgstr "ಹೆಸರು(_N):"
 msgid "_Delay:"
 msgstr "ವಿಳಂಬ (_D):"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "ಕಡತವು ಮಾನ್ಯವಾದ .desktop ಕಡತವಾಗಿಲ್ಲ"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "ಗುರುತಿಸಲಾಗದ ಗಣಕತೆರೆ ಕಡತ ಆವೃತ್ತಿ '%s'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
-msgstr "%s ಅನ್ನು ಆರಂಭಿಸಲಾಗುತ್ತಿದೆ"
+msgstr "%s ಅನ್ನು ತೊಡಗಿಸಲಾಗುತ್ತಿದೆ"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "ಅನ್ವಯವು ಆಜ್ಞಾ ಸಾಲಿನಲ್ಲಿ ದಸ್ತಾವೇಜುಗಳನ್ನು ಅಂಗೀಕರಿಸುವುದಿಲ್ಲ"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "ಗುರುತಿಸಲಾಗದ ಆರಂಭದ ಆಯ್ಕೆ: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "ಒಂದು 'Type=Link' ಗಣಕತೆರೆ ನಮೂದಿಗಾಗಿ ದಸ್ತಾವೇಜು URIಗಳನ್ನು ಒದಗಿಸಲಾಗಿಲ್ಲ"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
-msgstr "ಆರಂಭಿಸಬಹುದಾದ ಅಂಶವಾಗಿಲ್ಲ"
+msgstr "ತೊಡಗಿಸಬಹುದಾದ ಅಡಕವಾಗಿಲ್ಲ"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "ಅಧಿವೇಶನದ ವ್ಯವಸ್ಥಾಪಕನೊಂದಿಗಿನ ಸಂಪರ್ಕವನ್ನು ಅಶಕ್ತಗೊಳಿಸು"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "ಉಳಿಸಲಾದ ಸಂರಚನೆಯನ್ನು ಹೊಂದಿರುವ ಕಡತವನ್ನು ಸೂಚಿಸಿ"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "FILE"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "ಅಧೀವೇಶನ ವ್ಯವಸ್ಥಾಪನಾ ID ಯನ್ನು ಸೂಚಿಸಿ"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ಐಡಿ"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "ಅಧಿವೇಶನ ವ್ಯವಸ್ಥಾಪನಾ ಆಯ್ಕೆಗಳು:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "ಅಧಿವೇಶನ ವ್ಯವಸ್ಥಾಪನಾ ಆಯ್ಕೆಗಳನ್ನು ತೋರಿಸು"
 

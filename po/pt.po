@@ -4,30 +4,31 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# fc2d9c36d73e741383fbbf46a4aac49f_013445b, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Diogo Oliveira <diogodesigns@gmail.com>, 2018
-# Manuela Silva <mmsrs@sky.com>, 2018
-# Carlos Moreira, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Sérgio Marques <smarquespt@gmail.com>, 2019
-# Rui <xymarior@yandex.com>, 2019
-# Guilherme Campos <guilhermemiguel97@hotmail.com>, 2020
+# Sérgio Marques <smarquespt@gmail.com>, 2021
+# Carlos Moreira, 2021
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# fc2d9c36d73e741383fbbf46a4aac49f_013445b, 2021
+# Martin Wimpress <code@flexion.org>, 2021
+# Diogo Oliveira <diogodesigns@gmail.com>, 2021
+# Rui <xymarior@yandex.com>, 2021
+# Manuela Silva <mmsrs@sky.com>, 2021
 # José Vieira <jvieira33@sapo.pt>, 2021
+# Guilherme Campos <guilhermemiguel97@hotmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: José Vieira <jvieira33@sapo.pt>, 2021\n"
-"Language-Team: Portuguese (https://www.transifex.com/mate/teams/13566/pt/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: Guilherme Campos <guilhermemiguel97@hotmail.com>, 2021\n"
+"Language-Team: Portuguese (https://app.transifex.com/mate/teams/13566/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -72,7 +73,7 @@ msgstr "O comando de arranque não é válido"
 
 #: capplet/gsm-properties-dialog.c:586
 msgid "_Help"
-msgstr "A_juda"
+msgstr "_Ajuda"
 
 #: capplet/gsm-properties-dialog.c:590
 msgid "_Close"
@@ -112,7 +113,7 @@ msgstr "Não foi possível mostrar o documento da ajuda"
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
-msgstr ""
+msgstr "- Propriedades da Sessão do MATE"
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -357,64 +358,64 @@ msgstr "_Nome:"
 msgid "_Delay:"
 msgstr "_Demora:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "O ficheiro não é um ficheiro .desktop válido"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Versão de ficheiro .desktop \"%s\" não reconhecida"
+msgstr "Versão de ficheiro .desktop '%s' não reconhecida"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "A iniciar %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "A aplicação não aceita documentos na linha de comando"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Opção de arranque desconhecida: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
 "Não pode enviar URIs de documento para uma entrada da área de trabalho "
 "'Tipo=Hiperligação'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "Não é um item de iniciação"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Desativar a ligação ao gestor de sessões"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Especifique o ficheiro que contém a configuração guardada"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "FICHEIRO"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Especifique a ID de gestão de sessão"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID."
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Opções do gestor de sessão:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Mostrar as opções de gestão de sessões"
 
@@ -479,15 +480,17 @@ msgstr "Cancelar"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Irá terminar a sessão automaticamente em %d segundo"
-msgstr[1] "Irá terminar a sessão automaticamente em %d segundos"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Este sistema irá desligar automaticamente em %d segundo"
-msgstr[1] "Este sistema irá desligar automaticamente em %d segundos"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format

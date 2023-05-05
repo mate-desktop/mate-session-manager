@@ -4,26 +4,27 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Michal Procházka <mich.procha@seznam.cz>, 2018
-# Ondřej Kolín <ondrej.kolin@gmail.com>, 2018
-# Honza K. <honza889@gmail.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# 1e6459e9b1241af8afa03d508d281c17_dbe0d8b, 2018
-# 6e833d5535e2fe0dd9dfa7fe5bf473f2_d78f422 <64c38a0ff10419c64e8e03d54c72b3bd_352524>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Michal <sinope@seznam.cz>, 2018
-# LiberteCzech <liberte.czech@gmail.com>, 2018
-# ToMáš Marný, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Michal Procházka <mich.procha@seznam.cz>, 2021
+# Honza K. <honza889@gmail.com>, 2021
+# Michal <sinope@seznam.cz>, 2021
 # Lukáš Lommer <drom@kdyne.net>, 2021
+# clefebvre <clement.lefebvre@linuxmint.com>, 2021
+# Martin Wimpress <code@flexion.org>, 2021
+# 1e6459e9b1241af8afa03d508d281c17_dbe0d8b, 2021
+# LiberteCzech <martin.kriz.czech@gmail.com>, 2021
+# 6e833d5535e2fe0dd9dfa7fe5bf473f2_d78f422 <64c38a0ff10419c64e8e03d54c72b3bd_352524>, 2021
+# Roman Horník <roman.hornik@debian-linux.cz>, 2021
+# ToMáš Marný, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Lukáš Lommer <drom@kdyne.net>, 2021\n"
-"Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: ToMáš Marný, 2023\n"
+"Language-Team: Czech (https://app.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,7 +41,7 @@ msgstr "sekunda"
 
 #: capplet/gsm-app-dialog.c:170
 msgid "seconds"
-msgstr "sekundách"
+msgstr "sekund"
 
 #: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
 #: mate-session/gsm-logout-dialog.c:486
@@ -53,7 +54,7 @@ msgstr "Přidat program při přihlášení"
 
 #: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
 msgid "_Add"
-msgstr "Přid_at"
+msgstr "Při_dat"
 
 #: capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
@@ -121,7 +122,7 @@ msgstr "Startovací čas aktuálního sezení"
 
 #: data/org.mate.session.gschema.xml.in:6
 msgid "Unix time of the start of the current session."
-msgstr "Unixový čas spuštění aktuálního sezení"
+msgstr "Unixový čas spuštění aktuálního sezení."
 
 #: data/org.mate.session.gschema.xml.in:10
 msgid "Save sessions"
@@ -207,7 +208,7 @@ msgstr "Kontrola kompatibilních komponent ke spuštění"
 
 #: data/org.mate.session.gschema.xml.in:47
 msgid "Control which compatibility components to start."
-msgstr "Kontrola kompatibilních komponent ke startu"
+msgstr "Kontrola kompatibilních komponent ke startu."
 
 #: data/org.mate.session.gschema.xml.in:54 data/mate-wm.desktop.in:4
 msgid "Window Manager"
@@ -333,11 +334,11 @@ msgstr "Zapa_matovat si aktuálně běžící aplikaci"
 
 #: data/session-properties.ui:259
 msgid "Options"
-msgstr "Volby"
+msgstr "Možnosti"
 
 #: data/session-properties.ui:297
 msgid "Browse…"
-msgstr "Procházet..."
+msgstr "Procházet…"
 
 #: data/session-properties.ui:340
 msgid "Comm_ent:"
@@ -349,70 +350,70 @@ msgstr "_Příkaz:"
 
 #: data/session-properties.ui:368
 msgid "_Name:"
-msgstr "Jmé_no:"
+msgstr "Náz_ev:"
 
 #: data/session-properties.ui:382
 msgid "_Delay:"
 msgstr "Zpož_dění:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
-msgstr "Soubor není platným souborem .desktop"
+msgstr "Soubor není platným souborem typu .desktop"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Nerozpoznaná verze „%s“ souboru pracovní plochy"
+msgstr "Nerozpoznaný soubor typu .desktop ve verzi „%s“"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "Spouští se %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "Aplikace nepřijímá dokumenty z příkazové řádky"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Nerozpoznaná volba spuštění: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Nelze předat URI dokumentu položce .desktop „Type=Link“"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
-msgstr "Nespustitelná položka"
+msgstr "Není spustitelnou položkou"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
-msgstr "Vypnout spojení se správcem sezení"
+msgstr "Zakázat napojení na správce sezení"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
-msgstr "Stanovit soubor obsahující uloženou konfiguraci"
+msgstr "Vyberte soubor s uloženou konfigurací"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "SOUBOR"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
-msgstr "Stanovit ID Správy sezení"
+msgstr "Zadejte ID správce sezení"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
-msgid "Session management options:"
-msgstr "Možnosti Správy sezení:"
-
 #: mate-submodules/libegg/eggsmclient.c:270
+msgid "Session management options:"
+msgstr "Volby správce sezení:"
+
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
-msgstr "Zobrazit možnosti Správy sezení"
+msgstr "Zobrazit volby správce sezení"
 
 #: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
@@ -421,7 +422,7 @@ msgstr "Ikona \"%s\" nenalezena"
 
 #: mate-session/gsm-inhibit-dialog.c:592
 msgid "Unknown"
-msgstr "Neznámo"
+msgstr "Neznámé"
 
 #: mate-session/gsm-inhibit-dialog.c:643
 msgid "A program is still running:"

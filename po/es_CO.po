@@ -4,25 +4,25 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Julian Borrero <julborre@gmail.com>, 2018
-# Daniel Aranda <dwarandae@gmail.com>, 2018
-# Sergio Alejandro Bayona Becerra <sergioalejo@gmail.com>, 2018
-# John Toro <johntoro@gmail.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# John Toro <johntoro@gmail.com>, 2021
+# Sergio Alejandro Bayona Becerra <sergioalejo@gmail.com>, 2021
+# Julian Borrero <julborre@gmail.com>, 2021
+# Daniel Aranda <dwarandae@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: John Toro <johntoro@gmail.com>, 2019\n"
-"Language-Team: Spanish (Colombia) (https://www.transifex.com/mate/teams/13566/es_CO/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: Daniel Aranda <dwarandae@gmail.com>, 2021\n"
+"Language-Team: Spanish (Colombia) (https://app.transifex.com/mate/teams/13566/es_CO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_CO\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -327,64 +327,64 @@ msgstr "_Nombre:"
 msgid "_Delay:"
 msgstr ""
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "El archivo no es un archivo .desktop válido"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Versión \"%s\" del archivo .desktop no reconocida"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "Iniciando %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "La aplicación no acepta documentos por línea de comandos"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Opción de inicio no reconocida: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
 "No se pueden pasar los URI de documentos a entradas de escritorio con "
 "'Type=Link'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "No es un elemento lanzable"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Deshabilite la conexión al administrador de sesiones"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Especifique el archivo que contiene la configuración guardada"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "ARCHIVO"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Especifique el identificador de administración de la sesión"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Opciones del administrador de sesiones:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Muestre las opciones del administrador de sesiones"
 
@@ -449,6 +449,7 @@ msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
@@ -456,6 +457,7 @@ msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format

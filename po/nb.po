@@ -4,21 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# 83471bf16eb03bd248ce865f88678158_08f49ba <b37580a9d5c210d723d81df1f8c6f8f2_815>, 2018
-# Harald H. <haarektrans@gmail.com>, 2018
-# Kenneth Jenssen <kennethjenssen@yahoo.com>, 2018
-# Allan Nordhøy <epost@anotheragency.no>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Allan Nordhøy <epost@anotheragency.no>, 2021
+# Harald H. <haarektrans@gmail.com>, 2021
+# Kenneth Jenssen <kennethjenssen@yahoo.com>, 2021
 # heskjestad <cato@heskjestad.xyz>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
 "Last-Translator: heskjestad <cato@heskjestad.xyz>, 2021\n"
-"Language-Team: Norwegian Bokmål (https://www.transifex.com/mate/teams/13566/nb/)\n"
+"Language-Team: Norwegian Bokmål (https://app.transifex.com/mate/teams/13566/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -100,7 +99,7 @@ msgstr "Ingen beskrivelse"
 
 #: capplet/main.c:36 mate-session/main.c:614
 msgid "Version of this application"
-msgstr "Skjermsparerversjon"
+msgstr "Dette programmets versjon"
 
 #: capplet/main.c:52
 msgid "Could not display help document"
@@ -203,15 +202,15 @@ msgstr "Kontroller hvilke kompabilitetskomponenter som skal starte."
 
 #: data/org.mate.session.gschema.xml.in:54 data/mate-wm.desktop.in:4
 msgid "Window Manager"
-msgstr "Vindushåndterer"
+msgstr "Vindusbehandler"
 
 #: data/org.mate.session.gschema.xml.in:55
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr ""
-"Vindushåndterer er programmet som styrer tittellinje og kanter rundt vinduer"
-" i tillegg til å la deg flytte og endre størrelse på vinduene."
+"Vindusbehandleren er programmet som styrer tittellinje og kanter rundt "
+"vinduer i tillegg til å la deg flytte og endre størrelse på vinduene."
 
 #: data/org.mate.session.gschema.xml.in:59
 msgid "Panel"
@@ -347,63 +346,63 @@ msgstr "_Navn:"
 msgid "_Delay:"
 msgstr "_Pause:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Filen er ikke en gyldig .desktop-fil"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Kjenner ikke igjen versjon «%s» i desktop-fil"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "Starter %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "Programmet tar ikke dokumenter på kommandolinjen"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Kjenner ikke igjen oppstartsalternativ: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
 "Kan ikke gi URIer til dokumenter til en oppføring av type «Types=Link»"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "Ikke en startbar oppføring"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Slå av tilkobling til øktbehandler"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Oppgi fil som inneholder lagret oppsett"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "FIL"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Oppgi øktbehandlings-ID"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Alternativer for øktbehandling:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Vis alternativer for øktbehandling"
 
@@ -468,15 +467,15 @@ msgstr "Avbryt"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Du vil automatisk bli utlogget om %d sekund"
-msgstr[1] "Du vil automatisk bli utlogget om %d sekunder"
+msgstr[0] "Du vil logges ut automatisk om %d sekund"
+msgstr[1] "Du vil logges ut automatisk om %d sekunder"
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Systemet vil bli slått automatisk av om %d sekund"
-msgstr[1] "Systemet vil bli slått automatisk av om %d sekunder"
+msgstr[0] "Systemet slås av automatisk om %d sekund"
+msgstr[1] "Systemet slås av automatisk om %d sekunder"
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format

@@ -4,24 +4,26 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Emre FIRAT <emrefirat93@gmail.com>, 2018
-# Mehmet, 2018
-# Butterfly <gokhanlnx@gmail.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Umut Barış GÖKMEN <umtbrsgkmn@gmail.com>, 2018
-# tarakbumba <tarakbumba@gmail.com>, 2018
-# mauron, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Sabri Ünal <yakushabb@gmail.com>, 2019
+# tarakbumba <tarakbumba@gmail.com>, 2021
+# mauron, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Emre FIRAT <emrefirat93@gmail.com>, 2021
+# Mehmet, 2021
+# Butterfly <gokhanlnx@gmail.com>, 2021
+# clefebvre <clement.lefebvre@linuxmint.com>, 2021
+# Martin Wimpress <code@flexion.org>, 2021
+# Umut Barış GÖKMEN <umtbrsgkmn@gmail.com>, 2021
+# Sabri Ünal <yakushabb@gmail.com>, 2021
+# Sabri Ünal <libreajans@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Sabri Ünal <yakushabb@gmail.com>, 2019\n"
-"Language-Team: Turkish (https://www.transifex.com/mate/teams/13566/tr/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>, 2022\n"
+"Language-Team: Turkish (https://app.transifex.com/mate/teams/13566/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -111,7 +113,7 @@ msgstr "Yardım belgesi görüntülenemedi"
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
-msgstr ""
+msgstr "- MATE Oturum Özellikleri"
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -131,12 +133,14 @@ msgstr "Eğer seçiliyse, mate-session oturumu otomatik olarak kaydedecektir."
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr ""
+msgstr "Gizli otomatik başlangıç uygulamalarını göster"
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
+"Etkinleştirilirse, mate-session-properties gizli başlangıç uygulamalarını "
+"gösterir."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -268,13 +272,13 @@ msgstr "Bu oturum MATE girişi yapmanızı sağlar"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "başlat;MATE;masaüstü;oturum;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr ""
+msgstr "MATE;pencere;yönetici;başlat;MDM;"
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
@@ -301,6 +305,7 @@ msgstr "Giriş yaptığınızda hangi uygulamaların başlatılacağını seçin
 #: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
 msgstr ""
+"MATE;oturum;özellikler;uygulamalar;giriş;oturum açma;başlangıç;başlat;"
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
@@ -316,7 +321,7 @@ msgstr "_Düzenle"
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
-msgstr ""
+msgstr "_Gizlileri göster"
 
 #: data/session-properties.ui:168
 msgid "Startup Programs"
@@ -354,62 +359,62 @@ msgstr "_Ad:"
 msgid "_Delay:"
 msgstr "_Gecikme:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Dosya geçerli bir .desktop dosyası değil"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Tanınmayan desktop dosyası Sürüm '%s'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "%s başlatılıyor"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "Uygulama komut satırında belgeleri kabul etmiyor"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Anımsanamayan başlatma seçeneği: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Belge URI'leri bir 'Tür=Bağ' masaüstü girişine geçilemiyor"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "Başlatılabilir bir öğe değil"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Ortam yöneticisiyle bağlantıyı kapat"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Kaydedilen yapılandırmayı içeren dosyayı belirtin"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "DOSYA"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Ortam yönetici ID belirtin"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "No"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Ortam yönetimi seçenekleri:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Ortam yönetimi seçeneklerini göster"
 
@@ -474,15 +479,15 @@ msgstr "İptal"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "%d saniye içerisinde otomatik olarak çıkış yaptırılacaksınız."
-msgstr[1] "%d saniye içerisinde otomatik olarak çıkış yaptırılacaksınız."
+msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Bu sistem %d saniye içerisinde kendiliğinden kapatılacak"
-msgstr[1] "Bu sistem %d saniye içerisinde kendiliğinden kapatılacak"
+msgstr[0] ""
+msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format
@@ -566,7 +571,7 @@ msgstr "Kullanıcıya özel programları yükleme"
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr ""
+msgstr "Donanım hızlandırma denetimini devre dışı bırak"
 
 #: mate-session/main.c:637
 msgid " - the MATE session manager"

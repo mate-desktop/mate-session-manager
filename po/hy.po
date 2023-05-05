@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Davit Mayilyan <davit.mayilyan@protonmail.ch>, 2018
-# Siranush <ss.m.95@mail.ru>, 2019
-# Avag Sayan <avo777772012@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Davit Mayilyan <davit.mayilyan@protonmail.ch>, 2021
+# Siranush <ss.m.95@mail.ru>, 2021
+# Avag Sayan <avo777772012@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Avag Sayan <avo777772012@gmail.com>, 2020\n"
-"Language-Team: Armenian (https://www.transifex.com/mate/teams/13566/hy/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: Avag Sayan <avo777772012@gmail.com>, 2021\n"
+"Language-Team: Armenian (https://app.transifex.com/mate/teams/13566/hy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -229,7 +229,7 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:64
 msgid "File Manager"
-msgstr "Ֆայլի Կառավարիչ"
+msgstr "Նիշքի կառավարիչ"
 
 #: data/org.mate.session.gschema.xml.in:65
 msgid ""
@@ -349,64 +349,64 @@ msgstr "_Անուն։"
 msgid "_Delay:"
 msgstr "_ՈՒշացումը:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Ֆայլը վավեր չէ .աշխատանքային սեղան ֆայլ"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Չճանաչված աշխատանքային ֆայլի տարբերակ '%s'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "Գործարկում %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "Ծրագիրը փաստաթուղթ չի ընդունում հրամանի տողում "
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Չճանաչված գործարկչի ընտրացանկ. %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
 "Չի հաջողվել անցկացնել փաստաթղթի URI–ները աշխատաքային սեղանի մուտքի "
 "'Type=Link'–ին "
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "Չգործարկվող տարր"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Անջատել ենթահամակարգի կառավարչի հետ կապը"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Պահպանված կոնֆիգուրացիա պարունակող ֆայլը նշել"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "ՖԱՅԼ"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Հ ատկորոշել ենթահամակարգի կառավարչի ID֊ն"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Սեսիայի կառավարման տարբերակներ․"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Ցույց տալ սեսիայի կառավարման ընտրացանկը"
 

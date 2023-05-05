@@ -4,13 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# a8421664e61380eccf98265d27b51edb, 2021
-# royaniva <royaniva@outlook.com>, 2021
-# sir_hawell <arash.cordi@gmail.com>, 2021
-# hypermit <hypermit@gmail.com>, 2021
-# Mahdi Pourghasem <mahdipourghasem@gmail.com>, 2021
-# 6f5aa4f0e7eb845399ccca24115a73fc, 2021
+# Christopher Patrick <cpatrick08@rocketmail.com>, 2021
 # 
 msgid ""
 msgstr ""
@@ -18,17 +12,17 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2021-08-05 10:13+0200\n"
 "PO-Revision-Date: 2021-09-20 19:41+0000\n"
-"Last-Translator: 6f5aa4f0e7eb845399ccca24115a73fc, 2021\n"
-"Language-Team: Persian (https://app.transifex.com/mate/teams/13566/fa/)\n"
+"Last-Translator: Christopher Patrick <cpatrick08@rocketmail.com>, 2021\n"
+"Language-Team: English (United States) (https://app.transifex.com/mate/teams/13566/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
-msgstr ""
+msgstr "Select Command"
 
 #: capplet/gsm-app-dialog.c:168
 msgid "second"
@@ -36,76 +30,76 @@ msgstr ""
 
 #: capplet/gsm-app-dialog.c:170
 msgid "seconds"
-msgstr "ثانیه"
+msgstr "seconds"
 
 #: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
 #: mate-session/gsm-logout-dialog.c:486
 msgid "_Cancel"
-msgstr "ان_صراف"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
-msgstr "اضافه کردن برنامه‌ی راه‌اندازی"
+msgstr "Add Startup Program"
 
 #: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
 msgid "_Add"
-msgstr "ا_ضافه شود"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
-msgstr "ویرایش برنامه‌ی راه‌اندازی"
+msgstr "Edit Startup Program"
 
 #: capplet/gsm-app-dialog.c:231
 msgid "_Save"
-msgstr "_ذخیره"
+msgstr "Save"
 
 #: capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
-msgstr "فرمان راه‌اندازی نمی‌تواند خالی باشد"
+msgstr "The startup command cannot be empty"
 
 #: capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
-msgstr ""
+msgstr "The startup command is not valid"
 
 #: capplet/gsm-properties-dialog.c:586
 msgid "_Help"
-msgstr "_راهنما"
+msgstr "Help"
 
 #: capplet/gsm-properties-dialog.c:590
 msgid "_Close"
-msgstr "_بستن"
+msgstr "_Close"
 
 #: capplet/gsm-properties-dialog.c:640
 msgid "Enabled"
-msgstr "فعال شده"
+msgstr "Enabled"
 
 #: capplet/gsm-properties-dialog.c:652
 msgid "Icon"
-msgstr "شمایل"
+msgstr "Icon"
 
 #: capplet/gsm-properties-dialog.c:664
 msgid "Program"
-msgstr "برنامه"
+msgstr "Program"
 
 #: capplet/gsm-properties-dialog.c:865
 msgid "Startup Applications Preferences"
-msgstr ""
+msgstr "Startup Applications Preferences"
 
 #: capplet/gsp-app.c:283
 msgid "No name"
-msgstr "بدون نام"
+msgstr "No name"
 
 #: capplet/gsp-app.c:289
 msgid "No description"
-msgstr ""
+msgstr "No description"
 
 #: capplet/main.c:36 mate-session/main.c:614
 msgid "Version of this application"
-msgstr "نسخهٔ این برنامه"
+msgstr "Version of this application"
 
 #: capplet/main.c:52
 msgid "Could not display help document"
-msgstr "نمی‌توان نوشتار راهنما را نمایش داد"
+msgstr "Could not display help document"
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
@@ -113,19 +107,19 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
-msgstr ""
+msgstr "Current session start time"
 
 #: data/org.mate.session.gschema.xml.in:6
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Unix time of the start of the current session."
 
 #: data/org.mate.session.gschema.xml.in:10
 msgid "Save sessions"
-msgstr "ذخیره‌ی نشست‌ها"
+msgstr "Save sessions"
 
 #: data/org.mate.session.gschema.xml.in:11
 msgid "If enabled, mate-session will save the session automatically."
-msgstr ""
+msgstr "If enabled, mate-session will save the session automatically."
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
@@ -138,12 +132,12 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
-msgstr "اعلان خروج از سیستم"
+msgstr "Logout prompt"
 
 #: data/org.mate.session.gschema.xml.in:21
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr ""
-"اگر انتخاب شود، mate-session قبل از تمام کردن نشست از کاربر تأیید می‌گیرد."
+"If enabled, mate-session will prompt the user before ending a session."
 
 #: data/org.mate.session.gschema.xml.in:26
 msgid "Logout timeout"
@@ -157,24 +151,25 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:31
 msgid "Time before session is considered idle"
-msgstr ""
+msgstr "Time before session is considered idle"
 
 #: data/org.mate.session.gschema.xml.in:32
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "تعداد دقایق بی‌کاری که نشست پس از آن بی‌کار فرض می‌شود."
+msgstr ""
+"The number of minutes of inactivity before the session is considered idle."
 
 #: data/org.mate.session.gschema.xml.in:36
 msgid "Default session"
-msgstr ""
+msgstr "Default session"
 
 #: data/org.mate.session.gschema.xml.in:37
 msgid "List of applications that are part of the default session."
-msgstr ""
+msgstr "List of applications that are part of the default session."
 
 #: data/org.mate.session.gschema.xml.in:41
 msgid "Required session components"
-msgstr ""
+msgstr "Required session components"
 
 #: data/org.mate.session.gschema.xml.in:42
 msgid ""
@@ -185,6 +180,12 @@ msgid ""
 "automatically add the required components back to the session at login time "
 "if they do get removed."
 msgstr ""
+"List of components that are required as part of the session. (Each element "
+"names a key under \"/org/mate/desktop/session/required_components\"). The "
+"Startup Applications preferences tool will not normally allow users to "
+"remove a required component from the session, and the session manager will "
+"automatically add the required components back to the session at login time "
+"if they do get removed."
 
 #: data/org.mate.session.gschema.xml.in:46
 msgid "Control gnome compatibility component startup"
@@ -196,33 +197,39 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:54 data/mate-wm.desktop.in:4
 msgid "Window Manager"
-msgstr "مدیر پنجره‌ها"
+msgstr "Window Manager"
 
 #: data/org.mate.session.gschema.xml.in:55
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr ""
+"The window manager is the program that draws the title bar and borders "
+"around windows, and allows you to move and resize windows."
 
 #: data/org.mate.session.gschema.xml.in:59
 msgid "Panel"
-msgstr "تابلو"
+msgstr "Panel"
 
 #: data/org.mate.session.gschema.xml.in:60
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr ""
+"The panel provides the bar at the top or bottom of the screen containing "
+"menus, the window list, status icons, the clock, etc."
 
 #: data/org.mate.session.gschema.xml.in:64
 msgid "File Manager"
-msgstr "مدیر پرونده‌ها"
+msgstr "File Manager"
 
 #: data/org.mate.session.gschema.xml.in:65
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
 msgstr ""
+"The file manager provides the desktop icons and allows you to interact with "
+"your saved files."
 
 #: data/org.mate.session.gschema.xml.in:69
 msgid "Dock"
@@ -236,11 +243,11 @@ msgstr ""
 
 #: data/mate.desktop.in:3
 msgid "MATE"
-msgstr "گنوم"
+msgstr "MATE"
 
 #: data/mate.desktop.in:4
 msgid "This session logs you into MATE"
-msgstr ""
+msgstr "This session logs you into MATE"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -256,21 +263,23 @@ msgstr ""
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
-msgstr ""
+msgstr "<b>Some programs are still running:</b>"
 
 #: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:644
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr ""
+"Waiting for the program to finish. Interrupting the program may cause you to"
+" lose work."
 
 #: data/mate-session-properties.desktop.in:3
 msgid "Startup Applications"
-msgstr ""
+msgstr "Startup Applications"
 
 #: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
-msgstr ""
+msgstr "Choose what applications to start when you log in"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -280,15 +289,15 @@ msgstr ""
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
-msgstr "برنامه‌های راه‌اندازی اضافی:"
+msgstr "Additional startup _programs:"
 
 #: data/session-properties.ui:101
 msgid "_Remove"
-msgstr "_حذف"
+msgstr ""
 
 #: data/session-properties.ui:117
 msgid "_Edit"
-msgstr "_ویرایش"
+msgstr "_Edit"
 
 #: data/session-properties.ui:147
 msgid "_Show hidden"
@@ -296,153 +305,155 @@ msgstr ""
 
 #: data/session-properties.ui:168
 msgid "Startup Programs"
-msgstr "برنامه‌های راه‌اندازی"
+msgstr "Startup Programs"
 
 #: data/session-properties.ui:183
 msgid "_Automatically remember running applications when logging out"
-msgstr ""
+msgstr "_Automatically remember running applications when logging out"
 
 #: data/session-properties.ui:225
 msgid "_Remember Currently Running Application"
-msgstr ""
+msgstr "_Remember Currently Running Application"
 
 #: data/session-properties.ui:259
 msgid "Options"
-msgstr "گزینه‌ها"
+msgstr "Options"
 
 #: data/session-properties.ui:297
 msgid "Browse…"
-msgstr ""
+msgstr "Browse…"
 
 #: data/session-properties.ui:340
 msgid "Comm_ent:"
-msgstr ""
+msgstr "Comment:"
 
 #: data/session-properties.ui:354
 msgid "Co_mmand:"
-msgstr "_فرمان:"
+msgstr "Command:"
 
 #: data/session-properties.ui:368
 msgid "_Name:"
-msgstr "_نام:"
+msgstr "_Name:"
 
 #: data/session-properties.ui:382
 msgid "_Delay:"
-msgstr "_تأخیر:"
+msgstr ""
 
 #: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
-msgstr "فایل یک فایل .desktop معتبر نیست"
+msgstr "File is not a valid .desktop file"
 
 #: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "نسخه فایل میز کاری ناشناخته‌ی '%s'"
+msgstr "Unrecognized desktop file Version '%s'"
 
 #: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
-msgstr "در حال آغاز %s"
+msgstr "Starting %s"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
-msgstr "برنامه اسناد را نمی تواند در خط فرمان قبول کند"
+msgstr "Application does not accept documents on command line"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "گزینه راه اندازی ناشناخته: %d"
+msgstr "Unrecognized launch option: %d"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr ""
+msgstr "Can't pass document URIs to a 'Type=Link' desktop entry"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
-msgstr "این مورد قابل راه اندازی نیست"
+msgstr "Not a launchable item"
 
 #: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
-msgstr "از کار انداختن اتصال به مدیر نشست"
+msgstr "Disable connection to session manager"
 
 #: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
-msgstr "پیشوند پیکربندی ذخیره شده را مشخص کنید."
+msgstr "Specify file containing saved configuration"
 
 #: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
-msgstr "فایل"
+msgstr "FILE"
 
 #: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
-msgstr "شناسه‌ی مدیریت نشست را مشخص کنید"
+msgstr "Specify session management ID"
 
 #: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
-msgstr "شناسه"
+msgstr "ID"
 
 #: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
-msgstr "مدیریت نشست"
+msgstr "Session management options:"
 
 #: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
-msgstr "شناسه‌ی مدیریت نشست را مشخص کنید"
+msgstr "Show session management options"
 
 #: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
 msgid "Icon '%s' not found"
-msgstr "شمایل «%s» پیدا نشد"
+msgstr "Icon '%s' not found"
 
 #: mate-session/gsm-inhibit-dialog.c:592
 msgid "Unknown"
-msgstr "ناشناخته"
+msgstr "Unknown"
 
 #: mate-session/gsm-inhibit-dialog.c:643
 msgid "A program is still running:"
-msgstr ""
+msgstr "A program is still running:"
 
 #: mate-session/gsm-inhibit-dialog.c:647
 msgid "Some programs are still running:"
-msgstr ""
+msgstr "Some programs are still running:"
 
 #: mate-session/gsm-inhibit-dialog.c:648
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
+"Waiting for programs to finish. Interrupting these programs may cause you to"
+" lose work."
 
 #: mate-session/gsm-inhibit-dialog.c:878
 msgid "Switch User Anyway"
-msgstr ""
+msgstr "Switch User Anyway"
 
 #: mate-session/gsm-inhibit-dialog.c:881
 msgid "Log Out Anyway"
-msgstr ""
+msgstr "Log Out Anyway"
 
 #: mate-session/gsm-inhibit-dialog.c:884
 msgid "Suspend Anyway"
-msgstr ""
+msgstr "Suspend Anyway"
 
 #: mate-session/gsm-inhibit-dialog.c:887
 msgid "Hibernate Anyway"
-msgstr ""
+msgstr "Hibernate Anyway"
 
 #: mate-session/gsm-inhibit-dialog.c:890
 msgid "Shut Down Anyway"
-msgstr ""
+msgstr "Shut Down Anyway"
 
 #: mate-session/gsm-inhibit-dialog.c:893
 msgid "Reboot Anyway"
-msgstr ""
+msgstr "Reboot Anyway"
 
 #: mate-session/gsm-inhibit-dialog.c:901
 msgid "Lock Screen"
-msgstr "قفل کردن صفحه"
+msgstr "Lock Screen"
 
 #: mate-session/gsm-inhibit-dialog.c:904
 msgid "Cancel"
-msgstr "انصراف"
+msgstr "Cancel"
 
 #: mate-session/gsm-logout-dialog.c:308
 #, c-format
@@ -461,43 +472,43 @@ msgstr[1] ""
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format
 msgid "You are currently logged in as \"%s\"."
-msgstr ""
+msgstr "You are currently logged in as \"%s\"."
 
 #: mate-session/gsm-logout-dialog.c:442
 msgid "Log out of this system now?"
-msgstr ""
+msgstr "Log out of this system now?"
 
 #: mate-session/gsm-logout-dialog.c:448
 msgid "_Switch User"
-msgstr "ت_عویض کاربر..."
+msgstr "_Switch User"
 
 #: mate-session/gsm-logout-dialog.c:457
 msgid "_Log Out"
-msgstr "_خروج از سیستم"
+msgstr "_Log Out"
 
 #: mate-session/gsm-logout-dialog.c:463
 msgid "Shut down this system now?"
-msgstr ""
+msgstr "Shut down this system now?"
 
 #: mate-session/gsm-logout-dialog.c:469
 msgid "S_uspend"
-msgstr ""
+msgstr "Suspend"
 
 #: mate-session/gsm-logout-dialog.c:475
 msgid "_Hibernate"
-msgstr ""
+msgstr "_Hibernate"
 
 #: mate-session/gsm-logout-dialog.c:481
 msgid "_Restart"
-msgstr ""
+msgstr "_Restart"
 
 #: mate-session/gsm-logout-dialog.c:491
 msgid "_Shut Down"
-msgstr ""
+msgstr "_Shut Down"
 
 #: mate-session/gsm-manager.c:1527 mate-session/gsm-manager.c:2351
 msgid "Not responding"
-msgstr ""
+msgstr "Not responding"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
@@ -508,35 +519,37 @@ msgstr ""
 
 #: mate-session/gsm-xsmp-client.c:1263
 msgid "This program is blocking logout."
-msgstr ""
+msgstr "This program is blocking logout."
 
 #: mate-session/gsm-xsmp-server.c:323
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
 msgstr ""
+"Refusing new client connection because the session is currently being shut "
+"down\n"
 
 #: mate-session/gsm-xsmp-server.c:585
 #, c-format
 msgid "Could not create ICE listening socket: %s"
-msgstr ""
+msgstr "Could not create ICE listening socket: %s"
 
 #. Oh well, no X for you!
 #: mate-session/gsm-util.c:383
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr ""
+msgstr "Unable to start login session (and unable to connect to the X server)"
 
 #: mate-session/main.c:611
 msgid "Override standard autostart directories"
-msgstr ""
+msgstr "Override standard autostart directories"
 
 #: mate-session/main.c:612
 msgid "Enable debugging code"
-msgstr "اشکال‌زدایی کُد به کار انداخته شود"
+msgstr "Enable debugging code"
 
 #: mate-session/main.c:613
 msgid "Do not load user-specified applications"
-msgstr ""
+msgstr "Do not load user-specified applications"
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
@@ -544,7 +557,7 @@ msgstr ""
 
 #: mate-session/main.c:637
 msgid " - the MATE session manager"
-msgstr ""
+msgstr " - the MATE session manager"
 
 #: tools/mate-session-inhibit.c:118
 #, c-format
@@ -577,46 +590,46 @@ msgstr ""
 
 #: tools/mate-session-save.c:67
 msgid "Log out"
-msgstr "خروج از سیستم"
+msgstr "Log out"
 
 #: tools/mate-session-save.c:68
 msgid "Log out, ignoring any existing inhibitors"
-msgstr ""
+msgstr "Log out, ignoring any existing inhibitors"
 
 #: tools/mate-session-save.c:69
 msgid "Show logout dialog"
-msgstr ""
+msgstr "Show logout dialog"
 
 #: tools/mate-session-save.c:70
 msgid "Show shutdown dialog"
-msgstr ""
+msgstr "Show shutdown dialog"
 
 #: tools/mate-session-save.c:71
 msgid "Use dialog boxes for errors"
-msgstr ""
+msgstr "Use dialog boxes for errors"
 
 #. deprecated options
 #: tools/mate-session-save.c:73
 msgid "Set the current session name"
-msgstr ""
+msgstr "Set the current session name"
 
 #: tools/mate-session-save.c:73
 msgid "NAME"
-msgstr "نام"
+msgstr "NAME"
 
 #: tools/mate-session-save.c:74
 msgid "Kill session"
-msgstr "کشتن نشست"
+msgstr "Kill session"
 
 #: tools/mate-session-save.c:75
 msgid "Do not require confirmation"
-msgstr ""
+msgstr "Do not require confirmation"
 
 #. Okay, it wasn't the upgrade case, so now we can give up.
 #: tools/mate-session-save.c:127
 msgid "Could not connect to the session manager"
-msgstr "اتصال به مدیر نشست ممکن نیست"
+msgstr "Could not connect to the session manager"
 
 #: tools/mate-session-save.c:254
 msgid "Program called with conflicting options"
-msgstr ""
+msgstr "Program called with conflicting options"

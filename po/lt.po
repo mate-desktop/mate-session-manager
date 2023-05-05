@@ -4,21 +4,21 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Mantas Kriaučiūnas Baltix <mantas@akl.lt>, 2018
-# Audrius Meskauskas, 2018
-# brennus <jonas.ska@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2020
+# Mantas Kriaučiūnas Baltix <mantas@akl.lt>, 2021
+# brennus <jonas.ska@gmail.com>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2021
 # Moo, 2021
+# Audrius Meskauskas, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 22:34+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Moo, 2021\n"
-"Language-Team: Lithuanian (https://www.transifex.com/mate/teams/13566/lt/)\n"
+"POT-Creation-Date: 2021-08-05 10:13+0200\n"
+"PO-Revision-Date: 2021-09-20 19:41+0000\n"
+"Last-Translator: Audrius Meskauskas, 2021\n"
+"Language-Team: Lithuanian (https://app.transifex.com/mate/teams/13566/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -348,62 +348,62 @@ msgstr "_Vardas:"
 msgid "_Delay:"
 msgstr "_Delsa:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Šis failas nėra taisyklingas .desktop failas"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Neatpažinta darbalaukio failo versija „%s“"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:976
 #, c-format
 msgid "Starting %s"
 msgstr "Paleidžiama %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1118
 msgid "Application does not accept documents on command line"
 msgstr "Programa nepriima dokumentų komandų eilutėje"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1186
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Neatpažintas paleidimo parametras: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1402
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Negalima perduoti dokumentų URI „Type=Link“ darbalaukio elementui"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1423
 msgid "Not a launchable item"
 msgstr "Nepaleidžiamas elementas"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Išjungti ryšį su seansų tvarkytuve"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Nurodyti failą su įrašytais nustatymais"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "FAILAS"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Nurodykite seanso valdymo ID"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Seanso valdymo parametrai:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Rodyti seanso valdymo parametrus"
 
@@ -468,19 +468,19 @@ msgstr "Atsisakyti"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] "Būsite automatiškai atjungti po %d sekundės"
-msgstr[1] "Būsite automatiškai atjungti po %d sekundžių"
-msgstr[2] "Būsite automatiškai atjungti po %d sekundžių"
-msgstr[3] "Būsite automatiškai atjungti po %d sekundės"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] "Sistema automatiškai išsijungs po %d sekundės"
-msgstr[1] "Sistema automatiškai išsijungs po %d sekundžių"
-msgstr[2] "Sistema automatiškai išsijungs po %d sekundžių"
-msgstr[3] "Sistema automatiškai išsijungs po %d sekundės"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format
