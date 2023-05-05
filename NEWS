@@ -1,3 +1,9 @@
+### mate-session-manager 1.26.1
+
+  * Translations update
+    mate-session: fix memory leak
+    Fix memory leaks (#284)
+
 ### mate-session-manager 1.26.0
 
   * Translations update
