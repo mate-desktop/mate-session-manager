@@ -759,7 +759,6 @@ int main(int argc, char** argv)
 
 	gsm_xsmp_server_start(xsmp_server);
 	_gsm_manager_set_renderer (manager, gl_renderer);
-	g_free (gl_renderer);
 	gsm_manager_start(manager);
 
 	gtk_main();
