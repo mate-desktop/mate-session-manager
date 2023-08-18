@@ -15,6 +15,8 @@ mate_session_properties_SOURCES =			\
 	gsm-properties-dialog.c				\
 	gsm-app-dialog.h				\
 	gsm-app-dialog.c				\
+	msm-desktop-app-dialog.h				\
+	msm-desktop-app-dialog.c				\
 	gsp-app.h					\
 	gsp-app.c					\
 	gsp-app-manager.h				\
