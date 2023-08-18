@@ -32,6 +32,7 @@
 
 #include "gsm-properties-dialog.h"
 #include "gsm-app-dialog.h"
+#include "msm-desktop-app-dialog.h"
 #include "gsm-util.h"
 #include "gsp-app.h"
 #include "gsp-app-manager.h"
@@ -40,6 +41,7 @@
 
 #define CAPPLET_TREEVIEW_WIDGET_NAME      "session_properties_treeview"
 #define CAPPLET_ADD_WIDGET_NAME           "session_properties_add_button"
+#define CAPPLET_DESKTOP_ADD_WIDGET_NAME   "session_properties_desktop_add_button"
 #define CAPPLET_DELETE_WIDGET_NAME        "session_properties_delete_button"
 #define CAPPLET_EDIT_WIDGET_NAME          "session_properties_edit_button"
 #define CAPPLET_SAVE_WIDGET_NAME          "session_properties_save_button"
@@ -61,6 +63,7 @@ struct _GsmPropertiesDialog
 
         GtkTreeView       *treeview;
         GtkWidget         *add_button;
+        GtkWidget         *desktop_add_button;
         GtkWidget         *delete_button;
         GtkWidget         *edit_button;
 
@@ -385,6 +388,33 @@ on_add_app_clicked (GtkWidget           *widget,
                 g_free (exec);
                 g_free (comment);
         }
+}
+
+static void
+on_desktop_add_app_clicked (GtkWidget           *widget,
+                            GsmPropertiesDialog *dialog)
+{
+    GtkWidget  *desktop_add_dialog;
+    gint        response;
+    const char *filename;
+
+    desktop_add_dialog = msm_desktop_app_dialog_new (dialog->manager);
+    gtk_window_set_transient_for (GTK_WINDOW (desktop_add_dialog),
+                                  GTK_WINDOW (dialog));
+
+    gtk_widget_show_all (desktop_add_dialog);
+    response = gtk_dialog_run (GTK_DIALOG (desktop_add_dialog));
+
+    if (response == GTK_RESPONSE_OK)
+    {
+        filename = msm_dektop_app_dialog_get_selected (MSM_DESKTOP_APP_DIALOG (desktop_add_dialog));
+        if (filename != NULL)
+        {
+            gsp_app_copy_desktop_file (g_filename_to_uri (filename, NULL, NULL));
+        }
+    }
+
+    gtk_widget_destroy (desktop_add_dialog);
 }
 
 static void
@@ -721,6 +751,14 @@ setup_dialog (GsmPropertiesDialog *dialog)
         g_signal_connect (button,
                           "clicked",
                           G_CALLBACK (on_add_app_clicked),
+                          dialog);
+
+        button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
+                                                     CAPPLET_DESKTOP_ADD_WIDGET_NAME));
+        dialog->desktop_add_button = button;
+        g_signal_connect (button,
+                          "clicked",
+                          G_CALLBACK (on_desktop_add_app_clicked),
                           dialog);
 
         button = GTK_WIDGET (gtk_builder_get_object (dialog->xml,
