@@ -229,6 +229,31 @@ gboolean
 gsm_manager_request_reboot (GsmExportedManager    *skeleton,
                     GDBusMethodInvocation *invocation,
                     GsmManager            *manager);
+gboolean
+gsm_manager_request_shutdown (GsmManager *manager,
+                              GError    **error);
+gboolean
+gsm_manager_setenv (GsmManager  *manager,
+                    const char  *variable,
+                    const char  *value,
+                    GError     **error);
+static gboolean
+gsm_manager_shutdown (GsmExportedManager    *skeleton,
+                      GDBusMethodInvocation *invocation,
+                      GsmManager            *manager);
+static gboolean
+gsm_manager_uninhibit (GsmExportedManager    *skeleton,
+                       GDBusMethodInvocation *invocation,
+                       guint                  cookie,
+                       GsmManager            *manager);
+static gboolean
+gsm_manager_unregister_client (GsmExportedManager    *skeleton,
+                               GDBusMethodInvocation *invocation,
+                               const char            *client_id,
+                               GsmManager            *manager);
+static void
+user_logout (GsmManager           *manager,
+             GsmManagerLogoutMode  mode);
 
 static gpointer manager_object = NULL;
 
@@ -2177,23 +2202,6 @@ on_session_connection_closed (GDBusConnection *connection G_GNUC_UNUSED,
         g_debug ("GsmManager: dbus disconnected; disconnecting dbus clients...");
         priv->dbus_disconnected = TRUE;
         remove_clients_for_connection (manager, NULL);
-}
-
-static void
-user_logout (GsmManager           *manager,
-             GsmManagerLogoutMode  mode)
-{
-        //GsmManagerPrivate *priv;
-
-        //priv = gsm_manager_get_instance_private (manager);
-
-        //if (priv->phase >= GSM_MANAGER_PHASE_QUERY_END_SESSION) {
-        //        priv->logout_mode = mode;
-        //        end_session_or_show_shell_dialog (manager);
-        //        return;
-        //}
-
-        request_logout (manager, mode);
 }
 
 gboolean
