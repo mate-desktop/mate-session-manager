@@ -113,6 +113,13 @@ gboolean            gsm_manager_add_legacy_session_apps        (GsmManager     *
 void                gsm_manager_start                          (GsmManager     *manager);
 
 /* exported methods */
+void                _gsm_manager_set_renderer                  (GsmManager     *manager,
+                                                                const char     *renderer);
+gboolean            gsm_manager_logout                         (GsmManager     *manager,
+                                                                guint           logout_mode,
+                                                                GError        **error);
+gboolean            gsm_manager_set_phase                      (GsmManager     *manager,
+                                                                GsmManagerPhase phase);
 
 #if 0
 gboolean            gsm_manager_register_client                (GsmManager            *manager,
@@ -149,9 +156,6 @@ gboolean            gsm_manager_shutdown                       (GsmManager     *
 gboolean            gsm_manager_can_shutdown                   (GsmManager     *manager,
                                                                 gboolean       *shutdown_available,
                                                                 GError        **error);
-gboolean            gsm_manager_logout                         (GsmManager     *manager,
-                                                                guint           logout_mode,
-                                                                GError        **error);
 
 gboolean            gsm_manager_setenv                         (GsmManager     *manager,
                                                                 const char     *variable,
@@ -172,15 +176,11 @@ gboolean            gsm_manager_is_autostart_condition_handled (GsmManager     *
                                                                 const char     *condition,
                                                                 gboolean       *handled,
                                                                 GError        **error);
-gboolean            gsm_manager_set_phase                      (GsmManager     *manager,
-                                                                GsmManagerPhase phase);
 
 gboolean            gsm_manager_is_session_running             (GsmManager *manager,
                                                                 gboolean *running,
                                                                 GError **error);
 
-void                _gsm_manager_set_renderer                  (GsmManager     *manager,
-                                                                const char     *renderer);
 #endif
 
 G_END_DECLS
