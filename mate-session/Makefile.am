@@ -150,6 +150,13 @@ org.gnome.SessionManager.Presence.h: org.gnome.SessionManager.Presence.xml Makef
 org.gnome.SessionManager.Presence.c: org.gnome.SessionManager.Presence.h
 	@: # generated as a side-effect
 
+gsm-marshal.c: gsm-marshal.list
+	$(AM_V_GEN)echo "#include \"gsm-marshal.h\"" > $@ && \
+	$(GLIB_GENMARSHAL) $< --prefix=gsm_marshal --body >> $@
+
+gsm-marshal.h: gsm-marshal.list
+	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --prefix=gsm_marshal --header > $@
+
 BUILT_SOURCES =			\
 	gsm-marshal.c		\
 	gsm-marshal.h		\
