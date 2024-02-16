@@ -1,6 +1,20 @@
+### mate-session-manager 1.28.0
+
+  * Translations update
+  * Revert "gsm-manager: use g_settings_schema_source_lookup ()"
+  * Add system desktop files item to automatic startup support
+  * main: fix double free on gl_renderer
+  * g_key_file_save_to_file () is available from glib 2.40
+  * gsm-manager: use g_settings_schema_source_lookup ()
+  * gsm-inhibit-dialog: Fix -Wimplicit-int-float-conversion warnings
+  * Fix build warnings about missing field initializer
+  * Fix implicit conversion changes signedness: 'gboolean' to 'guint'
+  * mate-session: fix memory leak
+  * configure.ac: The macro 'AC_HELP_STRING' is obsolete
+
 ### mate-session-manager 1.27.0
 
-  * tx: sync with transifex
+  * Translations update
   * tx: update resource
   * tx: migrate config file
   * Fix memory leaks (#284)
