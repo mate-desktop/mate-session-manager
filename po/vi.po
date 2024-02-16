@@ -13,12 +13,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.26.0\n"
+"Project-Id-Version: mate-session-manager 1.27.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2022-10-29 15:25+0200\n"
+"POT-Creation-Date: 2023-09-04 20:19+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Horazone Detex <thmmt2017d@gmail.com>, 2020\n"
-"Language-Team: Vietnamese (https://www.transifex.com/mate/teams/13566/vi/)\n"
+"Language-Team: Vietnamese (https://app.transifex.com/mate/teams/13566/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,7 +46,7 @@ msgstr "Th_ôi"
 msgid "Add Startup Program"
 msgstr "Thêm chương trình khởi động"
 
-#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
+#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:101
 msgid "_Add"
 msgstr "Thê_m"
 
@@ -66,27 +66,27 @@ msgstr "Không cho phép tạo lệnh khởi động rỗng"
 msgid "The startup command is not valid"
 msgstr "Lệnh khởi động không hợp lệ"
 
-#: capplet/gsm-properties-dialog.c:586
+#: capplet/gsm-properties-dialog.c:616
 msgid "_Help"
 msgstr "Trợ _giúp"
 
-#: capplet/gsm-properties-dialog.c:590
+#: capplet/gsm-properties-dialog.c:620
 msgid "_Close"
 msgstr "Đón_g"
 
-#: capplet/gsm-properties-dialog.c:640
+#: capplet/gsm-properties-dialog.c:670
 msgid "Enabled"
 msgstr "Bật"
 
-#: capplet/gsm-properties-dialog.c:652
+#: capplet/gsm-properties-dialog.c:682
 msgid "Icon"
 msgstr "Biểu tượng"
 
-#: capplet/gsm-properties-dialog.c:664
+#: capplet/gsm-properties-dialog.c:694
 msgid "Program"
 msgstr "Chương trình"
 
-#: capplet/gsm-properties-dialog.c:862
+#: capplet/gsm-properties-dialog.c:900
 msgid "Startup Applications Preferences"
 msgstr "Tùy chỉnh Ứng dụng Khởi chạy"
 
@@ -300,110 +300,114 @@ msgstr ""
 msgid "Additional startup _programs:"
 msgstr "_Chương trình khởi động thêm:"
 
-#: data/session-properties.ui:101
+#: data/session-properties.ui:86
+msgid "_Custom Add"
+msgstr ""
+
+#: data/session-properties.ui:116
 msgid "_Remove"
 msgstr "_Bỏ..."
 
-#: data/session-properties.ui:117
+#: data/session-properties.ui:132
 msgid "_Edit"
 msgstr "_Sửa"
 
-#: data/session-properties.ui:147
+#: data/session-properties.ui:162
 msgid "_Show hidden"
 msgstr "_Hiện ẩn"
 
-#: data/session-properties.ui:168
+#: data/session-properties.ui:183
 msgid "Startup Programs"
 msgstr "Chương trình khởi động"
 
-#: data/session-properties.ui:183
+#: data/session-properties.ui:198
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Tự động nhớ các ứng dụng đang chạy khi đăng xuất"
 
-#: data/session-properties.ui:225
+#: data/session-properties.ui:240
 msgid "_Remember Currently Running Application"
 msgstr "_Nhớ ứng dụng đang chạy"
 
-#: data/session-properties.ui:259
+#: data/session-properties.ui:274
 msgid "Options"
 msgstr "Tùy chọn"
 
-#: data/session-properties.ui:297
+#: data/session-properties.ui:312
 msgid "Browse…"
 msgstr "Duyệt..."
 
-#: data/session-properties.ui:340
+#: data/session-properties.ui:355
 msgid "Comm_ent:"
 msgstr "C_hú thích:"
 
-#: data/session-properties.ui:354
+#: data/session-properties.ui:369
 msgid "Co_mmand:"
 msgstr "Lệ_nh:"
 
-#: data/session-properties.ui:368
+#: data/session-properties.ui:383
 msgid "_Name:"
 msgstr "Tê_n:"
 
-#: data/session-properties.ui:382
+#: data/session-properties.ui:397
 msgid "_Delay:"
 msgstr "Khoảng _trễ:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Tập tin không phải là dạng tập tin .desktop hợp lệ"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Không nhận ra tập tin màn hình nền phiên bản '%s'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:984
 #, c-format
 msgid "Starting %s"
 msgstr "Đang khởi chạy %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1126
 msgid "Application does not accept documents on command line"
 msgstr "Ứng dụng không chấp nhận tài liệu thông qua dòng lệnh"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1194
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Không nhận ra tùy chọn khởi chạy: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1410
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Không thể chuyển URI của tài liệu cho mục desktop 'Type=Link'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1431
 msgid "Not a launchable item"
 msgstr "Không phải mục có thể khởi chạy"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Tắt kết nối với trình quản lý phiên chạy"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Xác định tập tin chứa cấu hình đã lưu"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "TẬP TIN"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Xác định mã số quản lý phiên làm việc"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Tùy chọn quản lý phiên làm việc:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Hiển thị các tùy chọn quản lý phiên làm việc"
 
@@ -513,7 +517,7 @@ msgstr "_Khởi chạy lại"
 msgid "_Shut Down"
 msgstr "_Tắt máy"
 
-#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2349
 msgid "Not responding"
 msgstr "Không trả lời"
 

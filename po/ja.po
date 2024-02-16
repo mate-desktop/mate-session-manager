@@ -12,16 +12,16 @@
 # ABE Tsunehiko, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # FuRuYa7 <goo.sirocat47@gmail.com>, 2020
-# Green, 2021
+# Green <usergreen@users.osdn.me>, 2024
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.26.0\n"
+"Project-Id-Version: mate-session-manager 1.27.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2022-10-29 15:25+0200\n"
+"POT-Creation-Date: 2023-09-04 20:19+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Green, 2021\n"
-"Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
+"Last-Translator: Green <usergreen@users.osdn.me>, 2024\n"
+"Language-Team: Japanese (https://app.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,7 +49,7 @@ msgstr "キャンセル(_C)"
 msgid "Add Startup Program"
 msgstr "自動起動するプログラムの追加"
 
-#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
+#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:101
 msgid "_Add"
 msgstr "追加(_A)"
 
@@ -69,27 +69,27 @@ msgstr "自動起動するプログラムのコマンド名を入力してくだ
 msgid "The startup command is not valid"
 msgstr "コマンド名が間違っています"
 
-#: capplet/gsm-properties-dialog.c:586
+#: capplet/gsm-properties-dialog.c:616
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: capplet/gsm-properties-dialog.c:590
+#: capplet/gsm-properties-dialog.c:620
 msgid "_Close"
 msgstr "閉じる(_C)"
 
-#: capplet/gsm-properties-dialog.c:640
+#: capplet/gsm-properties-dialog.c:670
 msgid "Enabled"
 msgstr "有効"
 
-#: capplet/gsm-properties-dialog.c:652
+#: capplet/gsm-properties-dialog.c:682
 msgid "Icon"
 msgstr "アイコン"
 
-#: capplet/gsm-properties-dialog.c:664
+#: capplet/gsm-properties-dialog.c:694
 msgid "Program"
 msgstr "プログラム"
 
-#: capplet/gsm-properties-dialog.c:862
+#: capplet/gsm-properties-dialog.c:900
 msgid "Startup Applications Preferences"
 msgstr "自動起動するアプリの設定"
 
@@ -107,7 +107,7 @@ msgstr "このアプリケーションのバージョンを表示する"
 
 #: capplet/main.c:52
 msgid "Could not display help document"
-msgstr "ヘルプドキュメントを表示できませんでした"
+msgstr "ヘルプの文書を表示できませんでした"
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
@@ -144,7 +144,7 @@ msgstr "ログアウト時に確認するかどうか"
 
 #: data/org.mate.session.gschema.xml.in:21
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr "これを有効にすると、mate-session はセッション終了時にユーザーに確認を行います。"
+msgstr "これを有効にすると、MATE セッションはセッション終了時ユーザに確認を行います。"
 
 #: data/org.mate.session.gschema.xml.in:26
 msgid "Logout timeout"
@@ -167,11 +167,11 @@ msgstr "セッションがアイドル状態であるとみなすまでの時間
 
 #: data/org.mate.session.gschema.xml.in:36
 msgid "Default session"
-msgstr "デフォルトのセッション"
+msgstr "既定のセッション"
 
 #: data/org.mate.session.gschema.xml.in:37
 msgid "List of applications that are part of the default session."
-msgstr "デフォルトのセッションの一部として起動されるアプリケーションのリストです。"
+msgstr "既定セッションの一部として起動される、アプリケーションのリストです。"
 
 #: data/org.mate.session.gschema.xml.in:41
 msgid "Required session components"
@@ -187,9 +187,9 @@ msgid ""
 "if they do get removed."
 msgstr ""
 "セッションの一部として必要になるコンポーネントの一覧です(各要素は "
-"\"/org/mate/desktop/session/required_components\" にキーとして格納されます)。通常、ユーザーは "
+"\"/org/mate/desktop/session/required_components\" にキーとして格納されます)。通常、ユーザは "
 "\"自動起動するアプリの設定\" "
-"でセッションからコンポーネントを削除することができません。また、もし削除されても、ログイン時にセッションマネージャーが必要なコンポーネントを自動的に追加します。"
+"でセッションからコンポーネントを削除することができません。また、もし削除されても、ログイン時にセッションマネージャが必要なコンポーネントを自動的に追加します。"
 
 #: data/org.mate.session.gschema.xml.in:46
 msgid "Control gnome compatibility component startup"
@@ -288,110 +288,114 @@ msgstr "MATE;session;properties;applications;login;start;"
 msgid "Additional startup _programs:"
 msgstr "自動的に起動するプログラムの追加(_P):"
 
-#: data/session-properties.ui:101
+#: data/session-properties.ui:86
+msgid "_Custom Add"
+msgstr "カスタムの追加(_C)"
+
+#: data/session-properties.ui:116
 msgid "_Remove"
 msgstr "削除(_R)"
 
-#: data/session-properties.ui:117
+#: data/session-properties.ui:132
 msgid "_Edit"
 msgstr "編集(_E)"
 
-#: data/session-properties.ui:147
+#: data/session-properties.ui:162
 msgid "_Show hidden"
 msgstr "隠しフォルダを表示(_S)"
 
-#: data/session-properties.ui:168
+#: data/session-properties.ui:183
 msgid "Startup Programs"
 msgstr "自動起動するプログラム"
 
-#: data/session-properties.ui:183
+#: data/session-properties.ui:198
 msgid "_Automatically remember running applications when logging out"
 msgstr "ログアウト時に実行中のアプリを自動的に記憶しておく(_A)"
 
-#: data/session-properties.ui:225
+#: data/session-properties.ui:240
 msgid "_Remember Currently Running Application"
 msgstr "現在実行中のアプリを記憶しておく(_R)"
 
-#: data/session-properties.ui:259
+#: data/session-properties.ui:274
 msgid "Options"
 msgstr "オプション"
 
-#: data/session-properties.ui:297
+#: data/session-properties.ui:312
 msgid "Browse…"
 msgstr "参照…"
 
-#: data/session-properties.ui:340
+#: data/session-properties.ui:355
 msgid "Comm_ent:"
 msgstr "説明(_E):"
 
-#: data/session-properties.ui:354
+#: data/session-properties.ui:369
 msgid "Co_mmand:"
 msgstr "コマンド(_M):"
 
-#: data/session-properties.ui:368
+#: data/session-properties.ui:383
 msgid "_Name:"
 msgstr "名前(_N):"
 
-#: data/session-properties.ui:382
+#: data/session-properties.ui:397
 msgid "_Delay:"
 msgstr "間隔(_D):"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "妥当な .desktop ファイルではありません"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "バージョン '%s' の .desktop ファイルはサポートしていません"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:984
 #, c-format
 msgid "Starting %s"
 msgstr "%s の起動中です"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1126
 msgid "Application does not accept documents on command line"
-msgstr "コマンドラインからドキュメントにはアクセスできません"
+msgstr "コマンドラインから文書にアクセスできません"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1194
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "不明な起動オプションです: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1410
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "'Type=Link' の .desktop エントリーにはドキュメントの URI を渡せません"
+msgstr "'Type=Link' の .desktop エントリには文書の URI を渡せません"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1431
 msgid "Not a launchable item"
 msgstr "起動できないアイテムです"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "セッションマネージャーに接続しない"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "設定を保存したファイルを指定する"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "FILE"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "セッション管理 ID を指定する"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "セッション管理のオプション:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "セッション管理のオプションを表示する"
 
@@ -473,7 +477,7 @@ msgstr "このシステムから今すぐログアウトしますか?"
 
 #: mate-session/gsm-logout-dialog.c:448
 msgid "_Switch User"
-msgstr "ユーザーを切り替える(_S)"
+msgstr "ユーザを切り替える(_S)"
 
 #: mate-session/gsm-logout-dialog.c:457
 msgid "_Log Out"
@@ -499,7 +503,7 @@ msgstr "再起動(_R)"
 msgid "_Shut Down"
 msgstr "シャットダウン(_S)"
 
-#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2349
 msgid "Not responding"
 msgstr "応答なし"
 
@@ -528,11 +532,11 @@ msgstr "ICE の監視ソケットを生成できませんでした: %s"
 #. Oh well, no X for you!
 #: mate-session/gsm-util.c:382
 msgid "Unable to start login session (and unable to connect to the X server)"
-msgstr "ログインセッションを起動できません (X サーバーにも接続できません)"
+msgstr "ログインセッションを起動できません (X サーバにも接続できません)"
 
 #: mate-session/main.c:611
 msgid "Override standard autostart directories"
-msgstr "標準の自動起動フォルダーをオーバーライドする"
+msgstr "標準の自動開始ディレクトリを上書きする"
 
 #: mate-session/main.c:612
 msgid "Enable debugging code"
@@ -540,7 +544,7 @@ msgstr "デバッグモードにする"
 
 #: mate-session/main.c:613
 msgid "Do not load user-specified applications"
-msgstr "ユーザーが指定したアプリケーションを起動しない"
+msgstr "ユーザが指定したアプリケーションを起動しない"
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"

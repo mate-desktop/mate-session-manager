@@ -9,12 +9,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.26.0\n"
+"Project-Id-Version: mate-session-manager 1.27.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2022-10-29 15:25+0200\n"
+"POT-Creation-Date: 2023-09-04 20:19+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2019\n"
-"Language-Team: Kazakh (https://www.transifex.com/mate/teams/13566/kk/)\n"
+"Language-Team: Kazakh (https://app.transifex.com/mate/teams/13566/kk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,7 +42,7 @@ msgstr "Ба_с тарту"
 msgid "Add Startup Program"
 msgstr "Іске қосылатын бағдарламаны қосу"
 
-#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
+#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:101
 msgid "_Add"
 msgstr "Қ_осу"
 
@@ -62,27 +62,27 @@ msgstr "Іске қосылатын команда бос болмауы тиі�
 msgid "The startup command is not valid"
 msgstr "Іске қосылатын команда дұрыс емес"
 
-#: capplet/gsm-properties-dialog.c:586
+#: capplet/gsm-properties-dialog.c:616
 msgid "_Help"
 msgstr "Көм_ек"
 
-#: capplet/gsm-properties-dialog.c:590
+#: capplet/gsm-properties-dialog.c:620
 msgid "_Close"
 msgstr "Жа_бу"
 
-#: capplet/gsm-properties-dialog.c:640
+#: capplet/gsm-properties-dialog.c:670
 msgid "Enabled"
 msgstr "Іске қосылған"
 
-#: capplet/gsm-properties-dialog.c:652
+#: capplet/gsm-properties-dialog.c:682
 msgid "Icon"
 msgstr "Таңбаша"
 
-#: capplet/gsm-properties-dialog.c:664
+#: capplet/gsm-properties-dialog.c:694
 msgid "Program"
 msgstr "Бағдарлама"
 
-#: capplet/gsm-properties-dialog.c:862
+#: capplet/gsm-properties-dialog.c:900
 msgid "Startup Applications Preferences"
 msgstr "Іске қосылатын қолданба баптаулары"
 
@@ -286,110 +286,114 @@ msgstr ""
 msgid "Additional startup _programs:"
 msgstr "Қосымша іске қосылатын бағ_дарламалар:"
 
-#: data/session-properties.ui:101
+#: data/session-properties.ui:86
+msgid "_Custom Add"
+msgstr ""
+
+#: data/session-properties.ui:116
 msgid "_Remove"
 msgstr "Өші_ру"
 
-#: data/session-properties.ui:117
+#: data/session-properties.ui:132
 msgid "_Edit"
 msgstr "Тү_зету"
 
-#: data/session-properties.ui:147
+#: data/session-properties.ui:162
 msgid "_Show hidden"
 msgstr ""
 
-#: data/session-properties.ui:168
+#: data/session-properties.ui:183
 msgid "Startup Programs"
 msgstr "Іске қосылатын бағдарламалар"
 
-#: data/session-properties.ui:183
+#: data/session-properties.ui:198
 msgid "_Automatically remember running applications when logging out"
 msgstr "Жүйеден шыққан кезде орындалып жатқан қолданбаларды е_сте сақтау"
 
-#: data/session-properties.ui:225
+#: data/session-properties.ui:240
 msgid "_Remember Currently Running Application"
 msgstr "Ағымдағы орындалын тұрған қолданбаны е_сте сақтау"
 
-#: data/session-properties.ui:259
+#: data/session-properties.ui:274
 msgid "Options"
 msgstr "Опциялар"
 
-#: data/session-properties.ui:297
+#: data/session-properties.ui:312
 msgid "Browse…"
 msgstr "Шолу…"
 
-#: data/session-properties.ui:340
+#: data/session-properties.ui:355
 msgid "Comm_ent:"
 msgstr "Түсі_ндірме:"
 
-#: data/session-properties.ui:354
+#: data/session-properties.ui:369
 msgid "Co_mmand:"
 msgstr "Ко_манда:"
 
-#: data/session-properties.ui:368
+#: data/session-properties.ui:383
 msgid "_Name:"
 msgstr "_Аты:"
 
-#: data/session-properties.ui:382
+#: data/session-properties.ui:397
 msgid "_Delay:"
 msgstr "Күт_у:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Файл дұрыс .desktop файлы емес"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Белгісіз desktop файлдың нұсқасы '%s'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:984
 #, c-format
 msgid "Starting %s"
 msgstr "%s іске қосылуда"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1126
 msgid "Application does not accept documents on command line"
 msgstr "Қолданба команда жолында құжаттарды қабылдамайды"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1194
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Белгісіз жөнелту опциясы: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1410
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Құжат URI-ін 'Type=Link' desktop элементіне беру мүмкін емес"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1431
 msgid "Not a launchable item"
 msgstr "Жөнелтілетін элемент емес"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Сессиялар менеджеріне байланыстарды сөндіру"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Сақталған баптаулары бар файлды көрсету"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "FILE"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Сессия менеджментінің ID-ін көрсету"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Сессия менеджмент опциялары:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Сессия менеджмент опцияларын көрсету"
 
@@ -501,7 +505,7 @@ msgstr "Қа_йта қосу"
 msgid "_Shut Down"
 msgstr "_Сөндіру"
 
-#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2349
 msgid "Not responding"
 msgstr "Жауап бермейді"
 

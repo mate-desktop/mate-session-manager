@@ -8,16 +8,16 @@
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # 1763f4a4329a2376c933c5e919a36cbc_341ca53 <1f851310383599d03339229d772e1290_119292>, 2019
-# JungHee Lee <daemul72@gmail.com>, 2021
+# Junghee Lee <daemul72@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.26.0\n"
+"Project-Id-Version: mate-session-manager 1.27.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2022-10-29 15:25+0200\n"
+"POT-Creation-Date: 2023-09-04 20:19+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: JungHee Lee <daemul72@gmail.com>, 2021\n"
-"Language-Team: Korean (https://www.transifex.com/mate/teams/13566/ko/)\n"
+"Last-Translator: Junghee Lee <daemul72@gmail.com>, 2021\n"
+"Language-Team: Korean (https://app.transifex.com/mate/teams/13566/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,7 +45,7 @@ msgstr "취소(_C)"
 msgid "Add Startup Program"
 msgstr "시작 프로그램 추가"
 
-#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
+#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:101
 msgid "_Add"
 msgstr "추가(_A)"
 
@@ -65,27 +65,27 @@ msgstr "시작 프로그램을 비워 둘 수 없습니다"
 msgid "The startup command is not valid"
 msgstr "시작 프로그램이 올바르지 않습니다"
 
-#: capplet/gsm-properties-dialog.c:586
+#: capplet/gsm-properties-dialog.c:616
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: capplet/gsm-properties-dialog.c:590
+#: capplet/gsm-properties-dialog.c:620
 msgid "_Close"
 msgstr "닫기(_C)"
 
-#: capplet/gsm-properties-dialog.c:640
+#: capplet/gsm-properties-dialog.c:670
 msgid "Enabled"
 msgstr "사용중"
 
-#: capplet/gsm-properties-dialog.c:652
+#: capplet/gsm-properties-dialog.c:682
 msgid "Icon"
 msgstr "아이콘"
 
-#: capplet/gsm-properties-dialog.c:664
+#: capplet/gsm-properties-dialog.c:694
 msgid "Program"
 msgstr "프로그램"
 
-#: capplet/gsm-properties-dialog.c:862
+#: capplet/gsm-properties-dialog.c:900
 msgid "Startup Applications Preferences"
 msgstr "시작 프로그램 기본 설정"
 
@@ -285,110 +285,114 @@ msgstr ""
 msgid "Additional startup _programs:"
 msgstr "시작 프로그램 추가(_P):"
 
-#: data/session-properties.ui:101
+#: data/session-properties.ui:86
+msgid "_Custom Add"
+msgstr ""
+
+#: data/session-properties.ui:116
 msgid "_Remove"
 msgstr "제거(_R)"
 
-#: data/session-properties.ui:117
+#: data/session-properties.ui:132
 msgid "_Edit"
 msgstr "편집(_E)"
 
-#: data/session-properties.ui:147
+#: data/session-properties.ui:162
 msgid "_Show hidden"
 msgstr ""
 
-#: data/session-properties.ui:168
+#: data/session-properties.ui:183
 msgid "Startup Programs"
 msgstr "시작 프로그램"
 
-#: data/session-properties.ui:183
+#: data/session-properties.ui:198
 msgid "_Automatically remember running applications when logging out"
 msgstr "로그아웃할 때 자동으로 실행 중인 프로그램 기억(_A)"
 
-#: data/session-properties.ui:225
+#: data/session-properties.ui:240
 msgid "_Remember Currently Running Application"
 msgstr "현재 실행 중인 프로그램 기억(_R)"
 
-#: data/session-properties.ui:259
+#: data/session-properties.ui:274
 msgid "Options"
 msgstr "옵션"
 
-#: data/session-properties.ui:297
+#: data/session-properties.ui:312
 msgid "Browse…"
 msgstr "찾아보기..."
 
-#: data/session-properties.ui:340
+#: data/session-properties.ui:355
 msgid "Comm_ent:"
 msgstr "설명(_E):"
 
-#: data/session-properties.ui:354
+#: data/session-properties.ui:369
 msgid "Co_mmand:"
 msgstr "명령(_M):"
 
-#: data/session-properties.ui:368
+#: data/session-properties.ui:383
 msgid "_Name:"
 msgstr "이름(_N):"
 
-#: data/session-properties.ui:382
+#: data/session-properties.ui:397
 msgid "_Delay:"
 msgstr "지연 시간(_D):"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "올바른 .desktop 파일이 아닙니다"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "desktop 파일 버전을 ('%s') 인식할 수 없습니다"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:984
 #, c-format
 msgid "Starting %s"
 msgstr "%s 시작"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1126
 msgid "Application does not accept documents on command line"
 msgstr "명령문에서 문서를 지정할 수 없는 프로그램입니다"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1194
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "알 수 없는 실행 옵션: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1410
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "문서 URI는 'Type=Link' desktop 항목에 넘길 수 없습니다"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1431
 msgid "Not a launchable item"
 msgstr "실행할 수 있는 항목이 없습니다"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "세션 관리자에 연결하지 않습니다"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "설정을 저장할 파일을 지정합니다"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "<파일>"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "세션 관리 ID를 지정합니다"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "세션 관리 옵션:"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "세션 관리 옵션을 표시합니다"
 
@@ -496,7 +500,7 @@ msgstr "다시 시작(_R)"
 msgid "_Shut Down"
 msgstr "끄기(_S)"
 
-#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2349
 msgid "Not responding"
 msgstr "응답 없음"
 

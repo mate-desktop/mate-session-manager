@@ -4,9 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Sven Keeter <sven.keeter@gmail.com>, 2018
-# chautari <chautari@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Tan, Kian-ting, 2024
 # 
 msgid ""
 msgstr ""
@@ -14,17 +12,17 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2023-09-04 20:19+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Nepali (https://app.transifex.com/mate/teams/13566/ne/)\n"
+"Last-Translator: Tan, Kian-ting, 2024\n"
+"Language-Team: Chinese (Min Nan) (https://app.transifex.com/mate/teams/13566/nan/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ne\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nan\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
-msgstr "आदेश छान्नुहोस्"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:168
 msgid "second"
@@ -32,56 +30,56 @@ msgstr ""
 
 #: capplet/gsm-app-dialog.c:170
 msgid "seconds"
-msgstr "सेकेन्ड"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
 #: mate-session/gsm-logout-dialog.c:486
 msgid "_Cancel"
-msgstr "रद्द गर्नुहोस्"
+msgstr "取消 (_C)"
 
 #: capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
-msgstr "सुरुआत कार्यक्रमहरू थप्नुहोस्"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:226 data/session-properties.ui:101
 msgid "_Add"
-msgstr "थप्नुहोस्"
+msgstr "加入 (_A)"
 
 #: capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
-msgstr "सुरुआत कार्यक्रम सम्पादन गर्नुहोस्"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:231
 msgid "_Save"
-msgstr "बचत गर्नुहोस्"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
-msgstr "सुरुआत आदेशलाई खाली गर्न सकिदैँन"
+msgstr ""
 
 #: capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
-msgstr "सुरुआत आदेश वैध छैन"
+msgstr ""
 
 #: capplet/gsm-properties-dialog.c:616
 msgid "_Help"
-msgstr "मद्दत"
+msgstr ""
 
 #: capplet/gsm-properties-dialog.c:620
 msgid "_Close"
-msgstr "_Close"
+msgstr ""
 
 #: capplet/gsm-properties-dialog.c:670
 msgid "Enabled"
-msgstr "सक्षम"
+msgstr ""
 
 #: capplet/gsm-properties-dialog.c:682
 msgid "Icon"
-msgstr "प्रतिमा"
+msgstr "標á"
 
 #: capplet/gsm-properties-dialog.c:694
 msgid "Program"
-msgstr "कार्यक्रम"
+msgstr ""
 
 #: capplet/gsm-properties-dialog.c:900
 msgid "Startup Applications Preferences"
@@ -89,19 +87,19 @@ msgstr ""
 
 #: capplet/gsp-app.c:280
 msgid "No name"
-msgstr "नाम छैन"
+msgstr ""
 
 #: capplet/gsp-app.c:286
 msgid "No description"
-msgstr "वर्णन छैन"
+msgstr ""
 
 #: capplet/main.c:36 mate-session/main.c:614
 msgid "Version of this application"
-msgstr "यस अनुप्रयोगको संस्करण"
+msgstr ""
 
 #: capplet/main.c:52
 msgid "Could not display help document"
-msgstr "मद्दत कागजात प्रदर्शन गर्न सकेन"
+msgstr ""
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
@@ -117,7 +115,7 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:10
 msgid "Save sessions"
-msgstr "सत्र बचत गर्नुहोस्"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:11
 msgid "If enabled, mate-session will save the session automatically."
@@ -134,13 +132,11 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
-msgstr "तत्काल लगआउट"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:21
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr ""
-"सक्षम भएमा, जिनोम सत्रले सत्र अन्त्य हुनुभन्दा पहिला प्रयोगकर्तालाई "
-"प्रोत्साहन दिन्छ ।"
 
 #: data/org.mate.session.gschema.xml.in:26
 msgid "Logout timeout"
@@ -154,12 +150,12 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:31
 msgid "Time before session is considered idle"
-msgstr "सत्रलाई निष्प्रयोजन ठान्नु पहिलेको समय"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:32
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "सत्रलाई निष्प्रयोजन ठान्नु पहिले निस्क्रियता मिनेटको सङ्ख्या ।"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:36
 msgid "Default session"
@@ -193,7 +189,7 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:54 data/mate-wm.desktop.in:4
 msgid "Window Manager"
-msgstr "सञ्झ्याल प्रबन्धक"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:55
 msgid ""
@@ -203,7 +199,7 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:59
 msgid "Panel"
-msgstr "प्यानल"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:60
 msgid ""
@@ -213,7 +209,7 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:64
 msgid "File Manager"
-msgstr "फाइल प्रबन्धक"
+msgstr "檔案管理器"
 
 #: data/org.mate.session.gschema.xml.in:65
 msgid ""
@@ -233,7 +229,7 @@ msgstr ""
 
 #: data/mate.desktop.in:3
 msgid "MATE"
-msgstr "मेट"
+msgstr ""
 
 #: data/mate.desktop.in:4
 msgid "This session logs you into MATE"
@@ -277,7 +273,7 @@ msgstr ""
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
-msgstr "अतिरिक्त सुरुआत कार्यक्रम:"
+msgstr ""
 
 #: data/session-properties.ui:86
 msgid "_Custom Add"
@@ -285,11 +281,11 @@ msgstr ""
 
 #: data/session-properties.ui:116
 msgid "_Remove"
-msgstr ""
+msgstr "Thâi掉 (_R_"
 
 #: data/session-properties.ui:132
 msgid "_Edit"
-msgstr "सम्पादन गर्नुहोस्"
+msgstr ""
 
 #: data/session-properties.ui:162
 msgid "_Show hidden"
@@ -297,11 +293,11 @@ msgstr ""
 
 #: data/session-properties.ui:183
 msgid "Startup Programs"
-msgstr "सुरुआत कार्यक्रम"
+msgstr ""
 
 #: data/session-properties.ui:198
 msgid "_Automatically remember running applications when logging out"
-msgstr "लगआउट हुदा चलिरहेका अनुप्रयोग स्वत: याद गर्नुहोस्"
+msgstr ""
 
 #: data/session-properties.ui:240
 msgid "_Remember Currently Running Application"
@@ -309,7 +305,7 @@ msgstr ""
 
 #: data/session-properties.ui:274
 msgid "Options"
-msgstr "विकल्पहरु"
+msgstr ""
 
 #: data/session-properties.ui:312
 msgid "Browse…"
@@ -321,19 +317,19 @@ msgstr ""
 
 #: data/session-properties.ui:369
 msgid "Co_mmand:"
-msgstr "आदेश:"
+msgstr ""
 
 #: data/session-properties.ui:383
 msgid "_Name:"
-msgstr "नाम:"
+msgstr ""
 
 #: data/session-properties.ui:397
 msgid "_Delay:"
-msgstr "विलम्ब गर्नुहोस्:"
+msgstr ""
 
 #: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
-msgstr "फाइल मान्य .डेस्कटप फाइल होइन"
+msgstr ""
 
 #: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
@@ -343,7 +339,7 @@ msgstr ""
 #: mate-submodules/libegg/eggdesktopfile.c:984
 #, c-format
 msgid "Starting %s"
-msgstr "%s सुरु गर्दै"
+msgstr ""
 
 #: mate-submodules/libegg/eggdesktopfile.c:1126
 msgid "Application does not accept documents on command line"
@@ -352,7 +348,7 @@ msgstr ""
 #: mate-submodules/libegg/eggdesktopfile.c:1194
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "अपरिचित सुरु विकल्प: %d"
+msgstr ""
 
 #: mate-submodules/libegg/eggdesktopfile.c:1410
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
@@ -360,11 +356,11 @@ msgstr ""
 
 #: mate-submodules/libegg/eggdesktopfile.c:1431
 msgid "Not a launchable item"
-msgstr "एउटा सुरुआतयोग्य वस्तु होइन"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
-msgstr "सत्र प्रबन्धकमा जडान गर्न असक्षम"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
@@ -372,32 +368,32 @@ msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
-msgstr "फाइल"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
-msgstr "सत्र प्रबन्धक आईडी निर्दिष्ट गर्नुहोस्"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
-msgstr "आईडी"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
-msgstr "सत्र प्रबन्ध विकल्प:"
+msgstr ""
 
 #: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
-msgstr "सत्र प्रबन्ध विकल्प देखाउनुहोस्"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
 msgid "Icon '%s' not found"
-msgstr "प्रतिमा '%s' फेला परेन"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:591
 msgid "Unknown"
-msgstr "अज्ञात"
+msgstr "毋知ê"
 
 #: mate-session/gsm-inhibit-dialog.c:642
 msgid "A program is still running:"
@@ -439,25 +435,23 @@ msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:899
 msgid "Lock Screen"
-msgstr "पर्दामा ताल्चा लगाउनुहोस्"
+msgstr ""
 
 #: mate-session/gsm-inhibit-dialog.c:902
 msgid "Cancel"
-msgstr "रद्द गर्नुहोस्"
+msgstr "取消"
 
 #: mate-session/gsm-logout-dialog.c:308
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
 msgstr[0] ""
-msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] ""
-msgstr[1] ""
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format
@@ -470,11 +464,11 @@ msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:448
 msgid "_Switch User"
-msgstr "स्विच प्रयोगकर्ता"
+msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:457
 msgid "_Log Out"
-msgstr "लगआउट गर्नुहोस्"
+msgstr ""
 
 #: mate-session/gsm-logout-dialog.c:463
 msgid "Shut down this system now?"
@@ -533,7 +527,7 @@ msgstr ""
 
 #: mate-session/main.c:612
 msgid "Enable debugging code"
-msgstr "त्रुटि सच्याउने कोड सक्षम पार्नुहोस्"
+msgstr ""
 
 #: mate-session/main.c:613
 msgid "Do not load user-specified applications"
@@ -578,7 +572,7 @@ msgstr ""
 
 #: tools/mate-session-save.c:67
 msgid "Log out"
-msgstr "बाहिर निस्क"
+msgstr ""
 
 #: tools/mate-session-save.c:68
 msgid "Log out, ignoring any existing inhibitors"
@@ -594,29 +588,29 @@ msgstr ""
 
 #: tools/mate-session-save.c:71
 msgid "Use dialog boxes for errors"
-msgstr "त्रुटिका लागि संवाद बाकस प्रयोग गर्नुहोस्"
+msgstr ""
 
 #. deprecated options
 #: tools/mate-session-save.c:73
 msgid "Set the current session name"
-msgstr "हालको सत्रनाम सेट गर्नुहोस्"
+msgstr ""
 
 #: tools/mate-session-save.c:73
 msgid "NAME"
-msgstr "नाम"
+msgstr ""
 
 #: tools/mate-session-save.c:74
 msgid "Kill session"
-msgstr "सत्र अन्त्य गर्नुहोस्"
+msgstr ""
 
 #: tools/mate-session-save.c:75
 msgid "Do not require confirmation"
-msgstr "यकीन आवश्यक छैन"
+msgstr ""
 
 #. Okay, it wasn't the upgrade case, so now we can give up.
 #: tools/mate-session-save.c:127
 msgid "Could not connect to the session manager"
-msgstr "सत्र प्रबन्धकमा जडान गर्न सकेन"
+msgstr ""
 
 #: tools/mate-session-save.c:254
 msgid "Program called with conflicting options"

@@ -19,12 +19,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.26.0\n"
+"Project-Id-Version: mate-session-manager 1.27.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2022-10-29 15:25+0200\n"
+"POT-Creation-Date: 2023-09-04 20:19+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
 "Last-Translator: Alkis Georgopoulos <alkisg@gmail.com>, 2020\n"
-"Language-Team: Greek (https://www.transifex.com/mate/teams/13566/el/)\n"
+"Language-Team: Greek (https://app.transifex.com/mate/teams/13566/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,7 +52,7 @@ msgstr "Α_κύρωση"
 msgid "Add Startup Program"
 msgstr "Προσθήκη προγραμμάτων εκκίνησης"
 
-#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:86
+#: capplet/gsm-app-dialog.c:226 data/session-properties.ui:101
 msgid "_Add"
 msgstr "Προσ_θήκη"
 
@@ -72,27 +72,27 @@ msgstr "Η εντολή εκκίνησης δε μπορεί να είναι κ�
 msgid "The startup command is not valid"
 msgstr "Η εντολή εκκίνησης δεν είναι έγκυρη"
 
-#: capplet/gsm-properties-dialog.c:586
+#: capplet/gsm-properties-dialog.c:616
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: capplet/gsm-properties-dialog.c:590
+#: capplet/gsm-properties-dialog.c:620
 msgid "_Close"
 msgstr "_Κλείσιμο"
 
-#: capplet/gsm-properties-dialog.c:640
+#: capplet/gsm-properties-dialog.c:670
 msgid "Enabled"
 msgstr "Ενεργοποιημένο"
 
-#: capplet/gsm-properties-dialog.c:652
+#: capplet/gsm-properties-dialog.c:682
 msgid "Icon"
 msgstr "Εικονίδιο"
 
-#: capplet/gsm-properties-dialog.c:664
+#: capplet/gsm-properties-dialog.c:694
 msgid "Program"
 msgstr "Πρόγραμμα"
 
-#: capplet/gsm-properties-dialog.c:862
+#: capplet/gsm-properties-dialog.c:900
 msgid "Startup Applications Preferences"
 msgstr "Προτιμήσεις προγραμμάτων εκκίνησης "
 
@@ -312,112 +312,116 @@ msgstr ""
 msgid "Additional startup _programs:"
 msgstr "Πρόσθετα _προγράμματα εκκίνησης:"
 
-#: data/session-properties.ui:101
+#: data/session-properties.ui:86
+msgid "_Custom Add"
+msgstr ""
+
+#: data/session-properties.ui:116
 msgid "_Remove"
 msgstr "_Αφάιρεση"
 
-#: data/session-properties.ui:117
+#: data/session-properties.ui:132
 msgid "_Edit"
 msgstr "_Επεξεργασία"
 
-#: data/session-properties.ui:147
+#: data/session-properties.ui:162
 msgid "_Show hidden"
 msgstr "Προ_βολή κρυφών"
 
-#: data/session-properties.ui:168
+#: data/session-properties.ui:183
 msgid "Startup Programs"
 msgstr "Εκκίνηση προγραμμάτων"
 
-#: data/session-properties.ui:183
+#: data/session-properties.ui:198
 msgid "_Automatically remember running applications when logging out"
 msgstr "_Αυτόματη απομνημόνευση εκτελούμενων εφαρμογών κατά την αποσύνδεση"
 
-#: data/session-properties.ui:225
+#: data/session-properties.ui:240
 msgid "_Remember Currently Running Application"
 msgstr "Α_πομνημόνευση εφαρμογών που εκτελούνται "
 
-#: data/session-properties.ui:259
+#: data/session-properties.ui:274
 msgid "Options"
 msgstr "Επιλογές"
 
-#: data/session-properties.ui:297
+#: data/session-properties.ui:312
 msgid "Browse…"
 msgstr "Περιήγηση…"
 
-#: data/session-properties.ui:340
+#: data/session-properties.ui:355
 msgid "Comm_ent:"
 msgstr "_Σχόλιο:"
 
-#: data/session-properties.ui:354
+#: data/session-properties.ui:369
 msgid "Co_mmand:"
 msgstr "_Εντολή:"
 
-#: data/session-properties.ui:368
+#: data/session-properties.ui:383
 msgid "_Name:"
 msgstr "Ό_νομα:"
 
-#: data/session-properties.ui:382
+#: data/session-properties.ui:397
 msgid "_Delay:"
 msgstr "Καθυ_στέρηση:"
 
-#: mate-submodules/libegg/eggdesktopfile.c:168
+#: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
 msgstr "Το αρχείο δεν είναι έγκυρο αρχείο .desktop"
 
-#: mate-submodules/libegg/eggdesktopfile.c:193
+#: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Μη αναγνωρίσιμη έκδοση αρχείου desktop '%s'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:975
+#: mate-submodules/libegg/eggdesktopfile.c:984
 #, c-format
 msgid "Starting %s"
 msgstr "Εκκίνηση %s"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1117
+#: mate-submodules/libegg/eggdesktopfile.c:1126
 msgid "Application does not accept documents on command line"
 msgstr "Η εφαρμογή δεν δέχεται έγγραφα από τη γραμμή εντολών"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1185
+#: mate-submodules/libegg/eggdesktopfile.c:1194
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Μη αναγνωρίσιμη επιλογή εκκίνησης: %d"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1401
+#: mate-submodules/libegg/eggdesktopfile.c:1410
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
 "Δεν επιτρέπεται το πέρασμα διευθύνσεων (URI) εγγράφων σε εγγραφές της "
 "επιφάνειας εργασίας τύπου 'Type=Link'"
 
-#: mate-submodules/libegg/eggdesktopfile.c:1422
+#: mate-submodules/libegg/eggdesktopfile.c:1431
 msgid "Not a launchable item"
 msgstr "Μη εκκινήσιμο αντικείμενο"
 
-#: mate-submodules/libegg/eggsmclient.c:233
+#: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
 msgstr "Απενεργοποίηση σύνδεσης με τον διαχειριστή συνεδρίας"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
 msgstr "Καθορισμός του αρχείου που περιέχει τις αποθηκευμένες ρυθμίσεις"
 
-#: mate-submodules/libegg/eggsmclient.c:238
+#: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
 msgstr "ΑΡΧΕΙΟ"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
 msgstr "Καθορισμός ID διαχείρισης συνεδρίας"
 
-#: mate-submodules/libegg/eggsmclient.c:243
+#: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
 msgstr "ID"
 
-#: mate-submodules/libegg/eggsmclient.c:269
+#: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
 msgstr "Επιλογές διαχείρισης συνεδρίας"
 
-#: mate-submodules/libegg/eggsmclient.c:270
+#: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
 msgstr "Εμφάνιση επιλογών διαχείρισης συνεδρίας"
 
@@ -529,7 +533,7 @@ msgstr "Επα_νεκκίνηση"
 msgid "_Shut Down"
 msgstr "Κ_λείσιμο συστήματος"
 
-#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2348
+#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2349
 msgid "Not responding"
 msgstr "Δεν ανταποκρίνεται"
 
