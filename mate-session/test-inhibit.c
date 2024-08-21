@@ -29,7 +29,6 @@
 
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
-#include <dbus/dbus-glib.h>
 
 #define SM_DBUS_NAME      "org.gnome.SessionManager"
 #define SM_DBUS_PATH      "/org/gnome/SessionManager"

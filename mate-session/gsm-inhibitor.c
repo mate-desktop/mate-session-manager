@@ -27,8 +27,6 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <dbus/dbus-glib.h>
-
 #include "gsm-inhibitor.h"
 #include "gsm-inhibitor-glue.h"
 #include "gsm-util.h"

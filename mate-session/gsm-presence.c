@@ -27,8 +27,6 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <dbus/dbus-glib.h>
-
 #include "gs-idle-monitor.h"
 
 #include "gsm-presence.h"

@@ -22,8 +22,6 @@
 
 #include "config.h"
 
-#include <dbus/dbus-glib.h>
-
 #include "eggdesktopfile.h"
 
 #include "gsm-marshal.h"

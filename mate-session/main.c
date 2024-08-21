@@ -35,9 +35,6 @@
 #include <gio/gio.h>
 
 #include <dbus/dbus.h>
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-bindings.h>
-#include <dbus/dbus-glib-lowlevel.h>
 
 #include "mdm-signal-handler.h"
 #include "mdm-log.h"
