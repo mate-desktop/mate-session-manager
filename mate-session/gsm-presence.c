@@ -201,7 +201,7 @@ on_screensaver_proxy_destroy (GObject     *proxy,
 {
         GsmPresencePrivate *priv;
 
-        g_warning ("Detected that screensaver has left the bus");
+        g_info ("Detected that screensaver has left the bus");
         priv = gsm_presence_get_instance_private (presence);
 
         priv->screensaver_proxy = NULL;
