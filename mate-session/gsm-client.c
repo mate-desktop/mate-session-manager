@@ -153,7 +153,7 @@ gsm_client_constructor (GType                  type,
 }
 
 static void
-gsm_client_init (GsmClient *client)
+gsm_client_init (GsmClient *client G_GNUC_UNUSED)
 {
 }
 
@@ -286,7 +286,7 @@ gsm_client_get_property (GObject    *object,
 
 static gboolean
 default_stop (GsmClient *client,
-              GError   **error)
+              GError   **error G_GNUC_UNUSED)
 {
         g_return_val_if_fail (GSM_IS_CLIENT (client), FALSE);
 
