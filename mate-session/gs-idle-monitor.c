@@ -104,7 +104,7 @@ gs_idle_monitor_dispose (GObject *object)
 }
 
 static gboolean
-_find_alarm (gpointer            key,
+_find_alarm (gpointer            key G_GNUC_UNUSED,
              GSIdleMonitorWatch *watch,
              XSyncAlarm         *alarm)
 {
@@ -217,7 +217,7 @@ handle_alarm_notify_event (GSIdleMonitor         *monitor,
 
 static GdkFilterReturn
 xevent_filter (GdkXEvent     *xevent,
-               GdkEvent      *event,
+               GdkEvent      *event G_GNUC_UNUSED,
                GSIdleMonitor *monitor)
 {
         XEvent                *ev;

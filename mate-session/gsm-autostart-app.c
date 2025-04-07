@@ -178,9 +178,9 @@ parse_condition_string (const char *condition_string,
 }
 
 static void
-if_exists_condition_cb (GFileMonitor     *monitor,
-                        GFile            *file,
-                        GFile            *other_file,
+if_exists_condition_cb (GFileMonitor     *monitor G_GNUC_UNUSED,
+                        GFile            *file G_GNUC_UNUSED,
+                        GFile            *other_file G_GNUC_UNUSED,
                         GFileMonitorEvent event,
                         GsmApp           *app)
 {
@@ -209,9 +209,9 @@ if_exists_condition_cb (GFileMonitor     *monitor,
 }
 
 static void
-unless_exists_condition_cb (GFileMonitor     *monitor,
-                            GFile            *file,
-                            GFile            *other_file,
+unless_exists_condition_cb (GFileMonitor     *monitor G_GNUC_UNUSED,
+                            GFile            *file G_GNUC_UNUSED,
+                            GFile            *other_file G_GNUC_UNUSED,
                             GFileMonitorEvent event,
                             GsmApp           *app)
 {
@@ -802,8 +802,8 @@ autostart_app_stop_spawn (GsmAutostartApp *app,
 }
 
 static gboolean
-autostart_app_stop_activate (GsmAutostartApp *app,
-                             GError         **error)
+autostart_app_stop_activate (GsmAutostartApp *app G_GNUC_UNUSED,
+                             GError         **error G_GNUC_UNUSED)
 {
         return TRUE;
 }
@@ -896,7 +896,7 @@ autostart_app_start_spawn (GsmAutostartApp *app,
 }
 
 static void
-start_notify (GObject *source_object,
+start_notify (GObject *source_object G_GNUC_UNUSED,
               GAsyncResult *res,
               gpointer data)
 {

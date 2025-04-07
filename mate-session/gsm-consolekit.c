@@ -150,7 +150,7 @@ gsm_consolekit_class_init (GsmConsolekitClass *manager_class)
 }
 
 static DBusHandlerResult
-gsm_consolekit_dbus_filter (DBusConnection *connection,
+gsm_consolekit_dbus_filter (DBusConnection *connection G_GNUC_UNUSED,
                             DBusMessage    *message,
                             void           *user_data)
 {
@@ -272,10 +272,10 @@ out:
 }
 
 static void
-gsm_consolekit_on_name_owner_changed (DBusGProxy    *bus_proxy,
+gsm_consolekit_on_name_owner_changed (DBusGProxy    *bus_proxy G_GNUC_UNUSED,
                                       const char    *name,
-                                      const char    *prev_owner,
-                                      const char    *new_owner,
+                                      const char    *prev_owner G_GNUC_UNUSED,
+                                      const char    *new_owner G_GNUC_UNUSED,
                                       GsmConsolekit *manager)
 {
         GsmConsolekitPrivate *priv;
