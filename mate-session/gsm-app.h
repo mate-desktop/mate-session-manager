@@ -104,17 +104,6 @@ gboolean         gsm_app_has_autostart_condition        (GsmApp     *app,
 void             gsm_app_registered                     (GsmApp     *app);
 int              gsm_app_peek_autostart_delay           (GsmApp     *app);
 
-/* exported to bus */
-gboolean         gsm_app_get_app_id                     (GsmApp     *app,
-                                                         char      **id,
-                                                         GError    **error);
-gboolean         gsm_app_get_startup_id                 (GsmApp     *app,
-                                                         char      **id,
-                                                         GError    **error);
-gboolean         gsm_app_get_phase                      (GsmApp     *app,
-                                                         guint      *phase,
-                                                         GError    **error);
-
 G_END_DECLS
 
 #endif /* __GSM_APP_H__ */
