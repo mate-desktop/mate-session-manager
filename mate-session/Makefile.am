@@ -23,8 +23,6 @@ mate_session_SOURCES =				\
 	gsm-xsmp-client.c			\
 	gsm-dbus-client.h			\
 	gsm-dbus-client.c			\
-	gsm-marshal.h				\
-	gsm-marshal.c				\
 	gsm-consolekit.c			\
 	gsm-consolekit.h			\
 	gsm-systemd.c 				\
@@ -55,7 +53,8 @@ mate_session_SOURCES =				\
 	gsm-session-save.c			\
 	gsm-session-save.h			\
 	gsm-xsmp-server.c			\
-	gsm-xsmp-server.h
+	gsm-xsmp-server.h           \
+	$(BUILT_SOURCES)
 
 mate_session_CPPFLAGS =			\
 	$(AM_CPPFLAGS)				\
@@ -97,6 +96,15 @@ test_inhibit_LDADD = $(MATE_SESSION_LIBS)
 test_client_dbus_SOURCES = test-client-dbus.c
 test_client_dbus_LDADD = $(MATE_SESSION_LIBS)
 
+org.gnome.SessionManager.App.h: org.gnome.SessionManager.App.xml Makefile.am
+	$(AM_V_GEN) gdbus-codegen --interface-prefix org.gnome.SessionManager.App. \
+	--generate-c-code org.gnome.SessionManager.App \
+	--c-namespace Gsm \
+	--annotate "org.gnome.SessionManager.App" "org.gtk.GDBus.C.Name" ExportedApp \
+	$(srcdir)/org.gnome.SessionManager.App.xml
+org.gnome.SessionManager.App.c: org.gnome.SessionManager.App.h
+	@: # generated as a side-effect
+
 gsm-marshal.c: gsm-marshal.list
 	$(AM_V_GEN)echo "#include \"gsm-marshal.h\"" > $@ && \
 	$(GLIB_GENMARSHAL) $< --prefix=gsm_marshal --body >> $@
@@ -110,9 +118,6 @@ gsm-manager-glue.h: org.gnome.SessionManager.xml Makefile.am
 gsm-client-glue.h: org.gnome.SessionManager.Client.xml Makefile.am
 	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_client --mode=glib-server --output=gsm-client-glue.h $(srcdir)/org.gnome.SessionManager.Client.xml
 
-gsm-app-glue.h: org.gnome.SessionManager.App.xml Makefile.am
-	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_app --mode=glib-server --output=gsm-app-glue.h $(srcdir)/org.gnome.SessionManager.App.xml
-
 gsm-inhibitor-glue.h: org.gnome.SessionManager.Inhibitor.xml Makefile.am
 	$(AM_V_GEN)dbus-binding-tool --prefix=gsm_inhibitor --mode=glib-server --output=gsm-inhibitor-glue.h $(srcdir)/org.gnome.SessionManager.Inhibitor.xml
 
@@ -122,11 +127,12 @@ gsm-presence-glue.h: org.gnome.SessionManager.Presence.xml Makefile.am
 BUILT_SOURCES =			\
 	gsm-marshal.c		\
 	gsm-marshal.h		\
+	org.gnome.SessionManager.App.h		\
+	org.gnome.SessionManager.App.c		\
 	gsm-manager-glue.h	\
 	gsm-presence-glue.h	\
 	gsm-inhibitor-glue.h	\
-	gsm-client-glue.h	\
-	gsm-app-glue.h
+	gsm-client-glue.h
 
 EXTRA_DIST =						\
 	README						\
