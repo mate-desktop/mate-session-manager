@@ -411,7 +411,7 @@ gsm_dbus_client_finalize (GObject *object)
 
 static GKeyFile *
 dbus_client_save (GsmClient *client,
-                  GError   **error)
+                  GError   **error G_GNUC_UNUSED)
 {
         g_debug ("GsmDBusClient: saving client with id %s",
                  gsm_client_peek_id (client));
@@ -424,7 +424,7 @@ dbus_client_save (GsmClient *client,
 
 static gboolean
 dbus_client_stop (GsmClient *client,
-                  GError   **error)
+                  GError   **error G_GNUC_UNUSED)
 {
         GsmDBusClient  *dbus_client = (GsmDBusClient *) client;
         DBusMessage    *message;
@@ -458,7 +458,7 @@ dbus_client_stop (GsmClient *client,
 }
 
 static char *
-dbus_client_get_app_name (GsmClient *client)
+dbus_client_get_app_name (GsmClient *client G_GNUC_UNUSED)
 {
         /* Always use app-id instead */
         return NULL;
@@ -541,7 +541,7 @@ dbus_client_query_end_session (GsmClient *client,
 static gboolean
 dbus_client_end_session (GsmClient *client,
                          guint      flags,
-                         GError   **error)
+                         GError   **error G_GNUC_UNUSED)
 {
         GsmDBusClient  *dbus_client = (GsmDBusClient *) client;
         DBusMessage    *message;

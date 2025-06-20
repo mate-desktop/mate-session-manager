@@ -229,9 +229,9 @@ gsm_manager_error_get_type (void)
 }
 
 static gboolean
-_debug_client (const char *id,
+_debug_client (const char *id G_GNUC_UNUSED,
                GsmClient  *client,
-               GsmManager *manager)
+               GsmManager *manager G_GNUC_UNUSED)
 {
         g_debug ("GsmManager: Client %s", gsm_client_peek_id (client));
         return FALSE;
@@ -248,9 +248,9 @@ debug_clients (GsmManager *manager)
 }
 
 static gboolean
-_debug_inhibitor (const char    *id,
+_debug_inhibitor (const char    *id G_GNUC_UNUSED,
                   GsmInhibitor  *inhibitor,
-                  GsmManager    *manager)
+                  GsmManager    *manager G_GNUC_UNUSED)
 {
         g_debug ("GsmManager: Inhibitor app:%s client:%s bus-name:%s reason:%s",
                  gsm_inhibitor_peek_app_id (inhibitor),
@@ -272,7 +272,7 @@ debug_inhibitors (GsmManager *manager)
 }
 
 static gboolean
-_find_by_cookie (const char   *id,
+_find_by_cookie (const char   *id G_GNUC_UNUSED,
                  GsmInhibitor *inhibitor,
                  guint        *cookie_ap)
 {
@@ -284,7 +284,7 @@ _find_by_cookie (const char   *id,
 }
 
 static gboolean
-_find_by_startup_id (const char *id,
+_find_by_startup_id (const char *id G_GNUC_UNUSED,
                      GsmClient  *client,
                      const char *startup_id_a)
 {
@@ -793,7 +793,7 @@ _client_end_session (GsmClient            *client,
 }
 
 static gboolean
-_client_end_session_helper (const char           *id,
+_client_end_session_helper (const char           *id G_GNUC_UNUSED,
                             GsmClient            *client,
                             ClientEndSessionData *data)
 {
@@ -869,9 +869,9 @@ do_phase_end_session_part_2 (GsmManager *manager)
 }
 
 static gboolean
-_client_stop (const char *id,
+_client_stop (const char *id G_GNUC_UNUSED,
               GsmClient  *client,
-              gpointer    user_data)
+              gpointer    user_data G_GNUC_UNUSED)
 {
         gboolean ret;
         GError  *error;
@@ -954,7 +954,7 @@ do_phase_exit (GsmManager *manager)
 }
 
 static gboolean
-_client_query_end_session (const char           *id,
+_client_query_end_session (const char           *id G_GNUC_UNUSED,
                            GsmClient            *client,
                            ClientEndSessionData *data)
 {
@@ -979,7 +979,7 @@ _client_query_end_session (const char           *id,
 }
 
 static gboolean
-inhibitor_has_flag (gpointer      key,
+inhibitor_has_flag (gpointer      key G_GNUC_UNUSED,
                     GsmInhibitor *inhibitor,
                     gpointer      data)
 {
@@ -1036,9 +1036,9 @@ gsm_manager_is_idle_inhibited (GsmManager *manager)
 }
 
 static gboolean
-_client_cancel_end_session (const char *id,
+_client_cancel_end_session (const char *id G_GNUC_UNUSED,
                             GsmClient  *client,
-                            GsmManager *manager)
+                            GsmManager *manager G_GNUC_UNUSED)
 {
         gboolean res;
         GError  *error;
@@ -1054,9 +1054,9 @@ _client_cancel_end_session (const char *id,
 }
 
 static gboolean
-inhibitor_is_jit (gpointer      key,
+inhibitor_is_jit (gpointer      key G_GNUC_UNUSED,
                   GsmInhibitor *inhibitor,
-                  GsmManager   *manager)
+                  GsmManager   *manager G_GNUC_UNUSED)
 {
         gboolean    matches;
         const char *id;
@@ -1638,7 +1638,7 @@ start_phase (GsmManager *manager)
 }
 
 static gboolean
-_debug_app_for_phase (const char *id,
+_debug_app_for_phase (const char *id G_GNUC_UNUSED,
                       GsmApp     *app,
                       gpointer    data)
 {
@@ -1700,7 +1700,7 @@ _gsm_manager_set_renderer (GsmManager *manager,
 }
 
 static gboolean
-_app_has_app_id (const char   *id,
+_app_has_app_id (const char   *id G_GNUC_UNUSED,
                  GsmApp       *app,
                  const char   *app_id_a)
 {
@@ -1725,7 +1725,7 @@ find_app_for_app_id (GsmManager *manager,
 }
 
 static gboolean
-inhibitor_has_client_id (gpointer      key,
+inhibitor_has_client_id (gpointer      key G_GNUC_UNUSED,
                          GsmInhibitor *inhibitor,
                          const char   *client_id_a)
 {
@@ -1748,7 +1748,7 @@ inhibitor_has_client_id (gpointer      key,
 }
 
 static gboolean
-_app_has_startup_id (const char *id,
+_app_has_startup_id (const char *id G_GNUC_UNUSED,
                      GsmApp     *app,
                      const char *startup_id_a)
 {
@@ -1920,7 +1920,7 @@ typedef struct {
 } RemoveClientData;
 
 static gboolean
-_disconnect_dbus_client (const char       *id,
+_disconnect_dbus_client (const char       *id G_GNUC_UNUSED,
                          GsmClient        *client,
                          RemoveClientData *data)
 {
@@ -1982,7 +1982,7 @@ remove_clients_for_connection (GsmManager *manager,
 }
 
 static gboolean
-inhibitor_has_bus_name (gpointer          key,
+inhibitor_has_bus_name (gpointer          key G_GNUC_UNUSED,
                         GsmInhibitor     *inhibitor,
                         RemoveClientData *data)
 {
@@ -2129,7 +2129,7 @@ gsm_manager_set_failsafe (GsmManager *manager,
 }
 
 static gboolean
-_client_has_startup_id (const char *id,
+_client_has_startup_id (const char *id G_GNUC_UNUSED,
                         GsmClient  *client,
                         const char *startup_id_a)
 {
@@ -2405,7 +2405,7 @@ on_client_end_session_response (GsmClient  *client,
 }
 
 static void
-on_xsmp_client_logout_request (GsmXSMPClient *client,
+on_xsmp_client_logout_request (GsmXSMPClient *client G_GNUC_UNUSED,
                                gboolean       show_dialog,
                                GsmManager    *manager)
 {

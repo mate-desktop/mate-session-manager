@@ -134,7 +134,7 @@ gsm_app_constructor (GType                  type,
 }
 
 static void
-gsm_app_init (GsmApp *app)
+gsm_app_init (GsmApp *app G_GNUC_UNUSED)
 {
 }
 
@@ -185,7 +185,7 @@ static void
 gsm_app_set_property (GObject      *object,
                       guint         prop_id,
                       const GValue *value,
-                      GParamSpec   *pspec)
+                      GParamSpec   *pspec G_GNUC_UNUSED)
 {
         GsmApp *app = GSM_APP (object);
 
@@ -208,7 +208,7 @@ static void
 gsm_app_get_property (GObject    *object,
                       guint       prop_id,
                       GValue     *value,
-                      GParamSpec *pspec)
+                      GParamSpec *pspec G_GNUC_UNUSED)
 {
         GsmAppPrivate *priv;
         GsmApp *app = GSM_APP (object);
