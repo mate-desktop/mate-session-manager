@@ -3428,6 +3428,19 @@ logout_dialog_response (GsmLogoutDialog *logout_dialog,
         case GTK_RESPONSE_DELETE_EVENT:
                 break;
         case GSM_LOGOUT_RESPONSE_SWITCH_USER:
+
+                ; /* place an empty statement between label above and declaration below... */
+
+                /* Lock screen before requesting user switch
+                 */
+                GError *error;
+                error = NULL;
+                g_spawn_command_line_async ("mate-screensaver-command --lock", &error);
+                if (error != NULL) {
+                    g_warning ("Couldn't lock screen: %s", error->message);
+                    g_error_free (error);
+                }
+
                 request_switch_user (manager);
                 break;
         case GSM_LOGOUT_RESPONSE_HIBERNATE:
