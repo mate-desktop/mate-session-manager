@@ -42,7 +42,7 @@
       <description>List of components that are required as part of the session. (Each element names a key under "/org/mate/desktop/session/required_components"). The Startup Applications preferences tool will not normally allow users to remove a required component from the session, and the session manager will automatically add the required components back to the session at login time if they do get removed.</description>
     </key>
     <key name="gnome-compat-startup" type="as">
-      <default>[ 'keyring', 'smproxy' ]</default>
+      <default>[ 'smproxy' ]</default>
       <summary>Control gnome compatibility component startup</summary>
       <description>Control which compatibility components to start.</description>
     </key>
