@@ -120,6 +120,12 @@ if test "x$with_systemd" != "xno" ; then
         AC_DEFINE(HAVE_SYSTEMD, 1, [systemd support])
         AC_SUBST(SYSTEMD_CFLAGS)
         AC_SUBST(SYSTEMD_LIBS)
+        PKG_CHECK_EXISTS([libsystemd],
+                         [systemd_pkgconfig=libsystemd],
+                         [systemd_pkgconfig=libsystemd-login])
+        PKG_CHECK_EXISTS([$systemd_pkgconfig >= 248],,
+                         [AC_DEFINE([SYSTEMD_STRICT_ENV], [1],
+                         [Use strict environment variable validation for systemd < 248])])
     fi
 fi
 AM_CONDITIONAL(HAVE_SYSTEMD, test "x$use_systemd" = "xyes")

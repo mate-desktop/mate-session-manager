@@ -501,6 +501,13 @@ gsm_util_update_activation_environment (const char  *variable,
         return environment_updated;
 }
 
+#define ENV_NAME_PATTERN "[a-zA-Z_][a-zA-Z0-9_]*"
+#ifdef SYSTEMD_STRICT_ENV
+#define ENV_VALUE_PATTERN "(?:[ \t\n]|[^[:cntrl:]])*"
+#else
+#define ENV_VALUE_PATTERN ".*"
+#endif
+
 gboolean
 gsm_util_export_activation_environment (GError     **error)
 {
@@ -519,13 +526,14 @@ gsm_util_export_activation_environment (GError     **error)
                 return FALSE;
         }
 
-        name_regex = g_regex_new ("^[a-zA-Z_][a-zA-Z0-9_]*$", G_REGEX_OPTIMIZE, 0, error);
+        name_regex = g_regex_new ("^" ENV_NAME_PATTERN "$", G_REGEX_OPTIMIZE, 0, error);
 
         if (name_regex == NULL) {
                 return FALSE;
         }
 
-        value_regex = g_regex_new ("^(?:[ \t\n]|[^[:cntrl:]])*$", G_REGEX_OPTIMIZE, 0, error);
+
+        value_regex = g_regex_new ("^" ENV_VALUE_PATTERN "$", G_REGEX_OPTIMIZE, 0, error);
 
         if (value_regex == NULL) {
                 return FALSE;
@@ -597,7 +605,7 @@ gsm_util_export_user_environment (GError     **error)
                 return FALSE;
         }
 
-        regex = g_regex_new ("^[a-zA-Z_][a-zA-Z0-9_]*=(?:[ \t\n]|[^[:cntrl:]])*$", G_REGEX_OPTIMIZE, 0, error);
+        regex = g_regex_new ("^" ENV_NAME_PATTERN "=" ENV_VALUE_PATTERN "$", G_REGEX_OPTIMIZE, 0, error);
 
         if (regex == NULL) {
                 return FALSE;
