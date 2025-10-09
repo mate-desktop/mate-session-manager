@@ -525,7 +525,7 @@ gsm_util_export_activation_environment (GError     **error)
                 return FALSE;
         }
 
-        value_regex = g_regex_new ("^([ \t\n]|[^[:cntrl:]])*$", G_REGEX_OPTIMIZE, 0, error);
+        value_regex = g_regex_new ("^(?:[ \t\n]|[^[:cntrl:]])*$", G_REGEX_OPTIMIZE, 0, error);
 
         if (value_regex == NULL) {
                 return FALSE;
@@ -597,7 +597,7 @@ gsm_util_export_user_environment (GError     **error)
                 return FALSE;
         }
 
-        regex = g_regex_new ("^[a-zA-Z_][a-zA-Z0-9_]*=([ \t\n]|[^[:cntrl:]])*$", G_REGEX_OPTIMIZE, 0, error);
+        regex = g_regex_new ("^[a-zA-Z_][a-zA-Z0-9_]*=(?:[ \t\n]|[^[:cntrl:]])*$", G_REGEX_OPTIMIZE, 0, error);
 
         if (regex == NULL) {
                 return FALSE;
