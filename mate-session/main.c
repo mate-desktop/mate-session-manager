@@ -283,7 +283,44 @@ static void append_required_apps(GsmManager* manager)
 				}
 				else
 				{
-					g_warning("Unable to find provider '%s' of required component '%s'", default_provider, component);
+
+					g_warning ("Unable to find provider '%s' of required component '%s'", default_provider, component);
+
+					if (!IS_STRING_EMPTY ((char*) default_provider))
+					{
+						// possible reset component to default
+
+						const char *default_default_provider;
+						GVariant *g_settings_default_default;
+						g_settings_default_default = g_settings_get_default_value (settings_required_components, component);
+						default_default_provider = g_variant_get_string (g_settings_default_default, NULL);
+
+						if (!IS_STRING_EMPTY ((char*) default_default_provider) && strcmp (default_default_provider, default_provider) != 0)
+						{
+							g_warning ("Reset required component '%s' to default", component);
+							g_settings_reset (settings_required_components, component);
+
+							g_free (default_provider);
+							default_provider = g_settings_get_string (settings_required_components, component);
+
+							if (default_provider != NULL)
+							{
+								app_path = gsm_util_find_desktop_file_for_app_name (default_provider, NULL);
+								if (app_path != NULL)
+								{
+									gsm_manager_add_autostart_app (manager, app_path, component);
+								}
+								else
+								{
+									g_warning ("Unable to find provider '%s' of required component '%s'", default_provider, component);
+								}
+							}
+
+						}
+
+						g_variant_unref (g_settings_default_default);
+					}
+
 				}
 
 				g_free(app_path);
