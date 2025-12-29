@@ -58,6 +58,14 @@ if [ "x$WINDOW_MANAGER" = "xcompiz" -o "x$DEFWM" = "xcompiz" ]; then
   fi
 fi
 
+#  Check WINDOW_MANAGER exists
+if [ -n "$WINDOW_MANAGER" ] ; then
+  if ! command -v "$WINDOW_MANAGER" > /dev/null 2>&1; then
+    echo "Window manager $WINDOW_MANAGER executable not found."
+    WINDOW_MANAGER=""
+  fi
+fi
+
 # Avoid looping if the session configuration tells us to use mate-wm or if
 # the user forces mate-wm via WINDOW_MANAGER
 if [ "x$WINDOW_MANAGER" = "xmate-wm" ]; then
