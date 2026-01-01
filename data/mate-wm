@@ -43,6 +43,13 @@ done
 # WINDOW_MANAGER overrides all
 if [ -z "$WINDOW_MANAGER" ] ; then
     WINDOW_MANAGER=`gsettings get org.mate.session.required-components windowmanager 2> /dev/null | sed -r -e "s/^'([^']*)'$/\\1/"`
+    if [ -n "$WINDOW_MANAGER" ] ; then
+        if ! command -v "$WINDOW_MANAGER" > /dev/null 2>&1; then
+           # Known bug: xcompiz / "Migrate compiz to compiz-manager" (=next block) is now not working anymore.
+           echo "Window manager $WINDOW_MANAGER executable not found."
+           WINDOW_MANAGER=""
+        fi
+    fi
 fi
 
 # Migrate compiz to compiz-manager if possible and needed
