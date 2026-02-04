@@ -65,6 +65,10 @@
 #endif
 #include "gsm-session-save.h"
 
+#ifdef HAVE_LIBCANBERRA
+#include <canberra-gtk.h>
+#endif
+
 #define GSM_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSM_TYPE_MANAGER, GsmManagerPrivate))
 
 #define GSM_MANAGER_DBUS_PATH "/org/gnome/SessionManager"
@@ -1548,6 +1552,13 @@ do_phase_query_end_session (GsmManager *manager)
         data.flags = 0;
         priv = gsm_manager_get_instance_private (manager);
 
+#ifdef HAVE_LIBCANBERRA
+        ca_context_play (ca_gtk_context_get (), 0,
+                         CA_PROP_EVENT_ID, "desktop-logout",
+                         CA_PROP_EVENT_DESCRIPTION, "Session logout",
+                         NULL);
+#endif
+
         if (priv->logout_mode == GSM_MANAGER_LOGOUT_MODE_FORCE) {
                 data.flags |= GSM_CLIENT_END_SESSION_FLAG_FORCEFUL;
         }
@@ -1620,6 +1631,12 @@ start_phase (GsmManager *manager)
                 break;
         case GSM_MANAGER_PHASE_RUNNING:
                 g_signal_emit (manager, signals[SESSION_RUNNING], 0);
+#ifdef HAVE_LIBCANBERRA
+                ca_context_play (ca_gtk_context_get (), 0,
+                                 CA_PROP_EVENT_ID, "desktop-login",
+                                 CA_PROP_EVENT_DESCRIPTION, "Session login",
+                                 NULL);
+#endif
                 update_idle (manager);
                 break;
         case GSM_MANAGER_PHASE_QUERY_END_SESSION:

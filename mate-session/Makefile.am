@@ -62,6 +62,7 @@ mate_session_CPPFLAGS =			\
 	$(SM_CFLAGS)				\
 	$(ICE_CFLAGS)				\
 	$(XEXT_CFLAGS)				\
+	$(LIBCANBERRA_CFLAGS)			\
 	-I$(top_srcdir)/mate-submodules/libegg			\
 	-DLOCALE_DIR=\""$(datadir)/locale"\"	\
 	-DDATA_DIR=\""$(datadir)/mate-session"\" \
@@ -81,7 +82,8 @@ mate_session_LDADD =				\
 	$(MATE_SESSION_LIBS)			\
 	$(SYSTEMD_LIBS)				\
 	$(LIBELOGIND_LIBS)			\
-	$(EXECINFO_LIBS)
+	$(EXECINFO_LIBS)			\
+	$(LIBCANBERRA_LIBS)
 
 libgsmutil_la_SOURCES =				\
 	gsm-util.c				\
