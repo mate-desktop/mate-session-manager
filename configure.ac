@@ -84,6 +84,26 @@ fi
 AM_CONDITIONAL([HAVE_GLESV2], [test "x$have_glesv2" = "xyes"])
 
 dnl ====================================================================
+dnl libcanberra (optional) for sound events
+dnl ====================================================================
+
+AC_ARG_WITH([libcanberra],
+    AS_HELP_STRING([--without-libcanberra], [Disable sound events (default: auto)]),
+    [with_libcanberra=$withval], [with_libcanberra=auto])
+
+have_libcanberra=no
+if test "x$with_libcanberra" != "xno"; then
+    PKG_CHECK_MODULES(LIBCANBERRA, libcanberra-gtk3,
+              [AC_DEFINE(HAVE_LIBCANBERRA, 1, [Define if libcanberra-gtk3 is available])
+              have_libcanberra=yes], have_libcanberra=no)
+    if test "x$have_libcanberra" = xno -a "x$with_libcanberra" = xyes; then
+        AC_MSG_ERROR([libcanberra support requested but library not found])
+    fi
+fi
+AC_SUBST(LIBCANBERRA_CFLAGS)
+AC_SUBST(LIBCANBERRA_LIBS)
+
+dnl ====================================================================
 dnl Option to set the default window manager
 dnl ====================================================================
 AC_ARG_WITH(default-wm,
@@ -385,5 +405,6 @@ echo "
         XTest support:            ${have_xtest}
         Build documentation:      ${enable_docbook_docs}
         Native Language support:  ${USE_NLS}
+        Libcanberra support:      ${have_libcanberra}
 
 "
