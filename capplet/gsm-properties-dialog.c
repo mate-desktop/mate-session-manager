@@ -410,7 +410,9 @@ on_desktop_add_app_clicked (GtkWidget           *widget,
         filename = msm_dektop_app_dialog_get_selected (MSM_DESKTOP_APP_DIALOG (desktop_add_dialog));
         if (filename != NULL)
         {
-            gsp_app_copy_desktop_file (g_filename_to_uri (filename, NULL, NULL));
+            gchar *uri = g_filename_to_uri (filename, NULL, NULL);
+            gsp_app_copy_desktop_file (uri);
+            g_free (uri);
         }
     }
 

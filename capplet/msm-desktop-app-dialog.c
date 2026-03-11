@@ -71,9 +71,14 @@ list_filter_app_func (GtkListBoxRow *row,
     g_string_ascii_up (s1);
     g_string_ascii_up (s2);
 
-    if (strstr (s2->str, s1->str) != NULL)
+    if (strstr (s2->str, s1->str) != NULL) {
+        g_string_free (s1, TRUE);
+        g_string_free (s2, TRUE);
         return TRUE;
+    }
 
+    g_string_free (s1, TRUE);
+    g_string_free (s2, TRUE);
     return FALSE;
 }
 
@@ -254,7 +259,7 @@ create_app_info_row (GAppInfo *app)
     gtk_grid_attach_next_to (GTK_GRID (grid), label2, label, GTK_POS_BOTTOM, 1, 1);
 
     gtk_container_add (GTK_CONTAINER (row), grid);
-    g_object_set_data (G_OBJECT (row), "appinfo", app);
+    g_object_set_data_full(G_OBJECT(row), "appinfo", g_object_ref(app), g_object_unref);
 
     return row;
 }
@@ -294,6 +299,7 @@ msm_desktop_app_dialog_new (GspAppManager *manager)
             }
         }
     }
+    g_list_free_full (apps, g_object_unref);
 
     return GTK_WIDGET (dialog);
 }
