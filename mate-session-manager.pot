@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-session-manager 1.27.0\n"
+"Project-Id-Version: mate-session-manager 1.28.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2023-09-04 20:19+0200\n"
+"POT-Creation-Date: 2026-04-02 20:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,27 +58,27 @@ msgstr ""
 msgid "The startup command is not valid"
 msgstr ""
 
-#: capplet/gsm-properties-dialog.c:616
+#: capplet/gsm-properties-dialog.c:618
 msgid "_Help"
 msgstr ""
 
-#: capplet/gsm-properties-dialog.c:620
+#: capplet/gsm-properties-dialog.c:622
 msgid "_Close"
 msgstr ""
 
-#: capplet/gsm-properties-dialog.c:670
+#: capplet/gsm-properties-dialog.c:672
 msgid "Enabled"
 msgstr ""
 
-#: capplet/gsm-properties-dialog.c:682
+#: capplet/gsm-properties-dialog.c:684
 msgid "Icon"
 msgstr ""
 
-#: capplet/gsm-properties-dialog.c:694
+#: capplet/gsm-properties-dialog.c:696
 msgid "Program"
 msgstr ""
 
-#: capplet/gsm-properties-dialog.c:900
+#: capplet/gsm-properties-dialog.c:902
 msgid "Startup Applications Preferences"
 msgstr ""
 
@@ -486,7 +486,7 @@ msgstr ""
 msgid "_Shut Down"
 msgstr ""
 
-#: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2349
+#: mate-session/gsm-manager.c:1529 mate-session/gsm-manager.c:2366
 msgid "Not responding"
 msgstr ""
 
