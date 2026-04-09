@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Lasse Liehu <larso@gmx.com>, 2018
+# Lasse Liehu-Inui <larso@gmx.com>, 2018
 # Mikko Harhanen <gitti@mikkoharhanen.fi>, 2018
 # Martin Wimpress <code@flexion.org>, 2018
 # Riku Viitanen <riisseli4@gmail.com>, 2018
@@ -13,6 +13,7 @@
 # Ammuu5, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Kimmo Kujansuu <mrkujansuu@gmail.com>, 2019
+# Tommi Nieminen <translator@legisign.org>, 2026
 # 
 msgid ""
 msgstr ""
@@ -20,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2023-09-04 20:19+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>, 2019\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>, 2026\n"
 "Language-Team: Finnish (https://app.transifex.com/mate/teams/13566/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -111,7 +112,7 @@ msgstr "Ohjetta ei voitu näyttää"
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
-msgstr ""
+msgstr "– MATE-istunnon ominaisuudet"
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -131,12 +132,14 @@ msgstr "Jos käytössä, mate-session tallentaa istunnon automaatisesti."
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr ""
+msgstr "Näytä piilotetut automaattikäynnistyssovellukset"
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
+"Jos käytössä, mate-session-properties näyttää piilotetut "
+"automaattikäynnistyssovellukset."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -202,7 +205,7 @@ msgstr "Hallinnoi Gnome-yhteensopivuuskomponenttien käynnistystä"
 
 #: data/org.mate.session.gschema.xml.in:47
 msgid "Control which compatibility components to start."
-msgstr "Kontrolloi, mitkä komponentit käynnistyvät."
+msgstr "Asettaa, mitkä osat käynnistetään."
 
 #: data/org.mate.session.gschema.xml.in:54 data/mate-wm.desktop.in:4
 msgid "Window Manager"
@@ -264,17 +267,17 @@ msgstr "Tämä istunto kirjautuu MATEn"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "käynnistä;käynnistys;MATE;työpöytä;istunto;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr ""
+msgstr "MATE;ikkuna;hallinta;käynnistä;käynnistys;MDM;"
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
-msgstr "<b>Joitakin ohjelmia on vielä käynnissä:</b>"
+msgstr "<b>Jotkin ohjelmat ovat yhä käynnissä:</b>"
 
 #: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:643
 msgid ""
@@ -290,13 +293,14 @@ msgstr "Käynnistettävät ohjelmat"
 
 #: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
-msgstr "Valitse sisäänkirjauduttaessa käynnistettävät ohjelmat"
+msgstr "Valitse kirjauduttaessa käynnistettävät ohjelmat"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
 msgstr ""
+"MATE;istunto;ominaisuudet;sovellukset;kirjautuminen;käynnistys;käynnistäminen;"
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
@@ -304,7 +308,7 @@ msgstr "Muut käynnistyvät _ohjelmat:"
 
 #: data/session-properties.ui:86
 msgid "_Custom Add"
-msgstr ""
+msgstr "Lisää m_ukautettu"
 
 #: data/session-properties.ui:116
 msgid "_Remove"
@@ -316,7 +320,7 @@ msgstr "_Muokkaa"
 
 #: data/session-properties.ui:162
 msgid "_Show hidden"
-msgstr ""
+msgstr "Näytä _piilotetut"
 
 #: data/session-properties.ui:183
 msgid "Startup Programs"
@@ -400,7 +404,7 @@ msgstr "TIEDOSTO"
 
 #: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
-msgstr "Anna istunnonhallinan tunniste"
+msgstr "Anna istunnonhallinnan tunniste"
 
 #: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
@@ -408,11 +412,11 @@ msgstr "ID"
 
 #: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
-msgstr "Istunnonhallinan valitsimet:"
+msgstr "Istunnonhallinnan valitsimet:"
 
 #: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
-msgstr "Näytä istunnonhallinan valitsimet"
+msgstr "Näytä istunnonhallinnan valitsimet"
 
 #: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
@@ -425,19 +429,19 @@ msgstr "Tuntematon"
 
 #: mate-session/gsm-inhibit-dialog.c:642
 msgid "A program is still running:"
-msgstr "Ohjelma on vielä käynnissä:"
+msgstr "Ohjelma on yhä käynnissä:"
 
 #: mate-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
-msgstr "Joitakin ohjelmia on vielä käynnissä:"
+msgstr "Jotkin ohjelmat ovat yhä käynnissä:"
 
 #: mate-session/gsm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
-"Odotetaan ohjelmien lopettamista. Ohjelmien suorituksen keskeyttäminen voi "
-"aiheuttaa töiden häviämistä."
+"Odotetaan ohjelmien päättyvän. Suorituksen keskeyttäminen voisi aiheuttaa "
+"töiden menetystä."
 
 #: mate-session/gsm-inhibit-dialog.c:876
 msgid "Switch User Anyway"
@@ -483,16 +487,16 @@ msgstr[1] "Sinut kirjataan ulos automaattisesti %d sekunnin kuluttua"
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
 msgstr[0] "Järjestelmä sammuu automaattisesti %d sekunnin päästä"
-msgstr[1] "Järjestelmä sammuu automaattisesti %d sekunnin päästä"
+msgstr[1] "Järjestelmä sammuu automaattisesti %d sekunnin kuluttua"
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format
 msgid "You are currently logged in as \"%s\"."
-msgstr "Olet kirjautunut sisään käyttäjänä \"%s\"."
+msgstr "Olet kirjautunut käyttäjäksi ”%s”."
 
 #: mate-session/gsm-logout-dialog.c:442
 msgid "Log out of this system now?"
-msgstr "Kirjaudutaanko ulos järjestelmästä nyt?"
+msgstr "Kirjaudutaanko järjestelmästä ulos nyt?"
 
 #: mate-session/gsm-logout-dialog.c:448
 msgid "_Switch User"
@@ -570,7 +574,7 @@ msgstr "Älä lataa käyttäjän määrittelemiä sovelluksia"
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr ""
+msgstr "Poista laitteistokiihdytyksen tarkistus käytöstä"
 
 #: mate-session/main.c:637
 msgid " - the MATE session manager"
@@ -658,7 +662,7 @@ msgstr "Älä vaadi vahvistusta"
 #. Okay, it wasn't the upgrade case, so now we can give up.
 #: tools/mate-session-save.c:127
 msgid "Could not connect to the session manager"
-msgstr "Istunnonhallintaan ei saa yhteyttä"
+msgstr "Istunnonhallintaan ei saada yhteyttä"
 
 #: tools/mate-session-save.c:254
 msgid "Program called with conflicting options"

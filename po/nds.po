@@ -5,8 +5,8 @@
 # 
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Benedikt Straub <benedikt-straub@web.de>, 2023
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Benedikt Straub <benedikt-straub@web.de>, 2025
 # 
 msgid ""
 msgstr ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2023-09-04 20:19+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Benedikt Straub <benedikt-straub@web.de>, 2023\n"
+"Last-Translator: Benedikt Straub <benedikt-straub@web.de>, 2025\n"
 "Language-Team: Low German (https://app.transifex.com/mate/teams/13566/nds/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
-msgstr "Order utwählen"
+msgstr "Order utkören"
 
 #: capplet/gsm-app-dialog.c:168
 msgid "second"
@@ -32,7 +32,7 @@ msgstr "Sekünn"
 
 #: capplet/gsm-app-dialog.c:170
 msgid "seconds"
-msgstr "Sekunnen"
+msgstr "Sekünnen"
 
 #: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
 #: mate-session/gsm-logout-dialog.c:486
@@ -41,7 +41,7 @@ msgstr "_Avbreken"
 
 #: capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
-msgstr "Systemstartprogramm hentofögen"
+msgstr "Systeemstartprogramm hentofögen"
 
 #: capplet/gsm-app-dialog.c:226 data/session-properties.ui:101
 msgid "_Add"
@@ -49,7 +49,7 @@ msgstr "_Hentofögen"
 
 #: capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
-msgstr "Systemstartprogramm bewarken"
+msgstr "Systeemstartprogramm bewarken"
 
 #: capplet/gsm-app-dialog.c:231
 msgid "_Save"
@@ -57,15 +57,15 @@ msgstr "_Spiekern"
 
 #: capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
-msgstr "De Systemstartprogrammorder künn nich leer ween"
+msgstr "De Systeemstartprogrammorder kunn nich leer ween"
 
 #: capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
-msgstr "De Systemstartprogrammorder is nich valide"
+msgstr "De Systeemstartprogrammorder is nich valide"
 
 #: capplet/gsm-properties-dialog.c:616
 msgid "_Help"
-msgstr "_Hölp"
+msgstr "_Hülp"
 
 #: capplet/gsm-properties-dialog.c:620
 msgid "_Close"
@@ -85,7 +85,7 @@ msgstr "Programm"
 
 #: capplet/gsm-properties-dialog.c:900
 msgid "Startup Applications Preferences"
-msgstr "Instellens för Systemstartprogrammen"
+msgstr "Instellens för Systeemstartprogrammen"
 
 #: capplet/gsp-app.c:280
 msgid "No name"
@@ -97,7 +97,7 @@ msgstr "Keen Beschrievens"
 
 #: capplet/main.c:36 mate-session/main.c:614
 msgid "Version of this application"
-msgstr "Verschoon vun düssem Programm"
+msgstr "Versioon vun deesem Programm"
 
 #: capplet/main.c:52
 msgid "Could not display help document"
@@ -105,7 +105,7 @@ msgstr "Kunn dat Hülp-Dokument nich wiesen"
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
-msgstr ""
+msgstr "- MATE-Törn-Eegenskuppen"
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -125,12 +125,14 @@ msgstr "Wenn jau, sekert mate-session de Törn automatisk."
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr ""
+msgstr "Verburgen Systeemstart-Anwennens wiesen"
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
+"Wenn anknipst, word mate-session-properties verburgen Systeemstart-Anwennens"
+" wiesen."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -160,7 +162,7 @@ msgstr "Tiet bevor de Törn schlopen geiht"
 #: data/org.mate.session.gschema.xml.in:32
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr "Minuten de Inaktivität, bevor de Törn slopen gahn schall."
+msgstr "Menüten de Inaktivität, bevor de Törn slopen gahn sall."
 
 #: data/org.mate.session.gschema.xml.in:36
 msgid "Default session"
@@ -185,7 +187,7 @@ msgid ""
 msgstr ""
 "List vun Programmen, wat een Törn hebben mutt. (Elkeen Ding is een Slötel "
 "unner »/org/mate/desktop/session/required_components«). De Instellens för "
-"Systemstartprogrammen verlööven Brukers normaal nich, een nödiges Programm "
+"Systeemstartprogrammen verlööven Brukers normaal nich, een nödiges Programm "
 "ut de Törn to lösken, un de Törn-Uppasser föögt de nödigen Programmen bi'm "
 "Anmellen automatisk weer tum Törn to, wenn se doch lösket worden."
 
@@ -206,7 +208,7 @@ msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr ""
-"De Fensteruppasser is dat Programm, wat de Titelbalken un de Grenz vun "
+"De Fensteruppasser is dat Programm, wat de Titelbalken un de Rand vun "
 "Fensters tekent un di verlöövt, Fensters to verschuven un hör Grött to "
 "ännern."
 
@@ -219,7 +221,7 @@ msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr ""
-"De Balken is de Rieg boven oder unnern am Billschirm, wat Menüs, de "
+"De Balken is de Rieg boven of unnern am Billschirm, wat Menüs, de "
 "Fensterlist, Tostands-Tekens, de Klock un so wieder enthollt."
 
 #: data/org.mate.session.gschema.xml.in:64
@@ -231,16 +233,20 @@ msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
 msgstr ""
+"De Dateiverwalter maakt de Schrievdisk-Tekens paraat un lett di mit dienen "
+"sekert Dateien warken."
 
 #: data/org.mate.session.gschema.xml.in:69
 msgid "Dock"
-msgstr ""
+msgstr "Dock"
 
 #: data/org.mate.session.gschema.xml.in:70
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
 msgstr ""
+"Een Dock maakt een Dockens-Rebeet paraat, liek as een Balken, um Anwennens "
+"uttoföhren un daartüsken to wesseln."
 
 #: data/mate.desktop.in:3
 msgid "MATE"
@@ -248,19 +254,19 @@ msgstr "MATE"
 
 #: data/mate.desktop.in:4
 msgid "This session logs you into MATE"
-msgstr "Düsser Törn mellt dik bi MATE an"
+msgstr "Deeser Törn mellt dik bi MATE an"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "utföhren;MATE;Schrievdisk;Törn;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr ""
+msgstr "MATE;Fenster;Verwalter;utföhren;MDM;"
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
@@ -271,28 +277,30 @@ msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr ""
+"Wacht, dat dat Programm ennt.  Wenn du dat Programm unnerbreckst, verlüst du"
+" villicht dien Wark."
 
 #: data/mate-session-properties.desktop.in:3
 msgid "Startup Applications"
-msgstr "Systemstartprogramme"
+msgstr "Systeemstartprogramme"
 
 #: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
-msgstr ""
+msgstr "Köör ut, welke Anwennens start worden, wenn du di anmellst"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
-msgstr ""
+msgstr "MATE;Törn;Eegenskuppen;Anwennens;Anmellen;Start;"
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
-msgstr "Tosettliche Systemstart_programme"
+msgstr "Tosettliche Systeemstart_programme"
 
 #: data/session-properties.ui:86
 msgid "_Custom Add"
-msgstr ""
+msgstr "Ee_genes Hentofögen"
 
 #: data/session-properties.ui:116
 msgid "_Remove"
@@ -304,27 +312,27 @@ msgstr "_Bewarken"
 
 #: data/session-properties.ui:162
 msgid "_Show hidden"
-msgstr ""
+msgstr "_Verburgen wiesen"
 
 #: data/session-properties.ui:183
 msgid "Startup Programs"
-msgstr "Systemstartprogramme"
+msgstr "Systeemstartprogramme"
 
 #: data/session-properties.ui:198
 msgid "_Automatically remember running applications when logging out"
-msgstr ""
+msgstr "_Anwennens bi’m Avmellen automatisk marken"
 
 #: data/session-properties.ui:240
 msgid "_Remember Currently Running Application"
-msgstr ""
+msgstr "Stedenwies _lopend Anwennen marken"
 
 #: data/session-properties.ui:274
 msgid "Options"
-msgstr "Optschoonen"
+msgstr "Instellens"
 
 #: data/session-properties.ui:312
 msgid "Browse…"
-msgstr ""
+msgstr "Dörsöken …"
 
 #: data/session-properties.ui:355
 msgid "Comm_ent:"
@@ -340,7 +348,7 @@ msgstr "_Naam:"
 
 #: data/session-properties.ui:397
 msgid "_Delay:"
-msgstr ""
+msgstr "Vertre_ck"
 
 #: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
@@ -349,7 +357,7 @@ msgstr "Datei is keene valide .desktop Datei"
 #: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Dateiverschoon '%s' vu'm Schrievdisk nich erkannt"
+msgstr "Dateiversioon '%s' vu'm Schrievdisk nich erkannt"
 
 #: mate-submodules/libegg/eggdesktopfile.c:984
 #, c-format
@@ -358,7 +366,7 @@ msgstr "Starte %s"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1126
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "Anwennen nimmt keene Dokumenten up de Oorderrieg an"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1194
 #, c-format
@@ -368,6 +376,8 @@ msgstr "Unbekannte Startoption: %d"
 #: mate-submodules/libegg/eggdesktopfile.c:1410
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
+"Kann Dokument-URIs nich an eenen Schrievdisk-Indrag vun de Aard »Type=Link« "
+"geven"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1431
 msgid "Not a launchable item"
@@ -375,7 +385,7 @@ msgstr "Keen startbares Element"
 
 #: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
-msgstr "Deaktivert de Verbinnen to'm Törnoppasser"
+msgstr "Deaktiveert de Verbinnen to'm Törnoppasser"
 
 #: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
@@ -383,7 +393,7 @@ msgstr "Datei mit sekert Konfiguratioon angeven"
 
 #: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
-msgstr "FILE"
+msgstr "DATEI"
 
 #: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
@@ -395,11 +405,11 @@ msgstr "ID"
 
 #: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
-msgstr "Törnoppassensoptschoonen:"
+msgstr "Törnoppassens-Instellens:"
 
 #: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
-msgstr "Törnoppassensoptschoonen opwiesen"
+msgstr "Törnoppassens-Instellens opwiesen"
 
 #: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
@@ -416,13 +426,15 @@ msgstr "Een Programm lööpt noh:"
 
 #: mate-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
-msgstr ""
+msgstr "Eenige Programmen lopen noch:"
 
 #: mate-session/gsm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
+"Wacht, dat de Programmen ennen.  Wenn du deese Programmen unnerbreckst, "
+"verlüst du villicht dien Wark."
 
 #: mate-session/gsm-inhibit-dialog.c:876
 msgid "Switch User Anyway"
@@ -430,7 +442,7 @@ msgstr "Bruker liekers wesseln"
 
 #: mate-session/gsm-inhibit-dialog.c:879
 msgid "Log Out Anyway"
-msgstr ""
+msgstr "Doch avmellen"
 
 #: mate-session/gsm-inhibit-dialog.c:882
 msgid "Suspend Anyway"
@@ -442,7 +454,7 @@ msgstr "Liekers överwintern"
 
 #: mate-session/gsm-inhibit-dialog.c:888
 msgid "Shut Down Anyway"
-msgstr ""
+msgstr "Doch daalfahren"
 
 #: mate-session/gsm-inhibit-dialog.c:891
 msgid "Reboot Anyway"
@@ -460,20 +472,20 @@ msgstr "Avbreken"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Du worst in %d Sekünn automatisk avmellt"
+msgstr[1] "Du worst in %d Sekünnen automatisk avmellt"
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Deeses Systeem word in %d Sekünn automatisk daalfahren"
+msgstr[1] "Deeses Systeem word in %d Sekünnen automatisk daalfahren"
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format
 msgid "You are currently logged in as \"%s\"."
-msgstr ""
+msgstr "Du büst jüüst as »%s« anmellt."
 
 #: mate-session/gsm-logout-dialog.c:442
 msgid "Log out of this system now?"
@@ -489,7 +501,7 @@ msgstr "_Avmellen"
 
 #: mate-session/gsm-logout-dialog.c:463
 msgid "Shut down this system now?"
-msgstr "System nu daalfahren?"
+msgstr "Systeem nu daalfahren?"
 
 #: mate-session/gsm-logout-dialog.c:469
 msgid "S_uspend"
@@ -516,31 +528,33 @@ msgstr "Antert nich"
 #. * properties. But it could still be that SmProgram is not set.
 #: mate-session/gsm-xsmp-client.c:593
 msgid "Remembered Application"
-msgstr ""
+msgstr "Markt Anwennen"
 
 #: mate-session/gsm-xsmp-client.c:1258
 msgid "This program is blocking logout."
-msgstr ""
+msgstr "Deeses Programm blockeert dat Avmellen."
 
 #: mate-session/gsm-xsmp-server.c:323
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr ""
+msgstr "Lehnt neje Gast-Verbinnen of, denn de Törn word jüüst daalfahren\n"
 
 #: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
-msgstr ""
+msgstr "Kunn keene ICE-Tohörens-Steekdöös maken: %s"
 
 #. Oh well, no X for you!
 #: mate-session/gsm-util.c:382
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
+"Kunn keenen Anmellens-Törn starten (un kunn sik nich mit de X-Server "
+"verbinnen)"
 
 #: mate-session/main.c:611
 msgid "Override standard autostart directories"
-msgstr ""
+msgstr "Normaale Systeemstart-Verteeknissen överschrieven"
 
 #: mate-session/main.c:612
 msgid "Enable debugging code"
@@ -548,11 +562,11 @@ msgstr "Debugging code möglich maken"
 
 #: mate-session/main.c:613
 msgid "Do not load user-specified applications"
-msgstr ""
+msgstr "Keene vum Bruker angeven Anwennens laden"
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr ""
+msgstr "Prüfen vun Hardware-Upstapper utknipsen"
 
 #: mate-session/main.c:637
 msgid " - the MATE session manager"
@@ -575,17 +589,30 @@ msgid ""
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
 msgstr ""
+"%s [INSTELLEN …] OORDER\n"
+"\n"
+"De OORDER utföhren un daarbi eenige Törn-Funktioonen unnerdrücken.\n"
+"\n"
+"  -h, --help        Deese Hülp wiesen\n"
+"  --version         Programm-Versioon wiesen\n"
+"  --app-id ID       De Anwennens-ID, wat bi’m Unnerdrücken\n"
+"                    bruukt worden sall (wenn du willst)\n"
+"  --reason GRUND    De Grund för dat Unnerdrücken (wenn du willst)\n"
+"  --inhibit ARG     Dingen tum Unnerdrücken; Dübbelpunkt-trennte List vun:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"Wenn keene »--inhibit«-Instellen angeven is, word »idle« annohmen.\n"
 
 #: tools/mate-session-inhibit.c:174 tools/mate-session-inhibit.c:184
 #: tools/mate-session-inhibit.c:194
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s bruukt een Argument\n"
 
 #: tools/mate-session-inhibit.c:230
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "Kunn %s nich utföhren\n"
 
 #: tools/mate-session-save.c:67
 msgid "Log out"
@@ -605,7 +632,7 @@ msgstr "Daalfahrdialog opwiesen"
 
 #: tools/mate-session-save.c:71
 msgid "Use dialog boxes for errors"
-msgstr ""
+msgstr "Dialogkisten för Fehlers bruken"
 
 #. deprecated options
 #: tools/mate-session-save.c:73
@@ -622,13 +649,13 @@ msgstr "Törn avbreken"
 
 #: tools/mate-session-save.c:75
 msgid "Do not require confirmation"
-msgstr ""
+msgstr "Keen Utwiesen verlangen"
 
 #. Okay, it wasn't the upgrade case, so now we can give up.
 #: tools/mate-session-save.c:127
 msgid "Could not connect to the session manager"
-msgstr ""
+msgstr "Kunn sik nich mit de Törn-Uppasser verbinnen"
 
 #: tools/mate-session-save.c:254
 msgid "Program called with conflicting options"
-msgstr ""
+msgstr "Programm mit unverdragelk Instellens upropen"

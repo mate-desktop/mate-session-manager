@@ -6,7 +6,7 @@
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Cédric Valmary <cvalmary@yahoo.fr>, 2019
-# Quentin PAGÈS, 2023
+# Quentin PAGÈS, 2025
 # 
 msgid ""
 msgstr ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2023-09-04 20:19+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Quentin PAGÈS, 2023\n"
+"Last-Translator: Quentin PAGÈS, 2025\n"
 "Language-Team: Occitan (post 1500) (https://app.transifex.com/mate/teams/13566/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,11 +45,11 @@ msgstr "Ajustar un programa al lançament"
 
 #: capplet/gsm-app-dialog.c:226 data/session-properties.ui:101
 msgid "_Add"
-msgstr "_Apondre"
+msgstr "_Ajustar"
 
 #: capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
-msgstr "Editar lo programa de lançament"
+msgstr "Editar lo programa al lançament"
 
 #: capplet/gsm-app-dialog.c:231
 msgid "_Save"
@@ -65,7 +65,7 @@ msgstr "La comanda d’aviada es pas valida"
 
 #: capplet/gsm-properties-dialog.c:616
 msgid "_Help"
-msgstr "Aju_da"
+msgstr "_Ajuda"
 
 #: capplet/gsm-properties-dialog.c:620
 msgid "_Close"
@@ -113,7 +113,7 @@ msgstr "Temps d’aviada de la session actuala"
 
 #: data/org.mate.session.gschema.xml.in:6
 msgid "Unix time of the start of the current session."
-msgstr "Temps UNIX d’aviada de la session actuala"
+msgstr "Temps UNIX d’aviada de la session actuala."
 
 #: data/org.mate.session.gschema.xml.in:10
 msgid "Save sessions"
@@ -132,7 +132,7 @@ msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
 "Se activat, mate-session-properties mostrarà las aplicacions amagadas "
-"lançadas automaticament"
+"lançadas automaticament."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -174,7 +174,7 @@ msgstr "Session per defaut"
 
 #: data/org.mate.session.gschema.xml.in:37
 msgid "List of applications that are part of the default session."
-msgstr "Lista de las aplicacions que forman part del la session per defaut."
+msgstr "Lista de las aplicacions que fòrman part del la session per defaut."
 
 #: data/org.mate.session.gschema.xml.in:41
 msgid "Required session components"
@@ -203,7 +203,7 @@ msgstr "Contraròtla del compausant de d’aviada de compatibilitat de Gnome"
 
 #: data/org.mate.session.gschema.xml.in:47
 msgid "Control which compatibility components to start."
-msgstr " Contraròtla los compausants de compatibilitat d’aviar."
+msgstr "Contraròtlar los compausants de compatibilitat d’aviar."
 
 #: data/org.mate.session.gschema.xml.in:54 data/mate-wm.desktop.in:4
 msgid "Window Manager"
@@ -260,7 +260,7 @@ msgstr "MATE"
 
 #: data/mate.desktop.in:4
 msgid "This session logs you into MATE"
-msgstr "La session vos connectarà dins MATE"
+msgstr "La session vos connectarà a MATE"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -319,7 +319,7 @@ msgstr "_Edicion"
 
 #: data/session-properties.ui:162
 msgid "_Show hidden"
-msgstr "_Mostrar las amagadas"
+msgstr "_Mostrar çò amagat"
 
 #: data/session-properties.ui:183
 msgid "Startup Programs"
@@ -345,11 +345,11 @@ msgstr "Percórrer…"
 
 #: data/session-properties.ui:355
 msgid "Comm_ent:"
-msgstr "Co_mentari :"
+msgstr "Com_entari :"
 
 #: data/session-properties.ui:369
 msgid "Co_mmand:"
-msgstr "_Comanda :"
+msgstr "Co_manda :"
 
 #: data/session-properties.ui:383
 msgid "_Name:"
@@ -435,7 +435,7 @@ msgstr "Un programa es encara en execucion :"
 
 #: mate-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
-msgstr "Unes programas son encara en execucion : "
+msgstr "Unes programas son encara en execucion :"
 
 #: mate-session/gsm-inhibit-dialog.c:647
 msgid ""
@@ -443,7 +443,7 @@ msgid ""
 "to lose work."
 msgstr ""
 "En espèra de la fin d’unes programas. Los arrestar poiriá causar de pèrda de"
-" trabalha."
+" trabalh."
 
 #: mate-session/gsm-inhibit-dialog.c:876
 msgid "Switch User Anyway"
@@ -607,7 +607,7 @@ msgstr ""
 "  --app-id ID       L’ID de l’aplicacion d’utilizar\n"
 "                    pendent inibicion (opcional)\n"
 "  --reason REASON   La rason de l’inibicion (opcional)\n"
-"  --inhibit ARG     Causas d’inibir , separadas per de punts virgulas :\n"
+"  --inhibit ARG     Causas d’inibir , separadas per de ponches virgulas :\n"
 "                    desconnexion, bascular d’utilizaire, metre en velha, repaus, montatge auto\n"
 "\n"
 "Se cap d’opcion --inhibit es especificat, repaus es supausat.\n"
@@ -616,7 +616,7 @@ msgstr ""
 #: tools/mate-session-inhibit.c:194
 #, c-format
 msgid "%s requires an argument\n"
-msgstr "%s necessita un paramètre\n"
+msgstr "%s requerís un paramètre\n"
 
 #: tools/mate-session-inhibit.c:230
 #, c-format
