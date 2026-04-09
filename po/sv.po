@@ -14,8 +14,7 @@
 # cb445fb3dfd1fe3c2b9f58ac5638f478, 2018
 # Tobias Lekare <lekare@linux.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Luna Jernberg <droidbittin@gmail.com>, 2024
-# Daniel Nylander <po@danielnylander.se>, 2025
+# Luna Jernberg <droidbittin@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -23,7 +22,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2023-09-04 20:19+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>, 2025\n"
+"Last-Translator: Luna Jernberg <droidbittin@gmail.com>, 2020\n"
 "Language-Team: Swedish (https://app.transifex.com/mate/teams/13566/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -114,7 +113,7 @@ msgstr "Kunde inte visa hjälpdokumentet"
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
-msgstr "- Egenskaper för MATE-session"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -135,14 +134,12 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr "Visa dolda autostart-program"
+msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
-"Om aktiverat, kommer mate-session-properties att visa dolda autostart-"
-"program."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -274,13 +271,13 @@ msgstr "Denna session loggar in dig i MATE"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr "starta;MATE;skrivbordssession;"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr "MATE;fönster;hanterare;starta;MDM;"
+msgstr ""
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
@@ -306,7 +303,7 @@ msgstr "Välj vilka program att starta när du loggar in"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
-msgstr "MATE;session;egenskaper;program;inloggning;start;"
+msgstr ""
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
@@ -314,7 +311,7 @@ msgstr "Ytterligare start_program:"
 
 #: data/session-properties.ui:86
 msgid "_Custom Add"
-msgstr "Lägg _till anpassat"
+msgstr ""
 
 #: data/session-properties.ui:116
 msgid "_Remove"
@@ -579,7 +576,7 @@ msgstr "Läs inte in användarspecifika program"
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr "Inaktivera kontroll av hårdvaruacceleration"
+msgstr ""
 
 #: mate-session/main.c:637
 msgid " - the MATE session manager"

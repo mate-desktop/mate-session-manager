@@ -12,11 +12,11 @@
 # Étienne Deparis <etienne@depar.is>, 2018
 # Charles Monzat <c.monzat@laposte.net>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# roxfr, 2020
+# David D, 2019
+# roxfr <roxfr@outlook.fr>, 2020
 # Laurent Napias, 2020
 # Yoshida Shouyou, 2021
 # Tubuntu, 2021
-# David D, 2024
 # 
 msgid ""
 msgstr ""
@@ -24,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2023-09-04 20:19+0200\n"
 "PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: David D, 2024\n"
+"Last-Translator: Tubuntu, 2021\n"
 "Language-Team: French (https://app.transifex.com/mate/teams/13566/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -317,7 +317,7 @@ msgstr "_Programmes supplémentaires au démarrage :"
 
 #: data/session-properties.ui:86
 msgid "_Custom Add"
-msgstr "Ajout _personnalisé"
+msgstr ""
 
 #: data/session-properties.ui:116
 msgid "_Remove"

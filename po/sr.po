@@ -6,7 +6,7 @@
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Wolfgang Ulbrich <raveit65.sun@gmail.com>, 2021
+# Wolfgang Ulbrich <mate@raveit.de>, 2021
 # Мирослав Николић <miroslavnikolic@rocketmail.com>, 2023
 # 
 msgid ""
