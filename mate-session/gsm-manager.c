@@ -4149,6 +4149,66 @@ gsm_manager_is_autostart_condition_handled (GsmManager *manager,
 }
 
 static void
+_app_restart (GsmManager *manager,
+              GsmApp     *app)
+{
+        GsmManagerPrivate *priv;
+        GsmClient *client;
+        const char *startup_id;
+        GError *error;
+        gboolean UNUSED_VARIABLE res;
+
+        priv = gsm_manager_get_instance_private (manager);
+
+        if (priv->phase >= GSM_MANAGER_PHASE_QUERY_END_SESSION) {
+                g_debug ("GsmManager: in shutdown, not restarting application");
+                return;
+        }
+
+        if (!gsm_app_peek_autorestart (app)) {
+                g_debug ("GsmManager: autorestart not set, not restarting application");
+                return;
+        }
+
+        /* If the app has a registered client, _disconnect_client will
+         * handle its restart. Skip here to avoid a double restart */
+        startup_id = gsm_app_peek_startup_id (app);
+        if (!IS_STRING_EMPTY (startup_id)) {
+                client = (GsmClient *)gsm_store_find (priv->clients,
+                                                       (GsmStoreFunc)_find_by_startup_id,
+                                                       (char *)startup_id);
+                if (client != NULL) {
+                        g_debug ("GsmManager: app '%s' has a registered client, skipping",
+                                 gsm_app_peek_app_id (app));
+                        return;
+                }
+        }
+
+        g_debug ("GsmManager: restarting app '%s'", gsm_app_peek_app_id (app));
+
+        error = NULL;
+        res = gsm_app_restart (app, &error);
+        if (error != NULL) {
+                g_warning ("Error on restarting app: %s", error->message);
+                g_error_free (error);
+        }
+}
+
+static void
+on_app_exited (GsmApp     *app,
+               GsmManager *manager)
+{
+        _app_restart (manager, app);
+}
+
+static void
+on_app_died (GsmApp     *app,
+             GsmManager *manager)
+{
+        _app_restart (manager, app);
+}
+
+static void
 append_app (GsmManager *manager,
             GsmApp     *app)
 {
@@ -4183,6 +4243,11 @@ append_app (GsmManager *manager,
         }
 
         gsm_store_add (priv->apps, id, G_OBJECT (app));
+
+        g_signal_connect (app, "exited",
+                          G_CALLBACK (on_app_exited), manager);
+        g_signal_connect (app, "died",
+                          G_CALLBACK (on_app_died), manager);
 }
 
 gboolean

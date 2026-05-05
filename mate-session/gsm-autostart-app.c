@@ -474,7 +474,18 @@ load_desktop_file (GsmAutostartApp *app)
                                                                   GSM_AUTOSTART_APP_AUTORESTART_KEY,
                                                                   NULL);
         } else {
-                priv->autorestart = FALSE;
+                /* Fall back to X-GNOME-AutoRestart for compatibility with
+                 * apps like Orca that set the GNOME key */
+                res = egg_desktop_file_has_key (priv->desktop_file,
+                                                "X-GNOME-AutoRestart",
+                                                NULL);
+                if (res) {
+                        priv->autorestart = egg_desktop_file_get_boolean (priv->desktop_file,
+                                                                          "X-GNOME-AutoRestart",
+                                                                          NULL);
+                } else {
+                        priv->autorestart = FALSE;
+                }
         }
 
         g_free (priv->condition_string);
@@ -1108,28 +1119,11 @@ gsm_autostart_app_has_autostart_condition (GsmApp     *app,
 static gboolean
 gsm_autostart_app_get_autorestart (GsmApp *app)
 {
-        gboolean res;
-        gboolean autorestart;
         GsmAutostartAppPrivate *priv;
 
         priv = gsm_autostart_app_get_instance_private (GSM_AUTOSTART_APP(app));
 
-        if (priv->desktop_file == NULL) {
-                return FALSE;
-        }
-
-        autorestart = FALSE;
-
-        res = egg_desktop_file_has_key (priv->desktop_file,
-                                        GSM_AUTOSTART_APP_AUTORESTART_KEY,
-                                        NULL);
-        if (res) {
-                autorestart = egg_desktop_file_get_boolean (priv->desktop_file,
-                                                            GSM_AUTOSTART_APP_AUTORESTART_KEY,
-                                                            NULL);
-        }
-
-        return autorestart;
+        return priv->autorestart;
 }
 
 static const char *
