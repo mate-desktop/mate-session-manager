@@ -1552,13 +1552,6 @@ do_phase_query_end_session (GsmManager *manager)
         data.flags = 0;
         priv = gsm_manager_get_instance_private (manager);
 
-#ifdef HAVE_LIBCANBERRA
-        ca_context_play (ca_gtk_context_get (), 0,
-                         CA_PROP_EVENT_ID, "desktop-logout",
-                         CA_PROP_EVENT_DESCRIPTION, "Session logout",
-                         NULL);
-#endif
-
         if (priv->logout_mode == GSM_MANAGER_LOGOUT_MODE_FORCE) {
                 data.flags |= GSM_CLIENT_END_SESSION_FLAG_FORCEFUL;
         }
@@ -1643,6 +1636,12 @@ start_phase (GsmManager *manager)
                 do_phase_query_end_session (manager);
                 break;
         case GSM_MANAGER_PHASE_END_SESSION:
+#ifdef HAVE_LIBCANBERRA
+                ca_context_play (ca_gtk_context_get (), 0,
+                                 CA_PROP_EVENT_ID, "desktop-logout",
+                                 CA_PROP_EVENT_DESCRIPTION, "Session logout",
+                                 NULL);
+#endif
                 do_phase_end_session (manager);
                 break;
         case GSM_MANAGER_PHASE_EXIT:
