@@ -1,0 +1,165 @@
+# MATE default Wayfire configuration.
+#
+# This is the template installed by mate-session-manager. On first login it is
+# copied to ~/.config/mate/wayfire.ini and may be edited there.
+# See the Wayfire documentation for a complete reference:
+# https://github.com/WayfireWM/wayfire/wiki/Configuration
+
+[core]
+
+# List of plugins to be enabled.
+plugins = \
+  alpha \
+  animate \
+  autostart \
+  command \
+  decoration \
+  ext-workspace \
+  fast-switcher \
+  foreign-toplevel \
+  grid \
+  idle \
+  invert \
+  move \
+  oswitch \
+  place \
+  resize \
+  session-lock \
+  shortcuts-inhibit \
+  switcher \
+  window-rules \
+  wm-actions \
+  zoom
+
+# Close focused window.
+close_top_view = <super> KEY_Q | <alt> KEY_F4
+
+# 4 workspaces by default.
+vwidth = 4
+vheight = 1
+
+# Prefer client-side decoration or server-side decoration
+preferred_decoration_mode = client
+
+# MATE dialogs are not forced to be modal.
+all_dialogs_modal = false
+
+# Mouse bindings ---------------------------------------------------------------
+
+# Drag windows by holding down Super and left mouse button.
+[move]
+activate = <super> BTN_LEFT
+
+# Resize them with right mouse button + Super.
+[resize]
+activate = <super> BTN_RIGHT
+
+# Zoom in the desktop by scrolling + Super.
+[zoom]
+modifier = <super>
+
+# Change opacity by scrolling with Super + Alt.
+[alpha]
+modifier = <super> <alt>
+
+# Startup commands -------------------------------------------------------------
+
+[autostart]
+# Make bus-activated and systemd-managed services aware of the Wayland
+# environment (also fixes the slow startup of Gtk+3 applications).
+0_env = dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY
+
+# The background and panel are managed by MATE itself (mate-settings-daemon and
+# mate-panel), so do not start the wf-shell clients. wf-background provides a
+# placeholder background until then.
+autostart_wf_shell = false
+background = wf-background
+
+# Commands ---------------------------------------------------------------------
+
+[command]
+
+# Start a terminal
+binding_terminal = <ctrl> <alt> KEY_T
+command_terminal = mate-terminal
+
+# Start the MATE run dialog
+binding_launcher = <alt> KEY_F2
+command_launcher = mate-panel --run-dialog
+
+# Lock the screen
+binding_lock = <super> KEY_L
+command_lock = mate-screensaver-command --lock
+
+# Log out
+binding_logout = <ctrl> <alt> KEY_DELETE
+command_logout = mate-session-quit --logout
+
+# Take a screenshot
+binding_screenshot = KEY_PRINT
+command_screenshot = mate-screenshot
+
+# Windows ----------------------------------------------------------------------
+
+# Actions related to window management functionalities.
+[wm-actions]
+toggle_fullscreen = <super> KEY_F
+toggle_always_on_top = <super> KEY_X
+toggle_always_on_bottom = <super> <alt> KEY_X
+toggle_sticky = <super> <shift> KEY_X
+
+# Position the windows in certain regions of the output.
+[grid]
+slot_bl = <super> KEY_KP1
+slot_b = <super> KEY_KP2
+slot_br = <super> KEY_KP3
+slot_l = <super> KEY_LEFT | <super> KEY_KP4
+slot_c = <super> KEY_UP | <super> KEY_KP5
+slot_r = <super> KEY_RIGHT | <super> KEY_KP6
+slot_tl = <super> KEY_KP7
+slot_t = <super> KEY_KP8
+slot_tr = <super> KEY_KP9
+# Restore default.
+restore = <super> KEY_DOWN | <super> KEY_KP0
+
+# Change active window with an animation.
+[switcher]
+next_view = <alt> KEY_TAB
+prev_view = <alt> <shift> KEY_TAB
+
+# Simple active window switcher.
+[fast-switcher]
+activate = <alt> KEY_ESC
+
+# Outputs ----------------------------------------------------------------------
+
+# Change focused output.
+[oswitch]
+# Switch to the next output.
+next_output = <super> KEY_O
+# Same with the window.
+next_output_with_win = <super> <shift> KEY_O
+
+# Invert the colors of the whole output.
+[invert]
+toggle = <super> KEY_I
+
+# Rules ------------------------------------------------------------------------
+
+# Example configuration:
+#
+# [window-rules]
+# maximize_alacritty = on created if app_id is "Alacritty" then maximize
+#
+# You can get the properties of your applications with the following command:
+# $ WAYLAND_DEBUG=1 alacritty 2>&1 | kak
+#
+# See Window rules for a complete reference.
+# https://github.com/WayfireWM/wayfire/wiki/Configuration#window-rules
+
+# Idle -------------------------------------------------------------------------
+
+# MATE handles idle notification itself (via ext-idle-notify), so do not let
+# Wayfire turn off the display on its own.
+[idle]
+dpms_timeout = 0

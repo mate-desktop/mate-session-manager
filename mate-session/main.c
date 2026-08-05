@@ -267,6 +267,15 @@ static void append_required_apps(GsmManager* manager)
 
 			component = required_components[i];
 
+			/* On Wayland the compositor (e.g. Wayfire) is the window
+			 * manager, so the required windowmanager component would
+			 * conflict with it and is not started. */
+			if (gsm_util_session_is_wayland ()
+			    && strcmp (component, "windowmanager") == 0) {
+				g_debug ("main: skipping '%s' required component on Wayland", component);
+				continue;
+			}
+
 			default_provider = g_settings_get_string (settings_required_components, component);
 
 			g_debug ("main: %s looking for component: '%s'", component, default_provider);
@@ -579,7 +588,8 @@ check_gl (gchar **gl_renderer, GError **error)
 	int status;
 	char *argv[] = { LIBEXECDIR "/mate-session-check-accelerated", NULL };
 
-	if (getenv ("DISPLAY") == NULL) {
+	if (getenv ("DISPLAY") == NULL
+	    || g_strcmp0 (g_getenv ("XDG_SESSION_TYPE"), "wayland") == 0) {
 		/* Not connected to X11, someone else will take care of checking GL */
 		return TRUE;
 	}
@@ -697,10 +707,19 @@ int main(int argc, char** argv)
 		gsm_util_setenv ("XDG_CURRENT_DESKTOP", "MATE");
 
 	/* Set DISPLAY explicitly for all our children, in case --display
-	 * was specified on the command line.
+	 * was specified on the command line. Only meaningful on X11: on
+	 * Wayland gdk_display_get_name() returns the Wayland socket name.
 	 */
-	display_str = gdk_display_get_name (gdk_display_get_default());
-	gsm_util_setenv("DISPLAY", display_str);
+	if (!gsm_util_session_is_wayland ()) {
+		display_str = gdk_display_get_name (gdk_display_get_default());
+		gsm_util_setenv("DISPLAY", display_str);
+	} else {
+		/* Export the Wayland display for bus activated children. */
+		display_str = g_getenv ("WAYLAND_DISPLAY");
+		if (display_str != NULL) {
+			gsm_util_setenv ("WAYLAND_DISPLAY", display_str);
+		}
+	}
 
 	/* Some third-party programs rely on MATE_DESKTOP_SESSION_ID to
 	 * detect if MATE is running. We keep this for compatibility reasons.

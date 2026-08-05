@@ -1,0 +1,7 @@
+[org.gnome.desktop.wm.preferences:MATE]
+button-layout='menu:minimize,maximize,close'
+
+[org.gnome.desktop.interface:MATE]
+gtk-theme='Menta'
+icon-theme='mate'
+overlay-scrolling=false

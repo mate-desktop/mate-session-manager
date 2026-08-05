@@ -32,6 +32,7 @@
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
 #include <gtk/gtk.h>
+#include <gdk/gdkx.h>
 
 #include <dbus/dbus-glib.h>
 
@@ -758,4 +759,19 @@ gsm_util_dialog_add_button (GtkDialog   *dialog,
 	gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, response_id);
 
 	return button;
+}
+
+gboolean
+gsm_util_session_is_wayland (void)
+{
+	GdkDisplay *display;
+
+	display = gdk_display_get_default ();
+
+	if (display != NULL
+	    && GDK_IS_X11_DISPLAY (display)) {
+		return FALSE;
+	}
+
+	return TRUE;
 }

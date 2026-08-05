@@ -6,6 +6,7 @@ noinst_PROGRAMS = 		\
 
 AM_CPPFLAGS =					\
 	$(MATE_SESSION_CFLAGS)		\
+	$(WAYLAND_CFLAGS)			\
 	$(SYSTEMD_CFLAGS)			\
 	$(LIBELOGIND_CFLAGS)			\
 	$(DISABLE_DEPRECATED_CFLAGS)
@@ -79,6 +80,7 @@ mate_session_LDADD =				\
 	$(XRENDER_LIBS)				\
 	$(XTEST_LIBS)				\
 	$(XEXT_LIBS)				\
+	$(WAYLAND_LIBS)				\
 	$(MATE_SESSION_LIBS)			\
 	$(SYSTEMD_LIBS)				\
 	$(LIBELOGIND_LIBS)			\
@@ -135,6 +137,20 @@ BUILT_SOURCES =			\
 	gsm-presence-glue.h	\
 	gsm-inhibitor-glue.h	\
 	gsm-client-glue.h
+
+if HAVE_WAYLAND
+wayland_idle_protocol_sources =	\
+	ext-idle-notify-v1-client.c	\
+	ext-idle-notify-v1-client.h
+
+ext-idle-notify-v1-client.h: Makefile
+	$(AM_V_GEN)$(WAYLAND_SCANNER) client-header "$(WAYLAND_IDLE_NOTIFY_XML)" $@
+
+ext-idle-notify-v1-client.c: Makefile
+	$(AM_V_GEN)$(WAYLAND_SCANNER) private-code "$(WAYLAND_IDLE_NOTIFY_XML)" $@
+
+BUILT_SOURCES += $(wayland_idle_protocol_sources)
+endif
 
 EXTRA_DIST =						\
 	README						\

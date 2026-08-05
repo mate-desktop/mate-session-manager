@@ -215,6 +215,24 @@ AC_SUBST(XRENDER_CFLAGS)
 AC_SUBST(XRENDER_LIBS)
 
 dnl ====================================================================
+dnl Wayland (ext-idle-notify-v1 idle backend)
+dnl ====================================================================
+
+have_wayland=no
+PKG_CHECK_MODULES(WAYLAND, wayland-client,
+                  [AC_DEFINE(HAVE_WAYLAND, 1, [Define if Wayland support is enabled])
+                   have_wayland=yes], have_wayland=no)
+AC_PATH_PROG(WAYLAND_SCANNER, wayland-scanner, no)
+if test "x$have_wayland" = "xyes" -a "x$WAYLAND_SCANNER" = "xno"; then
+    AC_MSG_ERROR([wayland-scanner not found but is required for Wayland support (it is part of libwayland-dev)])
+fi
+AM_CONDITIONAL(HAVE_WAYLAND, test "x$have_wayland" = "xyes")
+WAYLAND_PROTOCOLS_DATADIR=`$PKG_CONFIG --variable=pkgdatadir wayland-protocols 2>/dev/null || echo /usr/share/wayland-protocols`
+WAYLAND_IDLE_NOTIFY_XML="$WAYLAND_PROTOCOLS_DATADIR/staging/ext-idle-notify/ext-idle-notify-v1.xml"
+AC_SUBST(WAYLAND_PROTOCOLS_DATADIR)
+AC_SUBST(WAYLAND_IDLE_NOTIFY_XML)
+
+dnl ====================================================================
 dnl - DocBook Documentation
 dnl ====================================================================
 
@@ -367,6 +385,7 @@ mate-submodules/Makefile
 mate-submodules/libegg/Makefile
 mate-session/Makefile
 tools/Makefile
+wayfire/Makefile
 po/Makefile.in
 ])
 AC_OUTPUT
@@ -403,6 +422,7 @@ echo "
         XRender support:          ${have_xrender}
         XSync support:            ${have_xsync}
         XTest support:            ${have_xtest}
+        Wayland support:          ${have_wayland}
         Build documentation:      ${enable_docbook_docs}
         Native Language support:  ${USE_NLS}
         Libcanberra support:      ${have_libcanberra}

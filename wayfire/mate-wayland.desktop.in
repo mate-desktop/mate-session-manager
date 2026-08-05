@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=MATE (Wayland)
+Comment=This session logs you into MATE on Wayland
+Exec=mate-wayland-session
+TryExec=wayfire
+Icon=
+Type=Application
+DesktopNames=MATE
+X-GDM-SessionRegisters=true
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=launch;MATE;desktop;session;wayland;

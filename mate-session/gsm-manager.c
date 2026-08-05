@@ -76,6 +76,10 @@
 
 #define GSM_MANAGER_PHASE_TIMEOUT 30 /* seconds */
 
+/* On Wayland, autostart components are not tracked by the session manager and
+ * do not register, so do not wait as long for the startup phases to finish. */
+#define GSM_MANAGER_PHASE_TIMEOUT_WAYLAND 3 /* seconds */
+
 /* In the exit phase, all apps were already given the chance to inhibit the session end
  * At that stage we don't want to wait much for apps to respond, we want to exit, and fast.
  */
@@ -535,6 +539,16 @@ gsm_manager_quit (GsmManager *manager)
         }
 }
 
+static guint
+get_phase_timeout (void)
+{
+        if (gsm_util_session_is_wayland ()) {
+                return GSM_MANAGER_PHASE_TIMEOUT_WAYLAND;
+        }
+
+        return GSM_MANAGER_PHASE_TIMEOUT;
+}
+
 static void
 end_phase (GsmManager *manager)
 {
@@ -542,7 +556,6 @@ end_phase (GsmManager *manager)
         gboolean start_next_phase = TRUE;
 
         priv = gsm_manager_get_instance_private (manager);
-
         g_debug ("GsmManager: ending phase %s\n",
                  phase_num_to_name (priv->phase));
 
@@ -757,7 +770,7 @@ do_phase_startup (GsmManager *manager)
 
         if (priv->pending_apps != NULL) {
                 if (priv->phase < GSM_MANAGER_PHASE_APPLICATION) {
-                        priv->phase_timeout_id = g_timeout_add_seconds (GSM_MANAGER_PHASE_TIMEOUT,
+                        priv->phase_timeout_id = g_timeout_add_seconds (get_phase_timeout (),
                                                                         (GSourceFunc)on_phase_timeout,
                                                                         manager);
                 }
@@ -827,7 +840,7 @@ do_phase_end_session (GsmManager *manager)
         }
 
         if (gsm_store_size (priv->clients) > 0) {
-                priv->phase_timeout_id = g_timeout_add_seconds (GSM_MANAGER_PHASE_TIMEOUT,
+                priv->phase_timeout_id = g_timeout_add_seconds (get_phase_timeout (),
                                                                 (GSourceFunc)on_phase_timeout,
                                                                 manager);
 
@@ -3474,6 +3487,16 @@ logout_dialog_response (GsmLogoutDialog *logout_dialog,
         }
 }
 
+static guint32
+_get_current_window_time (GtkWidget *widget)
+{
+        if (gsm_util_session_is_wayland ()) {
+                return GDK_CURRENT_TIME;
+        }
+
+        return gdk_x11_get_server_time (gtk_widget_get_window (widget));
+}
+
 static void
 show_shutdown_dialog (GsmManager *manager)
 {
@@ -3497,7 +3520,7 @@ show_shutdown_dialog (GsmManager *manager)
                           manager);
         gtk_widget_show (dialog);
         gtk_window_present_with_time (GTK_WINDOW (dialog),
-                                      gdk_x11_get_server_time (gtk_widget_get_window (GTK_WIDGET (dialog))));
+                                      _get_current_window_time (GTK_WIDGET (dialog)));
 }
 
 static void
@@ -3523,7 +3546,7 @@ show_logout_dialog (GsmManager *manager)
                           manager);
         gtk_widget_show (dialog);
         gtk_window_present_with_time (GTK_WINDOW (dialog),
-                                      gdk_x11_get_server_time (gtk_widget_get_window (GTK_WIDGET (dialog))));
+                                      _get_current_window_time (GTK_WIDGET (dialog)));
 }
 
 static void
