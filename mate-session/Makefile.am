@@ -34,6 +34,8 @@ mate_session_SOURCES =				\
 	gsm-inhibit-dialog.c			\
 	gs-idle-monitor.h			\
 	gs-idle-monitor.c			\
+	gsm-compositor.h			\
+	gsm-compositor.c			\
 	gsm-presence.h				\
 	gsm-presence.c				\
 	mdm.h					\

@@ -116,6 +116,17 @@ AC_SUBST(DEFAULT_WM)
 AM_CONDITIONAL(USE_MATE_WM, test x$with_default_wm = xmate-wm)
 
 dnl ====================================================================
+dnl Option to set the default Wayland compositor
+dnl ====================================================================
+AC_ARG_WITH(default-compositor,
+              [AS_HELP_STRING([--with-default-compositor],
+                              [Specify the default Wayland compositor @<:@default=wayfire@:>@])],,
+                              [with_default_compositor="wayfire"])
+
+DEFAULT_COMPOSITOR=$with_default_compositor
+AC_SUBST(DEFAULT_COMPOSITOR)
+
+dnl ====================================================================
 dnl GSettings
 dnl ====================================================================
 GLIB_GSETTINGS
@@ -414,6 +425,7 @@ echo "
         Warn about deprecations:  ${enable_deprecations}
 
         Default WM:               ${with_default_wm}
+        Default compositor:       ${with_default_compositor}
         Systemd support:          ${use_systemd}
         Elogind support:          ${use_elogind}
         GLES2 support:            ${have_glesv2}

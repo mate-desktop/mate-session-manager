@@ -36,6 +36,11 @@
       <summary>Default session</summary>
       <description>List of applications that are part of the default session.</description>
     </key>
+    <key name="compositor" type="s">
+      <default>'@DEFAULT_COMPOSITOR@'</default>
+      <summary>Wayland compositor</summary>
+      <description>The compositor used to run a Wayland session. The value names the compositor to launch; currently supported compositors are 'wayfire'.</description>
+    </key>
     <key name="required-components-list" type="as">
       <default>[ 'windowmanager', 'panel', 'filemanager', 'dock' ]</default>
       <summary>Required session components</summary>

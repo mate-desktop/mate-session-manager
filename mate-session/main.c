@@ -42,6 +42,7 @@
 #include "mdm-signal-handler.h"
 #include "mdm-log.h"
 
+#include "gsm-compositor.h"
 #include "gsm-consolekit.h"
 #ifdef HAVE_SYSTEMD
 #include "gsm-systemd.h"
@@ -83,6 +84,7 @@ static gboolean failsafe = FALSE;
 static gboolean show_version = FALSE;
 static gboolean debug = FALSE;
 static gboolean disable_acceleration_check = FALSE;
+static gboolean wayland_mode = FALSE;
 
 static gboolean
 initialize_gsettings (void)
@@ -605,7 +607,7 @@ check_gl (gchar **gl_renderer, GError **error)
 int main(int argc, char** argv)
 {
 	struct sigaction sa;
-	GError* error;
+	GError* error = NULL;
 	const char* display_str;
 	GsmManager* manager;
 	GsmStore* client_store;
@@ -623,6 +625,7 @@ int main(int argc, char** argv)
 		{"failsafe", 'f', 0, G_OPTION_ARG_NONE, &failsafe, N_("Do not load user-specified applications"), NULL},
 		{"version", 0, 0, G_OPTION_ARG_NONE, &show_version, N_("Version of this application"), NULL},
 		{ "disable-acceleration-check", 0, 0, G_OPTION_ARG_NONE, &disable_acceleration_check, N_("Disable hardware acceleration check"), NULL },
+		{ "wayland", 0, 0, G_OPTION_ARG_NONE, &wayland_mode, N_("Start a Wayland session, launching the compositor"), NULL },
 		{NULL, 0, 0, 0, NULL, NULL, NULL }
 	};
 
@@ -643,6 +646,28 @@ int main(int argc, char** argv)
 	sigemptyset(&sa.sa_mask);
 	sigaction(SIGPIPE, &sa, 0);
 
+	/* On a Wayland session the compositor must be running before any toolkit
+	 * initializes (GDK needs the Wayland socket to exist), so detect the
+	 * option ourselves here and launch the compositor. */
+	if (!wayland_mode) {
+		int i;
+
+		for (i = 1; i < argc; i++) {
+			if (g_strcmp0 (argv[i], "--wayland") == 0) {
+				wayland_mode = TRUE;
+				break;
+			}
+		}
+	}
+
+	if (wayland_mode) {
+		if (!gsm_compositor_start (&error)) {
+			gsm_util_init_error (TRUE, "Unable to start the Wayland compositor: %s",
+			                     error != NULL ? error->message : "unknown error");
+			/* not reached */
+		}
+	}
+
 	error = NULL;
 	gtk_init_with_args(&argc, &argv, (char*) _(" - the MATE session manager"), entries, GETTEXT_PACKAGE, &error);
 
@@ -657,12 +682,6 @@ int main(int argc, char** argv)
 		g_print("%s %s\n", g_get_application_name(), VERSION);
 		exit(1);
 	}
-
-        gsm_util_export_activation_environment (NULL);
-
-#ifdef HAVE_SYSTEMD
-        gsm_util_export_user_environment (NULL);
-#endif
 
 	mdm_log_init();
 
@@ -714,10 +733,21 @@ int main(int argc, char** argv)
 		display_str = gdk_display_get_name (gdk_display_get_default());
 		gsm_util_setenv("DISPLAY", display_str);
 	} else {
+		const gchar *xdisp;
+
 		/* Export the Wayland display for bus activated children. */
 		display_str = g_getenv ("WAYLAND_DISPLAY");
 		if (display_str != NULL) {
 			gsm_util_setenv ("WAYLAND_DISPLAY", display_str);
+		}
+
+		/* Set the Xwayland display for X11 clients.  Use the value
+		 * saved by gsm_compositor_start() rather than reading DISPLAY
+		 * back from the environment, because GDK may have overwritten
+		 * it with the Wayland socket name during gtk_init. */
+		xdisp = gsm_compositor_get_display ();
+		if (xdisp != NULL) {
+			gsm_util_setenv ("DISPLAY", xdisp);
 		}
 	}
 
@@ -725,6 +755,16 @@ int main(int argc, char** argv)
 	 * detect if MATE is running. We keep this for compatibility reasons.
 	 */
 	gsm_util_setenv("MATE_DESKTOP_SESSION_ID", "this-is-deprecated");
+
+	/* Now that DISPLAY and WAYLAND_DISPLAY are correctly set, export
+	 * the environment to the session bus and systemd.  This must happen
+	 * after the Wayland DISPLAY fixup above so that D-Bus activated
+	 * children receive the correct DISPLAY value. */
+	gsm_util_export_activation_environment (NULL);
+
+#ifdef HAVE_SYSTEMD
+	gsm_util_export_user_environment (NULL);
+#endif
 
 	/*
 	 * Make sure gsettings is set up correctly.  If not, then bail.
@@ -780,7 +820,13 @@ int main(int argc, char** argv)
 	_gsm_manager_set_renderer (manager, gl_renderer);
 	gsm_manager_start(manager);
 
+	/* Watch the compositor so that a compositor crash ends the session. */
+	gsm_compositor_watch (manager);
+
 	gtk_main();
+
+	/* Session is over (logout); stop the compositor. */
+	gsm_compositor_stop ();
 
 	if (xsmp_server != NULL)
 	{

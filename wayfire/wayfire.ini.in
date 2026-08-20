@@ -1,7 +1,10 @@
 # MATE default Wayfire configuration.
 #
-# This is the template installed by mate-session-manager. On first login it is
-# copied to ~/.config/mate/wayfire.ini and may be edited there.
+# This is the system template installed by mate-session-manager at
+# /usr/share/mate-session-manager/wayfire.ini. On the first Wayland login it is
+# copied to ~/.config/mate/wayfire/wayfire.ini, which you can edit freely; the system
+# template is never overwritten again. To go back to the defaults, simply remove
+# ~/.config/mate/wayfire/wayfire.ini.
 # See the Wayfire documentation for a complete reference:
 # https://github.com/WayfireWM/wayfire/wiki/Configuration
 
