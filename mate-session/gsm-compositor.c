@@ -432,10 +432,10 @@ list_x_displays (void)
  * create a brand-new X11 socket or reuse one that already existed when we
  * snapshotted the directory (e.g. the previous session's :0).  Because of
  * this reuse, we cannot rely on "new socket" detection alone.  Instead we
- * poll for any X11 socket to appear; the first one we find is Xwayland.
- * Returns the display number as a string (e.g. "0") or NULL on timeout. */
+ * poll for any X11 socket to appear; the first NEW one we find is Xwayland.
+ * Returns the display number as a string (e.g. "1") or NULL on timeout. */
 static gchar *
-wait_for_new_xdisplay (void)
+wait_for_new_xdisplay (GList *existing)
 {
         gint i;
 
@@ -446,11 +446,13 @@ wait_for_new_xdisplay (void)
 
                 current = list_x_displays ();
                 for (l = current; l != NULL; l = l->next) {
-                        const gchar *basename;
+                        if (!list_contains (existing, l->data)) {
+                                const gchar *basename;
 
-                        basename = g_path_get_basename (l->data);
-                        found = g_strdup (basename + 1); /* strip leading 'X' */
-                        break;
+                                basename = g_path_get_basename (l->data);
+                                found = g_strdup (basename + 1); /* strip leading 'X' */
+                                break;
+                        }
                 }
                 g_list_free_full (current, g_free);
 
@@ -474,6 +476,7 @@ gsm_compositor_start (GError **error)
         gchar                   *socket_name;
         gchar                  **argv;
         GList                   *existing;
+        GList                   *existing_x;
         GError                  *spawn_error = NULL;
 
         g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
@@ -514,6 +517,7 @@ gsm_compositor_start (GError **error)
 
         runtime_dir = g_strdup (g_getenv ("XDG_RUNTIME_DIR"));
         existing = list_sockets (runtime_dir);
+        existing_x = list_x_displays ();
 
         g_debug ("GsmCompositor: starting %s", info->binary);
 
@@ -525,6 +529,7 @@ gsm_compositor_start (GError **error)
                 g_strfreev (argv);
                 g_free (config_path);
                 g_list_free_full (existing, g_free);
+                g_list_free_full (existing_x, g_free);
                 g_free (runtime_dir);
                 return FALSE;
         }
@@ -562,7 +567,7 @@ gsm_compositor_start (GError **error)
         {
                 gchar *xdisplay;
 
-                xdisplay = wait_for_new_xdisplay ();
+                xdisplay = wait_for_new_xdisplay (existing_x);
 
                 if (xdisplay != NULL) {
                         gchar *display_name;
@@ -585,6 +590,8 @@ gsm_compositor_start (GError **error)
                         gsm_util_setenv ("DISPLAY", ":0");
                 }
         }
+
+        g_list_free_full (existing_x, g_free);
 
         return TRUE;
 }
