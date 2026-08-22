@@ -17,21 +17,26 @@ plugins = \
   autostart \
   command \
   decoration \
+  ext-toplevel \
   ext-workspace \
   fast-switcher \
   foreign-toplevel \
   grid \
+  gtk-shell \
   idle \
+  input-method-v1 \
   invert \
   move \
   oswitch \
   place \
   resize \
+  security-context-v1 \
   session-lock \
   shortcuts-inhibit \
   switcher \
   window-rules \
   wm-actions \
+  xdg-activation \
   zoom
 
 # Close focused window.
