@@ -61,11 +61,14 @@ static const GsmCompositorInfo compositor_infos[] = {
         { NULL }
 };
 
-static GPid     compositor_pid     = 0;
-static guint    compositor_watch_id = 0;
-static gboolean compositor_started  = FALSE;
-static gboolean compositor_stopping = FALSE;
-static gchar   *xwayland_display   = NULL;
+static GPid     compositor_pid      = 0;
+static guint    compositor_watch_id  = 0;
+static guint    compositor_watchdog_id = 0;
+static gboolean compositor_started   = FALSE;
+static gboolean compositor_stopping  = FALSE;
+static gchar   *xwayland_display    = NULL;
+
+static void compositor_exited (GPid pid, gint status, gpointer data);
 
 static gchar *
 get_compositor_settings_name (void)
@@ -596,6 +599,28 @@ gsm_compositor_start (GError **error)
         return TRUE;
 }
 
+/* Watchdog timer: if the GLib main loop is wedged by the compositor crash
+ * (e.g. GDK-Wayland connection loss stops dispatching child watches), this
+ * periodic timer still fires and detects the dead child via waitpid(). */
+static gboolean
+compositor_watchdog_cb (gpointer data)
+{
+        gint status;
+        gint ret;
+
+        if (!compositor_started || compositor_pid <= 0)
+                return G_SOURCE_REMOVE;
+
+        ret = waitpid (compositor_pid, &status, WNOHANG);
+        if (ret > 0) {
+                g_debug ("GsmCompositor: watchdog detected compositor exit");
+                compositor_exited (compositor_pid, status, data);
+                return G_SOURCE_REMOVE;
+        }
+
+        return G_SOURCE_CONTINUE;
+}
+
 static void
 compositor_exited (GPid     pid,
                    gint     status,
@@ -609,6 +634,11 @@ compositor_exited (GPid     pid,
         compositor_pid = 0;
         compositor_started = FALSE;
         compositor_watch_id = 0;
+
+        if (compositor_watchdog_id > 0) {
+                g_source_remove (compositor_watchdog_id);
+                compositor_watchdog_id = 0;
+        }
 
         if (compositor_stopping) {
                 return;
@@ -634,6 +664,13 @@ gsm_compositor_watch (GsmManager *manager)
         compositor_watch_id = g_child_watch_add (compositor_pid,
                                                  compositor_exited,
                                                  manager);
+
+        /* Belt-and-suspenders: a periodic watchdog that detects compositor
+         * death via waitpid() even if the main loop stops dispatching the
+         * child-watch source (e.g. GDK-Wayland connection loss). */
+        compositor_watchdog_id = g_timeout_add_seconds (1,
+                                                        compositor_watchdog_cb,
+                                                        manager);
 }
 
 void
@@ -651,6 +688,11 @@ gsm_compositor_stop (void)
         if (compositor_watch_id > 0) {
                 g_source_remove (compositor_watch_id);
                 compositor_watch_id = 0;
+        }
+
+        if (compositor_watchdog_id > 0) {
+                g_source_remove (compositor_watchdog_id);
+                compositor_watchdog_id = 0;
         }
 
         g_debug ("GsmCompositor: terminating the compositor");

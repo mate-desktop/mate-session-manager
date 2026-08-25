@@ -1421,7 +1421,10 @@ query_end_session_complete (GsmManager *manager)
                 priv->query_timeout_id = 0;
         }
 
-        if (! gsm_manager_is_logout_inhibited (manager)) {
+        /* When logout is forced (e.g. compositor crash), skip the inhibit
+         * dialog entirely — there is no display to show it on. */
+        if (priv->logout_mode == GSM_MANAGER_LOGOUT_MODE_FORCE
+            || ! gsm_manager_is_logout_inhibited (manager)) {
                 end_phase (manager);
                 return;
         }
