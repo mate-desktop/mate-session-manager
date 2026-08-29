@@ -39,7 +39,7 @@
     <key name="compositor" type="s">
       <default>'@DEFAULT_COMPOSITOR@'</default>
       <summary>Wayland compositor</summary>
-      <description>The compositor used to run a Wayland session. The value names the compositor to launch; currently supported compositors are 'wayfire'.</description>
+      <description>The compositor used to run a Wayland session. Currently supported compositors are 'wayfire'.</description>
     </key>
     <key name="required-components-list" type="as">
       <default>[ 'windowmanager', 'panel', 'filemanager', 'dock' ]</default>

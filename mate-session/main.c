@@ -84,7 +84,6 @@ static gboolean failsafe = FALSE;
 static gboolean show_version = FALSE;
 static gboolean debug = FALSE;
 static gboolean disable_acceleration_check = FALSE;
-static gboolean wayland_mode = FALSE;
 
 static gboolean
 initialize_gsettings (void)
@@ -269,7 +268,7 @@ static void append_required_apps(GsmManager* manager)
 
 			component = required_components[i];
 
-			/* On Wayland the compositor (e.g. Wayfire) is the window
+			/* On Wayland the compositor is the window
 			 * manager, so the required windowmanager component would
 			 * conflict with it and is not started. */
 			if (gsm_util_session_is_wayland ()
@@ -609,6 +608,7 @@ int main(int argc, char** argv)
 	struct sigaction sa;
 	GError* error = NULL;
 	const char* display_str;
+	gchar* saved_display = NULL;
 	GsmManager* manager;
 	GsmStore* client_store;
 	GsmXsmpServer* xsmp_server;
@@ -625,7 +625,6 @@ int main(int argc, char** argv)
 		{"failsafe", 'f', 0, G_OPTION_ARG_NONE, &failsafe, N_("Do not load user-specified applications"), NULL},
 		{"version", 0, 0, G_OPTION_ARG_NONE, &show_version, N_("Version of this application"), NULL},
 		{ "disable-acceleration-check", 0, 0, G_OPTION_ARG_NONE, &disable_acceleration_check, N_("Disable hardware acceleration check"), NULL },
-		{ "wayland", 0, 0, G_OPTION_ARG_NONE, &wayland_mode, N_("Start a Wayland session, launching the compositor"), NULL },
 		{NULL, 0, 0, 0, NULL, NULL, NULL }
 	};
 
@@ -646,27 +645,12 @@ int main(int argc, char** argv)
 	sigemptyset(&sa.sa_mask);
 	sigaction(SIGPIPE, &sa, 0);
 
-	/* On a Wayland session the compositor must be running before any toolkit
-	 * initializes (GDK needs the Wayland socket to exist), so detect the
-	 * option ourselves here and launch the compositor. */
-	if (!wayland_mode) {
-		int i;
-
-		for (i = 1; i < argc; i++) {
-			if (g_strcmp0 (argv[i], "--wayland") == 0) {
-				wayland_mode = TRUE;
-				break;
-			}
-		}
-	}
-
-	if (wayland_mode) {
-		if (!gsm_compositor_start (&error)) {
-			gsm_util_init_error (TRUE, "Unable to start the Wayland compositor: %s",
-			                     error != NULL ? error->message : "unknown error");
-			/* not reached */
-		}
-	}
+	/* On a Wayland session the compositor is already running: the display
+	 * manager started it through startmatewayland, and this process is a
+	 * child of the compositor. Remember the X11 (Xwayland) display
+         * the compositor provided, because GDK may overwrite DISPLAY with the
+         * Wayland socket name during gtk_init and we want the correct value for X11 clients below. */
+	saved_display = g_strdup (g_getenv ("DISPLAY"));
 
 	error = NULL;
 	gtk_init_with_args(&argc, &argv, (char*) _(" - the MATE session manager"), entries, GETTEXT_PACKAGE, &error);
@@ -733,22 +717,21 @@ int main(int argc, char** argv)
 		display_str = gdk_display_get_name (gdk_display_get_default());
 		gsm_util_setenv("DISPLAY", display_str);
 	} else {
-		const gchar *xdisp;
-
 		/* Export the Wayland display for bus activated children. */
 		display_str = g_getenv ("WAYLAND_DISPLAY");
 		if (display_str != NULL) {
 			gsm_util_setenv ("WAYLAND_DISPLAY", display_str);
 		}
 
-		/* Set the Xwayland display for X11 clients.  Use the value
-		 * saved by gsm_compositor_start() rather than reading DISPLAY
-		 * back from the environment, because GDK may have overwritten
-		 * it with the Wayland socket name during gtk_init. */
-		xdisp = gsm_compositor_get_display ();
-		if (xdisp != NULL) {
-			gsm_util_setenv ("DISPLAY", xdisp);
+		/* Set the Xwayland display for X11 clients.  Use the value the
+		 * compositor provided before gtk_init (which may have overwritten
+		 * DISPLAY with the Wayland socket name) rather than reading DISPLAY
+		 * back from the environment. */
+		if (saved_display != NULL && saved_display[0] != '\0') {
+			gsm_util_setenv ("DISPLAY", saved_display);
 		}
+		g_free (saved_display);
+		saved_display = NULL;
 	}
 
 	/* Some third-party programs rely on MATE_DESKTOP_SESSION_ID to
@@ -820,13 +803,7 @@ int main(int argc, char** argv)
 	_gsm_manager_set_renderer (manager, gl_renderer);
 	gsm_manager_start(manager);
 
-	/* Watch the compositor so that a compositor crash ends the session. */
-	gsm_compositor_watch (manager);
-
 	gtk_main();
-
-	/* Session is over (logout); stop the compositor. */
-	gsm_compositor_stop ();
 
 	if (xsmp_server != NULL)
 	{
@@ -855,6 +832,24 @@ int main(int argc, char** argv)
 	}
 
 	msm_gnome_stop();
+
+	/* Reset the signal handlers loginctl might trigger, then ask logind to
+	 * terminate the session scope.  This frees the seat and display so the
+	 * display manager returns to the login screen promptly instead of
+	 * blocking on a lingering session scope after logout. */
+	{
+		struct sigaction sa;
+
+		memset (&sa, 0, sizeof (sa));
+		sa.sa_handler = SIG_DFL;
+		sigemptyset (&sa.sa_mask);
+		sigaction (SIGTERM, &sa, NULL);
+		sigaction (SIGINT, &sa, NULL);
+		sigaction (SIGHUP, &sa, NULL);
+	}
+
+	gsm_compositor_terminate_session ();
+
 	mdm_log_shutdown();
 
 	return 0;

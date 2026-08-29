@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=MATE (Wayland)
 Comment=This session logs you into MATE on Wayland
-Exec=mate-session --wayland
-TryExec=wayfire
+Exec=startmatewayland
+TryExec=startmatewayland
 Icon=
 Type=Application
 DesktopNames=MATE

@@ -22,16 +22,10 @@
 #define __GSM_COMPOSITOR_H
 
 #include <glib.h>
-#include <gio/gio.h>
-
-#include "gsm-manager.h"
 
 G_BEGIN_DECLS
 
-gboolean gsm_compositor_start   (GError     **error);
-void     gsm_compositor_watch   (GsmManager  *manager);
-void     gsm_compositor_stop    (void);
-const gchar *gsm_compositor_get_display (void);
+gboolean gsm_compositor_terminate_session (void);
 
 G_END_DECLS
 

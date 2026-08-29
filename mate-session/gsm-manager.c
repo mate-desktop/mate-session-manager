@@ -458,7 +458,7 @@ quit_request_completed_systemd (GsmSystemd *systemd,
 }
 #endif
 
-static void
+void
 gsm_manager_quit (GsmManager *manager)
 {
         GsmConsolekit *consolekit;
@@ -941,7 +941,7 @@ maybe_restart_user_bus (GsmManager *manager)
                                              g_variant_new ("(ss)", "dbus.service", "replace"),
                                              NULL,
                                              G_DBUS_CALL_FLAGS_NONE,
-                                             -1,
+                                             5000, /* 5 second timeout — don't block session exit */
                                              NULL,
                                              &error);
 

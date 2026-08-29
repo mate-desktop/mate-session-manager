@@ -1,0 +1,124 @@
+#!/bin/sh
+# startmatewayland -- Start the compositor for a MATE Wayland session.
+#
+# The compositor is the session leader: the display manager launches this
+# command through the wayland-sessions desktop file and keeps the greeter
+# hidden only while the compositor process it tracks is running.  When the
+# compositor exits - whether through logout, a crash or a hotkey - the
+# display manager sees the session end and brings the login screen back.
+#
+# MATE's session manager is not started here.  The compositor configuration
+# ([autostart] section in wayfire.ini) runs "mate-session && killall
+# wayfire": the session runs as a child of the compositor and, when it ends,
+# tears the compositor down with it.  This makes wisdom-of-the-session the
+# *only* needed compositor liveness signal - no polling or watchdog code in
+# the session manager.
+#
+# Copyright (C) 2026 MATE Developers
+
+export XDG_SESSION_TYPE=wayland
+[ -n "$XDG_CURRENT_DESKTOP" ] || export XDG_CURRENT_DESKTOP=MATE
+
+# Make sure we have a runtime directory for the Wayland socket.
+if [ -z "$XDG_RUNTIME_DIR" ] || [ ! -d "$XDG_RUNTIME_DIR" ]; then
+    runtime_dir="/tmp/${USER:-mate}-runtime"
+    mkdir -p "$runtime_dir" 2>/dev/null && chmod 700 "$runtime_dir"
+    export XDG_RUNTIME_DIR="$runtime_dir"
+fi
+
+# If the user did not set an explicit keyboard layout, apply the system layout
+# from /etc/vconsole.conf so that libxkbcommon uses it when the compositor
+# configuration does not specify xkb_layout.
+unquote () {
+    case "$1" in
+        \"*\") printf '%s\n' "$1" | sed 's/^"//;s/"$//' ;;
+        \'*\') printf '%s\n' "$1" | sed "s/^'//;s/'$//" ;;
+        *)     printf '%s\n' "$1" ;;
+    esac
+}
+
+if [ -z "$XKB_DEFAULT_LAYOUT" ] && [ -r /etc/vconsole.conf ]; then
+    layout=""
+    variant=""
+    keymap=""
+    while IFS= read -r line; do
+        case "$line" in
+            KEYMAP=*)   keymap=${line#KEYMAP=}   ;;
+            XKBLAYOUT=*) layout=${line#XKBLAYOUT=} ;;
+            XKBVARIANT=*) variant=${line#XKBVARIANT=} ;;
+        esac
+    done < /etc/vconsole.conf
+
+    layout=$(unquote "$layout")
+    variant=$(unquote "$variant")
+    keymap=$(unquote "$keymap")
+    layout=$(printf '%s\n' "$layout"  | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    variant=$(printf '%s\n' "$variant" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    keymap=$(printf '%s\n' "$keymap"   | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+
+    if [ -n "$layout" ]; then
+        export XKB_DEFAULT_LAYOUT="$layout"
+        if [ -n "$variant" ]; then
+            export XKB_DEFAULT_VARIANT="$variant"
+        fi
+    elif [ -n "$keymap" ]; then
+        export XKB_DEFAULT_LAYOUT="$keymap"
+    fi
+fi
+
+# Resolve the compositor to run.  $MATE_COMPOSITOR overrides the GSettings
+# choice, which in turn falls back to the configure-time default.
+compositor=${MATE_COMPOSITOR:-}
+if [ -z "$compositor" ]; then
+    compositor=$(gsettings get org.mate.session compositor 2>/dev/null | tr -d "'")
+fi
+[ -n "$compositor" ] || compositor=@DEFAULT_COMPOSITOR@
+
+# Per-compositor configuration handling.  To support another compositor
+# (e.g. labwc) add a case here, ship its template in this directory and
+# document its GSettings value.
+config_subdir=""
+config_template=""
+needs_config_arg=0
+case "$compositor" in
+    wayfire)
+        config_subdir=wayfire
+        config_template=wayfire.ini
+        needs_config_arg=1
+        ;;
+    *)
+        echo "startmatewayland: unsupported compositor '$compositor'" >&2
+        ;;
+esac
+
+config_arg=""
+if [ "$needs_config_arg" = 1 ]; then
+    if [ -n "$XDG_CONFIG_HOME" ]; then
+        config_dir=$XDG_CONFIG_HOME/mate
+    else
+        config_dir=$HOME/.config/mate
+    fi
+    config_path=$config_dir/$config_subdir/$config_template
+
+    # Create a private copy of the default configuration on the first login
+    # so the user can customize it afterwards; fall back to the system
+    # template read-only when a copy cannot be made.
+    if [ ! -f "$config_path" ]; then
+        mkdir -p "$config_dir/$config_subdir" 2>/dev/null
+        if [ -f @pkgdatadir@/$config_template ]; then
+            cp @pkgdatadir@/$config_template "$config_path" 2>/dev/null || true
+        fi
+    fi
+
+    if [ -f "$config_path" ]; then
+        config_arg="-c $config_path"
+    elif [ -f @pkgdatadir@/$config_template ]; then
+        config_arg="-c @pkgdatadir@/$config_template"
+    else
+        echo "startmatewayland: no configuration found for $compositor" >&2
+    fi
+fi
+
+# Replace ourselves with the compositor.  It becomes the session leader the
+# display manager tracks, and the greeter returns as soon as it exits.
+exec "$compositor" $config_arg

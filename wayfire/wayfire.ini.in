@@ -77,6 +77,10 @@ modifier = <super> <alt>
 # environment (also fixes the slow startup of Gtk+3 applications).
 0_env = dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY
 
+# The MATE session.  Run while the session does, then kill this compositor so
+# the display manager sees the session end and returns to the login screen.
+session = mate-session && killall wayfire
+
 # The background and panel are managed by MATE itself (mate-settings-daemon and
 # mate-panel), so do not start the wf-shell clients. wf-background provides a
 # placeholder background until then.
