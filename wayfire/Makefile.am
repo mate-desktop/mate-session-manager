@@ -15,9 +15,6 @@ waylandsessionsdir = $(datadir)/wayland-sessions
 waylandsession_in_files = mate-wayland.desktop.in
 waylandsessions_DATA = $(waylandsession_in_files:.desktop.in=.desktop)
 
-schemasdir = $(datadir)/glib-2.0/schemas
-schemas_DATA = 10_mate-wayland.gschema.override
-
 %.desktop: %.desktop.in Makefile
 if USE_NLS
 	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
@@ -28,8 +25,7 @@ endif
 EXTRA_DIST =				\
 	$(waylandsession_in_files)	\
 	startmatewayland.in		\
-	wayfire.ini.in			\
-	$(schemas_DATA)
+	wayfire.ini.in
 
 CLEANFILES =				\
 	$(waylandsessions_DATA)		\
