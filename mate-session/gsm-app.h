@@ -86,6 +86,10 @@ GsmManagerPhase  gsm_app_peek_phase                     (GsmApp     *app);
 gboolean         gsm_app_peek_is_disabled               (GsmApp     *app);
 gboolean         gsm_app_peek_is_conditionally_disabled (GsmApp     *app);
 
+void             gsm_app_set_blocking                   (GsmApp     *app,
+                                                         gboolean    blocking);
+gboolean         gsm_app_peek_blocking                  (GsmApp     *app);
+
 gboolean         gsm_app_start                          (GsmApp     *app,
                                                          GError    **error);
 gboolean         gsm_app_restart                        (GsmApp     *app,
