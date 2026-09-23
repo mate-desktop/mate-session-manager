@@ -80,6 +80,12 @@
  * do not register, so do not wait as long for the startup phases to finish. */
 #define GSM_MANAGER_PHASE_TIMEOUT_WAYLAND 3 /* seconds */
 
+/* Autostart apps are only given a short grace period to register with the
+ * session (or exit) before we stop waiting for them, so a hung autostart
+ * program cannot stall the rest of the session startup. */
+#define GSM_MANAGER_AUTOSTART_TIMEOUT 5 /* seconds */
+#define GSM_MANAGER_AUTOSTART_TIMEOUT_WAYLAND 3 /* seconds */
+
 /* In the exit phase, all apps were already given the chance to inhibit the session end
  * At that stage we don't want to wait much for apps to respond, we want to exit, and fast.
  */
@@ -549,6 +555,16 @@ get_phase_timeout (void)
         return GSM_MANAGER_PHASE_TIMEOUT;
 }
 
+static guint
+get_autostart_timeout (void)
+{
+        if (gsm_util_session_is_wayland ()) {
+                return GSM_MANAGER_AUTOSTART_TIMEOUT_WAYLAND;
+        }
+
+        return GSM_MANAGER_AUTOSTART_TIMEOUT;
+}
+
 static void
 end_phase (GsmManager *manager)
 {
@@ -558,6 +574,23 @@ end_phase (GsmManager *manager)
         priv = gsm_manager_get_instance_private (manager);
         g_debug ("GsmManager: ending phase %s\n",
                  phase_num_to_name (priv->phase));
+
+        {
+                GSList *a;
+
+                for (a = priv->pending_apps; a != NULL; a = a->next) {
+                        guint timeout_id;
+
+                        timeout_id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (a->data),
+                                                                          "gsm-app-pending-timeout"));
+                        if (timeout_id > 0) {
+                                g_source_remove (timeout_id);
+                                g_object_set_data (G_OBJECT (a->data),
+                                                   "gsm-app-pending-timeout",
+                                                   GUINT_TO_POINTER (0));
+                        }
+                }
+        }
 
         g_slist_free (priv->pending_apps);
         priv->pending_apps = NULL;
@@ -613,8 +646,19 @@ app_registered (GsmApp     *app,
                 GsmManager *manager)
 {
         GsmManagerPrivate *priv;
+        guint              timeout_id;
 
         priv = gsm_manager_get_instance_private (manager);
+
+        timeout_id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (app),
+                                                          "gsm-app-pending-timeout"));
+        if (timeout_id > 0) {
+                g_source_remove (timeout_id);
+                g_object_set_data (G_OBJECT (app),
+                                   "gsm-app-pending-timeout",
+                                   GUINT_TO_POINTER (0));
+        }
+
         priv->pending_apps = g_slist_remove (priv->pending_apps, app);
         g_signal_handlers_disconnect_by_func (app, app_registered, manager);
 
@@ -626,6 +670,45 @@ app_registered (GsmApp     *app,
 
                 end_phase (manager);
         }
+}
+
+static gboolean
+app_pending_timeout (GsmApp *app)
+{
+        GsmManager *manager;
+        GsmManagerPrivate *priv;
+        guint              timeout_id;
+
+        manager = g_object_get_data (G_OBJECT (app), "gsm-app-pending-manager");
+        g_return_val_if_fail (GSM_IS_MANAGER (manager), G_SOURCE_REMOVE);
+
+        priv = gsm_manager_get_instance_private (manager);
+
+        timeout_id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (app),
+                                                          "gsm-app-pending-timeout"));
+        if (timeout_id > 0) {
+                g_object_set_data (G_OBJECT (app),
+                                   "gsm-app-pending-timeout",
+                                   GUINT_TO_POINTER (0));
+        }
+
+        g_debug ("GsmManager: app '%s' did not register in time, "
+                 "no longer blocking session startup",
+                 gsm_app_peek_app_id (app));
+
+        priv->pending_apps = g_slist_remove (priv->pending_apps, app);
+        g_signal_handlers_disconnect_by_func (app, app_registered, manager);
+
+        if (priv->pending_apps == NULL) {
+                if (priv->phase_timeout_id > 0) {
+                        g_source_remove (priv->phase_timeout_id);
+                        priv->phase_timeout_id = 0;
+                }
+
+                end_phase (manager);
+        }
+
+        return G_SOURCE_REMOVE;
 }
 
 static gboolean
@@ -744,6 +827,8 @@ _start_app (const char *id,
         }
 
         if (priv->phase < GSM_MANAGER_PHASE_APPLICATION) {
+                guint timeout_id;
+
                 g_signal_connect (app,
                                   "exited",
                                   G_CALLBACK (app_registered),
@@ -753,6 +838,19 @@ _start_app (const char *id,
                                   G_CALLBACK (app_registered),
                                   manager);
                 priv->pending_apps = g_slist_prepend (priv->pending_apps, app);
+
+                g_object_set_data (G_OBJECT (app),
+                                   "gsm-app-pending-timeout",
+                                   GUINT_TO_POINTER (0));
+                g_object_set_data (G_OBJECT (app),
+                                   "gsm-app-pending-manager",
+                                   manager);
+                timeout_id = g_timeout_add_seconds (get_autostart_timeout (),
+                                                    (GSourceFunc)app_pending_timeout,
+                                                    app);
+                g_object_set_data (G_OBJECT (app),
+                                   "gsm-app-pending-timeout",
+                                   GUINT_TO_POINTER (timeout_id));
         }
  out:
         return FALSE;
