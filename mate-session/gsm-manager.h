@@ -104,8 +104,7 @@ GsmManager *        gsm_manager_new                            (GsmStore       *
 
 gboolean            gsm_manager_add_autostart_app              (GsmManager     *manager,
                                                                 const char     *path,
-                                                                const char     *provides,
-                                                                gboolean        blocking);
+                                                                const char     *provides);
 gboolean            gsm_manager_add_autostart_apps_from_dir    (GsmManager     *manager,
                                                                 const char     *path);
 gboolean            gsm_manager_add_legacy_session_apps        (GsmManager     *manager,

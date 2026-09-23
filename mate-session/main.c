@@ -228,7 +228,7 @@ static void append_default_apps(GsmManager* manager, const char* default_session
 
 		if (app_path != NULL)
 		{
-			gsm_manager_add_autostart_app(manager, app_path, NULL, TRUE);
+			gsm_manager_add_autostart_app(manager, app_path, NULL);
 			g_free(app_path);
 		}
 	}
@@ -289,7 +289,7 @@ static void append_required_apps(GsmManager* manager)
 
 				if (app_path != NULL)
 				{
-					gsm_manager_add_autostart_app(manager, app_path, component, TRUE);
+					gsm_manager_add_autostart_app(manager, app_path, component);
 				}
 				else
 				{
@@ -331,7 +331,7 @@ static void append_accessibility_apps(GsmManager* manager)
 			app_path = gsm_util_find_desktop_file_for_app_name(mobility_exec, NULL);
 			if (app_path != NULL)
 			{
-				gsm_manager_add_autostart_app(manager, app_path, NULL, TRUE);
+				gsm_manager_add_autostart_app(manager, app_path, NULL);
 				g_free (app_path);
 			}
 			g_free (mobility_exec);
@@ -348,7 +348,7 @@ static void append_accessibility_apps(GsmManager* manager)
 			app_path = gsm_util_find_desktop_file_for_app_name(visual_exec, NULL);
 			if (app_path != NULL)
 			{
-				gsm_manager_add_autostart_app(manager, app_path, NULL, TRUE);
+				gsm_manager_add_autostart_app(manager, app_path, NULL);
 				g_free (app_path);
 			}
 			g_free (visual_exec);

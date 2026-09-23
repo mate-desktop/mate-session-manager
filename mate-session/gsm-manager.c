@@ -743,8 +743,7 @@ _start_app (const char *id,
                 goto out;
         }
 
-        if (priv->phase < GSM_MANAGER_PHASE_APPLICATION
-            && gsm_app_peek_blocking (app)) {
+        if (priv->phase < GSM_MANAGER_PHASE_APPLICATION) {
                 g_signal_connect (app,
                                   "exited",
                                   G_CALLBACK (app_registered),
@@ -1815,20 +1814,6 @@ find_app_for_startup_id (GsmManager *manager,
                         GsmApp *app = GSM_APP (a->data);
 
                         if (strcmp (startup_id, gsm_app_peek_startup_id (app)) == 0) {
-                                found_app = app;
-                                goto out;
-                        }
-                }
-
-                /* Non-blocking apps are not tracked in pending_apps, so
-                 * fall back to a full store lookup. */
-                if (found_app == NULL) {
-                        GsmApp *app;
-
-                        app = (GsmApp *)gsm_store_find (priv->apps,
-                                                        (GsmStoreFunc)_app_has_startup_id,
-                                                        (char *)startup_id);
-                        if (app != NULL) {
                                 found_app = app;
                                 goto out;
                         }
@@ -4278,12 +4263,7 @@ append_app (GsmManager *manager,
 
         dup = find_app_for_app_id (manager, app_id);
         if (dup != NULL) {
-                /* The app was already added, but a later add is
-                 * allowed to upgrade it to blocking. */
                 g_debug ("GsmManager: not adding app: app-id already exists");
-                if (gsm_app_peek_blocking (app)) {
-                        gsm_app_set_blocking (dup, TRUE);
-                }
                 return;
         }
 
@@ -4298,8 +4278,7 @@ append_app (GsmManager *manager,
 gboolean
 gsm_manager_add_autostart_app (GsmManager *manager,
                                const char *path,
-                               const char *provides,
-                               gboolean    blocking)
+                               const char *provides)
 {
         GsmApp *app;
         GsmManagerPrivate *priv;
@@ -4326,8 +4305,6 @@ gsm_manager_add_autostart_app (GsmManager *manager,
                 g_warning ("could not read %s", path);
                 return FALSE;
         }
-
-        gsm_app_set_blocking (app, blocking);
 
         g_debug ("GsmManager: read %s", path);
         append_app (manager, app);
@@ -4361,7 +4338,7 @@ gsm_manager_add_autostart_apps_from_dir (GsmManager *manager,
                 }
 
                 desktop_file = g_build_filename (path, name, NULL);
-                gsm_manager_add_autostart_app (manager, desktop_file, NULL, FALSE);
+                gsm_manager_add_autostart_app (manager, desktop_file, NULL);
                 g_free (desktop_file);
         }
 

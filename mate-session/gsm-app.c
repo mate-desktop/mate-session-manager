@@ -41,7 +41,6 @@ typedef struct {
         gint64           last_restart_time;
         GDBusConnection *connection;
         GsmExportedApp  *skeleton;
-        gboolean         blocking;
 } GsmAppPrivate;
 
 enum {
@@ -206,11 +205,6 @@ gsm_app_constructor (GType                  type,
 static void
 gsm_app_init (GsmApp G_GNUC_UNUSED *app)
 {
-        GsmAppPrivate *priv;
-
-        priv = gsm_app_get_instance_private (app);
-
-        priv->blocking = TRUE;
 }
 
 static void
@@ -442,31 +436,6 @@ gsm_app_peek_phase (GsmApp *app)
         priv = gsm_app_get_instance_private (app);
 
         return priv->phase;
-}
-
-void
-gsm_app_set_blocking (GsmApp   *app,
-                      gboolean  blocking)
-{
-        GsmAppPrivate *priv;
-
-        g_return_if_fail (GSM_IS_APP (app));
-
-        priv = gsm_app_get_instance_private (app);
-
-        priv->blocking = blocking;
-}
-
-gboolean
-gsm_app_peek_blocking (GsmApp *app)
-{
-        GsmAppPrivate *priv;
-
-        g_return_val_if_fail (GSM_IS_APP (app), TRUE);
-
-        priv = gsm_app_get_instance_private (app);
-
-        return priv->blocking;
 }
 
 gboolean
