@@ -28,42 +28,70 @@
 
 #include "gsm-compositor.h"
 
+static gboolean
+_run_loginctl (char **argv)
+{
+	GError  *error = NULL;
+	gint     status;
+
+	if (!g_spawn_sync (NULL, argv, NULL, G_SPAWN_SEARCH_PATH,
+	                   NULL, NULL, NULL, NULL, &status, &error)) {
+		g_warning ("GsmCompositor: unable to run loginctl (%s): %s",
+		           argv[0] != NULL ? argv[0] : "unknown",
+		           error != NULL ? error->message : "unknown error");
+		g_clear_error (&error);
+		return FALSE;
+	}
+
+	return WIFEXITED (status) && WEXITSTATUS (status) == 0;
+}
+
 /* Ask logind to terminate the session scope. */
 gboolean
 gsm_compositor_terminate_session (void)
 {
 	const gchar *session_id;
 	gchar      **argv;
-	gchar       *loginctl;
-	GError      *error = NULL;
-	gint         status;
+	gboolean     ok;
 
 	session_id = g_getenv ("XDG_SESSION_ID");
 	if (session_id == NULL || session_id[0] == '\0') {
+		g_debug ("GsmCompositor: XDG_SESSION_ID is not set, "
+		         "skipping session scope termination");
 		return FALSE;
 	}
 
-	loginctl = g_find_program_in_path ("loginctl");
-	if (loginctl == NULL) {
+	if (g_find_program_in_path ("loginctl") == NULL) {
+		g_debug ("GsmCompositor: loginctl not found, "
+		         "skipping session scope termination");
 		return FALSE;
 	}
-	g_free (loginctl);
 
 	argv = g_new0 (gchar *, 4);
 	argv[0] = "loginctl";
 	argv[1] = "terminate-session";
 	argv[2] = (gchar *) session_id;
 
-	if (!g_spawn_sync (NULL, argv, NULL, G_SPAWN_SEARCH_PATH,
-	                   NULL, NULL, NULL, NULL, &status, &error)) {
-		g_warning ("GsmCompositor: unable to terminate the session: %s",
-		           error != NULL ? error->message : "unknown error");
-		g_clear_error (&error);
-		g_free (argv);
-		return FALSE;
-	}
-
+	ok = _run_loginctl (argv);
 	g_free (argv);
 
-	return WIFEXITED (status) && WEXITSTATUS (status) == 0;
+	if (ok) {
+		return TRUE;
+	}
+
+	/* Fall back to forcing every process in the session scope to be killed. */
+	g_warning ("GsmCompositor: loginctl terminate-session failed, "
+	           "trying kill-session --kill-who=all as fallback");
+
+	argv = g_new0 (gchar *, 6);
+	argv[0] = "loginctl";
+	argv[1] = "kill-session";
+	argv[2] = (gchar *) session_id;
+	argv[3] = "--kill-who";
+	argv[4] = "all";
+
+	ok = _run_loginctl (argv);
+	g_free (argv);
+
+	return ok;
 }

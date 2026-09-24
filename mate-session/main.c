@@ -833,10 +833,7 @@ int main(int argc, char** argv)
 
 	msm_gnome_stop();
 
-	/* Reset the signal handlers loginctl might trigger, then ask logind to
-	 * terminate the session scope.  This frees the seat and display so the
-	 * display manager returns to the login screen promptly instead of
-	 * blocking on a lingering session scope after logout. */
+	/* Reset the signal handlers loginctl might trigger. */
 	{
 		struct sigaction sa;
 
@@ -848,7 +845,14 @@ int main(int argc, char** argv)
 		sigaction (SIGHUP, &sa, NULL);
 	}
 
-	gsm_compositor_terminate_session ();
+#if defined(HAVE_SYSTEMD)
+	/* Ask logind to terminate the session scope.  This frees the seat and
+	 * display so the display manager returns to the login screen promptly
+	 * instead of blocking on a lingering session scope after logout. */
+	if (LOGIND_RUNNING ()) {
+		gsm_compositor_terminate_session ();
+	}
+#endif
 
 	mdm_log_shutdown();
 

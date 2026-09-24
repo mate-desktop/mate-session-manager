@@ -91,6 +91,12 @@
  */
 #define GSM_MANAGER_EXIT_PHASE_TIMEOUT 1 /* seconds */
 
+/* If the end-session inhibit dialog is not answered within this time, the
+ * logout proceeds anyway.  Otherwise a "Not responding" dialog that is never
+ * dismissed (e.g. no interactive display) would leave the session manager
+ * running forever and the display manager would never return to the greeter. */
+#define GSM_MANAGER_LOGOUT_DIALOG_TIMEOUT 10 /* seconds */
+
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
 
@@ -737,6 +743,16 @@ on_phase_timeout (GsmManager *manager)
         case GSM_MANAGER_PHASE_RUNNING:
                 break;
         case GSM_MANAGER_PHASE_QUERY_END_SESSION:
+                /* The inhibit dialog timed out unanswered: dismiss it and
+                 * proceed with the logout so the session is guaranteed to
+                 * terminate. */
+                if (priv->inhibit_dialog != NULL) {
+                        g_warning ("GsmManager: inhibit dialog not answered "
+                                   "in time, ending the session anyway");
+                        gtk_widget_destroy (GTK_WIDGET (priv->inhibit_dialog));
+                        priv->inhibit_dialog = NULL;
+                }
+                break;
         case GSM_MANAGER_PHASE_END_SESSION:
                 break;
         case GSM_MANAGER_PHASE_EXIT:
@@ -1049,6 +1065,31 @@ maybe_restart_user_bus (GsmManager *manager)
 }
 #endif
 
+static gboolean
+_stop_running_app (const char *id,
+                   GsmApp     *app,
+                   gpointer    user_data)
+{
+        GError *error;
+
+        if (!gsm_app_is_running (app)) {
+                return FALSE;
+        }
+
+        g_debug ("GsmManager: stopping leftover app %s at session end",
+                 gsm_app_peek_app_id (app));
+
+        error = NULL;
+        if (!gsm_app_stop (app, &error)) {
+                g_warning ("GsmManager: cannot stop leftover app '%s': %s",
+                           gsm_app_peek_app_id (app),
+                           error != NULL ? error->message : "unknown error");
+                g_clear_error (&error);
+        }
+
+        return FALSE;
+}
+
 static void
 do_phase_exit (GsmManager *manager)
 {
@@ -1060,6 +1101,10 @@ do_phase_exit (GsmManager *manager)
                                    (GsmStoreFunc)_client_stop,
                                    NULL);
         }
+
+        gsm_store_foreach (priv->apps,
+                           (GsmStoreFunc)_stop_running_app,
+                           NULL);
 
 #ifdef HAVE_SYSTEMD
         maybe_restart_user_bus (manager);
@@ -1567,6 +1612,14 @@ query_end_session_complete (GsmManager *manager)
                           G_CALLBACK (inhibit_dialog_response),
                           manager);
         gtk_widget_show (priv->inhibit_dialog);
+
+        /* Bound the logout: if the dialog goes unanswered (e.g. it cannot be
+         * shown or attended on this display), still complete the session. */
+        if (priv->phase_timeout_id == 0) {
+                priv->phase_timeout_id = g_timeout_add_seconds (GSM_MANAGER_LOGOUT_DIALOG_TIMEOUT,
+                                                                (GSourceFunc)on_phase_timeout,
+                                                                manager);
+        }
 
 }
 
