@@ -79,7 +79,7 @@ modifier = <super> <alt>
 
 # The MATE session.  Run while the session does, then kill this compositor so
 # the display manager sees the session end and returns to the login screen.
-session = mate-session && killall wayfire
+session = mate-session; killall wayfire
 
 # The background and panel are managed by MATE itself (mate-settings-daemon and
 # mate-panel), so do not start the wf-shell clients. wf-background provides a

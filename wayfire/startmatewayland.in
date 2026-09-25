@@ -8,11 +8,11 @@
 # display manager sees the session end and brings the login screen back.
 #
 # MATE's session manager is not started here.  The compositor configuration
-# ([autostart] section in wayfire.ini) runs "mate-session && killall
-# wayfire": the session runs as a child of the compositor and, when it ends,
-# tears the compositor down with it.  This makes wisdom-of-the-session the
-# *only* needed compositor liveness signal - no polling or watchdog code in
-# the session manager.
+# ([autostart] section in wayfire.ini) runs "mate-session; killall wayfire":
+# the session runs as a child of the compositor and, when it ends - whether
+# by clean logout, a crash or anything else - tears the compositor down with
+# it.  This makes wisdom-of-the-session the *only* needed compositor
+# liveness signal - no polling or watchdog code in the session manager.
 #
 # Copyright (C) 2026 MATE Developers
 
