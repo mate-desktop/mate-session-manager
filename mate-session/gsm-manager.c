@@ -470,6 +470,41 @@ quit_request_completed_systemd (GsmSystemd *systemd,
 }
 #endif
 
+static void
+gsm_manager_release_name (void)
+{
+        GDBusConnection *connection;
+        GError          *error = NULL;
+        GVariant        *result;
+
+        connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, NULL);
+        if (connection == NULL) {
+                return;
+        }
+
+        result = g_dbus_connection_call_sync (connection,
+                                              "org.freedesktop.DBus",
+                                              "/org/freedesktop/DBus",
+                                              "org.freedesktop.DBus",
+                                              "ReleaseName",
+                                              g_variant_new ("(s)",
+                                                             GSM_MANAGER_DBUS_NAME),
+                                              G_VARIANT_TYPE ("(u)"),
+                                              G_DBUS_CALL_FLAGS_NONE,
+                                              -1,
+                                              NULL,
+                                              &error);
+        if (error != NULL) {
+                g_debug ("GsmManager: failed to release %s: %s",
+                         GSM_MANAGER_DBUS_NAME, error->message);
+                g_clear_error (&error);
+        } else {
+                g_variant_unref (result);
+        }
+
+        g_object_unref (connection);
+}
+
 void
 gsm_manager_quit (GsmManager *manager)
 {
@@ -482,6 +517,8 @@ gsm_manager_quit (GsmManager *manager)
         priv = gsm_manager_get_instance_private (manager);
         /* See the comment in request_reboot() for some more details about how
          * this works. */
+
+        gsm_manager_release_name ();
 
         switch (priv->logout_type) {
         case GSM_MANAGER_LOGOUT_LOGOUT:
