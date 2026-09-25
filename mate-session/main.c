@@ -85,6 +85,10 @@ static gboolean show_version = FALSE;
 static gboolean debug = FALSE;
 static gboolean disable_acceleration_check = FALSE;
 
+static pid_t session_parent_pid = 0;
+
+static gboolean parent_watchdog (gpointer data);
+
 static gboolean
 initialize_gsettings (void)
 {
@@ -110,6 +114,61 @@ static void on_bus_name_lost(DBusGProxy* bus_proxy, const char* name, gpointer d
 {
 	g_warning("Lost name on bus: %s, exiting", name);
 	exit(1);
+}
+
+static gboolean
+terminate_stale_owner (DBusGConnection *connection,
+                       const gchar     *name)
+{
+	DBusGProxy *bus_proxy;
+	GError     *error = NULL;
+	gchar      *owner = NULL;
+	guint32     pid = 0;
+	gint        i;
+	gboolean    terminated = FALSE;
+
+	bus_proxy = dbus_g_proxy_new_for_name (connection,
+	                                       DBUS_SERVICE_DBUS,
+	                                       DBUS_PATH_DBUS,
+	                                       DBUS_INTERFACE_DBUS);
+
+	if (dbus_g_proxy_call (bus_proxy, "GetNameOwner", &error,
+	                       G_TYPE_STRING, name, G_TYPE_INVALID,
+	                       G_TYPE_STRING, &owner, G_TYPE_INVALID)
+	    && owner != NULL && owner[0] != '\0') {
+		g_clear_error (&error);
+
+		if (dbus_g_proxy_call (bus_proxy, "GetConnectionUnixProcessID", &error,
+		                       G_TYPE_STRING, owner, G_TYPE_INVALID,
+		                       G_TYPE_UINT, &pid, G_TYPE_INVALID)
+		    && pid != 0 && pid != (guint32) getpid ()) {
+			g_debug ("Stale owner of %s is pid %u; terminating it", name, pid);
+
+			if (kill ((pid_t) pid, SIGTERM) == 0) {
+				terminated = TRUE;
+
+				/* Wait for the stale session to die and release the name. */
+				for (i = 0; i < 40 && kill ((pid_t) pid, 0) == 0; i++) {
+					g_usleep (100 * 1000);
+				}
+			} else {
+				g_warning ("Failed to terminate stale %s owner (pid %u): %s",
+				           name, pid, g_strerror (errno));
+			}
+		} else {
+			g_warning ("Failed to resolve the process holding %s: %s",
+			           name, error != NULL ? error->message : "unknown error");
+		}
+	}
+
+	if (error != NULL) {
+		g_error_free (error);
+	}
+
+	g_free (owner);
+	g_object_unref (bus_proxy);
+
+	return terminated;
 }
 
 static gboolean acquire_name_on_proxy(DBusGProxy* bus_proxy, const char* name)
@@ -189,6 +248,14 @@ static gboolean acquire_name(void)
 
 	if (!acquire_name_on_proxy(bus_proxy, GSM_DBUS_NAME))
 	{
+		g_debug ("%s is already taken; terminating the stale session owner", GSM_DBUS_NAME);
+
+		if (terminate_stale_owner (connection, GSM_DBUS_NAME)
+		    && acquire_name_on_proxy (bus_proxy, GSM_DBUS_NAME)) {
+			g_object_unref (bus_proxy);
+			return TRUE;
+		}
+
 		gsm_util_init_error(TRUE, "%s", "Could not acquire name on session bus");
 		/* not reached */
 	}
@@ -584,6 +651,20 @@ static void set_overlay_scroll (void)
 }
 
 static gboolean
+parent_watchdog (gpointer data)
+{
+	if (session_parent_pid > 0 && getppid () != session_parent_pid) {
+		g_debug ("Parent process gone, ending the orphaned session");
+
+		gtk_main_quit ();
+
+		return G_SOURCE_REMOVE;
+	}
+
+	return G_SOURCE_CONTINUE;
+}
+
+static gboolean
 check_gl (gchar **gl_renderer, GError **error)
 {
 	int status;
@@ -802,6 +883,9 @@ int main(int argc, char** argv)
 	gsm_xsmp_server_start(xsmp_server);
 	_gsm_manager_set_renderer (manager, gl_renderer);
 	gsm_manager_start(manager);
+
+	session_parent_pid = getppid();
+	g_timeout_add (2000, parent_watchdog, NULL);
 
 	gtk_main();
 
