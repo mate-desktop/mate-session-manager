@@ -96,6 +96,13 @@
  * dismissed (e.g. no interactive display) would leave the session manager
  * running forever and the display manager would never return to the greeter. */
 #define GSM_MANAGER_LOGOUT_DIALOG_TIMEOUT 10 /* seconds */
+#define GSM_MANAGER_CONFIRM_DIALOG_TIMEOUT 30 /* seconds */
+
+/* During GSM_MANAGER_PHASE_END_SESSION, give the clients a short budget to
+ * reply before we drop them and their "Not responding" inhibitor, so a
+ * crashed or hung component can no longer stall the whole phase for the full
+ * phase timeout. */
+#define GSM_MANAGER_END_SESSION_RESPONSE_TIMEOUT 5 /* seconds */
 
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
@@ -143,6 +150,7 @@ typedef struct {
         /* Current status */
         GsmManagerPhase         phase;
         guint                   phase_timeout_id;
+        guint                   end_session_giveup_id;
         GSList                 *pending_apps;
         GsmManagerLogoutMode    logout_mode;
         GSList                 *query_clients;
@@ -205,6 +213,13 @@ static void     _handle_client_end_session_response (GsmManager *manager,
 
 static gboolean auto_save_is_enabled (GsmManager *manager);
 static void     maybe_save_session   (GsmManager *manager);
+
+static gboolean end_session_giveup_timeout     (gpointer      user_data);
+static void     maybe_advance_end_session      (GsmManager  *manager);
+static gboolean gsm_manager_is_logout_inhibited (GsmManager *manager);
+static gboolean inhibitor_has_client_id        (gpointer      key,
+                                                GsmInhibitor *inhibitor,
+                                                const char   *client_id_a);
 
 static gpointer manager_object = NULL;
 
@@ -518,7 +533,9 @@ gsm_manager_quit (GsmManager *manager)
         /* See the comment in request_reboot() for some more details about how
          * this works. */
 
-        gsm_manager_release_name ();
+        if (gsm_util_session_is_wayland ()) {
+                gsm_manager_release_name ();
+        }
 
         switch (priv->logout_type) {
         case GSM_MANAGER_LOGOUT_LOGOUT:
@@ -647,6 +664,11 @@ end_phase (GsmManager *manager)
         if (priv->phase_timeout_id > 0) {
                 g_source_remove (priv->phase_timeout_id);
                 priv->phase_timeout_id = 0;
+        }
+
+        if (priv->end_session_giveup_id > 0) {
+                g_source_remove (priv->end_session_giveup_id);
+                priv->end_session_giveup_id = 0;
         }
 
         switch (priv->phase) {
@@ -780,10 +802,8 @@ on_phase_timeout (GsmManager *manager)
         case GSM_MANAGER_PHASE_RUNNING:
                 break;
         case GSM_MANAGER_PHASE_QUERY_END_SESSION:
-                /* The inhibit dialog timed out unanswered: dismiss it and
-                 * proceed with the logout so the session is guaranteed to
-                 * terminate. */
-                if (priv->inhibit_dialog != NULL) {
+                if (gsm_util_session_is_wayland ()
+                    && priv->inhibit_dialog != NULL) {
                         g_warning ("GsmManager: inhibit dialog not answered "
                                    "in time, ending the session anyway");
                         gtk_widget_destroy (GTK_WIDGET (priv->inhibit_dialog));
@@ -898,12 +918,14 @@ _start_app (const char *id,
                 g_object_set_data (G_OBJECT (app),
                                    "gsm-app-pending-manager",
                                    manager);
-                timeout_id = g_timeout_add_seconds (get_autostart_timeout (),
-                                                    (GSourceFunc)app_pending_timeout,
-                                                    app);
-                g_object_set_data (G_OBJECT (app),
-                                   "gsm-app-pending-timeout",
-                                   GUINT_TO_POINTER (timeout_id));
+                if (gsm_util_session_is_wayland ()) {
+                        timeout_id = g_timeout_add_seconds (get_autostart_timeout (),
+                                                            (GSourceFunc)app_pending_timeout,
+                                                            app);
+                        g_object_set_data (G_OBJECT (app),
+                                           "gsm-app-pending-timeout",
+                                           GUINT_TO_POINTER (timeout_id));
+                }
         }
  out:
         return FALSE;
@@ -995,6 +1017,12 @@ do_phase_end_session (GsmManager *manager)
                                                                 (GSourceFunc)on_phase_timeout,
                                                                 manager);
 
+                if (gsm_util_session_is_wayland ()) {
+                        priv->end_session_giveup_id = g_timeout_add_seconds (GSM_MANAGER_END_SESSION_RESPONSE_TIMEOUT,
+                                                                             end_session_giveup_timeout,
+                                                                             manager);
+                }
+
                 gsm_store_foreach (priv->clients,
                                    (GsmStoreFunc)_client_end_session_helper,
                                    &data);
@@ -1031,6 +1059,66 @@ do_phase_end_session_part_2 (GsmManager *manager)
 
                 g_slist_free (priv->next_query_clients);
                 priv->next_query_clients = NULL;
+        } else {
+                end_phase (manager);
+        }
+}
+
+static gboolean
+end_session_giveup_timeout (gpointer user_data)
+{
+        GsmManager       *manager;
+        GsmManagerPrivate *priv;
+        GSList           *l;
+
+        manager = GSM_MANAGER (user_data);
+        priv = gsm_manager_get_instance_private (manager);
+        priv->end_session_giveup_id = 0;
+
+        if (priv->phase != GSM_MANAGER_PHASE_END_SESSION) {
+                g_debug ("GsmManager: end-session response budget already spent in phase %s",
+                         phase_num_to_name (priv->phase));
+                return G_SOURCE_REMOVE;
+        }
+
+        for (l = priv->query_clients; l != NULL; l = l->next) {
+                const char *client_id;
+
+                client_id = gsm_client_peek_id (l->data);
+                g_debug ("GsmManager: client '%s' did not respond to end session in time; giving up on it",
+                         client_id);
+                gsm_store_foreach_remove (priv->inhibitors,
+                                          (GsmStoreFunc)inhibitor_has_client_id,
+                                          (gpointer)client_id);
+        }
+
+        g_slist_free (priv->query_clients);
+        priv->query_clients = NULL;
+
+        maybe_advance_end_session (manager);
+
+        return G_SOURCE_REMOVE;
+}
+
+static void
+maybe_advance_end_session (GsmManager *manager)
+{
+        GsmManagerPrivate *priv;
+
+        priv = gsm_manager_get_instance_private (manager);
+
+        /* we can continue to the next step if all clients have replied
+         * and if there's no inhibitor */
+        if (priv->phase != GSM_MANAGER_PHASE_END_SESSION
+            || priv->query_clients != NULL
+            || gsm_manager_is_logout_inhibited (manager)) {
+                return;
+        }
+
+        g_debug ("GsmManager: end-session complete, moving to the next step");
+
+        if (priv->next_query_clients != NULL) {
+                do_phase_end_session_part_2 (manager);
         } else {
                 end_phase (manager);
         }
@@ -1091,10 +1179,11 @@ maybe_restart_user_bus (GsmManager *manager)
                                              "TryRestartUnit",
                                              g_variant_new ("(ss)", "dbus.service", "replace"),
                                              NULL,
-                                             G_DBUS_CALL_FLAGS_NONE,
-                                             5000, /* 5 second timeout — don't block session exit */
-                                             NULL,
-                                             &error);
+G_DBUS_CALL_FLAGS_NONE,
+                                              gsm_util_session_is_wayland () ?
+                                              5000 : -1, /* 5s cap on Wayland so a dead bus cannot block session exit; unbounded (upstream) on X11 */
+                                              NULL,
+                                              &error);
 
         if (error != NULL) {
                 g_debug ("GsmManager: reloading user bus failed: %s", error->message);
@@ -1139,9 +1228,11 @@ do_phase_exit (GsmManager *manager)
                                    NULL);
         }
 
-        gsm_store_foreach (priv->apps,
-                           (GsmStoreFunc)_stop_running_app,
-                           NULL);
+        if (gsm_util_session_is_wayland ()) {
+                gsm_store_foreach (priv->apps,
+                                   (GsmStoreFunc)_stop_running_app,
+                                   NULL);
+        }
 
 #ifdef HAVE_SYSTEMD
         maybe_restart_user_bus (manager);
@@ -1601,9 +1692,8 @@ query_end_session_complete (GsmManager *manager)
                 priv->query_timeout_id = 0;
         }
 
-        /* When logout is forced (e.g. compositor crash), skip the inhibit
-         * dialog entirely — there is no display to show it on. */
-        if (priv->logout_mode == GSM_MANAGER_LOGOUT_MODE_FORCE
+        if ((gsm_util_session_is_wayland ()
+             && priv->logout_mode == GSM_MANAGER_LOGOUT_MODE_FORCE)
             || ! gsm_manager_is_logout_inhibited (manager)) {
                 end_phase (manager);
                 return;
@@ -1650,9 +1740,8 @@ query_end_session_complete (GsmManager *manager)
                           manager);
         gtk_widget_show (priv->inhibit_dialog);
 
-        /* Bound the logout: if the dialog goes unanswered (e.g. it cannot be
-         * shown or attended on this display), still complete the session. */
-        if (priv->phase_timeout_id == 0) {
+        if (gsm_util_session_is_wayland ()
+            && priv->phase_timeout_id == 0) {
                 priv->phase_timeout_id = g_timeout_add_seconds (GSM_MANAGER_LOGOUT_DIALOG_TIMEOUT,
                                                                 (GSourceFunc)on_phase_timeout,
                                                                 manager);
@@ -2593,18 +2682,7 @@ _handle_client_end_session_response (GsmManager *manager,
                                                                     client);
                 }
 
-                /* we can continue to the next step if all clients have replied
-                 * and if there's no inhibitor */
-                if (priv->query_clients != NULL
-                    || gsm_manager_is_logout_inhibited (manager)) {
-                        return;
-                }
-
-                if (priv->next_query_clients != NULL) {
-                        do_phase_end_session_part_2 (manager);
-                } else {
-                        end_phase (manager);
-                }
+                maybe_advance_end_session (manager);
         }
 }
 
@@ -3628,8 +3706,21 @@ logout_dialog_response (GsmLogoutDialog *logout_dialog,
                         GsmManager      *manager)
 {
         GsmManagerPrivate *priv;
+        guint              timeout_id;
 
         priv = gsm_manager_get_instance_private (manager);
+
+        /* The confirmation dialog is bounded (see show_logout_dialog()); drop
+         * the pending timer before the widget is torn down. */
+        timeout_id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (logout_dialog),
+                                                          "gsm-dialog-timeout"));
+        if (timeout_id > 0) {
+                g_source_remove (timeout_id);
+                g_object_set_data (G_OBJECT (logout_dialog),
+                                   "gsm-dialog-timeout",
+                                   GUINT_TO_POINTER (0));
+        }
+
         /* We should only be here if mode has already have been set from
          * show_fallback_shutdown/logout_dialog
          */
@@ -3688,6 +3779,64 @@ _get_current_window_time (GtkWidget *widget)
         return gdk_x11_get_server_time (gtk_widget_get_window (widget));
 }
 
+static gboolean
+confirm_dialog_timeout (GtkWidget *dialog)
+{
+        GsmManager *manager;
+        guint       timeout_id;
+        gint        response;
+
+        manager = g_object_get_data (G_OBJECT (dialog), "gsm-dialog-manager");
+        if (manager == NULL || ! GSM_IS_MANAGER (manager)) {
+                gtk_widget_destroy (dialog);
+                return G_SOURCE_REMOVE;
+        }
+
+        timeout_id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (dialog),
+                                                          "gsm-dialog-timeout"));
+        if (timeout_id > 0) {
+                g_object_set_data (G_OBJECT (dialog),
+                                   "gsm-dialog-timeout",
+                                   GUINT_TO_POINTER (0));
+        }
+
+        response = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (dialog),
+                                                        "gsm-dialog-default-response"));
+
+        g_warning ("GsmManager: session confirmation dialog not answered "
+                   "within %d seconds, proceeding with the default action",
+                   GSM_MANAGER_CONFIRM_DIALOG_TIMEOUT);
+
+        gtk_widget_destroy (dialog);
+
+        /* Same dispatch as if the dialog's default button had been pressed. */
+        switch (response) {
+        case GSM_LOGOUT_RESPONSE_LOGOUT:
+                request_logout (manager, GSM_MANAGER_LOGOUT_MODE_NO_CONFIRMATION);
+                break;
+        case GSM_LOGOUT_RESPONSE_SHUTDOWN:
+                request_shutdown (manager);
+                break;
+        case GSM_LOGOUT_RESPONSE_REBOOT:
+                request_reboot (manager);
+                break;
+        case GSM_LOGOUT_RESPONSE_SLEEP:
+                request_suspend (manager);
+                break;
+        case GSM_LOGOUT_RESPONSE_HIBERNATE:
+                request_hibernate (manager);
+                break;
+        case GSM_LOGOUT_RESPONSE_SWITCH_USER:
+                request_switch_user (manager);
+                break;
+        default:
+                request_logout (manager, GSM_MANAGER_LOGOUT_MODE_NO_CONFIRMATION);
+                break;
+        }
+
+        return G_SOURCE_REMOVE;
+}
+
 static void
 show_shutdown_dialog (GsmManager *manager)
 {
@@ -3709,9 +3858,30 @@ show_shutdown_dialog (GsmManager *manager)
                           "response",
                           G_CALLBACK (logout_dialog_response),
                           manager);
+
+        g_debug ("GsmManager: showing shutdown confirmation dialog");
+
         gtk_widget_show (dialog);
         gtk_window_present_with_time (GTK_WINDOW (dialog),
                                       _get_current_window_time (GTK_WIDGET (dialog)));
+
+        /* Bound the prompt: if it cannot be shown or attended (broken
+         * compositor/display), perform the default action anyway. */
+        g_object_set_data (G_OBJECT (dialog),
+                           "gsm-dialog-manager",
+                           manager);
+        g_object_set_data (G_OBJECT (dialog),
+                           "gsm-dialog-default-response",
+                           GUINT_TO_POINTER (GSM_LOGOUT_RESPONSE_SHUTDOWN));
+        /* Bound the prompt on Wayland: if it cannot be shown or attended
+         * (broken compositor/display), perform the default action anyway. */
+        if (gsm_util_session_is_wayland ()) {
+                g_object_set_data (G_OBJECT (dialog),
+                                   "gsm-dialog-timeout",
+                                   GUINT_TO_POINTER (g_timeout_add_seconds (GSM_MANAGER_CONFIRM_DIALOG_TIMEOUT,
+                                                                            (GSourceFunc)confirm_dialog_timeout,
+                                                                            dialog)));
+        }
 }
 
 static void
@@ -3735,9 +3905,30 @@ show_logout_dialog (GsmManager *manager)
                           "response",
                           G_CALLBACK (logout_dialog_response),
                           manager);
+
+        g_debug ("GsmManager: showing logout confirmation dialog");
+
         gtk_widget_show (dialog);
         gtk_window_present_with_time (GTK_WINDOW (dialog),
                                       _get_current_window_time (GTK_WIDGET (dialog)));
+
+        /* Bound the prompt: if it cannot be shown or attended (broken
+         * compositor/display), complete the logout anyway. */
+        g_object_set_data (G_OBJECT (dialog),
+                           "gsm-dialog-manager",
+                           manager);
+        g_object_set_data (G_OBJECT (dialog),
+                           "gsm-dialog-default-response",
+                           GUINT_TO_POINTER (GSM_LOGOUT_RESPONSE_LOGOUT));
+        /* Bound the prompt on Wayland: if it cannot be shown or attended
+         * (broken compositor/display), complete the logout anyway. */
+        if (gsm_util_session_is_wayland ()) {
+                g_object_set_data (G_OBJECT (dialog),
+                                   "gsm-dialog-timeout",
+                                   GUINT_TO_POINTER (g_timeout_add_seconds (GSM_MANAGER_CONFIRM_DIALOG_TIMEOUT,
+                                                                            (GSourceFunc)confirm_dialog_timeout,
+                                                                            dialog)));
+        }
 }
 
 static void

@@ -42,7 +42,7 @@
 #include "mdm-signal-handler.h"
 #include "mdm-log.h"
 
-#include "gsm-compositor.h"
+
 #include "gsm-consolekit.h"
 #ifdef HAVE_SYSTEMD
 #include "gsm-systemd.h"
@@ -248,12 +248,15 @@ static gboolean acquire_name(void)
 
 	if (!acquire_name_on_proxy(bus_proxy, GSM_DBUS_NAME))
 	{
-		g_debug ("%s is already taken; terminating the stale session owner", GSM_DBUS_NAME);
+		/* Only on Wayland do we recover a stale session that still owns the name. */
+		if (gsm_util_session_is_wayland ()) {
+			g_debug ("%s is already taken; terminating the stale session owner", GSM_DBUS_NAME);
 
-		if (terminate_stale_owner (connection, GSM_DBUS_NAME)
-		    && acquire_name_on_proxy (bus_proxy, GSM_DBUS_NAME)) {
-			g_object_unref (bus_proxy);
-			return TRUE;
+			if (terminate_stale_owner (connection, GSM_DBUS_NAME)
+			    && acquire_name_on_proxy (bus_proxy, GSM_DBUS_NAME)) {
+				g_object_unref (bus_proxy);
+				return TRUE;
+			}
 		}
 
 		gsm_util_init_error(TRUE, "%s", "Could not acquire name on session bus");
@@ -884,8 +887,10 @@ int main(int argc, char** argv)
 	_gsm_manager_set_renderer (manager, gl_renderer);
 	gsm_manager_start(manager);
 
-	session_parent_pid = getppid();
-	g_timeout_add (2000, parent_watchdog, NULL);
+	if (gsm_util_session_is_wayland ()) {
+		session_parent_pid = getppid();
+		g_timeout_add (2000, parent_watchdog, NULL);
+	}
 
 	gtk_main();
 
@@ -917,8 +922,9 @@ int main(int argc, char** argv)
 
 	msm_gnome_stop();
 
-	/* Reset the signal handlers loginctl might trigger. */
-	{
+	/* Reset the signal handlers loginctl might trigger. Wayland only: on
+	 * X11 the display manager manages session teardown itself, as upstream. */
+	if (gsm_util_session_is_wayland ()) {
 		struct sigaction sa;
 
 		memset (&sa, 0, sizeof (sa));
@@ -929,16 +935,7 @@ int main(int argc, char** argv)
 		sigaction (SIGHUP, &sa, NULL);
 	}
 
-#if defined(HAVE_SYSTEMD)
-	/* Ask logind to terminate the session scope.  This frees the seat and
-	 * display so the display manager returns to the login screen promptly
-	 * instead of blocking on a lingering session scope after logout. */
-	if (LOGIND_RUNNING ()) {
-		gsm_compositor_terminate_session ();
-	}
-#endif
-
-	mdm_log_shutdown();
+mdm_log_shutdown();
 
 	return 0;
 }
