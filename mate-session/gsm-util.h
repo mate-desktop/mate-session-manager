@@ -62,6 +62,7 @@ void        gsm_util_setenv                         (const char *variable,
                                                      const char *value);
 
 gboolean    gsm_util_session_is_wayland             (void);
+gboolean    gsm_util_running_under_systemd_user     (void);
 
 GtkWidget*  gsm_util_dialog_add_button              (GtkDialog   *dialog,
                                                      const gchar *button_text,

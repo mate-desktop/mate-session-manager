@@ -775,3 +775,22 @@ gsm_util_session_is_wayland (void)
 
 	return TRUE;
 }
+
+gboolean
+gsm_util_running_under_systemd_user (void)
+{
+	const gchar *runtime_dir;
+	gchar       *private_socket;
+	gboolean     running;
+
+	runtime_dir = g_getenv ("XDG_RUNTIME_DIR");
+	if (runtime_dir == NULL || runtime_dir[0] == '\0') {
+		return FALSE;
+	}
+
+	private_socket = g_build_filename (runtime_dir, "systemd", "private", NULL);
+	running = g_file_test (private_socket, G_FILE_TEST_EXISTS);
+	g_free (private_socket);
+
+	return running;
+}
