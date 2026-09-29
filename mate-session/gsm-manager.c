@@ -1179,11 +1179,11 @@ maybe_restart_user_bus (GsmManager *manager)
                                              "TryRestartUnit",
                                              g_variant_new ("(ss)", "dbus.service", "replace"),
                                              NULL,
-G_DBUS_CALL_FLAGS_NONE,
-                                              gsm_util_session_is_wayland () ?
-                                              5000 : -1, /* 5s cap on Wayland so a dead bus cannot block session exit; unbounded (upstream) on X11 */
-                                              NULL,
-                                              &error);
+                                             G_DBUS_CALL_FLAGS_NONE,
+                                             gsm_util_session_is_wayland () ?
+                                             5000 : -1, /* 5s cap on Wayland so a dead bus cannot block session exit. */
+                                             NULL,
+                                             &error);
 
         if (error != NULL) {
                 g_debug ("GsmManager: reloading user bus failed: %s", error->message);
