@@ -923,7 +923,7 @@ int main(int argc, char** argv)
 	msm_gnome_stop();
 
 	/* Reset the signal handlers loginctl might trigger. Wayland only: on
-	 * X11 the display manager manages session teardown itself, as upstream. */
+	 * X11 the display manager manages session teardown itself. */
 	if (gsm_util_session_is_wayland ()) {
 		struct sigaction sa;
 

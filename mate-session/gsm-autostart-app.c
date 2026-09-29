@@ -124,21 +124,21 @@ is_disabled (GsmApp *app)
         }
 
         /* Check OnlyShowIn/NotShowIn/TryExec */
-	if (!egg_desktop_file_can_launch (priv->desktop_file, "MATE")) {
-		g_debug ("app %s not installed or not for MATE",
-			 gsm_app_peek_id (app));
-		return TRUE;
-	}
+        if (!egg_desktop_file_can_launch (priv->desktop_file, "MATE")) {
+                g_debug ("app %s not installed or not for MATE",
+                         gsm_app_peek_id (app));
+                return TRUE;
+        }
 
         /* Check X-GNOME-HiddenUnderSystemd */
-	if (egg_desktop_file_get_boolean (priv->desktop_file,
-		                          "X-GNOME-HiddenUnderSystemd", NULL)
-            && gsm_util_session_is_wayland ()
-            && gsm_util_running_under_systemd_user ()) {
-		g_debug ("app %s is disabled by X-GNOME-HiddenUnderSystemd",
-			 gsm_app_peek_id (app));
-		return TRUE;
-	}
+        if (egg_desktop_file_get_boolean (priv->desktop_file,
+                                          "X-GNOME-HiddenUnderSystemd", NULL)
+                && gsm_util_session_is_wayland ()
+                && gsm_util_running_under_systemd_user ()) {
+            g_debug ("app %s is disabled by X-GNOME-HiddenUnderSystemd",
+                     gsm_app_peek_id (app));
+            return TRUE;
+        }
 
         /* Do not check AutostartCondition - this method is only to determine
          if the app is unconditionally disabled */
