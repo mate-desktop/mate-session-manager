@@ -545,17 +545,18 @@ gs_idle_monitor_constructor (GType                  type,
         if (display != NULL && GDK_IS_X11_DISPLAY (display)) {
                 _init_xtest (monitor);
 
-        if (! init_xsync (monitor)) {
-                g_object_unref (monitor);
-                return NULL;
+                if (! init_xsync (monitor)) {
+                        g_object_unref (monitor);
+                        return NULL;
+                }
         } else {
 #ifdef HAVE_WAYLAND
-        if (! init_wayland (monitor)) {
-                /* Fall back to a monitor that never reports idle. */
-                g_warning ("GSIdleMonitor: unable to initialize Wayland idle notifications; idle detection disabled");
-        }
+                if (! init_wayland (monitor)) {
+                        /* Fall back to a monitor that never reports idle. */
+                        g_warning ("GSIdleMonitor: unable to initialize Wayland idle notifications; idle detection disabled");
+                }
 #else
-        g_warning ("GSIdleMonitor: this build has no Wayland idle support; idle detection disabled");
+                g_warning ("GSIdleMonitor: this build has no Wayland idle support; idle detection disabled");
 #endif
         }
 
