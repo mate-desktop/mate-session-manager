@@ -966,16 +966,18 @@ gsm_inhibit_dialog_constructor (GType                  type,
 
 #ifdef HAVE_XRENDER
         gdkdisplay = gdk_display_get_default ();
-        gdk_x11_display_error_trap_push (gdkdisplay);
-        if (XRenderQueryExtension (GDK_DISPLAY_XDISPLAY (gdkdisplay), &dialog->xrender_event_base, &dialog->xrender_error_base)) {
-                g_debug ("GsmInhibitDialog: Initialized XRender extension");
-                dialog->have_xrender = TRUE;
-        } else {
-                g_debug ("GsmInhibitDialog: Unable to initialize XRender extension");
-                dialog->have_xrender = FALSE;
+        if (GDK_IS_X11_DISPLAY (gdkdisplay)) {
+                gdk_x11_display_error_trap_push (gdkdisplay);
+                if (XRenderQueryExtension (GDK_DISPLAY_XDISPLAY (gdkdisplay), &dialog->xrender_event_base, &dialog->xrender_error_base)) {
+                        g_debug ("GsmInhibitDialog: Initialized XRender extension");
+                        dialog->have_xrender = TRUE;
+                } else {
+                        g_debug ("GsmInhibitDialog: Unable to initialize XRender extension");
+                        dialog->have_xrender = FALSE;
+                }
+                gdk_display_sync (gdkdisplay);
+                gdk_x11_display_error_trap_pop_ignored (gdkdisplay);
         }
-        gdk_display_sync (gdkdisplay);
-        gdk_x11_display_error_trap_pop_ignored (gdkdisplay);
 #endif /* HAVE_XRENDER */
 
         /* FIXME: turn this on when it is ready */

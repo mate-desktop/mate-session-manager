@@ -178,6 +178,8 @@ gboolean            gsm_manager_is_session_running             (GsmManager *mana
                                                                 gboolean *running,
                                                                 GError **error);
 
+void                gsm_manager_quit                           (GsmManager *manager);
+
 void                _gsm_manager_set_renderer                  (GsmManager     *manager,
                                                                 const char     *renderer);
 

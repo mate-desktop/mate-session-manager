@@ -9,6 +9,7 @@ SUBDIRS = \
 	capplet \
 	tools \
 	data \
+	wayfire \
 	doc
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}

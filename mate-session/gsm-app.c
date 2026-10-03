@@ -194,6 +194,12 @@ gsm_app_constructor (GType                  type,
         g_free (priv->id);
         priv->id = g_strdup_printf ("/org/gnome/SessionManager/App%u", get_next_app_serial ());
 
+        g_debug ("GsmApp: registered %s for '%s'",
+                 priv->id,
+                 (priv->app_id != NULL && priv->app_id[0] != '\0') ? priv->app_id
+                 : (priv->startup_id != NULL && priv->startup_id[0] != '\0') ? priv->startup_id
+                 : "(no desktop id)");
+
         res = register_app (app);
         if (! res) {
                 g_warning ("Unable to register app with session bus");

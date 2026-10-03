@@ -32,6 +32,7 @@ requires+=(
 	systemd-devel
 	xmlto
 	xorg-x11-xtrans-devel
+	wayland-protocols-devel
 )
 
 infobegin "Update system"

@@ -26,6 +26,11 @@
 #include <time.h>
 #include <string.h>
 
+#ifdef HAVE_WAYLAND
+#include <wayland-client.h>
+#include "ext-idle-notify-v1-client.h"
+#endif /* HAVE_WAYLAND */
+
 #include <X11/Xlib.h>
 #include <X11/extensions/sync.h>
 
@@ -53,21 +58,49 @@ struct _GSIdleMonitor {
         int          keycode1;
         int          keycode2;
         gboolean     have_xtest;
+
+#ifdef HAVE_WAYLAND
+        /* For use with the ext-idle-notify-v1 protocol */
+        struct wl_display           *wl_display;
+        struct ext_idle_notifier_v1 *wl_notifier;
+        struct wl_seat              *wl_seat;
+        guint                        wl_source_id;
+        uint32_t                     wl_notifier_version;
+#endif
 };
 
 typedef struct
 {
         guint                  id;
-        XSyncValue             interval;
+        guint                  interval_ms;
         GSIdleMonitorWatchFunc callback;
         gpointer               user_data;
+        GSIdleMonitor         *monitor;
         XSyncAlarm             xalarm_positive;
         XSyncAlarm             xalarm_negative;
+
+#ifdef HAVE_WAYLAND
+        struct ext_idle_notification_v1 *notification;
+#endif
 } GSIdleMonitorWatch;
 
 static guint32 watch_serial = 1;
 
 G_DEFINE_TYPE (GSIdleMonitor, gs_idle_monitor, G_TYPE_OBJECT)
+
+static gboolean
+gs_idle_monitor_using_wayland (GSIdleMonitor *monitor)
+{
+        GdkDisplay *display;
+
+        display = gdk_display_get_default ();
+
+        if (display == NULL) {
+                return FALSE;
+        }
+
+        return ! GDK_IS_X11_DISPLAY (display);
+}
 
 static gint64
 _xsyncvalue_to_int64 (XSyncValue value)
@@ -94,6 +127,20 @@ gs_idle_monitor_dispose (GObject *object)
         g_return_if_fail (GS_IS_IDLE_MONITOR (object));
 
         monitor = GS_IDLE_MONITOR (object);
+
+#ifdef HAVE_WAYLAND
+        if (monitor->wl_source_id != 0) {
+                g_source_remove (monitor->wl_source_id);
+                monitor->wl_source_id = 0;
+        }
+
+        if (monitor->wl_display != NULL) {
+                wl_display_disconnect (monitor->wl_display);
+                monitor->wl_display = NULL;
+                monitor->wl_notifier = NULL;
+                monitor->wl_seat = NULL;
+        }
+#endif
 
         if (monitor->watches != NULL) {
                 g_hash_table_destroy (monitor->watches);
@@ -165,11 +212,186 @@ gs_idle_monitor_reset (GSIdleMonitor *monitor)
 {
         g_return_if_fail (GS_IS_IDLE_MONITOR (monitor));
 
+        if (gs_idle_monitor_using_wayland (monitor)) {
+                /* The Wayland compositor keeps track of the idle time on its
+                 * own; there is no way for a client to reset it. */
+                return;
+        }
+
 #ifdef HAVE_XTEST
         /* FIXME: is there a better way to reset the IDLETIME? */
         send_fake_event (monitor);
 #endif
 }
+
+#ifdef HAVE_WAYLAND
+
+static void
+wl_idle_notification_handle_idled (void                            *data,
+                                   struct ext_idle_notification_v1 *notification)
+{
+        GSIdleMonitorWatch *watch = data;
+        gboolean            res;
+
+        g_debug ("GSIdleMonitor: wayland watch %u went idle", watch->id);
+
+        res = TRUE;
+        if (watch->callback != NULL) {
+                res = watch->callback (watch->monitor,
+                                       watch->id,
+                                       TRUE,
+                                       watch->user_data);
+        }
+
+        (void) res;
+}
+
+static void
+wl_idle_notification_handle_resumed (void                            *data,
+                                     struct ext_idle_notification_v1 *notification)
+{
+        GSIdleMonitorWatch *watch = data;
+
+        g_debug ("GSIdleMonitor: wayland watch %u resumed", watch->id);
+
+        if (watch->callback != NULL) {
+                watch->callback (watch->monitor,
+                                 watch->id,
+                                 FALSE,
+                                 watch->user_data);
+        }
+}
+
+static const struct ext_idle_notification_v1_listener wl_idle_notification_listener = {
+        wl_idle_notification_handle_idled,
+        wl_idle_notification_handle_resumed,
+};
+
+static void
+wl_registry_handle_global (void                *data,
+                           struct wl_registry *registry,
+                           uint32_t             name,
+                           const char          *interface,
+                           uint32_t             version)
+{
+        GSIdleMonitor *monitor = data;
+
+        if (g_strcmp0 (interface, ext_idle_notifier_v1_interface.name) == 0) {
+                monitor->wl_notifier_version = MIN (version, 2);
+                monitor->wl_notifier = wl_registry_bind (registry,
+                                                         name,
+                                                         &ext_idle_notifier_v1_interface,
+                                                         monitor->wl_notifier_version);
+        } else if (monitor->wl_seat == NULL
+                   && g_strcmp0 (interface, wl_seat_interface.name) == 0) {
+                /* ext-idle-notify-v1 notifications are tied to a seat. */
+                monitor->wl_seat = wl_registry_bind (registry,
+                                                     name,
+                                                     &wl_seat_interface,
+                                                     1);
+        }
+}
+
+static void
+wl_registry_handle_global_remove (void                *data,
+                                  struct wl_registry *registry,
+                                  uint32_t             name)
+{
+}
+
+static const struct wl_registry_listener wl_registry_listener = {
+        wl_registry_handle_global,
+        wl_registry_handle_global_remove,
+};
+
+static gboolean
+wl_dispatch_source_cb (GIOChannel   *source,
+                       GIOCondition  condition,
+                       gpointer      data)
+{
+        GSIdleMonitor *monitor = data;
+
+        if (condition & (G_IO_HUP | G_IO_ERR)) {
+                g_warning ("GSIdleMonitor: Wayland connection lost; idle detection disabled");
+                wl_display_disconnect (monitor->wl_display);
+                monitor->wl_display = NULL;
+                monitor->wl_notifier = NULL;
+                return G_SOURCE_REMOVE;
+        }
+
+        if (wl_display_dispatch (monitor->wl_display) < 0) {
+                g_warning ("GSIdleMonitor: Wayland dispatch failed; idle detection disabled");
+                wl_display_disconnect (monitor->wl_display);
+                monitor->wl_display = NULL;
+                monitor->wl_notifier = NULL;
+                return G_SOURCE_REMOVE;
+        }
+
+        return G_SOURCE_CONTINUE;
+}
+
+static gboolean
+init_wayland (GSIdleMonitor *monitor)
+{
+        struct wl_registry *registry;
+        GIOChannel         *channel;
+
+        monitor->wl_display = wl_display_connect (NULL);
+        if (monitor->wl_display == NULL) {
+                return FALSE;
+        }
+
+        registry = wl_display_get_registry (monitor->wl_display);
+        wl_registry_add_listener (registry, &wl_registry_listener, monitor);
+
+        if (wl_display_roundtrip (monitor->wl_display) < 0
+            || monitor->wl_notifier == NULL) {
+                wl_display_disconnect (monitor->wl_display);
+                monitor->wl_display = NULL;
+                return FALSE;
+        }
+
+        channel = g_io_channel_unix_new (wl_display_get_fd (monitor->wl_display));
+        monitor->wl_source_id = g_io_add_watch (channel,
+                                                G_IO_IN | G_IO_HUP | G_IO_ERR,
+                                                wl_dispatch_source_cb,
+                                                monitor);
+        g_io_channel_unref (channel);
+
+        return TRUE;
+}
+
+static gboolean
+_wayland_notification_set (GSIdleMonitor      *monitor,
+                           GSIdleMonitorWatch *watch)
+{
+        if (monitor->wl_notifier == NULL || monitor->wl_seat == NULL) {
+                return FALSE;
+        }
+
+        if (monitor->wl_notifier_version >= 2) {
+                /* Track raw user input, matching the X11 IDLETIME counter
+                 * semantics used on X11 sessions. */
+                watch->notification = ext_idle_notifier_v1_get_input_idle_notification (monitor->wl_notifier,
+                                                                                        (uint32_t) watch->interval_ms,
+                                                                                        monitor->wl_seat);
+        } else {
+                watch->notification = ext_idle_notifier_v1_get_idle_notification (monitor->wl_notifier,
+                                                                                  (uint32_t) watch->interval_ms,
+                                                                                  monitor->wl_seat);
+        }
+
+        if (watch->notification == NULL) {
+                return FALSE;
+        }
+
+        ext_idle_notification_v1_add_listener (watch->notification,
+                                               &wl_idle_notification_listener,
+                                               watch);
+        return TRUE;
+}
+
+#endif /* HAVE_WAYLAND */
 
 static void
 handle_alarm_notify_event (GSIdleMonitor         *monitor,
@@ -312,16 +534,30 @@ gs_idle_monitor_constructor (GType                  type,
                              GObjectConstructParam *construct_properties)
 {
         GSIdleMonitor *monitor;
+        GdkDisplay    *display;
 
         monitor = GS_IDLE_MONITOR (G_OBJECT_CLASS (gs_idle_monitor_parent_class)->constructor (type,
                                                                                                n_construct_properties,
                                                                                                construct_properties));
 
-        _init_xtest (monitor);
+        display = gdk_display_get_default ();
 
-        if (! init_xsync (monitor)) {
-                g_object_unref (monitor);
-                return NULL;
+        if (display != NULL && GDK_IS_X11_DISPLAY (display)) {
+                _init_xtest (monitor);
+
+                if (! init_xsync (monitor)) {
+                        g_object_unref (monitor);
+                        return NULL;
+                }
+        } else {
+#ifdef HAVE_WAYLAND
+                if (! init_wayland (monitor)) {
+                        /* Fall back to a monitor that never reports idle. */
+                        g_warning ("GSIdleMonitor: unable to initialize Wayland idle notifications; idle detection disabled");
+                }
+#else
+                g_warning ("GSIdleMonitor: this build has no Wayland idle support; idle detection disabled");
+#endif
         }
 
         return G_OBJECT (monitor);
@@ -359,7 +595,7 @@ idle_monitor_watch_new (guint interval)
         GSIdleMonitorWatch *watch;
 
         watch = g_slice_new0 (GSIdleMonitorWatch);
-        watch->interval = _int64_to_xsyncvalue ((gint64)interval);
+        watch->interval_ms = interval;
         watch->id = get_next_watch_serial ();
         watch->xalarm_positive = None;
         watch->xalarm_negative = None;
@@ -373,6 +609,12 @@ idle_monitor_watch_free (GSIdleMonitorWatch *watch)
         if (watch == NULL) {
                 return;
         }
+#ifdef HAVE_WAYLAND
+        if (watch->notification != NULL) {
+                ext_idle_notification_v1_destroy (watch->notification);
+                watch->notification = NULL;
+        }
+#endif
         if (watch->xalarm_positive != None) {
                 XSyncDestroyAlarm (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), watch->xalarm_positive);
         }
@@ -425,6 +667,7 @@ _xsync_alarm_set (GSIdleMonitor      *monitor,
 {
         XSyncAlarmAttributes attr;
         XSyncValue           delta;
+        XSyncValue           interval;
         guint                flags;
 
         flags = XSyncCACounter
@@ -435,13 +678,14 @@ _xsync_alarm_set (GSIdleMonitor      *monitor,
                 | XSyncCAEvents;
 
         XSyncIntToValue (&delta, 0);
+        interval = _int64_to_xsyncvalue ((gint64)watch->interval_ms);
         attr.trigger.counter = monitor->counter;
         attr.trigger.value_type = XSyncAbsolute;
-        attr.trigger.wait_value = watch->interval;
+        attr.trigger.wait_value = interval;
         attr.delta = delta;
         attr.events = TRUE;
 
-        attr.trigger.wait_value = _int64_to_xsyncvalue (_xsyncvalue_to_int64 (watch->interval) - 1);
+        attr.trigger.wait_value = _int64_to_xsyncvalue ((gint64)watch->interval_ms - 1);
         attr.trigger.test_type = XSyncPositiveTransition;
         if (watch->xalarm_positive != None) {
                 g_debug ("GSIdleMonitor: updating alarm for positive transition wait=%" G_GINT64_FORMAT,
@@ -481,8 +725,17 @@ gs_idle_monitor_add_watch (GSIdleMonitor         *monitor,
         watch = idle_monitor_watch_new (interval);
         watch->callback = callback;
         watch->user_data = user_data;
+        watch->monitor = monitor;
 
-        _xsync_alarm_set (monitor, watch);
+        if (gs_idle_monitor_using_wayland (monitor)) {
+#ifdef HAVE_WAYLAND
+                _wayland_notification_set (monitor, watch);
+#else
+                g_warning ("GSIdleMonitor: Wayland idle notifications not supported");
+#endif
+        } else {
+                _xsync_alarm_set (monitor, watch);
+        }
 
         g_hash_table_insert (monitor->watches,
                              GUINT_TO_POINTER (watch->id),

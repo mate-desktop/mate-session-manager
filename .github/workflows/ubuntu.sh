@@ -40,6 +40,7 @@ requires+=(
 	mate-common
 	xmlto
 	xsltproc
+	wayland-protocols
 )
 
 infobegin "Update system"
