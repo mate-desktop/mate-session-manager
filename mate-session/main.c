@@ -696,6 +696,9 @@ int main(int argc, char** argv)
 	if (g_getenv ("XDG_CURRENT_DESKTOP") == NULL)
 		gsm_util_setenv ("XDG_CURRENT_DESKTOP", "MATE");
 
+	if (g_getenv ("XDG_MENU_PREFIX") == NULL)
+		gsm_util_setenv ("XDG_MENU_PREFIX", "mate-");
+
 	/* Set DISPLAY explicitly for all our children, in case --display
 	 * was specified on the command line.
 	 */
