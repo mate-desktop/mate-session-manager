@@ -1,173 +1,178 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the mate-session-manager package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# 
+# Bone NI <bounkirdni@gmail.com>, 2026.
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.27.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2023-09-04 20:19+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
-"Language-Team: Lao (https://app.transifex.com/mate/teams/13566/lo/)\n"
+"PO-Revision-Date: 2026-09-10 04:17+0000\n"
+"Last-Translator: Bone NI <bounkirdni@gmail.com>\n"
+"Language-Team: Lao <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/mate-session-manager/lo/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: lo\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 #: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
-msgstr ""
+msgstr "ເລືອກຄຳສັ່ງ"
 
 #: capplet/gsm-app-dialog.c:168
 msgid "second"
-msgstr ""
+msgstr "ວິນາທີ"
 
 #: capplet/gsm-app-dialog.c:170
 msgid "seconds"
-msgstr ""
+msgstr "ວິນາທີ"
 
 #: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
 #: mate-session/gsm-logout-dialog.c:486
 msgid "_Cancel"
-msgstr ""
+msgstr "_ຍົກເລີກ"
 
 #: capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
-msgstr ""
+msgstr "ເພີ່ມໂປຣແກຣມເລີ່ມຕົ້ນ"
 
 #: capplet/gsm-app-dialog.c:226 data/session-properties.ui:101
 msgid "_Add"
-msgstr ""
+msgstr "_ເພີ່ມ"
 
 #: capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
-msgstr ""
+msgstr "ແກ້ໄຂໂປຣແກຣມເລີ່ມຕົ້ນ"
 
 #: capplet/gsm-app-dialog.c:231
 msgid "_Save"
-msgstr ""
+msgstr "_ບັນທຶກ"
 
 #: capplet/gsm-app-dialog.c:544
 msgid "The startup command cannot be empty"
-msgstr ""
+msgstr "ຄຳສັ່ງເລີ່ມຕົ້ນບໍ່ສາມາດຫວ່າງເປົ່າໄດ້"
 
 #: capplet/gsm-app-dialog.c:550
 msgid "The startup command is not valid"
-msgstr ""
+msgstr "ຄຳສັ່ງເລີ່ມຕົ້ນບໍ່ຖືກຕ້ອງ"
 
 #: capplet/gsm-properties-dialog.c:616
 msgid "_Help"
-msgstr ""
+msgstr "_ຊ່ວຍເຫຼືອ"
 
 #: capplet/gsm-properties-dialog.c:620
 msgid "_Close"
-msgstr ""
+msgstr "ປິດ"
 
 #: capplet/gsm-properties-dialog.c:670
 msgid "Enabled"
-msgstr ""
+msgstr "ເປີດໃຊ້ງານ"
 
 #: capplet/gsm-properties-dialog.c:682
 msgid "Icon"
-msgstr ""
+msgstr "ໄອຄອນ"
 
 #: capplet/gsm-properties-dialog.c:694
 msgid "Program"
-msgstr ""
+msgstr "ໂປຣແກຣມ"
 
 #: capplet/gsm-properties-dialog.c:900
 msgid "Startup Applications Preferences"
-msgstr ""
+msgstr "ການຕັ້ງຄ່າແອັບພລິເຄຊັນເລີ່ມຕົ້ນ"
 
 #: capplet/gsp-app.c:280
 msgid "No name"
-msgstr "ບໍ່ມີຊື"
+msgstr "ບໍ່ມີຊື່"
 
 #: capplet/gsp-app.c:286
 msgid "No description"
-msgstr ""
+msgstr "ບໍ່ມີລາຍລະອຽດ"
 
 #: capplet/main.c:36 mate-session/main.c:614
 msgid "Version of this application"
-msgstr ""
+msgstr "ເວີຊັນຂອງແອັບພລິເຄຊັນນີ້"
 
 #: capplet/main.c:52
 msgid "Could not display help document"
-msgstr ""
+msgstr "ບໍ່ສາມາດສະແດງເອກະສານຊ່ວຍເຫຼືອໄດ້"
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
-msgstr ""
+msgstr "- ຄຸນສົມບັດຂອງເຊດຊັນ MATE"
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
-msgstr ""
+msgstr "ເວລາເລີ່ມຕົ້ນຂອງເຊດຊັນປັດຈຸບັນ"
 
 #: data/org.mate.session.gschema.xml.in:6
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "ເວລາ Unix ທີ່ເລີ່ມຕົ້ນເຊດຊັນປັດຈຸບັນ."
 
 #: data/org.mate.session.gschema.xml.in:10
 msgid "Save sessions"
-msgstr ""
+msgstr "ບັນທຶກເຊດຊັນ"
 
 #: data/org.mate.session.gschema.xml.in:11
 msgid "If enabled, mate-session will save the session automatically."
-msgstr ""
+msgstr "ຖ້າເປີດໃຊ້, mate-session ຈະບັນທຶກເຊດຊັນໂດຍອັດຕະໂນມັດ."
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr ""
+msgstr "ສະແດງແອັບພລິເຄຊັນເລີ່ມຕົ້ນອັດຕະໂນມັດທີ່ຖືກເຊື່ອງໄວ້"
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
+"ຖ້າເປີດໃຊ້, mate-session-properties ຈະສະແດງແອັບພລິເຄຊັນເລີ່ມຕົ້ນທີ່ຖືກເຊື່ອງໄວ້."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
-msgstr ""
+msgstr "ຖາມກ່ອນອອກຈາກລະບົບ"
 
 #: data/org.mate.session.gschema.xml.in:21
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr ""
+msgstr "ຖ້າເປີດໃຊ້, mate-session ຈະຖາມຜູ້ໃຊ້ກ່ອນທີ່ຈະສິ້ນສຸດເຊດຊັນ."
 
 #: data/org.mate.session.gschema.xml.in:26
 msgid "Logout timeout"
-msgstr ""
+msgstr "ເວລາສິ້ນສຸດການອອກຈາກລະບົບ"
 
 #: data/org.mate.session.gschema.xml.in:27
 msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
 msgstr ""
+"ຖ້າເປີດການຖາມກ່ອນອອກຈາກລະບົບ, ນີ້ຈະກຳນົດເວລາເປັນວິນາທີກ່ອນທີ່ຈະອອກຈາກລະບົບໂດຍອັດຕະໂນມັດ. ຖ້າເປັ"
+"ນ 0, ການອອກຈາກລະບົບອັດຕະໂນມັດຈະຖືກປິດໃຊ້ງານ."
 
 #: data/org.mate.session.gschema.xml.in:31
 msgid "Time before session is considered idle"
-msgstr ""
+msgstr "ເວລາກ່ອນທີ່ເຊດຊັນຈະຖືກຖືວ່າວ່າງ (idle)"
 
 #: data/org.mate.session.gschema.xml.in:32
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr ""
+msgstr "ຈຳນວນນາທີທີ່ບໍ່ມີການເຄື່ອນໄຫວກ່ອນທີ່ເຊດຊັນຈະຖືກຖືວ່າວ່າງ."
 
 #: data/org.mate.session.gschema.xml.in:36
 msgid "Default session"
-msgstr ""
+msgstr "ເຊດຊັນເລີ່ມຕົ້ນ"
 
 #: data/org.mate.session.gschema.xml.in:37
 msgid "List of applications that are part of the default session."
-msgstr ""
+msgstr "ລາຍຊື່ແອັບພລິເຄຊັນທີ່ເປັນສ່ວນໜຶ່ງຂອງເຊດຊັນເລີ່ມຕົ້ນ."
 
 #: data/org.mate.session.gschema.xml.in:41
 msgid "Required session components"
-msgstr ""
+msgstr "ອົງປະກອບທີ່ຈຳເປັນຂອງເຊດຊັນ"
 
 #: data/org.mate.session.gschema.xml.in:42
 msgid ""
@@ -178,368 +183,381 @@ msgid ""
 "automatically add the required components back to the session at login time "
 "if they do get removed."
 msgstr ""
+"ລາຍຊື່ອົງປະກອບທີ່ຈຳເປັນເຊິ່ງເປັນສ່ວນໜຶ່ງຂອງເຊດຊັນ. ໂດຍປົກກະຕິແລ້ວເຄື່ອງມືຕັ້ງຄ່າແອັບພລິເຄຊັນເລີ່ມຕົ້ນຈະບໍ່ອະ"
+"ນຸຍາດໃຫ້ຜູ້ໃຊ້ເອົາອົງປະກອບທີ່ຈຳເປັນອອກຈາກເຊດຊັນ, ແລະ ຕົວຈັດການເຊດຊັນຈະເພີ່ມອົງປະກອບທີ່ຈຳເປັນກັບຄືນເ"
+"ຂົ້າໃນເຊດຊັນໂດຍອັດຕະໂນມັດໃນເວລາເຂົ້າສູ່ລະບົບ ຫາກພວກມັນຖືກເອົາອອກ."
 
 #: data/org.mate.session.gschema.xml.in:46
 msgid "Control gnome compatibility component startup"
-msgstr ""
+msgstr "ຄວບຄຸມການເລີ່ມຕົ້ນຂອງອົງປະກອບທີ່ເຂົ້າກັນໄດ້ກັບ gnome"
 
 #: data/org.mate.session.gschema.xml.in:47
 msgid "Control which compatibility components to start."
-msgstr ""
+msgstr "ຄວບຄຸມວ່າຈະເລີ່ມຕົ້ນອົງປະກອບທີ່ເຂົ້າກັນໄດ້ໃດແດ່."
 
 #: data/org.mate.session.gschema.xml.in:54 data/mate-wm.desktop.in:4
 msgid "Window Manager"
-msgstr ""
+msgstr "ຕົວຈັດການໜ້າຕ່າງ"
 
 #: data/org.mate.session.gschema.xml.in:55
 msgid ""
 "The window manager is the program that draws the title bar and borders "
 "around windows, and allows you to move and resize windows."
 msgstr ""
+"ຕົວຈັດການໜ້າຕ່າງແມ່ນໂປຣແກຣມທີ່ແຕ້ມແຖບຊື່ ແລະ ຂອບອ້ອມຮອບໜ້າຕ່າງ, ແລະ ຊ່ວຍໃຫ້ເຈົ້າຍ້າຍ ຫຼື ປ່ຽນຂະໜາດ"
+"ໜ້າຕ່າງໄດ້."
 
 #: data/org.mate.session.gschema.xml.in:59
 msgid "Panel"
-msgstr ""
+msgstr "ພາເນລ"
 
 #: data/org.mate.session.gschema.xml.in:60
 msgid ""
 "The panel provides the bar at the top or bottom of the screen containing "
 "menus, the window list, status icons, the clock, etc."
 msgstr ""
+"ພາເນລແມ່ນແຖບທີ່ຢູ່ທາງເທິງ ຫຼື ທາງລຸ່ມຂອງໜ້າຈໍ ທີ່ປະກອບມີເມນູ, ລາຍຊື່ໜ້າຕ່າງ, ໄອຄອນສະຖານະ, ໂມງ ແລ"
+"ະ ອື່ນໆ."
 
 #: data/org.mate.session.gschema.xml.in:64
 msgid "File Manager"
-msgstr ""
+msgstr "ຕົວຈັດການໄຟລ໌"
 
 #: data/org.mate.session.gschema.xml.in:65
 msgid ""
 "The file manager provides the desktop icons and allows you to interact with "
 "your saved files."
 msgstr ""
+"ຕົວຈັດການໄຟລ໌ໃຫ້ບໍລິການໄອຄອນໜ້າຈໍ ແລະ ຊ່ວຍໃຫ້ເຈົ້າຈັດການກັບໄຟລ໌ທີ່ບັນທຶກໄວ້."
 
 #: data/org.mate.session.gschema.xml.in:69
 msgid "Dock"
-msgstr ""
+msgstr "ດັອກ"
 
 #: data/org.mate.session.gschema.xml.in:70
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
 msgstr ""
+"ດັອກແມ່ນພື້ນທີ່ສຳລັບວາງໄອຄອນ, ຄ້າຍຄືກັບພາເນລ, ເພື່ອໃຊ້ເປີດ ແລະ ສະຫຼັບແອັບພລິເຄຊັນ."
 
 #: data/mate.desktop.in:3
 msgid "MATE"
-msgstr ""
+msgstr "MATE"
 
 #: data/mate.desktop.in:4
 msgid "This session logs you into MATE"
-msgstr ""
+msgstr "ເຊດຊັນນີ້ຈະນຳເຈົ້າເຂົ້າສູ່ລະບົບ MATE"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "launch;MATE;desktop;session;ເປີດ;ເດັສທັອບ;ເຊດຊັນ;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr ""
+msgstr "MATE;window;manager;launch;MDM;ໜ້າຕ່າງ;ຕົວຈັດການ;"
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
-msgstr ""
+msgstr "<b>ບາງໂປຣແກຣມຍັງເຮັດວຽກຢູ່:</b>"
 
 #: data/gsm-inhibit-dialog.ui:52 mate-session/gsm-inhibit-dialog.c:643
 msgid ""
 "Waiting for the program to finish.  Interrupting the program may cause you "
 "to lose work."
 msgstr ""
+"ກຳລັງລໍຖ້າໃຫ້ໂປຣແກຣມເຮັດວຽກໃຫ້ແລ້ວ. ການຂັດຈັງຫວະໂປຣແກຣມອາດເຮັດໃຫ້ວຽກຂອງເຈົ້າເສຍຫາຍໄດ້."
 
 #: data/mate-session-properties.desktop.in:3
 msgid "Startup Applications"
-msgstr ""
+msgstr "ແອັບພລິເຄຊັນເລີ່ມຕົ້ນ"
 
 #: data/mate-session-properties.desktop.in:4
 msgid "Choose what applications to start when you log in"
-msgstr ""
+msgstr "ເລືອກແອັບພລິເຄຊັນທີ່ຈະເລີ່ມຕົ້ນເມື່ອເຈົ້າເຂົ້າສູ່ລະບົບ"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
-msgstr ""
+msgstr "MATE;session;properties;applications;login;start;ຄຸນສົມບັດ;ແອັບ;ເລີ່ມ;"
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
-msgstr ""
+msgstr "_ໂປຣແກຣມເລີ່ມຕົ້ນເພີ່ມເຕີມ:"
 
 #: data/session-properties.ui:86
 msgid "_Custom Add"
-msgstr ""
+msgstr "ເພີ່ມແບບ_ກຳນົດເອງ"
 
 #: data/session-properties.ui:116
 msgid "_Remove"
-msgstr ""
+msgstr "_ເອົາອອກ"
 
 #: data/session-properties.ui:132
 msgid "_Edit"
-msgstr ""
+msgstr "_ແກ້ໄຂ"
 
 #: data/session-properties.ui:162
 msgid "_Show hidden"
-msgstr ""
+msgstr "_ສະແດງອັນທີ່ເຊື່ອງໄວ້"
 
 #: data/session-properties.ui:183
 msgid "Startup Programs"
-msgstr ""
+msgstr "ໂປຣແກຣມເລີ່ມຕົ້ນ"
 
 #: data/session-properties.ui:198
 msgid "_Automatically remember running applications when logging out"
-msgstr ""
+msgstr "ຈົດຈຳແອັບພລິເຄຊັນທີ່ກຳລັງເຮັດວຽກໂດຍ_ອັດຕະໂນມັດເມື່ອອອກຈາກລະບົບ"
 
 #: data/session-properties.ui:240
 msgid "_Remember Currently Running Application"
-msgstr ""
+msgstr "_ຈົດຈຳແອັບພລິເຄຊັນທີ່ກຳລັງເຮັດວຽກຢູ່ປັດຈຸບັນ"
 
 #: data/session-properties.ui:274
 msgid "Options"
-msgstr ""
+msgstr "ຕົວເລືອກ"
 
 #: data/session-properties.ui:312
 msgid "Browse…"
-msgstr ""
+msgstr "ເລືອກເບິ່ງ…"
 
 #: data/session-properties.ui:355
 msgid "Comm_ent:"
-msgstr ""
+msgstr "ຄຳ_ອະທິບາຍ:"
 
 #: data/session-properties.ui:369
 msgid "Co_mmand:"
-msgstr ""
+msgstr "ຄຳ_ສັ່ງ:"
 
 #: data/session-properties.ui:383
 msgid "_Name:"
-msgstr ""
+msgstr "_ຊື່:"
 
 #: data/session-properties.ui:397
 msgid "_Delay:"
-msgstr ""
+msgstr "ໄລຍະ_ໜ່ວງ:"
 
 #: mate-submodules/libegg/eggdesktopfile.c:169
 msgid "File is not a valid .desktop file"
-msgstr ""
+msgstr "ໄຟລ໌ນີ້ບໍ່ແມ່ນໄຟລ໌ .desktop ທີ່ຖືກຕ້ອງ"
 
 #: mate-submodules/libegg/eggdesktopfile.c:194
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr ""
+msgstr "ບໍ່ຮູ້ຈັກເວີຊັນຂອງໄຟລ໌ເດດທັອບ '%s'"
 
 #: mate-submodules/libegg/eggdesktopfile.c:984
 #, c-format
 msgid "Starting %s"
-msgstr "ກໍາລັງເລີ້ມ %s"
+msgstr "ກຳລັງເລີ່ມ %s"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1126
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "ແອັບພລິເຄຊັນບໍ່ຮອງຮັບການເປີດເອກະສານຜ່ານຄຳສັ່ງ (command line)"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1194
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr ""
+msgstr "ບໍ່ຮູ້ຈັກຕົວເລືອກການເປີດ: %d"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1410
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr ""
+msgstr "ບໍ່ສາມາດສົ່ງ URI ຂອງເອກະສານໄປຫາໄຟລ໌ເດດທັອບທີ່ມີ 'Type=Link'"
 
 #: mate-submodules/libegg/eggdesktopfile.c:1431
 msgid "Not a launchable item"
-msgstr "ຮ້ອງໃຊ້ບໍ່ໃດ້"
+msgstr "ບໍ່ແມ່ນລາຍການທີ່ສາມາດເປີດໃຊ້ງານໄດ້"
 
 #: mate-submodules/libegg/eggsmclient.c:234
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "ປິດການເຊື່ອມຕໍ່ກັບຕົວຈັດການເຊດຊັນ (session manager)"
 
 #: mate-submodules/libegg/eggsmclient.c:239
 msgid "Specify file containing saved configuration"
-msgstr ""
+msgstr "ລະບຸໄຟລ໌ທີ່ບັນຈຸການຕັ້ງຄ່າທີ່ບັນທຶກໄວ້"
 
 #: mate-submodules/libegg/eggsmclient.c:239
 msgid "FILE"
-msgstr ""
+msgstr "ໄຟລ໌"
 
 #: mate-submodules/libegg/eggsmclient.c:244
 msgid "Specify session management ID"
-msgstr ""
+msgstr "ລະບຸ ID ຂອງການຈັດການເຊດຊັນ"
 
 #: mate-submodules/libegg/eggsmclient.c:244
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: mate-submodules/libegg/eggsmclient.c:270
 msgid "Session management options:"
-msgstr ""
+msgstr "ຕົວເລືອກການຈັດການເຊດຊັນ:"
 
 #: mate-submodules/libegg/eggsmclient.c:271
 msgid "Show session management options"
-msgstr ""
+msgstr "ສະແດງຕົວເລືອກການຈັດການເຊດຊັນ"
 
 #: mate-session/gsm-inhibit-dialog.c:262
 #, c-format
 msgid "Icon '%s' not found"
-msgstr ""
+msgstr "ບໍ່ເຫັນໄອຄອນ '%s'"
 
 #: mate-session/gsm-inhibit-dialog.c:591
 msgid "Unknown"
-msgstr ""
+msgstr "ບໍ່ຮູ້ຈັກ"
 
 #: mate-session/gsm-inhibit-dialog.c:642
 msgid "A program is still running:"
-msgstr ""
+msgstr "ມີໂປຣແກຣມໜຶ່ງຍັງເຮັດວຽກຢູ່:"
 
 #: mate-session/gsm-inhibit-dialog.c:646
 msgid "Some programs are still running:"
-msgstr ""
+msgstr "ບາງໂປຣແກຣມຍັງເຮັດວຽກຢູ່:"
 
 #: mate-session/gsm-inhibit-dialog.c:647
 msgid ""
 "Waiting for programs to finish.  Interrupting these programs may cause you "
 "to lose work."
 msgstr ""
+"ກຳລັງລໍຖ້າໃຫ້ໂປຣແກຣມຕ່າງໆເຮັດວຽກໃຫ້ແລ້ວ. ການຂັດຈັງຫວະໂປຣແກຣມເຫຼົ່ານີ້ອາດເຮັດໃຫ້ວຽກຂອງເຈົ້າເສຍຫາຍ"
+"ໄດ້."
 
 #: mate-session/gsm-inhibit-dialog.c:876
 msgid "Switch User Anyway"
-msgstr ""
+msgstr "ສະຫຼັບຜູ້ໃຊ້ຕໍ່ໄປ"
 
 #: mate-session/gsm-inhibit-dialog.c:879
 msgid "Log Out Anyway"
-msgstr ""
+msgstr "ອອກຈາກລະບົບຕໍ່ໄປ"
 
 #: mate-session/gsm-inhibit-dialog.c:882
 msgid "Suspend Anyway"
-msgstr ""
+msgstr "ພັກເຄື່ອງຕໍ່ໄປ"
 
 #: mate-session/gsm-inhibit-dialog.c:885
 msgid "Hibernate Anyway"
-msgstr ""
+msgstr "ຈຳສິນຕໍ່ໄປ"
 
 #: mate-session/gsm-inhibit-dialog.c:888
 msgid "Shut Down Anyway"
-msgstr ""
+msgstr "ປິດເຄື່ອງຕໍ່ໄປ"
 
 #: mate-session/gsm-inhibit-dialog.c:891
 msgid "Reboot Anyway"
-msgstr ""
+msgstr "ເລີ່ມລະບົບໃໝ່ຕໍ່ໄປ"
 
 #: mate-session/gsm-inhibit-dialog.c:899
 msgid "Lock Screen"
-msgstr ""
+msgstr "ລັອກໜ້າຈໍ"
 
 #: mate-session/gsm-inhibit-dialog.c:902
 msgid "Cancel"
-msgstr ""
+msgstr "ຍົກເລີກ"
 
 #: mate-session/gsm-logout-dialog.c:308
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
+msgstr[0] "ເຈົ້າຈະຖືກອອກຈາກລະບົບໂດຍອັດຕະໂນມັດພາຍໃນ %d ວິນາທີ"
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
+msgstr[0] "ລະບົບນີ້ຈະປິດເຄື່ອງໂດຍອັດຕະໂນມັດພາຍໃນ %d ວິນາທີ"
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format
 msgid "You are currently logged in as \"%s\"."
-msgstr ""
+msgstr "ປັດຈຸບັນເຈົ້າເຂົ້າສູ່ລະບົບໃນຊື່ \"%s\"."
 
 #: mate-session/gsm-logout-dialog.c:442
 msgid "Log out of this system now?"
-msgstr ""
+msgstr "ອອກຈາກລະບົບດຽວນີ້ເລີຍບໍ?"
 
 #: mate-session/gsm-logout-dialog.c:448
 msgid "_Switch User"
-msgstr ""
+msgstr "_ສະຫຼັບຜູ້ໃຊ້"
 
 #: mate-session/gsm-logout-dialog.c:457
 msgid "_Log Out"
-msgstr ""
+msgstr "_ອອກຈາກລະບົບ"
 
 #: mate-session/gsm-logout-dialog.c:463
 msgid "Shut down this system now?"
-msgstr ""
+msgstr "ປິດລະບົບດຽວນີ້ເລີຍບໍ?"
 
 #: mate-session/gsm-logout-dialog.c:469
 msgid "S_uspend"
-msgstr ""
+msgstr "_ພັກເຄື່ອງ"
 
 #: mate-session/gsm-logout-dialog.c:475
 msgid "_Hibernate"
-msgstr ""
+msgstr "_ຈຳສິນ"
 
 #: mate-session/gsm-logout-dialog.c:481
 msgid "_Restart"
-msgstr ""
+msgstr "_ເລີ່ມລະບົບໃໝ່"
 
 #: mate-session/gsm-logout-dialog.c:491
 msgid "_Shut Down"
-msgstr ""
+msgstr "_ປິດເຄື່ອງ"
 
 #: mate-session/gsm-manager.c:1525 mate-session/gsm-manager.c:2349
 msgid "Not responding"
-msgstr ""
+msgstr "ບໍ່ມີການຕອບສະໜອງ"
 
 #. It'd be really surprising to reach this code: if we're here,
 #. * then the XSMP client already has set several XSMP
 #. * properties. But it could still be that SmProgram is not set.
 #: mate-session/gsm-xsmp-client.c:593
 msgid "Remembered Application"
-msgstr ""
+msgstr "ແອັບພລິເຄຊັນທີ່ຖືກຈົດຈຳໄວ້"
 
 #: mate-session/gsm-xsmp-client.c:1258
 msgid "This program is blocking logout."
-msgstr ""
+msgstr "ໂປຣແກຣມນີ້ກຳລັງຂັດຂວາງການອອກຈາກລະບົບ."
 
 #: mate-session/gsm-xsmp-server.c:323
 msgid ""
 "Refusing new client connection because the session is currently being shut "
 "down\n"
-msgstr ""
+msgstr "ປະຕິເສດການເຊື່ອມຕໍ່ຈາກລູກຂ່າຍໃໝ່ ເພາະວ່າເຊດຊັນກຳລັງຖືກປິດລົງ\n"
 
 #: mate-session/gsm-xsmp-server.c:584
 #, c-format
 msgid "Could not create ICE listening socket: %s"
-msgstr ""
+msgstr "ບໍ່ສາມາດສ້າງ ICE listening socket: %s ໄດ້"
 
 #. Oh well, no X for you!
 #: mate-session/gsm-util.c:382
 msgid "Unable to start login session (and unable to connect to the X server)"
 msgstr ""
+"ບໍ່ສາມາດເລີ່ມເຊດຊັນການເຂົ້າສູ່ລະບົບໄດ້ (ແລະ ບໍ່ສາມາດເຊື່ອມຕໍ່ຫາ X server ໄດ້)"
 
 #: mate-session/main.c:611
 msgid "Override standard autostart directories"
-msgstr ""
+msgstr "ແທນທີ່ໄດເຣັກທໍຣີເລີ່ມຕົ້ນອັດຕະໂນມັດມາດຕະຖານ"
 
 #: mate-session/main.c:612
 msgid "Enable debugging code"
-msgstr ""
+msgstr "ເປີດໃຊ້ງານໂຄ້ດ debugging"
 
 #: mate-session/main.c:613
 msgid "Do not load user-specified applications"
-msgstr ""
+msgstr "ບໍ່ຕ້ອງໂຫຼດແອັບພລິເຄຊັນທີ່ຜູ້ໃຊ້ກຳນົດເອງ"
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr ""
+msgstr "ປິດການກວດສອບການເລັ່ງຄວາມໄວຮາດແວ"
 
 #: mate-session/main.c:637
 msgid " - the MATE session manager"
-msgstr ""
+msgstr " - ຕົວຈັດການເຊດຊັນ MATE"
 
 #: tools/mate-session-inhibit.c:118
 #, c-format
@@ -558,60 +576,73 @@ msgid ""
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
 msgstr ""
+"%s [ຕົວເລືອກ...] ຄຳສັ່ງ\n"
+"\n"
+"ປະຕິບັດຄຳສັ່ງ (COMMAND) ໃນຂະນະທີ່ຢັບຢັ້ງບາງຟັງຊັນຂອງເຊດຊັນ.\n"
+"\n"
+"  -h, --help        ສະແດງການຊ່ວຍເຫຼືອນີ້\n"
+"  --version         ສະແດງເວີຊັນຂອງໂປຣແກຣມ\n"
+"  --app-id ID       ໄອດີແອັບພລິເຄຊັນທີ່ຈະໃຊ້\n"
+"                    ເມື່ອຢັບຢັ້ງ (ເປັນທາງເລືອກ)\n"
+"  --reason REASON   ເຫດຜົນໃນການຢັບຢັ້ງ (ເປັນທາງເລືອກ)\n"
+"  --inhibit ARG     ສິ່ງທີ່ຈະຢັບຢັ້ງ, ແຍກລາຍການດ້ວຍເຄື່ອງໝາຍຈຸດ:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"ຫາກບໍ່ມີຕົວເລືອກ --inhibit, ຈະຖືວ່າເປັນ idle.\n"
 
 #: tools/mate-session-inhibit.c:174 tools/mate-session-inhibit.c:184
 #: tools/mate-session-inhibit.c:194
 #, c-format
 msgid "%s requires an argument\n"
-msgstr ""
+msgstr "%s ຕ້ອງການອາຄິວເມນ (argument)\n"
 
 #: tools/mate-session-inhibit.c:230
 #, c-format
 msgid "Failed to execute %s\n"
-msgstr ""
+msgstr "ບໍ່ສາມາດປະຕິບັດການ %s ໄດ້\n"
 
 #: tools/mate-session-save.c:67
 msgid "Log out"
-msgstr ""
+msgstr "ອອກຈາກລະບົບ"
 
 #: tools/mate-session-save.c:68
 msgid "Log out, ignoring any existing inhibitors"
-msgstr ""
+msgstr "ອອກຈາກລະບົບ ໂດຍບໍ່ສົນໃຈການຢັບຢັ້ງທີ່ມີຢູ່"
 
 #: tools/mate-session-save.c:69
 msgid "Show logout dialog"
-msgstr ""
+msgstr "ສະແດງກ່ອງໂຕ້ຕອບການອອກຈາກລະບົບ"
 
 #: tools/mate-session-save.c:70
 msgid "Show shutdown dialog"
-msgstr ""
+msgstr "ສະແດງກ່ອງໂຕ້ຕອບການປິດເຄື່ອງ"
 
 #: tools/mate-session-save.c:71
 msgid "Use dialog boxes for errors"
-msgstr ""
+msgstr "ໃຊ້ກ່ອງໂຕ້ຕອບສຳລັບຂໍ້ຜິດພາດ"
 
 #. deprecated options
 #: tools/mate-session-save.c:73
 msgid "Set the current session name"
-msgstr ""
+msgstr "ກຳນົດຊື່ເຊດຊັນປັດຈຸບັນ"
 
 #: tools/mate-session-save.c:73
 msgid "NAME"
-msgstr ""
+msgstr "ຊື່"
 
 #: tools/mate-session-save.c:74
 msgid "Kill session"
-msgstr ""
+msgstr "ປິດເຊດຊັນທັນທີ"
 
 #: tools/mate-session-save.c:75
 msgid "Do not require confirmation"
-msgstr ""
+msgstr "ບໍ່ຕ້ອງຂໍການຢືນຢັນ"
 
 #. Okay, it wasn't the upgrade case, so now we can give up.
 #: tools/mate-session-save.c:127
 msgid "Could not connect to the session manager"
-msgstr ""
+msgstr "ບໍ່ສາມາດເຊື່ອມຕໍ່ຫາຕົວຈັດການເຊດຊັນໄດ້"
 
 #: tools/mate-session-save.c:254
 msgid "Program called with conflicting options"
-msgstr ""
+msgstr "ໂປຣແກຣມຖືກເອີ້ນໃຊ້ດ້ວຍຕົວເລືອກທີ່ຂັດແຍ້ງກັນ"
