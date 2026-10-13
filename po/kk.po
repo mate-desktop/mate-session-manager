@@ -1,25 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the mate-session-manager package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2019
-# 
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2019, 2026.
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.27.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2023-09-04 20:19+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2019\n"
-"Language-Team: Kazakh (https://app.transifex.com/mate/teams/13566/kk/)\n"
+"PO-Revision-Date: 2026-08-30 04:20+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/mate-session-manager/kk/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: kk\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.8.1\n"
 
 #: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -27,7 +28,7 @@ msgstr "Команданы таңдаңыз"
 
 #: capplet/gsm-app-dialog.c:168
 msgid "second"
-msgstr ""
+msgstr "секунд"
 
 #: capplet/gsm-app-dialog.c:170
 msgid "seconds"
@@ -104,7 +105,7 @@ msgstr "Көмек құжатын көрсету мүмкін емес"
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
-msgstr ""
+msgstr "- MATE сессиясының қасиеттері"
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -112,7 +113,7 @@ msgstr "Ағымдағы сессияның басталу уақыты"
 
 #: data/org.mate.session.gschema.xml.in:6
 msgid "Unix time of the start of the current session."
-msgstr ""
+msgstr "Ағымдағы сессияның басталған Unix уақыты."
 
 #: data/org.mate.session.gschema.xml.in:10
 msgid "Save sessions"
@@ -121,15 +122,18 @@ msgstr "Сессияларды сақтау"
 #: data/org.mate.session.gschema.xml.in:11
 msgid "If enabled, mate-session will save the session automatically."
 msgstr ""
+"Егер іске қосылған болса, mate-session сессияны автоматты түрде сақтайды."
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr ""
+msgstr "Жасырын автоқосылатын қолданбаларды көрсету"
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
+"Егер іске қосылған болса, mate-session-properties жасырын автоқосылатын "
+"қолданбаларды көрсетеді."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -138,6 +142,8 @@ msgstr "Жүйеден шығу сұранымы"
 #: data/org.mate.session.gschema.xml.in:21
 msgid "If enabled, mate-session will prompt the user before ending a session."
 msgstr ""
+"Егер іске қосылған болса, mate-session сеансты аяқтау алдында пайдаланушыдан "
+"сұрайды."
 
 #: data/org.mate.session.gschema.xml.in:26
 msgid "Logout timeout"
@@ -148,6 +154,9 @@ msgid ""
 "If logout prompt is enabled, this set the timeout in seconds before logout "
 "automatically. If 0, automatic logout is disabled."
 msgstr ""
+"Егер жүйеден шығуды сұрау іске қосылған болса, бұл автоматты түрде шығуға "
+"дейінгі күту уақытын секундпен орнатады. Егер 0 болса, автоматты түрде шығу "
+"сөндіріледі."
 
 #: data/org.mate.session.gschema.xml.in:31
 msgid "Time before session is considered idle"
@@ -156,7 +165,7 @@ msgstr "Сессия бос етіп саналу үшін уақыт мерзі
 #: data/org.mate.session.gschema.xml.in:32
 msgid ""
 "The number of minutes of inactivity before the session is considered idle."
-msgstr ""
+msgstr "Сессия іссіз деп саналуға дейінгі әрекетсіздік минуттарының саны."
 
 #: data/org.mate.session.gschema.xml.in:36
 msgid "Default session"
@@ -164,7 +173,7 @@ msgstr "Бастапқы сессия"
 
 #: data/org.mate.session.gschema.xml.in:37
 msgid "List of applications that are part of the default session."
-msgstr ""
+msgstr "Үнсіз келісім бойынша сессияның құрамына кіретін қолданбалар тізімі."
 
 #: data/org.mate.session.gschema.xml.in:41
 msgid "Required session components"
@@ -179,6 +188,12 @@ msgid ""
 "automatically add the required components back to the session at login time "
 "if they do get removed."
 msgstr ""
+"Сессияның бөлігі ретінде талап етілетін компоненттер тізімі. (Әрбір элемент "
+"«/org/mate/desktop/session/required_components» астындағы кілтті көрсетеді). "
+"Әдетте, іске қосылатын қолданбалар баптауларының құралы пайдаланушыларға "
+"қажетті компонентті сессиядан өшіруге рұқсат бермейді, ал сессия басқарушысы "
+"қажетті компоненттер өшірілген болса, жүйеге кіру кезінде оларды сессияға "
+"автоматты түрде қайта қосады."
 
 #: data/org.mate.session.gschema.xml.in:46
 msgid "Control gnome compatibility component startup"
@@ -226,13 +241,15 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:69
 msgid "Dock"
-msgstr ""
+msgstr "Док"
 
 #: data/org.mate.session.gschema.xml.in:70
 msgid ""
 "A dock provides a dockable area, similar to a panel, for launching and "
 "switching applications."
 msgstr ""
+"Док қолданбаларды іске қосу және ауыстыру үшін панельге ұқсас бекітілетін "
+"аймақты қамтамасыз етеді."
 
 #: data/mate.desktop.in:3
 msgid "MATE"
@@ -246,13 +263,13 @@ msgstr "Бұл сессия сізді MATE ішіне кіргізеді"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "іске қосу;MATE;жұмыс үстелі;сессия;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr ""
+msgstr "MATE;терезе;басқарушы;іске қосу;MDM;"
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
@@ -280,7 +297,7 @@ msgstr ""
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
-msgstr ""
+msgstr "MATE;сессия;қасиеттер;қолданбалар;кіру;бастау;"
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
@@ -288,7 +305,7 @@ msgstr "Қосымша іске қосылатын бағ_дарламалар:"
 
 #: data/session-properties.ui:86
 msgid "_Custom Add"
-msgstr ""
+msgstr "Па_йдаланушылық қосу"
 
 #: data/session-properties.ui:116
 msgid "_Remove"
@@ -300,7 +317,7 @@ msgstr "Тү_зету"
 
 #: data/session-properties.ui:162
 msgid "_Show hidden"
-msgstr ""
+msgstr "Жасы_рынды көрсету"
 
 #: data/session-properties.ui:183
 msgid "Startup Programs"
@@ -458,15 +475,15 @@ msgstr "Ба_с тарту"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Сіз %d секундтан кейін жүйеден автоматты түрде шығарыласыз"
+msgstr[1] "Сіз %d секундтан кейін жүйеден автоматты түрде шығарыласыз"
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
 msgid "This system will be automatically shut down in %d second"
 msgid_plural "This system will be automatically shut down in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Бұл жүйе %d секундтан кейін автоматты түрде сөндіріледі"
+msgstr[1] "Бұл жүйе %d секундтан кейін автоматты түрде сөндіріледі"
 
 #: mate-session/gsm-logout-dialog.c:362
 #, c-format
@@ -552,7 +569,7 @@ msgstr "Пайдаланушыға тән қолданбаларды жөнел�
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr ""
+msgstr "Аппараттық үдетуді тексеруді сөндіру"
 
 #: mate-session/main.c:637
 msgid " - the MATE session manager"
@@ -575,6 +592,20 @@ msgid ""
 "\n"
 "If no --inhibit option is specified, idle is assumed.\n"
 msgstr ""
+"%s [ОПЦИЯ...] КОМАНДА\n"
+"\n"
+"Сеанстың кейбір функцияларына тыйым сала отырып, КОМАНДАНЫ орындау.\n"
+"\n"
+"  -h, --help        Бұл көмекті көрсету\n"
+"  --version         Бағдарлама нұсқасын көрсету\n"
+"  --app-id ID       Тыйым салу кезінде қолданылатын\n"
+"                    қолданба идентификаторы (міндетті емес)\n"
+"  --reason REASON   Тыйым салу себебі (міндетті емес)\n"
+"  --inhibit ARG     Тыйым салынатын әрекеттер, қос нүктемен бөлінген "
+"тізімі:\n"
+"                    logout, switch-user, suspend, idle, automount\n"
+"\n"
+"Егер --inhibit опциясы көрсетілмесе, idle деп саналады.\n"
 
 #: tools/mate-session-inhibit.c:174 tools/mate-session-inhibit.c:184
 #: tools/mate-session-inhibit.c:194

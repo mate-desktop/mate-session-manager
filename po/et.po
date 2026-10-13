@@ -1,27 +1,30 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the mate-session-manager package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
 # Martin Wimpress <code@flexion.org>, 2018
 # Mattias Põldaru <mahfiaz@gmail.com>, 2018
 # Ivar Smolin <okul@linux.ee>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# 
+# Priit Jõerüüt <jrtkbfdr@users.noreply.translate.fedoraproject.org>, 2026.
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.27.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2023-09-04 20:19+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Estonian (https://app.transifex.com/mate/teams/13566/et/)\n"
+"PO-Revision-Date: 2026-09-27 13:54+0000\n"
+"Last-Translator: Priit Jõerüüt "
+"<jrtkbfdr@users.noreply.translate.fedoraproject.org>\n"
+"Language-Team: Estonian <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/mate-session-manager/et/>\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: et\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 #: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -29,7 +32,7 @@ msgstr "Käsu valimine"
 
 #: capplet/gsm-app-dialog.c:168
 msgid "second"
-msgstr ""
+msgstr "sekund"
 
 #: capplet/gsm-app-dialog.c:170
 msgid "seconds"
@@ -38,7 +41,7 @@ msgstr "sekundit"
 #: capplet/gsm-app-dialog.c:218 mate-session/gsm-logout-dialog.c:453
 #: mate-session/gsm-logout-dialog.c:486
 msgid "_Cancel"
-msgstr "_Tühista"
+msgstr "_Katkesta"
 
 #: capplet/gsm-app-dialog.c:224
 msgid "Add Startup Program"
@@ -106,7 +109,7 @@ msgstr "Abidokumenti pole võimalik kuvada"
 
 #: capplet/main.c:80
 msgid "- MATE Session Properties"
-msgstr ""
+msgstr "- MATE sessiooni omadused"
 
 #: data/org.mate.session.gschema.xml.in:5
 msgid "Current session start time"
@@ -114,7 +117,7 @@ msgstr "Jooksva seansi käivitamise aeg"
 
 #: data/org.mate.session.gschema.xml.in:6
 msgid "Unix time of the start of the current session."
-msgstr "Jooksva seansi käivitamise aeg Unixi vormingus"
+msgstr "Jooksva sessiooni käivitamise aeg Unixi vormingus."
 
 #: data/org.mate.session.gschema.xml.in:10
 msgid "Save sessions"
@@ -126,12 +129,14 @@ msgstr "Lubamise korral salvestab mate-session seansi automaatselt."
 
 #: data/org.mate.session.gschema.xml.in:15
 msgid "Show hidden autostart applications"
-msgstr ""
+msgstr "Näita peidetud automaatselt käivitatavaid rakendusi"
 
 #: data/org.mate.session.gschema.xml.in:16
 msgid ""
 "If enabled, mate-session-properties will show hidden autostart applications."
 msgstr ""
+"Kui on kasutusel, siis mate-session-properties kuvab peidetud automaatselt "
+"käivitatavaid rakendusi."
 
 #: data/org.mate.session.gschema.xml.in:20
 msgid "Logout prompt"
@@ -255,13 +260,13 @@ msgstr "Selle seansiga logitakse sind MATE keskkonda sisse"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "launch;MATE;desktop;session;töölaud;sessioon;seanss;käivitamine;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr ""
+msgstr "MATE;window;manager;launch;MDM;aken;haldus;käivitamine;käivitaja;"
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
@@ -307,7 +312,7 @@ msgstr "_Redaktor"
 
 #: data/session-properties.ui:162
 msgid "_Show hidden"
-msgstr ""
+msgstr "_Näita peidetuid"
 
 #: data/session-properties.ui:183
 msgid "Startup Programs"
@@ -327,7 +332,7 @@ msgstr "Valikud"
 
 #: data/session-properties.ui:312
 msgid "Browse…"
-msgstr "Sirvi..."
+msgstr "Sirvi…"
 
 #: data/session-properties.ui:355
 msgid "Comm_ent:"
@@ -339,7 +344,7 @@ msgstr "_Käsk:"
 
 #: data/session-properties.ui:383
 msgid "_Name:"
-msgstr "_Nimi"
+msgstr "_Nimi:"
 
 #: data/session-properties.ui:397
 msgid "_Delay:"
@@ -466,8 +471,8 @@ msgstr "Tühista"
 #, c-format
 msgid "You will be automatically logged out in %d second"
 msgid_plural "You will be automatically logged out in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Sind logitakse automaatselt välja %d sekundi möödumisel"
+msgstr[1] "Sind logitakse automaatselt välja %d sekundi möödumisel"
 
 #: mate-session/gsm-logout-dialog.c:316
 #, c-format
@@ -522,7 +527,7 @@ msgstr "Ei vasta"
 #. * properties. But it could still be that SmProgram is not set.
 #: mate-session/gsm-xsmp-client.c:593
 msgid "Remembered Application"
-msgstr ""
+msgstr "Meeldejäetud rakendus"
 
 #: mate-session/gsm-xsmp-client.c:1258
 msgid "This program is blocking logout."
@@ -562,7 +567,7 @@ msgstr "Kasutaja määratud rakendusi ei laadita"
 
 #: mate-session/main.c:615
 msgid "Disable hardware acceleration check"
-msgstr ""
+msgstr "Lülita riistvaralise kiirenduse kontroll välja"
 
 #: mate-session/main.c:637
 msgid " - the MATE session manager"
