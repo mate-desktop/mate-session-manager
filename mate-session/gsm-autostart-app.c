@@ -32,6 +32,9 @@
 #include <glib.h>
 #include <gio/gio.h>
 
+#define MATE_DESKTOP_USE_UNSTABLE_API
+#include <libmate-desktop/mate-systemd.h>
+
 #include "gsm-autostart-app.h"
 #include "gsm-util.h"
 
@@ -905,6 +908,14 @@ autostart_app_start_spawn (GsmAutostartApp *app,
                 priv->child_watch_id = g_child_watch_add (priv->pid,
                                                           (GChildWatchFunc)app_exited,
                                                           app);
+
+                mate_start_systemd_scope (priv->desktop_id,
+                                          priv->pid,
+                                          NULL,
+                                          NULL,
+                                          NULL,
+                                          NULL,
+                                          NULL);
         } else {
                 g_set_error (error,
                              GSM_APP_ERROR,

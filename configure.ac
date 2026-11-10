@@ -51,6 +51,7 @@ PKG_CHECK_MODULES(MATE_SESSION,
         gio-2.0 >= $GIO_REQUIRED
         gtk+-3.0 >= $GTK_REQUIRED
         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+        mate-desktop-2.0
 )
 
 PKG_CHECK_MODULES(SESSION_PROPERTIES,
