@@ -1,25 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the mate-session-manager package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2023
-# 
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2023, 2026.
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-session-manager 1.27.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2023-09-04 20:19+0200\n"
-"PO-Revision-Date: 2018-03-12 08:06+0000\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2023\n"
-"Language-Team: Georgian (https://app.transifex.com/mate/teams/13566/ka/)\n"
+"PO-Revision-Date: 2026-06-22 16:10+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/mate-session-manager/ka/>\n"
+"Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ka\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #: capplet/gsm-app-dialog.c:125
 msgid "Select Command"
@@ -27,7 +28,7 @@ msgstr "ბრძანების ამორჩევა"
 
 #: capplet/gsm-app-dialog.c:168
 msgid "second"
-msgstr ""
+msgstr "წამი"
 
 #: capplet/gsm-app-dialog.c:170
 msgid "seconds"
@@ -44,7 +45,7 @@ msgstr "დამწყები პროგრამის დამატე�
 
 #: capplet/gsm-app-dialog.c:226 data/session-properties.ui:101
 msgid "_Add"
-msgstr "დამატება"
+msgstr "დ_ამატება"
 
 #: capplet/gsm-app-dialog.c:229
 msgid "Edit Startup Program"
@@ -137,8 +138,7 @@ msgstr "დასტურის მოთხოვნის რეჟიმი"
 
 #: data/org.mate.session.gschema.xml.in:21
 msgid "If enabled, mate-session will prompt the user before ending a session."
-msgstr ""
-"თუ მონიშნულია,mate-session შეეკითხება მომხმარებელს სესიის დასრულებამდე"
+msgstr "თუ ჩართულია, mate-session ჰკითხავს მომხმარებელს სესიის დასრულებისას."
 
 #: data/org.mate.session.gschema.xml.in:26
 msgid "Logout timeout"
@@ -221,7 +221,7 @@ msgstr ""
 
 #: data/org.mate.session.gschema.xml.in:69
 msgid "Dock"
-msgstr ""
+msgstr "პანელი"
 
 #: data/org.mate.session.gschema.xml.in:70
 msgid ""
@@ -241,13 +241,13 @@ msgstr "ეს სესია გნომში შესვლის სა�
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate.desktop.in:11
 msgid "launch;MATE;desktop;session;"
-msgstr ""
+msgstr "launch;MATE;desktop;session;სამუშაომაგიდა;სესია;გაშვება;"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-wm.desktop.in:7
 msgid "MATE;window;manager;launch;MDM;"
-msgstr ""
+msgstr "MATE;window;manager;launch;MDM;ფანჯრები;მართვა;გაშვება;"
 
 #: data/gsm-inhibit-dialog.ui:14
 msgid "<b>Some programs are still running:</b>"
@@ -272,6 +272,7 @@ msgstr ""
 #: data/mate-session-properties.desktop.in:13
 msgid "MATE;session;properties;applications;login;start;"
 msgstr ""
+"MATE;session;properties;applications;login;start;სესია;თვისებები;შესვლა;აპლიკაციები;გაშვება;"
 
 #: data/session-properties.ui:35
 msgid "Additional startup _programs:"
@@ -283,11 +284,11 @@ msgstr ""
 
 #: data/session-properties.ui:116
 msgid "_Remove"
-msgstr "ამო_ღება"
+msgstr "წაშ_ლა"
 
 #: data/session-properties.ui:132
 msgid "_Edit"
-msgstr "_დამუშავება"
+msgstr "ჩასწორ_ება"
 
 #: data/session-properties.ui:162
 msgid "_Show hidden"
@@ -307,19 +308,19 @@ msgstr ""
 
 #: data/session-properties.ui:274
 msgid "Options"
-msgstr "სესიის პარამეტრები"
+msgstr "მორგება"
 
 #: data/session-properties.ui:312
 msgid "Browse…"
-msgstr ""
+msgstr "დათვალიერება…"
 
 #: data/session-properties.ui:355
 msgid "Comm_ent:"
-msgstr "ბრძანება"
+msgstr "კომ_ენტარი:"
 
 #: data/session-properties.ui:369
 msgid "Co_mmand:"
-msgstr "ბრძანება"
+msgstr "ბ_რძანება:"
 
 #: data/session-properties.ui:383
 msgid "_Name:"
@@ -483,15 +484,15 @@ msgstr "გნებავთ სისტემის ახლავე გა
 
 #: mate-session/gsm-logout-dialog.c:469
 msgid "S_uspend"
-msgstr "_დაყოვნება"
+msgstr "_ძილი"
 
 #: mate-session/gsm-logout-dialog.c:475
 msgid "_Hibernate"
-msgstr "_ჰიბერნიზაცია"
+msgstr "პროგრ_ამული ძილი"
 
 #: mate-session/gsm-logout-dialog.c:481
 msgid "_Restart"
-msgstr "გადატვირთვა"
+msgstr "გადატვი_რთვა"
 
 #: mate-session/gsm-logout-dialog.c:491
 msgid "_Shut Down"
@@ -546,7 +547,7 @@ msgstr ""
 
 #: mate-session/main.c:637
 msgid " - the MATE session manager"
-msgstr "ვერ ვუკავშირდები სესიის მენეჯერს"
+msgstr " - MATE-ის სესიების მმართველი"
 
 #: tools/mate-session-inhibit.c:118
 #, c-format
@@ -604,7 +605,7 @@ msgstr "მიმდინარე სესიის დაყენება"
 
 #: tools/mate-session-save.c:73
 msgid "NAME"
-msgstr "სახელწოდება"
+msgstr "სახელი"
 
 #: tools/mate-session-save.c:74
 msgid "Kill session"

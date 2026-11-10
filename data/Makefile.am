@@ -34,7 +34,7 @@ gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
 
 EXTRA_DIST =					\
-	mate-wm				\
+	mate-wm					\
 	$(xsession_in_files)			\
 	$(gsettingsschema_in_files)		\
 	$(hwcompat_DATA)			\

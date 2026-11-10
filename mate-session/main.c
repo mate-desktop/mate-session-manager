@@ -42,6 +42,7 @@
 #include "mdm-signal-handler.h"
 #include "mdm-log.h"
 
+
 #include "gsm-consolekit.h"
 #ifdef HAVE_SYSTEMD
 #include "gsm-systemd.h"
@@ -84,6 +85,10 @@ static gboolean show_version = FALSE;
 static gboolean debug = FALSE;
 static gboolean disable_acceleration_check = FALSE;
 
+static pid_t session_parent_pid = 0;
+
+static gboolean parent_watchdog (gpointer data);
+
 static gboolean
 initialize_gsettings (void)
 {
@@ -109,6 +114,61 @@ static void on_bus_name_lost(DBusGProxy* bus_proxy, const char* name, gpointer d
 {
 	g_warning("Lost name on bus: %s, exiting", name);
 	exit(1);
+}
+
+static gboolean
+terminate_stale_owner (DBusGConnection *connection,
+                       const gchar     *name)
+{
+	DBusGProxy *bus_proxy;
+	GError     *error = NULL;
+	gchar      *owner = NULL;
+	guint32     pid = 0;
+	gint        i;
+	gboolean    terminated = FALSE;
+
+	bus_proxy = dbus_g_proxy_new_for_name (connection,
+	                                       DBUS_SERVICE_DBUS,
+	                                       DBUS_PATH_DBUS,
+	                                       DBUS_INTERFACE_DBUS);
+
+	if (dbus_g_proxy_call (bus_proxy, "GetNameOwner", &error,
+	                       G_TYPE_STRING, name, G_TYPE_INVALID,
+	                       G_TYPE_STRING, &owner, G_TYPE_INVALID)
+	    && owner != NULL && owner[0] != '\0') {
+		g_clear_error (&error);
+
+		if (dbus_g_proxy_call (bus_proxy, "GetConnectionUnixProcessID", &error,
+		                       G_TYPE_STRING, owner, G_TYPE_INVALID,
+		                       G_TYPE_UINT, &pid, G_TYPE_INVALID)
+		    && pid != 0 && pid != (guint32) getpid ()) {
+			g_debug ("Stale owner of %s is pid %u; terminating it", name, pid);
+
+			if (kill ((pid_t) pid, SIGTERM) == 0) {
+				terminated = TRUE;
+
+				/* Wait for the stale session to die and release the name. */
+				for (i = 0; i < 40 && kill ((pid_t) pid, 0) == 0; i++) {
+					g_usleep (100 * 1000);
+				}
+			} else {
+				g_warning ("Failed to terminate stale %s owner (pid %u): %s",
+				           name, pid, g_strerror (errno));
+			}
+		} else {
+			g_warning ("Failed to resolve the process holding %s: %s",
+			           name, error != NULL ? error->message : "unknown error");
+		}
+	}
+
+	if (error != NULL) {
+		g_error_free (error);
+	}
+
+	g_free (owner);
+	g_object_unref (bus_proxy);
+
+	return terminated;
 }
 
 static gboolean acquire_name_on_proxy(DBusGProxy* bus_proxy, const char* name)
@@ -188,6 +248,17 @@ static gboolean acquire_name(void)
 
 	if (!acquire_name_on_proxy(bus_proxy, GSM_DBUS_NAME))
 	{
+		/* Only on Wayland do we recover a stale session that still owns the name. */
+		if (gsm_util_session_is_wayland ()) {
+			g_debug ("%s is already taken; terminating the stale session owner", GSM_DBUS_NAME);
+
+			if (terminate_stale_owner (connection, GSM_DBUS_NAME)
+			    && acquire_name_on_proxy (bus_proxy, GSM_DBUS_NAME)) {
+				g_object_unref (bus_proxy);
+				return TRUE;
+			}
+		}
+
 		gsm_util_init_error(TRUE, "%s", "Could not acquire name on session bus");
 		/* not reached */
 	}
@@ -266,6 +337,15 @@ static void append_required_apps(GsmManager* manager)
 			}
 
 			component = required_components[i];
+
+			/* On Wayland the compositor is the window
+			 * manager, so the required windowmanager component would
+			 * conflict with it and is not started. */
+			if (gsm_util_session_is_wayland ()
+			    && strcmp (component, "windowmanager") == 0) {
+				g_debug ("main: skipping '%s' required component on Wayland", component);
+				continue;
+			}
 
 			default_provider = g_settings_get_string (settings_required_components, component);
 
@@ -574,12 +654,27 @@ static void set_overlay_scroll (void)
 }
 
 static gboolean
+parent_watchdog (gpointer data)
+{
+	if (session_parent_pid > 0 && getppid () != session_parent_pid) {
+		g_debug ("Parent process gone, ending the orphaned session");
+
+		gtk_main_quit ();
+
+		return G_SOURCE_REMOVE;
+	}
+
+	return G_SOURCE_CONTINUE;
+}
+
+static gboolean
 check_gl (gchar **gl_renderer, GError **error)
 {
 	int status;
 	char *argv[] = { LIBEXECDIR "/mate-session-check-accelerated", NULL };
 
-	if (getenv ("DISPLAY") == NULL) {
+	if (getenv ("DISPLAY") == NULL
+	    || g_strcmp0 (g_getenv ("XDG_SESSION_TYPE"), "wayland") == 0) {
 		/* Not connected to X11, someone else will take care of checking GL */
 		return TRUE;
 	}
@@ -595,8 +690,9 @@ check_gl (gchar **gl_renderer, GError **error)
 int main(int argc, char** argv)
 {
 	struct sigaction sa;
-	GError* error;
+	GError* error = NULL;
 	const char* display_str;
+	gchar* saved_display = NULL;
 	GsmManager* manager;
 	GsmStore* client_store;
 	GsmXsmpServer* xsmp_server;
@@ -633,6 +729,13 @@ int main(int argc, char** argv)
 	sigemptyset(&sa.sa_mask);
 	sigaction(SIGPIPE, &sa, 0);
 
+	/* On a Wayland session the compositor is already running: the display
+	 * manager started it through startmatewayland, and this process is a
+	 * child of the compositor. Remember the X11 (Xwayland) display
+         * the compositor provided, because GDK may overwrite DISPLAY with the
+         * Wayland socket name during gtk_init and we want the correct value for X11 clients below. */
+	saved_display = g_strdup (g_getenv ("DISPLAY"));
+
 	error = NULL;
 	gtk_init_with_args(&argc, &argv, (char*) _(" - the MATE session manager"), entries, GETTEXT_PACKAGE, &error);
 
@@ -647,12 +750,6 @@ int main(int argc, char** argv)
 		g_print("%s %s\n", g_get_application_name(), VERSION);
 		exit(1);
 	}
-
-        gsm_util_export_activation_environment (NULL);
-
-#ifdef HAVE_SYSTEMD
-        gsm_util_export_user_environment (NULL);
-#endif
 
 	mdm_log_init();
 
@@ -697,15 +794,44 @@ int main(int argc, char** argv)
 		gsm_util_setenv ("XDG_CURRENT_DESKTOP", "MATE");
 
 	/* Set DISPLAY explicitly for all our children, in case --display
-	 * was specified on the command line.
+	 * was specified on the command line. Only meaningful on X11: on
+	 * Wayland gdk_display_get_name() returns the Wayland socket name.
 	 */
-	display_str = gdk_display_get_name (gdk_display_get_default());
-	gsm_util_setenv("DISPLAY", display_str);
+	if (!gsm_util_session_is_wayland ()) {
+		display_str = gdk_display_get_name (gdk_display_get_default());
+		gsm_util_setenv("DISPLAY", display_str);
+	} else {
+		/* Export the Wayland display for bus activated children. */
+		display_str = g_getenv ("WAYLAND_DISPLAY");
+		if (display_str != NULL) {
+			gsm_util_setenv ("WAYLAND_DISPLAY", display_str);
+		}
+
+		/* Set the Xwayland display for X11 clients.  Use the value the
+		 * compositor provided before gtk_init (which may have overwritten
+		 * DISPLAY with the Wayland socket name) rather than reading DISPLAY
+		 * back from the environment. */
+		if (saved_display != NULL && saved_display[0] != '\0') {
+			gsm_util_setenv ("DISPLAY", saved_display);
+		}
+		g_free (saved_display);
+		saved_display = NULL;
+	}
 
 	/* Some third-party programs rely on MATE_DESKTOP_SESSION_ID to
 	 * detect if MATE is running. We keep this for compatibility reasons.
 	 */
 	gsm_util_setenv("MATE_DESKTOP_SESSION_ID", "this-is-deprecated");
+
+	/* Now that DISPLAY and WAYLAND_DISPLAY are correctly set, export
+	 * the environment to the session bus and systemd.  This must happen
+	 * after the Wayland DISPLAY fixup above so that D-Bus activated
+	 * children receive the correct DISPLAY value. */
+	gsm_util_export_activation_environment (NULL);
+
+#ifdef HAVE_SYSTEMD
+	gsm_util_export_user_environment (NULL);
+#endif
 
 	/*
 	 * Make sure gsettings is set up correctly.  If not, then bail.
@@ -761,6 +887,11 @@ int main(int argc, char** argv)
 	_gsm_manager_set_renderer (manager, gl_renderer);
 	gsm_manager_start(manager);
 
+	if (gsm_util_session_is_wayland ()) {
+		session_parent_pid = getppid();
+		g_timeout_add (2000, parent_watchdog, NULL);
+	}
+
 	gtk_main();
 
 	if (xsmp_server != NULL)
@@ -790,7 +921,21 @@ int main(int argc, char** argv)
 	}
 
 	msm_gnome_stop();
-	mdm_log_shutdown();
+
+	/* Reset the signal handlers loginctl might trigger. Wayland only: on
+	 * X11 the display manager manages session teardown itself. */
+	if (gsm_util_session_is_wayland ()) {
+		struct sigaction sa;
+
+		memset (&sa, 0, sizeof (sa));
+		sa.sa_handler = SIG_DFL;
+		sigemptyset (&sa.sa_mask);
+		sigaction (SIGTERM, &sa, NULL);
+		sigaction (SIGINT, &sa, NULL);
+		sigaction (SIGHUP, &sa, NULL);
+	}
+
+mdm_log_shutdown();
 
 	return 0;
 }

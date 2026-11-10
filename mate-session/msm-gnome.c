@@ -131,6 +131,9 @@ msm_compat_gnome_smproxy_shutdown (void)
 {
   GdkDisplay *gdkdisplay;
 
+  if (! GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+    return;
+
   gdkdisplay = gdk_display_get_default ();
   gdk_x11_display_error_trap_push (gdkdisplay);
 
@@ -159,9 +162,14 @@ msm_gnome_start (void)
 
     for (i = 0; array[i]; i++) {
       if (strcmp (array[i], "smproxy") == 0) {
-        g_debug ("MsmGnome: starting smproxy");
-        msm_compat_gnome_smproxy_startup ();
-        gnome_compat_started = TRUE;
+        if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+          g_debug ("MsmGnome: starting smproxy");
+          msm_compat_gnome_smproxy_startup ();
+          gnome_compat_started = TRUE;
+        } else {
+          /* The GNOME_SM_PROXY window is an X11-only mechanism. */
+          g_debug ("MsmGnome: skipping smproxy on non-X11 session");
+        }
       } else if (strcmp (array[i], "keyring") == 0) {
         g_debug ("MsmGnome: starting keyring");
         gnome_keyring_daemon_startup ();

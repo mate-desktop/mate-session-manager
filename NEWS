@@ -1,3 +1,30 @@
+### mate-session-manager 1.29.0
+
+  * Translations update from Fedora Weblate (#338)
+  * app: Add respawn rate limiting to prevent CPU spinning
+  * build(deps): bump actions/checkout from 6 to 7
+  * util: Blacklist some session-specific variables
+  * session: restart non-client apps that set AutoRestart
+  * session: Move logout sound to end-session phase
+  * correcting po with errors
+  * remove empty po file
+  * add translation coverage badge
+  * retrieve last transifex translations
+  * Revert "Retrieve last transifex translations"
+  * Retrieve last transifex translations
+  * Refers to mate-desktop/mate-terminal#487
+  * session: Add sound events for login and logout
+  * gsm-app: migrate to gdbus
+  * fix memleaks
+  * ci: migrate from Travis CI to GitHub Actions
+  * manager: Loosen environment variable restrictions
+  * util: Disable capturing of subpatterns
+  * util: Only accept common space characters
+  * Update layout of gsm-properties-dialog.c
+  * Update layout of session-properties.ui
+  * Use g_info() for "screensaver left the bus" message
+
+
 ### mate-session-manager 1.28.0
 
   * Translations update

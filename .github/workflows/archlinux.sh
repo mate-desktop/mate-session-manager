@@ -33,6 +33,7 @@ requires+=(
 	systemd
 	which
 	xtrans
+	wayland-protocols
 )
 
 infobegin "Update system"
